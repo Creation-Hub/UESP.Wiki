@@ -485,6 +485,7 @@ def wiki_script_member_summary(title, script_name, member_name, member_kind, mem
     )
 
 
+# Debug
 def wiki_generation_date():
     """Make a generation date string in the format YYYY/MM/DD hh:mm:ss AM/PM."""
     dt = datetime.datetime.now()
@@ -492,6 +493,7 @@ def wiki_generation_date():
     return f"* GENERATED: {pretty_date}"
 
 
+# Debug
 def wiki_script_date_modified(script_path):
     """Make a last modified date string for the script file in the format YYYY/MM/DD hh:mm:ss AM/PM."""
     mod_time = os.path.getmtime(script_path)
@@ -573,14 +575,14 @@ def wiki_write_page(script_path, output_path):
 
         # Script Definition
         f.write("== Definition ==\n")
-        f.write("The script header definition.\n\n")
+        f.write(f"The <code>{script_name}.psc</code> source file header definition for this script.\n\n")
         f.write("<source lang=\"papyrus\">\n")
         f.write(f"{normalize_strip_comments(header_line)}\n")
         f.write("</source>\n\n\n")
 
         # Script Documentation
         f.write("== Documentation ==\n")
-        f.write("The documentation provided by script source comments.\n\n")
+        f.write(f"The <code>{script_name}.psc</code> source file documentation comments for this script.\n\n")
         f.write("<source>\n")
         f.write(f"{documentation}\n")
         f.write("</source>\n\n\n")
@@ -601,7 +603,7 @@ def wiki_write_page(script_path, output_path):
                     title,
                     script_name,
                     member_name,
-                    member_kind,
+                    normalize_keyword(member_kind),
                     member_rtype,
                     " ".join(member_flags) if isinstance(member_flags, list) else member_flags,
                     ", ".join(member_params) if isinstance(member_params, list) else member_params,
