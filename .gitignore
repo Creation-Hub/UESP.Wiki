@@ -4,9 +4,7 @@
 
 /_input/
 /_output/
-/settings.txt
-
-/wiki_script.py
+# /settings.txt
 
 
 # Visual Studio Code

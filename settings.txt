@@ -1,0 +1,2 @@
+SCRIPT_PATH=.\_input\Papyrus\Base\ScriptObject.psc
+OUTPUT_PATH=.\_output\Papyrus\ScriptObject.wiki
