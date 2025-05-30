@@ -1,2 +1,3 @@
-SCRIPT_PATH=.\_input\Papyrus\Base\ScriptObject.psc
-OUTPUT_PATH=.\_output\Papyrus\ScriptObject.wiki
+WIKI_DEBUG=no
+SCRIPT_PATH=.\_input\Papyrus\Base\Game.psc
+OUTPUT_PATH=.\_output\Papyrus\Game.wiki

@@ -8,21 +8,39 @@ import datetime
 # Settings file path
 SETTINGS_FILE = os.path.join(os.path.dirname(__file__), "settings.txt")
 
+def parse_bool(val, default=False):
+    """Parse a string as a boolean value. Accepts 1/0, true/false, yes/no, on/off (case-insensitive)."""
+    if isinstance(val, bool):
+        return val
+    if not isinstance(val, str):
+        return default
+    val = val.strip().lower()
+    if val in ("1", "true", "yes", "on"):
+        return True
+    if val in ("0", "false", "no", "off"):
+        return False
+    return default
+
 # Read settings from file
 def read_settings(settings_path):
     script_path = None
     output_path = None
+    wiki_debug = "0"  # Default to off
     if os.path.exists(settings_path):
         with open(settings_path, encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
-                if line.startswith("SCRIPT_PATH="):
+                if line.startswith("WIKI_DEBUG="):
+                    wiki_debug = line.split("=", 1)[1].strip()
+                elif line.startswith("SCRIPT_PATH="):
                     script_path = line.split("=", 1)[1].strip()
                 elif line.startswith("OUTPUT_PATH="):
                     output_path = line.split("=", 1)[1].strip()
-    return script_path, output_path
+    # Use the common parse_bool function
+    wiki_debug_bool = parse_bool(wiki_debug, default=False)
+    return wiki_debug_bool, script_path, output_path
 
-SCRIPT_PATH, OUTPUT_PATH = read_settings(SETTINGS_FILE)
+WIKI_DEBUG, SCRIPT_PATH, OUTPUT_PATH = read_settings(SETTINGS_FILE)
 
 
 # Normalize
@@ -260,7 +278,7 @@ def parse_script_member_function(function_match, lines, idx, property_names):
         if fname == f"Get{pname}" or fname == f"Set{pname}":
             return None
     rtype = function_match.group("rtype")
-    params = function_match.group("params").strip()
+    params = normalize_strip_comments(function_match.group("params").strip())
     # Strip comments from flags before splitting
     flags_raw = function_match.group("flags")
     norm_flags = normalize_strip_comments(flags_raw)
@@ -410,8 +428,9 @@ def wiki_link_script_member(script_name, member_name):
 
 
 def wiki_script_object_summary(title, script_name, extends_name, script_namespace=None, script_flags=None, game_version="v0.0.0+"):
-    """Return the 'Script_Object_Summary' wiki template as a string.
-        https://starfieldwiki.net/wiki/Template:Script_Object_Summary
+    """
+    Return the 'Script_Object_Summary' wiki template as a string.
+    https://starfieldwiki.net/wiki/Template:Script_Object_Summary
     """
     return (
         "{{Script_Object_Summary\n"
@@ -425,21 +444,43 @@ def wiki_script_object_summary(title, script_name, extends_name, script_namespac
     )
 
 
-# Not implemented yet
-def wiki_script_object_member_summary(title, script_name, member_name, member_kind, member_return, member_flags, member_parameters, game_version="v0.0.0+"):
-    """Return the 'Script_Member_Summary' wiki template as a string.
-        https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
+def wiki_script_object_member_summary(title, script_name, member_name, member_kind, member_return, member_flags, member_parameters, documentation, game_version="v0.0.0+"):
+    """
+    Return the 'Script_Object_Member_Summary' wiki template as a string.
+    See https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
     """
     return (
         "{{Script_Object_Member_Summary\n"
         f"| title = {title}\n"
         f"| script = {wiki_link_script(script_name)}\n"
+        f"| name = {wiki_link_script_member(script_name, member_name)}\n"
         f"| kind = {member_kind}\n"
-        f"| name = {wiki_link_script_member(member_name)}\n"
+        f"| flags = {member_flags}\n"
         f"| returns = {member_return}\n"
         f"| parameters = {member_parameters}\n"
-        f"| flags = {member_flags}\n"
+        f"| documentation = {documentation}\n"
         f"| game_version = {game_version}\n"
+        "}}\n"
+    )
+
+
+# Not implemented yet, for standalone member pages
+def wiki_script_member_summary(title, script_name, member_name, member_kind, member_return, member_flags, member_parameters, documentation, game_version="v0.0.0+"):
+    """
+    Return the 'Script_Member_Summary' wiki template as a string.
+    https://starfieldwiki.net/wiki/Template:Script_Member_Summary
+    """
+    return (
+        "{{Script_Member_Summary\n"
+        f"| title = {title}\n"
+        f"| script = {wiki_link_script(script_name)}\n"
+        f"| name = {wiki_link_script_member(script_name, member_name)}\n"
+        f"| kind = {member_kind}\n"
+        f"| flags = {member_flags}\n"
+        f"| returns = {member_return}\n"
+        f"| parameters = {member_parameters}\n"
+        f"| documentation = {game_version}\n"
+        f"| game_version = {documentation}\n"
         "}}\n"
     )
 
@@ -459,7 +500,16 @@ def wiki_script_date_modified(script_path):
     return f"* PAPYRUS:   {pretty_date}"
 
 
-def wiki_script_member(member, script_name):
+# Unused
+def wiki_script_member(script_name, member):
+    """
+    Generate a MediaWiki formatted string for a script member.
+    Returns a list of lines that can be written to a wiki page.
+
+    Example:
+        for line in wiki_script_member(script_name, member):
+            f.write(f"{line}\n")
+    """
     kind = member["kind"]
     lines = []
 
@@ -511,31 +561,56 @@ def wiki_write_page(script_path, output_path):
     # Write the wiki page text content
     with open(output_path, "w", encoding="utf-8") as f:
         # DEBUG
-        f.write(wiki_generation_date())
-        f.write("\n")
-        f.write(wiki_script_date_modified(script_path))
-        f.write("\n\n")
+        if WIKI_DEBUG:
+            f.write(wiki_generation_date())
+            f.write("\n")
+            f.write(wiki_script_date_modified(script_path))
+            f.write("\n\n")
+
         # Script Summary Template
         f.write(wiki_script_object_summary(script_name, script_name, extends_value))
         f.write("\n\n")
+
         # Script Definition
         f.write("== Definition ==\n")
         f.write("The script header definition.\n\n")
         f.write("<source lang=\"papyrus\">\n")
         f.write(f"{normalize_strip_comments(header_line)}\n")
         f.write("</source>\n\n\n")
+
         # Script Documentation
         f.write("== Documentation ==\n")
         f.write("The documentation provided by script source comments.\n\n")
         f.write("<source>\n")
         f.write(f"{documentation}\n")
         f.write("</source>\n\n\n")
+
         # Script Members
         f.write("== Members ==\n")
         f.write("The members that belong to this script.\n\n")
         for member in members:
-            for line in wiki_script_member(member, script_name):
-                f.write(f"{line}\n")
+            title = member["name"]
+            member_name = member["name"]
+            member_kind = member["kind"]
+            member_rtype = member.get("rtype", "")
+            member_flags = member.get("flags", [])
+            member_params = member.get("params", [])
+            member_doc = member.get("doc", "")
+            f.write(
+                wiki_script_object_member_summary(
+                    title,
+                    script_name,
+                    member_name,
+                    member_kind,
+                    member_rtype,
+                    " ".join(member_flags) if isinstance(member_flags, list) else member_flags,
+                    ", ".join(member_params) if isinstance(member_params, list) else member_params,
+                    member_doc,
+                    "v0.0.0+"
+                )
+            )
+            f.write("\n")
+
         # Page Categories
         f.write("\n\n")
         f.write("[[Category:Starfield_Mod-Papyrus]]\n")
