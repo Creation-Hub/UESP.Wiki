@@ -1,2 +1,2 @@
 # UESP.Wiki
-Some automation for https://starfieldwiki.net/wiki/StarfieldWiki:About
+Some automation for https://starfieldwiki.net/ MediaWiki contributions.
