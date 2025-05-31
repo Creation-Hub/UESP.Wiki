@@ -6,10 +6,9 @@ import wiki.page
 # Settings
 #---------------------------------------------
 
-def app_arguments():
+def app_arguments() -> str:
     """
-    Parses command line arguments to get the path to the settings JSON file.
-    If no path is provided, it defaults to 'settings_default.json' in the same directory as this script.
+    Parses command line arguments to for this application.
     """
     argument_parser = argparse.ArgumentParser(description="UESP Wiki Generator")
     argument_parser.add_argument(
@@ -22,10 +21,9 @@ def app_arguments():
     return arguments.settings
 
 
-def settings_read(settings_path):
+def settings_read(settings_path: str) -> tuple[str | None, str | None]:
     """
-    Reads settings from a JSON file.
-    Resolves SCRIPT_DIR and OUTPUT_DIR relative to the settings file location.
+    Reads application settings from a JSON file.
     """
     script_dir = None
     output_dir = None
