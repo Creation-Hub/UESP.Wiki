@@ -9,7 +9,10 @@ import datetime
 SETTINGS_FILE = os.path.join(os.path.dirname(__file__), "settings.txt")
 
 def parse_bool(val, default=False):
-    """Parse a string as a boolean value. Accepts 1/0, true/false, yes/no, on/off (case-insensitive)."""
+    """
+    Parse a string as a boolean value.
+    Accepts 1/0, true/false, yes/no, on/off (case-insensitive).
+    """
     if isinstance(val, bool):
         return val
     if not isinstance(val, str):
@@ -21,10 +24,14 @@ def parse_bool(val, default=False):
         return False
     return default
 
-# Read settings from file
+
 def read_settings(settings_path):
-    script_path = None
-    output_path = None
+    """
+    Reads settings from a file and returns the WIKI_DEBUG flag, SCRIPT_DIR, and OUTPUT_DIR.
+    If the file does not exist, returns default values.
+    """
+    script_dir = None
+    output_dir = None
     wiki_debug = "0"  # Default to off
     if os.path.exists(settings_path):
         with open(settings_path, encoding="utf-8") as f:
@@ -32,15 +39,14 @@ def read_settings(settings_path):
                 line = line.strip()
                 if line.startswith("WIKI_DEBUG="):
                     wiki_debug = line.split("=", 1)[1].strip()
-                elif line.startswith("SCRIPT_PATH="):
-                    script_path = line.split("=", 1)[1].strip()
-                elif line.startswith("OUTPUT_PATH="):
-                    output_path = line.split("=", 1)[1].strip()
-    # Use the common parse_bool function
+                elif line.startswith("SCRIPT_DIR="):
+                    script_dir = line.split("=", 1)[1].strip()
+                elif line.startswith("OUTPUT_DIR="):
+                    output_dir = line.split("=", 1)[1].strip()
     wiki_debug_bool = parse_bool(wiki_debug, default=False)
-    return wiki_debug_bool, script_path, output_path
+    return wiki_debug_bool, script_dir, output_dir
 
-WIKI_DEBUG, SCRIPT_PATH, OUTPUT_PATH = read_settings(SETTINGS_FILE)
+WIKI_DEBUG, SCRIPT_DIR, OUTPUT_DIR = read_settings(SETTINGS_FILE)
 
 
 # Normalize
@@ -621,9 +627,22 @@ def wiki_write_page(script_path, output_path):
 # Main
 #---------------------------------------------
 if __name__ == "__main__":
-    if not os.path.exists(SCRIPT_PATH):
-        print(f"Script file does not exist: {SCRIPT_PATH}")
+    if not SCRIPT_DIR or not OUTPUT_DIR:
+        print("SCRIPT_DIR or OUTPUT_DIR not set in settings.txt")
         exit(1)
-    wiki_write_page(SCRIPT_PATH, OUTPUT_PATH)
-    print(f"- Reading: {SCRIPT_PATH}")
-    print(f"- Writing: {OUTPUT_PATH}")
+    if not os.path.exists(SCRIPT_DIR):
+        print(f"Script directory does not exist: '{SCRIPT_DIR}'")
+        exit(1)
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+
+    for filename in os.listdir(SCRIPT_DIR):
+        if filename.lower().endswith(".psc"):
+            script_path = os.path.join(SCRIPT_DIR, filename)
+            script_name = os.path.splitext(filename)[0]
+            output_path = os.path.join(OUTPUT_DIR, f"{script_name}.wiki")
+            try:
+                wiki_write_page(script_path, output_path)
+                print(f"Read/Write: '{script_path}' -> '{output_path}'")
+            except Exception as e:
+                print(f"Error processing '{script_path}': {e}")
