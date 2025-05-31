@@ -1,5 +1,4 @@
 {
-  "WIKI_DEBUG": false,
-  "SCRIPT_DIR": "./_input/Papyrus/Base",
-  "OUTPUT_DIR": "./_output/Papyrus/Base"
+	"SCRIPT_DIR": "_input/Papyrus/Base",
+	"OUTPUT_DIR": "wiki/Papyrus/Base"
 }
