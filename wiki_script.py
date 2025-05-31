@@ -1,50 +1,30 @@
 import os
 import re
 import datetime
+import json
 
 # Settings
 #---------------------------------------------
 
 # Settings file path
-SETTINGS_FILE = os.path.join(os.path.dirname(__file__), "settings.txt")
-
-def parse_bool(val, default=False):
-    """
-    Parse a string as a boolean value.
-    Accepts 1/0, true/false, yes/no, on/off (case-insensitive).
-    """
-    if isinstance(val, bool):
-        return val
-    if not isinstance(val, str):
-        return default
-    val = val.strip().lower()
-    if val in ("1", "true", "yes", "on"):
-        return True
-    if val in ("0", "false", "no", "off"):
-        return False
-    return default
+SETTINGS_FILE = os.path.join(os.path.dirname(__file__), "settings.json")
 
 
 def read_settings(settings_path):
     """
-    Reads settings from a file and returns the WIKI_DEBUG flag, SCRIPT_DIR, and OUTPUT_DIR.
+    Reads settings from a JSON file and returns the WIKI_DEBUG flag, SCRIPT_DIR, and OUTPUT_DIR.
     If the file does not exist, returns default values.
     """
     script_dir = None
     output_dir = None
-    wiki_debug = "0"  # Default to off
+    wiki_debug = False  # Default to off
     if os.path.exists(settings_path):
         with open(settings_path, encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith("WIKI_DEBUG="):
-                    wiki_debug = line.split("=", 1)[1].strip()
-                elif line.startswith("SCRIPT_DIR="):
-                    script_dir = line.split("=", 1)[1].strip()
-                elif line.startswith("OUTPUT_DIR="):
-                    output_dir = line.split("=", 1)[1].strip()
-    wiki_debug_bool = parse_bool(wiki_debug, default=False)
-    return wiki_debug_bool, script_dir, output_dir
+            data = json.load(f)
+            wiki_debug = data.get("WIKI_DEBUG", False)
+            script_dir = data.get("SCRIPT_DIR")
+            output_dir = data.get("OUTPUT_DIR")
+    return bool(wiki_debug), script_dir, output_dir
 
 WIKI_DEBUG, SCRIPT_DIR, OUTPUT_DIR = read_settings(SETTINGS_FILE)
 

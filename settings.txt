@@ -1,3 +1,0 @@
-WIKI_DEBUG=no
-SCRIPT_DIR=.\_input\Papyrus\Base
-OUTPUT_DIR=.\_output\Papyrus\Base
