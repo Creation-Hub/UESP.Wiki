@@ -1,7 +1,7 @@
 import re
 import papyrus.normalize
 
-# Parser
+# Documentation
 #---------------------------------------------
 
 def extract_script_documentation(lines, element_idx):
@@ -61,7 +61,28 @@ def extract_script_documentation(lines, element_idx):
     return "No documentation provided."
 
 
-def extract_script_extends(header_line):
+# Header
+#---------------------------------------------
+
+def parse_header(lines):
+    """
+    Finds the script header line, script name, and its line index.
+    Returns (script_name, header_line, header_idx) or raises ValueError if not found.
+    """
+    for idx, line in enumerate(lines):
+        # Skip empty lines and comments
+        if line.strip() == "" or line.strip().startswith(";"):
+            continue
+        line = papyrus.normalize.strip_comments(line)
+        match = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
+        if match:
+            header_line = line.strip()
+            script_name = match.group(1).split()[0]
+            return idx, script_name, header_line
+    raise ValueError("ScriptName not found")
+
+
+def extract_header_extends(header_line):
     """
     Extracts the Extends value from the script header.
     Returns:
@@ -184,34 +205,19 @@ def parse_script_member_struct(struct_match, lines, idx):
     }
 
 
-def parse_script_header(lines):
-    """
-    Finds the script header line, script name, and its line index.
-    Returns (script_name, header_line, header_idx) or raises ValueError if not found.
-    """
-    for idx, line in enumerate(lines):
-        # Skip empty lines and comments
-        if line.strip() == "" or line.strip().startswith(";"):
-            continue
-        line = papyrus.normalize.strip_comments(line)
-        match = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
-        if match:
-            header_line = line.strip()
-            script_name = match.group(1).split()[0]
-            return idx, script_name, header_line
-    raise ValueError("ScriptName not found")
-
-
 # Parse
 #---------------------------------------------
 
 def parse_script(script_path):
-    with open(script_path, encoding="utf-8") as f:
-        lines = f.readlines()
+    with open(script_path, encoding="utf-8") as file:
+        lines = file.readlines()
 
-    header_idx, script_name, header_line = parse_script_header(lines)
+    # Read script header
+    header_idx, script_name, header_line = parse_header(lines)
+    header_line = papyrus.normalize.script_header(header_line)
     documentation = extract_script_documentation(lines, header_idx)
 
+    # Initialize member variables
     members = []
     seen_properties = set()
     property_names = set()
@@ -275,4 +281,4 @@ def parse_script(script_path):
                 members.append(member)
             continue
 
-    return script_name, papyrus.normalize.script_header(header_line), documentation, members
+    return script_name, header_line, documentation, members

@@ -63,23 +63,20 @@ def write(script_path, output_path):
     """Generates a MediaWiki page for a given Papyrus script source file."""
     # Collect script information
     script_name, header_line, documentation, members = papyrus.parser.parse_script(script_path)
-    extends_value = papyrus.parser.extract_script_extends(header_line)
+    header_line = papyrus.normalize.strip_comments(header_line)
+    script_extends = papyrus.parser.extract_header_extends(header_line)
 
     # Write the wiki page text content
     with open(output_path, "w", encoding="utf-8") as file:
-        # Meta Information (Hidden)
-        wiki.meta.write(file, script_path)
-        file.write("\n\n")
-
         # Script Summary Template
-        file.write(wiki.template.script_object_summary(script_name, script_name, extends_value))
+        file.write(wiki.template.script_object_summary(script_name, script_name, script_extends))
         file.write("\n\n")
 
         # Script Definition
         file.write("== Definition ==\n")
         file.write(f"The <code>{script_name}.psc</code> source file header definition for this script.\n\n")
         file.write("<source lang=\"papyrus\">\n")
-        file.write(f"{papyrus.normalize.strip_comments(header_line)}\n")
+        file.write(f"{header_line}\n")
         file.write("</source>\n\n\n")
 
         # Script Documentation
@@ -115,6 +112,11 @@ def write(script_path, output_path):
                 )
             )
             file.write("\n")
+
+        # Meta Information (Hidden)
+        file.write("== Generation Meta ==\n")
+        wiki.meta.write(file, script_path)
+        file.write("\n\n")
 
         # Page Categories
         file.write("\n\n")
