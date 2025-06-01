@@ -61,7 +61,11 @@ if __name__ == "__main__":
         if filename.lower().endswith(".psc"):
             script_path = os.path.join(SCRIPT_DIR, filename)
             script_name = os.path.splitext(filename)[0]
-            output_path = os.path.join(OUTPUT_DIR, f"{script_name}.wiki")
+            output_file_name = f"{script_name}.wiki"
+            output_directory = os.path.join(OUTPUT_DIR, script_name)
+            if not os.path.exists(output_directory):
+                os.makedirs(output_directory)
+            output_path = os.path.join(output_directory, output_file_name)
             try:
                 wiki.page.write(script_path, output_path)
                 print(f"{script_name}:\n  -> in:  {script_path}\n  -> out: {output_path}")

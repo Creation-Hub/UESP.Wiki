@@ -11,6 +11,7 @@ Some automation for https://starfieldwiki.net/ MediaWiki contributions.
 The wiki templates used by this generator.
 
 #### `Script_Object_Summary`
+https://starfieldwiki.net/wiki/Template:Script_Object_Summary
 ```
 <includeonly>
 <cleantable>
@@ -38,6 +39,7 @@ The wiki templates used by this generator.
 ```
 
 #### `Script_Object_Member_Summary`
+https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
 ```
 <includeonly>
 <cleantable>
@@ -73,7 +75,13 @@ The wiki templates used by this generator.
 <noinclude>{{/Doc}}</noinclude>
 ```
 
+#### `Script_Member_Summary`
+https://starfieldwiki.net/wiki/Template:Script_Member_Summary
+```
+```
+
 #### `Script_DocGen_Meta`
+https://starfieldwiki.net/wiki/Template:Script_Member_Summary
 ```
 <includeonly>
 <cleantable>
