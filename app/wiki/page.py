@@ -1,4 +1,3 @@
-import papyrus.normalize
 import papyrus.parser
 import wiki.template
 
@@ -42,7 +41,6 @@ def write(script_path, output_path):
             title = member["name"]
             member_name = member["name"]
             member_kind = member["kind"]
-            member_kind = papyrus.normalize.script_keyword(member_kind) # TODO: Refactor this to occur earlier in the parser.
             member_rtype = member.get("rtype", "")
             member_flags = member.get("flags", [])
             member_params = member.get("params", [])

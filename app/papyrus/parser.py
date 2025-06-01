@@ -253,6 +253,7 @@ def parse_script(script_path):
         if property_match:
             member = parse_script_member_property(property_match, lines, idx, seen_properties)
             if member:
+                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
                 members.append(member)
             # Check if this is a block property (not auto)
             if not line.strip().lower().endswith("auto") and not line.strip().lower().endswith("auto const") and not line.strip().lower().endswith("auto readonly"):
@@ -270,6 +271,7 @@ def parse_script(script_path):
         if function_match:
             member = parse_script_member_function(function_match, lines, idx, property_names)
             if member:
+                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
                 members.append(member)
             continue
 
@@ -278,6 +280,7 @@ def parse_script(script_path):
         if event_match:
             member = parse_script_member_event(event_match, lines, idx)
             if member:
+                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
                 members.append(member)
             continue
 
@@ -286,6 +289,7 @@ def parse_script(script_path):
         if struct_match:
             member = parse_script_member_struct(struct_match, lines, idx)
             if member:
+                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
                 members.append(member)
             continue
 
