@@ -81,7 +81,7 @@ https://starfieldwiki.net/wiki/Template:Script_Member_Summary
 ```
 
 #### `Script_DocGen_Meta`
-https://starfieldwiki.net/wiki/Template:Script_Member_Summary
+https://starfieldwiki.net/wiki/Template:Script_DocGen_Meta
 ```
 <includeonly>
 <cleantable>
