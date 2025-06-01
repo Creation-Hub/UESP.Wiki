@@ -1,6 +1,6 @@
 import papyrus.normalize
+import wiki
 import wiki.link
-import wiki.meta
 
 # Members: Bulleted List
 #---------------------------------------------
