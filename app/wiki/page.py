@@ -41,20 +41,23 @@ def write(script_path, output_path):
             title = member["name"]
             member_name = member["name"]
             member_kind = member["kind"]
-            member_rtype = member.get("rtype", "")
+            member_returns = member.get("rtype", "")
             member_flags = member.get("flags", [])
-            member_params = member.get("params", [])
+            member_flags_string = " ".join(member_flags) if isinstance(member_flags, list) else member_flags
+            member_parameters = member.get("params", [])
+            member_parameters_string = ", ".join(member_parameters) if isinstance(member_parameters, list) else member_parameters
             member_doc = member.get("doc", "")
-            game_version = "v0.0.0+" # TODO: Perhaps this should NOT be included in generation.
+            game_version = ""
             file.write(
-                wiki.template.script_object_member_summary(
+                wiki.template.script_object_member_summary
+                (
                     title,
                     script_name,
                     member_name,
                     member_kind,
-                    member_rtype,
-                    " ".join(member_flags) if isinstance(member_flags, list) else member_flags,
-                    ", ".join(member_params) if isinstance(member_params, list) else member_params,
+                    member_returns,
+                    member_flags_string,
+                    member_parameters_string,
                     member_doc,
                     game_version
                 )
@@ -62,5 +65,5 @@ def write(script_path, output_path):
             file.write("\n")
 
         # Page Categories
-        file.write("\n\n")
+        file.write("\n")
         file.write("[[Category:Starfield_Mod-Papyrus]]\n")

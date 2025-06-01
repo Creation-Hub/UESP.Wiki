@@ -21,7 +21,7 @@ def script_object_summary(title, script_name, extends_name, script_namespace=Non
     )
 
 
-def script_object_member_summary(title, script_name, member_name, member_kind, member_return, member_flags, member_parameters, documentation, game_version="v0.0.0+"):
+def script_object_member_summary(title, script_name, member_name, member_kind, member_return, member_flags, member_parameters, member_documentation, game_version="v0.0.0+"):
     """
     Return the 'Script_Object_Member_Summary' wiki template as a string.
     See https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
@@ -35,7 +35,7 @@ def script_object_member_summary(title, script_name, member_name, member_kind, m
         f"| flags = {member_flags}\n"
         f"| returns = {member_return}\n"
         f"| parameters = {member_parameters}\n"
-        f"| documentation = {documentation}\n"
+        f"| documentation = {member_documentation}\n"
         f"| game_version = {game_version}\n"
         "}}\n"
     )
