@@ -47,8 +47,8 @@ def script_type(type_str: str) -> str:
         is_array = True
         t = t[:-2]
     # Normalize primitive types
-    primitives = {"int", "float", "bool", "string", "var", "none"}
-    if t.lower() in primitives:
+    primitive_types = {"int", "float", "bool", "string", "var", "none"}
+    if t.lower() in primitive_types:
         base = t.lower()
     else:
         base = t[:1].upper() + t[1:]
@@ -80,8 +80,8 @@ def default_value(default_val: str) -> str:
     val = default_val.strip()
     if val.startswith("="):
         val = val[1:].strip()
-    primitives = {"none", "true", "false"}
-    if val.lower() in primitives:
+    primitive_values = {"none", "true", "false"}
+    if val.lower() in primitive_values:
         return "= " + val.lower()
     try:
         float(val)

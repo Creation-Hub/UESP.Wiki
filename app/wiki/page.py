@@ -38,27 +38,12 @@ def write(script_path, output_path):
         file.write("== Members ==\n")
         file.write("The members that belong to this script.\n\n")
         for member in members:
-            title = member["name"]
-            member_name = member["name"]
-            member_kind = member["kind"]
-            member_returns = member.get("rtype", "")
-            member_flags = member.get("flags", [])
-            member_flags_string = " ".join(member_flags) if isinstance(member_flags, list) else member_flags
-            member_parameters = member.get("params", [])
-            member_parameters_string = ", ".join(member_parameters) if isinstance(member_parameters, list) else member_parameters
-            member_doc = member.get("doc", "")
             game_version = ""
             file.write(
                 wiki.template.script_object_member_summary
                 (
-                    title,
                     script_name,
-                    member_name,
-                    member_kind,
-                    member_returns,
-                    member_flags_string,
-                    member_parameters_string,
-                    member_doc,
+                    member,
                     game_version
                 )
             )
