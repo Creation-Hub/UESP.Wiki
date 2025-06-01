@@ -6,7 +6,7 @@ import papyrus.normalize
 
 # TODO: This function is too greedy with check-1. It should stop at the first non-comment line.
 # TODO: Ensire the function returns the result of both the comment and the block docstring.
-def extract_script_documentation(lines, element_idx):
+def extract_script_documentation(lines, line_index):
     """
     Extracts the documentation comment for a script or member.
     Supports:
@@ -16,7 +16,7 @@ def extract_script_documentation(lines, element_idx):
     """
     # 1. Check for doc comments above (Papyrus ;)
     desc_lines = []
-    idx = element_idx - 1
+    idx = line_index - 1
     while idx >= 0:
         line = lines[idx].rstrip()
         if line.lstrip().startswith(";"):
@@ -31,7 +31,7 @@ def extract_script_documentation(lines, element_idx):
         return description
 
     # 2. Check for curly-brace doc block immediately below (allow blank lines)
-    idx = element_idx + 1
+    idx = line_index + 1
     # Skip blank lines
     while idx < len(lines) and lines[idx].strip() == "":
         idx += 1
@@ -71,7 +71,7 @@ def parse_header(lines):
     Finds the script header line information.
     Returns values or raises ValueError if `ScriptName` is not found.
     """
-    is_skipping = False
+    inside_comment_block = False
     for line_index, line in enumerate(lines):
         # Skip empty lines and comments
         line = line.strip()
@@ -83,16 +83,16 @@ def parse_header(lines):
             continue
         elif line.startswith(";/"):
             # This is the start of a multi-line block comment, skip it
-            is_skipping = True
+            inside_comment_block = True
             continue
         elif line.endswith("/;"):
             # This is the end of a multi-line block comment, skip it
-            is_skipping = False
+            inside_comment_block = False
             continue
         elif line.startswith(";"):
             # This is a single-line comment, skip it
             continue
-        elif is_skipping:
+        elif inside_comment_block:
             # If we are in a multi-line block comment, skip it
             continue
 
@@ -103,12 +103,14 @@ def parse_header(lines):
         if header_match:
             script_header = papyrus.normalize.script_header(line)
             script_name = header_match.group(1).split()[0]
+            script_namespace = script_name.split(":")
             script_extends = extract_header_extends(script_header)
             script_doc = extract_script_documentation(lines, line_index)
             return {
                 "line_index": line_index,
                 "header": script_header,
                 "name": script_name,
+                "namespace": None,
                 "extends": script_extends,
                 "doc": script_doc
             }
@@ -243,7 +245,7 @@ def parse_script_member_struct(struct_match, lines, idx):
 # Parse
 #---------------------------------------------
 
-def parse_script(script_path):
+def parse(script_path):
     with open(script_path, encoding="utf-8") as file:
         lines = file.readlines()
 
@@ -263,7 +265,7 @@ def parse_script(script_path):
     STRUCT_PATTERN = re.compile(r'^\s*struct\s+(?P<name>\w+)', re.IGNORECASE)
     ENDPROPERTY_PATTERN = re.compile(r'^\s*endproperty\b', re.IGNORECASE)
 
-    # First pass: collect all property names (CamelCase)
+    # First pass: collect all property names
     for line_index, line in enumerate(lines[header_idx+1:], start=header_idx+1):
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:

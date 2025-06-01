@@ -6,6 +6,7 @@ Some automation for https://starfieldwiki.net/ MediaWiki contributions.
 - Parser does not handle properties with default value field initializers. See `Actor.wiki` and `ObjectReference.wiki`.
 - The `ScriptObject.psc` should explicitly list `Nothing` as it's `Extends`, but it should not be a page link.
 - Fix parser return type for functions. Functions that have no return type should NOT use `none`. It should be blank or use `void`.
+- Add import information to script objects.
 
 # Templates
 The wiki templates used by this generator.
