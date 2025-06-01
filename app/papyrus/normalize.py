@@ -3,6 +3,17 @@ import re
 # Normalize
 #---------------------------------------------
 
+def whitespace(line: str) -> str:
+    """
+    Replaces all consecutive whitespace in the input string with a single space.
+    Returns the normalized string.
+    """
+    return re.sub(r'\s+', ' ', line).strip()
+
+
+# Script
+#---------------------------------------------
+
 def script_keyword(word: str) -> str:
     """Normalize Papyrus keywords and flags to CamelCase."""
     mapping = {

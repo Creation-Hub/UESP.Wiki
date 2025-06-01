@@ -4,6 +4,8 @@ import papyrus.normalize
 # Documentation
 #---------------------------------------------
 
+# TODO: This function is too greedy with check-1. It should stop at the first non-comment line.
+# TODO: Ensire the function returns the result of both the comment and the block docstring.
 def extract_script_documentation(lines, element_idx):
     """
     Extracts the documentation comment for a script or member.
@@ -69,18 +71,40 @@ def parse_header(lines):
     Finds the script header line information.
     Returns values or raises ValueError if `ScriptName` is not found.
     """
+    is_skipping = False
     for line_index, line in enumerate(lines):
         # Skip empty lines and comments
-        if line.strip() == "" or line.strip().startswith(";"):
+        line = line.strip()
+        if line == "":
+            # If the line is empty, skip it
             continue
+        elif line.startswith(";/") and line.endswith("/;"):
+            # This is a single-line block comment, skip it
+            continue
+        elif line.startswith(";/"):
+            # This is the start of a multi-line block comment, skip it
+            is_skipping = True
+            continue
+        elif line.endswith("/;"):
+            # This is the end of a multi-line block comment, skip it
+            is_skipping = False
+            continue
+        elif line.startswith(";"):
+            # This is a single-line comment, skip it
+            continue
+        elif is_skipping:
+            # If we are in a multi-line block comment, skip it
+            continue
+
         line = papyrus.normalize.strip_comments(line)
-        match = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
-        if match:
-            script_header = papyrus.normalize.script_header(line.strip())
-            script_name = match.group(1).split()[0]
-            script_doc = extract_script_documentation(lines, line_index)
+        line = papyrus.normalize.whitespace(line)
+
+        header_match = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
+        if header_match:
+            script_header = papyrus.normalize.script_header(line)
+            script_name = header_match.group(1).split()[0]
             script_extends = extract_header_extends(script_header)
-            # return line_index, script_name, script_header, script_doc, script_extends
+            script_doc = extract_script_documentation(lines, line_index)
             return {
                 "line_index": line_index,
                 "header": script_header,
@@ -226,10 +250,6 @@ def parse_script(script_path):
     # Parse the script header
     header = parse_header(lines)
     header_idx = header["line_index"]
-    script_name = header["name"]
-    script_header = header["header"]
-    script_doc = header["doc"]
-    script_extends = header["extends"]
 
     # Initialize member variables
     members = []
@@ -299,4 +319,4 @@ def parse_script(script_path):
                 members.append(member)
             continue
 
-    return script_header, script_name, script_extends, script_doc, members
+    return header, members

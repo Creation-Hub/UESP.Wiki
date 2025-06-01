@@ -7,12 +7,15 @@ import wiki.template
 def write(script_path, output_path):
     """Generates a MediaWiki page for a given Papyrus script source file."""
     (# Collect script information
-        script_header,
-        script_name,
-        script_extends,
-        script_doc,
+        header,
         members
     ) = papyrus.parser.parse_script(script_path)
+
+    script_header = header["header"]
+    script_name = header["name"]
+    script_extends = header["extends"]
+    script_doc = header["doc"]
+
 
     # Write the wiki page text content
     with open(output_path, "w", encoding="utf-8") as file:
