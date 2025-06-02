@@ -1,12 +1,14 @@
 import re
+from re import Match
 import papyrus.normalize
+from papyrus.script import Header, Member, Script
 
 # Documentation
 #---------------------------------------------
 
 # TODO: This function is too greedy with check-1. It should stop at the first non-comment line.
 # TODO: Ensire the function returns the result of both the comment and the block docstring.
-def extract_script_documentation(lines, line_index):
+def extract_script_documentation(lines:list[str], line_index:int):
     """
     Extracts the documentation comment for a script or member.
     Supports:
@@ -66,7 +68,34 @@ def extract_script_documentation(lines, line_index):
 # Header
 #---------------------------------------------
 
-def parse_header(lines):
+def extract_header_extends(header_line:str) -> str:
+    """
+    Extracts the Extends value from the script header.
+    Returns:
+      - The script name after 'Extends' if present (may be namespaced).
+      - 'Nothing' if this is ScriptObject itself.
+      - 'ScriptObject' if no Extends is present.
+    """
+    clean_line = papyrus.normalize.strip_comments(header_line)
+    tokens = clean_line.strip().split()
+    script_name = None
+    extends_name = None
+
+    for i, token in enumerate(tokens):
+        if token.lower() == "scriptname" and i + 1 < len(tokens):
+            script_name = tokens[i + 1]
+        if token.lower() == "extends" and i + 1 < len(tokens):
+            extends_name = tokens[i + 1]
+
+    if extends_name:
+        return extends_name
+    elif script_name and script_name.endswith("ScriptObject"):
+        return "Nothing"
+    else:
+        return "ScriptObject"
+
+
+def parse_header(lines:list[str]) -> Header:
     """
     Finds the script header line information.
     Returns values or raises ValueError if `ScriptName` is not found.
@@ -98,163 +127,143 @@ def parse_header(lines):
 
         line = papyrus.normalize.strip_comments(line)
         line = papyrus.normalize.whitespace(line)
-
-        header_match = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
+        header_match:Match[str] = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
         if header_match:
-            script_header = papyrus.normalize.script_header(line)
-            script_name = header_match.group(1).split()[0]
-            script_namespace = script_name.split(":")
-            script_extends = extract_header_extends(script_header)
-            script_doc = extract_script_documentation(lines, line_index)
-            return {
-                "line_index": line_index,
-                "header": script_header,
-                "name": script_name,
-                "namespace": None,
-                "extends": script_extends,
-                "doc": script_doc
-            }
+            header:Header = Header()
+            header.index = line_index
+            header.definition = papyrus.normalize.script_header(line)
+            header.name = header_match.group(1).split()[0]
+            header.namespace = header.name.split(":") if header.name else []
+            header.extends = extract_header_extends(header.definition)
+            header.flags = []
+            header.documentation = extract_script_documentation(lines, line_index)
+            return header
     raise ValueError("ScriptName not found")
-
-
-def extract_header_extends(header_line):
-    """
-    Extracts the Extends value from the script header.
-    Returns:
-      - The script name after 'Extends' if present (may be namespaced).
-      - 'Nothing' if this is ScriptObject itself.
-      - 'ScriptObject' if no Extends is present.
-    """
-    clean_line = papyrus.normalize.strip_comments(header_line)
-    tokens = clean_line.strip().split()
-    script_name = None
-    extends_name = None
-
-    for i, token in enumerate(tokens):
-        if token.lower() == "scriptname" and i + 1 < len(tokens):
-            script_name = tokens[i + 1]
-        if token.lower() == "extends" and i + 1 < len(tokens):
-            extends_name = tokens[i + 1]
-
-    if extends_name:
-        return extends_name
-    elif script_name and script_name.endswith("ScriptObject"):
-        return "Nothing"
-    else:
-        return "ScriptObject"
 
 
 # Members
 #---------------------------------------------
 
-def parse_script_member_parameters(parameter_match):
+def parse_script_member_parameters(parameters_match:Match[str]) -> list[str]:
     """Parse a Papyrus parameter string into a list of normalized parameter strings."""
-    param_list = []
-    if parameter_match:
-        for p in parameter_match.split(","):
-            p = p.strip()
-            if not p:
+    parameters = []
+    if parameters_match:
+        for element in parameters_match.split(","):
+            element = element.strip()
+            if not element:
                 continue
-            param_match = re.match(r'^(\w+(?:\[\])?)\s+(\w+)(\s*=\s*.+)?$', p)
+            param_match = re.match(r'^(\w+(?:\[\])?)\s+(\w+)(\s*=\s*.+)?$', element)
             if param_match:
                 ptype = param_match.group(1)
                 pname = param_match.group(2)
                 default = param_match.group(3) or ""
-                norm_default = papyrus.normalize.default_value(default)
-                param_str_piece = f"{papyrus.normalize.script_type(ptype)} {pname}{(' ' + norm_default) if norm_default else ''}".strip()
-                param_list.append(param_str_piece)
+                default_norm = papyrus.normalize.default_value(default)
+                param_str_piece = f"{papyrus.normalize.script_type(ptype)} {pname}{(' ' + default_norm) if default_norm else ''}".strip()
+                parameters.append(param_str_piece)
             else:
-                param_list.append(p)
-    return param_list
+                parameters.append(element)
+    return parameters
 
 
-def parse_script_member_property(property_match, lines, idx, seen_properties):
-    member_type = papyrus.normalize.script_type(property_match.group("type"))
-    member_name = papyrus.normalize.member_name(property_match.group("name"))
-    flags = property_match.group("flags")
-    member_flags = papyrus.normalize.strip_comments(flags)
-    member_flags = papyrus.normalize.script_flags(member_flags.strip().split())
-    member_doc = extract_script_documentation(lines, idx)
-    # If this property has already been seen, skip it.
-    if member_name not in seen_properties:
-        seen_properties.add(member_name)
-        return {
-            "kind": "Property",
-            "type": member_type,
-            "name": member_name,
-            "flags": member_flags,
-            "doc": member_doc
-        }
-    return None
+def parse_script_member_property(property_match:Match[str], lines:list[str], line_index:int, seen_properties:list[str]) -> Member | None:
+    key:str = papyrus.normalize.member_name(property_match.group("name"))
+    #----------
+    if key in seen_properties: return None
+    else: seen_properties.add(key)
+    #----------
+    member:Member = Member()
+    member.name = key
+    member.index = line_index
+    member.definition = lines[line_index]
+    member.documentation = extract_script_documentation(lines, line_index)
+    member.state = ""
+    member.kind = "Property"
+    #----------
+    member.type = papyrus.normalize.script_type(property_match.group("type"))
+    #----------
+    flags:str = property_match.group("flags")
+    flags = papyrus.normalize.strip_comments(flags)
+    member.flags = papyrus.normalize.script_flags(flags.split())
+    #----------
+    member.parameters = []
+    #----------
+    return member
 
 
-def parse_script_member_function(function_match, lines, idx, property_names):
-    member_name = papyrus.normalize.member_name(function_match.group("name"))
+def parse_script_member_function(function_match:Match[str], lines:list[str], line_index:int, property_names:list[str]) -> Member | None:
+    key:str = papyrus.normalize.member_name(function_match.group("name"))
+    #----------
     # Skip property accessor functions (Get<Property>, Set<Property>)
     # This is a workaround to avoid parsing them as functions.
     # TODO: This is not a correct naming for property accessors, they should not include the property name.
     #   Property accessors are just named "Get" or "Set" without the property name.
     for property_name in property_names:
-        if member_name == f"Get{property_name}" or member_name == f"Set{property_name}":
+        if key == f"Get{property_name}" or key == f"Set{property_name}":
             return None
-    # Get the member details.
-    member_returns = function_match.group("rtype")
-    member_params = papyrus.normalize.strip_comments(function_match.group("params").strip())
-    member_param_list = parse_script_member_parameters(member_params)
-    flags = function_match.group("flags")
-    member_flags = papyrus.normalize.strip_comments(flags)
-    member_flags = papyrus.normalize.script_flags(member_flags.strip().split())
-    member_doc = extract_script_documentation(lines, idx)
-    return {
-        "kind": "Function",
-        "name": member_name,
-        "rtype": member_returns,
-        "params": member_param_list,
-        "flags": member_flags,
-        "doc": member_doc
-    }
+    #----------
+    member:Member = Member()
+    member.name = key
+    member.index = line_index
+    member.definition = lines[line_index]
+    member.documentation = extract_script_documentation(lines, line_index)
+    member.state = ""
+    member.kind = "Function"
+    #----------
+    member.type = function_match.group("rtype")
+    #----------
+    flags:str = function_match.group("flags")
+    flags = papyrus.normalize.strip_comments(flags)
+    member.flags = papyrus.normalize.script_flags(flags.split())
+    #----------
+    parameters:str = papyrus.normalize.strip_comments(function_match.group("params"))
+    member.parameters = parse_script_member_parameters(parameters)
+    #----------
+    return member
 
 
-def parse_script_member_event(event_match, lines, idx):
-    member_name = papyrus.normalize.member_name(event_match.group("name"))
-    params = event_match.group("params").strip()
-    member_params = parse_script_member_parameters(params)
-    flags = event_match.group("flags")
-    member_flags = papyrus.normalize.strip_comments(flags)
-    member_flags = papyrus.normalize.script_flags(member_flags.strip().split())
-    member_doc = extract_script_documentation(lines, idx)
-    return {
-        "kind": "Event",
-        "name": member_name,
-        "params": member_params,
-        "flags": member_flags,
-        "doc": member_doc
-    }
+def parse_script_member_event(event_match:Match[str], lines:list[str], line_index:int) -> Member | None:
+    key:str = papyrus.normalize.member_name(event_match.group("name"))
+    member:Member = Member()
+    member.name = key
+    member.index = line_index
+    member.definition = lines[line_index]
+    member.documentation = extract_script_documentation(lines, line_index)
+    member.state = ""
+    member.kind = "Event"
+    #----------
+    flags:str = event_match.group("flags")
+    flags = papyrus.normalize.strip_comments(flags)
+    member.flags = papyrus.normalize.script_flags(flags.split())
+    #----------
+    parameters:str = papyrus.normalize.strip_comments(event_match.group("params"))
+    member.parameters = parse_script_member_parameters(parameters)
+    #----------
+    return member
 
 
-def parse_script_member_struct(struct_match, lines, idx):
-    member_name = papyrus.normalize.member_name(struct_match.group("name"))
-    member_doc = extract_script_documentation(lines, idx)
-    return {
-        "kind": "Struct",
-        "name": member_name,
-        "doc": member_doc
-    }
+def parse_script_member_struct(struct_match:Match[str], lines:list[str], line_index:int) -> Member | None:
+    key:str = papyrus.normalize.member_name(struct_match.group("name"))
+    member:Member = Member()
+    member.name = key
+    member.index = line_index
+    member.definition = lines[line_index]
+    member.documentation = extract_script_documentation(lines, line_index)
+    member.state = ""
+    member.kind = "Struct"
+    return member
 
 
 # Parse
 #---------------------------------------------
 
-def parse(script_path):
+def parse(script_path:str) -> Script:
     with open(script_path, encoding="utf-8") as file:
-        lines = file.readlines()
+        lines:list[str] = file.readlines()
 
-    # Parse the script header
-    header = parse_header(lines)
-    header_idx = header["line_index"]
+    script:Script = Script()
+    script.header = parse_header(lines)
 
-    # Initialize member variables
-    members = []
+    # Initialize loop variables
     seen_properties = set()
     property_names = set()
 
@@ -266,7 +275,7 @@ def parse(script_path):
     ENDPROPERTY_PATTERN = re.compile(r'^\s*endproperty\b', re.IGNORECASE)
 
     # First pass: collect all property names
-    for line_index, line in enumerate(lines[header_idx+1:], start=header_idx+1):
+    for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
             pname = papyrus.normalize.member_name(property_match.group("name"))
@@ -274,15 +283,15 @@ def parse(script_path):
 
     # Second pass: collect members, skipping property accessors and property block contents
     inside_property_block = False
-    for line_index, line in enumerate(lines[header_idx+1:], start=header_idx+1):
+    for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
 
         # Property: Detect start of a property block
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
             member = parse_script_member_property(property_match, lines, line_index, seen_properties)
             if member:
-                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
-                members.append(member)
+                member.kind = papyrus.normalize.script_keyword(member.kind)
+                script.members.append(member)
             # Check if this is a block property (not auto)
             if not line.strip().lower().endswith("auto") and not line.strip().lower().endswith("auto const") and not line.strip().lower().endswith("auto readonly"):
                 inside_property_block = True
@@ -299,8 +308,8 @@ def parse(script_path):
         if function_match:
             member = parse_script_member_function(function_match, lines, line_index, property_names)
             if member:
-                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
-                members.append(member)
+                member.kind = papyrus.normalize.script_keyword(member.kind)
+                script.members.append(member)
             continue
 
         # Event
@@ -308,8 +317,8 @@ def parse(script_path):
         if event_match:
             member = parse_script_member_event(event_match, lines, line_index)
             if member:
-                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
-                members.append(member)
+                member.kind = papyrus.normalize.script_keyword(member.kind)
+                script.members.append(member)
             continue
 
         # Struct
@@ -317,8 +326,8 @@ def parse(script_path):
         if struct_match:
             member = parse_script_member_struct(struct_match, lines, line_index)
             if member:
-                member["kind"] = papyrus.normalize.script_keyword(member["kind"])
-                members.append(member)
+                member.kind = papyrus.normalize.script_keyword(member.kind)
+                script.members.append(member)
             continue
 
-    return header, members
+    return script

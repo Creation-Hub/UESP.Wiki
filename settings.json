@@ -1,4 +1,5 @@
 {
 	"SCRIPT_DIR": "_input/Papyrus/Base",
-	"OUTPUT_DIR": "wiki/Papyrus/Base"
+	"OUTPUT_DIR": "wiki/Papyrus/Base",
+	"OUTPUT_DIR_SORT": false
 }
