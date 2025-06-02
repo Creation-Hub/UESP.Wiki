@@ -9,6 +9,7 @@ Some automation for https://starfieldwiki.net/ MediaWiki contributions.
 - Add import information to script objects.
 - Generate member example sections that show remote syntax for events.
 - Detect property get/set accessors in the parser.
+- Avoid filling template fields with empty values.
 
 # Templates
 The wiki templates used by this generator.
