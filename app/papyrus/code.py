@@ -15,29 +15,33 @@ class Code:
 
 
 class ScriptName:
-    """Represents a Papyrus script name."""
-
-    def __init__(self, value:str=""):
-        """
-        Initializes the script name with a full namespace and name.
-        The format is `Namespace1:Namespace2:ScriptName`.
-        Parameters:
-            value (str): The full script namespace and name.
-        """
-        self._value = value.strip() if value else ""
-
-    def __str__(self) -> str:
-        """Returns the full script namespace and name."""
-        if self._value: return self._value
-        else: return ""
+    """
+    Represents a Papyrus script name.
+    The value format is `Namespace1:Namespace2:ScriptName`.
+    """
+    _value: str = ""
+    """The script name value, which can include namespaces."""
 
     @property
     def value(self):
-        return self._value  # Read-only
+        return self._value
+
+    @value.setter
+    def value(self, value: str):
+        self._value = value.strip() if value else ""
+
+    def __init__(self, value: str = ""):
+        """Initializes this class with an optional script name value."""
+        self.value = value
+
+    def __str__(self) -> str:
+        """Returns the string representation of this class."""
+        if self.value: return str(self.value)
+        else: return ""
 
     def toArray(self) -> list[str]:
         """Returns the script name as a list of strings."""
-        if self._value: return self._value.split(":")
+        if self.value: return self.value.split(":")
         else: return []
 
     def fromArray(self, name:list[str]) -> bool:
@@ -48,7 +52,7 @@ class ScriptName:
 
     def path(self) -> str:
         """Returns the relative path based on the script name."""
-        if not self._value: return ""
+        if not self.value: return ""
         array = self.toArray()
         path = "\\".join(array)
         if path:
@@ -70,6 +74,11 @@ class Header(Code):
 
     flags: list[str] = []
     """The flags associated with the script."""
+
+    def __str__(self) -> str:
+        """Returns the string representation of this class."""
+        if self.name: return str(self.name)
+        else: return ""
 
 
 class Member(Code):
@@ -114,7 +123,7 @@ class Script:
     """The source file path for this script."""
 
     def __str__(self) -> str:
-        """Returns the script name."""
+        """Returns the string representation of this class."""
         if self.header.name:
             return str(self.header.name)
         else:

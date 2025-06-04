@@ -1,5 +1,45 @@
 {
-	"SCRIPT_DIR": "_input/Papyrus/Base",
-	"OUTPUT_DIR": "wiki/Base",
-	"OUTPUT_DIR_SORT": false
+	"publish":
+	{
+		"game":
+		{
+			"name": "Starfield",
+			"version": "1.15.216.0",
+			"steam.app": "1716740",
+			"steam.build": "18483158"
+		},
+		"editor":
+		{
+			"name": "Creation Kit",
+			"version": "1.15.216.0",
+			"steam.app": "2722710",
+			"steam.build": "18483730"
+		}
+	},
+	"targets": [
+		{
+			"name": "Base Native",
+			"source.directory": "_input/Papyrus/Base-Native",
+			"output.directory": "wiki/Base-Native",
+			"output.sort": false,
+			"output.objects": true,
+			"output.members": false
+		},
+		{
+			"name": "Base Default",
+			"source.directory": "_input/Papyrus/Base-Default",
+			"output.directory": "wiki/Base-Default",
+			"output.sort": false,
+			"output.objects": true,
+			"output.members": false
+		},
+		{
+			"name": "Test Sample",
+			"source.directory": "_input/Papyrus/Test-Sample",
+			"output.directory": "wiki/Test-Sample",
+			"output.sort": false,
+			"output.objects": true,
+			"output.members": false
+		}
+	]
 }

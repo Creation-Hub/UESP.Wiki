@@ -1,7 +1,7 @@
 import re
 from re import Match
 from app import papyrus
-from app.papyrus.script import Header, Member, Script, ScriptName
+from app.papyrus.code import Header, Member, Script, ScriptName
 
 
 # Documentation

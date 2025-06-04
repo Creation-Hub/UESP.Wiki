@@ -1,5 +1,5 @@
 from app import wiki
-from app.papyrus.script import Script, Member
+from app.papyrus.code import Script, Member
 
 
 # Script Object
