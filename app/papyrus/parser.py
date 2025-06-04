@@ -1,7 +1,8 @@
 import re
 from re import Match
-import papyrus.normalize
-from papyrus.script import Header, Member, Script, ScriptName
+from app import papyrus
+from app.papyrus.script import Header, Member, Script, ScriptName
+
 
 # Documentation
 #---------------------------------------------

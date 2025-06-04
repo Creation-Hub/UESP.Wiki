@@ -1,7 +1,8 @@
 import os
 import argparse
 import json
-import wiki.page
+from app import wiki
+
 
 # Settings
 #---------------------------------------------

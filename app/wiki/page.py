@@ -1,6 +1,6 @@
-import papyrus.parser
-from papyrus.script import Script, Member
-import wiki.template
+from app import wiki, papyrus
+from app.papyrus.script import Script
+
 
 # Writer
 #---------------------------------------------

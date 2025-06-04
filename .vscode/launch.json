@@ -18,6 +18,17 @@
 				"--settings",
 				"${workspaceFolder}/settings.json"
 			]
+		},
+		{
+			"name": "Launch Module (args)",
+			"console": "integratedTerminal",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "app.main",
+			"args": [
+				"--settings",
+				"${workspaceFolder}/settings.json"
+			]
 		}
 	]
 }

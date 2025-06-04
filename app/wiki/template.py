@@ -1,5 +1,6 @@
-from papyrus.script import Script, Member
-import wiki.link
+from app import wiki
+from app.papyrus.script import Script, Member
+
 
 # Script Object
 #---------------------------------------------
@@ -15,7 +16,7 @@ def script_object_summary(script:Script, game_version):
     script_title = script.header.name
     script_name = wiki.link.script_object(script.header.name)
     script_extends = wiki.link.script_object(script.header.extends)
-    script_flags = script.header.flags
+    script_flags = wiki.list.toString(script.header.flags)
     return (
         "{{Script_Object_Summary\n"
         f"| title = {script_title}\n"
