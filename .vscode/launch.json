@@ -24,7 +24,7 @@
 			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
-			"module": "app.main",
+			"module": "app",
 			"args": [
 				"--settings",
 				"${workspaceFolder}/settings.json"
