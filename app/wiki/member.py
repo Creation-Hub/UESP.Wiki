@@ -24,9 +24,9 @@ def wiki_script_member(script_name, member):
         param_str = ", ".join(member["params"])
         rtype = papyrus.normalize.script_type(member["rtype"]) if member.get("rtype") else ""
         if rtype:
-            lines.append(f"* {rtype} {papyrus.normalize.script_keyword('function')} {link}({param_str}){flag_str}")
+            lines.append(f"* {rtype} {papyrus.normalize.symbol('function')} {link}({param_str}){flag_str}")
         else:
-            lines.append(f"* {papyrus.normalize.script_keyword('function')} {link}({param_str}){flag_str}")
+            lines.append(f"* {papyrus.normalize.symbol('function')} {link}({param_str}){flag_str}")
         if member.get("doc"):
             lines.append(f"** {member['doc']}")
 
@@ -34,20 +34,20 @@ def wiki_script_member(script_name, member):
         link = wiki.link.script_member(script_name, member["name"])
         flag_str = f" {' '.join(member['flags'])}" if member.get("flags") else ""
         param_str = ", ".join(member["params"])
-        lines.append(f"* {papyrus.normalize.script_keyword('event')} {link}({param_str}){flag_str}")
+        lines.append(f"* {papyrus.normalize.symbol('event')} {link}({param_str}){flag_str}")
         if member.get("doc"):
             lines.append(f"** {member['doc']}")
 
     elif kind == "property":
         link = wiki.link.script_member(script_name, member["name"])
         flag_str = f" {' '.join(member['flags'])}" if member.get("flags") else ""
-        lines.append(f"* {member['type']} {papyrus.normalize.script_keyword('property')} {link}{flag_str}")
+        lines.append(f"* {member['type']} {papyrus.normalize.symbol('property')} {link}{flag_str}")
         if member.get("doc"):
             lines.append(f"** {member['doc']}")
 
     elif kind == "struct":
         link = wiki.link.script_member(script_name, member["name"])
-        lines.append(f"* {papyrus.normalize.script_keyword('struct')} {link}")
+        lines.append(f"* {papyrus.normalize.symbol('struct')} {link}")
         if member.get("doc"):
             lines.append(f"** {member['doc']}")
 

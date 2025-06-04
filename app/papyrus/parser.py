@@ -1,14 +1,14 @@
 import re
 from re import Match
 import papyrus.normalize
-from papyrus.script import Header, Member, Script
+from papyrus.script import Header, Member, Script, ScriptName
 
 # Documentation
 #---------------------------------------------
 
 # TODO: This function is too greedy with check-1. It should stop at the first non-comment line.
 # TODO: Ensire the function returns the result of both the comment and the block docstring.
-def extract_script_documentation(lines:list[str], line_index:int):
+def parse_script_documentation(lines:list[str], line_index:int):
     """
     Extracts the documentation comment for a script or member.
     Supports:
@@ -68,6 +68,7 @@ def extract_script_documentation(lines:list[str], line_index:int):
 # Header
 #---------------------------------------------
 
+# UNUSED: This function is not used in the current codebase.
 def extract_header_extends(header_line:str) -> str:
     """
     Extracts the Extends value from the script header.
@@ -127,16 +128,30 @@ def parse_header(lines:list[str]) -> Header:
 
         line = papyrus.normalize.strip_comments(line)
         line = papyrus.normalize.whitespace(line)
-        header_match:Match[str] = re.match(r'^\s*scriptname\s+([^\s]+.*)$', line, re.IGNORECASE)
+
+        header_match = re.match(
+            r'^\s*scriptname\s+(?P<name>[^\s]+)'     # Required name
+            r'(?:\s+extends\s+(?P<extends>[^\s]+))?' # Optional extends
+            r'(?P<flags>(?:\s+\w+)*)\s*$',           # Optional flags
+            line,
+            re.IGNORECASE
+        )
         if header_match:
             header:Header = Header()
             header.index = line_index
-            header.definition = papyrus.normalize.script_header(line)
-            header.name = header_match.group(1).split()[0]
-            header.namespace = header.name.split(":") if header.name else []
-            header.extends = extract_header_extends(header.definition)
-            header.flags = []
-            header.documentation = extract_script_documentation(lines, line_index)
+            header.definition = papyrus.normalize.script_definition(line)
+            header.documentation = parse_script_documentation(lines, line_index)
+            #----------
+            header.name = ScriptName(header_match.group("name"))
+            header.extends = ScriptName(header_match.group("extends"))
+            #----------
+            # TODO:
+            # header.flags = header_match.group("flags").strip().split() if header_match.group("flags") else []
+            #----------
+            flags:str = header_match.group("flags")
+            flags = papyrus.normalize.strip_comments(flags)
+            header.flags = papyrus.normalize.script_flags(flags.split())
+            #----------
             return header
     raise ValueError("ScriptName not found")
 
@@ -175,7 +190,7 @@ def parse_script_member_property(property_match:Match[str], lines:list[str], lin
     member.name = key
     member.index = line_index
     member.definition = lines[line_index]
-    member.documentation = extract_script_documentation(lines, line_index)
+    member.documentation = parse_script_documentation(lines, line_index)
     member.state = ""
     member.kind = "Property"
     #----------
@@ -205,7 +220,7 @@ def parse_script_member_function(function_match:Match[str], lines:list[str], lin
     member.name = key
     member.index = line_index
     member.definition = lines[line_index]
-    member.documentation = extract_script_documentation(lines, line_index)
+    member.documentation = parse_script_documentation(lines, line_index)
     member.state = ""
     member.kind = "Function"
     #----------
@@ -227,7 +242,7 @@ def parse_script_member_event(event_match:Match[str], lines:list[str], line_inde
     member.name = key
     member.index = line_index
     member.definition = lines[line_index]
-    member.documentation = extract_script_documentation(lines, line_index)
+    member.documentation = parse_script_documentation(lines, line_index)
     member.state = ""
     member.kind = "Event"
     #----------
@@ -247,7 +262,7 @@ def parse_script_member_struct(struct_match:Match[str], lines:list[str], line_in
     member.name = key
     member.index = line_index
     member.definition = lines[line_index]
-    member.documentation = extract_script_documentation(lines, line_index)
+    member.documentation = parse_script_documentation(lines, line_index)
     member.state = ""
     member.kind = "Struct"
     return member
@@ -261,6 +276,7 @@ def parse(script_path:str) -> Script:
         lines:list[str] = file.readlines()
 
     script:Script = Script()
+    script.source_file = script_path
     script.header = parse_header(lines)
 
     # Initialize loop variables
@@ -290,7 +306,7 @@ def parse(script_path:str) -> Script:
         if property_match:
             member = parse_script_member_property(property_match, lines, line_index, seen_properties)
             if member:
-                member.kind = papyrus.normalize.script_keyword(member.kind)
+                member.kind = papyrus.normalize.symbol(member.kind)
                 script.members.append(member)
             # Check if this is a block property (not auto)
             if not line.strip().lower().endswith("auto") and not line.strip().lower().endswith("auto const") and not line.strip().lower().endswith("auto readonly"):
@@ -308,7 +324,7 @@ def parse(script_path:str) -> Script:
         if function_match:
             member = parse_script_member_function(function_match, lines, line_index, property_names)
             if member:
-                member.kind = papyrus.normalize.script_keyword(member.kind)
+                member.kind = papyrus.normalize.symbol(member.kind)
                 script.members.append(member)
             continue
 
@@ -317,7 +333,7 @@ def parse(script_path:str) -> Script:
         if event_match:
             member = parse_script_member_event(event_match, lines, line_index)
             if member:
-                member.kind = papyrus.normalize.script_keyword(member.kind)
+                member.kind = papyrus.normalize.symbol(member.kind)
                 script.members.append(member)
             continue
 
@@ -326,7 +342,7 @@ def parse(script_path:str) -> Script:
         if struct_match:
             member = parse_script_member_struct(struct_match, lines, line_index)
             if member:
-                member.kind = papyrus.normalize.script_keyword(member.kind)
+                member.kind = papyrus.normalize.symbol(member.kind)
                 script.members.append(member)
             continue
 

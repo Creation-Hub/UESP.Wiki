@@ -10,16 +10,16 @@ def script_object_summary(script:Script, game_version):
     Return the 'Script_Object_Summary' wiki template as a string.
     https://starfieldwiki.net/wiki/Template:Script_Object_Summary
     """
+    # TODO: The `ScriptObject.psc` has special rules for it's `Extends` which extends "Nothing".
+    #       The word "Nothing" should not have an internal wiki link.
     script_title = script.header.name
     script_name = wiki.link.script_object(script.header.name)
     script_extends = wiki.link.script_object(script.header.extends)
-    script_namespace = script.header.namespace
     script_flags = script.header.flags
     return (
         "{{Script_Object_Summary\n"
         f"| title = {script_title}\n"
-        f"| script = {script_name}\n"
-        f"| namespace = {script_namespace}\n"
+        f"| name = {script_name}\n"
         f"| extends = {script_extends}\n"
         f"| flags = {script_flags}\n"
         f"| game_version = {game_version}\n"

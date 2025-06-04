@@ -18,14 +18,14 @@ def write(script_path:str, output_path:str):
 
         # Script Definition
         file.write("== Definition ==\n")
-        file.write(f"The <code>{script.header.name}.psc</code> source file header definition for this script.\n\n")
+        file.write(f"The <code>{script.header.name.path()}.psc</code> source file header definition for this script.\n\n")
         file.write("<source lang=\"papyrus\">\n")
         file.write(f"{script.header.definition}\n")
         file.write("</source>\n\n\n")
 
         # Script Documentation
         file.write("== Documentation ==\n")
-        file.write(f"The <code>{script.header.name}.psc</code> source file documentation comments for this script.\n\n")
+        file.write(f"The <code>{script.header.name.path()}.psc</code> source file documentation comments for this script.\n\n")
         file.write("<source>\n")
         file.write(f"{script.header.documentation}\n")
         file.write("</source>\n\n\n")

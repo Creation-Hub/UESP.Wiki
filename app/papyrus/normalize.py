@@ -3,7 +3,7 @@ import re
 # Normalize
 #---------------------------------------------
 
-def whitespace(line: str) -> str:
+def whitespace(line:str) -> str:
     """
     Replaces all consecutive whitespace in the input string with a single space.
     Returns the normalized string.
@@ -11,11 +11,11 @@ def whitespace(line: str) -> str:
     return re.sub(r'\s+', ' ', line).strip()
 
 
-# Script
+# Papyrus
 #---------------------------------------------
 
-def script_keyword(word: str) -> str:
-    """Normalize Papyrus keywords and flags to CamelCase."""
+def symbol(token:str) -> str:
+    """Normalize Papyrus keywords, flags, and other symbols."""
     mapping = {
         # Keywords
         "scriptname": "ScriptName",
@@ -38,12 +38,36 @@ def script_keyword(word: str) -> str:
         "mandatory": "Mandatory",
         "readonly": "ReadOnly",
         "debugonly": "DebugOnly",
-        "betaonly": "BetaOnly"
+        "betaonly": "BetaOnly",
+        # Primitive Types
+        "int": "int",
+        "float": "float",
+        "bool": "bool",
+        "string": "string",
+        "var": "var",
+        # Primitive Values
+        "none": "none",
+        "true": "true",
+        "false": "false",
     }
-    return mapping.get(word.lower(), word)
+    return mapping.get(token.lower(), token)
 
 
-def script_type(type_str: str) -> str:
+# Script
+#---------------------------------------------
+
+def script_definition(line:str) -> str:
+    """Normalizes the given Papyrus header."""
+    tokens = line.strip().split()
+    return " ".join(symbol(token) for token in tokens)
+
+
+def script_flags(flags:list[str]) -> list[str]:
+    """Normalizes the given Papyrus flag symbol names."""
+    return [symbol(flag) for flag in flags]
+
+
+def script_type(type_str:str) -> str:
     """
     Papyrus primitive types are lowercase, object types are CamelCase.
     Handles arrays and 'none'.
@@ -58,6 +82,7 @@ def script_type(type_str: str) -> str:
         is_array = True
         t = t[:-2]
     # Normalize primitive types
+    #TODO: Use symbol() to normalize primitive types?
     primitive_types = {"int", "float", "bool", "string", "var", "none"}
     if t.lower() in primitive_types:
         base = t.lower()
@@ -66,31 +91,21 @@ def script_type(type_str: str) -> str:
     return f"{base}[]" if is_array else base
 
 
-def member_name(name: str) -> str:
-    """Ensure member names are CamelCase."""
+def member_name(name:str) -> str:
+    """Ensure member names are CamelCase. Set first letter to uppercase."""
     if not name:
         return ""
     return name[0].upper() + name[1:]
 
 
-def script_header(header_line: str) -> str:
-    """Ensure Papyrus header keywords and flags are CamelCase."""
-    tokens = header_line.strip().split()
-    return " ".join(script_keyword(token) for token in tokens)
-
-
-def script_flags(flag_tokens: list[str]) -> list[str]:
-    """Normalize member flags to CamelCase."""
-    return [script_keyword(f) for f in flag_tokens]
-
-
-def default_value(default_val: str) -> str:
+def default_value(default_val:str) -> str:
     """Normalize primitive default values (none, true, false, numbers)."""
     if not default_val:
         return ""
     val = default_val.strip()
     if val.startswith("="):
         val = val[1:].strip()
+    #TODO: Use symbol() to normalize primitive values?
     primitive_values = {"none", "true", "false"}
     if val.lower() in primitive_values:
         return "= " + val.lower()
@@ -102,7 +117,7 @@ def default_value(default_val: str) -> str:
     return "= " + val
 
 
-def strip_comments(line: str) -> str:
+def strip_comments(line:str) -> str:
     """
     Strips this line of any Papyrus comments.
 
