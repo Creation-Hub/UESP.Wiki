@@ -16,28 +16,31 @@
 			"steam.build": "18483730"
 		}
 	},
-	"targets": [
+	"projects": [
 		{
 			"name": "Base Native",
 			"source.directory": "_input/Papyrus/Base-Native",
 			"output.directory": "wiki/Base-Native",
-			"output.sort": false,
-			"output.objects": true,
+			"output.enabled": false,
+			"output.sort": "DEFAULT",
+			"output.objects": false,
 			"output.members": false
 		},
 		{
 			"name": "Base Default",
 			"source.directory": "_input/Papyrus/Base-Default",
 			"output.directory": "wiki/Base-Default",
-			"output.sort": false,
-			"output.objects": true,
+			"output.enabled": false,
+			"output.sort": "FLAT",
+			"output.objects": false,
 			"output.members": false
 		},
 		{
 			"name": "Test Sample",
 			"source.directory": "_input/Papyrus/Test-Sample",
 			"output.directory": "wiki/Test-Sample",
-			"output.sort": false,
+			"output.enabled": true,
+			"output.sort": "TREE",
 			"output.objects": true,
 			"output.members": false
 		}

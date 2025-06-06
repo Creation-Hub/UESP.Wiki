@@ -1,26 +1,24 @@
-import os
+import logging
 import app
-from app import papyrus
-from app.papyrus import Script
-
 
 # Main
 #---------------------------------------------
 
 if __name__ == "__main__":
-    # Read the application configuration settings
-    base_dir, publish_info, targets = app.settings.settings_read(app.settings.app_arguments())
+    app.settings.configure_logging()
+
+    # Setup for arguments and settings.
+    arguments = app.settings.arguments()
+    base_dir, publish_info, projects = app.settings.read(arguments.settings)
+
+    # Get content data for game and editor.
     game_info = publish_info.get("game", {})
     editor_info = publish_info.get("editor", {})
-    print("Directory:", base_dir)
-    print("Game:", game_info)
-    print("Editor:", editor_info)
 
-    scripts:list[Script] = papyrus.read(targets)
-    if scripts:
-        print(f"Found {len(scripts)} scripts in the targets.")
-        for script in scripts:
-            print(f"  - {script.header} ({script.header.name.path()})")
+    # Log some application startup details.
+    logging.info(f"Directory: {base_dir}")
+    logging.info(f"Game: {game_info}")
+    logging.info(f"Editor: {editor_info}")
 
-    # TODO: This is a condition to avoid running the process in the main block temporarily
-    if True == False: app.generator.process(targets)
+    # Start processing any projects
+    app.generator.process(projects)

@@ -272,12 +272,12 @@ def parse_script_member_struct(struct_match:Match[str], lines:list[str], line_in
 # Parse
 #---------------------------------------------
 
-def parse(script_path:str) -> Script:
-    with open(script_path, encoding="utf-8") as file:
+def parse(script_file_path:str) -> Script:
+    with open(script_file_path, encoding="utf-8") as file:
         lines:list[str] = file.readlines()
 
     script:Script = Script()
-    script.source_file = script_path
+    script.source_file = script_file_path
     script.header = parse_header(lines)
 
     # Initialize loop variables

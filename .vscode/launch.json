@@ -2,32 +2,14 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch App",
-			"console": "integratedTerminal",
-			"type": "debugpy",
-			"request": "launch",
-			"program": "${workspaceFolder}/app/main.py"
-		},
-		{
-			"name": "Launch App (args)",
-			"console": "integratedTerminal",
-			"type": "debugpy",
-			"request": "launch",
-			"program": "${workspaceFolder}/app/main.py",
-			"args": [
-				"--settings",
-				"${workspaceFolder}/settings.json"
-			]
-		},
-		{
-			"name": "Launch Module (args)",
+			"name": "Wiki: Launch Debug",
 			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
 			"module": "app",
 			"args": [
 				"--settings",
-				"${workspaceFolder}/settings.json"
+				"${workspaceFolder}\\app_settings.json"
 			]
 		}
 	]
