@@ -268,6 +268,9 @@ def parse_script_member_struct(struct_match:Match[str], lines:list[str], line_in
 # Parse
 #---------------------------------------------
 
+# TODO: Detect property groups for properties.
+# TODO: Detect get/set capabilities for non-auto properties.
+# TODO: Detect states for events and functions.
 def parse(script_file_path:str) -> Script:
     with open(script_file_path, encoding="utf-8") as file:
         lines:list[str] = file.readlines()
