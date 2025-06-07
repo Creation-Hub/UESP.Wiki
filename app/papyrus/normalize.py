@@ -20,10 +20,12 @@ def symbol(token:str) -> str:
         # Keywords
         "scriptname": "ScriptName",
         "extends": "Extends",
+        "state": "State",
         "function": "Function",
         "event": "Event",
         "property": "Property",
         "struct": "Struct",
+        "guard": "Guard",
         # Flags
         "native": "Native",
         "const": "Const",
@@ -48,7 +50,7 @@ def symbol(token:str) -> str:
         # Primitive Values
         "none": "none",
         "true": "true",
-        "false": "false",
+        "false": "false"
     }
     return mapping.get(token.lower(), token)
 

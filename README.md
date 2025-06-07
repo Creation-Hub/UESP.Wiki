@@ -5,11 +5,12 @@ Some automation for https://starfieldwiki.net/ MediaWiki contributions.
 - The `Template:Script_Object_Summary` `extends` field needs to support breadcrumb links for inheritance.
 - Parser does not handle properties with default value field initializers. See `Actor.wiki` and `ObjectReference.wiki`.
 - The `ScriptObject.psc` should explicitly list `Nothing` as it's `Extends`, but it should not be a page link.
-- Fix parser return type for functions. Functions that have no return type should NOT use `none`. It should be blank or use `void`.
+- Fix parser return type for Papyrus functions with no return type. Functions that have no return type should NOT use `none`. It should be blank or use `void`.
 - Add import information to script objects.
 - Generate member example sections that show remote syntax for events.
 - Detect property get/set accessors in the parser.
 - Avoid filling template fields with empty values.
+- Collect Papyrus state information in the parser.
 
 # Templates
 The wiki templates used by this generator.

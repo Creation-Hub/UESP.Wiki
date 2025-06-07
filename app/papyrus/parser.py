@@ -142,12 +142,8 @@ def parse_header(lines:list[str]) -> Header:
             header.index = line_index
             header.definition = papyrus.normalize.script_definition(line)
             header.documentation = parse_script_documentation(lines, line_index)
-            #----------
             header.name = ScriptName(header_match.group("name"))
             header.extends = ScriptName(header_match.group("extends"))
-            #----------
-            # TODO:
-            # header.flags = header_match.group("flags").strip().split() if header_match.group("flags") else []
             #----------
             flags:str = header_match.group("flags")
             flags = papyrus.normalize.strip_comments(flags)
@@ -278,9 +274,13 @@ def parse(script_file_path:str) -> Script:
 
     script:Script = Script()
     script.source_file = script_file_path
+
+    # Pass 0: find and parse the script header
+    #---------------------------------------------
     script.header = parse_header(lines)
 
     # Initialize loop variables
+    #---------------------------------------------
     seen_properties = set()
     property_names = set()
 
@@ -288,17 +288,19 @@ def parse(script_file_path:str) -> Script:
     FUNC_PATTERN = re.compile(r'^\s*(?P<rtype>\w+(?:\[\])?)?\s*function\s+(?P<name>\w+)\s*\((?P<params>[^\)]*)\)\s*(?P<flags>.*)$', re.IGNORECASE)
     EVENT_PATTERN = re.compile(r'^\s*event\s+(?P<name>\w+)\s*\((?P<params>[^\)]*)\)\s*(?P<flags>.*)$', re.IGNORECASE)
     PROPERTY_PATTERN = re.compile(r'^\s*(?P<type>\w+(?:\[\])?)\s+property\s+(?P<name>\w+)\s*(?P<flags>.*)$', re.IGNORECASE)
+    PROPERTY_END_PATTERN = re.compile(r'^\s*endproperty\b', re.IGNORECASE)
     STRUCT_PATTERN = re.compile(r'^\s*struct\s+(?P<name>\w+)', re.IGNORECASE)
-    ENDPROPERTY_PATTERN = re.compile(r'^\s*endproperty\b', re.IGNORECASE)
 
-    # First pass: collect all property names
+    # Pass 1: collect all property names
+    #---------------------------------------------
     for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
             pname = papyrus.normalize.member_name(property_match.group("name"))
             property_names.add(pname)
 
-    # Second pass: collect members, skipping property accessors and property block contents
+    # Pass 2: collect members, skipping property accessors and property block contents
+    #---------------------------------------------
     inside_property_block = False
     for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
 
@@ -310,13 +312,16 @@ def parse(script_file_path:str) -> Script:
                 member.kind = papyrus.normalize.symbol(member.kind)
                 script.members.append(member)
             # Check if this is a block property (not auto)
-            if not line.strip().lower().endswith("auto") and not line.strip().lower().endswith("auto const") and not line.strip().lower().endswith("auto readonly"):
+            line_strip = line.strip().lower()
+            if not line_strip.endswith("auto") \
+                and not line_strip.endswith("auto const") \
+                and not line_strip.endswith("auto readonly"):
                 inside_property_block = True
             continue
 
         # Property: Detect end of a property block
         if inside_property_block:
-            if ENDPROPERTY_PATTERN.match(line):
+            if PROPERTY_END_PATTERN.match(line):
                 inside_property_block = False
             continue  # Skip everything inside property blocks
 
