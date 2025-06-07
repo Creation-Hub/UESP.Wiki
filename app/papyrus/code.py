@@ -64,7 +64,6 @@ class ScriptName:
         return array[-1] if array else ""
 
 
-# TODO: Possibly consolidate this into the Script() class.
 class Header(Code):
     """
     Represents the header of a Papyrus script.
@@ -112,9 +111,6 @@ class Member(Code):
         self.flags: list[str] = []
         """The flags associated with the member."""
 
-        self.game_version: str = ""
-        """The game version this member was introduced."""
-
 
 class Script:
     """Represents a Papyrus script."""
@@ -127,7 +123,7 @@ class Script:
         """The members that belong to this script."""
 
         self.source_file: str = ""
-        """The source file path for this script."""
+        """The original source file path for this script."""
 
     def __str__(self) -> str:
         """Returns the string representation of this class."""
