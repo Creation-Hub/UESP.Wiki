@@ -1,28 +1,7 @@
 import os
-from enum import Enum
 from . import parser
 from . import code
 from . import normalize
-from app import papyrus
-from app.papyrus.code import Script
-
-
-class Sort(Enum):
-    DEFAULT = 1
-    FLAT = 2
-    TREE = 3
-
-
-class Project:
-    name: str = ""
-    root: str = ""
-    output: str = ""
-    scripts: list[Script] = []
-    option_publish_enabled: bool = False
-    option_publish_sort: Sort = Sort.DEFAULT
-    option_publish_objects: bool = False
-    option_publish_members: bool = False
-
 
 # Files
 #---------------------------------------------

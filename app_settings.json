@@ -21,18 +21,18 @@
 			"name": "Base Native",
 			"source.directory": "_input/Papyrus/Base-Native",
 			"output.directory": "wiki/Base-Native",
-			"output.enabled": false,
+			"output.enabled": true,
 			"output.sort": "DEFAULT",
-			"output.objects": false,
+			"output.objects": true,
 			"output.members": false
 		},
 		{
 			"name": "Base Default",
 			"source.directory": "_input/Papyrus/Base-Default",
 			"output.directory": "wiki/Base-Default",
-			"output.enabled": false,
+			"output.enabled": true,
 			"output.sort": "FLAT",
-			"output.objects": false,
+			"output.objects": true,
 			"output.members": false
 		},
 		{
