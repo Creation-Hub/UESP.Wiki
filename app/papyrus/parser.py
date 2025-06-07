@@ -4,6 +4,14 @@ from app import papyrus
 from app.papyrus.code import Header, Member, Script, ScriptName
 
 
+# Regular expressions for matching members
+FUNC_PATTERN = re.compile(r'^\s*(?P<rtype>\w+(?:\[\])?)?\s*function\s+(?P<name>\w+)\s*\((?P<params>[^\)]*)\)\s*(?P<flags>.*)$', re.IGNORECASE)
+EVENT_PATTERN = re.compile(r'^\s*event\s+(?P<name>\w+)\s*\((?P<params>[^\)]*)\)\s*(?P<flags>.*)$', re.IGNORECASE)
+PROPERTY_PATTERN = re.compile(r'^\s*(?P<type>\w+(?:\[\])?)\s+property\s+(?P<name>\w+)\s*(?P<flags>.*)$', re.IGNORECASE)
+PROPERTY_END_PATTERN = re.compile(r'^\s*endproperty\b', re.IGNORECASE)
+STRUCT_PATTERN = re.compile(r'^\s*struct\s+(?P<name>\w+)', re.IGNORECASE)
+
+
 # Documentation
 #---------------------------------------------
 
@@ -69,34 +77,6 @@ def parse_script_documentation(lines:list[str], line_index:int):
 # Header
 #---------------------------------------------
 
-# UNUSED: This function is not used in the current codebase.
-def extract_header_extends(header_line:str) -> str:
-    """
-    Extracts the Extends value from the script header.
-    Returns:
-      - The script name after 'Extends' if present (may be namespaced).
-      - 'Nothing' if this is ScriptObject itself.
-      - 'ScriptObject' if no Extends is present.
-    """
-    clean_line = papyrus.normalize.strip_comments(header_line)
-    tokens = clean_line.strip().split()
-    script_name = None
-    extends_name = None
-
-    for i, token in enumerate(tokens):
-        if token.lower() == "scriptname" and i + 1 < len(tokens):
-            script_name = tokens[i + 1]
-        if token.lower() == "extends" and i + 1 < len(tokens):
-            extends_name = tokens[i + 1]
-
-    if extends_name:
-        return extends_name
-    elif script_name and script_name.endswith("ScriptObject"):
-        return "Nothing"
-    else:
-        return "ScriptObject"
-
-
 def parse_header(lines:list[str]) -> Header:
     """
     Finds the script header line information.
@@ -156,6 +136,7 @@ def parse_header(lines:list[str]) -> Header:
 # Members
 #---------------------------------------------
 
+#TODO: Fix parameter type Match[str] to str. Expects regex match group but is passed a string.
 def parse_script_member_parameters(parameters_match:Match[str]) -> list[str]:
     """Parse a Papyrus parameter string into a list of normalized parameter strings."""
     parameters = []
@@ -286,13 +267,6 @@ def parse(script_file_path:str) -> Script:
     #---------------------------------------------
     seen_properties = set()
     property_names = set()
-
-    # Regular expressions for matching members
-    FUNC_PATTERN = re.compile(r'^\s*(?P<rtype>\w+(?:\[\])?)?\s*function\s+(?P<name>\w+)\s*\((?P<params>[^\)]*)\)\s*(?P<flags>.*)$', re.IGNORECASE)
-    EVENT_PATTERN = re.compile(r'^\s*event\s+(?P<name>\w+)\s*\((?P<params>[^\)]*)\)\s*(?P<flags>.*)$', re.IGNORECASE)
-    PROPERTY_PATTERN = re.compile(r'^\s*(?P<type>\w+(?:\[\])?)\s+property\s+(?P<name>\w+)\s*(?P<flags>.*)$', re.IGNORECASE)
-    PROPERTY_END_PATTERN = re.compile(r'^\s*endproperty\b', re.IGNORECASE)
-    STRUCT_PATTERN = re.compile(r'^\s*struct\s+(?P<name>\w+)', re.IGNORECASE)
 
     # Pass 1: collect all property names
     #---------------------------------------------
