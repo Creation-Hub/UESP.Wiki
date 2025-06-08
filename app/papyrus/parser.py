@@ -226,14 +226,9 @@ def parse_member_parameters(parameters_line:str) -> list[str]:
     return parameters
 
 
-def parse_member_property(property_match:Match[str], lines:list[str], line_index:int, seen_properties:list[str]) -> Member | None:
-    key:str = papyrus.normalize.member_name(property_match.group("name"))
-    #----------
-    if key in seen_properties: return None
-    else: seen_properties.add(key)
-    #----------
+def parse_member_property(property_match:Match[str], lines:list[str], line_index:int) -> Member | None:
     member:Member = Member()
-    member.name = key
+    member.name = papyrus.normalize.member_name(property_match.group("name"))
     member.index = line_index
     member.definition = lines[line_index]
     member.documentation = parse_documentation(lines, line_index)
@@ -246,24 +241,12 @@ def parse_member_property(property_match:Match[str], lines:list[str], line_index
     flags = papyrus.normalize.strip_comments(flags)
     member.flags = papyrus.normalize.script_flags(flags.split())
     #----------
-    member.parameters = []
-    #----------
     return member
 
 
-def parse_member_function(function_match:Match[str], lines:list[str], line_index:int, property_names:list[str]) -> Member | None:
-    key:str = papyrus.normalize.member_name(function_match.group("name"))
-    #----------
-    # Skip property accessor functions (Get<Property>, Set<Property>)
-    # This is a workaround to avoid parsing them as functions.
-    # TODO: This is not a correct naming for property accessors, they should not include the property name.
-    #   Property accessors are just named "Get" or "Set" without the property name.
-    for property_name in property_names:
-        if key == f"Get{property_name}" or key == f"Set{property_name}":
-            return None
-    #----------
+def parse_member_function(function_match:Match[str], lines:list[str], line_index:int) -> Member | None:
     member:Member = Member()
-    member.name = key
+    member.name = papyrus.normalize.member_name(function_match.group("name"))
     member.index = line_index
     member.definition = lines[line_index]
     member.documentation = parse_documentation(lines, line_index)
@@ -332,20 +315,7 @@ def parse(script_file_path:str) -> Script:
     #---------------------------------------------
     script.header = parse_header(lines)
 
-    # Initialize loop variables
-    #---------------------------------------------
-    seen_properties = set()
-    property_names = set()
-
-    # Pass 1: collect all property names
-    #---------------------------------------------
-    for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
-        property_match = PROPERTY_PATTERN.match(line)
-        if property_match:
-            pname = papyrus.normalize.member_name(property_match.group("name"))
-            property_names.add(pname)
-
-    # Pass 2: collect members, skipping property accessors and property block contents
+    # Pass 1: parse the script members
     #---------------------------------------------
     inside_property_block = False
     for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
@@ -354,7 +324,7 @@ def parse(script_file_path:str) -> Script:
         # Property: Detect start of a property block
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
-            member = parse_member_property(property_match, lines, line_index, seen_properties)
+            member = parse_member_property(property_match, lines, line_index)
             if member:
                 script.members.append(member)
 
@@ -368,15 +338,16 @@ def parse(script_file_path:str) -> Script:
 
         # Property: Detect end of a property block
         if inside_property_block:
+            # Skip everything inside property blocks until the EndProperty is encountered.
             if PROPERTY_END_PATTERN.match(line):
                 inside_property_block = False
-            continue  # Skip everything inside property blocks
+            continue
         #---------------------------------------------
 
         # Function
         function_match = FUNCTION_PATTERN.match(line)
         if function_match:
-            member = parse_member_function(function_match, lines, line_index, property_names)
+            member = parse_member_function(function_match, lines, line_index)
             if member:
                 script.members.append(member)
             continue
