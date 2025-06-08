@@ -92,7 +92,7 @@ STATE_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-ENDSTATE_PATTERN = re.compile(
+STATE_END_PATTERN = re.compile(
     r'^\s*endstate\s*$',            # 'endstate' keyword, optional whitespace
     re.IGNORECASE
 )
@@ -106,7 +106,7 @@ GROUP_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-ENDGROUP_PATTERN = re.compile(
+GROUP_END_PATTERN = re.compile(
     r'^\s*endgroup\s*$',            # 'endgroup' keyword, optional whitespace
     re.IGNORECASE
 )
@@ -353,7 +353,7 @@ def parse_state_block(lines, start_index, state_name):
         line = lines[line_index]
 
         # End of state block
-        if ENDSTATE_PATTERN.match(line):
+        if STATE_END_PATTERN.match(line):
             return members, line_index
 
         # Parse members inside the state
@@ -388,7 +388,7 @@ def parse_group_block(lines, start_index, group_name, group_flags):
         line = lines[line_index]
 
         # End of group block
-        if ENDGROUP_PATTERN.match(line):
+        if GROUP_END_PATTERN.match(line):
             return members, line_index
 
         # Parse members inside the group
