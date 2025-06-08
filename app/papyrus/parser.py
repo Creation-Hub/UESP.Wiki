@@ -117,61 +117,71 @@ ENDGROUP_PATTERN = re.compile(
 
 # TODO: This function is too greedy with check-1. It should stop at the first non-comment line.
 # TODO: Ensire the function returns the result of both the comment and the block docstring.
-def parse_documentation(lines:list[str], line_index:int):
+def parse_documentation(lines: list[str], line_index: int) -> str:
     """
-    Extracts the documentation comment for a script or member.
-    Supports:
-    - Consecutive comment lines (;) immediately above the element (with blank lines allowed)
-    - Or, a block docstring in curly braces { ... } immediately below the element (with blank lines allowed)
-    Returns the doc string, or a default if none is found.
+    Collects Papyrus documentation for a code element at line_index.
+    - Collects braced docstring below (with blank lines allowed, but nothing else in between).
+    - Collects contiguous line/block comments above (no blank lines allowed).
+    - If both exist, combines them (docstring first, then comments).
     """
-    # 1. Check for doc comments above (Papyrus ;)
-    desc_lines = []
-    idx = line_index - 1
-    while idx >= 0:
-        line = lines[idx].rstrip()
-        if line.lstrip().startswith(";"):
-            desc_lines.insert(0, line.lstrip(";").strip())
-            idx -= 1
-        elif line.strip() == "":
-            idx -= 1
-        else:
-            break
-    description = "\n".join(desc_lines).strip()
-    if description:
-        return description
+    docstring = ""
+    comments = []
 
-    # 2. Check for curly-brace doc block immediately below (allow blank lines)
-    idx = line_index + 1
+    # --- Collect braced docstring below ---
+    search_index = line_index + 1
     # Skip blank lines
-    while idx < len(lines) and lines[idx].strip() == "":
-        idx += 1
-    if idx < len(lines) and lines[idx].lstrip().startswith("{"):
-        doc_block = []
-        line = lines[idx].lstrip()
+    while search_index < len(lines) and lines[search_index].strip() == "":
+        search_index += 1
+    # Check for opening brace
+    if search_index < len(lines) and lines[search_index].lstrip().startswith("{"):
+        brace_line = lines[search_index].lstrip()
+        doc_lines = []
         # If the opening brace is on a line by itself, skip it
-        if line.strip() == "{":
-            idx += 1
+        if brace_line.strip() == "{":
+            search_index += 1
         else:
-            # If there's text after the opening brace, include it (minus the brace)
-            doc_block.append(line.lstrip("{").rstrip())
-            idx += 1
+            doc_lines.append(brace_line.lstrip()[1:].rstrip())
+            search_index += 1
         # Collect until closing brace
-        while idx < len(lines):
-            line = lines[idx]
-            if "}" in line:
-                # If there's text before the closing brace, include it (minus the brace)
-                before, _, _ = line.partition("}")
-                doc_block.append(before.rstrip())
+        while search_index < len(lines):
+            line = lines[search_index]
+            closing_brace_pos = line.find("}")
+            if closing_brace_pos != -1:
+                doc_lines.append(line[:closing_brace_pos])
                 break
-            doc_block.append(line.rstrip())
-            idx += 1
-        documentation = "\n".join([l.rstrip() for l in doc_block]).strip()
-        if documentation:
-            return documentation
+            doc_lines.append(line.rstrip())
+            search_index += 1
+        docstring = "\n".join(doc_lines).strip()
 
-    # 3. Fallback default
-    return "No documentation provided."
+    # --- Collect contiguous line/block comments above ---
+    comment_lines = []
+    search_index = line_index - 1
+    while search_index >= 0:
+        line = lines[search_index]
+        if line.strip() == "":
+            break  # Blank line breaks the comment block
+        stripped = line.lstrip()
+        if stripped.startswith(";") or stripped.startswith(";/"):
+            comment_lines.append(stripped)
+            search_index -= 1
+        else:
+            break  # Non-comment line breaks the comment block
+    if comment_lines:
+        # Comments are collected in reverse order, so reverse them
+        comments = [l for l in reversed(comment_lines)]
+
+        # Optionally, strip leading ';' and whitespace for a cleaner doc
+        comments = [l.lstrip(";").strip() for l in comments]
+
+    # --- Combine ---
+    if docstring and comments:
+        return f"{docstring}\n{'\n'.join(comments)}"
+    elif docstring:
+        return docstring
+    elif comments:
+        return "\n".join(comments)
+    else:
+        return ""
 
 
 # Header
