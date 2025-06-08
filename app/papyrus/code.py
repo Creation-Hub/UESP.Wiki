@@ -88,8 +88,9 @@ class Header(Code):
 # TODO: Consider making the `name` a `list[str]` type to support remote-event syntax.
 class Member(Code):
     """
-    Represents a member in a Papyrus script.
+    Represents a member of a Papyrus script.
     This can be a function, property, or event.
+    For properties, the `parameters` field is used to store the initializer value (if any).
     """
 
     def __init__(self):

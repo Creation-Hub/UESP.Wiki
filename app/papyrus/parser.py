@@ -48,14 +48,15 @@ EVENT_PATTERN = re.compile(
 )
 
 PROPERTY_PATTERN = re.compile(
-    r'^'                            # Start of line
-    r'\s*'                          # Optional leading whitespace
-    r'(?P<type>\w+(?:\[\])?)'       # Property type
-    r'\s+property\s+'               # 'property' keyword
-    r'(?P<name>\w+)'                # Property name
-    r'\s*'                          # Optional whitespace
-    r'(?P<flags>.*)'                # Optional flags
-    r'$',                           # End of line
+    r'^'                                   # Start of line
+    r'\s*'                                 # Optional leading whitespace
+    r'(?P<type>\w+(?:\[\])?)'              # Property type
+    r'\s+property\s+'                      # 'property' keyword
+    r'(?P<name>\w+)'                       # Property name
+    r'(?:\s*=\s*(?P<initializer>[^\s]+))?' # Optional initializer (e.g., = False)
+    r'\s*'                                 # Optional whitespace
+    r'(?P<flags>.*)'                       # Optional flags
+    r'$',                                  # End of line
     re.IGNORECASE
 )
 
@@ -79,6 +80,34 @@ PARAMETERS_PATTERN = re.compile(
     r'\s+(?P<name>\w+)'             # Parameter name
     r'(\s*=\s*.+)?'                 # Optional default value
     r'$',                           # End of line
+    re.IGNORECASE
+)
+
+STATE_PATTERN = re.compile(
+    r'^'                            # Start of line
+    r'\s*(?P<flags>auto\s+)?'       # Optional 'auto' flag
+    r'state\s+'                     # 'state' keyword
+    r'(?P<name>\w+)'                # State name
+    r'\s*$',                        # Optional trailing whitespace, end of line
+    re.IGNORECASE
+)
+
+ENDSTATE_PATTERN = re.compile(
+    r'^\s*endstate\s*$',            # 'endstate' keyword, optional whitespace
+    re.IGNORECASE
+)
+
+GROUP_PATTERN = re.compile(
+    r'^'                            # Start of line
+    r'\s*group\s+'                  # 'group' keyword
+    r'(?P<name>\w+)'                # Group name
+    r'(?P<flags>.*)'                # Optional flags
+    r'$',                           # End of line
+    re.IGNORECASE
+)
+
+ENDGROUP_PATTERN = re.compile(
+    r'^\s*endgroup\s*$',            # 'endgroup' keyword, optional whitespace
     re.IGNORECASE
 )
 
@@ -237,6 +266,12 @@ def parse_member_property(property_match:Match[str], lines:list[str], line_index
     #----------
     member.type = papyrus.normalize.script_type(property_match.group("type"))
     #----------
+    # Get initializer if present and store in parameters as a single-element list
+    initializer = property_match.group("initializer")
+    if initializer:
+        initializer = papyrus.normalize.symbol(initializer)
+        member.parameters = [initializer] if initializer is not None else []
+    #----------
     flags:str = property_match.group("flags")
     flags = papyrus.normalize.strip_comments(flags)
     member.flags = papyrus.normalize.script_flags(flags.split())
@@ -300,64 +335,128 @@ def parse_member_struct(struct_match:Match[str], lines:list[str], line_index:int
 # Parse
 #---------------------------------------------
 
+def parse_state_block(lines, start_index, state_name):
+    """Parse a state block, returning members and the index after the block."""
+    members = []
+    line_index = start_index
+    while line_index < len(lines):
+        line = lines[line_index]
+
+        # End of state block
+        if ENDSTATE_PATTERN.match(line):
+            return members, line_index
+
+        # Parse members inside the state
+        function_match = FUNCTION_PATTERN.match(line)
+        if function_match:
+            member = parse_member_function(function_match, lines, line_index)
+            if member:
+                member.state = state_name
+                members.append(member)
+            line_index += 1
+            continue
+
+        event_match = EVENT_PATTERN.match(line)
+        if event_match:
+            member = parse_member_event(event_match, lines, line_index)
+            if member:
+                member.state = state_name
+                members.append(member)
+            line_index += 1
+            continue
+
+        # Skip other lines (structs, properties, etc. are not allowed in states)
+        line_index += 1
+    return members, line_index
+
+
+def parse_group_block(lines, start_index, group_name, group_flags):
+    """Parse a group block, returning properties and the index after the block."""
+    members = []
+    line_index = start_index
+    while line_index < len(lines):
+        line = lines[line_index]
+
+        # End of group block
+        if ENDGROUP_PATTERN.match(line):
+            return members, line_index
+
+        # Parse members inside the group
+        property_match = PROPERTY_PATTERN.match(line)
+        if property_match:
+            member = parse_member_property(property_match, lines, line_index)
+            if member:
+                member.group = group_name
+                member.group_flags = group_flags.strip()
+                members.append(member)
+
+        line_index += 1
+    return members, line_index
+
+
 # TODO: Detect property groups for properties.
 # TODO: Detect get/set capabilities for non-auto properties.
 # TODO: Detect states for events and functions.
 # TODO: Support line continuations.
-def parse(script_file_path:str) -> Script:
+# TODO: Support guards and guard flags on properties.
+def parse(script_file_path: str) -> Script:
     with open(script_file_path, encoding="utf-8") as file:
-        lines:list[str] = file.readlines()
+        lines = file.readlines()
 
-    script:Script = Script()
-    # script.source_file = script_file_path
-
-    # Pass 0: find and parse the script header
-    #---------------------------------------------
+    script = Script()
     script.header = parse_header(lines)
+    script.members = []
 
-    # Pass 1: parse the script members
-    #---------------------------------------------
-    inside_property_block = False
-    for line_index, line in enumerate(lines[script.header.index+1:], start=script.header.index+1):
+    line_index = script.header.index + 1
+    while line_index < len(lines):
+        line = lines[line_index]
 
-        #---------------------------------------------
-        # Property: Detect start of a property block
+        # State block
+        state_match = STATE_PATTERN.match(line)
+        if state_match:
+            state_name = state_match.group("name")
+            state_members, state_end_index = parse_state_block(lines, line_index + 1, state_name)
+            script.members.extend(state_members)
+            line_index = state_end_index + 1
+            continue
+
+        # Group block
+        group_match = GROUP_PATTERN.match(line)
+        if group_match:
+            group_name = group_match.group("name")
+            group_flags = group_match.group("flags")
+            group_members, group_end_index = parse_group_block(lines, line_index + 1, group_name, group_flags)
+            script.members.extend(group_members)
+            line_index = group_end_index + 1
+            continue
+
+        # Property
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
             member = parse_member_property(property_match, lines, line_index)
             if member:
                 script.members.append(member)
-
-            # Check if this is a block property (not auto)
-            line_strip = line.strip().lower()
-            if not line_strip.endswith("auto") \
-                and not line_strip.endswith("auto const") \
-                and not line_strip.endswith("auto readonly"):
-                inside_property_block = True
+            line_index += 1
             continue
-
-        # Property: Detect end of a property block
-        if inside_property_block:
-            # Skip everything inside property blocks until the EndProperty is encountered.
-            if PROPERTY_END_PATTERN.match(line):
-                inside_property_block = False
-            continue
-        #---------------------------------------------
 
         # Function
         function_match = FUNCTION_PATTERN.match(line)
         if function_match:
             member = parse_member_function(function_match, lines, line_index)
             if member:
+                member.state = ""  # Empty state
                 script.members.append(member)
+            line_index += 1
             continue
 
-        # Event
+        # Event (in empty state)
         event_match = EVENT_PATTERN.match(line)
         if event_match:
             member = parse_member_event(event_match, lines, line_index)
             if member:
+                member.state = ""  # Empty state
                 script.members.append(member)
+            line_index += 1
             continue
 
         # Struct
@@ -366,6 +465,10 @@ def parse(script_file_path:str) -> Script:
             member = parse_member_struct(struct_match, lines, line_index)
             if member:
                 script.members.append(member)
+            line_index += 1
             continue
+
+        # Skip other lines
+        line_index += 1
 
     return script
