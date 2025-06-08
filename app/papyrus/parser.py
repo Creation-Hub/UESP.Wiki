@@ -326,7 +326,7 @@ def parse(script_file_path:str) -> Script:
         lines:list[str] = file.readlines()
 
     script:Script = Script()
-    script.source_file = script_file_path
+    # script.source_file = script_file_path
 
     # Pass 0: find and parse the script header
     #---------------------------------------------

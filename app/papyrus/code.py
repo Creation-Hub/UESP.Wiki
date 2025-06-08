@@ -122,9 +122,6 @@ class Script:
         self.members: list[Member] = []
         """The members that belong to this script."""
 
-        self.source_file: str = ""
-        """The original source file path for this script."""
-
     def __str__(self) -> str:
         """Returns the string representation of this class."""
         if self.header.name:
