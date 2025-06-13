@@ -115,19 +115,12 @@ GROUP_END_PATTERN = re.compile(
 # Documentation
 #---------------------------------------------
 
-# TODO: This function is too greedy with check-1. It should stop at the first non-comment line.
-# TODO: Ensire the function returns the result of both the comment and the block docstring.
-def parse_documentation(lines: list[str], line_index: int) -> str:
+def collect_braced_docstring(lines: list[str], line_index: int) -> str:
     """
-    Collects Papyrus documentation for a code element at line_index.
-    - Collects braced docstring below (with blank lines allowed, but nothing else in between).
-    - Collects contiguous line/block comments above (no blank lines allowed).
-    - If both exist, combines them (docstring first, then comments).
+    Collects a braced docstring { ... } immediately below the code element at line_index.
+    Allows blank lines between the element and the docstring, but nothing else.
+    Returns the docstring content or an empty string if not found.
     """
-    docstring = ""
-    comments = []
-
-    # --- Collect braced docstring below ---
     search_index = line_index + 1
     # Skip blank lines
     while search_index < len(lines) and lines[search_index].strip() == "":
@@ -151,9 +144,16 @@ def parse_documentation(lines: list[str], line_index: int) -> str:
                 break
             doc_lines.append(line.rstrip())
             search_index += 1
-        docstring = "\n".join(doc_lines).strip()
+        return "\n".join(doc_lines).strip()
+    return ""
 
-    # --- Collect contiguous line/block comments above ---
+
+def collect_contiguous_comments(lines: list[str], line_index: int) -> str:
+    """
+    Collects contiguous line/block comments immediately above the code element at line_index.
+    Stops at the first blank or non-comment line.
+    Returns the comments as a single string (joined by newlines), or an empty string if none found.
+    """
     comment_lines = []
     search_index = line_index - 1
     while search_index >= 0:
@@ -169,17 +169,27 @@ def parse_documentation(lines: list[str], line_index: int) -> str:
     if comment_lines:
         # Comments are collected in reverse order, so reverse them
         comments = [l for l in reversed(comment_lines)]
-
         # Optionally, strip leading ';' and whitespace for a cleaner doc
         comments = [l.lstrip(";").strip() for l in comments]
+        return "\n".join(comments)
+    return ""
 
-    # --- Combine ---
+
+def parse_documentation(lines: list[str], line_index: int) -> str:
+    """
+    Collects Papyrus documentation for a code element at line_index.
+    - Collects braced docstring below (with blank lines allowed, but nothing else in between).
+    - Collects contiguous line/block comments above (no blank lines allowed).
+    - If both exist, combines them (docstring first, then comments).
+    """
+    docstring = collect_braced_docstring(lines, line_index)
+    comments = collect_contiguous_comments(lines, line_index)
     if docstring and comments:
-        return f"{docstring}\n{'\n'.join(comments)}"
+        return f"{docstring}\n{comments}"
     elif docstring:
         return docstring
     elif comments:
-        return "\n".join(comments)
+        return comments
     else:
         return ""
 
