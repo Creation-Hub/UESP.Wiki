@@ -14,9 +14,9 @@ def script_object_summary(script:Script, game_version):
     # TODO: The `ScriptObject.psc` has special rules for it's `Extends` which extends "Nothing".
     #       The word "Nothing" should not have an internal wiki link.
     script_title = script.header.name
-    script_name = wiki.link.script_object(script.header.name)
-    script_extends = wiki.link.script_object(script.header.extends)
-    script_flags = wiki.list.toString(script.header.flags)
+    script_name = wiki.style.link_script_object(script.header.name)
+    script_extends = wiki.style.link_script_object(script.header.extends)
+    script_flags = wiki.style.to_list_csv(script.header.flags)
     return (
         "{{Script_Object_Summary\n"
         f"| title = {script_title}\n"
@@ -33,9 +33,9 @@ def script_object_member_summary(script:Script, member:Member, game_version):
     Return the 'Script_Object_Member_Summary' wiki template as a string.
     See https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
     """
-    script_name = wiki.link.script_object(script.header.name)
+    script_name = wiki.style.link_script_object(script.header.name)
     member_title = member.name
-    member_name = wiki.link.script_member(script.header.name, member.name)
+    member_name = wiki.style.link_script_member(script.header.name, member.name)
     member_kind = member.kind
     member_returns = member.type
     member_flags_string = " ".join(member.flags) if isinstance(member.flags, list) else member.flags
@@ -68,8 +68,8 @@ def script_member_summary(member_title, script_name, member_name, member_kind, m
     return (
         "{{Script_Member_Summary\n"
         f"| title = {member_title}\n"
-        f"| script = {wiki.link.script_object(script_name)}\n"
-        f"| name = {wiki.link.script_member(script_name, member_name)}\n"
+        f"| script = {wiki.style.link_script_object(script_name)}\n"
+        f"| name = {wiki.style.link_script_member(script_name, member_name)}\n"
         f"| kind = {member_kind}\n"
         f"| flags = {member_flags}\n"
         f"| returns = {member_returns}\n"

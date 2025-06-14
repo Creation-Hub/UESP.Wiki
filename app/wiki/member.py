@@ -1,6 +1,6 @@
 import papyrus.normalize
 import wiki
-import wiki.link
+import app.wiki.style
 
 # Members: Bulleted List
 #---------------------------------------------
@@ -19,7 +19,7 @@ def wiki_script_member(script_name, member):
     lines = []
 
     if kind == "function":
-        link = wiki.link.script_member(script_name, member["name"])
+        link = wiki.style.script_member(script_name, member["name"])
         flag_str = f" {' '.join(member['flags'])}" if member.get("flags") else ""
         param_str = ", ".join(member["params"])
         rtype = papyrus.normalize.script_type(member["rtype"]) if member.get("rtype") else ""
@@ -31,7 +31,7 @@ def wiki_script_member(script_name, member):
             lines.append(f"** {member['doc']}")
 
     elif kind == "event":
-        link = wiki.link.script_member(script_name, member["name"])
+        link = wiki.style.script_member(script_name, member["name"])
         flag_str = f" {' '.join(member['flags'])}" if member.get("flags") else ""
         param_str = ", ".join(member["params"])
         lines.append(f"* {papyrus.normalize.symbol('event')} {link}({param_str}){flag_str}")
@@ -39,14 +39,14 @@ def wiki_script_member(script_name, member):
             lines.append(f"** {member['doc']}")
 
     elif kind == "property":
-        link = wiki.link.script_member(script_name, member["name"])
+        link = wiki.style.script_member(script_name, member["name"])
         flag_str = f" {' '.join(member['flags'])}" if member.get("flags") else ""
         lines.append(f"* {member['type']} {papyrus.normalize.symbol('property')} {link}{flag_str}")
         if member.get("doc"):
             lines.append(f"** {member['doc']}")
 
     elif kind == "struct":
-        link = wiki.link.script_member(script_name, member["name"])
+        link = wiki.style.script_member(script_name, member["name"])
         lines.append(f"* {papyrus.normalize.symbol('struct')} {link}")
         if member.get("doc"):
             lines.append(f"** {member['doc']}")

@@ -1,5 +1,4 @@
 
-from . import link
-from . import list
+from . import style
 from . import page
 from . import template
