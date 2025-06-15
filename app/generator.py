@@ -54,7 +54,10 @@ def project_start(project:Project):
         # Write a wiki page for this script object.
         if project.option_publish_enable_objects:
             wiki.page.parse_write(script_file_path_full, output_file_path)
-            logging.info(f"[{project.name}] {script}:\n  -> in:  {project.root}\n  -> out: {output_file_path}")
+            logging.info(f"[{project.name}] {project.root}:\n"
+                f"  -> in:  {script_file_path_full}\n"
+                f"  -> out: {output_file_path}"
+            )
 
         # Write a wiki page for this script member.
         if project.option_publish_enable_members:

@@ -20,21 +20,30 @@ def write(script:Script, output_file_path:str):
         file.write(f"The <code>{script.header.name.file_path()}.psc</code> source file header definition for this script.\n\n")
         file.write("<source lang=\"papyrus\">\n")
         file.write(f"{script.header.definition}\n")
-        file.write("</source>\n\n\n")
+        file.write("</source>\n")
+        file.write("\n\n")
 
         # Script Documentation
         file.write("== Documentation ==\n")
-        file.write(f"The <code>{script.header.name.file_path()}.psc</code> source file documentation comments for this script.\n\n")
-        file.write("<source>\n")
-        file.write(f"{script.header.documentation}\n")
-        file.write("</source>\n\n\n")
+        if not script.header.documentation:
+            file.write(f"No documentation comments were provided in the <code>{script.header.name.file_path()}.psc</code> source file.\n")
+            file.write("\n\n")
+        else:
+            file.write(f"The <code>{script.header.name.file_path()}.psc</code> source file documentation comments for this script.\n\n")
+            file.write("<source>\n")
+            file.write(f"{script.header.documentation}\n")
+            file.write("</source>\n")
+            file.write("\n\n")
 
         # Script Members
         file.write("== Members ==\n")
-        file.write("The members that belong to this script.\n\n")
-        for member in script.members:
-            file.write(wiki.template.script_object_member_summary(script, member, game_version))
-            file.write("\n")
+        if not script.members:
+            file.write(f"No members were defined in the <code>{script.header.name.file_path()}.psc</code> source file.\n\n")
+        else:
+            file.write("The members that belong to this script.\n\n")
+            for member in script.members:
+                file.write(wiki.template.script_object_member_summary(script, member, game_version))
+                file.write("\n")
 
         # Page Categories
         file.write("\n")

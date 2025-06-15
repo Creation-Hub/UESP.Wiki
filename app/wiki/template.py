@@ -2,30 +2,48 @@ from app import wiki
 from app.papyrus.code import Script, Member
 
 
+def get_script_extends(script:Script) -> str:
+    if script.header.name.value == "ScriptObject":
+        return "Nothing"
+    elif script.header.extends.value:
+        return wiki.style.link_script_object(script.header.extends)
+    else:
+        return wiki.style.link_script_object("ScriptObject")
+
+
 # Script Object
 #---------------------------------------------
 
-# TODO: Script namespace and flags are not implemented by the parser yet.
 def script_object_summary(script:Script, game_version):
     """
     Return the 'Script_Object_Summary' wiki template as a string.
     https://starfieldwiki.net/wiki/Template:Script_Object_Summary
     """
-    # TODO: The `ScriptObject.psc` has special rules for it's `Extends` which extends "Nothing".
-    #       The word "Nothing" should not have an internal wiki link.
     script_title = script.header.name
     script_name = wiki.style.link_script_object(script.header.name)
-    script_extends = wiki.style.link_script_object(script.header.extends)
+    script_extends = get_script_extends(script)
     script_flags = wiki.style.to_list_csv(script.header.flags)
-    return (
-        "{{Script_Object_Summary\n"
-        f"| title = {script_title}\n"
-        f"| name = {script_name}\n"
-        f"| extends = {script_extends}\n"
-        f"| flags = {script_flags}\n"
-        f"| game_version = {game_version}\n"
-        "}}\n"
-    )
+
+    template_text = ""
+    template_text += "{{Script_Object_Summary\n"
+
+    if script_title:
+        template_text += f"| title = {script_title}\n"
+
+    if script_name:
+        template_text += f"| name = {script_name}\n"
+
+    if script_extends:
+        template_text += f"| extends = {script_extends}\n"
+
+    if script_flags:
+        template_text += f"| flags = {script_flags}\n"
+
+    if game_version:
+        template_text += f"| game_version = {game_version}\n"
+
+    template_text += "}}\n"
+    return template_text
 
 
 def script_object_member_summary(script:Script, member:Member, game_version):
@@ -41,19 +59,39 @@ def script_object_member_summary(script:Script, member:Member, game_version):
     member_flags_string = " ".join(member.flags) if isinstance(member.flags, list) else member.flags
     member_parameters_string = ", ".join(member.parameters) if isinstance(member.parameters, list) else member.parameters
     member_documentation = member.documentation
-    return (
-        "{{Script_Object_Member_Summary\n"
-        f"| title = {member_title}\n"
-        f"| script = {script_name}\n"
-        f"| name = {member_name}\n"
-        f"| kind = {member_kind}\n"
-        f"| flags = {member_flags_string}\n"
-        f"| returns = {member_returns}\n"
-        f"| parameters = {member_parameters_string}\n"
-        f"| documentation = {member_documentation}\n"
-        f"| game_version = {game_version}\n"
-        "}}\n"
-    )
+
+    template_text = ""
+    template_text += "{{Script_Object_Member_Summary\n"
+
+    if member_title:
+        template_text += f"| title = {member_title}\n"
+
+    if script_name:
+        template_text += f"| script = {script_name}\n"
+
+    if member_name:
+        template_text += f"| name = {member_name}\n"
+
+    if member_kind:
+        template_text += f"| kind = {member_kind}\n"
+
+    if member_flags_string:
+        template_text += f"| flags = {member_flags_string}\n"
+
+    if member_returns:
+        template_text += f"| returns = {member_returns}\n"
+
+    if member_parameters_string:
+        template_text += f"| parameters = {member_parameters_string}\n"
+
+    if member_documentation:
+        template_text += f"| documentation = {member_documentation}\n"
+
+    if game_version:
+        template_text += f"| game_version = {game_version}\n"
+
+    template_text += "}}\n"
+    return template_text
 
 
 # Script Member
