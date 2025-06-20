@@ -122,28 +122,49 @@ def collect_braced_docstring(lines: list[str], line_index: int) -> str:
     Returns the docstring content or an empty string if not found.
     """
     search_index = line_index + 1
+
     # Skip blank lines
     while search_index < len(lines) and lines[search_index].strip() == "":
         search_index += 1
+
     # Check for opening brace
     if search_index < len(lines) and lines[search_index].lstrip().startswith("{"):
         brace_line = lines[search_index].lstrip()
         doc_lines = []
+
         # If the opening brace is on a line by itself, skip it
         if brace_line.strip() == "{":
             search_index += 1
+            # Collect until closing brace
+            while search_index < len(lines):
+                line = lines[search_index]
+                closing_brace_pos = line.find("}")
+                if closing_brace_pos != -1:
+                    doc_lines.append(line[:closing_brace_pos])
+                    break
+                doc_lines.append(line.rstrip())
+                search_index += 1
         else:
-            doc_lines.append(brace_line.lstrip()[1:].rstrip())
-            search_index += 1
-        # Collect until closing brace
-        while search_index < len(lines):
-            line = lines[search_index]
-            closing_brace_pos = line.find("}")
+            # Opening brace and content are on the same line
+            after_brace = brace_line[1:]
+            closing_brace_pos = after_brace.find("}")
             if closing_brace_pos != -1:
-                doc_lines.append(line[:closing_brace_pos])
-                break
-            doc_lines.append(line.rstrip())
-            search_index += 1
+                # Both braces on the same line
+                doc_lines.append(after_brace[:closing_brace_pos])
+                return "\n".join(doc_lines).strip()
+            else:
+                # No closing brace on this line, collect as before
+                doc_lines.append(after_brace.rstrip())
+                search_index += 1
+                while search_index < len(lines):
+                    line = lines[search_index]
+                    closing_brace_pos = line.find("}")
+                    if closing_brace_pos != -1:
+                        doc_lines.append(line[:closing_brace_pos])
+                        break
+                    doc_lines.append(line.rstrip())
+                    search_index += 1
+
         return "\n".join(doc_lines).strip()
     return ""
 
@@ -270,8 +291,6 @@ def parse_member_parameters(parameters_line:str) -> list[str]:
                 parameters.append(param_str_piece)
             else:
                 parameters.append(element)
-    else:
-        logging.warning("parse_member_parameters: No parameters found in line.")
     return parameters
 
 

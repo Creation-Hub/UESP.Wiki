@@ -17,23 +17,23 @@ class Sort(Enum):
 #   Default: `Base-Native\MyNamespace\Action.wiki`
 #   Flat:    `Base-Native\MyNamespace-Action.wiki`
 #   Tree:    `Base-Native\MyNamespace\Action\Action.wiki`
-class Project:
+class AppProject:
     def __init__(self):
         self.name: str = ""
         self.root: str = ""
         self.output: str = ""
-        self.scripts: list[Script] = []
         self.option_publish_sort: Sort = Sort.DEFAULT
         self.option_publish_enable: bool = False
         self.option_publish_enable_objects: bool = False
         self.option_publish_enable_members: bool = False
+        self.scripts: list[Script] = []
 
 
 class AppSettings:
     def __init__(self):
         self.base_dir:str = ""
         self.publish_info = {}
-        self.projects:list[Project] = []
+        self.projects:list[AppProject] = []
 
 
 # Data
@@ -55,7 +55,7 @@ def get_property_sort(data:dict) -> Sort:
     except KeyError: return Sort.DEFAULT
 
 def read_project(data_project, base_dir):
-    project:Project = Project()
+    project:AppProject = AppProject()
     project.name = data_project.get("name", "UNNAMED")
     project.root = get_property_path(data_project, "source.directory", base_dir)
     project.output = get_property_path(data_project, "output.directory", base_dir)
@@ -89,6 +89,6 @@ def read(settings_file_path:str):
             settings.publish_info = data.get("publish", {})
 
             for data_project in data.get("projects", []):
-                project:Project = read_project(data_project, settings.base_dir)
+                project:AppProject = read_project(data_project, settings.base_dir)
                 settings.projects.append(project)
     return settings

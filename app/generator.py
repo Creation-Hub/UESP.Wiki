@@ -1,29 +1,33 @@
 import os
 import logging
 from app import wiki, papyrus
-from app.settings import Project, Sort
+from app.settings import AppProject, Sort
 from app.papyrus.code import Script
 
 # Project
 #---------------------------------------------
 
-def project_load(project:Project):
+def project_load(project:AppProject) -> bool:
     # Parser: Search for source files in the project script directory.
     paths = papyrus.find_files(project.root)
     if not paths:
-        logging.info(f"[{project.name}] No scripts found in this project.")
-        return
+        logging.warning(f"[{project.name}] No scripts found in this project.")
+        return False
     else:
         logging.info(f"[{project.name}] Found {len(paths)} scripts in this project.")
 
     # Parser: Deserialize each source file into application data.
     for path in paths:
         script:Script = papyrus.parser.parse(path)
-        project.scripts.append(script)
-        logging.info(f"  - {script.header.name} ({script.header.name.file_path()})")
+        if script:
+            project.scripts.append(script)
+            logging.debug(f"  - {script.header.name} ({script.header.name.file_path()})")
+        else:
+            logging.warning(f"[{project.name}] The script could not be parsed: {path}")
+    return True
 
 
-def project_start(project:Project):
+def project_start(project:AppProject):
     # Wiki: Generate wiki pages for each project script.
     for script in project.scripts:
         script_file_name = script.header.name.file_name()
@@ -53,7 +57,8 @@ def project_start(project:Project):
 
         # Write a wiki page for this script object.
         if project.option_publish_enable_objects:
-            wiki.page.parse_write(script_file_path_full, output_file_path)
+            # parse_write(script_file_path_full, output_file_path)
+            wiki.page.write_script(script, output_file_path)
             logging.info(f"[{project.name}] {project.root}:\n"
                 f"  -> in:  {script_file_path_full}\n"
                 f"  -> out: {output_file_path}"
@@ -61,14 +66,20 @@ def project_start(project:Project):
 
         # Write a wiki page for this script member.
         if project.option_publish_enable_members:
-            logging.warning("Not implemented yet for output_members.")
-            pass
+            for member in script.members:
+                member_file_name = f"{script_file_name}-{member.name}.wiki"
+                member_file_path = os.path.join(os.path.dirname(output_file_path), member_file_name)
+                wiki.page.write_member(script, member, member_file_path)
+                logging.info(f"[{project.name}] {project.root}:\n"
+                    f"  -> in:  {script_file_path_full} :: {member.name}\n"
+                    f"  -> out: {member_file_path}"
+                )
 
 
 # Generator
 #---------------------------------------------
 
-def process(projects: list[Project]) -> None:
+def process(projects: list[AppProject]) -> None:
     if not projects:
         logging.info(f"No projects found.")
         return
@@ -91,5 +102,9 @@ def process(projects: list[Project]) -> None:
             logging.warning(f"[{project.name}] Skipping this project. The project `root` directory does not exist: '{project.root}'")
             continue
 
-        project_load(project)
+        # Deserialize the project scripts.
+        if not project_load(project):
+            logging.warning(f"[{project.name}] Skipping this project. The path values were not set in the project options.")
+            continue
+
         project_start(project)
