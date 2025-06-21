@@ -1,0 +1,57 @@
+{
+	"publish":
+	{
+		"game":
+		{
+			"name": "Starfield",
+			"version": "1.15.216.0",
+			"steam.app": "1716740",
+			"steam.build": "18483158"
+		},
+		"editor":
+		{
+			"name": "Creation Kit",
+			"version": "1.15.216.0",
+			"steam.app": "2722710",
+			"steam.build": "18483730"
+		}
+	},
+	"projects": [
+		{
+			"name": "Base Native",
+			"source.directory": "_input/Papyrus/Base-Native",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Native",
+			"output.enabled": true,
+			"output.sort": "TREE",
+			"output.objects": true,
+			"output.members": false
+		},
+		{
+			"name": "Base Default",
+			"source.directory": "_input/Papyrus/Base-Default",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Default",
+			"output.enabled": true,
+			"output.sort": "TREE",
+			"output.objects": true,
+			"output.members": false
+		},
+		{
+			"name": "Test Sample",
+			"source.directory": "_input/Papyrus/Test-Sample",
+			"output.directory": "wiki/Papyrus/Scripts/Test-Sample",
+			"output.enabled": false,
+			"output.sort": "TREE",
+			"output.objects": true,
+			"output.members": true
+		},
+		{
+			"name": "Cassiopeia",
+			"source.directory": "_input/Papyrus/Cassiopeia",
+			"output.directory": "wiki/Papyrus/Scripts/Cassiopeia",
+			"output.enabled": false,
+			"output.sort": "DEFAULT",
+			"output.objects": true,
+			"output.members": true
+		}
+	]
+}
