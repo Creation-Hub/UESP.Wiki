@@ -1,8 +1,9 @@
 import os
 import argparse
 import logging
-from . import settings
-from . import program
+from . import program # type: ignore # noqa: F401
+from . import settings # type: ignore # noqa: F401
+
 
 # Configuration
 #---------------------------------------------

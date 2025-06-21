@@ -1,4 +1,4 @@
-from app import wiki, papyrus
+from app import wiki
 from app.papyrus.code import Member, Script
 
 # Writer: Script Object

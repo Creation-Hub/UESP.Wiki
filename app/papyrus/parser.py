@@ -1,4 +1,3 @@
-import logging
 import re
 from re import Match
 from app.mutable import MutableBool
@@ -131,7 +130,7 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
     # Check for opening brace
     if search_index < len(lines) and lines[search_index].lstrip().startswith("{"):
         brace_line = lines[search_index].lstrip()
-        doc_lines = []
+        doc_lines:list[str] = []
 
         # If the opening brace is on a line by itself, skip it
         if brace_line.strip() == "{":
@@ -176,7 +175,7 @@ def collect_contiguous_comments(lines:list[str], line_index:int) -> str:
     Stops at the first blank or non-comment line.
     Returns the comments as a single string (joined by newlines), or an empty string if none found.
     """
-    comment_lines = []
+    comment_lines:list[str] = []
     search_index = line_index - 1
     while search_index >= 0:
         line = lines[search_index]
@@ -285,7 +284,7 @@ def parse_header(lines:list[str]) -> Header:
 #TODO: Fix parameter type Match[str] to str. Expects regex match group but is passed a string.
 def parse_member_parameters(parameters_line:str) -> list[str]:
     """Parse a Papyrus parameter string into a list of normalized parameter strings."""
-    parameters = []
+    parameters:list[str] = []
     if parameters_line:
         parameters_line = papyrus.normalize.strip_comments(parameters_line)
         for element in parameters_line.split(","):
@@ -320,7 +319,7 @@ def parse_member_property(property_match:Match[str], lines:list[str], line_index
     initializer = property_match.group("initializer")
     if initializer:
         initializer = papyrus.normalize.symbol(initializer)
-        member.parameters = [initializer] if initializer is not None else []
+        member.parameters = [initializer]
     #----------
     flags:str = property_match.group("flags")
     flags = papyrus.normalize.strip_comments(flags)
@@ -385,9 +384,9 @@ def parse_member_struct(struct_match:Match[str], lines:list[str], line_index:int
 # Parse
 #---------------------------------------------
 
-def parse_state_block(lines, start_index, state_name):
+def parse_state_block(lines:list[str], start_index:int, state_name:str) -> tuple[list[Member], int]:
     """Parse a state block, returning members and the index after the block."""
-    members = []
+    members:list[Member] = []
     line_index = start_index
     while line_index < len(lines):
         line = lines[line_index]
@@ -420,9 +419,9 @@ def parse_state_block(lines, start_index, state_name):
     return members, line_index
 
 
-def parse_group_block(lines, start_index, group_name, group_flags):
+def parse_group_block(lines:list[str], start_index:int, group_name:str, group_flags:str) -> tuple[list[Member], int]:
     """Parse a group block, returning properties and the index after the block."""
-    members = []
+    members:list[Member] = []
     line_index = start_index
     while line_index < len(lines):
         line = lines[line_index]
@@ -449,7 +448,7 @@ def parse_group_block(lines, start_index, group_name, group_flags):
 # TODO: Detect states for events and functions.
 # TODO: Support line continuations.
 # TODO: Support guards and guard flags on properties.
-def parse(script_file_path: str) -> Script:
+def parse(script_file_path:str) -> Script:
     with open(script_file_path, encoding="utf-8") as file:
         lines = file.readlines()
 

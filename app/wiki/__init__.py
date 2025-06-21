@@ -1,4 +1,3 @@
-
-from . import style
-from . import page
-from . import template
+from . import style # type: ignore # noqa: F401
+from . import page # type: ignore # noqa: F401
+from . import template # type: ignore # noqa: F401
