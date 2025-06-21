@@ -31,7 +31,7 @@
 			"source.directory": "_input/Papyrus/Base-Default",
 			"output.directory": "wiki/Papyrus/Scripts/Base-Default",
 			"output.enabled": true,
-			"output.sort": "TREE",
+			"output.sort": "DEFAULT",
 			"output.objects": true,
 			"output.members": false
 		},

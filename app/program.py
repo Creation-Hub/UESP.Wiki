@@ -36,6 +36,11 @@ def project_start(project:AppProject) -> bool:
         logging.info(f"[{project.name}] Skipping this project. The project is disabled.")
         return False
 
+    # Skip any projects without a publish sorting option.
+    if not project.option_publish_sort:
+        logging.warning(f"[{project.name}] Skipping this project. The project publish sorting property cannot be a None value.")
+        return False
+
     # Validate provided project configuration.
     if not project.root or not project.output:
         logging.warning(f"[{project.name}] Skipping this project. The path values were not set in the project options.")
@@ -59,10 +64,7 @@ def project_start(project:AppProject) -> bool:
 
         # Get the output file path based on the project sorting option.
         output_file_path = ""
-        if project.option_publish_sort == None:
-            logging.warning(f"[{project.name}][{script_file_path}] Skipping this script. The project sorting property cannot be a None value.")
-            continue
-        elif project.option_publish_sort == Sort.DEFAULT:
+        if project.option_publish_sort == Sort.DEFAULT:
             output_file_path = os.path.join(project.output, f"{script_file_path}.wiki")
         elif project.option_publish_sort == Sort.FLAT:
             output_file_path = os.path.join(project.output, f"{str(script.header.name).replace(":", "-")}.wiki")
