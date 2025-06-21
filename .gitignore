@@ -3,8 +3,10 @@
 # Project specific ignores for this repository.
 
 /_input/
-/_output/
 /wiki/
+# !/wiki/Papyrus/Scripts/Base-Native
+# !/wiki/Papyrus/Scripts/Base-Default
+
 
 # Visual Studio Code (VSC)
 #---------------------------------------------

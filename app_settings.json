@@ -20,29 +20,38 @@
 		{
 			"name": "Base Native",
 			"source.directory": "_input/Papyrus/Base-Native",
-			"output.directory": "wiki/Base-Native",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Native",
 			"output.enabled": true,
-			"output.sort": "DEFAULT",
+			"output.sort": "TREE",
 			"output.objects": true,
 			"output.members": false
 		},
 		{
 			"name": "Base Default",
 			"source.directory": "_input/Papyrus/Base-Default",
-			"output.directory": "wiki/Base-Default",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Default",
 			"output.enabled": true,
-			"output.sort": "FLAT",
+			"output.sort": "TREE",
 			"output.objects": true,
 			"output.members": false
 		},
 		{
 			"name": "Test Sample",
 			"source.directory": "_input/Papyrus/Test-Sample",
-			"output.directory": "wiki/Test-Sample",
-			"output.enabled": true,
+			"output.directory": "wiki/Papyrus/Scripts/Test-Sample",
+			"output.enabled": false,
 			"output.sort": "TREE",
 			"output.objects": true,
-			"output.members": false
+			"output.members": true
+		},
+		{
+			"name": "Cassiopeia",
+			"source.directory": "_input/Papyrus/Cassiopeia",
+			"output.directory": "wiki/Papyrus/Scripts/Cassiopeia",
+			"output.enabled": false,
+			"output.sort": "DEFAULT",
+			"output.objects": true,
+			"output.members": true
 		}
 	]
 }

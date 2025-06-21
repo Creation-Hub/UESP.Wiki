@@ -7,6 +7,7 @@ from app.papyrus.code import Member, Script
 def write_script(script:Script, output_file_path:str):
     """Generates a MediaWiki page for a given Papyrus script source file."""
     game_version = ""
+    source_file_path:str = script.header.name.file_path() + ".psc"
 
     # Write the wiki page text content
     with open(output_file_path, "w", encoding="utf-8") as file:
@@ -16,7 +17,7 @@ def write_script(script:Script, output_file_path:str):
 
         # Script Definition
         file.write("== Definition ==\n")
-        file.write(f"The <code>{script.header.name.file_path()}.psc</code> source file header definition for this script.\n\n")
+        file.write(f"The <code>{source_file_path}</code> source file header definition for this script.\n\n")
         file.write("<source lang=\"papyrus\">\n")
         file.write(f"{script.header.definition}\n")
         file.write("</source>\n")
@@ -25,10 +26,10 @@ def write_script(script:Script, output_file_path:str):
         # Script Documentation
         file.write("== Documentation ==\n")
         if not script.header.documentation:
-            file.write(f"No documentation comments were provided in the <code>{script.header.name.file_path()}.psc</code> source file.\n")
+            file.write(f"No documentation comments were provided in the <code>{source_file_path}</code> source file.\n")
             file.write("\n\n")
         else:
-            file.write(f"The <code>{script.header.name.file_path()}.psc</code> source file documentation comments for this script.\n\n")
+            file.write(f"The <code>{source_file_path}</code> source file documentation comments for this script.\n\n")
             file.write("<source>\n")
             file.write(f"{script.header.documentation}\n")
             file.write("</source>\n")
@@ -37,7 +38,7 @@ def write_script(script:Script, output_file_path:str):
         # Script Members
         file.write("== Members ==\n")
         if not script.members:
-            file.write(f"No members were defined in the <code>{script.header.name.file_path()}.psc</code> source file.\n\n")
+            file.write(f"No members were defined in the <code>{source_file_path}</code> source file.\n\n")
         else:
             file.write("The members that belong to this script.\n\n")
             for member in script.members:
@@ -54,6 +55,7 @@ def write_script(script:Script, output_file_path:str):
 
 def write_member(script:Script, member:Member, output_file_path:str):
     game_version = ""
+    source_file_path:str = script.header.name.file_path() + ".psc"
 
     # Write the wiki page text content
     with open(output_file_path, "w", encoding="utf-8") as file:
@@ -67,9 +69,9 @@ def write_member(script:Script, member:Member, output_file_path:str):
             file.write(f"No documentation comments were provided for this member.\n")
             file.write("\n\n")
         else:
-            file.write(f"The <code>{script.header.name.file_path()}.psc</code> source file documentation comments for this script.\n\n")
+            file.write(f"The <code>{source_file_path}</code> source file documentation comments for this script.\n\n")
             file.write("<source>\n")
-            file.write(f"{script.header.documentation}\n")
+            file.write(f"{member.documentation}\n")
             file.write("</source>\n")
             file.write("\n\n")
 
@@ -93,5 +95,5 @@ def write_member(script:Script, member:Member, output_file_path:str):
 
         # Page Categories
         # TODO: Should this be a different category for members?
-        file.write("\n")
+        file.write("\n\n")
         file.write("[[Category:Starfield_Mod-Papyrus]]\n")
