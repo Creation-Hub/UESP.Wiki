@@ -2,7 +2,7 @@ import os
 import argparse
 import logging
 from . import settings
-from . import generator
+from . import program
 
 # Configuration
 #---------------------------------------------
@@ -22,7 +22,7 @@ def configure_logging():
     # Console Stream handler
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
-    console_handler.setLevel(logging.DEBUG)
+    console_handler.setLevel(logging.INFO)
     logger.addHandler(console_handler)
 
 

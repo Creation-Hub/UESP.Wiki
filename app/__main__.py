@@ -20,4 +20,4 @@ if __name__ == "__main__":
     logging.info(f"Editor: {editor_info}")
 
     # Start processing any projects
-    app.generator.process(settings.projects)
+    app.program.start(settings.projects)

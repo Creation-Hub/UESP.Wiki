@@ -1,6 +1,7 @@
 import logging
 import re
 from re import Match
+from app.mutable import MutableBool
 from app import papyrus
 from app.papyrus.code import Header, Member, Script, ScriptName
 
@@ -115,7 +116,7 @@ GROUP_END_PATTERN = re.compile(
 # Documentation
 #---------------------------------------------
 
-def collect_braced_docstring(lines: list[str], line_index: int) -> str:
+def collect_braced_docstring(lines:list[str], line_index:int) -> str:
     """
     Collects a braced docstring { ... } immediately below the code element at line_index.
     Allows blank lines between the element and the docstring, but nothing else.
@@ -169,7 +170,7 @@ def collect_braced_docstring(lines: list[str], line_index: int) -> str:
     return ""
 
 
-def collect_contiguous_comments(lines: list[str], line_index: int) -> str:
+def collect_contiguous_comments(lines:list[str], line_index:int) -> str:
     """
     Collects contiguous line/block comments immediately above the code element at line_index.
     Stops at the first blank or non-comment line.
@@ -196,7 +197,7 @@ def collect_contiguous_comments(lines: list[str], line_index: int) -> str:
     return ""
 
 
-def parse_documentation(lines: list[str], line_index: int) -> str:
+def parse_documentation(lines:list[str], line_index:int) -> str:
     """
     Collects Papyrus documentation for a code element at line_index.
     - Collects braced docstring below (with blank lines allowed, but nothing else in between).
@@ -218,35 +219,45 @@ def parse_documentation(lines: list[str], line_index: int) -> str:
 # Header
 #---------------------------------------------
 
+def skip(inside_comment_block:MutableBool, line:str) -> bool:
+    """
+    Determines if a line should be skipped based on whitespace and comment conditions.
+    """
+    line = line.strip()
+    if line == "":
+        # If the line is empty, skip it
+        return True
+    elif line.startswith(";/") and line.endswith("/;"):
+        # This is a single-line block comment, skip it
+        return True
+    elif line.startswith(";/"):
+        # This is the start of a multi-line block comment, skip it
+        inside_comment_block.value = True
+        return True
+    elif line.endswith("/;"):
+        # This is the end of a multi-line block comment, skip it
+        inside_comment_block.value = False
+        return True
+    elif line.startswith(";"):
+        # This is a single-line comment, skip it
+        return True
+    elif inside_comment_block.value:
+        # If we are in a multi-line block comment, skip it
+        return True
+    else:
+        return False
+
+
 def parse_header(lines:list[str]) -> Header:
     """
     Finds the script header line information.
     Returns values or raises ValueError if `ScriptName` is not found.
     """
-    inside_comment_block = False
+    inside_comment_block = MutableBool()
     for line_index, line in enumerate(lines):
-        # Skip empty lines and comments
-        line = line.strip()
-        if line == "":
-            # If the line is empty, skip it
-            continue
-        elif line.startswith(";/") and line.endswith("/;"):
-            # This is a single-line block comment, skip it
-            continue
-        elif line.startswith(";/"):
-            # This is the start of a multi-line block comment, skip it
-            inside_comment_block = True
-            continue
-        elif line.endswith("/;"):
-            # This is the end of a multi-line block comment, skip it
-            inside_comment_block = False
-            continue
-        elif line.startswith(";"):
-            # This is a single-line comment, skip it
-            continue
-        elif inside_comment_block:
-            # If we are in a multi-line block comment, skip it
-            continue
+
+        # Skip lines that are inside a comment block
+        if skip(inside_comment_block, line): continue
 
         line = papyrus.normalize.strip_comments(line)
         line = papyrus.normalize.whitespace(line)
