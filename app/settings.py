@@ -1,94 +1,50 @@
 import os
 import json
-from enum import Enum
-from app.papyrus.code import Script
+from typing import Any
+from app.context import AppContext
+from app.project import PapyrusProject
+from app.publishing import Sort
 
-# Types
+# Json
 #---------------------------------------------
 
-class Sort(Enum):
-    DEFAULT = 1
-    FLAT = 2
-    TREE = 3
+def get_property_path(data:dict[str, Any], property:str, directory:str) -> str:
+    path = data.get(property, None)
+    # os.path.abspath(path)
+    if not path: return ""
+    elif os.path.isabs(path): return path
+    else: return os.path.join(directory, path)
 
 
-# Changes the base output directory path to sort into script name folders.
-# option_publish_sort:
-#   Default: `Base-Native\MyNamespace\Action.wiki`
-#   Flat:    `Base-Native\MyNamespace-Action.wiki`
-#   Tree:    `Base-Native\MyNamespace\Action\Action.wiki`
-class AppProject:
-    def __init__(self):
-        self.name: str = ""
-        self.root: str = ""
-        self.output: str = ""
-        self.option_publish_sort: Sort = Sort.DEFAULT
-        self.option_publish_enable: bool = False
-        self.option_publish_enable_objects: bool = False
-        self.option_publish_enable_members: bool = False
-        self.scripts: list[Script] = []
-
-
-class AppSettings:
-    def __init__(self):
-        self.base_dir:str = ""
-        self.publish_info = {}
-        self.projects:list[AppProject] = []
-
-
-# Data
-#---------------------------------------------
-
-# TODO: Add support for full paths specified in json. Only resolve paths without a drive letter.
-def path_resolve(directory:str, path:str) -> str:
-    if path: return os.path.abspath(os.path.join(directory, path))
-    else: return path
-
-def get_property_path(data:dict, property:str, directory:str) -> str:
+def get_property_sort(data:dict[str, Any], property:str) -> Sort:
     value = data.get(property, None)
-    if value: return path_resolve(directory, value)
-    else: return ""
-
-def get_property_sort(data:dict) -> Sort:
-    value = data.get("output.sort", "DEFAULT")
+    if value is None: return Sort.DEFAULT
     try: return Sort[value.upper()]
     except KeyError: return Sort.DEFAULT
-
-def read_project(data_project, base_dir):
-    project:AppProject = AppProject()
-    project.name = data_project.get("name", "UNNAMED")
-    project.root = get_property_path(data_project, "source.directory", base_dir)
-    project.output = get_property_path(data_project, "output.directory", base_dir)
-    project.option_publish_enable = data_project.get("output.enabled", False)
-    project.option_publish_sort = get_property_sort(data_project)
-    project.option_publish_enable_objects = data_project.get("output.objects", False)
-    project.option_publish_enable_members = data_project.get("output.members", False)
-    return project
 
 
 # Settings
 #---------------------------------------------
 
-def read(settings_file_path:str):
+def read(settings_file_path:str) -> AppContext:
     """
     Reads application settings file.
-
-    Returns (publish_info, targets) where:
-      - base_dir: the base directory of the settings file
-      - publish_info: dict with 'game' and 'editor' info
-      - projects: a list of Project information classes
     """
-    settings:AppSettings = AppSettings()
-    settings.base_dir = os.path.dirname(os.path.abspath(settings_file_path))
-    settings.publish_info = {}
-    settings.projects = []
-
+    context:AppContext = AppContext()
+    context.base_directory = os.path.dirname(os.path.abspath(settings_file_path))
     if os.path.exists(settings_file_path):
         with open(settings_file_path, encoding="utf-8") as file:
-            data = json.load(file)
-            settings.publish_info = data.get("publish", {})
-
-            for data_project in data.get("projects", []):
-                project:AppProject = read_project(data_project, settings.base_dir)
-                settings.projects.append(project)
-    return settings
+            data:dict[str, Any] = json.load(file)
+        context.publish_info = data.get("publish", {})
+        for data_project in data.get("projects", []):
+            project:PapyrusProject = PapyrusProject()
+            project.identifier = data_project.get("identifier", "UNNAMED")
+            project.imports = data_project.get("source.imports", [])
+            project.root = get_property_path(data_project, "source.directory", context.base_directory)
+            project.publish.output = get_property_path(data_project, "output.directory", context.base_directory)
+            project.publish.sort = get_property_sort(data_project, "output.sort")
+            project.publish.enable = data_project.get("output.enabled", False)
+            project.publish.enable_objects = data_project.get("output.objects", False)
+            project.publish.enable_members = data_project.get("output.members", False)
+            context.add(project)
+    return context

@@ -112,6 +112,12 @@ class Member(Code):
         self.flags: list[str] = []
         """The flags associated with the member."""
 
+        self.group: str = ""
+        """The group this member belongs to, if any. This only applies to properties."""
+
+        self.group_flags: str = ""
+        """The flags associated with the group this member belongs to, if any."""
+
 
 class Script:
     """Represents a Papyrus script."""

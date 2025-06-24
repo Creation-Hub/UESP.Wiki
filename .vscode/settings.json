@@ -1,4 +1,5 @@
 {
+	"python.analysis.typeCheckingMode": "strict",
 	"[python]": {
 		"editor.detectIndentation": false,
 		"editor.insertSpaces": true,

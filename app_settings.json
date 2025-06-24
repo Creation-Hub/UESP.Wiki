@@ -18,7 +18,8 @@
 	},
 	"projects": [
 		{
-			"name": "Base Native",
+			"identifier": "Base-Native",
+			"source.imports": [],
 			"source.directory": "_input/Papyrus/Base-Native",
 			"output.directory": "wiki/Papyrus/Scripts/Base-Native",
 			"output.enabled": true,
@@ -27,16 +28,28 @@
 			"output.members": false
 		},
 		{
-			"name": "Base Default",
-			"source.directory": "_input/Papyrus/Base-Default",
-			"output.directory": "wiki/Papyrus/Scripts/Base-Default",
+			"identifier": "Base-Default-Common",
+			"source.imports": [ "Base-Native" ],
+			"source.directory": "_input/Papyrus/Base-Default-Common",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Default-Common",
 			"output.enabled": true,
-			"output.sort": "TREE",
+			"output.sort": "DEFAULT",
 			"output.objects": true,
 			"output.members": false
 		},
 		{
-			"name": "Test Sample",
+			"identifier": "Base-Default",
+			"source.imports": [ "Base-Default-Common", "Base-Native" ],
+			"source.directory": "_input/Papyrus/Base-Default",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Default",
+			"output.enabled": true,
+			"output.sort": "DEFAULT",
+			"output.objects": true,
+			"output.members": false
+		},
+		{
+			"identifier": "Test-Sample",
+			"source.imports": [ "Base-Native" ],
 			"source.directory": "_input/Papyrus/Test-Sample",
 			"output.directory": "wiki/Papyrus/Scripts/Test-Sample",
 			"output.enabled": false,
@@ -45,7 +58,8 @@
 			"output.members": true
 		},
 		{
-			"name": "Cassiopeia",
+			"identifier": "Cassiopeia",
+			"source.imports": [ "Base-Native" ],
 			"source.directory": "_input/Papyrus/Cassiopeia",
 			"output.directory": "wiki/Papyrus/Scripts/Cassiopeia",
 			"output.enabled": false,

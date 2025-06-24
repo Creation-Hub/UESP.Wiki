@@ -1,10 +1,13 @@
-from app import wiki, papyrus
+from app import wiki
+from app.context import AppContext
 from app.papyrus.code import Member, Script
+from app.project import PapyrusProject
+
 
 # Writer: Script Object
 #---------------------------------------------
 
-def write_script(script:Script, output_file_path:str):
+def write_script(context:AppContext, project:PapyrusProject, script:Script, output_file_path:str):
     """Generates a MediaWiki page for a given Papyrus script source file."""
     game_version = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
@@ -12,7 +15,7 @@ def write_script(script:Script, output_file_path:str):
     # Write the wiki page text content
     with open(output_file_path, "w", encoding="utf-8") as file:
         # Script Summary Template
-        file.write(wiki.template.script_object_summary(script, game_version))
+        file.write(wiki.template.script_object_summary(context, project, script, game_version))
         file.write("\n\n")
 
         # Script Definition
@@ -36,14 +39,23 @@ def write_script(script:Script, output_file_path:str):
             file.write("\n\n")
 
         # Script Members
-        file.write("== Members ==\n")
+        file.write("== Member ==\n")
         if not script.members:
             file.write(f"No members were defined in the <code>{source_file_path}</code> source file.\n\n")
         else:
-            file.write("The members that belong to this script.\n\n")
+            file.write("The members that belong to this script, grouped by kind.\n\n")
+            # Group members by kind
+            from collections import defaultdict
+            from typing import DefaultDict
+            members_by_kind:DefaultDict[str, list[Member]] = defaultdict(list)
             for member in script.members:
-                file.write(wiki.template.script_object_member_summary(script, member, game_version))
-                file.write("\n")
+                members_by_kind[member.kind].append(member)
+            # Write each kind section
+            for kind, members in members_by_kind.items():
+                file.write(f"=== {kind} ===\n")
+                for member in members:
+                    file.write(wiki.template.script_object_member_summary(script, member, game_version))
+                    file.write("\n")
 
         # Page Categories
         file.write("\n")
@@ -53,7 +65,7 @@ def write_script(script:Script, output_file_path:str):
 # Writer: Script Member
 #---------------------------------------------
 
-def write_member(script:Script, member:Member, output_file_path:str):
+def write_member(context:AppContext, project:PapyrusProject, script:Script, member:Member, output_file_path:str):
     game_version = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
 
