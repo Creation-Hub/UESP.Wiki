@@ -1,10 +1,13 @@
 from app import wiki
+from app.context import AppContext
 from app.papyrus.code import Member, Script
+from app.project import PapyrusProject
+
 
 # Writer: Script Object
 #---------------------------------------------
 
-def write_script(script:Script, output_file_path:str):
+def write_script(context:AppContext, project:PapyrusProject, script:Script, output_file_path:str):
     """Generates a MediaWiki page for a given Papyrus script source file."""
     game_version = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
@@ -12,7 +15,7 @@ def write_script(script:Script, output_file_path:str):
     # Write the wiki page text content
     with open(output_file_path, "w", encoding="utf-8") as file:
         # Script Summary Template
-        file.write(wiki.template.script_object_summary(script, game_version))
+        file.write(wiki.template.script_object_summary(context, project, script, game_version))
         file.write("\n\n")
 
         # Script Definition
@@ -62,7 +65,7 @@ def write_script(script:Script, output_file_path:str):
 # Writer: Script Member
 #---------------------------------------------
 
-def write_member(script:Script, member:Member, output_file_path:str):
+def write_member(context:AppContext, project:PapyrusProject, script:Script, member:Member, output_file_path:str):
     game_version = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
 

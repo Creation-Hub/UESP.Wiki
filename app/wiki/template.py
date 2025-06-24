@@ -1,8 +1,39 @@
+from typing import Iterable
 from app import wiki
+from app.context import AppContext
 from app.papyrus.code import Script, Member
+from app.papyrus import inheritance
+from app.project import PapyrusProject
+
+# Inheritance
+#---------------------------------------------
+
+def to_names(scripts:list[Script]) -> list[str]:
+    return [str(script.header.name) for script in scripts] if scripts else []
 
 
-def get_script_extends(script:Script) -> str:
+def to_names_linked(scripts:list[Script]) -> list[str]:
+    return [wiki.style.link_script_object(str(script.header.name)) for script in scripts] if scripts else []
+
+
+# Used for the extends field on script templates.
+def get_inheritance_extends_string(inheritance_chain:list[Script]) -> str:
+    if not inheritance_chain:
+        return "Nothing"
+    else:
+        names:list[str] = to_names_linked(inheritance_chain)
+        return " → ".join(names)
+
+
+# Used to build the script index page.
+def get_inheritance_string(script:Script, inheritance_chain:list[Script]) -> str:
+    chain_reversed:Iterable[Script] = reversed(inheritance_chain)
+    inheritance_list:list[Script] = list(chain_reversed) + [script]
+    names:list[str] = to_names(inheritance_list)
+    return " ← ".join(names)
+
+
+def get_script_extends_link(script:Script) -> str:
     if script.header.name.value == "ScriptObject":
         return "Nothing"
     elif script.header.extends.value:
@@ -14,16 +45,18 @@ def get_script_extends(script:Script) -> str:
 # Script Object
 #---------------------------------------------
 
-def script_object_summary(script:Script, game_version:str):
+def script_object_summary(context:AppContext, project:PapyrusProject, script:Script, game_version:str):
     """
     Return the 'Script_Object_Summary' wiki template as a string.
     https://starfieldwiki.net/wiki/Template:Script_Object_Summary
     """
     script_title = script.header.name
     script_name = wiki.style.link_script_object(str(script.header.name))
-    script_extends = get_script_extends(script)
+    inheritance_chain:list[Script] = inheritance.get_chain(context, project, script)
+    script_extends = get_inheritance_extends_string(inheritance_chain)
     script_flags = wiki.style.to_list_csv(script.header.flags)
 
+    #---------------------------------------------
     template_text = ""
     template_text += "{{Script_Object_Summary\n"
 

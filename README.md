@@ -11,6 +11,7 @@ Some automation for https://starfieldwiki.net/ MediaWiki contributions.
 - Detect property get/set accessors in the parser.
 - Avoid filling template fields with empty values.
 - Collect Papyrus state information in the parser.
+- Standardize script name case in dictionaries for consistent case-insensitive lookups across projects.
 
 # Templates
 The wiki templates used by this generator.
