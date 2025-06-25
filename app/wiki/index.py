@@ -1,6 +1,7 @@
 from collections import Counter
 from collections.abc import ItemsView
 from typing import TextIO
+from app import wiki
 from app.context import AppContext
 from app.project import PapyrusProject
 
@@ -55,7 +56,7 @@ def wiki_list_extends_most_common(script_extends_counter:Counter[str]) -> str:
         return "There are no common scripts in this project."
     entries:list[str] = []
     for script_name, count in common_parent_names:
-        entries.append(f"* The {script_name} script was extended {count} times.")
+        entries.append(f"* The {wiki.style.link_script_object(script_name)} script was extended {count} times.")
     return "\n".join(entries)
 
 
@@ -64,7 +65,7 @@ def wiki_list_script_names(project:PapyrusProject) -> str:
         return "There are no scripts defined in this project."
     entries:list[str] = []
     for script in project.scripts:
-        entries.append(f"* {str(script.header.name)}")
+        entries.append(f"* {wiki.style.link_script_object(str(script.header.name))}")
     return "\n".join(entries)
 
 
