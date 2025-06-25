@@ -28,10 +28,10 @@
 			"output.members": false
 		},
 		{
-			"identifier": "Base-Default-Common",
+			"identifier": "Base-Shared-Default",
 			"source.imports": [ "Base-Native" ],
-			"source.directory": "_input/Papyrus/Base-Default-Common",
-			"output.directory": "wiki/Papyrus/Scripts/Base-Default-Common",
+			"source.directory": "_input/Papyrus/Base-Shared-Default",
+			"output.directory": "wiki/Papyrus/Scripts/Base-Shared-Default",
 			"output.enabled": true,
 			"output.sort": "DEFAULT",
 			"output.objects": true,
@@ -39,7 +39,7 @@
 		},
 		{
 			"identifier": "Base-Default",
-			"source.imports": [ "Base-Default-Common", "Base-Native" ],
+			"source.imports": [ "Base-Shared-Default", "Base-Native" ],
 			"source.directory": "_input/Papyrus/Base-Default",
 			"output.directory": "wiki/Papyrus/Scripts/Base-Default",
 			"output.enabled": true,

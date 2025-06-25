@@ -5,7 +5,6 @@ from app.context import AppContext
 from app.project import PapyrusProject
 from app.publishing import Sort
 
-
 # Project
 #---------------------------------------------
 
@@ -86,5 +85,16 @@ def start(context:AppContext) -> None:
     else:
         logging.info(f"Found {len(context.projects)} projects.")
 
+    # Generate wiki pages for each project.
     for key in context.projects:
         project_start(context, context.projects[key])
+
+    # Generate the wiki index page.
+    index_path = os.path.join(context.base_directory, "wiki", "Papyrus", "Scripts", "index.wiki")
+    if not os.path.exists(os.path.dirname(index_path)):
+        os.makedirs(os.path.dirname(index_path))
+        logging.debug(f"Created index directory: {os.path.dirname(index_path)}")
+    try:
+        wiki.index.write(context, index_path)
+    except Exception as e:
+        logging.error(f"Failed to write projects index: {str(e)}")
