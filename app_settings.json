@@ -25,7 +25,7 @@
 			"output.enabled": true,
 			"output.sort": "TREE",
 			"output.objects": true,
-			"output.members": false
+			"output.members": true
 		},
 		{
 			"identifier": "Base-Shared-Default",

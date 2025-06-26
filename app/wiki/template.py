@@ -1,9 +1,15 @@
 from typing import Iterable
 from app import wiki
 from app.context import AppContext
-from app.papyrus.code import Script, Member
 from app.papyrus import inheritance
 from app.project import PapyrusProject
+from app.papyrus.code import Script
+from app.papyrus.code import Member
+from app.papyrus.code import Function
+from app.papyrus.code import Event
+from app.papyrus.code import Variable
+from app.papyrus.code import Property
+
 
 # Inheritance
 #---------------------------------------------
@@ -16,8 +22,10 @@ def to_names_linked(scripts:list[Script]) -> list[str]:
     return [wiki.style.link_script_object(str(script.header.name)) for script in scripts] if scripts else []
 
 
-# Used for the extends field on script templates.
 def get_inheritance_extends_string(inheritance_chain:list[Script]) -> str:
+    """
+    Gets the inheritance chain as a string for the 'extends' field in script templates.
+    """
     if not inheritance_chain:
         return "Nothing"
     else:
@@ -25,8 +33,10 @@ def get_inheritance_extends_string(inheritance_chain:list[Script]) -> str:
         return " → ".join(names)
 
 
-# Used to build the script index page.
 def get_inheritance_string(script:Script, inheritance_chain:list[Script]) -> str:
+    """
+    Gets the inheritance chain as a string for the script index page.
+    """
     chain_reversed:Iterable[Script] = reversed(inheritance_chain)
     inheritance_list:list[Script] = list(chain_reversed) + [script]
     names:list[str] = to_names(inheritance_list)
@@ -34,6 +44,9 @@ def get_inheritance_string(script:Script, inheritance_chain:list[Script]) -> str
 
 
 def get_script_extends_link(script:Script) -> str:
+    """
+    Gets the link to the script extends for the script index page.
+    """
     if script.header.name.value == "ScriptObject":
         return "Nothing"
     elif script.header.extends.value:
@@ -42,22 +55,35 @@ def get_script_extends_link(script:Script) -> str:
         return wiki.style.link_script_object("ScriptObject")
 
 
+def get_member_parameters_string(member:Member) -> str:
+    """
+    Gets the parameters string for a member template.
+    Templates need to have minimal parameters that accommodate several member types.
+    """
+    parameters_string:str = ""
+    if isinstance(member, Function) or isinstance(member, Event):
+        parameters_string = ", ".join(member.parameters)
+    elif isinstance(member, Variable) or isinstance(member, Property):
+        parameters_string = member.value_auto
+    return parameters_string
+
+
 # Script Object
 #---------------------------------------------
 
 def script_object_summary(context:AppContext, project:PapyrusProject, script:Script, game_version:str):
     """
-    Return the 'Script_Object_Summary' wiki template as a string.
-    https://starfieldwiki.net/wiki/Template:Script_Object_Summary
-    """
-    script_title = script.header.name
-    script_name = wiki.style.link_script_object(str(script.header.name))
-    inheritance_chain:list[Script] = inheritance.get_chain(context, project, script)
-    script_extends = get_inheritance_extends_string(inheritance_chain)
-    script_flags = wiki.style.to_list_csv(script.header.flags)
+    Gets the 'Script_Object_Summary' wiki template as a string.
 
+    See: https://starfieldwiki.net/wiki/Template:Script_Object_Summary
+    """
+    script_title:str = str(script.header.name)
+    script_name:str = wiki.style.link_script_object(str(script.header.name))
+    inheritance_chain:list[Script] = inheritance.get_chain(context, project, script)
+    script_extends:str = get_inheritance_extends_string(inheritance_chain)
+    script_flags:str = wiki.style.to_list_csv(script.header.flags)
     #---------------------------------------------
-    template_text = ""
+    template_text:str = ""
     template_text += "{{Script_Object_Summary\n"
 
     if script_title:
@@ -81,19 +107,20 @@ def script_object_summary(context:AppContext, project:PapyrusProject, script:Scr
 
 def script_object_member_summary(script:Script, member:Member, game_version:str):
     """
-    Return the 'Script_Object_Member_Summary' wiki template as a string.
-    See https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
-    """
-    script_name = wiki.style.link_script_object(str(script.header.name))
-    member_title = member.name
-    member_name = wiki.style.link_script_member(str(script.header.name), member.name)
-    member_kind = member.kind
-    member_returns = member.type
-    member_flags_string = " ".join(member.flags)
-    member_parameters_string = ", ".join(member.parameters)
-    member_documentation = member.documentation
+    Gets the 'Script_Object_Member_Summary' wiki template as a string.
 
-    template_text = ""
+    See: https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
+    """
+    script_name:str = wiki.style.link_script_object(str(script.header.name))
+    member_title:str = member.name
+    member_name:str = wiki.style.link_script_member(str(script.header.name), member.name)
+    member_kind:str = member.kind
+    member_returns:str = member.type
+    member_flags_string:str = " ".join(member.flags)
+    member_parameters_string:str = get_member_parameters_string(member)
+    member_documentation:str = member.documentation
+    #---------------------------------------------
+    template_text:str = ""
     template_text += "{{Script_Object_Member_Summary\n"
 
     if member_title:
@@ -133,19 +160,20 @@ def script_object_member_summary(script:Script, member:Member, game_version:str)
 # Not implemented yet, for standalone member pages
 def script_member_summary(script:Script, member:Member, game_version:str) -> str:
     """
-    Return the 'Script_Member_Summary' wiki template as a string.
-    https://starfieldwiki.net/wiki/Template:Script_Member_Summary
-    """
-    script_name = wiki.style.link_script_object(str(script.header.name))
-    member_title = member.name
-    member_name = wiki.style.link_script_member(str(script.header.name), member.name)
-    member_kind = member.kind
-    member_returns = member.type
-    member_flags_string = " ".join(member.flags)
-    member_parameters_string = ", ".join(member.parameters)
-    member_documentation = member.documentation
+    Gets the 'Script_Member_Summary' wiki template as a string.
 
-    template_text = ""
+    See: https://starfieldwiki.net/wiki/Template:Script_Member_Summary
+    """
+    script_name:str = wiki.style.link_script_object(str(script.header.name))
+    member_title:str = member.name
+    member_name:str = wiki.style.link_script_member(str(script.header.name), member.name)
+    member_kind:str = member.kind
+    member_returns:str = member.type
+    member_flags_string:str = " ".join(member.flags)
+    member_parameters_string:str = get_member_parameters_string(member)
+    member_documentation:str = member.documentation
+    #---------------------------------------------
+    template_text:str = ""
     template_text += "{{Script_Member_Summary\n"
 
     if member_title:

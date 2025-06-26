@@ -1,7 +1,12 @@
 from app import wiki
 from app.context import AppContext
-from app.papyrus.code import Member, Script
 from app.project import PapyrusProject
+from app.papyrus.code import Script
+from app.papyrus.code import Member
+from app.papyrus.code import Function
+from app.papyrus.code import Event
+from app.papyrus.code import Variable
+from app.papyrus.code import Property
 
 
 # Writer: Script Object
@@ -87,15 +92,17 @@ def write_member(context:AppContext, project:PapyrusProject, script:Script, memb
             file.write("</source>\n")
             file.write("\n\n")
 
-        # Member Parameters
-        if member.kind == "Property":
+        # Member Auto Value
+        if isinstance(member, Property) or isinstance(member, Variable):
             file.write("== Field Initializer ==\n")
-            if not member.parameters:
+            if not member.value_auto:
                 file.write(f"This {str.lower(member.kind)} member has no field initialized value.\n\n")
             else:
-                file.write("* " + member.parameters[0])
+                file.write("* " + member.value_auto)
                 file.write("\n")
-        else:
+
+        # Member Parameters
+        if isinstance(member, Function) or isinstance(member, Event):
             file.write("== Parameters ==\n")
             if not member.parameters:
                 file.write(f"This {str.lower(member.kind)} member has no parameters.\n\n")

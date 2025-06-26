@@ -2,7 +2,14 @@ import re
 from re import Match
 from app.mutable import MutableBool
 from app import papyrus
-from app.papyrus.code import Header, Member, Script, ScriptName
+from app.papyrus.code import Script
+from app.papyrus.code import ScriptName
+from app.papyrus.code import Header
+from app.papyrus.code import Member
+from app.papyrus.code import Structure
+from app.papyrus.code import Property
+from app.papyrus.code import Function
+from app.papyrus.code import Event
 
 
 # Regular Expressions
@@ -281,7 +288,6 @@ def parse_header(lines:list[str]) -> Header:
 # Members
 #---------------------------------------------
 
-#TODO: Fix parameter type Match[str] to str. Expects regex match group but is passed a string.
 def parse_member_parameters(parameters_line:str) -> list[str]:
     """Parse a Papyrus parameter string into a list of normalized parameter strings."""
     parameters:list[str] = []
@@ -304,81 +310,75 @@ def parse_member_parameters(parameters_line:str) -> list[str]:
     return parameters
 
 
-def parse_member_property(property_match:Match[str], lines:list[str], line_index:int) -> Member | None:
-    member:Member = Member()
-    member.name = papyrus.normalize.member_name(property_match.group("name"))
-    member.index = line_index
-    member.definition = lines[line_index]
-    member.documentation = parse_documentation(lines, line_index)
-    member.state = ""
-    member.kind = papyrus.normalize.symbol("Property")
-    #----------
-    member.type = papyrus.normalize.script_type(property_match.group("type"))
+def parse_member_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
+    property:Property = Property()
+    property.name = papyrus.normalize.member_name(property_match.group("name"))
+    property.index = line_index
+    property.definition = lines[line_index]
+    property.documentation = parse_documentation(lines, line_index)
+    property.kind = papyrus.normalize.symbol("Property")
+    property.type = papyrus.normalize.script_type(property_match.group("type"))
     #----------
     # Get initializer if present and store in parameters as a single-element list
     initializer = property_match.group("initializer")
     if initializer:
         initializer = papyrus.normalize.symbol(initializer)
-        member.parameters = [initializer]
+        property.value_auto = initializer
     #----------
     flags:str = property_match.group("flags")
     flags = papyrus.normalize.strip_comments(flags)
-    member.flags = papyrus.normalize.script_flags(flags.split())
+    property.flags = papyrus.normalize.script_flags(flags.split())
     #----------
-    return member
+    return property
 
 
-def parse_member_function(function_match:Match[str], lines:list[str], line_index:int) -> Member | None:
-    member:Member = Member()
-    member.name = papyrus.normalize.member_name(function_match.group("name"))
-    member.index = line_index
-    member.definition = lines[line_index]
-    member.documentation = parse_documentation(lines, line_index)
-    member.state = ""
-    member.kind = papyrus.normalize.symbol("Function")
-    #----------
-    member.type = function_match.group("rtype")
+def parse_member_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
+    function:Function = Function()
+    function.name = papyrus.normalize.member_name(function_match.group("name"))
+    function.index = line_index
+    function.definition = lines[line_index]
+    function.documentation = parse_documentation(lines, line_index)
+    function.kind = papyrus.normalize.symbol("Function")
+    function.type = function_match.group("rtype")
     #----------
     flags:str = function_match.group("flags")
     flags = papyrus.normalize.strip_comments(flags)
-    member.flags = papyrus.normalize.script_flags(flags.split())
+    function.flags = papyrus.normalize.script_flags(flags.split())
     #----------
     parameters:str = function_match.group("params")
-    member.parameters = parse_member_parameters(parameters)
+    function.parameters = parse_member_parameters(parameters)
     #----------
-    return member
+    return function
 
 
-def parse_member_event(event_match:Match[str], lines:list[str], line_index:int) -> Member | None:
+def parse_member_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
     key:str = papyrus.normalize.member_name(event_match.group("name"))
-    member:Member = Member()
-    member.name = key
-    member.index = line_index
-    member.definition = lines[line_index]
-    member.documentation = parse_documentation(lines, line_index)
-    member.state = ""
-    member.kind = papyrus.normalize.symbol("Event")
+    event:Event = Event()
+    event.name = key
+    event.index = line_index
+    event.definition = lines[line_index]
+    event.documentation = parse_documentation(lines, line_index)
+    event.kind = papyrus.normalize.symbol("Event")
     #----------
     flags:str = event_match.group("flags")
     flags = papyrus.normalize.strip_comments(flags)
-    member.flags = papyrus.normalize.script_flags(flags.split())
+    event.flags = papyrus.normalize.script_flags(flags.split())
     #----------
     parameters:str = event_match.group("params")
-    member.parameters = parse_member_parameters(parameters)
+    event.parameters = parse_member_parameters(parameters)
     #----------
-    return member
+    return event
 
 
-def parse_member_struct(struct_match:Match[str], lines:list[str], line_index:int) -> Member | None:
+def parse_member_struct(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
     key:str = papyrus.normalize.member_name(struct_match.group("name"))
-    member:Member = Member()
-    member.name = key
-    member.index = line_index
-    member.definition = lines[line_index]
-    member.documentation = parse_documentation(lines, line_index)
-    member.state = ""
-    member.kind = papyrus.normalize.symbol("Struct")
-    return member
+    structure:Structure = Structure()
+    structure.name = key
+    structure.index = line_index
+    structure.definition = lines[line_index]
+    structure.documentation = parse_documentation(lines, line_index)
+    structure.kind = papyrus.normalize.symbol("Struct")
+    return structure
 
 
 # Parse
@@ -387,9 +387,9 @@ def parse_member_struct(struct_match:Match[str], lines:list[str], line_index:int
 def parse_state_block(lines:list[str], start_index:int, state_name:str) -> tuple[list[Member], int]:
     """Parse a state block, returning members and the index after the block."""
     members:list[Member] = []
-    line_index = start_index
+    line_index:int = start_index
     while line_index < len(lines):
-        line = lines[line_index]
+        line:str = lines[line_index]
 
         # End of state block
         if STATE_END_PATTERN.match(line):
@@ -398,19 +398,17 @@ def parse_state_block(lines:list[str], start_index:int, state_name:str) -> tuple
         # Parse members inside the state
         function_match = FUNCTION_PATTERN.match(line)
         if function_match:
-            member = parse_member_function(function_match, lines, line_index)
+            member:Function = parse_member_function(function_match, lines, line_index)
             if member:
-                member.state = state_name
                 members.append(member)
             line_index += 1
             continue
 
         event_match = EVENT_PATTERN.match(line)
         if event_match:
-            member = parse_member_event(event_match, lines, line_index)
-            if member:
-                member.state = state_name
-                members.append(member)
+            event:Event = parse_member_event(event_match, lines, line_index)
+            if event:
+                members.append(event)
             line_index += 1
             continue
 
@@ -422,9 +420,9 @@ def parse_state_block(lines:list[str], start_index:int, state_name:str) -> tuple
 def parse_group_block(lines:list[str], start_index:int, group_name:str, group_flags:str) -> tuple[list[Member], int]:
     """Parse a group block, returning properties and the index after the block."""
     members:list[Member] = []
-    line_index = start_index
+    line_index:int = start_index
     while line_index < len(lines):
-        line = lines[line_index]
+        line:str = lines[line_index]
 
         # End of group block
         if GROUP_END_PATTERN.match(line):
@@ -433,7 +431,7 @@ def parse_group_block(lines:list[str], start_index:int, group_name:str, group_fl
         # Parse members inside the group
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
-            member = parse_member_property(property_match, lines, line_index)
+            member:Property = parse_member_property(property_match, lines, line_index)
             if member:
                 member.group = group_name
                 member.group_flags = group_flags.strip()
@@ -450,17 +448,17 @@ def parse_group_block(lines:list[str], start_index:int, group_name:str, group_fl
 # TODO: Support guards and guard flags on properties.
 def parse(script_file_path:str) -> Script:
     with open(script_file_path, encoding="utf-8") as file:
-        lines = file.readlines()
+        lines:list[str] = file.readlines()
 
-    script = Script()
+    script:Script = Script()
     script.header = parse_header(lines)
     script.members = []
 
-    line_index = script.header.index + 1
+    line_index:int = script.header.index + 1
     while line_index < len(lines):
-        line = lines[line_index]
+        line:str = lines[line_index]
 
-        # State block
+        # State Block
         state_match = STATE_PATTERN.match(line)
         if state_match:
             state_name = state_match.group("name")
@@ -469,7 +467,7 @@ def parse(script_file_path:str) -> Script:
             line_index = state_end_index + 1
             continue
 
-        # Group block
+        # Group Block
         group_match = GROUP_PATTERN.match(line)
         if group_match:
             group_name = group_match.group("name")
@@ -482,38 +480,36 @@ def parse(script_file_path:str) -> Script:
         # Property
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
-            member = parse_member_property(property_match, lines, line_index)
-            if member:
-                script.members.append(member)
+            property:Property = parse_member_property(property_match, lines, line_index)
+            if property:
+                script.members.append(property)
             line_index += 1
             continue
 
         # Function
         function_match = FUNCTION_PATTERN.match(line)
         if function_match:
-            member = parse_member_function(function_match, lines, line_index)
-            if member:
-                member.state = ""  # Empty state
-                script.members.append(member)
+            function:Function = parse_member_function(function_match, lines, line_index)
+            if function:
+                script.members.append(function)
             line_index += 1
             continue
 
         # Event (in empty state)
         event_match = EVENT_PATTERN.match(line)
         if event_match:
-            member = parse_member_event(event_match, lines, line_index)
-            if member:
-                member.state = ""  # Empty state
-                script.members.append(member)
+            event:Event = parse_member_event(event_match, lines, line_index)
+            if event:
+                script.members.append(event)
             line_index += 1
             continue
 
         # Struct
         struct_match = STRUCT_PATTERN.match(line)
         if struct_match:
-            member = parse_member_struct(struct_match, lines, line_index)
-            if member:
-                script.members.append(member)
+            structure:Structure = parse_member_struct(struct_match, lines, line_index)
+            if structure:
+                script.members.append(structure)
             line_index += 1
             continue
 
