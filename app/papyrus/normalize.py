@@ -50,7 +50,10 @@ def symbol(token:str) -> str:
         # Primitive Values
         "none": "none",
         "true": "true",
-        "false": "false"
+        "false": "false",
+        # Special Values
+        "self": "self",
+        "parent": "parent"
     }
     return mapping.get(token.lower(), token)
 

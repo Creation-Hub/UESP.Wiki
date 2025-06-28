@@ -1,8 +1,12 @@
 from typing import Dict
+from app.papyrus.language import ScriptName
 
+
+# Source Code
+#---------------------------------------------
 
 class Code:
-    """Base class for code elements in a Papyrus script."""
+    """A base class for source code elements in a Papyrus script."""
     def __init__(self):
         self.index:int = -1
         """The source code line index for this element."""
@@ -17,57 +21,48 @@ class Code:
         """The game version history for this code, starting with when it was introduced."""
 
 
-# Types
+# Elements
 #---------------------------------------------
 
-class ScriptName:
+class Element(Code):
     """
-    Represents a Papyrus script name.
-    The value format is `Namespace1:Namespace2:ScriptName`.
+    Represents an element of a Papyrus script.
     """
+    def __init__(self):
+        super().__init__()
 
-    def __init__(self, value:str = ""):
-        """Initializes this class with an optional script name value."""
-        self._value:str = ""
-        self.value = value
+        self.name:str = ""
+        """The name of this element."""
 
-    def __str__(self) -> str:
-        """Returns the string representation of this class."""
-        if self.value: return self.value
-        else: return ""
+        self.flags:list[str] = []
+        """The flags associated with this element."""
+
+        self._kind:str = ""
+        """The kind of element (function, property, event, etc.)."""
 
     @property
-    def value(self) -> str:
-        """Gets the script name value, which may include namespaces."""
-        return self._value
+    def kind(self) -> str:
+        """Gets the canonical Papyrus type name (kind) for this member."""
+        return self._kind
 
-    # TODO: Ensure the stored script name value has valid namespace notation and normalization.
-    @value.setter
-    def value(self, value:str):
-        """Sets the script name value, which may include namespaces."""
-        self._value = value.strip() if value else ""
 
-    def get_array(self) -> list[str]:
-        """Returns the script name as a list of strings."""
-        if self.value: return self.value.split(":")
-        else: return []
+# Element Attributes
+#---------------------------------------------
 
-    def set_array(self, name:list[str]) -> bool:
-        """Sets the script name from a list of strings."""
-        if not name: return False
-        self.value = ":".join(name)
-        return True
+class ValueTypeAttribute():
+    def __init__(self):
+        self.type:str = ""
+        """The member type is used for variables, properties, and the return type for functions."""
 
-    def file_path(self) -> str:
-        """Returns the relative path based on the script name."""
-        if not self.value: return ""
-        return self.value.replace(":", "\\")
+class ValueAutoAttribute():
+    def __init__(self):
+        self.value_auto:str = ""
+        """The field initialized auto value for this member."""
 
-    def file_name(self) -> str:
-        """Returns the script file name without extension."""
-        if not self.value: return ""
-        array = self.get_array()
-        return array[-1] if array else ""
+class ParameterAttribute():
+    def __init__(self):
+        self.parameters:list[str] = []
+        """The parameters of this member."""
 
 
 # Header
@@ -77,16 +72,17 @@ class Header(Code):
     """
     Represents the header of a Papyrus script.
     """
-
     def __init__(self):
         super().__init__()
 
+        # TODO: This overlaps with the inherited element name.
         self.name:ScriptName = ScriptName()
         """The name of this script. Includes the namespace and name."""
 
         self.extends:ScriptName = ScriptName()
         """The inherited script. Includes the namespace and name."""
 
+        # TODO: Refactor this to use a common attribute.
         self.flags:list[str] = []
         """The flags associated with the script."""
 
@@ -96,29 +92,9 @@ class Header(Code):
         else: return ""
 
 
-# Member
-#---------------------------------------------
-
-class Member(Code):
-    """
-    Represents a member of a Papyrus script.
-    """
-
+class Member(Element):
     def __init__(self):
         super().__init__()
-
-        self.name:str = ""
-        """The name of the member."""
-
-        # TODO: This will likely be deprecated in favor of specific class types.
-        self.kind:str = ""
-        """The kind of member (function, property, event, etc.)."""
-
-        self.type:str = ""
-        """The type of the member. (int, float, string, etc.)"""
-
-        self.flags:list[str] = []
-        """The flags associated with the member."""
 
         # TODO: Move to PropertyGroup class.
         self.group:str = ""
@@ -129,57 +105,80 @@ class Member(Code):
         """The flags associated with the group this member belongs to, if any."""
 
 
+# Members
 #---------------------------------------------
-
-class Structure(Member):
-    def __init__(self):
-        super().__init__()
-
-class Variable(Member):
-    def __init__(self):
-        super().__init__()
-        self.value_auto:str = ""
-        """The field initialized auto value for this variable, if any."""
 
 class Guard(Member):
     def __init__(self):
         super().__init__()
+        self._kind = "Guard"
 
 
-#---------------------------------------------
-
-class Property(Member):
+class Variable(Member, ValueTypeAttribute, ValueAutoAttribute):
     def __init__(self):
         super().__init__()
-        self.value_auto:str = ""
-        self.isFull:bool = False
+        ValueTypeAttribute.__init__(self)
+        ValueAutoAttribute.__init__(self)
+        self._kind = ""
+
+
+class Structure(Member):
+    def __init__(self):
+        super().__init__()
+        self._kind = "Struct"
+        self.variables:Dict[str, Variable] = {}
+
+
+# Properties
+#---------------------------------------------
+
+class Property(Member, ValueTypeAttribute, ValueAutoAttribute):
+    def __init__(self):
+        super().__init__()
+        ValueTypeAttribute.__init__(self)
+        ValueAutoAttribute.__init__(self)
+        self._kind = "Property"
+        self.getter:Function|None = None
+        self.setter:Function|None = None
+
+    def isAuto(self) -> bool:
+        return "Auto" in self.flags or "AutoReadOnly" in self.flags
+
 
 class PropertyGroup(Code):
     def __init__(self):
         super().__init__()
+        self.kind = "Group"
         self.properties:Dict[str, Property] = {}
 
 
+# Methods
 #---------------------------------------------
 
-class Function(Member):
+class Function(Member, ParameterAttribute, ValueTypeAttribute):
     def __init__(self):
         super().__init__()
-        self.parameters:list[str] = []
-        """The parameters of the member."""
+        ParameterAttribute.__init__(self)
+        ValueTypeAttribute.__init__(self)
+        self._kind = "Function"
 
-class Event(Function):
+
+class Event(Member, ParameterAttribute):
     def __init__(self):
         super().__init__()
+        ParameterAttribute.__init__(self)
+        self._kind = "Event"
         self.isRemote:bool = False
         """Indicates if this event is a remote event handler."""
 
 class State(Code):
     def __init__(self):
         super().__init__()
-        self.methods:Dict[str, Function] = {}
+        self._kind = "State"
+        self.methods:Dict[str, Function|Event] = {}
 
 
+# Script
 #---------------------------------------------
 
 class Script:
@@ -189,6 +188,7 @@ class Script:
         self.header:Header = Header()
         """The header information of this script."""
 
+        # TODO: Refactor this into a dictionary of members.
         self.members:list[Member] = []
         """The members that belong to this script."""
 

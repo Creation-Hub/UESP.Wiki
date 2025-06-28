@@ -1,6 +1,6 @@
 import re
 from re import Match
-from app.mutable import MutableBool
+from app.common.mutable import MutableBool
 from app import papyrus
 from app.papyrus.code import Script
 from app.papyrus.code import ScriptName
@@ -128,7 +128,7 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
     Allows blank lines between the element and the docstring, but nothing else.
     Returns the docstring content or an empty string if not found.
     """
-    search_index = line_index + 1
+    search_index:int = line_index + 1
 
     # Skip blank lines
     while search_index < len(lines) and lines[search_index].strip() == "":
@@ -136,7 +136,7 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
 
     # Check for opening brace
     if search_index < len(lines) and lines[search_index].lstrip().startswith("{"):
-        brace_line = lines[search_index].lstrip()
+        brace_line:str = lines[search_index].lstrip()
         doc_lines:list[str] = []
 
         # If the opening brace is on a line by itself, skip it
@@ -144,8 +144,8 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
             search_index += 1
             # Collect until closing brace
             while search_index < len(lines):
-                line = lines[search_index]
-                closing_brace_pos = line.find("}")
+                line:str = lines[search_index]
+                closing_brace_pos:int = line.find("}")
                 if closing_brace_pos != -1:
                     doc_lines.append(line[:closing_brace_pos])
                     break
@@ -153,8 +153,8 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
                 search_index += 1
         else:
             # Opening brace and content are on the same line
-            after_brace = brace_line[1:]
-            closing_brace_pos = after_brace.find("}")
+            after_brace:str = brace_line[1:]
+            closing_brace_pos:int = after_brace.find("}")
             if closing_brace_pos != -1:
                 # Both braces on the same line
                 doc_lines.append(after_brace[:closing_brace_pos])
@@ -164,8 +164,8 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
                 doc_lines.append(after_brace.rstrip())
                 search_index += 1
                 while search_index < len(lines):
-                    line = lines[search_index]
-                    closing_brace_pos = line.find("}")
+                    line:str = lines[search_index]
+                    closing_brace_pos:int = line.find("}")
                     if closing_brace_pos != -1:
                         doc_lines.append(line[:closing_brace_pos])
                         break
@@ -183,12 +183,12 @@ def collect_contiguous_comments(lines:list[str], line_index:int) -> str:
     Returns the comments as a single string (joined by newlines), or an empty string if none found.
     """
     comment_lines:list[str] = []
-    search_index = line_index - 1
+    search_index:int = line_index - 1
     while search_index >= 0:
-        line = lines[search_index]
+        line:str = lines[search_index]
         if line.strip() == "":
             break  # Blank line breaks the comment block
-        stripped = line.lstrip()
+        stripped:str = line.lstrip()
         if stripped.startswith(";") or stripped.startswith(";/"):
             comment_lines.append(stripped)
             search_index -= 1
@@ -196,7 +196,7 @@ def collect_contiguous_comments(lines:list[str], line_index:int) -> str:
             break  # Non-comment line breaks the comment block
     if comment_lines:
         # Comments are collected in reverse order, so reverse them
-        comments = [l for l in reversed(comment_lines)]
+        comments:list[str] = [l for l in reversed(comment_lines)]
         # Optionally, strip leading ';' and whitespace for a cleaner doc
         comments = [l.lstrip(";").strip() for l in comments]
         return "\n".join(comments)
@@ -210,8 +210,8 @@ def parse_documentation(lines:list[str], line_index:int) -> str:
     - Collects contiguous line/block comments above (no blank lines allowed).
     - If both exist, combines them (docstring first, then comments).
     """
-    docstring = collect_braced_docstring(lines, line_index)
-    comments = collect_contiguous_comments(lines, line_index)
+    docstring:str = collect_braced_docstring(lines, line_index)
+    comments:str = collect_contiguous_comments(lines, line_index)
     if docstring and comments:
         return f"{docstring}\n{comments}"
     elif docstring:
@@ -220,6 +220,52 @@ def parse_documentation(lines:list[str], line_index:int) -> str:
         return comments
     else:
         return ""
+
+
+# Elements
+#---------------------------------------------
+
+def parse_flags(text:str) -> list[str]:
+    """Parse a Papyrus flags string into a list of normalized flag strings."""
+    flags:list[str] = []
+    if text:
+        text = papyrus.normalize.strip_comments(text)
+        tokens:list[str] = text.split()
+        for flag in tokens:
+            flag = flag.strip()
+            if not flag: continue
+            else: flags.append(papyrus.normalize.symbol(flag))
+    return flags
+
+
+def parse_initializer(initializer_text:str) -> str:
+    if initializer_text:
+        return papyrus.normalize.symbol(initializer_text)
+    return ""
+
+
+def parse_parameters(parameters_line:str) -> list[str]:
+    """Parse a Papyrus parameter string into a list of normalized parameter strings."""
+    parameters:list[str] = []
+    if parameters_line:
+        parameters_line = papyrus.normalize.strip_comments(parameters_line)
+        tokens:list[str] = parameters_line.split(",")
+        for token in tokens:
+            token = token.strip()
+            if not token:
+                continue
+            parameter_match = PARAMETERS_PATTERN.match(token)
+            if parameter_match:
+                type:str = parameter_match.group(1)
+                name:str = parameter_match.group(2)
+                initial:str = parameter_match.group(3) or ""
+                if initial:
+                    initial = papyrus.normalize.default_value(initial)
+                parameter:str = f"{papyrus.normalize.script_type(type)} {name}{(' ' + initial) if initial else ''}".strip()
+                parameters.append(parameter)
+            else:
+                parameters.append(token)
+    return parameters
 
 
 # Header
@@ -259,15 +305,17 @@ def parse_header(lines:list[str]) -> Header:
     Finds the script header line information.
     Returns values or raises ValueError if `ScriptName` is not found.
     """
-    inside_comment_block = MutableBool()
+    inside_comment_block:MutableBool = MutableBool()
     for line_index, line in enumerate(lines):
 
         # Skip lines that are inside a comment block
         if skip(inside_comment_block, line): continue
 
+        # Normalize the line by stripping comments and whitespace
         line = papyrus.normalize.strip_comments(line)
         line = papyrus.normalize.whitespace(line)
 
+        # Check if this line matches the header pattern
         header_match = HEADER_PATTERN.match(line)
         if header_match:
             header:Header = Header()
@@ -276,11 +324,7 @@ def parse_header(lines:list[str]) -> Header:
             header.documentation = parse_documentation(lines, line_index)
             header.name = ScriptName(header_match.group("name"))
             header.extends = ScriptName(header_match.group("extends"))
-            #----------
-            flags:str = header_match.group("flags")
-            flags = papyrus.normalize.strip_comments(flags)
-            header.flags = papyrus.normalize.script_flags(flags.split())
-            #----------
+            header.flags = parse_flags(header_match.group("flags"))
             return header
     raise ValueError("ScriptName not found")
 
@@ -288,97 +332,51 @@ def parse_header(lines:list[str]) -> Header:
 # Members
 #---------------------------------------------
 
-def parse_member_parameters(parameters_line:str) -> list[str]:
-    """Parse a Papyrus parameter string into a list of normalized parameter strings."""
-    parameters:list[str] = []
-    if parameters_line:
-        parameters_line = papyrus.normalize.strip_comments(parameters_line)
-        for element in parameters_line.split(","):
-            element = element.strip()
-            if not element:
-                continue
-            param_match = PARAMETERS_PATTERN.match(element)
-            if param_match:
-                ptype = param_match.group(1)
-                pname = param_match.group(2)
-                default = param_match.group(3) or ""
-                default_norm = papyrus.normalize.default_value(default)
-                param_str_piece = f"{papyrus.normalize.script_type(ptype)} {pname}{(' ' + default_norm) if default_norm else ''}".strip()
-                parameters.append(param_str_piece)
-            else:
-                parameters.append(element)
-    return parameters
+def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
+    structure:Structure = Structure()
+    structure.name = papyrus.normalize.member_name(struct_match.group("name"))
+    structure.index = line_index
+    structure.definition = lines[line_index]
+    structure.documentation = parse_documentation(lines, line_index)
+    #----------
+    # TODO: Parse the struct member variables
+    #----------
+    return structure
 
 
-def parse_member_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
+def parse_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
     property:Property = Property()
-    property.name = papyrus.normalize.member_name(property_match.group("name"))
     property.index = line_index
     property.definition = lines[line_index]
     property.documentation = parse_documentation(lines, line_index)
-    property.kind = papyrus.normalize.symbol("Property")
+    property.name = papyrus.normalize.member_name(property_match.group("name"))
+    property.flags = parse_flags(property_match.group("flags"))
     property.type = papyrus.normalize.script_type(property_match.group("type"))
-    #----------
-    # Get initializer if present and store in parameters as a single-element list
-    initializer = property_match.group("initializer")
-    if initializer:
-        initializer = papyrus.normalize.symbol(initializer)
-        property.value_auto = initializer
-    #----------
-    flags:str = property_match.group("flags")
-    flags = papyrus.normalize.strip_comments(flags)
-    property.flags = papyrus.normalize.script_flags(flags.split())
-    #----------
+    property.value_auto = parse_initializer(property_match.group("initializer"))
     return property
 
 
-def parse_member_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
+def parse_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
     function:Function = Function()
     function.name = papyrus.normalize.member_name(function_match.group("name"))
     function.index = line_index
     function.definition = lines[line_index]
     function.documentation = parse_documentation(lines, line_index)
-    function.kind = papyrus.normalize.symbol("Function")
     function.type = function_match.group("rtype")
-    #----------
-    flags:str = function_match.group("flags")
-    flags = papyrus.normalize.strip_comments(flags)
-    function.flags = papyrus.normalize.script_flags(flags.split())
-    #----------
-    parameters:str = function_match.group("params")
-    function.parameters = parse_member_parameters(parameters)
-    #----------
+    function.flags = parse_flags(function_match.group("flags"))
+    function.parameters = parse_parameters(function_match.group("params"))
     return function
 
 
-def parse_member_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
-    key:str = papyrus.normalize.member_name(event_match.group("name"))
+def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
     event:Event = Event()
-    event.name = key
+    event.name = papyrus.normalize.member_name(event_match.group("name"))
     event.index = line_index
     event.definition = lines[line_index]
     event.documentation = parse_documentation(lines, line_index)
-    event.kind = papyrus.normalize.symbol("Event")
-    #----------
-    flags:str = event_match.group("flags")
-    flags = papyrus.normalize.strip_comments(flags)
-    event.flags = papyrus.normalize.script_flags(flags.split())
-    #----------
-    parameters:str = event_match.group("params")
-    event.parameters = parse_member_parameters(parameters)
-    #----------
+    event.flags = parse_flags(event_match.group("flags"))
+    event.parameters = parse_parameters(event_match.group("params"))
     return event
-
-
-def parse_member_struct(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
-    key:str = papyrus.normalize.member_name(struct_match.group("name"))
-    structure:Structure = Structure()
-    structure.name = key
-    structure.index = line_index
-    structure.definition = lines[line_index]
-    structure.documentation = parse_documentation(lines, line_index)
-    structure.kind = papyrus.normalize.symbol("Struct")
-    return structure
 
 
 # Parse
@@ -398,7 +396,7 @@ def parse_state_block(lines:list[str], start_index:int, state_name:str) -> tuple
         # Parse members inside the state
         function_match = FUNCTION_PATTERN.match(line)
         if function_match:
-            member:Function = parse_member_function(function_match, lines, line_index)
+            member:Function = parse_function(function_match, lines, line_index)
             if member:
                 members.append(member)
             line_index += 1
@@ -406,7 +404,7 @@ def parse_state_block(lines:list[str], start_index:int, state_name:str) -> tuple
 
         event_match = EVENT_PATTERN.match(line)
         if event_match:
-            event:Event = parse_member_event(event_match, lines, line_index)
+            event:Event = parse_event(event_match, lines, line_index)
             if event:
                 members.append(event)
             line_index += 1
@@ -431,7 +429,7 @@ def parse_group_block(lines:list[str], start_index:int, group_name:str, group_fl
         # Parse members inside the group
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
-            member:Property = parse_member_property(property_match, lines, line_index)
+            member:Property = parse_property(property_match, lines, line_index)
             if member:
                 member.group = group_name
                 member.group_flags = group_flags.strip()
@@ -480,7 +478,7 @@ def parse(script_file_path:str) -> Script:
         # Property
         property_match = PROPERTY_PATTERN.match(line)
         if property_match:
-            property:Property = parse_member_property(property_match, lines, line_index)
+            property:Property = parse_property(property_match, lines, line_index)
             if property:
                 script.members.append(property)
             line_index += 1
@@ -489,7 +487,7 @@ def parse(script_file_path:str) -> Script:
         # Function
         function_match = FUNCTION_PATTERN.match(line)
         if function_match:
-            function:Function = parse_member_function(function_match, lines, line_index)
+            function:Function = parse_function(function_match, lines, line_index)
             if function:
                 script.members.append(function)
             line_index += 1
@@ -498,7 +496,7 @@ def parse(script_file_path:str) -> Script:
         # Event (in empty state)
         event_match = EVENT_PATTERN.match(line)
         if event_match:
-            event:Event = parse_member_event(event_match, lines, line_index)
+            event:Event = parse_event(event_match, lines, line_index)
             if event:
                 script.members.append(event)
             line_index += 1
@@ -507,7 +505,7 @@ def parse(script_file_path:str) -> Script:
         # Struct
         struct_match = STRUCT_PATTERN.match(line)
         if struct_match:
-            structure:Structure = parse_member_struct(struct_match, lines, line_index)
+            structure:Structure = parse_structure(struct_match, lines, line_index)
             if structure:
                 script.members.append(structure)
             line_index += 1

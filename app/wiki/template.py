@@ -68,6 +68,17 @@ def get_member_parameters_string(member:Member) -> str:
     return parameters_string
 
 
+def get_member_type_string(member:Member) -> str:
+    """
+    Gets the returns string for a member template.
+    Templates need to have minimal returns that accommodate several member types.
+    """
+    if  isinstance(member, Variable) or isinstance(member, Property) or isinstance(member, Function):
+        return str(member.type)
+    else:
+        return ""
+
+
 # Script Object
 #---------------------------------------------
 
@@ -115,7 +126,7 @@ def script_object_member_summary(script:Script, member:Member, game_version:str)
     member_title:str = member.name
     member_name:str = wiki.style.link_script_member(str(script.header.name), member.name)
     member_kind:str = member.kind
-    member_returns:str = member.type
+    member_returns:str = get_member_type_string(member)
     member_flags_string:str = " ".join(member.flags)
     member_parameters_string:str = get_member_parameters_string(member)
     member_documentation:str = member.documentation
@@ -168,7 +179,7 @@ def script_member_summary(script:Script, member:Member, game_version:str) -> str
     member_title:str = member.name
     member_name:str = wiki.style.link_script_member(str(script.header.name), member.name)
     member_kind:str = member.kind
-    member_returns:str = member.type
+    member_returns:str = get_member_type_string(member)
     member_flags_string:str = " ".join(member.flags)
     member_parameters_string:str = get_member_parameters_string(member)
     member_documentation:str = member.documentation
