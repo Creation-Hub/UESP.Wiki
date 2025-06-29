@@ -17,6 +17,7 @@ class PrimitiveType(Enum):
 # Script Identifier
 #---------------------------------------------
 
+# TODO: Test this on a concrete KeyedCollection.
 class ScriptName(KeyedObject):
     """
     Represents a Papyrus script name.
@@ -32,7 +33,6 @@ class ScriptName(KeyedObject):
         """Gets the script name value, which may include namespaces."""
         return self._key
 
-    # TODO: Ensure the stored script name value has valid namespace notation and normalization.
     @value.setter
     def value(self, value:str):
         """Sets the script name value, which may include namespaces."""

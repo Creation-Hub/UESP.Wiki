@@ -3,6 +3,7 @@ from collections.abc import ItemsView
 from typing import TextIO
 from app import wiki
 from app.context import AppContext
+from app.papyrus.code import Member
 from app.project import PapyrusProject
 
 
@@ -22,7 +23,8 @@ def statistics_project(project:PapyrusProject) -> \
         script_extends_counter[script_name] += 1
 
         # Iterate through each member in the script to count their kinds
-        for member in script.members:
+        for member_key in script.members:
+            member:Member = script.members[member_key]
             script_member_kind_counter[member.kind] += 1
 
     return (

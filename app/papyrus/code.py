@@ -9,7 +9,10 @@ class Code:
     """A base class for source code elements in a Papyrus script."""
     def __init__(self):
         self.index:int = -1
-        """The source code line index for this element."""
+        """The source code line index for the start of this element."""
+
+        self.index_end:int = -1
+        """The source code line index for the end of this element."""
 
         self.definition:str = ""
         """The source code definition for this element (normalized line text)."""
@@ -46,8 +49,18 @@ class Element(Code):
         return self._kind
 
 
+class Member(Element):
+    def __init__(self):
+        super().__init__()
+
+
 # Element Attributes
 #---------------------------------------------
+
+class FlagsAttribute():
+    def __init__(self):
+        self.flags:list[str] = []
+        """The flags for this member."""
 
 class ValueTypeAttribute():
     def __init__(self):
@@ -62,12 +75,16 @@ class ValueAutoAttribute():
 class ParameterAttribute():
     def __init__(self):
         self.parameters:list[str] = []
-        """The parameters of this member."""
+        """The parameters for this member."""
 
 
 # Header
 #---------------------------------------------
 
+# TODO: Refactor this to use to inherit from `Element`.
+#  - There is currently a class attribute conflict with `Element` for `name`.
+#  - This is because is shares the `flags` and `name` class attributes.
+#  - Ensure the the parser stores the line indexes for the header.
 class Header(Code):
     """
     Represents the header of a Papyrus script.
@@ -75,7 +92,7 @@ class Header(Code):
     def __init__(self):
         super().__init__()
 
-        # TODO: This overlaps with the inherited element name.
+        # TODO: This overlaps with the inherited `Element` name.
         self.name:ScriptName = ScriptName()
         """The name of this script. Includes the namespace and name."""
 
@@ -90,19 +107,6 @@ class Header(Code):
         """Returns the string representation of this class."""
         if self.name: return str(self.name)
         else: return ""
-
-
-class Member(Element):
-    def __init__(self):
-        super().__init__()
-
-        # TODO: Move to PropertyGroup class.
-        self.group:str = ""
-        """The group this member belongs to, if any. This only applies to properties."""
-
-        # TODO: Move to PropertyGroup class.
-        self.group_flags:str = ""
-        """The flags associated with the group this member belongs to, if any."""
 
 
 # Members
@@ -145,37 +149,42 @@ class Property(Member, ValueTypeAttribute, ValueAutoAttribute):
         return "Auto" in self.flags or "AutoReadOnly" in self.flags
 
 
-class PropertyGroup(Code):
+class PropertyGroup(Member):
     def __init__(self):
         super().__init__()
-        self.kind = "Group"
+        self._kind = "Group"
         self.properties:Dict[str, Property] = {}
 
 
 # Methods
 #---------------------------------------------
 
-class Function(Member, ParameterAttribute, ValueTypeAttribute):
+class Method(Member, ParameterAttribute):
     def __init__(self):
         super().__init__()
         ParameterAttribute.__init__(self)
+
+
+class Function(Method, ValueTypeAttribute):
+    def __init__(self):
+        super().__init__()
         ValueTypeAttribute.__init__(self)
         self._kind = "Function"
 
 
-class Event(Member, ParameterAttribute):
+class Event(Method):
     def __init__(self):
         super().__init__()
-        ParameterAttribute.__init__(self)
         self._kind = "Event"
         self.isRemote:bool = False
         """Indicates if this event is a remote event handler."""
 
-class State(Code):
+
+class State(Member):
     def __init__(self):
         super().__init__()
         self._kind = "State"
-        self.methods:Dict[str, Function|Event] = {}
+        self.methods:Dict[str, Method] = {}
 
 
 # Script
@@ -188,8 +197,7 @@ class Script:
         self.header:Header = Header()
         """The header information of this script."""
 
-        # TODO: Refactor this into a dictionary of members.
-        self.members:list[Member] = []
+        self.members:Dict[str, Member] = {}
         """The members that belong to this script."""
 
     def __str__(self) -> str:
