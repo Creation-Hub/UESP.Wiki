@@ -17,104 +17,147 @@ from app.papyrus.code import Structure
 
 HEADER_PATTERN = re.compile(
     r'^'                            # Start of line
-    r'\s*'                          # Optional leading whitespace
-    r'scriptname\s+'                # 'scriptname' keyword and at least one space
-    r'(?P<name>[^\s]+)'             # Script name (non-whitespace)
-    r'(?:\s+extends\s+'             # Optional: 'extends' keyword and parent name
+    r'\s*'                          # Whitespace optional (0+)
+    r'scriptname'                   # Papyrus keyword 'scriptname' and at least one space
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>[^\s]+)'             # Capture required `name`, non-whitespace
+    r'(?:\s+extends\s+'             # Optional: Papyrus keyword 'extends' and parent name
     r'(?P<extends>[^\s]+))?'        # Parent script name (non-whitespace)
     r'(?P<flags>(?:\s+\w+)*)'       # Optional flags (zero or more flag words)
-    r'\s*'                          # Optional trailing whitespace
+    r'\s*'                          # Whitespace optional (0+)
     r'$',                           # End of line
     re.IGNORECASE
 )
 
-FUNCTION_PATTERN = re.compile(
+#-------------------------
+
+STRUCT_PATTERN = re.compile(
     r'^'                            # Start of line
-    r'\s*'                          # Optional leading whitespace
-    r'(?P<rtype>\w+(?:\[\])?)?'     # Optional return type (with optional [])
-    r'\s*function\s+'               # 'function' keyword
-    r'(?P<name>\w+)'                # Function name
-    r'\s*\('                        # Opening parenthesis
-    r'(?P<params>[^\)]*)'           # Parameters (anything except ')')
-    r'\)\s*'                        # Closing parenthesis
-    r'(?P<flags>.*)'                # Optional flags (rest of line)
+    r'\s*'                          # Whitespace optional (0+)
+    r'struct'                       # Papyrus keyword 'struct'
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>\w+)',               # Capture required `name`
+    re.IGNORECASE
+)
+
+STRUCT_END_PATTERN = re.compile(
+    r'^'                            # Start of line
+    r'\s*'                          # Whitespace optional (0+)
+    r'endstruct'                    # Papyrus keyword 'endstruct'
+    r'\b',                          # Word boundary
+    re.IGNORECASE
+)
+
+#-------------------------
+
+GROUP_PATTERN = re.compile(
+    r'^'                            # Start of line
+    r'\s*'                          # Whitespace optional (0+)
+    r'group'                        # Papyrus keyword 'group'
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>\w+)'                # Capture required `name`
+    r'(?P<flags>.*)'                # Capture optional `flags`
     r'$',                           # End of line
     re.IGNORECASE
 )
 
-EVENT_PATTERN = re.compile(
+GROUP_END_PATTERN = re.compile(
     r'^'                            # Start of line
-    r'\s*event\s+'                  # 'event' keyword
-    r'(?P<name>\w+)'                # Event name
-    r'\s*\('                        # Opening parenthesis
-    r'(?P<params>[^\)]*)'           # Parameters
-    r'\)\s*'                        # Closing parenthesis
-    r'(?P<flags>.*)'                # Optional flags
+    r'\s*'                          # Whitespace optional (0+)
+    r'endgroup'                     # Papyrus keyword 'endgroup'
+    r'\s*'                          # Whitespace optional (0+)
     r'$',                           # End of line
     re.IGNORECASE
 )
 
 PROPERTY_PATTERN = re.compile(
     r'^'                                   # Start of line
-    r'\s*'                                 # Optional leading whitespace
-    r'(?P<type>\w+(?:\[\])?)'              # Property type
-    r'\s+property\s+'                      # 'property' keyword
-    r'(?P<name>\w+)'                       # Property name
-    r'(?:\s*=\s*(?P<initializer>[^\s]+))?' # Optional initializer (e.g., = False)
-    r'\s*'                                 # Optional whitespace
-    r'(?P<flags>.*)'                       # Optional flags
+    r'\s*'                                 # Whitespace optional (0+)
+    r'(?P<type>\w+(?:\[\])?)'              # Capture required `type`
+    r'\s+'                                 # Whitespace required (1+)
+    r'property'                            # Papyrus keyword 'property'
+    r'\s+'                                 # Whitespace required (1+)
+    r'(?P<name>\w+)'                       # Capture required `name`
+    r'(?:\s*=\s*(?P<initializer>[^\s]+))?' # Capture optional `initializer`
+    r'\s*'                                 # Whitespace optional (0+)
+    r'(?P<flags>.*)'                       # Capture optional `flags`
     r'$',                                  # End of line
     re.IGNORECASE
 )
 
 PROPERTY_END_PATTERN = re.compile(
     r'^'                            # Start of line
-    r'\s*'                          # Optional leading whitespace
-    r'endproperty\b',               # 'endproperty' keyword
+    r'\s*'                          # Whitespace optional (0+)
+    r'endproperty\b',               # Papyrus keyword 'endproperty'
     re.IGNORECASE
 )
 
-STRUCT_PATTERN = re.compile(
-    r'^'                            # Start of line
-    r'\s*struct\s+'                 # 'struct' keyword
-    r'(?P<name>\w+)',               # Struct name
-    re.IGNORECASE
-)
+#-------------------------
 
-PARAMETERS_PATTERN = re.compile(
+STATE_PATTERN = re.compile(
     r'^'                            # Start of line
-    r'\s*(?P<type>\w+(?:\[\])?)'    # Parameter type
-    r'\s+(?P<name>\w+)'             # Parameter name
-    r'(\s*=\s*.+)?'                 # Optional default value
+    r'\s*'                          # Whitespace optional (0+)
+    r'(?P<flags>auto\s+)?'          # Capture optional 'auto' flag
+    r'state'                        # Papyrus keyword 'state'
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>\w+)'                # Capture required `name`
+    r'\s*'                          # Whitespace optional (0+)
+    r''                             # TODO: There are still optional trailing flags.
     r'$',                           # End of line
     re.IGNORECASE
 )
 
-STATE_PATTERN = re.compile(
-    r'^'                            # Start of line
-    r'\s*(?P<flags>auto\s+)?'       # Optional 'auto' flag
-    r'state\s+'                     # 'state' keyword
-    r'(?P<name>\w+)'                # State name
-    r'\s*$',                        # Optional trailing whitespace, end of line
-    re.IGNORECASE
-)
-
 STATE_END_PATTERN = re.compile(
-    r'^\s*endstate\s*$',            # 'endstate' keyword, optional whitespace
+    r'^'                            # Start of line
+    r'\s*'                          # Whitespace optional (0+)
+    r'endstate'                     # Papyrus keyword 'endstate'
+    r'\s*'                          # Whitespace optional (0+)
+    r'$',                           # End of line
     re.IGNORECASE
 )
 
-GROUP_PATTERN = re.compile(
+EVENT_PATTERN = re.compile(
     r'^'                            # Start of line
-    r'\s*group\s+'                  # 'group' keyword
-    r'(?P<name>\w+)'                # Group name
+    r'\s*'                          # Whitespace optional (0+)
+    r'event'                        # Papyrus keyword 'event'
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>\w+)'                # Event name
+    r'\s*'                          # Whitespace optional (0+)
+    r'\('                           # Opening parenthesis
+    r'(?P<params>[^\)]*)'           # Parameters
+    r'\)'                           # Closing parenthesis
+    r'\s*'                          # Whitespace optional (0+)
     r'(?P<flags>.*)'                # Optional flags
     r'$',                           # End of line
     re.IGNORECASE
 )
 
-GROUP_END_PATTERN = re.compile(
-    r'^\s*endgroup\s*$',            # 'endgroup' keyword, optional whitespace
+FUNCTION_PATTERN = re.compile(
+    r'^'                            # Start of line
+    r'\s*'                          # Whitespace optional (0+)
+    r'(?P<rtype>\w+(?:\[\])?)?'     # Optional return type (with optional [])
+    r'\s*'                          # Whitespace optional (0+)
+    r'function'                     # Papyrus keyword 'function'
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>\w+)'                # Function name
+    r'\s*'                          # Whitespace optional (0+)
+    r'\('                           # Opening parenthesis
+    r'(?P<params>[^\)]*)'           # Parameters (anything except ')' character)
+    r'\)'                           # Closing parenthesis
+    r'\s*'                          # Whitespace optional (0+)
+    r'(?P<flags>.*)'                # Optional flags (rest of line)
+    r'$',                           # End of line
+    re.IGNORECASE
+)
+
+PARAMETERS_PATTERN = re.compile(
+    r'^'                            # Start of line
+    r'\s*'                          # Whitespace optional (0+)
+    r'(?P<type>\w+(?:\[\])?)'       # Parameter type
+    r'\s+'                          # Whitespace required (1+)
+    r'(?P<name>\w+)'                # Parameter name
+    r'(\s*=\s*.+)?'                 # Optional default value
+    r'$',                           # End of line
     re.IGNORECASE
 )
 
@@ -340,6 +383,20 @@ def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) ->
     structure.index_end = line_index
     structure.definition = lines[line_index]
     structure.documentation = parse_documentation(lines, line_index)
+
+    # TODO: Finish this implementation to parse the structure members.
+    line_index += 1
+    while line_index < len(lines):
+        line:str = lines[line_index]
+
+        print(f"Line: {line_index}: {line}")
+
+        # Terminate this loop if we reach the block end.
+        if STRUCT_END_PATTERN.match(line):
+            break
+
+        line_index += 1
+
     return structure
 
 
@@ -392,6 +449,8 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
     group.documentation = parse_documentation(lines, line_index)
     group.name = group_match.group("name")
     group.flags = parse_flags(group_match.group("flags"))
+
+    line_index += 1
     while line_index < len(lines):
         line:str = lines[line_index]
 
@@ -406,7 +465,6 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
             if property:
                 group.properties[property.name] = property
 
-        # Move to the next line if no match was found.
         line_index += 1
 
     # The last visited `line_index` will be the `index_end` of this group block.
@@ -422,6 +480,8 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
     state.documentation = parse_documentation(lines, line_index)
     state.name = papyrus.normalize.member_name(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
+
+    line_index += 1
     while line_index < len(lines):
         line:str = lines[line_index]
 
@@ -447,7 +507,6 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
             line_index += 1
             continue
 
-        # Move to the next line if no match was found.
         line_index += 1
 
     # The last visited `line_index` will be the `index_end` of this state block.
