@@ -4,6 +4,22 @@ Some automation for https://starfieldwiki.net/ MediaWiki contributions.
 - [Reference for Script Objects](https://starfieldwiki.net/wiki/Starfield_Mod:Object_Scripts)
 - [Reference for Editor Objects](https://starfieldwiki.net/wiki/Starfield_Mod:Form_Reference)
 
+
+### VS Code: Workspace Settings
+The VS Code build tasks use the `${config:papyrus.compiler.path}` setting to compile imported scripts into Papyrus assembly.
+This is done to ensure the compiler import dependencies are valid for each Papyrus project.
+Create a new `*.code-workspace` on the root directory and add the following setting.
+Avoid committing your own local `papyrus.compiler.path` setting to the repository.
+```json
+{
+  "settings":
+  {
+    "papyrus.compiler.path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe"
+  }
+}
+```
+
+
 ### TODO
 - TODO: Remove all `# TODO:` from the project by doing them or migrating them to an issue tracker.
 - Wiki: Finialize the output file structure and naming conventions.

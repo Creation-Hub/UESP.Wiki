@@ -6,9 +6,9 @@
         {
             "label": "Base-Native (Assemble)",
             "type": "shell",
-            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
-                "${workspaceFolder}\\wiki\\import\\Test-Sample\\Test-Sample.ppj"
+                "${workspaceFolder}\\wiki\\import\\Base-Native\\Base-Native.ppj"
             ],
             "group": {
                 "kind": "build"
@@ -18,7 +18,7 @@
         {
             "label": "Base-Shared-Default (Assemble)",
             "type": "shell",
-            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
                 "${workspaceFolder}\\wiki\\import\\Base-Shared-Default\\Base-Shared-Default.ppj"
             ],
@@ -30,7 +30,7 @@
         {
             "label": "Base-Default (Assemble)",
             "type": "shell",
-            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
                 "${workspaceFolder}\\wiki\\import\\Base-Default\\Base-Default.ppj"
             ],
@@ -42,7 +42,7 @@
         {
             "label": "Test-Sample (Assemble)",
             "type": "shell",
-            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
                 "${workspaceFolder}\\wiki\\import\\Test-Sample\\Test-Sample.ppj"
             ],
