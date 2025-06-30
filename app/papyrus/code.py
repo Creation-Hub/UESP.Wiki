@@ -40,7 +40,8 @@ class Element(Code):
         self.flags:list[str] = []
         """The flags associated with this element."""
 
-        self._kind:str = ""
+        # TODO: Reconsider how this is used between wiki pages and templates. Consider using the Papyrus class name instead.
+        self._kind:str = "UNK"
         """The kind of element (function, property, event, etc.)."""
 
     @property
@@ -123,7 +124,7 @@ class Variable(Member, ValueTypeAttribute, ValueAutoAttribute):
         super().__init__()
         ValueTypeAttribute.__init__(self)
         ValueAutoAttribute.__init__(self)
-        self._kind = ""
+        self._kind = "Variable"
 
 
 class Structure(Member):

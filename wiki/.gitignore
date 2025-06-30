@@ -1,0 +1,24 @@
+# Directory contains the imported files
+#---------------------------------------------
+*.bat
+*.flg
+*.zip
+/_compiled/
+/import/
+# !/import/Base-Native/
+# !/import/Base-Shared-Default/
+# !/import/Base-Default/
+# !/import/Base-Game/
+# !/import/SFSE/
+# !/import/Test-Sample/
+
+# Directory contains the exported files
+#---------------------------------------------
+*.wiki
+# /export/
+/export/Base-Native/
+/export/Base-Shared-Default/
+/export/Base-Default/
+/export/Base-Game/
+/export/SFSE/
+/export/Test-Sample/

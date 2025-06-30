@@ -35,6 +35,7 @@ def read(settings_file_path:str) -> AppContext:
     if os.path.exists(settings_file_path):
         with open(settings_file_path, encoding="utf-8") as file:
             data:dict[str, Any] = json.load(file)
+        context.export_directory = get_property_path(data, "export.directory", context.base_directory)
         context.publish_info = data.get("publish", {})
         for data_project in data.get("projects", []):
             project:PapyrusProject = PapyrusProject()

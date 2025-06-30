@@ -2,16 +2,16 @@
 #---------------------------------------------
 # Project specific ignores for this repository.
 
-/_input/
-/wiki/
-# !/wiki/Papyrus/Scripts/Base-Native
-# !/wiki/Papyrus/Scripts/Base-Default
+# <project specific patterns here>
 
 
 # Visual Studio Code (VSC)
 #---------------------------------------------
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
+
+# Ignore Visual Studio Code workspace settings
+*.code-workspace
 
 # Local History for Visual Studio Code
 .history/
