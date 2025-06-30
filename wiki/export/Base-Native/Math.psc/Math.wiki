@@ -1,0 +1,307 @@
+{{Script_Object_Summary
+| title = Math
+| name = [[SFM:Script-Math|Math]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Math.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Math Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Math.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Abs
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Abs|Abs]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the absolute value of the passed in value - N for N, and N for (-N)
+}}
+
+{{Script_Object_Member_Summary
+| title = Acos
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Acos|Acos]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the arccosine of the passed in value, returning degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = Asin
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Asin|Asin]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the arcsine of the passed in value, returning degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = Atan
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Atan|Atan]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the arctangent of the passed in value, returning degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = Ceiling
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Ceiling|Ceiling]]
+| kind = Function
+| flags = Global Native
+| returns = int
+| parameters = float afValue
+| documentation = Calculates the ceiling of the passed in value - the smallest integer greater than or equal to the value
+}}
+
+{{Script_Object_Member_Summary
+| title = Cos
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Cos|Cos]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the cosine of the passed in value (in degrees)
+}}
+
+{{Script_Object_Member_Summary
+| title = DegreesToRadians
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/DegreesToRadians|DegreesToRadians]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afDegrees
+| documentation = Converts degrees to radians
+}}
+
+{{Script_Object_Member_Summary
+| title = Floor
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Floor|Floor]]
+| kind = Function
+| flags = Global Native
+| returns = int
+| parameters = float afValue
+| documentation = Calculates the floor of the passed in value - the largest integer less than or equal to the value
+}}
+
+{{Script_Object_Member_Summary
+| title = Pow
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Pow|Pow]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float x, float y
+| documentation = Calculates x raised to the y power
+}}
+
+{{Script_Object_Member_Summary
+| title = RadiansToDegrees
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/RadiansToDegrees|RadiansToDegrees]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afRadians
+| documentation = Converts radians to degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = Sin
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Sin|Sin]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the sine of the passed in value (in degrees)
+}}
+
+{{Script_Object_Member_Summary
+| title = Sqrt
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Sqrt|Sqrt]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculate the square root of the passed in value
+}}
+
+{{Script_Object_Member_Summary
+| title = Tan
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Tan|Tan]]
+| kind = Function
+| flags = Global Native
+| returns = float
+| parameters = float afValue
+| documentation = Calculates the tangent of the passed in value (in degrees)
+}}
+
+{{Script_Object_Member_Summary
+| title = Max
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Max|Max]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afValue1, float afValue2
+| documentation = return the max of the two numbers
+}}
+
+{{Script_Object_Member_Summary
+| title = Min
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Min|Min]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afValue1, float afValue2
+| documentation = return the min of the two numbers
+}}
+
+{{Script_Object_Member_Summary
+| title = Clamp
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Clamp|Clamp]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float ValueToClamp, float afValueMin, float afValueMax
+| documentation = return clamped value
+}}
+
+{{Script_Object_Member_Summary
+| title = Normalize
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Normalize|Normalize]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afValue, float afMin, float afMax
+| documentation = return a normalized value between 0 and 1
+}}
+
+{{Script_Object_Member_Summary
+| title = Round
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/Round|Round]]
+| kind = Function
+| flags = Global
+| returns = int
+| parameters = float afValueToRound
+| documentation = rounds away from zero if decimal part is >= 0.5 otherwise rounds towards zero
+}}
+
+{{Script_Object_Member_Summary
+| title = ExtractDigit
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/ExtractDigit|ExtractDigit]]
+| kind = Function
+| flags = Global
+| returns = int
+| parameters = int number, int position, int NonExistentDigit = -1
+| documentation = extracts the value of a number at a particular position (0-based, one's place is 0)
+examples:
+ExtractDigit(567, 0) == 7
+ExtractDigit(567, 1) == 6
+ExtractDigit(567, 2) == 5
+ExtractDigit(567, 999) == -1
+ExtractDigit(567, 999, 0) == 0
+}}
+
+{{Script_Object_Member_Summary
+| title = HoursAsDays
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/HoursAsDays|HoursAsDays]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afHours
+| documentation = return a number days for a number of hours - useful for doing math with GameDaysPassed, etc.
+}}
+
+{{Script_Object_Member_Summary
+| title = MinutesAsDays
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/MinutesAsDays|MinutesAsDays]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afMinutes
+| documentation = return a number days for a number of minutes - useful for doing math with GameDaysPassed, etc.
+}}
+
+{{Script_Object_Member_Summary
+| title = SecondsAsDays
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/SecondsAsDays|SecondsAsDays]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afSeconds
+| documentation = return a number of days for a number of seconds - useful for doing math with GameDaysPassed, etc.
+}}
+
+{{Script_Object_Member_Summary
+| title = DaysAsHours
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/DaysAsHours|DaysAsHours]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afDays
+| documentation = return a number of hours for a number of days - useful for doing math with GameDaysPassed, etc.
+}}
+
+{{Script_Object_Member_Summary
+| title = DaysAsMinutes
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/DaysAsMinutes|DaysAsMinutes]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afDays
+| documentation = return a number of Minutes for a number of days - useful for doing math with GameDaysPassed, etc.
+}}
+
+{{Script_Object_Member_Summary
+| title = DaysAsSeconds
+| script = [[SFM:Script-Math|Math]]
+| name = [[SFM:Script-Math/DaysAsSeconds|DaysAsSeconds]]
+| kind = Function
+| flags = Global
+| returns = float
+| parameters = float afDays
+| documentation = return a number of Seconds for a number of days - useful for doing math with GameDaysPassed, etc.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

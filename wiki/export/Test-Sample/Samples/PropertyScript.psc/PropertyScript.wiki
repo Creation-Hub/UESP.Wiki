@@ -1,0 +1,104 @@
+{{Script_Object_Summary
+| title = Samples:PropertyScript
+| name = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| extends = [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The <code>Samples\PropertyScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Samples:PropertyScript Extends Samples:NativeScript
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Samples\PropertyScript.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = PropertyFullRef
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/PropertyFullRef|PropertyFullRef]]
+| kind = Property
+| returns = ObjectReference
+}}
+
+{{Script_Object_Member_Summary
+| title = PropertyFullBool_GetOnly
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/PropertyFullBool_GetOnly|PropertyFullBool_GetOnly]]
+| kind = Property
+| returns = bool
+}}
+
+{{Script_Object_Member_Summary
+| title = PropertyFullBool_SetOnly
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/PropertyFullBool_SetOnly|PropertyFullBool_SetOnly]]
+| kind = Property
+| returns = bool
+}}
+
+{{Script_Object_Member_Summary
+| title = AutoIntProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoIntProperty|AutoIntProperty]]
+| kind = Property
+| flags = Auto
+| returns = int
+}}
+
+{{Script_Object_Member_Summary
+| title = AutoObjectRefProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoObjectRefProperty|AutoObjectRefProperty]]
+| kind = Property
+| flags = Auto
+| returns = ObjectReference
+}}
+
+{{Script_Object_Member_Summary
+| title = AutoReadOnlyFloatProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoReadOnlyFloatProperty|AutoReadOnlyFloatProperty]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 41.5
+}}
+
+{{Script_Object_Member_Summary
+| title = AutoReadOnlyFormProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoReadOnlyFormProperty|AutoReadOnlyFormProperty]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = Form
+| parameters = none
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Get
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/Get|Get]]
+| kind = Function
+| returns = bool
+}}
+
+{{Script_Object_Member_Summary
+| title = Set
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/Set|Set]]
+| kind = Function
+| parameters = bool value
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

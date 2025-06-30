@@ -1,0 +1,72 @@
+{{Script_Object_Summary
+| title = DefaultAliasSetGroupFaction
+| name = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasSetGroupFaction.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasSetGroupFaction Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasSetGroupFaction.psc</code> source file documentation comments for this script.
+
+<source>
+sets a group faction on the aliased actor
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = GroupFaction
+| script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| name = [[SFM:Script-DefaultAliasSetGroupFaction/GroupFaction|GroupFaction]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = Faction
+| documentation = group faction to set on the aliased actor
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| name = [[SFM:Script-DefaultAliasSetGroupFaction/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| name = [[SFM:Script-DefaultAliasSetGroupFaction/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| name = [[SFM:Script-DefaultAliasSetGroupFaction/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = SetGroupFaction
+| script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| name = [[SFM:Script-DefaultAliasSetGroupFaction/SetGroupFaction|SetGroupFaction]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

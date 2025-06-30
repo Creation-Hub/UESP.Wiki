@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = SoulGem
+| name = [[SFM:Script-SoulGem|SoulGem]]
+| extends = [[SFM:Script-MiscObject|MiscObject]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>SoulGem.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName SoulGem Extends MiscObject Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>SoulGem.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>SoulGem.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

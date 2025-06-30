@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnEquipped
+| name = [[SFM:Script-DefaultAliasOnEquipped|DefaultAliasOnEquipped]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnEquipped.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnEquipped Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnEquipped.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference's is equipped.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the equipping actor.
+<LocationToCheck> is the current location of the equipping actor.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnEquipped
+| script = [[SFM:Script-DefaultAliasOnEquipped|DefaultAliasOnEquipped]]
+| name = [[SFM:Script-DefaultAliasOnEquipped/OnEquipped|OnEquipped]]
+| kind = Event
+| parameters = Actor akActor
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

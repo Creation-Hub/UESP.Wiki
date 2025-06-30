@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = Furniture
+| name = [[SFM:Script-Furniture|Furniture]]
+| extends = [[SFM:Script-Activator|Activator]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Furniture.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Furniture Extends Activator Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Furniture.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetAssociatedForm
+| script = [[SFM:Script-Furniture|Furniture]]
+| name = [[SFM:Script-Furniture/GetAssociatedForm|GetAssociatedForm]]
+| kind = Function
+| flags = Native
+| returns = Form
+| documentation = Get the associated form for this furniture
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

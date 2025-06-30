@@ -1,0 +1,138 @@
+{{Script_Object_Summary
+| title = Planet
+| name = [[SFM:Script-Planet|Planet]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Planet.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Planet Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Planet.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetAtmosphereType
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetAtmosphereType|GetAtmosphereType]]
+| kind = Function
+| flags = Native
+| returns = Keyword
+| documentation = Get the atmosphere type keyword for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDayLength
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetDayLength|GetDayLength]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the day length in hours for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGravity
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetGravity|GetGravity]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the gravity multiplier for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetKeywordTypeList
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetKeywordTypeList|GetKeywordTypeList]]
+| kind = Function
+| flags = Native
+| returns = Keyword[]
+| parameters = int aType
+| documentation = Get all of the keywords of the given type on this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPressure
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetPressure|GetPressure]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the pressure value for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSurveyPercent
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetSurveyPercent|GetSurveyPercent]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the survey percent for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetTemperature
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetTemperature|GetTemperature]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the temperature value for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetType
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetType|GetType]]
+| kind = Function
+| flags = Native
+| returns = Keyword
+| documentation = Get the planet type keyword for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = IsTraitKnown
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/IsTraitKnown|IsTraitKnown]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword aKeyword
+| documentation = Check if a planet trait is known
+}}
+
+{{Script_Object_Member_Summary
+| title = SetTraitKnown
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/SetTraitKnown|SetTraitKnown]]
+| kind = Function
+| flags = Native
+| parameters = Keyword aKeyword, bool abKnown = true
+| documentation = Set a planet trait as known by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocation
+| script = [[SFM:Script-Planet|Planet]]
+| name = [[SFM:Script-Planet/GetLocation|GetLocation]]
+| kind = Function
+| flags = Native
+| returns = Location
+| documentation = Get the location for this planet
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

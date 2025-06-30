@@ -1,0 +1,35 @@
+{{Script_Object_Summary
+| title = ResearchProject
+| name = [[SFM:Script-ResearchProject|ResearchProject]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ResearchProject.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ResearchProject Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ResearchProject.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Complete
+| script = [[SFM:Script-ResearchProject|ResearchProject]]
+| name = [[SFM:Script-ResearchProject/Complete|Complete]]
+| kind = Function
+| flags = Native
+| documentation = Set the status of the Research Project to completed.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

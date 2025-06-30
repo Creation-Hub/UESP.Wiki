@@ -1,0 +1,65 @@
+{{Script_Object_Summary
+| title = TopicInfo
+| name = [[SFM:Script-TopicInfo|TopicInfo]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>TopicInfo.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName TopicInfo Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>TopicInfo.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetOwningQuest
+| script = [[SFM:Script-TopicInfo|TopicInfo]]
+| name = [[SFM:Script-TopicInfo/GetOwningQuest|GetOwningQuest]]
+| kind = Function
+| flags = Native
+| returns = Quest
+| documentation = Returns the quest that owns this topic info
+}}
+
+{{Script_Object_Member_Summary
+| title = HasBeenSaid
+| script = [[SFM:Script-TopicInfo|TopicInfo]]
+| name = [[SFM:Script-TopicInfo/HasBeenSaid|HasBeenSaid]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if the topic info has been said to the player
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-TopicInfo|TopicInfo]]
+| name = [[SFM:Script-TopicInfo/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+| documentation = Event called when this topic info begins (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-TopicInfo|TopicInfo]]
+| name = [[SFM:Script-TopicInfo/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+| documentation = Event called when this topic info ends (in parallel with the fragment)
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,38 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnEnterBleedout
+| name = [[SFM:Script-DefaultAliasOnEnterBleedout|DefaultAliasOnEnterBleedout]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnEnterBleedout.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnEnterBleedout Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnEnterBleedout.psc</code> source file documentation comments for this script.
+
+<source>
+{Sets stage when THIS Alias enters bleedout.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnEnterBleedout
+| script = [[SFM:Script-DefaultAliasOnEnterBleedout|DefaultAliasOnEnterBleedout]]
+| name = [[SFM:Script-DefaultAliasOnEnterBleedout/OnEnterBleedout|OnEnterBleedout]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

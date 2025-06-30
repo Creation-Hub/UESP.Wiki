@@ -1,0 +1,86 @@
+{{Script_Object_Summary
+| title = Message
+| name = [[SFM:Script-Message|Message]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Message.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Message Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Message.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Show
+| script = [[SFM:Script-Message|Message]]
+| name = [[SFM:Script-Message/Show|Show]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = float afArg1 = 0.0, float afArg2 = 0.0, float afArg3 = 0.0, float afArg4 = 0.0, float afArg5 = 0.0, float afArg6 = 0.0, float afArg7 = 0.0, float afArg8 = 0.0, float afArg9 = 0.0
+| documentation = Show this message on the screen, substituting the values as appropriate. If a message box, it will wait until the user closes the box
+before returning - returning the button the user hit. If not a message box, or something went wrong, it will return -1
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowAsHelpMessage
+| script = [[SFM:Script-Message|Message]]
+| name = [[SFM:Script-Message/ShowAsHelpMessage|ShowAsHelpMessage]]
+| kind = Function
+| flags = Native
+| parameters = string asEvent, float afDuration, float afInterval, int aiMaxTimes, string asContext = "", int aiPriority = 0, Message GamepadMsg = none
+| documentation = Shows help message for a user action on screen.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnshowAsHelpMessage
+| script = [[SFM:Script-Message|Message]]
+| name = [[SFM:Script-Message/UnshowAsHelpMessage|UnshowAsHelpMessage]]
+| kind = Function
+| flags = Native
+| documentation = Ends the showing of a help message and makes the message inactive.
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearHelpMessages
+| script = [[SFM:Script-Message|Message]]
+| name = [[SFM:Script-Message/ClearHelpMessages|ClearHelpMessages]]
+| kind = Function
+| flags = Native Global
+| documentation = Hides the help message without marking it as "complete"
+}}
+
+{{Script_Object_Member_Summary
+| title = ResetHelpMessage
+| script = [[SFM:Script-Message|Message]]
+| name = [[SFM:Script-Message/ResetHelpMessage|ResetHelpMessage]]
+| kind = Function
+| flags = Native Global
+| parameters = string asEvent
+| documentation = Resets help message status for an input event so a new message can be displayed for that event.
+}}
+
+{{Script_Object_Member_Summary
+| title = AttachLoadDoors
+| script = [[SFM:Script-Message|Message]]
+| name = [[SFM:Script-Message/AttachLoadDoors|AttachLoadDoors]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference[] aDoorRefsToAdd
+| documentation = Assigns the given array of load doors to each option in the message respectively.  References passed must be of type door.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,130 @@
+{{Script_Object_Summary
+| title = Weather
+| name = [[SFM:Script-Weather|Weather]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Weather.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Weather Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Weather.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = EnableAmbientParticles
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/EnableAmbientParticles|EnableAmbientParticles]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abEnable = true
+| documentation = Turns on/off ambient particles in the sky
+}}
+
+{{Script_Object_Member_Summary
+| title = FindWeather
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/FindWeather|FindWeather]]
+| kind = Function
+| flags = Native Global
+| returns = Weather
+| parameters = Keyword aKeyword
+| documentation = Finds a weather from the current region/climate whose classification matches the given one.
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceActive
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/ForceActive|ForceActive]]
+| kind = Function
+| flags = Native
+| parameters = bool abOverride = false
+| documentation = Forces the active weather on the sky to be this weather.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetClassification
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/GetClassification|GetClassification]]
+| kind = Function
+| flags = Native
+| returns = Keyword[]
+| documentation = Gets this weather's classification keywords
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentWeather
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/GetCurrentWeather|GetCurrentWeather]]
+| kind = Function
+| flags = Native Global
+| returns = Weather
+| documentation = Gets the sky's current weather
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentWeatherTransition
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/GetCurrentWeatherTransition|GetCurrentWeatherTransition]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| documentation = Gets the transition percentage of the current weather
+}}
+
+{{Script_Object_Member_Summary
+| title = GetOutgoingWeather
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/GetOutgoingWeather|GetOutgoingWeather]]
+| kind = Function
+| flags = Native Global
+| returns = Weather
+| documentation = Gets the sky's outgoing weather
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSkyMode
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/GetSkyMode|GetSkyMode]]
+| kind = Function
+| flags = Native Global
+| returns = int
+| documentation = Gets the sky's current mode
+0 - No sky (SM_NONE)
+1 - Interior (SM_INTERIOR)
+2 - Skydome only (SM_SKYDOME_ONLY)
+3 - Full sky (SM_FULL)
+}}
+
+{{Script_Object_Member_Summary
+| title = ReleaseOverride
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/ReleaseOverride|ReleaseOverride]]
+| kind = Function
+| flags = Native Global
+| documentation = Tells the sky to release its overriding weather.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActive
+| script = [[SFM:Script-Weather|Weather]]
+| name = [[SFM:Script-Weather/SetActive|SetActive]]
+| kind = Function
+| flags = Native
+| parameters = bool abOverride = false, bool abAccelerate = false
+| documentation = Sets the active weather on the sky to be this weather.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

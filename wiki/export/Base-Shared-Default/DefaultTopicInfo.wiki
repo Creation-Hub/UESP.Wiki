@@ -1,0 +1,61 @@
+{{Script_Object_Summary
+| title = DefaultTopicInfo
+| name = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
+| extends = [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Hidden
+}}
+
+
+== Definition ==
+The <code>DefaultTopicInfo.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicInfo Extends TopicInfo Const Hidden
+</source>
+
+
+== Documentation ==
+The <code>DefaultTopicInfo.psc</code> source file documentation comments for this script.
+
+<source>
+Master script for the DefaultTopicInfo scripts.
+
+TODO `TTP-27142: Default Script: reimplement DefaultTopicInfo`
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
+| name = [[SFM:Script-DefaultTopicInfo/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
+| name = [[SFM:Script-DefaultTopicInfo/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
+| name = [[SFM:Script-DefaultTopicInfo/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = TryToSetStage
+| script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
+| name = [[SFM:Script-DefaultTopicInfo/TryToSetStage|TryToSetStage]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

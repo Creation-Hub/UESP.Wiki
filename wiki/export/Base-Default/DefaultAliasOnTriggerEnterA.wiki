@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnTriggerEnterA
+| name = [[SFM:Script-DefaultAliasOnTriggerEnterA|DefaultAliasOnTriggerEnterA]]
+| extends = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]] → [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnTriggerEnterA.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnTriggerEnterA Extends DefaultAliasOnTriggerEnter Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnTriggerEnterA.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias entered.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference triggering THIS Alias.
+<LocationToCheck> is the current location of THIS Alias.
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultAliasOnTriggerEnterA.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

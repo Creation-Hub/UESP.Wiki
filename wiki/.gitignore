@@ -5,7 +5,6 @@
 *.bat
 *.flg
 *.zip
-/import.asm/
 /import/*
 !/import/Base-Native/
 !/import/Base-Shared-Default/
@@ -14,15 +13,17 @@
 !/import/SFSE/
 !/import/Test-Sample/
 
+# Input
+# Directory contains the assembly files
+#---------------------------------------------
+/import.asm/*
 
 # Output
 # Directory contains the exported files
 #---------------------------------------------
-*.wiki
-# /export/
-/export/Base-Native/
-/export/Base-Shared-Default/
-/export/Base-Default/
-/export/Base-Game/
-/export/SFSE/
-/export/Test-Sample/
+/export/*
+!/export/Script_Information.wiki
+!/export/Base-Native/
+!/export/Base-Shared-Default/
+!/export/Base-Default/
+!/export/Test-Sample/

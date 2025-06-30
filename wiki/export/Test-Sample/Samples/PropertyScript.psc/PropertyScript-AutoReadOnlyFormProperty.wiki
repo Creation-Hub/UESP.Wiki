@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = AutoReadOnlyFormProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoReadOnlyFormProperty|AutoReadOnlyFormProperty]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = Form
+| parameters = none
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+* none
+
+
+[[Category:Starfield_Mod-Papyrus]]

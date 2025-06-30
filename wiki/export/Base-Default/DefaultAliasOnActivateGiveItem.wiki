@@ -1,0 +1,59 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnActivateGiveItem
+| name = [[SFM:Script-DefaultAliasOnActivateGiveItem|DefaultAliasOnActivateGiveItem]]
+| extends = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]] → [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnActivateGiveItem.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnActivateGiveItem Extends DefaultAliasOnActivate Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnActivateGiveItem.psc</code> source file documentation comments for this script.
+
+<source>
+Adds item(s) to <RefToCheck> when THIS Alias's reference is activated.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference activating THIS Alias's reference.
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultAliasOnActivateGiveItem|DefaultAliasOnActivateGiveItem]]
+| name = [[SFM:Script-DefaultAliasOnActivateGiveItem/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnActivateGiveItem|DefaultAliasOnActivateGiveItem]]
+| name = [[SFM:Script-DefaultAliasOnActivateGiveItem/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultAliasOnActivateGiveItem|DefaultAliasOnActivateGiveItem]]
+| name = [[SFM:Script-DefaultAliasOnActivateGiveItem/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

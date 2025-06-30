@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = ShaderParticleGeometry
+| name = [[SFM:Script-ShaderParticleGeometry|ShaderParticleGeometry]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ShaderParticleGeometry.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ShaderParticleGeometry Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ShaderParticleGeometry.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Apply
+| script = [[SFM:Script-ShaderParticleGeometry|ShaderParticleGeometry]]
+| name = [[SFM:Script-ShaderParticleGeometry/Apply|Apply]]
+| kind = Function
+| flags = Native
+| parameters = float afFadeInTime = 0.0
+| documentation = Applies this effect, optionally fading it in (0 means pop-in)
+}}
+
+{{Script_Object_Member_Summary
+| title = Remove
+| script = [[SFM:Script-ShaderParticleGeometry|ShaderParticleGeometry]]
+| name = [[SFM:Script-ShaderParticleGeometry/Remove|Remove]]
+| kind = Function
+| flags = Native
+| parameters = float afFadeOutTime = 0.0
+| documentation = Removes this effect, optionally fading it out (0 means pop-out)
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

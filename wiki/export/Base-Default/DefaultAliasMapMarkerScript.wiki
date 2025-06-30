@@ -1,0 +1,146 @@
+{{Script_Object_Summary
+| title = DefaultAliasMapMarkerScript
+| name = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Const
+}}
+
+
+== Definition ==
+The <code>DefaultAliasMapMarkerScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasMapMarkerScript Extends ReferenceAlias Default Const
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasMapMarkerScript.psc</code> source file documentation comments for this script.
+
+<source>
+default script to set map marker data on a map marker in an alias
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AllowGravJump
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/AllowGravJump|AllowGravJump]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = allow grav jump to the map marker? (only valid for space map markers)
+}}
+
+{{Script_Object_Member_Summary
+| title = VisibleOnStarMap
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/VisibleOnStarMap|VisibleOnStarMap]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Visible on Star Map?
+}}
+
+{{Script_Object_Member_Summary
+| title = Discovered
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/Discovered|Discovered]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = set the map marker "discovered"?
+}}
+
+{{Script_Object_Member_Summary
+| title = UndiscoveredVisibility
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/UndiscoveredVisibility|UndiscoveredVisibility]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = undiscovered visibility: -1 = don't change
+  0 = Always (default)
+  1 = System
+  2 = Planet
+}}
+
+{{Script_Object_Member_Summary
+| title = MapMarkerType
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/MapMarkerType|MapMarkerType]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = map marker type. See SetMapMarkerType in CS wiki for enum values
+    -1 = don't change
+}}
+
+{{Script_Object_Member_Summary
+| title = MapMarkerCategory
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/MapMarkerCategory|MapMarkerCategory]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = map marker category. See SetMapMarkerCategory in CS wiki for enum values
+    -1 = don't change
+}}
+
+{{Script_Object_Member_Summary
+| title = UnexploredName
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/UnexploredName|UnexploredName]]
+| kind = Property
+| flags = Auto Const
+| returns = Message
+| documentation = OPTIONAL - unexplored name to set on map marker if supplied
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableOnInit
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/EnableOnInit|EnableOnInit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Enables the map marker on init (usually irrelevant but required for default space cell map markers which are all initially disabled)
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = UpdateMapMarkerFlags
+| script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+| name = [[SFM:Script-DefaultAliasMapMarkerScript/UpdateMapMarkerFlags|UpdateMapMarkerFlags]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

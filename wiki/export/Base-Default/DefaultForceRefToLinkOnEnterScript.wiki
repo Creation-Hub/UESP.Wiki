@@ -1,0 +1,48 @@
+{{Script_Object_Summary
+| title = DefaultForceRefToLinkOnEnterScript
+| name = [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultForceRefToLinkOnEnterScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultForceRefToLinkOnEnterScript Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultForceRefToLinkOnEnterScript.psc</code> source file documentation comments for this script.
+
+<source>
+Used Primarily for Quest Target breadcrumbing. Force the QT RefAlias to this trigger's LinkedRef when the Player enters this Trigger.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = RefAliasToFill
+| script = [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+| name = [[SFM:Script-DefaultForceRefToLinkOnEnterScript/RefAliasToFill|RefAliasToFill]]
+| kind = Property
+| flags = Auto Mandatory Const
+| returns = ReferenceAlias
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+| name = [[SFM:Script-DefaultForceRefToLinkOnEnterScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

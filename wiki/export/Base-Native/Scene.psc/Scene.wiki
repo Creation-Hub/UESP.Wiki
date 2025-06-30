@@ -1,0 +1,138 @@
+{{Script_Object_Summary
+| title = Scene
+| name = [[SFM:Script-Scene|Scene]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Scene.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Scene Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Scene.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ForceStart
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/ForceStart|ForceStart]]
+| kind = Function
+| flags = Native
+| documentation = Forces a scene to start and kills the current scenes running on any ref in that scene
+}}
+
+{{Script_Object_Member_Summary
+| title = Start
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/Start|Start]]
+| kind = Function
+| flags = Native
+| documentation = Starts this scene
+}}
+
+{{Script_Object_Member_Summary
+| title = Stop
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/Stop|Stop]]
+| kind = Function
+| flags = Native
+| documentation = Stops the scene
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlaying
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/IsPlaying|IsPlaying]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this scene currently playing?
+}}
+
+{{Script_Object_Member_Summary
+| title = GetOwningQuest
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/GetOwningQuest|GetOwningQuest]]
+| kind = Function
+| flags = Native
+| returns = Quest
+| documentation = Returns the quest that owns this scene
+}}
+
+{{Script_Object_Member_Summary
+| title = IsActionComplete
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/IsActionComplete|IsActionComplete]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiActionID
+| documentation = Returns whether the specified action is complete or not
+}}
+
+{{Script_Object_Member_Summary
+| title = Pause
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/Pause|Pause]]
+| kind = Function
+| flags = Native
+| parameters = bool abPause
+| documentation = Pauses or unpauses the scene
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAction
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/OnAction|OnAction]]
+| kind = Event
+| parameters = int auiActionID, ReferenceAlias akAlias
+| documentation = Event received when a scene action is executed on an alias (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/OnBegin|OnBegin]]
+| kind = Event
+| documentation = Event received when this scene starts up (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/OnEnd|OnEnd]]
+| kind = Event
+| documentation = Event received when this scene ends (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPhaseBegin
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/OnPhaseBegin|OnPhaseBegin]]
+| kind = Event
+| parameters = int auiPhaseIndex
+| documentation = Event received when a phase starts (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPhaseEnd
+| script = [[SFM:Script-Scene|Scene]]
+| name = [[SFM:Script-Scene/OnPhaseEnd|OnPhaseEnd]]
+| kind = Event
+| parameters = int auiPhaseIndex
+| documentation = Event received when a phase ends (in parallel with the fragment)
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

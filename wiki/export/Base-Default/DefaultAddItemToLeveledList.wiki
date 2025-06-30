@@ -1,0 +1,85 @@
+{{Script_Object_Summary
+| title = DefaultAddItemToLeveledList
+| name = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAddItemToLeveledList.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAddItemToLeveledList Extends Quest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAddItemToLeveledList.psc</code> source file documentation comments for this script.
+
+<source>
+Adds an Item to a Leveled List.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = LeveledItemDatum
+| script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| name = [[SFM:Script-DefaultAddItemToLeveledList/LeveledItemDatum|LeveledItemDatum]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AddOnQuestStart
+| script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| name = [[SFM:Script-DefaultAddItemToLeveledList/AddOnQuestStart|AddOnQuestStart]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = Bool to see if items should be added to the leveled list when a quest starts or not
+}}
+
+{{Script_Object_Member_Summary
+| title = LeveledList
+| script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| name = [[SFM:Script-DefaultAddItemToLeveledList/LeveledList|LeveledList]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = LeveledItem[]
+| documentation = An array of Leveled Lists that the item will be added to
+}}
+
+{{Script_Object_Member_Summary
+| title = LeveledItemData
+| script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| name = [[SFM:Script-DefaultAddItemToLeveledList/LeveledItemData|LeveledItemData]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = LeveledItemDatum[]
+| documentation = An array of structs that contain the form to add, the level the items will drop at, and the amount of items that will drop
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| name = [[SFM:Script-DefaultAddItemToLeveledList/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddItemsToLeveledList
+| script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+| name = [[SFM:Script-DefaultAddItemToLeveledList/AddItemsToLeveledList|AddItemsToLeveledList]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

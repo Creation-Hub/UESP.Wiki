@@ -1,0 +1,110 @@
+{{Script_Object_Summary
+| title = FormList
+| name = [[SFM:Script-FormList|FormList]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>FormList.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName FormList Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>FormList.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddForm
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/AddForm|AddForm]]
+| kind = Function
+| flags = Native
+| parameters = Form apForm
+| documentation = Adds the given form to this form list
+}}
+
+{{Script_Object_Member_Summary
+| title = Find
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/Find|Find]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Form apForm
+| documentation = Finds the specified form in the form list and returns its index.
+If not found, returns a negative number
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSize
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/GetSize|GetSize]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Returns the number of forms in the list
+}}
+
+{{Script_Object_Member_Summary
+| title = GetArray
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/GetArray|GetArray]]
+| kind = Function
+| flags = Native
+| returns = Form[]
+| parameters = bool abRecurse = false
+| documentation = Returns an array of all forms in the list, with a parameter to specify whether to recurse one level
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAt
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/GetAt|GetAt]]
+| kind = Function
+| flags = Native
+| returns = Form
+| parameters = int aiIndex
+| documentation = Returns the form at index 'aiIndex' in the list
+}}
+
+{{Script_Object_Member_Summary
+| title = HasForm
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/HasForm|HasForm]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Form akForm
+| documentation = Queries the form list to see if it contains the passed in form
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveAddedForm
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/RemoveAddedForm|RemoveAddedForm]]
+| kind = Function
+| flags = Native
+| parameters = Form apForm
+| documentation = Removes the given added form from this form list
+}}
+
+{{Script_Object_Member_Summary
+| title = Revert
+| script = [[SFM:Script-FormList|FormList]]
+| name = [[SFM:Script-FormList/Revert|Revert]]
+| kind = Function
+| flags = Native
+| documentation = Removes all script added forms from this form list
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

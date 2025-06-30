@@ -1,0 +1,28 @@
+{{Script_Member_Summary
+| title = AddItems
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/AddItems|AddItems]]
+| kind = Function
+| returns = int
+| parameters = string itemName, int amount, bool abSilent = false
+| documentation = Functions with different return types and parameters
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+Functions with different return types and parameters
+</source>
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* string itemName
+* int amount
+* bool abSilent = false
+
+
+[[Category:Starfield_Mod-Papyrus]]

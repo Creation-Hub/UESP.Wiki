@@ -1,0 +1,68 @@
+{{Script_Object_Summary
+| title = DefaultCrowdEventMember
+| name = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| extends = [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCrowdEventMember.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCrowdEventMember Extends Actor Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCrowdEventMember.psc</code> source file documentation comments for this script.
+
+<source>
+Data for how this actor should respond to events sent by a DefaultCrowdEventManager
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = EventDatum
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/EventDatum|EventDatum]]
+| kind = Struct
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Data
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/Data|Data]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/Quest_Properties|Quest_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/OnInit|OnInit]]
+| kind = Event
+| documentation = /
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

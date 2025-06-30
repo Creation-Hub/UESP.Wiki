@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnItemAddedScriptB
+| name = [[SFM:Script-DefaultAliasOnItemAddedScriptB|DefaultAliasOnItemAddedScriptB]]
+| extends = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]] → [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnItemAddedScriptB.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnItemAddedScriptB Extends DefaultAliasOnItemAddedScript Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnItemAddedScriptB.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when items are added to this Alias.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the PLAYER.
+<LocationToCheck> is the current location of THIS alias.
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultAliasOnItemAddedScriptB.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

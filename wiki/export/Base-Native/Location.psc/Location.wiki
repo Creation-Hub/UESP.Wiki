@@ -1,0 +1,409 @@
+{{Script_Object_Summary
+| title = Location
+| name = [[SFM:Script-Location|Location]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Location.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Location Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Location.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddKeyword
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/AddKeyword|AddKeyword]]
+| kind = Function
+| flags = Native
+| parameters = Keyword akKeyword
+| documentation = Adds the specified keyword to the location
+}}
+
+{{Script_Object_Member_Summary
+| title = AddLinkedLocation
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/AddLinkedLocation|AddLinkedLocation]]
+| kind = Function
+| flags = Native
+| parameters = Location akLoc, Keyword akKeyword
+| documentation = Links the given location to this one under the given keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = CountActors
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/CountActors|CountActors]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Keyword apRequiredLinkedRefKeyword = none, Keyword apExcludeLinkedRefKeyword = none
+| documentation = Get the count of all instantiated Actors (across all process levels) who belong to this location.
+Can optionally specify a keyword for a linkedref that they must have (apRequiredLinkedRefKeyword), and/or a linkedref keyword they must NOT have (apExcludeLinkedRefKeyword).
+(Presence or absence of the keywordless linkedref cannot be checked.)
+(NOTE: if you're also necessarily going to call GetActors, just do that and check its size, instead of calling this.)
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableSpaceTravelToAllExcept
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/DisableSpaceTravelToAllExcept|DisableSpaceTravelToAllExcept]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Quest akQuest, bool abAddLocation = true
+| documentation = Disables player space travel to all locations except the specified location. Can call on multiple locations.
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableSpaceTravel
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/EnableSpaceTravel|EnableSpaceTravel]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Quest akQuest, bool abEnable = true
+| documentation = Enables player space travel to the specified location.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActors
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetActors|GetActors]]
+| kind = Function
+| flags = Native
+| returns = Actor[]
+| parameters = Keyword apRequiredLinkedRefKeyword = none, Keyword apExcludeLinkedRefKeyword = none
+| documentation = Get an array of all instantiated Actors (across all process levels) who belong to this location.
+Can optionally specify a keyword for a linkedref that they must have (apRequiredLinkedRefKeyword), and/or a linkedref keyword they must NOT have (apExcludeLinkedRefKeyword).
+(Presence or absence of the keywordless linkedref cannot be checked.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllLinkedLocations
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetAllLinkedLocations|GetAllLinkedLocations]]
+| kind = Function
+| flags = Native
+| returns = Location[]
+| parameters = Keyword akKeyword
+| documentation = Returns an array of all locations linked to this one under the given keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentPlanet
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetCurrentPlanet|GetCurrentPlanet]]
+| kind = Function
+| flags = Native
+| returns = Planet
+| documentation = Returns this location's planet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetKeywordData
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetKeywordData|GetKeywordData]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = Keyword akKeyword
+| documentation = Returns the float value attached to the specified keyword attached to this location
+}}
+
+{{Script_Object_Member_Summary
+| title = GetMinLevel
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetMinLevel|GetMinLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets this location's minimum level
+}}
+
+{{Script_Object_Member_Summary
+| title = GetMaxLevel
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetMaxLevel|GetMaxLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets this location's maximum level
+}}
+
+{{Script_Object_Member_Summary
+| title = GetParentLocations
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetParentLocations|GetParentLocations]]
+| kind = Function
+| flags = Native
+| returns = Location[]
+| parameters = Keyword apKeyword = none
+| documentation = Gets this location's parent locations
+Can optionally specify a keyword that the parent location must have
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRefTypeAliveCount
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetRefTypeAliveCount|GetRefTypeAliveCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = LocationRefType akRefType
+| documentation = Returns the number of alive references matching the specified reference type
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRefTypeDeadCount
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetRefTypeDeadCount|GetRefTypeDeadCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = LocationRefType akRefType
+| documentation = Returns the number of dead references matching the specified reference type
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValue
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/GetValue|GetValue]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ActorValue akActorValue
+| documentation = Gets an actor value on location
+}}
+
+{{Script_Object_Member_Summary
+| title = HasCommonParent
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/HasCommonParent|HasCommonParent]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Location akOther, Keyword akFilter = none
+| documentation = Returns if these two locations have a common parent - filtered with the keyword, if provided
+}}
+
+{{Script_Object_Member_Summary
+| title = HasEverBeenExplored
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/HasEverBeenExplored|HasEverBeenExplored]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this location has ever been explored
+}}
+
+{{Script_Object_Member_Summary
+| title = HasRefType
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/HasRefType|HasRefType]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = LocationRefType akRefType
+| documentation = Returns if this location has the specified reference type
+}}
+
+{{Script_Object_Member_Summary
+| title = IsExplored
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/IsExplored|IsExplored]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether this location is flagged as "explored" or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsChild
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/IsChild|IsChild]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Location akOther
+| documentation = Returns whether the other location is a child of this one
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLinkedLocation
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/IsLinkedLocation|IsLinkedLocation]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Location akLocation, Keyword akKeyword
+| documentation = Is this location linked to the given one under the given keyword?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLoaded
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/IsLoaded|IsLoaded]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this location loaded in game?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSameLocation
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/IsSameLocation|IsSameLocation]]
+| kind = Function
+| returns = bool
+| parameters = Location akOtherLocation, Keyword akKeyword = none
+| documentation = Returns true if the calling location is the same as the supplied location - if an optional keyword is supplied, it also returns true if the locations share a parent with that keyword, or if either location is a child of the other and the other has that keyword.
+}}
+
+{{Script_Object_Member_Summary
+| title = ModifyKeywordData
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/ModifyKeywordData|ModifyKeywordData]]
+| kind = Function
+| parameters = Keyword akKeyword, float afData
+| documentation = adds afData to the current keyword value (threadsafe)
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveKeyword
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/RemoveKeyword|RemoveKeyword]]
+| kind = Function
+| flags = Native
+| parameters = Keyword akKeyword
+| documentation = Removed the specified keyword from the location
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveLinkedLocation
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/RemoveLinkedLocation|RemoveLinkedLocation]]
+| kind = Function
+| flags = Native
+| parameters = Location akLoc, Keyword akKeyword
+| documentation = Removes any link between this location and the given one under the given keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = Reset
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/Reset|Reset]]
+| kind = Function
+| flags = Native
+| documentation = Forces reset on all encounter zones and interior cells which use this location
+}}
+
+{{Script_Object_Member_Summary
+| title = SetKeywordData
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetKeywordData|SetKeywordData]]
+| kind = Function
+| flags = Native
+| parameters = Keyword akKeyword, float afData
+| documentation = Sets the specified keyword's data on the location
+}}
+
+{{Script_Object_Member_Summary
+| title = SetExplored
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetExplored|SetExplored]]
+| kind = Function
+| flags = Native
+| parameters = bool abExplored = true
+| documentation = Sets this location as explored or not
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFactionOwner
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetFactionOwner|SetFactionOwner]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = Set the given faction as the faction owner for this location
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMinLevel
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetMinLevel|SetMinLevel]]
+| kind = Function
+| flags = Native
+| parameters = int aiMinLevel
+| documentation = Sets this encounter zone's minimum level
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMaxLevel
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetMaxLevel|SetMaxLevel]]
+| kind = Function
+| flags = Native
+| parameters = int aiMaxLevel
+| documentation = Sets this encounter zone's maximum level
+}}
+
+{{Script_Object_Member_Summary
+| title = SetNeverResets
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetNeverResets|SetNeverResets]]
+| kind = Function
+| flags = Native
+| parameters = bool abFlag = true
+| documentation = Forces the value of the never reset flag on this location
+}}
+
+{{Script_Object_Member_Summary
+| title = SetValue
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/SetValue|SetValue]]
+| kind = Function
+| flags = Native
+| parameters = ActorValue akActorValue, float afValue
+| documentation = Sets an actor value on location
+}}
+
+{{Script_Object_Member_Summary
+| title = ModValue
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/ModValue|ModValue]]
+| kind = Function
+| parameters = ActorValue akActorValue, float afAmount
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLocationExplored
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/OnLocationExplored|OnLocationExplored]]
+| kind = Event
+| documentation = Event sent to location when its explored
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLocationLoaded
+| script = [[SFM:Script-Location|Location]]
+| name = [[SFM:Script-Location/OnLocationLoaded|OnLocationLoaded]]
+| kind = Event
+| documentation = Event sent when a location is loaded
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

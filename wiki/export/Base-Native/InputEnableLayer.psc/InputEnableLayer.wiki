@@ -1,0 +1,502 @@
+{{Script_Object_Summary
+| title = InputEnableLayer
+| name = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>InputEnableLayer.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName InputEnableLayer Extends ScriptObject Native Hidden
+</source>
+
+
+== Documentation ==
+The <code>InputEnableLayer.psc</code> source file documentation comments for this script.
+
+<source>
+This is a single layer of input enable/disable. The end result of all layers in the game
+determine the actual state of the player's controls.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Create
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/Create|Create]]
+| kind = Function
+| flags = Native Global
+| returns = InputEnableLayer
+| documentation = Creates a new input enable layer and returns it. These are limited, so make sure
+to dispose of it when you're done (by setting variables to None)
+}}
+
+{{Script_Object_Member_Summary
+| title = Delete
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/Delete|Delete]]
+| kind = Function
+| flags = Native
+| documentation = Force-deletes this input layer. Any variable pointing at this layer will become invalid
+and it should also clear any disables this layer had (unless code, for some reason, is
+keeping it alive).
+}}
+
+{{Script_Object_Member_Summary
+| title = DisablePlayerControls
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/DisablePlayerControls|DisablePlayerControls]]
+| kind = Function
+| flags = Native
+| parameters = bool abMovement = true, bool abFighting = true, bool abCamSwitch = false, bool abLooking = false, bool abSneaking = false, bool abMenu = true, bool abActivate = true, bool abJournalTabs = false, bool abVATS = true, bool abFavorites = true, bool abRunning = false
+| documentation = Disables the user's controls
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableActivate
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableActivate|EnableActivate]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to activate objects
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableVATS
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableVATS|EnableVATS]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's VATS
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableCamSwitch
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableCamSwitch|EnableCamSwitch]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to switch the camera between 1st and 3rd person
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableFarTravel
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableFarTravel|EnableFarTravel]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to far travel in a spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableFastTravel
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableFastTravel|EnableFastTravel]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to fast travel
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableFavorites
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableFavorites|EnableFavorites]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to open the Favorites menu
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableGravJump
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableGravJump|EnableGravJump]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to grav jump in a spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableTakeoff
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableTakeoff|EnableTakeoff]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to take off in a spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableFighting
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableFighting|EnableFighting]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to fight
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableJournal
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableJournal|EnableJournal]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to use the journal menu
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableJumping
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableJumping|EnableJumping]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to jump (Note: Movement disable/enable also touches this)
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableLocationDiscovery
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableLocationDiscovery|EnableLocationDiscovery]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to discover new locations
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableLooking
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableLooking|EnableLooking]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to look around
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableMenu
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableMenu|EnableMenu]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to use the main menu
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableMovement
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableMovement|EnableMovement]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to move
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableRunning
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableRunning|EnableRunning]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to run
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableSprinting
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableSprinting|EnableSprinting]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to sprint
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableZKey
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableZKey|EnableZKey]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to z-key
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableHandscanner
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableHandscanner|EnableHandscanner]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to use the handscanner
+}}
+
+{{Script_Object_Member_Summary
+| title = EnablePlayerControls
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnablePlayerControls|EnablePlayerControls]]
+| kind = Function
+| flags = Native
+| parameters = bool abMovement = true, bool abFighting = true, bool abCamSwitch = true, bool abLooking = true, bool abSneaking = true, bool abMenu = true, bool abActivate = true, bool abJournalTabs = true, bool abVATS = true, bool abFavorites = true, bool abRunning = true
+| documentation = Enables the user's controls
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableInventoryMenuAccess
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableInventoryMenuAccess|EnableInventoryMenuAccess]]
+| kind = Function
+| flags = Native
+| parameters = bool aEnable = true
+| documentation = Enable/Disable access to the inventory menu from the data menu
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableSneaking
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/EnableSneaking|EnableSneaking]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables the player's ability to sneak
+}}
+
+{{Script_Object_Member_Summary
+| title = IsActivateEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsActivateEnabled|IsActivateEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether activation is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsVATSEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsVATSEnabled|IsVATSEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether VATS is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsCamSwitchEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsCamSwitchEnabled|IsCamSwitchEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether camera switch is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFarTravelEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsFarTravelEnabled|IsFarTravelEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether far travel is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFastTravelEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsFastTravelEnabled|IsFastTravelEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether fast travel is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFavoritesEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsFavoritesEnabled|IsFavoritesEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether the Favorites menu is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsGravJumpEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsGravJumpEnabled|IsGravJumpEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether grav jump is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsTakeoffEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsTakeoffEnabled|IsTakeoffEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether ship takeoff is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFightingEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsFightingEnabled|IsFightingEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether fighting is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsJournalEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsJournalEnabled|IsJournalEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether the journal menu is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsJumpingEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsJumpingEnabled|IsJumpingEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether jumping is enabled on this layer (Note: Movement also controls this)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLocationDiscoveryEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsLocationDiscoveryEnabled|IsLocationDiscoveryEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether location discovery is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLookingEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsLookingEnabled|IsLookingEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether looking is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsMenuEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsMenuEnabled|IsMenuEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether the menu is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsMovementEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsMovementEnabled|IsMovementEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether movement is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsRunningEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsRunningEnabled|IsRunningEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether running is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSprintingEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsSprintingEnabled|IsSprintingEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether sprinting is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsZKeyEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsZKeyEnabled|IsZKeyEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether z-key is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsHandscannerEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsHandscannerEnabled|IsHandscannerEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether the handscanner is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSneakingEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsSneakingEnabled|IsSneakingEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether sneaking is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInventoryMenuAccessEnabled
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/IsInventoryMenuAccessEnabled|IsInventoryMenuAccessEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether access to the inventory menu is enabled on this layer
+}}
+
+{{Script_Object_Member_Summary
+| title = Reset
+| script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+| name = [[SFM:Script-InputEnableLayer/Reset|Reset]]
+| kind = Function
+| flags = Native
+| documentation = Re-enables all controls currently disabled on this layer
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

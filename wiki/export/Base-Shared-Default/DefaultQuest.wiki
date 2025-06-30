@@ -1,0 +1,51 @@
+{{Script_Object_Summary
+| title = DefaultQuest
+| name = [[SFM:Script-DefaultQuest|DefaultQuest]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Hidden
+}}
+
+
+== Definition ==
+The <code>DefaultQuest.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultQuest Extends Quest Hidden
+</source>
+
+
+== Documentation ==
+The <code>DefaultQuest.psc</code> source file documentation comments for this script.
+
+<source>
+Script that other default quest scripts should extend
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultQuest|DefaultQuest]]
+| name = [[SFM:Script-DefaultQuest/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultQuest|DefaultQuest]]
+| name = [[SFM:Script-DefaultQuest/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultQuest|DefaultQuest]]
+| name = [[SFM:Script-DefaultQuest/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

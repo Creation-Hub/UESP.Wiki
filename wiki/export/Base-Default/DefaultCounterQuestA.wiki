@@ -1,0 +1,29 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuestA
+| name = [[SFM:Script-DefaultCounterQuestA|DefaultCounterQuestA]]
+| extends = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]] → [[SFM:Script-DefaultQuest|DefaultQuest]] → [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCounterQuestA.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuestA Extends DefaultCounterQuest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterQuestA.psc</code> source file documentation comments for this script.
+
+<source>
+A simple counter. Placed on an Quest, then increment with another alias script (such as DefaultCounterAliasIncOnceOnActivateA). When the target value is reached, the counter sets a Quest Stage.
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultCounterQuestA.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,67 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnDistanceLessThan
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnDistanceLessThan.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnDistanceLessThan Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnDistanceLessThan.psc</code> source file documentation comments for this script.
+
+<source>
+Sets a stage when the distance between this an a target alias is less than a target distance.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Data
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Required_Data|Required_Data]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Data
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Optional_Data|Optional_Data]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceLessThan
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/OnDistanceLessThan|OnDistanceLessThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = DefaultClearInventoryOnUnload
+| name = [[SFM:Script-DefaultClearInventoryOnUnload|DefaultClearInventoryOnUnload]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultClearInventoryOnUnload.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultClearInventoryOnUnload Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultClearInventoryOnUnload.psc</code> source file documentation comments for this script.
+
+<source>
+Removes all items from this reference's inventory when unloaded.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultClearInventoryOnUnload|DefaultClearInventoryOnUnload]]
+| name = [[SFM:Script-DefaultClearInventoryOnUnload/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

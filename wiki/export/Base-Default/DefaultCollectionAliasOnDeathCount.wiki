@@ -1,0 +1,31 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnDeathCount
+| name = [[SFM:Script-DefaultCollectionAliasOnDeathCount|DefaultCollectionAliasOnDeathCount]]
+| extends = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]] → [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnDeathCount.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnDeathCount Extends DefaultCollectionAliasOnDeath Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnDeathCount.psc</code> source file documentation comments for this script.
+
+<source>
+OBSOLETE!!! use DefaultCollectionAliasOnDeath instead.
+
+TTP# 17609: Papyrus: need a way to migrate propery data between scripts of same type
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultCollectionAliasOnDeathCount.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

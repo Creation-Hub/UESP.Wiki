@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = DefaultRefOnLockStateChanged
+| name = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnLockStateChanged.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnLockStateChanged Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnLockStateChanged.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage if THIS object's lock state changes.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| name = [[SFM:Script-DefaultRefOnLockStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLockStateChanged
+| script = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| name = [[SFM:Script-DefaultRefOnLockStateChanged/OnLockStateChanged|OnLockStateChanged]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

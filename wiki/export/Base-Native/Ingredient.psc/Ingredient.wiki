@@ -1,0 +1,65 @@
+{{Script_Object_Summary
+| title = Ingredient
+| name = [[SFM:Script-Ingredient|Ingredient]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Ingredient.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Ingredient Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Ingredient.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = IsHostile
+| script = [[SFM:Script-Ingredient|Ingredient]]
+| name = [[SFM:Script-Ingredient/IsHostile|IsHostile]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this ingredient classified as hostile?
+}}
+
+{{Script_Object_Member_Summary
+| title = LearnEffect
+| script = [[SFM:Script-Ingredient|Ingredient]]
+| name = [[SFM:Script-Ingredient/LearnEffect|LearnEffect]]
+| kind = Function
+| flags = Native
+| parameters = int aiIndex
+| documentation = Flags the effect with the given 0 based index as known by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = LearnNextEffect
+| script = [[SFM:Script-Ingredient|Ingredient]]
+| name = [[SFM:Script-Ingredient/LearnNextEffect|LearnNextEffect]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Flags the next unknown effect as known by the player, returning index of effect learned
+}}
+
+{{Script_Object_Member_Summary
+| title = LearnAllEffects
+| script = [[SFM:Script-Ingredient|Ingredient]]
+| name = [[SFM:Script-Ingredient/LearnAllEffects|LearnAllEffects]]
+| kind = Function
+| flags = Native
+| documentation = Flags the all effects as known by the player
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

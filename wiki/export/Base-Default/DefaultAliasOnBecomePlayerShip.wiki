@@ -1,0 +1,56 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnBecomePlayerShip
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnBecomePlayerShip.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnBecomePlayerShip Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnBecomePlayerShip.psc</code> source file documentation comments for this script.
+
+<source>
+sets stage and removes factions from this alias's ship when it becomes the current player ship (i.e. player sits in the pilot seat)
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = OVERRIDE PARENT SCRIPT
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

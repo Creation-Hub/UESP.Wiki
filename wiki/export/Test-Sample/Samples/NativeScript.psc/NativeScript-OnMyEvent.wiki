@@ -1,0 +1,25 @@
+{{Script_Member_Summary
+| title = OnMyEvent
+| script = [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
+| name = [[SFM:Script-Samples:NativeScript/OnMyEvent|OnMyEvent]]
+| kind = Event
+| parameters = int aiTimerID
+| documentation = An Event declaration.
+}}
+
+
+== Documentation ==
+The <code>Samples\NativeScript.psc</code> source file documentation comments for this script.
+
+<source>
+An Event declaration.
+</source>
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* int aiTimerID
+
+
+[[Category:Starfield_Mod-Papyrus]]

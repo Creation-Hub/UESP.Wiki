@@ -1,0 +1,56 @@
+{{Script_Object_Summary
+| title = Spell
+| name = [[SFM:Script-Spell|Spell]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Spell.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Spell Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Spell.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Cast
+| script = [[SFM:Script-Spell|Spell]]
+| name = [[SFM:Script-Spell/Cast|Cast]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akSource, ObjectReference akTarget = none
+| documentation = Cast this spell from an ObjectReference, optionally toward another.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoteCast
+| script = [[SFM:Script-Spell|Spell]]
+| name = [[SFM:Script-Spell/RemoteCast|RemoteCast]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akSource, Actor akBlameActor, ObjectReference akTarget = none
+| documentation = Cast this spell from an ObjectReference, optionally toward another, and blame it on a particular actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsHostile
+| script = [[SFM:Script-Spell|Spell]]
+| name = [[SFM:Script-Spell/IsHostile|IsHostile]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this spell classified as hostile?
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,196 @@
+{{Script_Object_Summary
+| title = DefaultPassengerQuestScript
+| name = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultPassengerQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultPassengerQuestScript Extends Quest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultPassengerQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+Manages handling passengers getting on and off your ship at a destination, and setting quest stages dealing with passengers and delivery.
+
+IMPORTANT: If you want to have you actors continue to walk to the destination marker after they leave the ship,
+you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passengers property.
+
+Call these functions to make aliases into passengers (which also adds them to this script's Alias_Passengers RefCollectionAlias)
+*AddPassenger(Alias_To_Make_A_Passenger)
+*AddPassengers(RefCollectionAlias_To_Make_Passengers)
+
+You shouldn't need to do this, but if you find a reason you need to manually remove an actor from being a passenger:
+*RemovePassengerActor(Actor_To_Stop_Being_Passenger)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = AutofillProperties
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/AutofillProperties|AutofillProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Aliases
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/Aliases|Aliases]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Stages
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/Stages|Stages]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Default_Passenger_Behavior_REMEMBER_Add_DefaultPassengerAlias_to_Passengers_Alias
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/Default_Passenger_Behavior_REMEMBER_Add_DefaultPassengerAlias_to_Passengers_Alias|Default_Passenger_Behavior_REMEMBER_Add_DefaultPassengerAlias_to_Passengers_Alias]]
+| kind = Group
+| documentation = IMPORTANT: If you want to have you actors continue to walk to the destination marker after they leave the ship,
+you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passengers property.
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceLessThan
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/OnDistanceLessThan|OnDistanceLessThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ShipArriving
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ShipArriving|ShipArriving]]
+| kind = Function
+| parameters = ReferenceAlias akSender, bool abComplete
+}}
+
+{{Script_Object_Member_Summary
+| title = ShipDeparting
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ShipDeparting|ShipDeparting]]
+| kind = Function
+| parameters = ReferenceAlias akSender, bool abComplete
+}}
+
+{{Script_Object_Member_Summary
+| title = HavePassengers
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/HavePassengers|HavePassengers]]
+| kind = Function
+| returns = bool
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveAllPassengersToLinkedRef
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/MoveAllPassengersToLinkedRef|MoveAllPassengersToLinkedRef]]
+| kind = Function
+| parameters = Keyword linkedRefKeyword, float MoveIfDistanceGreaterThan = 0.0
+}}
+
+{{Script_Object_Member_Summary
+| title = _HandlePassengerArrival
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/_HandlePassengerArrival|_HandlePassengerArrival]]
+| kind = Function
+| parameters = ObjectReference arrivingPassenger
+}}
+
+{{Script_Object_Member_Summary
+| title = _UpdatePassengerDestinationLinks
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/_UpdatePassengerDestinationLinks|_UpdatePassengerDestinationLinks]]
+| kind = Function
+| parameters = ObjectReference DestinationMarker
+}}
+
+{{Script_Object_Member_Summary
+| title = AddPassenger
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/AddPassenger|AddPassenger]]
+| kind = Function
+| parameters = ReferenceAlias PassengerToAdd
+}}
+
+{{Script_Object_Member_Summary
+| title = AddPassengers
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/AddPassengers|AddPassengers]]
+| kind = Function
+| parameters = RefCollectionAlias PassengersToAdd
+}}
+
+{{Script_Object_Member_Summary
+| title = _AddPassengers
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/_AddPassengers|_AddPassengers]]
+| kind = Function
+| parameters = Actor[] passengersToAdd
+}}
+
+{{Script_Object_Member_Summary
+| title = RemovePassengerActor
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/RemovePassengerActor|RemovePassengerActor]]
+| kind = Function
+| parameters = Actor ActorToRemove
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAllPassengersGoToShip
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/SetAllPassengersGoToShip|SetAllPassengersGoToShip]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAllPassengersGoToDestination
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/SetAllPassengersGoToDestination|SetAllPassengersGoToDestination]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = _SetAllPassengersAV
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/_SetAllPassengersAV|_SetAllPassengersAV]]
+| kind = Function
+| parameters = GlobalVariable GlobalWithValue
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

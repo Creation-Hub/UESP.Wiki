@@ -1,0 +1,25 @@
+{{Script_Member_Summary
+| title = PlayerRef
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/PlayerRef|PlayerRef]]
+| kind = Property
+| flags = Auto Mandatory
+| returns = Actor
+| documentation = The player reference - this is a documentation block for the property
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+The player reference - this is a documentation block for the property
+</source>
+
+
+== Field Initializer ==
+This property member has no field initialized value.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

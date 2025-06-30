@@ -1,0 +1,52 @@
+{{Script_Object_Summary
+| title = DefaultContainerAddRefsOnLoad
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultContainerAddRefsOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultContainerAddRefsOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultContainerAddRefsOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+On cell load, find all of the refs linked to or from this container with LinkAddItem, and add those items to the container.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = AutofillProperties
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/AutofillProperties|AutofillProperties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

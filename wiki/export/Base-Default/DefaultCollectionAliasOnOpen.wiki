@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnOpen
+| name = [[SFM:Script-DefaultCollectionAliasOnOpen|DefaultCollectionAliasOnOpen]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnOpen.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnOpen Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnOpen.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members are opened.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference opening a ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnOpen
+| script = [[SFM:Script-DefaultCollectionAliasOnOpen|DefaultCollectionAliasOnOpen]]
+| name = [[SFM:Script-DefaultCollectionAliasOnOpen/OnOpen|OnOpen]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

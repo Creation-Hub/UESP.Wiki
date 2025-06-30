@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = MiscObject
+| name = [[SFM:Script-MiscObject|MiscObject]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>MiscObject.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName MiscObject Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>MiscObject.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetObjectResourceCount
+| script = [[SFM:Script-MiscObject|MiscObject]]
+| name = [[SFM:Script-MiscObject/GetObjectResourceCount|GetObjectResourceCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Resource akResource
+| documentation = Returns the number of the given resource this form has.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

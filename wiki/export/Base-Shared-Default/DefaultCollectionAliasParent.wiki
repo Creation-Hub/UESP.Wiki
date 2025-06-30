@@ -1,0 +1,277 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasParent
+| name = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasParent.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasParent Extends RefCollectionAlias
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasParent.psc</code> source file documentation comments for this script.
+
+<source>
+Master script for the DefaultCollection scripts.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference activating/triggering/verbing each ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Quest_Properties|Quest_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = RefCollection_Handling_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/RefCollection_Handling_Properties|RefCollection_Handling_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = RefToCheck_Optional_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/RefToCheck_Optional_Properties|RefToCheck_Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationToCheck_Optional_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/LocationToCheck_Optional_Properties|LocationToCheck_Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Actor_Only_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Actor_Only_Properties|Actor_Only_Properties]]
+| kind = Group
+| documentation = These properties only matter if THIS object is an Actor
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SkipBusyState
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/SkipBusyState|SkipBusyState]]
+| kind = Property
+| flags = Auto Hidden
+| returns = bool
+| parameters = true
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasShutdown
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/OnAliasShutdown|OnAliasShutdown]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddTriggeredRefAndCheckTriggeredArray
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/AddTriggeredRefAndCheckTriggeredArray|AddTriggeredRefAndCheckTriggeredArray]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference TriggeredRef
+| documentation = Returns true if all refs are triggered
+}}
+
+{{Script_Object_Member_Summary
+| title = UpdateInstanceGlobals
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/UpdateInstanceGlobals|UpdateInstanceGlobals]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckAndSetStageAndCallDoSpecificThing
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/CheckAndSetStageAndCallDoSpecificThing|CheckAndSetStageAndCallDoSpecificThing]]
+| kind = Function
+| parameters = ObjectReference RefCollectionMemberRef, DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterOnHitFilters
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/RegisterOnHitFilters|RegisterOnHitFilters]]
+| kind = Function
+| documentation = Called by Children Scripts when they need to register for On Hit events
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerOnly
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetPlayerOnly|GetPlayerOnly]]
+| kind = Function
+| returns = bool
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "PlayerOnly" property.
+(We do this because different children will want different default values for that property and so need to define the property on themselves, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetReferencesToCheckAgainst
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetReferencesToCheckAgainst|GetReferencesToCheckAgainst]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "ReferencesToCheckAgainst" property.
+(We do this because different children may or may not want these properties, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetAliasesToCheckAgainst|GetAliasesToCheckAgainst]]
+| kind = Function
+| returns = ReferenceAlias[]
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "AliasesToCheckAgainst" property.
+(We do this because different children may or may not want these properties, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionsToCheckAgainst
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetFactionsToCheckAgainst|GetFactionsToCheckAgainst]]
+| kind = Function
+| returns = Faction[]
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "FactionsToCheckAgainst" property.
+(We do this because different children may or may not want these properties, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationsToCheckAgainst
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetLocationsToCheckAgainst|GetLocationsToCheckAgainst]]
+| kind = Function
+| returns = Location[]
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "LocationsToCheckAgainst" property.
+(We do this because different children may or may not want these properties, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetLocationAliasesToCheckAgainst|GetLocationAliasesToCheckAgainst]]
+| kind = Function
+| returns = LocationAlias[]
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "LocationAliasesToCheckAgainst" property.
+(We do this because different children may or may not want these properties, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationMatchIfChild
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetLocationMatchIfChild|GetLocationMatchIfChild]]
+| kind = Function
+| returns = bool
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+This function should usually return the value of the child script's "LocationMatchIfChild" property.
+(We do this because different children may or may not want these properties, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRefsToDoSpecificThingsWith
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/GetRefsToDoSpecificThingsWith|GetRefsToDoSpecificThingsWith]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+for each item in here, DoSpecificThing will be called, with each reference in the array as DoSpecificThing's RefToDoThingWith param.
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThingForEachValidRef
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/DoSpecificThingForEachValidRef|DoSpecificThingForEachValidRef]]
+| kind = Function
+| parameters = ObjectReference RefCollectionMemberRef, DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Busy
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Busy|Busy]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+| name = [[SFM:Script-DefaultCollectionAliasParent/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

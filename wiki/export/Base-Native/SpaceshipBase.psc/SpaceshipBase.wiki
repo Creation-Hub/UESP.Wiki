@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = SpaceshipBase
+| name = [[SFM:Script-SpaceshipBase|SpaceshipBase]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>SpaceshipBase.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName SpaceshipBase Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>SpaceshipBase.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = IsUnique
+| script = [[SFM:Script-SpaceshipBase|SpaceshipBase]]
+| name = [[SFM:Script-SpaceshipBase/IsUnique|IsUnique]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this base unique?
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

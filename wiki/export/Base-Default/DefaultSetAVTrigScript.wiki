@@ -1,0 +1,70 @@
+{{Script_Object_Summary
+| title = DefaultSetAVTrigScript
+| name = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultSetAVTrigScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultSetAVTrigScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultSetAVTrigScript.psc</code> source file documentation comments for this script.
+
+<source>
+Default trigger script that can set the Actor Values (AVs) of one (or a chain of) linked actors when a trigger is entered.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = SetActorValues
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/SetActorValues|SetActorValues]]
+| kind = Function
+| parameters = Actor akActor
+| documentation = Recursive helper function that sets the AVs for a chain of linked actors.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,31 @@
+{{Script_Object_Summary
+| title = defaultaliasonlocationchangeD
+| name = [[SFM:Script-defaultaliasonlocationchangeD|defaultaliasonlocationchangeD]]
+| extends = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>defaultaliasonlocationchangeD.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName defaultaliasonlocationchangeD Extends defaultaliasonlocationchange Default
+</source>
+
+
+== Documentation ==
+The <code>defaultaliasonlocationchangeD.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage if a THIS Alias's reference is activated.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<LocationToCheck> is either the New or Old location.
+</source>
+
+
+== Member ==
+No members were defined in the <code>defaultaliasonlocationchangeD.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

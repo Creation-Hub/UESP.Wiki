@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnCombatStateChangedA
+| name = [[SFM:Script-DefaultAliasOnCombatStateChangedA|DefaultAliasOnCombatStateChangedA]]
+| extends = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]] → [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnCombatStateChangedA.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnCombatStateChangedA Extends DefaultAliasOnCombatStateChanged Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnCombatStateChangedA.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias's combat state changes.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference THIS Alias is getting into combat with
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultAliasOnCombatStateChangedA.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

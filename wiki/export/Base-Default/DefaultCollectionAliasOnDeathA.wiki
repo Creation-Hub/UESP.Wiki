@@ -1,0 +1,33 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnDeathA
+| name = [[SFM:Script-DefaultCollectionAliasOnDeathA|DefaultCollectionAliasOnDeathA]]
+| extends = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]] → [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnDeathA.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnDeathA Extends DefaultCollectionAliasOnDeath Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnDeathA.psc</code> source file documentation comments for this script.
+
+<source>
+Additional version of DefaultCollectionAliasOnDeath so that you can attach it to the same RefCollectionAlias
+Sets stage when THIS RefCollection's members are killed.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference killing each ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultCollectionAliasOnDeathA.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

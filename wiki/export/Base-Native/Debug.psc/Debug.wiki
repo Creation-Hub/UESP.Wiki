@@ -1,0 +1,430 @@
+{{Script_Object_Summary
+| title = Debug
+| name = [[SFM:Script-Debug|Debug]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, DebugOnly, Hidden
+}}
+
+
+== Definition ==
+The <code>Debug.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Debug Native DebugOnly Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Debug.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AutomatedTestLogDebug
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/AutomatedTestLogDebug|AutomatedTestLogDebug]]
+| kind = Function
+| flags = Native Global
+| parameters = string asMessage
+| documentation = Logs a debug message to the automated testing logger
+}}
+
+{{Script_Object_Member_Summary
+| title = AutomatedTestLogError
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/AutomatedTestLogError|AutomatedTestLogError]]
+| kind = Function
+| flags = Native Global
+| parameters = string asMessage
+| documentation = Logs an error message to the automated testing logger
+}}
+
+{{Script_Object_Member_Summary
+| title = AutomatedTestLogProgress
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/AutomatedTestLogProgress|AutomatedTestLogProgress]]
+| kind = Function
+| flags = Native Global
+| parameters = string asMessage
+| documentation = Logs a test progress message to the automated testing logger
+}}
+
+{{Script_Object_Member_Summary
+| title = CenterOnCell
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/CenterOnCell|CenterOnCell]]
+| kind = Function
+| flags = Native Global
+| parameters = string asCellname
+| documentation = COC functionality
+}}
+
+{{Script_Object_Member_Summary
+| title = CenterOnCellAndWait
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/CenterOnCellAndWait|CenterOnCellAndWait]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| parameters = string asCellname
+| documentation = COC functionality
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerMoveToAndWait
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/PlayerMoveToAndWait|PlayerMoveToAndWait]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| parameters = string asDestRef
+| documentation = player.moveto functionality
+}}
+
+{{Script_Object_Member_Summary
+| title = CloseUserLog
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/CloseUserLog|CloseUserLog]]
+| kind = Function
+| flags = Native Global
+| parameters = string asLogName
+| documentation = Closes the specified user log
+}}
+
+{{Script_Object_Member_Summary
+| title = DumpAliasData
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/DumpAliasData|DumpAliasData]]
+| kind = Function
+| flags = Native Global
+| parameters = Quest akQuest
+| documentation = Dumps all alias fill information for the quest to the AliasDump log in Logs/Script/
+}}
+
+{{Script_Object_Member_Summary
+| title = DumpEventRegistrations
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/DumpEventRegistrations|DumpEventRegistrations]]
+| kind = Function
+| flags = Native Global
+| parameters = ScriptObject akScript
+| documentation = Dumps all event registrations for the specified script to the Papyrus log
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableAI
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/EnableAI|EnableAI]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abEnable = true
+| documentation = Enable/disable AI processing
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableCollisions
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/EnableCollisions|EnableCollisions]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abEnable = true
+| documentation = Enable/disable collision detection
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableDetection
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/EnableDetection|EnableDetection]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abEnable = true
+| documentation = Enable/disable AI detection
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableMenus
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/EnableMenus|EnableMenus]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abEnable = true
+| documentation = Enable/disable menu rendering
+}}
+
+{{Script_Object_Member_Summary
+| title = ExecuteConsole
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/ExecuteConsole|ExecuteConsole]]
+| kind = Function
+| flags = Native Global
+| parameters = string aCommand
+| documentation = Execute the specified console command
+}}
+
+{{Script_Object_Member_Summary
+| title = GetConfigName
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/GetConfigName|GetConfigName]]
+| kind = Function
+| flags = Native Global
+| returns = string
+| documentation = Returns the config name
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlatformName
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/GetPlatformName|GetPlatformName]]
+| kind = Function
+| flags = Native Global
+| returns = string
+| documentation = Returns the platform name
+}}
+
+{{Script_Object_Member_Summary
+| title = GetVersionNumber
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/GetVersionNumber|GetVersionNumber]]
+| kind = Function
+| flags = Native Global
+| returns = string
+| documentation = Returns the version number string
+}}
+
+{{Script_Object_Member_Summary
+| title = MessageBox
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/MessageBox|MessageBox]]
+| kind = Function
+| flags = Native Global
+| parameters = string asMessageBoxText
+| documentation = Displays an in-game message box
+}}
+
+{{Script_Object_Member_Summary
+| title = Notification
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/Notification|Notification]]
+| kind = Function
+| flags = Native Global
+| parameters = string asNotificationText
+| documentation = Displays an in-game notification
+}}
+
+{{Script_Object_Member_Summary
+| title = OpenUserLog
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/OpenUserLog|OpenUserLog]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = string asLogName
+| documentation = Opens a user log - fails if the log is already open
+}}
+
+{{Script_Object_Member_Summary
+| title = QuitGame
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/QuitGame|QuitGame]]
+| kind = Function
+| flags = Native Global
+| documentation = Quits the game
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGodMode
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/SetGodMode|SetGodMode]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abGodMode
+| documentation = TGM functionality
+}}
+
+{{Script_Object_Member_Summary
+| title = StartScriptProfiling
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/StartScriptProfiling|StartScriptProfiling]]
+| kind = Function
+| flags = Native Global
+| parameters = string asScriptName
+| documentation = Start profiing a specific script - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StartStackProfiling
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/StartStackProfiling|StartStackProfiling]]
+| kind = Function
+| flags = Native Global
+| documentation = Start profiling the calling stack - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StartStackRootProfiling
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/StartStackRootProfiling|StartStackRootProfiling]]
+| kind = Function
+| flags = Native Global
+| parameters = string asScriptName, ScriptObject akObj = none
+| documentation = Starts profiling all stacks that start in the specified script (and object, if any) - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StopScriptProfiling
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/StopScriptProfiling|StopScriptProfiling]]
+| kind = Function
+| flags = Native Global
+| parameters = string asScriptName
+| documentation = Stop profiling a specific script - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StopStackProfiling
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/StopStackProfiling|StopStackProfiling]]
+| kind = Function
+| flags = Native Global
+| documentation = Stop profiling the calling stack - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StopStackRootProfiling
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/StopStackRootProfiling|StopStackRootProfiling]]
+| kind = Function
+| flags = Native Global
+| parameters = string asScriptName, ScriptObject akObj = none
+| documentation = Stop profiling all stacks that start in the specified script (and object, if any) - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = Trace
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/Trace|Trace]]
+| kind = Function
+| flags = Native Global
+| parameters = string asTextToPrint, int aiSeverity = 0
+| documentation = Outputs the string to the log
+Severity is one of the following:
+0 - Info
+1 - Warning
+2 - Error
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceFunction
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceFunction|TraceFunction]]
+| kind = Function
+| flags = Native Global
+| parameters = string asTextToPrint = "Tracing function on request", int aiSeverity = 0
+| documentation = Outputs the current function to the log, including all variable values
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceStack
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceStack|TraceStack]]
+| kind = Function
+| flags = Native Global
+| parameters = string asTextToPrint = "Tracing stack on request", int aiSeverity = 0
+| documentation = Outputs the current stack to the log
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceUser
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceUser|TraceUser]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = string asUserLog, string asTextToPrint, int aiSeverity = 0
+| documentation = Outputs the string to a user log - fails if the log hasn't been opened
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceConditionalGlobal
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceConditionalGlobal|TraceConditionalGlobal]]
+| kind = Function
+| flags = Global
+| parameters = string TextToPrint, GlobalVariable ShowTrace
+| documentation = As TraceConditional() but checks to make sure the global exists to avoid error messages in the log
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceConditional
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceConditional|TraceConditional]]
+| kind = Function
+| flags = Global
+| parameters = string TextToPrint, bool ShowTrace, int Severity = 0
+| documentation = As Trace() but takes a second parameter bool ShowTrace (which if false suppresses the message). Used to turn off and on traces that might be otherwise annoying.
+Suppressable Trace
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceAndBox
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceAndBox|TraceAndBox]]
+| kind = Function
+| flags = Global
+| parameters = string asTextToPrint, int aiSeverity = 0
+| documentation = A convenience function to both throw a message box AND write to the trace log, since message boxes sometimes stack in weird ways and won't show up reliably.
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceSelf
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceSelf|TraceSelf]]
+| kind = Function
+| flags = Global
+| parameters = ScriptObject CallingScript, string FunctionName, string StringToTrace
+| documentation = Convenient way to trace the script name and optional function name as a prefix to the trace string
+Note, always pass in SELF as the CallingScript
+jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TraceLog
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/TraceLog|TraceLog]]
+| kind = Function
+| flags = Global
+| returns = bool
+| parameters = ScriptObject CallingObject, string asTextToPrint, string logName, string SubLogName = "", int aiSeverity = 0, bool bShowNormalTrace = false, bool bShowWarning = false, bool bPrefixTraceWithLogNames = false, bool bPrefixTracesWithCallingObject = true
+| documentation = jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowRefPosition
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/ShowRefPosition|ShowRefPosition]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference arRef
+| documentation = Used to add a tripod to a reference (non-release builds only)
+}}
+
+{{Script_Object_Member_Summary
+| title = DBSendPlayerPosition
+| script = [[SFM:Script-Debug|Debug]]
+| name = [[SFM:Script-Debug/DBSendPlayerPosition|DBSendPlayerPosition]]
+| kind = Function
+| flags = Native Global
+| documentation = Prints out the players position to the database (non-release PC and Xenon builds only)
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

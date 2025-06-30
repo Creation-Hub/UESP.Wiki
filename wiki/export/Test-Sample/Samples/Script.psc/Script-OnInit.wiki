@@ -1,0 +1,23 @@
+{{Script_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnInit|OnInit]]
+| kind = Event
+| documentation = Events
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+Events
+</source>
+
+
+== Parameters ==
+This event member has no parameters.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

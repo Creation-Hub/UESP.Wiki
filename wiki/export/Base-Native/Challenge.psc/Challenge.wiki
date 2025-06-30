@@ -1,0 +1,35 @@
+{{Script_Object_Summary
+| title = Challenge
+| name = [[SFM:Script-Challenge|Challenge]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Challenge.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Challenge Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Challenge.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = StartPlayerChallenge
+| script = [[SFM:Script-Challenge|Challenge]]
+| name = [[SFM:Script-Challenge/StartPlayerChallenge|StartPlayerChallenge]]
+| kind = Function
+| flags = Native
+| documentation = Starts the specified challenge on the player
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

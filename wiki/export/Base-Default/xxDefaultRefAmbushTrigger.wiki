@@ -1,0 +1,68 @@
+{{Script_Object_Summary
+| title = xxDefaultRefAmbushTrigger
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>xxDefaultRefAmbushTrigger.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName xxDefaultRefAmbushTrigger Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The <code>xxDefaultRefAmbushTrigger.psc</code> source file documentation comments for this script.
+
+<source>
+set the AmbushTriggered actor value on this ref when player enters
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/OnCellLoad|OnCellLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = TriggerAmbush
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerAmbush|TriggerAmbush]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

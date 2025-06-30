@@ -1,0 +1,49 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnShipDock
+| name = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnShipDock.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnShipDock Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnShipDock.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when this ship initiates docking with another ship.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is based on the value of WhichShipToCheck - see below
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| name = [[SFM:Script-DefaultAliasOnShipDock/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnShipDock
+| script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| name = [[SFM:Script-DefaultAliasOnShipDock/OnShipDock|OnShipDock]]
+| kind = Event
+| parameters = bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

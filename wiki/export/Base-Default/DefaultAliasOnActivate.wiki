@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnActivate
+| name = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnActivate Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage if a THIS Alias's reference is activated.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference activating THIS Alias's reference.
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+IMPORTANT: Children need to call this function as well when they override it
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

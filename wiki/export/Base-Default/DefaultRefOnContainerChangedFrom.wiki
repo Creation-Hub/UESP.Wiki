@@ -1,0 +1,40 @@
+{{Script_Object_Summary
+| title = DefaultRefOnContainerChangedFrom
+| name = [[SFM:Script-DefaultRefOnContainerChangedFrom|DefaultRefOnContainerChangedFrom]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnContainerChangedFrom.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnContainerChangedFrom Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnContainerChangedFrom.psc</code> source file documentation comments for this script.
+
+<source>
+Set stage when THIS object's container changes.
+<RefToCheck> is the container THIS object was removed from.
+<LocationToCheck> is the current location of the container THIS object was removed from.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-DefaultRefOnContainerChangedFrom|DefaultRefOnContainerChangedFrom]]
+| name = [[SFM:Script-DefaultRefOnContainerChangedFrom/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

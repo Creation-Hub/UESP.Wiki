@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = DefaultRefOnCellDetach
+| name = [[SFM:Script-DefaultRefOnCellDetach|DefaultRefOnCellDetach]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnCellDetach.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnCellDetach Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnCellDetach.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference's cell detaches.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnCellDetach
+| script = [[SFM:Script-DefaultRefOnCellDetach|DefaultRefOnCellDetach]]
+| name = [[SFM:Script-DefaultRefOnCellDetach/OnCellDetach|OnCellDetach]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

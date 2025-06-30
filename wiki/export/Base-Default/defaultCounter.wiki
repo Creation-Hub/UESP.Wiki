@@ -1,0 +1,77 @@
+{{Script_Object_Summary
+| title = defaultCounter
+| name = [[SFM:Script-defaultCounter|defaultCounter]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>defaultCounter.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName defaultCounter Extends objectReference Default
+</source>
+
+
+== Documentation ==
+The <code>defaultCounter.psc</code> source file documentation comments for this script.
+
+<source>
+A simple counter. Place on an object, then increment with another script (such as defaultCounterIncrementOnDeath). When the target value is reached (or, optionally, exceeded), the counter:
+ - Activates itself.
+ - Optionally, sets a quest stage.
+ - Optionally, performs a specified action on a specified linkedref.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = AllowCounting
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/AllowCounting|AllowCounting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCounting
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/StopCounting|StopCounting]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Increment|Increment]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = Decrement
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Decrement|Decrement]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,52 @@
+{{Script_Object_Summary
+| title = DefaultCounterIncrementOnDeath
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| extends = [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCounterIncrementOnDeath.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterIncrementOnDeath Extends Actor Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterIncrementOnDeath.psc</code> source file documentation comments for this script.
+
+<source>
+Once this actor dies it increments the counter on it's LinkedRef's DefaultCounter script.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = WaitingForDeath
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/WaitingForDeath|WaitingForDeath]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = AlreadyDied
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/AlreadyDied|AlreadyDied]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

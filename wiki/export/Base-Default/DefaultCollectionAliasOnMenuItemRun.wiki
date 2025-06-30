@@ -1,0 +1,53 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnMenuItemRun
+| name = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnMenuItemRun.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnMenuItemRun Extends RefCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnMenuItemRun.psc</code> source file documentation comments for this script.
+
+<source>
+Default script to set stages and/or send story events when terminal menu items run.)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTerminalMenuItemRun
+| script = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun/OnTerminalMenuItemRun|OnTerminalMenuItemRun]]
+| kind = Event
+| parameters = ObjectReference akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

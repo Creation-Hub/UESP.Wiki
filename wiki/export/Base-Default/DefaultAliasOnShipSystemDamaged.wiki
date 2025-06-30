@@ -1,0 +1,74 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnShipSystemDamaged
+| name = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnShipSystemDamaged.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnShipSystemDamaged Extends ReferenceAlias Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnShipSystemDamaged.psc</code> source file documentation comments for this script.
+
+<source>
+sets stages when the ship in this alias takes system damage
+
+Actor values for ship systems:
+ SpaceshipBuildableEnginePower
+ SpaceshipBuildableThrusterPower
+ SpaceshipBuildableShieldPower
+ SpaceshipGravJumpPower
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = SystemDamageStage
+| script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemDamaged/SystemDamageStage|SystemDamageStage]]
+| kind = Struct
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = SystemDamage_Properties
+| script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemDamaged/SystemDamage_Properties|SystemDamage_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemDamaged/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemDamaged/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnShipSystemDamaged
+| script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemDamaged/OnShipSystemDamaged|OnShipSystemDamaged]]
+| kind = Event
+| parameters = ActorValue akSystem, int aBlocksLost, bool aElectromagneticDamage, bool aFullyDamaged
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

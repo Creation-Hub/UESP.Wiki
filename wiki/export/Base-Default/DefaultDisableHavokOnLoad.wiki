@@ -1,0 +1,98 @@
+{{Script_Object_Summary
+| title = DefaultDisableHavokOnLoad
+| name = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultDisableHavokOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultDisableHavokOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultDisableHavokOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivate(), or OnGrab()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference triggerRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference var1, Form var2, Projectile var3, bool var4, bool var5, bool var6, bool var7, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGrab
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnGrab|OnGrab]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ReleaseToHavok
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/ReleaseToHavok|ReleaseToHavok]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

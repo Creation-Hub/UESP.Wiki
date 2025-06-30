@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = DefaultCounterAliasIncOnceOnDeathB
+| name = [[SFM:Script-DefaultCounterAliasIncOnceOnDeathB|DefaultCounterAliasIncOnceOnDeathB]]
+| extends = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCounterAliasIncOnceOnDeathB.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterAliasIncOnceOnDeathB Extends DefaultCounterQuestIncOnDeath Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterAliasIncOnceOnDeathB.psc</code> source file documentation comments for this script.
+
+<source>
+Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuestB script.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterAliasIncOnceOnDeathB|DefaultCounterAliasIncOnceOnDeathB]]
+| name = [[SFM:Script-DefaultCounterAliasIncOnceOnDeathB/Increment|Increment]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

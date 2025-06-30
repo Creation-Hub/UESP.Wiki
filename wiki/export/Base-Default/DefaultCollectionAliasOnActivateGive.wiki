@@ -1,0 +1,59 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnActivateGive
+| name = [[SFM:Script-DefaultCollectionAliasOnActivateGive|DefaultCollectionAliasOnActivateGive]]
+| extends = [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]] → [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnActivateGive.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnActivateGive Extends DefaultCollectionAliasOnActivate Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnActivateGive.psc</code> source file documentation comments for this script.
+
+<source>
+Adds item(s) to <RefToCheck> when THIS RefCollection's members are activated.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference activating each ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnActivateGive|DefaultCollectionAliasOnActivateGive]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivateGive/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnActivateGive|DefaultCollectionAliasOnActivateGive]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivateGive/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultCollectionAliasOnActivateGive|DefaultCollectionAliasOnActivateGive]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivateGive/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,69 @@
+{{Script_Object_Summary
+| title = DefaultRefOnTriggerEnterMultiActor
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| extends = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Conditional, Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnTriggerEnterMultiActor.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnTriggerEnterMultiActor Extends DefaultOnEnterMultiActor Conditional Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnTriggerEnterMultiActor.psc</code> source file documentation comments for this script.
+
+<source>
+sets a quest stage when the specified multiple actors enter a trigger
+
+NOT YET FULLY REIMPLEMENTED.
+It will test for stages but not other criteria.
+Sorry for the inconvenience.
+`TTP-27123: Default Script: fully implement DefaultRefOnTriggerEnterMultiActor`
+Please alert Jon Paul Duvall and we'll try to make this a priority.
+Thanks! :)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = TryToSetStage
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/TryToSetStage|TryToSetStage]]
+| kind = Function
+| parameters = bool PlayerCheckOverride = false, ObjectReference RefToCheck = none, Form FormToCheck = none, ObjectReference[] ReferenceArray = none, ReferenceAlias[] AliasArray = none, Faction[] FactionArray = none, Form[] FormArray = none, Location[] LocationArray = none, LocationAlias[] LocationAliasArray = none, bool LocationMatchIfChild = false
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerMe
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/TriggerMe|TriggerMe]]
+| kind = Function
+| documentation = what happens when all my targets are in the trigger?
+override on subclass to change behavior
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

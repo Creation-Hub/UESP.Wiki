@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Terminal
+| name = [[SFM:Script-Terminal|Terminal]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Terminal.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Terminal Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Terminal.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Terminal.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

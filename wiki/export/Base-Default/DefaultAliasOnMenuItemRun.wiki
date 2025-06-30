@@ -1,0 +1,73 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnMenuItemRun
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnMenuItemRun.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnMenuItemRun Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnMenuItemRun.psc</code> source file documentation comments for this script.
+
+<source>
+Default script to set stages and/or send story events when terminal menu items run.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = MenuItemDatum
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/MenuItemDatum|MenuItemDatum]]
+| kind = Struct
+| documentation = Struct also used by DefaultCollectionAliasOnMenuItemRun
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTerminalMenuItemRun
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/OnTerminalMenuItemRun|OnTerminalMenuItemRun]]
+| kind = Event
+| parameters = int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = HandleMenuItem
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/HandleMenuItem|HandleMenuItem]]
+| kind = Function
+| flags = Global
+| parameters = Alias callingAlias, MenuItemDatum[] MenuItemData, int auiMenuItemID, TerminalMenu akTerminalMenuBase, ObjectReference akTerminalRef, bool ShouldShowTraces
+| documentation = ALSO CALLED BY: DefaultCollectionAliasOnMenuItemRun
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

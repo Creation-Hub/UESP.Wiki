@@ -1,0 +1,336 @@
+{{Script_Object_Summary
+| title = DefaultGroupSpawnQuestScript
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultGroupSpawnQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultGroupSpawnQuestScript Extends Quest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultGroupSpawnQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+Used to spawn groups defined in SQ_GroupsScript attached to SQ_Groups quest
+
+You can register for the custom event "SpawnEvent" defined on this script to know when when something has spawned.
+You can cast the event's akArgs[0] as DefaultGroupSpawnQuestScript:SpawnEventArgs to access various data about what was spawned.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = SpawnGroup_DefinitionDatum
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroup_DefinitionDatum|SpawnGroup_DefinitionDatum]]
+| kind = Struct
+| documentation = Group definition and spawning data Structs
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroup_SpawnDatum
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroup_SpawnDatum|SpawnGroup_SpawnDatum]]
+| kind = Struct
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnEventArgs
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnEventArgs|SpawnEventArgs]]
+| kind = Struct
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupDoneEventArgs
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupDoneEventArgs|SpawnGroupDoneEventArgs]]
+| kind = Struct
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Autofill
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/Autofill|Autofill]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupA
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupA|SpawnGroupA]]
+| kind = Group
+| documentation = NPC Group Properties
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupB
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupB|SpawnGroupB]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupC
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupC|SpawnGroupC]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupD
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupD|SpawnGroupD]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupE
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupE|SpawnGroupE]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/Debug|Debug]]
+| kind = Group
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = GroupSetupCompleted
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/GroupSetupCompleted|GroupSetupCompleted]]
+| kind = Property
+| flags = Auto Hidden
+| returns = bool
+| parameters = false
+| documentation = Quest Variables
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = SendSpawnEvent
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SendSpawnEvent|SendSpawnEvent]]
+| kind = Function
+| parameters = SpawnEventArgs Args
+}}
+
+{{Script_Object_Member_Summary
+| title = SendSpawnGroupDoneEvent
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SendSpawnGroupDoneEvent|SendSpawnGroupDoneEvent]]
+| kind = Function
+| parameters = SpawnGroupDoneEventArgs Args
+}}
+
+{{Script_Object_Member_Summary
+| title = InitialGroupSpawn
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/InitialGroupSpawn|InitialGroupSpawn]]
+| kind = Function
+| parameters = string LocalScriptName
+| documentation = ************************************************************************************
+****************************         Functions         *****************************
+************************************************************************************
+Startup functions
+May be used as a Public function called by an External Script, e.g. OEScript.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetUpGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SetUpGroups|SetUpGroups]]
+| kind = Function
+| flags = Private
+}}
+
+{{Script_Object_Member_Summary
+| title = SetUpGroup
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SetUpGroup|SetUpGroup]]
+| kind = Function
+| flags = Private
+| parameters = string DefaultName, SpawnGroup_DefinitionDatum Definition, FormList[] AllowedGroups, FormList[] AllowedOccupations
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDefaultName
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SetDefaultName|SetDefaultName]]
+| kind = Function
+| flags = Private
+| parameters = SpawnGroup_DefinitionDatum GroupDefinitionToSetName, string DefaultName
+| documentation = Set default names
+}}
+
+{{Script_Object_Member_Summary
+| title = ConvertAllowedGroupsToArray
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/ConvertAllowedGroupsToArray|ConvertAllowedGroupsToArray]]
+| kind = Function
+| flags = Private
+| returns = SQ_GroupScript[]
+| parameters = Formlist[] ArrayOfFormlistsToBuildFrom
+}}
+
+{{Script_Object_Member_Summary
+| title = ConvertAllowedOccupationsToArray
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/ConvertAllowedOccupationsToArray|ConvertAllowedOccupationsToArray]]
+| kind = Function
+| flags = Private
+| returns = SQ_GroupOccupationScript[]
+| parameters = Formlist[] ArrayOfFormlistsToBuildFrom
+}}
+
+{{Script_Object_Member_Summary
+| title = ProcessGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/ProcessGroups|ProcessGroups]]
+| kind = Function
+| flags = Private
+| parameters = int iStageID
+}}
+
+{{Script_Object_Member_Summary
+| title = ProcessGroupData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/ProcessGroupData|ProcessGroupData]]
+| kind = Function
+| flags = Private
+| parameters = SpawnGroup_DefinitionDatum Definition, SpawnGroup_SpawnDatum[] SpawnData, int StageToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValidSpawnData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/GetValidSpawnData|GetValidSpawnData]]
+| kind = Function
+| flags = Private
+| returns = SpawnGroup_SpawnDatum[]
+| parameters = SpawnGroup_SpawnDatum[] SpawnData, int iStageID
+| documentation = Searches through a set of SpawnData to find a NPC group that is eligible for this stage and passes condition checks necessary to spawn.
+}}
+
+{{Script_Object_Member_Summary
+| title = Spawn
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/Spawn|Spawn]]
+| kind = Function
+| flags = Private
+| returns = bool
+| parameters = SpawnGroup_DefinitionDatum Definition, SpawnGroup_SpawnDatum[] SpawnData, SpawnGroup_SpawnDatum SpawnDatum
+| documentation = Spawn
+Spawns a specific group using the Allowed Groups and associates it with a specific Role. Spawns at the Marker specified in the GroupSpawnData.
+Assumes the group sent is valid and pre-approved as a selection for spawning.
+returns true if it actually spawns something (might not if AllowSpawningIntoNonEmptyAliases == false )
+}}
+
+{{Script_Object_Member_Summary
+| title = WaitForInitialGroupSetup
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/WaitForInitialGroupSetup|WaitForInitialGroupSetup]]
+| kind = Function
+| flags = Private
+| returns = bool
+}}
+
+{{Script_Object_Member_Summary
+| title = GetShipToSpawnForGroup
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/GetShipToSpawnForGroup|GetShipToSpawnForGroup]]
+| kind = Function
+| returns = SpaceshipBase
+| parameters = int GroupToGetShipFor, ObjectReference landingMarkerRef, GlobalVariable SpawnType = none
+| documentation = returns a SpaceshipBase based on the group specified.
+NOTE: this function waits until DefaultGroupSpawnQuestScript is done setting up. It will bail out if it's taking too long.
+int GroupToGetShipFor: 0 means group A, 1 means group B, etc.
+ObjectReference landingMarkerRef: landing marker this ship will be spawned at; used to determine max ship size to spawn
+GlobalVariable SpawnType: which ship to spawn. Global will be prefixed with: SQ_Group_SpawnType_Ship
+Defaults will be: Group A and SQ_Group_SpawnType_Ship_0_Any
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGroupOwnershipFaction
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/GetGroupOwnershipFaction|GetGroupOwnershipFaction]]
+| kind = Function
+| returns = Faction
+| parameters = int groupID = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSpawnGroupDefinitionDatum
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/GetSpawnGroupDefinitionDatum|GetSpawnGroupDefinitionDatum]]
+| kind = Function
+| returns = SpawnGroup_DefinitionDatum
+| parameters = int GroupID = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = DefineCustomLogs
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/DefineCustomLogs|DefineCustomLogs]]
+| kind = Function
+| flags = Private
+}}
+
+{{Script_Object_Member_Summary
+| title = Trace
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/Trace|Trace]]
+| kind = Function
+| flags = DebugOnly
+| parameters = ScriptObject CallingObject, string asTextToPrint, int aiSeverity = 0
+| documentation = Trace and warning functions
+}}
+
+{{Script_Object_Member_Summary
+| title = Warning
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/Warning|Warning]]
+| kind = Function
+| flags = BetaOnly
+| parameters = ScriptObject CallingObject, string asTextToPrint, bool DebugTrace = false, int aiSeverity = 2, bool bShowNormalTrace = false, bool bShowWarning = true, bool bPrefixTraceWithLogNames = true
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/OnQuestInit|OnQuestInit]]
+| kind = Event
+| documentation = ************************************************************************************
+****************************           Events          *****************************
+************************************************************************************
+Startup Functions
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int iStageID, int iItemID
+| documentation = EVENT: OnStageSet() ensures that each time a stage is set, any NPCs expecting to spawn are selected and considered for spawning.
+Update anything when a Stage is set
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

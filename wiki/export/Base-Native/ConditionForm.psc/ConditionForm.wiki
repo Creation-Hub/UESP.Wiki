@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = ConditionForm
+| name = [[SFM:Script-ConditionForm|ConditionForm]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ConditionForm.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ConditionForm Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ConditionForm.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = IsTrue
+| script = [[SFM:Script-ConditionForm|ConditionForm]]
+| name = [[SFM:Script-ConditionForm/IsTrue|IsTrue]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akRefObject = none, ObjectReference akTargetObject = none
+| documentation = IsTrue this condition function on on a refobject and target object returns true if the condition is true
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

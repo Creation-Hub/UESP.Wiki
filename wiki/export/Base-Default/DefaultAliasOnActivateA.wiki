@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnActivateA
+| name = [[SFM:Script-DefaultAliasOnActivateA|DefaultAliasOnActivateA]]
+| extends = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]] → [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnActivateA.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnActivateA Extends DefaultAliasOnActivate Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnActivateA.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage if a THIS Alias's reference is activated.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference activating THIS Alias's reference.
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+No members were defined in the <code>DefaultAliasOnActivateA.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

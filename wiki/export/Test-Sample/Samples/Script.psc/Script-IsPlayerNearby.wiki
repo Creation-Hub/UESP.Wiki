@@ -1,0 +1,27 @@
+{{Script_Member_Summary
+| title = IsPlayerNearby
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/IsPlayerNearby|IsPlayerNearby]]
+| kind = Function
+| flags = Global
+| returns = bool
+| parameters = ObjectReference this
+| documentation = Global function
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+Global function
+</source>
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* ObjectReference this
+
+
+[[Category:Starfield_Mod-Papyrus]]

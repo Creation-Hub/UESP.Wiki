@@ -1,0 +1,57 @@
+{{Script_Object_Summary
+| title = DefaultRefOnLocationChangeOutfit
+| name = [[SFM:Script-DefaultRefOnLocationChangeOutfit|DefaultRefOnLocationChangeOutfit]]
+| extends = [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnLocationChangeOutfit.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnLocationChangeOutfit Extends Actor Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnLocationChangeOutfit.psc</code> source file documentation comments for this script.
+
+<source>
+change outfits on location change
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = OutfitChange
+| script = [[SFM:Script-DefaultRefOnLocationChangeOutfit|DefaultRefOnLocationChangeOutfit]]
+| name = [[SFM:Script-DefaultRefOnLocationChangeOutfit/OutfitChange|OutfitChange]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = OutfitChangeList
+| script = [[SFM:Script-DefaultRefOnLocationChangeOutfit|DefaultRefOnLocationChangeOutfit]]
+| name = [[SFM:Script-DefaultRefOnLocationChangeOutfit/OutfitChangeList|OutfitChangeList]]
+| kind = Property
+| flags = Auto Const
+| returns = OutfitChange[]
+| documentation = list of location/outfit combinations
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLocationChange
+| script = [[SFM:Script-DefaultRefOnLocationChangeOutfit|DefaultRefOnLocationChangeOutfit]]
+| name = [[SFM:Script-DefaultRefOnLocationChangeOutfit/OnLocationChange|OnLocationChange]]
+| kind = Event
+| parameters = Location akOldLoc, Location akNewLoc
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

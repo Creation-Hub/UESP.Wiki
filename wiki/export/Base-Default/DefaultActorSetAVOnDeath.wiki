@@ -1,0 +1,77 @@
+{{Script_Object_Summary
+| title = DefaultActorSetAVOnDeath
+| name = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| extends = [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultActorSetAVOnDeath.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultActorSetAVOnDeath Extends Actor Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultActorSetAVOnDeath.psc</code> source file documentation comments for this script.
+
+<source>
+Default script used to set an actor value when the actor is killed.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ProcessDeathEvent
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/ProcessDeathEvent|ProcessDeathEvent]]
+| kind = Function
+| parameters = ObjectReference akKiller
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

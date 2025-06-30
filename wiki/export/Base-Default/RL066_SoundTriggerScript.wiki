@@ -1,0 +1,52 @@
+{{Script_Object_Summary
+| title = RL066_SoundTriggerScript
+| name = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>RL066_SoundTriggerScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName RL066_SoundTriggerScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>RL066_SoundTriggerScript.psc</code> source file documentation comments for this script.
+
+<source>
+Plays a random sound at a random interval
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

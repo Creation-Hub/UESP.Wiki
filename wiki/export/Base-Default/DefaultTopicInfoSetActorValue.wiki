@@ -1,0 +1,71 @@
+{{Script_Object_Summary
+| title = DefaultTopicInfoSetActorValue
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| extends = [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultTopicInfoSetActorValue.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicInfoSetActorValue Extends TopicInfo Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultTopicInfoSetActorValue.psc</code> source file documentation comments for this script.
+
+<source>
+Sets or mods an actor value on the topic info target and/or on the player
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Data
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/Data|Data]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = HandleActorValueChange
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/HandleActorValueChange|HandleActorValueChange]]
+| kind = Function
+| parameters = ObjectReference akSpeakerRef
+}}
+
+{{Script_Object_Member_Summary
+| title = ChangeActorValue
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/ChangeActorValue|ChangeActorValue]]
+| kind = Function
+| parameters = ObjectReference refToModify
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

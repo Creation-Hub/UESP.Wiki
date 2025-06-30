@@ -1,0 +1,126 @@
+{{Script_Object_Summary
+| title = DefaultSurveyTraitQuestScript
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultSurveyTraitQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultSurveyTraitQuestScript Extends Quest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultSurveyTraitQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+default script to set a stage when planet traits are surveyed
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = PlanetTraitData
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/PlanetTraitData|PlanetTraitData]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = PlanetTraits
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/PlanetTraits|PlanetTraits]]
+| kind = Property
+| flags = Auto Const
+| returns = PlanetTraitData[]
+| documentation = planet traits this quest is looking for in target system
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_Parent
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/SQ_Parent|SQ_Parent]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = SQ_ParentScript
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetPlanetLocation
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/TargetPlanetLocation|TargetPlanetLocation]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias
+| documentation = autofill - optional - planet where player is surveying traits
+    If this is not filled in, surveying a trait on any planet in the target system will qualify
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetSystemLocation
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/TargetSystemLocation|TargetSystemLocation]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias
+| documentation = autofill - system location where player is looking for planet traits
+}}
+
+{{Script_Object_Member_Summary
+| title = LocTypeMajorOrbital
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/LocTypeMajorOrbital|LocTypeMajorOrbital]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = autofill - used to check if something is a planet or moon
+}}
+
+{{Script_Object_Member_Summary
+| title = LocTypeStarSystem
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/LocTypeStarSystem|LocTypeStarSystem]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = PlanetTraitsCompleteStage
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/PlanetTraitsCompleteStage|PlanetTraitsCompleteStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = optional - stage to set when all planet traits have been surveyed
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = HandlePlanetTraitEvent
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/HandlePlanetTraitEvent|HandlePlanetTraitEvent]]
+| kind = Function
+| parameters = var[] akArgs, bool isDiscoveredEvent
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

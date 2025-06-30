@@ -1,0 +1,73 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuest
+| name = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| extends = [[SFM:Script-DefaultQuest|DefaultQuest]] → [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Hidden
+}}
+
+
+== Definition ==
+The <code>DefaultCounterQuest.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuest Extends DefaultQuest Default Hidden
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterQuest.psc</code> source file documentation comments for this script.
+
+<source>
+A simple counter. Place on an Quest, then increment with another script (such as DefaultCounterQuestIncOnDeath, or DefaultCounterQuestIncOnceOnActivate). When the target value is reached (or, optionally, exceeded), the counter sets a Quest Stage.
+
+NOT YET REIMPLEMENTED.
+Sorry for the inconvenience.
+`TTP-27118: Default Script: reimplement DefaultCounterQuest`
+Please alert Jon Paul Duvall and we'll try to make this a priority.
+Thanks! :)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| name = [[SFM:Script-DefaultCounterQuest/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = AllowCounting
+| script = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| name = [[SFM:Script-DefaultCounterQuest/AllowCounting|AllowCounting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCounting
+| script = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| name = [[SFM:Script-DefaultCounterQuest/StopCounting|StopCounting]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| name = [[SFM:Script-DefaultCounterQuest/Increment|Increment]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = Decrement
+| script = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| name = [[SFM:Script-DefaultCounterQuest/Decrement|Decrement]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

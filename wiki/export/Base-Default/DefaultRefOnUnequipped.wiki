@@ -1,0 +1,40 @@
+{{Script_Object_Summary
+| title = DefaultRefOnUnequipped
+| name = [[SFM:Script-DefaultRefOnUnequipped|DefaultRefOnUnequipped]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnUnequipped.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnUnequipped Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnUnequipped.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference's is unequipped.
+<RefToCheck> is the unequipping actor.
+<LocationToCheck> is the current location of the unequipping actor.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnUnequipped
+| script = [[SFM:Script-DefaultRefOnUnequipped|DefaultRefOnUnequipped]]
+| name = [[SFM:Script-DefaultRefOnUnequipped/OnUnequipped|OnUnequipped]]
+| kind = Event
+| parameters = Actor akActor
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

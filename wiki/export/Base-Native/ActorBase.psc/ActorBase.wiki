@@ -1,0 +1,193 @@
+{{Script_Object_Summary
+| title = ActorBase
+| name = [[SFM:Script-ActorBase|ActorBase]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ActorBase.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ActorBase Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ActorBase.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetClass
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetClass|GetClass]]
+| kind = Function
+| flags = Native
+| returns = Class
+| documentation = Returns this actor's class
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDeadCount
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetDeadCount|GetDeadCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets the number of actors of this type that have been killed
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGiftFilter
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetGiftFilter|GetGiftFilter]]
+| kind = Function
+| flags = Native
+| returns = FormList
+| documentation = Returns this actor's gift filter formlist
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRace
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetRace|GetRace]]
+| kind = Function
+| flags = Native
+| returns = Race
+| documentation = Returns this actor's race
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLevel
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetLevel|GetLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains this actor's level
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLevelExact
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetLevelExact|GetLevelExact]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains this actor's level, unmodified by matching the player's level
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSex
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetSex|GetSex]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Returns this actor's sex. Values for sex are:
+-1 - None
+0 - Male
+1 - Female
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPronoun
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetPronoun|GetPronoun]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Returns this actor's pronoun.
+0 - Unselected
+1 - He_Him
+2 - She_Her
+3 - They_Them
+}}
+
+{{Script_Object_Member_Summary
+| title = DeriveGeneticParentAppearance
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/DeriveGeneticParentAppearance|DeriveGeneticParentAppearance]]
+| kind = Function
+| flags = Native
+| parameters = ActorBase akChildSourceToDeriveFrom
+| documentation = Copy some genetic parent appearance related information from another npc to the calling npc
+}}
+
+{{Script_Object_Member_Summary
+| title = GetUniqueActor
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/GetUniqueActor|GetUniqueActor]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| documentation = Gets the actor for this UniqueNPC
+}}
+
+{{Script_Object_Member_Summary
+| title = IsEssential
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/IsEssential|IsEssential]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor essential?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsProtected
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/IsProtected|IsProtected]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor protected (can only be killed by player)?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsUnique
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/IsUnique|IsUnique]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor base unique?
+}}
+
+{{Script_Object_Member_Summary
+| title = SetEssential
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/SetEssential|SetEssential]]
+| kind = Function
+| flags = Native
+| parameters = bool abEssential = true
+| documentation = Sets this actor as essential or not - if set as essential, will UNSET protected
+}}
+
+{{Script_Object_Member_Summary
+| title = SetProtected
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/SetProtected|SetProtected]]
+| kind = Function
+| flags = Native
+| parameters = bool abProtected = true
+| documentation = Sets this actor as protected or not - if set as protected, will UNSET essential
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOutfit
+| script = [[SFM:Script-ActorBase|ActorBase]]
+| name = [[SFM:Script-ActorBase/SetOutfit|SetOutfit]]
+| kind = Function
+| flags = Native
+| parameters = Outfit akOutfit, bool abSleepOutfit = false
+| documentation = Sets the actors outfit
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

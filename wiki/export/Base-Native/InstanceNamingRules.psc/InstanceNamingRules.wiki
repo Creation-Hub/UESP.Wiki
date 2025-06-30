@@ -1,0 +1,35 @@
+{{Script_Object_Summary
+| title = InstanceNamingRules
+| name = [[SFM:Script-InstanceNamingRules|InstanceNamingRules]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>InstanceNamingRules.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName InstanceNamingRules Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>InstanceNamingRules.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = MergeWith
+| script = [[SFM:Script-InstanceNamingRules|InstanceNamingRules]]
+| name = [[SFM:Script-InstanceNamingRules/MergeWith|MergeWith]]
+| kind = Function
+| flags = Native
+| parameters = InstanceNamingRules aSource
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

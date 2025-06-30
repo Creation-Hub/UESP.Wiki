@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = VoiceType
+| name = [[SFM:Script-VoiceType|VoiceType]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>VoiceType.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName VoiceType Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>VoiceType.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetSex
+| script = [[SFM:Script-VoiceType|VoiceType]]
+| name = [[SFM:Script-VoiceType/GetSex|GetSex]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = returns the gender of the voice type. -1 = None, 0 = Male, 1 = Female
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

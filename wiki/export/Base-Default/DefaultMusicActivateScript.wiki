@@ -1,0 +1,56 @@
+{{Script_Object_Summary
+| title = DefaultMusicActivateScript
+| name = [[SFM:Script-DefaultMusicActivateScript|DefaultMusicActivateScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultMusicActivateScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultMusicActivateScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultMusicActivateScript.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required
+| script = [[SFM:Script-DefaultMusicActivateScript|DefaultMusicActivateScript]]
+| name = [[SFM:Script-DefaultMusicActivateScript/Required|Required]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = NoTouchy
+| script = [[SFM:Script-DefaultMusicActivateScript|DefaultMusicActivateScript]]
+| name = [[SFM:Script-DefaultMusicActivateScript/NoTouchy|NoTouchy]]
+| kind = Group
+| flags = CollapsedOnRef
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultMusicActivateScript|DefaultMusicActivateScript]]
+| name = [[SFM:Script-DefaultMusicActivateScript/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultMusicActivateScript|DefaultMusicActivateScript]]
+| name = [[SFM:Script-DefaultMusicActivateScript/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

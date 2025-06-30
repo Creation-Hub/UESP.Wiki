@@ -1,0 +1,66 @@
+{{Script_Object_Summary
+| title = DefaultStartQuestOnTriggerEnter
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| extends = [[SFM:Script-DefaultRefOnTriggerEnter|DefaultRefOnTriggerEnter]] → [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultStartQuestOnTriggerEnter.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultStartQuestOnTriggerEnter Extends DefaultRefOnTriggerEnter Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultStartQuestOnTriggerEnter.psc</code> source file documentation comments for this script.
+
+<source>
+Starts a quest when THIS reference's trigger is entered.
+<RefToCheck> is the reference triggering THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter/OnInit|OnInit]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

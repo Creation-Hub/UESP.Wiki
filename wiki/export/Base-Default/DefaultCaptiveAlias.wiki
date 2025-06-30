@@ -1,0 +1,152 @@
+{{Script_Object_Summary
+| title = DefaultCaptiveAlias
+| name = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCaptiveAlias.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCaptiveAlias Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCaptiveAlias.psc</code> source file documentation comments for this script.
+
+<source>
+Use this script to gain standard support for bound captive npcs being freed by player.
+
+WARNING: Dual use of DefaultCaptiveAlias AND DefaultCaptiveWoundedAlias on the same NPC is not currently supported.
+
+Let system design know if this is an important need.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = AutoFillProperties
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/AutoFillProperties|AutoFillProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = MainProperties
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/MainProperties|MainProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageProperties
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SetStageProperties|SetStageProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = CleanUpProperties
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/CleanUpProperties|CleanUpProperties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasShutdown
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/OnAliasShutdown|OnAliasShutdown]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddToFactions
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/AddToFactions|AddToFactions]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = SetState
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SetState|SetState]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = CleanupIfReady
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/CleanupIfReady|CleanupIfReady]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromCaptiveFactionIfNeeded
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/RemoveFromCaptiveFactionIfNeeded|RemoveFromCaptiveFactionIfNeeded]]
+| kind = Function
+| documentation = CaptiveFaction is a standard faction we put "innocent" NPCs found in hostile dungeons to keep hostiles from aggroing on them.
+}}
+
+{{Script_Object_Member_Summary
+| title = FreePrisoner
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/FreePrisoner|FreePrisoner]]
+| kind = Function
+| parameters = bool playerIsLiberator = true, bool OpenPrisonerInventory = false
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearFactions
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/ClearFactions|ClearFactions]]
+| kind = Function
+| documentation = call when quest shuts down
+}}
+
+{{Script_Object_Member_Summary
+| title = ResetAVs
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/ResetAVs|ResetAVs]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

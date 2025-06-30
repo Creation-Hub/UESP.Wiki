@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = Scroll
+| name = [[SFM:Script-Scroll|Scroll]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Scroll.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Scroll Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Scroll.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Cast
+| script = [[SFM:Script-Scroll|Scroll]]
+| name = [[SFM:Script-Scroll/Cast|Cast]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akSource, ObjectReference akTarget = none
+| documentation = Cast this scroll from an ObjectReference, optionally toward another.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

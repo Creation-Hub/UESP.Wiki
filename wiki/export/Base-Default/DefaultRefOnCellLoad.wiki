@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = DefaultRefOnCellLoad
+| name = [[SFM:Script-DefaultRefOnCellLoad|DefaultRefOnCellLoad]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnCellLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnCellLoad Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnCellLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference's cell loads.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-DefaultRefOnCellLoad|DefaultRefOnCellLoad]]
+| name = [[SFM:Script-DefaultRefOnCellLoad/OnCellLoad|OnCellLoad]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

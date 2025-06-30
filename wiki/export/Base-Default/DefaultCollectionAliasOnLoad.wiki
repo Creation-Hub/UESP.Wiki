@@ -1,0 +1,39 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnLoad
+| name = [[SFM:Script-DefaultCollectionAliasOnLoad|DefaultCollectionAliasOnLoad]]
+| extends = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnLoad Extends DefaultCollectionAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members load.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCollectionAliasOnLoad|DefaultCollectionAliasOnLoad]]
+| name = [[SFM:Script-DefaultCollectionAliasOnLoad/OnLoad|OnLoad]]
+| kind = Event
+| parameters = ObjectReference akSender
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

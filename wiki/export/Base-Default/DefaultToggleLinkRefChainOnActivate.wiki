@@ -1,0 +1,76 @@
+{{Script_Object_Summary
+| title = DefaultToggleLinkRefChainOnActivate
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultToggleLinkRefChainOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultToggleLinkRefChainOnActivate Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultToggleLinkRefChainOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+When this reference is activated, all LinkedRefs will toggle between OPEN or CLOSED.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = PreActivation
+| script = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate/PreActivation|PreActivation]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = PostActivation
+| script = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate/PostActivation|PostActivation]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ToggleLinkedRefChain
+| script = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate/ToggleLinkedRefChain|ToggleLinkedRefChain]]
+| kind = Function
+| parameters = ObjectReference akActionRef, Keyword LinkedRefKeyword = none
+}}
+
+{{Script_Object_Member_Summary
+| title = CloseOrOpen
+| script = [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+| name = [[SFM:Script-DefaultToggleLinkRefChainOnActivate/CloseOrOpen|CloseOrOpen]]
+| kind = Function
+| parameters = int count, ObjectReference akActionRef, Keyword LinkedRefKeyword = none
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

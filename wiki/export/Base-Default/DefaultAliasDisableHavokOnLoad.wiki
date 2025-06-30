@@ -1,0 +1,94 @@
+{{Script_Object_Summary
+| title = DefaultAliasDisableHavokOnLoad
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasDisableHavokOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasDisableHavokOnLoad Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasDisableHavokOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivate(), or OnGrab()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = BeenSimmed
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/BeenSimmed|BeenSimmed]]
+| kind = Property
+| flags = Auto Hidden
+| returns = bool
+| documentation = Prevent an object that has been havok'd in-game from going static
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference triggerRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference var1, Form var2, Projectile var3, bool var4, bool var5, bool var6, bool var7, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGrab
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/OnGrab|OnGrab]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ReleaseToHavok
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/ReleaseToHavok|ReleaseToHavok]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

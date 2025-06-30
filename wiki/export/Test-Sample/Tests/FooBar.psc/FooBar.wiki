@@ -1,0 +1,39 @@
+{{Script_Object_Summary
+| title = Tests:FooBar
+| name = [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native
+}}
+
+
+== Definition ==
+The <code>Tests\FooBar.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Tests:FooBar Native
+</source>
+
+
+== Documentation ==
+The <code>Tests\FooBar.psc</code> source file documentation comments for this script.
+
+<source>
+This is my docstring comment.
+hello world!
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = MyEvent
+| script = [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+| name = [[SFM:Script-Tests:FooBar/MyEvent|MyEvent]]
+| kind = Function
+| returns = bool
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

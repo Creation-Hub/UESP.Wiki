@@ -1,0 +1,25 @@
+{{Script_Member_Summary
+| title = Description
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Description|Description]]
+| kind = Property
+| flags = description" Auto
+| returns = string
+| parameters = "Default
+| documentation = Properties with various flags
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+Properties with various flags
+</source>
+
+
+== Field Initializer ==
+* "Default
+
+
+[[Category:Starfield_Mod-Papyrus]]

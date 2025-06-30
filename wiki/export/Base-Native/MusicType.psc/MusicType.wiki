@@ -1,0 +1,44 @@
+{{Script_Object_Summary
+| title = MusicType
+| name = [[SFM:Script-MusicType|MusicType]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>MusicType.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName MusicType Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>MusicType.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Add
+| script = [[SFM:Script-MusicType|MusicType]]
+| name = [[SFM:Script-MusicType/Add|Add]]
+| kind = Function
+| flags = Native
+| documentation = Add this music type to the music system stack
+}}
+
+{{Script_Object_Member_Summary
+| title = Remove
+| script = [[SFM:Script-MusicType|MusicType]]
+| name = [[SFM:Script-MusicType/Remove|Remove]]
+| kind = Function
+| flags = Native
+| documentation = Remove this music type from the music system stack
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnOpen
+| name = [[SFM:Script-DefaultAliasOnOpen|DefaultAliasOnOpen]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnOpen.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnOpen Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnOpen.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference is opened.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference opening THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnOpen
+| script = [[SFM:Script-DefaultAliasOnOpen|DefaultAliasOnOpen]]
+| name = [[SFM:Script-DefaultAliasOnOpen/OnOpen|OnOpen]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

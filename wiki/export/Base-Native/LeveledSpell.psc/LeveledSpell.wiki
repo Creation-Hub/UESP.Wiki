@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = LeveledSpell
+| name = [[SFM:Script-LeveledSpell|LeveledSpell]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>LeveledSpell.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName LeveledSpell Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>LeveledSpell.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddForm
+| script = [[SFM:Script-LeveledSpell|LeveledSpell]]
+| name = [[SFM:Script-LeveledSpell/AddForm|AddForm]]
+| kind = Function
+| flags = Native
+| parameters = Form apForm, int aiLevel
+| documentation = Adds the given count of the given form to the under the given level in this leveled list
+}}
+
+{{Script_Object_Member_Summary
+| title = Revert
+| script = [[SFM:Script-LeveledSpell|LeveledSpell]]
+| name = [[SFM:Script-LeveledSpell/Revert|Revert]]
+| kind = Function
+| flags = Native
+| documentation = Removes all script added forms from this leveled list
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

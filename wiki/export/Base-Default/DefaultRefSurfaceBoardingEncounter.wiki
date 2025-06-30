@@ -1,0 +1,70 @@
+{{Script_Object_Summary
+| title = DefaultRefSurfaceBoardingEncounter
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| extends = [[SFM:Script-SpaceshipReference|SpaceshipReference]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefSurfaceBoardingEncounter.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefSurfaceBoardingEncounter Extends SpaceshipReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefSurfaceBoardingEncounter.psc</code> source file documentation comments for this script.
+
+<source>
+Script for ships on the surface of a planet. When the ship lands, start a Boarding Encounter to manage the crew in the ship's interior.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = AliasProperties
+| script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/AliasProperties|AliasProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = AutofillProperties
+| script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/AutofillProperties|AutofillProperties]]
+| kind = Group
+| flags = CollapsedOnBase
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = MyBoardingEncounterQuest
+| script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/MyBoardingEncounterQuest|MyBoardingEncounterQuest]]
+| kind = Property
+| flags = Auto Hidden
+| returns = Quest
+| documentation = Hidden Properties
+TODO - TTP 29661 - Save off the Boarding Encounter Quest so other scripts can find and interact with it.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnShipLanding
+| script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/OnShipLanding|OnShipLanding]]
+| kind = Event
+| parameters = bool abComplete
+| documentation = The Boarding Encounter script event expects:
+- akRef1: Player's ship (for docking events only).
+- akRef2: Enemy ship.
+- aiValue1: CrewSizePercent multiplier.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

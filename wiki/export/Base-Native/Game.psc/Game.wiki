@@ -1,0 +1,1662 @@
+{{Script_Object_Summary
+| title = Game
+| name = [[SFM:Script-Game|Game]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Game.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Game Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Game.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddAchievement
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/AddAchievement|AddAchievement]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiAchievementID
+| documentation = Adds the specified achievement to the player's profile
+}}
+
+{{Script_Object_Member_Summary
+| title = AddToAvailableCrew
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/AddToAvailableCrew|AddToAvailableCrew]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = Actor akActor
+| documentation = Adds the specified actor to the player's unassigned crew list
+}}
+
+{{Script_Object_Member_Summary
+| title = AddPerkPoints
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/AddPerkPoints|AddPerkPoints]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiPerkPoints
+| documentation = Add the specified number of perk points to the player
+}}
+
+{{Script_Object_Member_Summary
+| title = AddPlayerOwnedShip
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/AddPlayerOwnedShip|AddPlayerOwnedShip]]
+| kind = Function
+| flags = Native Global
+| parameters = SpaceshipReference arRef
+| documentation = Add the specified spaceship to the player's owned ships
+}}
+
+{{Script_Object_Member_Summary
+| title = AdvanceSkill
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/AdvanceSkill|AdvanceSkill]]
+| kind = Function
+| flags = Native Global
+| parameters = string asSkillName, float afMagnitude
+| documentation = Advance the given skill on the player by the provided amount of skill usage
+}}
+
+{{Script_Object_Member_Summary
+| title = AreHostileActorsNear
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/AreHostileActorsNear|AreHostileActorsNear]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Check if hostile actors are near
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearPrison
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ClearPrison|ClearPrison]]
+| kind = Function
+| flags = Native Global
+| documentation = Clears the prison variables on the player
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearTempEffects
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ClearTempEffects|ClearTempEffects]]
+| kind = Function
+| flags = Native Global
+| documentation = Clears temp effects from game
+}}
+
+{{Script_Object_Member_Summary
+| title = Error
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/Error|Error]]
+| kind = Function
+| flags = Native Global BetaOnly
+| parameters = string asMessage
+| documentation = Issue an error with stack trace to the script log and warning system
+}}
+
+{{Script_Object_Member_Summary
+| title = FadeOutGame
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FadeOutGame|FadeOutGame]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abFadingOut, bool abBlackFade, float afSecsBeforeFade, float afFadeDuration, bool abStayFaded = false
+| documentation = Fades out the game to black, or vice versa
+}}
+
+{{Script_Object_Member_Summary
+| title = FastTravel
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FastTravel|FastTravel]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference akDestination
+| documentation = Fast-travels the player to the specified object's location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestReferenceOfType
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestReferenceOfType|FindClosestReferenceOfType]]
+| kind = Function
+| flags = Native Global
+| returns = ObjectReference
+| parameters = Form arBaseObject, float afX, float afY, float afZ, float afRadius
+| documentation = Finds the closest reference of a given base object within a given radius of a location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomReferenceOfType
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomReferenceOfType|FindRandomReferenceOfType]]
+| kind = Function
+| flags = Native Global
+| returns = ObjectReference
+| parameters = Form arBaseObject, float afX, float afY, float afZ, float afRadius
+| documentation = Finds a random reference of a given base object within a given radius of a location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestReferenceOfAnyTypeInList
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestReferenceOfAnyTypeInList|FindClosestReferenceOfAnyTypeInList]]
+| kind = Function
+| flags = Native Global
+| returns = ObjectReference
+| parameters = FormList arBaseObjects, float afX, float afY, float afZ, float afRadius
+| documentation = Finds the closest reference of any base object in the list within a given radius of a location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomReferenceOfAnyTypeInList
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomReferenceOfAnyTypeInList|FindRandomReferenceOfAnyTypeInList]]
+| kind = Function
+| flags = Native Global
+| returns = ObjectReference
+| parameters = FormList arBaseObjects, float afX, float afY, float afZ, float afRadius
+| documentation = Finds a random reference of a any base object in the list within a given radius of a location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestReferenceOfTypeFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestReferenceOfTypeFromRef|FindClosestReferenceOfTypeFromRef]]
+| kind = Function
+| flags = Global
+| returns = ObjectReference
+| parameters = Form arBaseObject, ObjectReference arCenter, float afRadius
+| documentation = Finds the closest reference of a given base object within a given radius of a reference
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomReferenceOfTypeFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomReferenceOfTypeFromRef|FindRandomReferenceOfTypeFromRef]]
+| kind = Function
+| flags = Global
+| returns = ObjectReference
+| parameters = Form arBaseObject, ObjectReference arCenter, float afRadius
+| documentation = Finds a random reference of a given base object within a given radius of a reference
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestReferenceOfAnyTypeInListFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestReferenceOfAnyTypeInListFromRef|FindClosestReferenceOfAnyTypeInListFromRef]]
+| kind = Function
+| flags = Global
+| returns = ObjectReference
+| parameters = FormList arBaseObjects, ObjectReference arCenter, float afRadius
+| documentation = Finds the closest reference of a given base object within a given radius of a reference
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomReferenceOfAnyTypeInListFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomReferenceOfAnyTypeInListFromRef|FindRandomReferenceOfAnyTypeInListFromRef]]
+| kind = Function
+| flags = Global
+| returns = ObjectReference
+| parameters = FormList arBaseObjects, ObjectReference arCenter, float afRadius
+| documentation = Finds a random reference of a given base object within a given radius of a reference
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestActor
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestActor|FindClosestActor]]
+| kind = Function
+| flags = Native Global
+| returns = Actor
+| parameters = float afX, float afY, float afZ, float afRadius
+| documentation = Finds the closest actor within a given radius of a location (may return dead actors)
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestLivingActor
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestLivingActor|FindClosestLivingActor]]
+| kind = Function
+| flags = Native Global
+| returns = Actor
+| parameters = float afX, float afY, float afZ, float afRadius
+| documentation = Finds the closest living actor within a given radius of a location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomActor
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomActor|FindRandomActor]]
+| kind = Function
+| flags = Native Global
+| returns = Actor
+| parameters = float afX, float afY, float afZ, float afRadius
+| documentation = Finds a random actor within a given radius of a location (may return dead actors)
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomLivingActor
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomLivingActor|FindRandomLivingActor]]
+| kind = Function
+| flags = Native Global
+| returns = Actor
+| parameters = float afX, float afY, float afZ, float afRadius
+| documentation = Finds a random living actor within a given radius of a location
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestActorFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestActorFromRef|FindClosestActorFromRef]]
+| kind = Function
+| flags = Global
+| returns = Actor
+| parameters = ObjectReference arCenter, float afRadius
+| documentation = Finds the closest actor within a given radius of a reference (may return dead actors)
+}}
+
+{{Script_Object_Member_Summary
+| title = FindClosestLivingActorFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindClosestLivingActorFromRef|FindClosestLivingActorFromRef]]
+| kind = Function
+| flags = Global
+| returns = Actor
+| parameters = ObjectReference arCenter, float afRadius
+| documentation = Finds the closest living actor within a given radius of a reference
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomActorFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomActorFromRef|FindRandomActorFromRef]]
+| kind = Function
+| flags = Global
+| returns = Actor
+| parameters = ObjectReference arCenter, float afRadius
+| documentation = Finds a random actor within a given radius of a reference (may return dead actors)
+}}
+
+{{Script_Object_Member_Summary
+| title = FindRandomLivingActorFromRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/FindRandomLivingActorFromRef|FindRandomLivingActorFromRef]]
+| kind = Function
+| flags = Global
+| returns = Actor
+| parameters = ObjectReference arCenter, float afRadius
+| documentation = Finds a random living actor within a given radius of a reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceDisableSSRDirLight
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ForceDisableSSRDirLight|ForceDisableSSRDirLight]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abDisableSSR, bool abDisableDirLight
+| documentation = Disable SSR, and/or directional lighting. Note: disable state reset after 240 frames if this function is not continually called.
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceThirdPerson
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ForceThirdPerson|ForceThirdPerson]]
+| kind = Function
+| flags = Native Global
+| documentation = Make the player got to 3rd person camera mode
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceFirstPerson
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ForceFirstPerson|ForceFirstPerson]]
+| kind = Function
+| flags = Native Global
+| documentation = Make the player got to 1st person camera mode
+}}
+
+{{Script_Object_Member_Summary
+| title = GetXPForLevel
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetXPForLevel|GetXPForLevel]]
+| kind = Function
+| flags = Native Global
+| returns = int
+| parameters = int auiLevel
+| documentation = Return the total amount of XP required to get to the particular level (not the gap between two levels)
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowFirstPersonGeometry
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowFirstPersonGeometry|ShowFirstPersonGeometry]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abShow = true
+| documentation = Show the players first person geometry.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowAllMapMarkers
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowAllMapMarkers|ShowAllMapMarkers]]
+| kind = Function
+| flags = Native Global
+| documentation = Show all the map markers on the world map.
+}}
+
+{{Script_Object_Member_Summary
+| title = GameplayAutomatedTestComplete
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GameplayAutomatedTestComplete|GameplayAutomatedTestComplete]]
+| kind = Function
+| flags = Native Global DebugOnly
+| parameters = bool abSuccessful
+| documentation = Tell the code that the gameplay automated test has been completed.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAggressionAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetAggressionAV|GetAggressionAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Aggression Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAgilityAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetAgilityAV|GetAgilityAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Agility Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllLocations
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetAllLocations|GetAllLocations]]
+| kind = Function
+| flags = Native Global
+| returns = Location[]
+| documentation = Returns a list of all Locations
+}}
+
+{{Script_Object_Member_Summary
+| title = GetMatchingLocations
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetMatchingLocations|GetMatchingLocations]]
+| kind = Function
+| flags = Global Native
+| returns = Location[]
+| parameters = Location ParentLocation = none, Keyword[] WantedKeywords = none, Keyword[] UnwantedKeywords = none, LocationRefType[] WantedRefTypes = none, LocationRefType[] UnwantedRefTypes = none, bool MustFindAllWantedKeywords = true, bool MustNotFindAnyUnwantedKeywords = true, bool MustFindAllWantedRefTypes = true, bool MustNotFindAnyUnwantedRefTypes = true, int LimitOfLocationsToReturn = 0
+| documentation = Returns a list of locations matching the following criteria
+ParentLocation - if not none, returns only locations which have this as a parent location
+WantedKeywords - if not empty, locations must have these keywords
+UnwantedKeywords - if not empty, locations must not have these keywords
+WantedRefTypes - if not empty, locations must have references with these LocationRefTypes
+UnwantedRefTypes - if not empty, locations must not have these RefTypes
+MustFindAllWantedKeywords - if true, locations must have ALL of the keywords. If false, location must have AT LEAST ONE of the keywords
+MustNotFindAnyUnwantedKeywords - if true, locations must not have ANY of the keywords. If false, location must not have ALL of the keywords present at the same time
+MustFindAllWantedRefTypes - if true, locations must have ALL of the RefTypes. If false, location must have AT LEAST ONE of the RefTypes
+MustNotFindAnyUnwantedRefTypes - if true, locations must not have ANY of the RefTypes. If false, location must not have ALL of the RefTypes present at the same time
+LimitOfLocationsToReturn - if > 0, randomly select this many locations to return. If <= 0, return all matching locations
+}}
+
+{{Script_Object_Member_Summary
+| title = GetMatchingLocation
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetMatchingLocation|GetMatchingLocation]]
+| kind = Function
+| flags = Global
+| returns = Location
+| parameters = Location ParentLocation = none, Keyword[] WantedKeywords = none, Keyword[] UnwantedKeywords = none, LocationRefType[] WantedRefTypes = none, LocationRefType[] UnwantedRefTypes = none, bool MustFindAllWantedKeywords = true, bool MustNotFindAnyUnwantedKeywords = true, bool MustFindAllWantedRefTypes = true, bool MustNotFindAnyUnwantedRefTypes = true
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCameraHeadingAngle
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetCameraHeadingAngle|GetCameraHeadingAngle]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| parameters = ObjectReference akTarget
+| documentation = Gets the angle between the camera's heading and the target object in degrees - in the range from -180 to 180
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCaps
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetCaps|GetCaps]]
+| kind = Function
+| flags = Global
+| returns = MiscObject
+| documentation = Returns the caps misc item
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCredits
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetCredits|GetCredits]]
+| kind = Function
+| flags = Global
+| returns = MiscObject
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCharismaAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetCharismaAV|GetCharismaAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Charisma Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetConfidenceAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetConfidenceAV|GetConfidenceAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Confidence Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDieRoll
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetDieRoll|GetDieRoll]]
+| kind = Function
+| flags = Global
+| returns = int
+| parameters = int MinResult = 1, int NumberOfSides = 100, int DebugDieRoll = -1
+| documentation = Get a die roll result
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDieRollSuccess
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetDieRollSuccess|GetDieRollSuccess]]
+| kind = Function
+| flags = Global
+| returns = bool
+| parameters = int Chance, int MinResult = 1, int NumberOfSides = 100, int DebugDieRoll = -1, int ForcedDieRoll = -1
+| documentation = Get if a die roll result was a success
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDifficulty
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetDifficulty|GetDifficulty]]
+| kind = Function
+| flags = Native Global
+| returns = int
+| documentation = Returns the game's current difficulty
+Type is as follows:
+0 - Very Easy
+1 - Easy
+2 - Normal
+3 - Hard
+4 - Very Hard
+5 - Survival w/ Hardcore
+}}
+
+{{Script_Object_Member_Summary
+| title = GetEnduranceAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetEnduranceAV|GetEnduranceAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Endurance Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetForm
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetForm|GetForm]]
+| kind = Function
+| flags = Native Global
+| returns = Form
+| parameters = int aiFormID
+| documentation = Returns the form specified by the ID
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFormFromFile
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetFormFromFile|GetFormFromFile]]
+| kind = Function
+| flags = Native Global
+| returns = Form
+| parameters = int aiFormID, string asFilename
+| documentation = Returns the form specified by the ID originating in the given file
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGameSettingFloat
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetGameSettingFloat|GetGameSettingFloat]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| parameters = string asGameSetting
+| documentation = Obtains the value of a game setting - one for each type of game setting
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGameSettingInt
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetGameSettingInt|GetGameSettingInt]]
+| kind = Function
+| flags = Native Global
+| returns = int
+| parameters = string asGameSetting
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGameSettingString
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetGameSettingString|GetGameSettingString]]
+| kind = Function
+| flags = Native Global
+| returns = string
+| parameters = string asGameSetting
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGameSettingUInt
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetGameSettingUInt|GetGameSettingUInt]]
+| kind = Function
+| flags = Native Global
+| returns = int
+| parameters = string asGameSetting
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGameSettingBool
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetGameSettingBool|GetGameSettingBool]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = string asGameSetting
+}}
+
+{{Script_Object_Member_Summary
+| title = GetHealthAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetHealthAV|GetHealthAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Health Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetIntelligenceAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetIntelligenceAV|GetIntelligenceAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Intelligence Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLuckAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetLuckAV|GetLuckAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Luck Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetInvulnerableAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetInvulnerableAV|GetInvulnerableAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Invulnerable Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPerceptionAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPerceptionAV|GetPerceptionAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Perception Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayer
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayer|GetPlayer]]
+| kind = Function
+| flags = Native Global
+| returns = Actor
+| documentation = Returns the player actor
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerActiveQuests
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerActiveQuests|GetPlayerActiveQuests]]
+| kind = Function
+| flags = Native Global
+| returns = Quest[]
+| documentation = Returns a list of quests that are active on the player
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerActiveDialogueUnsaidInfo
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerActiveDialogueUnsaidInfo|GetPlayerActiveDialogueUnsaidInfo]]
+| kind = Function
+| flags = Native Global
+| returns = int[]
+| documentation = Returns an array of how many unsaid topics are tied to each dialogue option in the active conversation
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerFollowers
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerFollowers|GetPlayerFollowers]]
+| kind = Function
+| flags = Native Global
+| returns = Actor[]
+| documentation = Returns a list of actors that are following the player (including both those running
+a Follow procedure and those flagged by their package to be treated as followers).
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerLevel
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerLevel|GetPlayerLevel]]
+| kind = Function
+| flags = Global
+| returns = int
+| documentation = Returns the player's level
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerGrabbedRef
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerGrabbedRef|GetPlayerGrabbedRef]]
+| kind = Function
+| flags = Native Global
+| returns = ObjectReference
+| documentation = Returns the reference the player is currently grabbing
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerRadioFrequency
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerRadioFrequency|GetPlayerRadioFrequency]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| documentation = Returns the current frequency setting of the player's radio
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayersLastRiddenHorse
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayersLastRiddenHorse|GetPlayersLastRiddenHorse]]
+| kind = Function
+| flags = Native Global
+| returns = Actor
+| documentation = Returns the horse last ridden by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRealHoursPassed
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetRealHoursPassed|GetRealHoursPassed]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| documentation = Returns the number of days spent in play
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSuspiciousAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetSuspiciousAV|GetSuspiciousAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Suspicious Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetStrengthAV
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetStrengthAV|GetStrengthAV]]
+| kind = Function
+| flags = Native Global
+| returns = ActorValue
+| documentation = Get the Strength Actor Value
+}}
+
+{{Script_Object_Member_Summary
+| title = GivePlayerCaps
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GivePlayerCaps|GivePlayerCaps]]
+| kind = Function
+| flags = Global
+| parameters = int nCaps
+| documentation = Adds a specified amount of caps to the player
+}}
+
+{{Script_Object_Member_Summary
+| title = HideContrabandScanWarning
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/HideContrabandScanWarning|HideContrabandScanWarning]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abSkipCompletionAnim = false, bool abWasDetectionEvaded = false
+| documentation = Hides the Contraband Scan Warning, skipping or completing the scan as a success or failure.
+If abSkipCompletionAnim is true, abWasDetectionEvaded will be ignored.
+}}
+
+{{Script_Object_Member_Summary
+| title = HideHudMenus
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/HideHudMenus|HideHudMenus]]
+| kind = Function
+| flags = Native Global
+| documentation = Hides the hud and spaceship hud menus.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemovePlayerCaps
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RemovePlayerCaps|RemovePlayerCaps]]
+| kind = Function
+| flags = Global
+| parameters = int nCaps
+| documentation = Removes a specified amount of caps from the player
+}}
+
+{{Script_Object_Member_Summary
+| title = IncrementSkill
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IncrementSkill|IncrementSkill]]
+| kind = Function
+| flags = Native Global
+| parameters = ActorValue akActorValue, int aiCount = 1
+| documentation = Increment the given skill on the player by the given number of points
+}}
+
+{{Script_Object_Member_Summary
+| title = IncrementStat
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IncrementStat|IncrementStat]]
+| kind = Function
+| flags = Native Global
+| parameters = string asStatName, int aiModAmount = 1
+| documentation = Modifies the specified MiscStat by the given amount.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsActivateControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsActivateControlsEnabled|IsActivateControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the activation controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAutomatedTestControllingPlayerInProgress
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsAutomatedTestControllingPlayerInProgress|IsAutomatedTestControllingPlayerInProgress]]
+| kind = Function
+| flags = Native Global DebugOnly
+| returns = bool
+| documentation = Is there an automated test controlling the player (bot) running currently?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsVATSControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsVATSControlsEnabled|IsVATSControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the VATS controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsVATSPlaybackActive
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsVATSPlaybackActive|IsVATSPlaybackActive]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is VATS playback active?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsCamSwitchControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsCamSwitchControlsEnabled|IsCamSwitchControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the camera switch controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFarTravelControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsFarTravelControlsEnabled|IsFarTravelControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is ship far travel enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFastTravelControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsFastTravelControlsEnabled|IsFastTravelControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is fast travel controls enabled? Returns false if EnableFastTravel(false) has been called
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFastTravelEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsFastTravelEnabled|IsFastTravelEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is fast travel enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFavoritesControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsFavoritesControlsEnabled|IsFavoritesControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is favorites menu enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsGravJumpControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsGravJumpControlsEnabled|IsGravJumpControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is ship grav jump enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsGuardPursuingPlayer
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsGuardPursuingPlayer|IsGuardPursuingPlayer]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = are any guards pursuing the player for crime?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsTakeoffControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsTakeoffControlsEnabled|IsTakeoffControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is ship takeoff enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFightingControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsFightingControlsEnabled|IsFightingControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the fighting controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsJournalControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsJournalControlsEnabled|IsJournalControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the journal menu controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsJumpingControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsJumpingControlsEnabled|IsJumpingControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the jumping controls enabled? (Note: Movement also enables/disables jumping)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLookingControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsLookingControlsEnabled|IsLookingControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the looking controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsMenuControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsMenuControlsEnabled|IsMenuControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the menu controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsMovementControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsMovementControlsEnabled|IsMovementControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the movement controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPluginInstalled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPluginInstalled|IsPluginInstalled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = string asName
+| documentation = Is the specified plugin (esm or esp) installed?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerInDialogue
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerInDialogue|IsPlayerInDialogue]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is the player currently considered in dialogue?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerInMessageBox
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerInMessageBox|IsPlayerInMessageBox]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is the player currently being displayed a message box?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerInRadioRange
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerInRadioRange|IsPlayerInRadioRange]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = float afFrequency
+| documentation = Is the player within the outer radius of a transmitter using the given frequency?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerListening
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerListening|IsPlayerListening]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = float afFrequency
+| documentation = Is the player actively listening to a transmitter using the given frequency.
+(Pipboy is on, set to a frequency that would receive the transmission, and within the transmitter's outer radius.)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerLoitering
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerLoitering|IsPlayerLoitering]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is the player loitering
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerSpaceshipOwner
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerSpaceshipOwner|IsPlayerSpaceshipOwner]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = SpaceshipReference arRef
+| documentation = Is the player an owner of this spaceship reference
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerRadioOn
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsPlayerRadioOn|IsPlayerRadioOn]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Is the player's radio currently on?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsResearchComplete
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsResearchComplete|IsResearchComplete]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = ResearchProject akResearchProject
+| documentation = has the player completed this research project
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSneakingControlsEnabled
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/IsSneakingControlsEnabled|IsSneakingControlsEnabled]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Are the sneaking controls enabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = PassTime
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PassTime|PassTime]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiHours
+| documentation = Pass time as if the player has waited the given number of hours.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayBink
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PlayBink|PlayBink]]
+| kind = Function
+| flags = Native Global
+| parameters = string asFileName, bool abInterruptible = false, bool abMuteAudio = true, bool abMuteMusic = true, bool abLetterbox = true, bool abIsNewGameBink = false
+| documentation = Plays a bink video - does not return until bink has finished, use with care!
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayBinkNoWait
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PlayBinkNoWait|PlayBinkNoWait]]
+| kind = Function
+| flags = Native Global
+| parameters = string asFileName, bool abInterruptible = false, bool abMuteAudio = true, bool abMuteMusic = true, bool abLetterbox = true, bool abIsNewGameBink = false, bool aPlayDuringLoadingScreen = false
+| documentation = Plays a bink video, use with care!
+}}
+
+{{Script_Object_Member_Summary
+| title = PrecacheCharGen
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PrecacheCharGen|PrecacheCharGen]]
+| kind = Function
+| flags = Native Global
+| documentation = Precaches character gen data.
+}}
+
+{{Script_Object_Member_Summary
+| title = PrecacheCharGenClear
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PrecacheCharGenClear|PrecacheCharGenClear]]
+| kind = Function
+| flags = Native Global
+| documentation = Clears Precached character gen data.
+}}
+
+{{Script_Object_Member_Summary
+| title = PopPlayerTo
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PopPlayerTo|PopPlayerTo]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = ObjectReference akTarget, float afXOffset = 0.0, float afYOffset = 0.0, float afZOffset = 0.0, bool abMatchRotation = true, bool abCheckForCollision = false
+| documentation = Pops the player to the location of the target without any load or screen fade. Note that the target reference must be in the same cell as the player.
+If you have to move the player to a reference in another cell, use MoveTo instead.
+}}
+
+{{Script_Object_Member_Summary
+| title = QueryStat
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/QueryStat|QueryStat]]
+| kind = Function
+| flags = Native Global
+| returns = int
+| parameters = string asStat
+| documentation = Queries the given stat and returns its value
+}}
+
+{{Script_Object_Member_Summary
+| title = QuitToMainMenu
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/QuitToMainMenu|QuitToMainMenu]]
+| kind = Function
+| flags = Native Global
+| documentation = Forces the game back to the main menu
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromAvailableCrew
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RemoveFromAvailableCrew|RemoveFromAvailableCrew]]
+| kind = Function
+| flags = Native Global
+| parameters = Actor akActor
+| documentation = Removes the specified actor from the player's list of available crew members.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemovePlayerOwnedShip
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RemovePlayerOwnedShip|RemovePlayerOwnedShip]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = SpaceshipReference arRef
+| documentation = Remove the specified spaceship from the player's owned ships
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestAutoSave
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestAutoSave|RequestAutoSave]]
+| kind = Function
+| flags = Native Global
+| documentation = Request that an auto-save be made
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestDialogueSkip
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestDialogueSkip|RequestDialogueSkip]]
+| kind = Function
+| flags = Native Global
+| documentation = Request that the dialogue menu skips the current line of dialogue
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestDialogueExit
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestDialogueExit|RequestDialogueExit]]
+| kind = Function
+| flags = Native Global
+| documentation = Request that the dialogue menu exits if possible
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestDialogueSelect
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestDialogueSelect|RequestDialogueSelect]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiIndex
+| documentation = Request to select a dialogue option
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestGameplayBotState
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestGameplayBotState|RequestGameplayBotState]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference arRef, int aiState
+| documentation = Request to start a state with the target refernece
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestMessageBoxSelect
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestMessageBoxSelect|RequestMessageBoxSelect]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiIndex
+| documentation = Request to select a messagebox option
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestHUDRolloverRefresh
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestHUDRolloverRefresh|RequestHUDRolloverRefresh]]
+| kind = Function
+| flags = Native Global
+| documentation = Request that the HUD's rollover refresh itself
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestModel
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestModel|RequestModel]]
+| kind = Function
+| flags = Native Global
+| parameters = string asModelName
+| documentation = Requests the specified model
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestSave
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestSave|RequestSave]]
+| kind = Function
+| flags = Native Global
+| documentation = Request that a normal save be made
+}}
+
+{{Script_Object_Member_Summary
+| title = RequestSaveByName
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RequestSaveByName|RequestSaveByName]]
+| kind = Function
+| flags = Native Global DebugOnly
+| parameters = string asSaveName
+| documentation = Request that a save with a specific name be made
+}}
+
+{{Script_Object_Member_Summary
+| title = CreateStarbornGame
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/CreateStarbornGame|CreateStarbornGame]]
+| kind = Function
+| flags = Native Global
+| documentation = Request that the game resets into NG+ with the current player character
+}}
+
+{{Script_Object_Member_Summary
+| title = RewardPlayerXP
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/RewardPlayerXP|RewardPlayerXP]]
+| kind = Function
+| flags = Native Global
+| parameters = int auiXPAmount, bool abDirect = false
+| documentation = Rewards the player with XP, if direct is true, then will ignore various XP adjustments like entry points and intelligence
+}}
+
+{{Script_Object_Member_Summary
+| title = ServeTime
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ServeTime|ServeTime]]
+| kind = Function
+| flags = Native Global
+| documentation = Has the player serve their prison time
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCameraTarget
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetCameraTarget|SetCameraTarget]]
+| kind = Function
+| flags = Native Global
+| parameters = Actor arTarget
+| documentation = Sets the camera target actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCharGenHUDMode
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetCharGenHUDMode|SetCharGenHUDMode]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiCGHUDMode
+| documentation = Sets or clears CharGen-specific HUD modes.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetHandscannerDistortionLevel
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetHandscannerDistortionLevel|SetHandscannerDistortionLevel]]
+| kind = Function
+| flags = Native Global
+| parameters = int aLevel
+| documentation = Sets the distortion level on the handscanner (0-3)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetInChargen
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetInChargen|SetInChargen]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abDisableSaving, bool abDisableWaiting, bool abShowControlsDisabledMessage
+| documentation = Informs the game whether we are in CharGen or not
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerAIDriven
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetPlayerAIDriven|SetPlayerAIDriven]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abAIDriven = true
+| documentation = Enables or disables the AI driven flag on Player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerOnElevator
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetPlayerOnElevator|SetPlayerOnElevator]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abOnElevator = true
+| documentation = Enables or disables the Player on Elevator flag
+}}
+
+{{Script_Object_Member_Summary
+| title = TrySetPlayerHomeSpaceShip
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/TrySetPlayerHomeSpaceShip|TrySetPlayerHomeSpaceShip]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| parameters = ObjectReference akHomeShip
+| documentation = Attempts to set the player's home ship
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerHomeSpaceShip
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerHomeSpaceShip|GetPlayerHomeSpaceShip]]
+| kind = Function
+| flags = Native Global
+| returns = SpaceshipReference
+| documentation = Gets the home ship of the player
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerOwnedShips
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetPlayerOwnedShips|GetPlayerOwnedShips]]
+| kind = Function
+| flags = Native Global
+| returns = SpaceshipReference[]
+| documentation = Gets spaceships the player owns
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerRadioFrequency
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetPlayerRadioFrequency|SetPlayerRadioFrequency]]
+| kind = Function
+| flags = Native Global
+| parameters = float afFrequency
+| documentation = Sets the player's radio's current frequency
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerReportCrime
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetPlayerReportCrime|SetPlayerReportCrime]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abReportCrime = true
+| documentation = Enables or disables  crime reporting on Player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetSittingRotation
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetSittingRotation|SetSittingRotation]]
+| kind = Function
+| flags = Native Global
+| parameters = float afValue
+| documentation = Set the players sitting camera rotation - in degrees, offset from the standard angle.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShakeCamera
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShakeCamera|ShakeCamera]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference akSource = none, float afStrength = 0.5, float afDuration = 0.0
+| documentation = Shakes the object from the location of the passed-in object. If none, it will shake the camera from the player's location.
+Strength is clamped from 0 to 1
+Duration in seconds. By default (0.0) use the game setting.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShakeController
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShakeController|ShakeController]]
+| kind = Function
+| flags = Native Global
+| parameters = float afSmallMotorStrength, float afBigMotorStreangth, float afDuration
+| documentation = Shakes the controller for the specified length of time (in seconds). The strength values are clamped from 0 to 1
+}}
+
+{{Script_Object_Member_Summary
+| title = SetLocalTime
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/SetLocalTime|SetLocalTime]]
+| kind = Function
+| flags = Native Global
+| parameters = float afLocalTime
+| documentation = Rotates the current planet such that the local time will match the specified time
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocalTime
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/GetLocalTime|GetLocalTime]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| documentation = Get the local time in normalized 24-hour day scale for this planet
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowContrabandScanWarning
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowContrabandScanWarning|ShowContrabandScanWarning]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiChanceToEvadeDetection, bool abScanInProgress = false
+| documentation = Shows the Contraband Scan Warning.
+aiChanceToEvadeDetection: an integer representing the percent to evade detection.
+abScanInProgress: a boolean that specifies whether a security scan is in progress.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowCustomWatchAlert
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowCustomWatchAlert|ShowCustomWatchAlert]]
+| kind = Function
+| flags = Native Global
+| parameters = string aAnimName
+| documentation = Shows a custom watch animation on the HUD watch
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowFatigueWarningOnHUD
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowFatigueWarningOnHUD|ShowFatigueWarningOnHUD]]
+| kind = Function
+| flags = Native Global
+| documentation = Causes the Fatigue Warning to show on the HUD
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowMissionBoardMenu
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowMissionBoardMenu|ShowMissionBoardMenu]]
+| kind = Function
+| flags = Native Global
+| parameters = Keyword akFilterByKeyword = none, int iFaction = -1
+| documentation = Opens the mission board menu with an optional keyword parameter to filter the list
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowRaceMenu
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowRaceMenu|ShowRaceMenu]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference akMenuTarget = none, int uiMode = 0, ObjectReference akMenuSpouseFemale = none, ObjectReference akMenuSpouseMale = none, ObjectReference akVendor = none
+| documentation = Displays the race/sex menu
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowGalaxyStarMapMenu
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowGalaxyStarMapMenu|ShowGalaxyStarMapMenu]]
+| kind = Function
+| flags = Native Global
+| documentation = Shows the Galaxy Star Map menu.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTitleSequenceMenu
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/ShowTitleSequenceMenu|ShowTitleSequenceMenu]]
+| kind = Function
+| flags = Native Global
+| documentation = Title Sequence menu functions
+}}
+
+{{Script_Object_Member_Summary
+| title = HideTitleSequenceMenu
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/HideTitleSequenceMenu|HideTitleSequenceMenu]]
+| kind = Function
+| flags = Native Global
+}}
+
+{{Script_Object_Member_Summary
+| title = StartTitleSequence
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/StartTitleSequence|StartTitleSequence]]
+| kind = Function
+| flags = Native Global
+| parameters = string asSequenceName
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerScreenBlood
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/TriggerScreenBlood|TriggerScreenBlood]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiValue
+| documentation = Trigger screen blood with the given count
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayEventCamera
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/PlayEventCamera|PlayEventCamera]]
+| kind = Function
+| flags = Native Global
+| parameters = CameraShot akCamera, ObjectReference akRef
+| documentation = Play an event camera
+}}
+
+{{Script_Object_Member_Summary
+| title = StartDialogueCameraOrCenterOnTarget
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/StartDialogueCameraOrCenterOnTarget|StartDialogueCameraOrCenterOnTarget]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference akCameraTarget = none
+| documentation = start dialogue camera if in third person or in dialogue camera or swing the camera to speaker if in 1st
+}}
+
+{{Script_Object_Member_Summary
+| title = StopDialogueCamera
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/StopDialogueCamera|StopDialogueCamera]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abConsiderResume = false, bool abSwitchingTo1stP = false
+| documentation = Stop dialogue camera
+}}
+
+{{Script_Object_Member_Summary
+| title = TurnPlayerRadioOn
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/TurnPlayerRadioOn|TurnPlayerRadioOn]]
+| kind = Function
+| flags = Native Global
+| parameters = bool abRadioOn = true
+| documentation = Turns on/off the player's radio
+}}
+
+{{Script_Object_Member_Summary
+| title = UsingGamepad
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/UsingGamepad|UsingGamepad]]
+| kind = Function
+| flags = Native Global
+| returns = bool
+| documentation = Returns true if we're using a gamepad
+}}
+
+{{Script_Object_Member_Summary
+| title = Warning
+| script = [[SFM:Script-Game|Game]]
+| name = [[SFM:Script-Game/Warning|Warning]]
+| kind = Function
+| flags = Native Global BetaOnly
+| parameters = string asMessage
+| documentation = Issue a warning to the script log and warning system
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

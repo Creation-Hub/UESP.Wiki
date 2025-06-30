@@ -1,0 +1,107 @@
+{{Script_Object_Summary
+| title = DefaultMultiStateActivator
+| name = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Conditional
+}}
+
+
+== Definition ==
+The <code>DefaultMultiStateActivator.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultMultiStateActivator Extends ObjectReference Default Conditional
+</source>
+
+
+== Documentation ==
+The <code>DefaultMultiStateActivator.psc</code> source file documentation comments for this script.
+
+<source>
+Generic script for managing and maintaining the animation state of activators.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = AnimationStateDatum
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/AnimationStateDatum|AnimationStateDatum]]
+| kind = Struct
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Base_Properties
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/Base_Properties|Base_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Reference_Properties
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/Reference_Properties|Reference_Properties]]
+| kind = Group
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = CurrentStateIndex
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/CurrentStateIndex|CurrentStateIndex]]
+| kind = Property
+| flags = Auto Hidden Conditional RequiresGuard(SetAnimationStateGuard)
+| returns = int
+| parameters = 0
+| documentation = Variables
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Initial
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/Initial|Initial]]
+| kind = State
+| documentation = On first load, set our initial animation state.
+}}
+
+{{Script_Object_Member_Summary
+| title = Main
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/Main|Main]]
+| kind = State
+| documentation = On subsequent loads, make sure we're in the animation state we want to be in.
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = SetAnimationState
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/SetAnimationState|SetAnimationState]]
+| kind = Function
+| parameters = string newStateName, bool shouldUseJumpAnims = false
+}}
+
+{{Script_Object_Member_Summary
+| title = Private_SetAnimationStateIndex
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/Private_SetAnimationStateIndex|Private_SetAnimationStateIndex]]
+| kind = Function
+| flags = RequiresGuard(SetAnimationStateGuard)
+| parameters = int newStateIndex, bool shouldUseJumpAnims = false
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentStateName
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/GetCurrentStateName|GetCurrentStateName]]
+| kind = Function
+| returns = string
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

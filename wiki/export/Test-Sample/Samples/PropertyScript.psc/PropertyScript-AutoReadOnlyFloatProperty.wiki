@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = AutoReadOnlyFloatProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoReadOnlyFloatProperty|AutoReadOnlyFloatProperty]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 41.5
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+* 41.5
+
+
+[[Category:Starfield_Mod-Papyrus]]

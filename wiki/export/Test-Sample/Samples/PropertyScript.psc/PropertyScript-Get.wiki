@@ -1,0 +1,19 @@
+{{Script_Member_Summary
+| title = Get
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/Get|Get]]
+| kind = Function
+| returns = bool
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Parameters ==
+This function member has no parameters.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

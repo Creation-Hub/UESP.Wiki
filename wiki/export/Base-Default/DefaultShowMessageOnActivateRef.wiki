@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = DefaultShowMessageOnActivateRef
+| name = [[SFM:Script-DefaultShowMessageOnActivateRef|DefaultShowMessageOnActivateRef]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Const
+}}
+
+
+== Definition ==
+The <code>DefaultShowMessageOnActivateRef.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultShowMessageOnActivateRef Extends ObjectReference Default Const
+</source>
+
+
+== Documentation ==
+The <code>DefaultShowMessageOnActivateRef.psc</code> source file documentation comments for this script.
+
+<source>
+Show the selected message when this REFERENCE is activate.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultShowMessageOnActivateRef|DefaultShowMessageOnActivateRef]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateRef/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultShowMessageOnActivateRef|DefaultShowMessageOnActivateRef]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateRef/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultShowMessageOnActivateRef|DefaultShowMessageOnActivateRef]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateRef/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultShowMessageOnActivateRef|DefaultShowMessageOnActivateRef]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateRef/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

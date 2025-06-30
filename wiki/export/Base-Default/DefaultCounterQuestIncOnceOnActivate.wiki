@@ -1,0 +1,52 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuestIncOnceOnActivate
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Hidden
+}}
+
+
+== Definition ==
+The <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuestIncOnceOnActivate Extends ReferenceAlias Default Hidden
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+Once this ALIAS is activated (by the PLAYER) it increments the counter on its Quest's DefaultCounterQuest script
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = WaitForActivate
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/WaitForActivate|WaitForActivate]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = DoneWaiting
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/DoneWaiting|DoneWaiting]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/Increment|Increment]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

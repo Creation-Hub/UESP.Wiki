@@ -1,0 +1,59 @@
+{{Script_Object_Summary
+| title = DefaultSetGlobalOnTriggerEnter
+| name = [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultSetGlobalOnTriggerEnter.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultSetGlobalOnTriggerEnter Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultSetGlobalOnTriggerEnter.psc</code> source file documentation comments for this script.
+
+<source>
+Set a global to a specific value when this trigger is entered by the player.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = GlobalToSet
+| script = [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
+| name = [[SFM:Script-DefaultSetGlobalOnTriggerEnter/GlobalToSet|GlobalToSet]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = The Global we want to set to NumToSetGlobalTo
+}}
+
+{{Script_Object_Member_Summary
+| title = NumToSetGlobalTo
+| script = [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
+| name = [[SFM:Script-DefaultSetGlobalOnTriggerEnter/NumToSetGlobalTo|NumToSetGlobalTo]]
+| kind = Property
+| flags = Const Auto
+| returns = float
+| documentation = The number we want to set GlobalToSet to.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
+| name = [[SFM:Script-DefaultSetGlobalOnTriggerEnter/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

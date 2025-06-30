@@ -1,0 +1,3071 @@
+{{Script_Object_Summary
+| title = Actor
+| name = [[SFM:Script-Actor|Actor]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Actor.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Actor Extends ObjectReference Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Actor.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ModFavorPoints
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ModFavorPoints|ModFavorPoints]]
+| kind = Function
+| parameters = int iFavorPoints = 1
+| documentation = DEPRECATED - use MakePlayerFriend() instead
+replacement for ModFavorPoints
+if iFavorPoints > 0, will setRelationshipRank to 1 if 0
+otherwise, won't do anything
+}}
+
+{{Script_Object_Member_Summary
+| title = ModFavorPointsWithGlobal
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ModFavorPointsWithGlobal|ModFavorPointsWithGlobal]]
+| kind = Function
+| parameters = GlobalVariable FavorPointsGlobal
+| documentation = also DEPRECATED
+}}
+
+{{Script_Object_Member_Summary
+| title = MakePlayerFriend
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/MakePlayerFriend|MakePlayerFriend]]
+| kind = Function
+| documentation = this function will make an actor a friend of the player if allowed
+}}
+
+{{Script_Object_Member_Summary
+| title = AddBountyCrime
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AddBountyCrime|AddBountyCrime]]
+| kind = Function
+| flags = Native
+| parameters = Form akBountyCrime
+| documentation = Adds a bounty crime to the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = AddPassiveAffinity
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AddPassiveAffinity|AddPassiveAffinity]]
+| kind = Function
+| flags = Native
+| parameters = float afAmountToAdd
+| documentation = Adds Affinity to the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = AddPerk
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AddPerk|AddPerk]]
+| kind = Function
+| flags = Native
+| parameters = Perk akPerk, bool abNotify = false
+| documentation = Adds the specified perk to this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = AllowBleedoutDialogue
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AllowBleedoutDialogue|AllowBleedoutDialogue]]
+| kind = Function
+| flags = Native
+| parameters = bool abCanTalk
+| documentation = Sets this a essential actors ability to talk when in a bleedout state
+}}
+
+{{Script_Object_Member_Summary
+| title = AllowPCDialogue
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AllowPCDialogue|AllowPCDialogue]]
+| kind = Function
+| flags = Native
+| parameters = bool abTalk
+| documentation = overrides the race flag on an actor and determines if he can talk to the player in dialogue menu
+}}
+
+{{Script_Object_Member_Summary
+| title = AttachAshPile
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AttachAshPile|AttachAshPile]]
+| kind = Function
+| flags = Native
+| parameters = Form akAshPileBase = none
+| documentation = Attaches an "ash pile" to this actor, placing it at this actor's location and using the specified
+base object (or leveled item list) to represent the pile. If None is passed, it will use the
+default ash pile object
+}}
+
+{{Script_Object_Member_Summary
+| title = AttackOutpostObjects
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AttackOutpostObjects|AttackOutpostObjects]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = ObjectReference akOutpostBeacon
+| documentation = Have the actor start combat with any destructible object associated with the specified
+outpost beacon.  Returns the number of objects that the actor entered combat with
+}}
+
+{{Script_Object_Member_Summary
+| title = AttemptAnimationSetSwitch
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AttemptAnimationSetSwitch|AttemptAnimationSetSwitch]]
+| kind = Function
+| flags = Native
+| documentation = Attempt to change the set of animations loaded for this actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = CanFlyHere
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CanFlyHere|CanFlyHere]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Can this actor fly here?
+}}
+
+{{Script_Object_Member_Summary
+| title = ChangeAnimArchetype
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ChangeAnimArchetype|ChangeAnimArchetype]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword apKeyword = none
+| documentation = Change this actor's anim archetype
+}}
+
+{{Script_Object_Member_Summary
+| title = ChangeAnimFlavor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ChangeAnimFlavor|ChangeAnimFlavor]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword apKeyword = none
+| documentation = Change this actor's anim flavor
+}}
+
+{{Script_Object_Member_Summary
+| title = ChangeHeadPart
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ChangeHeadPart|ChangeHeadPart]]
+| kind = Function
+| flags = Native
+| parameters = Headpart apHeadPart, bool abRemovePart = false, bool abRemoveExtraParts = false
+| documentation = Change this actor's headpart
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearArrested
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ClearArrested|ClearArrested]]
+| kind = Function
+| flags = Native
+| documentation = Clears this actor's arrested state
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearExpressionOverride
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ClearExpressionOverride|ClearExpressionOverride]]
+| kind = Function
+| flags = Native
+| documentation = Clears any expression override on the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearExtraArrows
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ClearExtraArrows|ClearExtraArrows]]
+| kind = Function
+| flags = Native
+| documentation = Clears this actor's extra arrows 3D
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearForcedLandingMarker
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ClearForcedLandingMarker|ClearForcedLandingMarker]]
+| kind = Function
+| documentation = Remove the obligation to use a particular marker when this actor has to land.
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearLookAt
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ClearLookAt|ClearLookAt]]
+| kind = Function
+| flags = Native
+| documentation = Clears this actor's look at target
+}}
+
+{{Script_Object_Member_Summary
+| title = Dismount
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/Dismount|Dismount]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Initiates a dismount.
+}}
+
+{{Script_Object_Member_Summary
+| title = DispelAllSpells
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/DispelAllSpells|DispelAllSpells]]
+| kind = Function
+| flags = Native
+| documentation = Dispel all spells from this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = DoCombatSpellApply
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/DoCombatSpellApply|DoCombatSpellApply]]
+| kind = Function
+| flags = Native
+| parameters = Spell akSpell, ObjectReference akTarget
+| documentation = Apply a spell to a target in combat
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableAI
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/EnableAI|EnableAI]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true, bool abPauseVoice = false
+| documentation = Enables or disable's this actor's AI, pausing their voice mid-line if desired.
+}}
+
+{{Script_Object_Member_Summary
+| title = EndDeferredKill
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/EndDeferredKill|EndDeferredKill]]
+| kind = Function
+| flags = Native
+| documentation = End the Deferred Kill state. This must only be called if StartDeferredKill was called first.
+}}
+
+{{Script_Object_Member_Summary
+| title = EquipItem
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/EquipItem|EquipItem]]
+| kind = Function
+| flags = Native
+| parameters = Form akItem, bool abPreventRemoval = false, bool abSilent = false
+| documentation = Forces this actor to equip the specified item, preventing removal if requested
+}}
+
+{{Script_Object_Member_Summary
+| title = EquipSpell
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/EquipSpell|EquipSpell]]
+| kind = Function
+| flags = Native
+| parameters = Spell akSpell, int aiSource
+| documentation = Forces this actor to equip the specified spell. The casting source can be:
+0 - Left hand
+1 - Right hand
+2 - Other
+}}
+
+{{Script_Object_Member_Summary
+| title = EvaluatePackage
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/EvaluatePackage|EvaluatePackage]]
+| kind = Function
+| flags = Native
+| parameters = bool abResetAI = false
+| documentation = Forces the AI to re-evaluate its package stack
+}}
+
+{{Script_Object_Member_Summary
+| title = GetBribeAmount
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetBribeAmount|GetBribeAmount]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains how much it would cost to bribe this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllCombatTargets
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetAllCombatTargets|GetAllCombatTargets]]
+| kind = Function
+| flags = Native
+| returns = Actor[]
+| documentation = Get all combat targets for this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllActorsInCombatWithMe
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetAllActorsInCombatWithMe|GetAllActorsInCombatWithMe]]
+| kind = Function
+| flags = Native
+| returns = Actor[]
+| documentation = Get all combat actors that have me listed as a combat target.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCrewAssignment
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetCrewAssignment|GetCrewAssignment]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Get actors crew assignment.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCrimeFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetCrimeFaction|GetCrimeFaction]]
+| kind = Function
+| flags = Native
+| returns = Faction
+| documentation = Get the faction this actor reports crimes to
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCombatState
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetCombatState|GetCombatState]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets this actor's current combat state
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCombatTarget
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetCombatTarget|GetCombatTarget]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| documentation = Gets this actor's current combat target
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentPackage
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetCurrentPackage|GetCurrentPackage]]
+| kind = Function
+| flags = Native
+| returns = Package
+| documentation = Gets this actor's current AI package
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDialogueTarget
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetDialogueTarget|GetDialogueTarget]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| documentation = Gets this actor's current dialogue target
+}}
+
+{{Script_Object_Member_Summary
+| title = GetEquippedItemType
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetEquippedItemType|GetEquippedItemType]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = int aiEquipIndex
+| documentation = Obtains the item quipped for the specified equip index
+Return values are:
+-1 - Error
+0 - Nothing
+1 - One-handed sword
+2 - One-handed dagger
+3 - One-handed axe
+4 - One-handed mace
+5 - Two-handed sword
+6 - Two-handed axe
+7 - Bow
+8 - Staff
+9 - Gun
+10 - Grenade
+11 - Mine
+24 - Magic spell
+25 - Shield
+26 - Torch
+}}
+
+{{Script_Object_Member_Summary
+| title = GetEquippedWeapon
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetEquippedWeapon|GetEquippedWeapon]]
+| kind = Function
+| flags = Native
+| returns = Weapon
+| parameters = int aiEquipIndex = 0
+| documentation = Gets this actor's currently equipped weapon for the specified equip index
+Defaults to the actor's first equip index
+}}
+
+{{Script_Object_Member_Summary
+| title = GetEquippedShield
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetEquippedShield|GetEquippedShield]]
+| kind = Function
+| flags = Native
+| returns = Armor
+| documentation = Gets this actor's currently equipped shield
+}}
+
+{{Script_Object_Member_Summary
+| title = GetEquippedSpell
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetEquippedSpell|GetEquippedSpell]]
+| kind = Function
+| flags = Native
+| returns = Spell
+| parameters = int aiSource
+| documentation = Gets the spell currently equipped in the specified source
+0 - Left Hand
+1 - Right Hand
+2 - Other
+3 - Instant
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetFactionRank|GetFactionRank]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Faction akFaction
+| documentation = Obtains this actor's rank with the specified faction - returns -1 if the actor is not a member
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionReaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetFactionReaction|GetFactionReaction]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Actor akOther
+| documentation = Obtains this actor's faction-based reaction to the other actor
+0 - Neutral
+1 - Enemy
+2 - Ally
+3 - Friend
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFlyingState
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetFlyingState|GetFlyingState]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains this actor's current flight state
+0 - Not flying
+1 - Taking off
+2 - Cruising
+3 - Hovering
+4 - Landing
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFurnitureUsing
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetFurnitureUsing|GetFurnitureUsing]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Get the ref this actor is currently interacting with
+}}
+
+{{Script_Object_Member_Summary
+| title = GetForcedLandingMarker
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetForcedLandingMarker|GetForcedLandingMarker]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Get the ref at which this actor is obliged to land, if one is set (or none, if not).
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGoldAmount
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetGoldAmount|GetGoldAmount]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Retrieves the amount of gold this actor has
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGroupFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetGroupFaction|GetGroupFaction]]
+| kind = Function
+| flags = Native
+| returns = Faction
+| documentation = Get the group faction for this actor if he has one for group behavior
+}}
+
+{{Script_Object_Member_Summary
+| title = GetHighestRelationshipRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetHighestRelationshipRank|GetHighestRelationshipRank]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets this actor's highest relationship rank - returns 0 if they have no relationships
+}}
+
+{{Script_Object_Member_Summary
+| title = GetKiller
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetKiller|GetKiller]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| documentation = Returns this actor's killer - or None if this actor is still alive
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLevel
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetLevel|GetLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Returns this actor's current level.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLightLevel
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetLightLevel|GetLightLevel]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Returns this actor's current light level.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLowestRelationshipRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetLowestRelationshipRank|GetLowestRelationshipRank]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets this actor's highest relationship rank - returns 0 if they have no relationships
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLeveledActorBase
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetLeveledActorBase|GetLeveledActorBase]]
+| kind = Function
+| flags = Native
+| returns = ActorBase
+| documentation = Obtains a leveled actor's "fake" base (the one generated by the game when the
+actor is leveled. This differs from GetBaseObject which will return the editor base
+object)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetMatchingPlanetActorBase
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetMatchingPlanetActorBase|GetMatchingPlanetActorBase]]
+| kind = Function
+| flags = Native
+| returns = ActorBase
+| documentation = Gets the ActorBase from the actor's biome data list, if the actor is of a creature type placed by the biome
+}}
+
+{{Script_Object_Member_Summary
+| title = GetNoBleedoutRecovery
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetNoBleedoutRecovery|GetNoBleedoutRecovery]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Queries whether this actor has no bleedout recovery flag set.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPlayerControls
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetPlayerControls|GetPlayerControls]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Queries whether this actor receives player input
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRace
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetRace|GetRace]]
+| kind = Function
+| flags = Native
+| returns = Race
+| documentation = Returns this actor's race
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRelationshipRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetRelationshipRank|GetRelationshipRank]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Actor akOther
+| documentation = Obtains the relationship rank between this actor and another
+Relationship functions use the following values:
+4 - Lover
+3 - Ally
+2 - Confidant
+1 - Friend
+0 - Acquaintance
+-1 - Rival
+-2 - Foe
+-3 - Enemy
+-4 - Archnemesis
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSitState
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetSitState|GetSitState]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains this actor's sit state, which is one of the following:
+0 - Not sitting
+1 - Not sitting, wants to sit
+2 - Not sitting, in the process of sitting down (playing the animation)
+3 - Sitting
+4 - Sitting, wants to stand
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSleepState
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetSleepState|GetSleepState]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains this actor's sleep state, which is one of the following:
+0 - Not sleeping
+2 - Not sleeping, wants to sleep
+3 - Sleeping
+4 - Sleeping, wants to wake
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSpaceship
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetSpaceship|GetSpaceship]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipReference
+| documentation = Obtains the spaceship this actor is piloting, if any
+}}
+
+{{Script_Object_Member_Summary
+| title = HasAssociation
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasAssociation|HasAssociation]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = AssociationType akAssociation, Actor akOther = none
+| documentation = Checks to see if this actor has the specified association with the other actor - or anyone (if no actor is passed)
+}}
+
+{{Script_Object_Member_Summary
+| title = HasFamilyRelationship
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasFamilyRelationship|HasFamilyRelationship]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akOther = none
+| documentation = Checks to see if this actor has a family relationship with the other actor - or anyone (if no actor is passed)
+}}
+
+{{Script_Object_Member_Summary
+| title = HasDetectionLOS
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasDetectionLOS|HasDetectionLOS]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akOther
+| documentation = Sees if this actor has detection-based line-of-sight to another object. Only the player can check LOS to a non-actor
+}}
+
+{{Script_Object_Member_Summary
+| title = HasMagicEffect
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasMagicEffect|HasMagicEffect]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = MagicEffect akEffect
+| documentation = Checks to see if this actor is currently being affected by the given Magic Effect
+}}
+
+{{Script_Object_Member_Summary
+| title = HasMagicEffectWithKeyword
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasMagicEffectWithKeyword|HasMagicEffectWithKeyword]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword akKeyword
+| documentation = Checks to see if this actor is currently being affected by a Magic Effect with the given Keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = HasParentRelationship
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasParentRelationship|HasParentRelationship]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akOther
+| documentation = Checks to see if this actor has a parent relationship with the other actor
+}}
+
+{{Script_Object_Member_Summary
+| title = HasPerk
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasPerk|HasPerk]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Perk akPerk
+| documentation = Checks to see if this actor has the given Perk
+}}
+
+{{Script_Object_Member_Summary
+| title = HasSpell
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/HasSpell|HasSpell]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Form akForm
+| documentation = Checks to see if this actor has the given Spell
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAIEnabled
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsAIEnabled|IsAIEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether this actor's AI is enabled.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAlarmed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsAlarmed|IsAlarmed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is alarmed or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAlerted
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsAlerted|IsAlerted]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is alerted or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAllowedToFly
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsAllowedToFly|IsAllowedToFly]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor allowed to fly?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsArrested
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsArrested|IsArrested]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor currently arrested?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsArrestingTarget
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsArrestingTarget|IsArrestingTarget]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor currently arresting his target? (Must be a guard and alarmed)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsBeingRidden
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsBeingRidden|IsBeingRidden]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the actor being ridden?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsBeingRiddenBy
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsBeingRiddenBy|IsBeingRiddenBy]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akActor
+| documentation = check if akActor is riding this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = IsBleedingOut
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsBleedingOut|IsBleedingOut]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Is this actor currently bleeding out?
+0 = Not bleeding out
+1 = Bleeding out, will recover
+2 = Bleeding out, will not recover
+}}
+
+{{Script_Object_Member_Summary
+| title = IsBribed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsBribed|IsBribed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Queries whether this actor has player bribe flag set.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsChild
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsChild|IsChild]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor a child?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsCommandedActor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsCommandedActor|IsCommandedActor]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor a commanded by another?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDead
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsDead|IsDead]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is dead or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDetectedBy
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsDetectedBy|IsDetectedBy]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akOther
+| documentation = Returns if this actor is detected by the other one
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDoingFavor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsDoingFavor|IsDoingFavor]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor doing a favor for the player?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsEquipped
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsEquipped|IsEquipped]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Form akItem
+| documentation = Returns if the specified object is equipped on this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = IsEssential
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsEssential|IsEssential]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor essential?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFlying
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsFlying|IsFlying]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is flying or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsGuard
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsGuard|IsGuard]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is a guard or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsGhost
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsGhost|IsGhost]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor flagged as a ghost?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsHostileToActor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsHostileToActor|IsHostileToActor]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akActor
+| documentation = Is this actor hostile to another actor?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInCombat
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsInCombat|IsInCombat]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is currently in combat
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsInFaction|IsInFaction]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Faction akFaction
+| documentation = Checks to see if this actor is a member of the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInIronSights
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsInIronSights|IsInIronSights]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether this actor is currently in iron sights.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInKillMove
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsInKillMove|IsInKillMove]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this actor is in a kill move or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInScene
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsInScene|IsInScene]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Queries whether this actor is in a scene.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsIntimidated
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsIntimidated|IsIntimidated]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Queries whether this actor has player intimidated flag set.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsOnMount
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsOnMount|IsOnMount]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the actor on a mount?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsOverEncumbered
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsOverEncumbered|IsOverEncumbered]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the actor over-encumbered?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsOwner
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsOwner|IsOwner]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akObject
+| documentation = kmk
+does the actor own the specified reference (in any way)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayersLastRiddenHorse
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsPlayersLastRiddenHorse|IsPlayersLastRiddenHorse]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if this actor the last ridden horse of the player
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerTeammate
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsPlayerTeammate|IsPlayerTeammate]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor currently a teammate of the player?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsRunning
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsRunning|IsRunning]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor currently running?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSeatOccupied
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsSeatOccupied|IsSeatOccupied]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword apKeyword
+| documentation = Is the seat that corresponds to the passed in keyword currently occupied?
+note: if this is not a mount with multiple seats or apKeyword is not a valid seat, this function will return false
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSneaking
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsSneaking|IsSneaking]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor currently sneaking?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSprinting
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsSprinting|IsSprinting]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor currently sprinting?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsTalking
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsTalking|IsTalking]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor talking
+}}
+
+{{Script_Object_Member_Summary
+| title = IsTrespassing
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsTrespassing|IsTrespassing]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor trespassing?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsUnconscious
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsUnconscious|IsUnconscious]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor unconscious?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsWeaponDrawn
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/IsWeaponDrawn|IsWeaponDrawn]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Does this actor have his weapon and/or magic drawn?
+}}
+
+{{Script_Object_Member_Summary
+| title = Kill
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/Kill|Kill]]
+| kind = Function
+| flags = Native
+| parameters = Actor akKiller = none
+| documentation = Kills this actor with the killer being the guilty party
+}}
+
+{{Script_Object_Member_Summary
+| title = KillEssential
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/KillEssential|KillEssential]]
+| kind = Function
+| parameters = Actor akKiller = none
+| documentation = Kills this actor even if essential
+}}
+
+{{Script_Object_Member_Summary
+| title = KillSilent
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/KillSilent|KillSilent]]
+| kind = Function
+| flags = Native
+| parameters = Actor akKiller = none
+| documentation = Kills this actor without a kill event with the killer being the guilty party
+}}
+
+{{Script_Object_Member_Summary
+| title = ApplyUnityCharacterData
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ApplyUnityCharacterData|ApplyUnityCharacterData]]
+| kind = Function
+| flags = Native
+| documentation = Apply Unity Character Data to Actor
+}}
+
+{{Script_Object_Member_Summary
+| title = CopyAppearance
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CopyAppearance|CopyAppearance]]
+| kind = Function
+| flags = Native
+| parameters = Actor akSourceToCopyFrom
+| documentation = Copy character customization appearance data from a given actor
+}}
+
+{{Script_Object_Member_Summary
+| title = MarkItemAsFavorite
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/MarkItemAsFavorite|MarkItemAsFavorite]]
+| kind = Function
+| flags = Native
+| parameters = Form akItem, int aiSlot = -1
+| documentation = Mark the given item as a favorite.
+}}
+
+{{Script_Object_Member_Summary
+| title = ModFactionRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ModFactionRank|ModFactionRank]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction, int aiMod
+| documentation = Modifies this actor's rank in the faction
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToFurniture
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/MoveToFurniture|MoveToFurniture]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akTargetFurniture
+| documentation = moves this actor to the furniture and snaps them into it
+returns the value of SnapIntoInteraction()
+Note: might not work in unloaded area
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToPackageLocation
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/MoveToPackageLocation|MoveToPackageLocation]]
+| kind = Function
+| flags = Native
+| documentation = Pop this actor to the initial location for a package. Mainly for use on
+disabled actors, since they would normally start at their editor locations.
+}}
+
+{{Script_Object_Member_Summary
+| title = OpenInventory
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OpenInventory|OpenInventory]]
+| kind = Function
+| flags = Native
+| parameters = bool abForceOpen = false, Form akFilter = none, bool abIncludeOnlyFromFilter = true
+| documentation = Opens this actor's inventory, as if you were pick-pocketing them. Only works on teammates, or anyone if forced.
+}}
+
+{{Script_Object_Member_Summary
+| title = PathToReference
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PathToReference|PathToReference]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = ObjectReference aTarget, float afNormalizedSpeed, float afNormalizedRotationSpeed, float afTargetRadius = -1.0, bool abHardRadius = false
+| documentation = Make the actor path to a reference, latent version
+Note: this method doesn't return until the goal is reached or pathing
+failed or was interrupted (by another request for instance)
+Return values (see above):
+0 - Success
+1 - Failure
+2 - Stopped
+3 - Cleared
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayIdle
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PlayIdle|PlayIdle]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Idle akIdle
+| documentation = Send an idle to the actor to load in and play.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayIdleAction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PlayIdleAction|PlayIdleAction]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Action aAction, ObjectReference aTarget = none
+| documentation = Attempts to run action on actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayIdleWithTarget
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PlayIdleWithTarget|PlayIdleWithTarget]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Idle akIdle, ObjectReference akTarget
+| documentation = Send an idle to the actor to play, overriding its target with the specified reference
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaySubGraphAnimation
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PlaySubGraphAnimation|PlaySubGraphAnimation]]
+| kind = Function
+| flags = Native
+| parameters = string asEventName
+| documentation = Send an event to the subgraphs of an actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/RemoveFromFaction|RemoveFromFaction]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = Removes this actor from the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromAllFactions
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/RemoveFromAllFactions|RemoveFromAllFactions]]
+| kind = Function
+| flags = Native
+| documentation = Removes this actor from all factions
+}}
+
+{{Script_Object_Member_Summary
+| title = RemovePerk
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/RemovePerk|RemovePerk]]
+| kind = Function
+| flags = Native
+| parameters = Perk akPerk
+| documentation = Removes the specified perk from this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveSpell
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/RemoveSpell|RemoveSpell]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Spell akSpell
+| documentation = Removes the specified spell from this actor - returns true on success
+}}
+
+{{Script_Object_Member_Summary
+| title = ResetHealthAndLimbs
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ResetHealthAndLimbs|ResetHealthAndLimbs]]
+| kind = Function
+| flags = Native
+| documentation = Resets this actor's health and limb state
+}}
+
+{{Script_Object_Member_Summary
+| title = Resurrect
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/Resurrect|Resurrect]]
+| kind = Function
+| flags = Native
+| documentation = Resurrects this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SendAssaultAlarm
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SendAssaultAlarm|SendAssaultAlarm]]
+| kind = Function
+| flags = Native
+| documentation = Has this actor behave as if assaulted
+}}
+
+{{Script_Object_Member_Summary
+| title = SendSmugglingAlarm
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SendSmugglingAlarm|SendSmugglingAlarm]]
+| kind = Function
+| flags = Native
+| parameters = Actor akCriminal
+| documentation = Has this actor behave as if they caught another actor smuggling
+}}
+
+{{Script_Object_Member_Summary
+| title = SendTrespassAlarm
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SendTrespassAlarm|SendTrespassAlarm]]
+| kind = Function
+| flags = Native
+| parameters = Actor akCriminal
+| documentation = Has this actor behave as if they caught the target trespassing
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAlert
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetAlert|SetAlert]]
+| kind = Function
+| flags = Native
+| parameters = bool abAlerted = true
+| documentation = Sets the actor in an alerted state
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAllowFlying
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetAllowFlying|SetAllowFlying]]
+| kind = Function
+| flags = Native
+| parameters = bool abAllowed = true, bool abAllowCrash = true, bool abAllowSearch = false
+| documentation = Sets whether this actor is allowed to fly or not - if not, will land the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAlpha
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetAlpha|SetAlpha]]
+| kind = Function
+| flags = Native
+| parameters = float afTargetAlpha, bool abFade = false
+| documentation = Sets this actor's alpha - with an optional fade to that alpha
+The alpha will be clamped between 0 and 1
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAttackActorOnSight
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetAttackActorOnSight|SetAttackActorOnSight]]
+| kind = Function
+| flags = Native
+| parameters = bool abAttackOnSight = true
+| documentation = Sets this actor to be attacked by all other actors on sight
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAvoidPlayer
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetAvoidPlayer|SetAvoidPlayer]]
+| kind = Function
+| flags = Native
+| parameters = bool abAvoid = true
+| documentation = Tells pathing to avoid the player (which it already does by default) or not (for use in scenes where the player is meant to be an incorporeal observer).
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCommandState
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetCommandState|SetCommandState]]
+| kind = Function
+| flags = Native
+| parameters = bool abStartCommandMode
+| documentation = Sets/Unsets the actor in command mode so that we can order them around.  SetCanDoCommand() needs to have already been called on the actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetBribed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetBribed|SetBribed]]
+| kind = Function
+| flags = Native
+| parameters = bool abBribe = true
+| documentation = Flags/unflags this actor as bribed by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCanDoCommand
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetCanDoCommand|SetCanDoCommand]]
+| kind = Function
+| flags = Native
+| parameters = bool abCanCommand = true
+| documentation = Flags/unflags this actor as can be commanded by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCombatStyle
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetCombatStyle|SetCombatStyle]]
+| kind = Function
+| flags = Native
+| parameters = CombatStyle akCombatStyle
+| documentation = Sets the combatstyle for this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCrimeFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetCrimeFaction|SetCrimeFaction]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = Sets the faction this actor reports crimes to
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCriticalStage
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetCriticalStage|SetCriticalStage]]
+| kind = Function
+| flags = Native
+| parameters = int aiStage
+| documentation = Sets this actor's critical stage, which is one of the following (properties below also match this)
+0 - None
+1 - Goo start
+2 - Goo end
+3 - Disintegrate start
+4 - Disintegrate end
+5 - Freeze start
+6 - Freeze end
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDoingFavor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetDoingFavor|SetDoingFavor]]
+| kind = Function
+| flags = Native
+| parameters = bool abDoingFavor = true, bool abWorkShopMode = false
+| documentation = Flag this actor as currently doing a favor for the player
+Indicate if the actor is in workshop or normal command mode
+}}
+
+{{Script_Object_Member_Summary
+| title = ChangeAnimFaceArchetype
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ChangeAnimFaceArchetype|ChangeAnimFaceArchetype]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword = none
+| documentation = Change this actor's anim face archetype
+}}
+
+{{Script_Object_Member_Summary
+| title = SetEssential
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetEssential|SetEssential]]
+| kind = Function
+| flags = Native
+| parameters = bool abEssential
+| documentation = overrides the Essential status of the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFactionRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetFactionRank|SetFactionRank]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction, int aiRank
+| documentation = Sets this actor's rank with the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetForcedLandingMarker
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetForcedLandingMarker|SetForcedLandingMarker]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aMarker
+| documentation = Set a specific marker as the place at which this actor must land from flight.
+params:
+- aMarker:  The ObjectReference to set as this actor's landing marker
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGhost
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetGhost|SetGhost]]
+| kind = Function
+| flags = Native
+| parameters = bool abIsGhost = true
+| documentation = Flags/unflags this actor as a ghost
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGroupFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetGroupFaction|SetGroupFaction]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = Sets the faction that this actor will use for group behavior
+}}
+
+{{Script_Object_Member_Summary
+| title = SetHasCharGenSkeleton
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetHasCharGenSkeleton|SetHasCharGenSkeleton]]
+| kind = Function
+| flags = Native
+| parameters = bool abCharGen = true
+| documentation = Flags/unflags this actor as requiring a char gen skeleton
+}}
+
+{{Script_Object_Member_Summary
+| title = AddToFaction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/AddToFaction|AddToFaction]]
+| kind = Function
+| parameters = Faction akFaction
+| documentation = Adds this actor to a faction at rank 0 if they aren't already in it
+}}
+
+{{Script_Object_Member_Summary
+| title = SetHeadTracking
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetHeadTracking|SetHeadTracking]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Turns on/off headtracking on this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetIntimidated
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetIntimidated|SetIntimidated]]
+| kind = Function
+| flags = Native
+| parameters = bool abIntimidate = true
+| documentation = Flags/unflags this actor as intimidated by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetLookAt
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetLookAt|SetLookAt]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget, bool abPathingLookAt = false
+| documentation = Sets this actor's head tracking target, optionally forcing it as their pathing look-at target
+}}
+
+{{Script_Object_Member_Summary
+| title = SetNoBleedoutRecovery
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetNoBleedoutRecovery|SetNoBleedoutRecovery]]
+| kind = Function
+| flags = Native
+| parameters = bool abAllowed
+| documentation = Set the no bleedout recovery flag on this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetNotShowOnStealthMeter
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetNotShowOnStealthMeter|SetNotShowOnStealthMeter]]
+| kind = Function
+| flags = Native
+| parameters = bool abNotShow
+| documentation = Sets this actor to not effect the detection level on the stealth meter if he is not hostile to the player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOutfit
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetOutfit|SetOutfit]]
+| kind = Function
+| flags = Native
+| parameters = Outfit akOutfit, bool abSleepOutfit = false
+| documentation = Sets the actors outfit and makes him wear it
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOverrideVoiceType
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetOverrideVoiceType|SetOverrideVoiceType]]
+| kind = Function
+| flags = Native
+| parameters = VoiceType akVoiceType
+| documentation = Sets the actor's override voice type
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOverrideVoiceTypeRandom
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetOverrideVoiceTypeRandom|SetOverrideVoiceTypeRandom]]
+| kind = Function
+| returns = Voicetype
+| parameters = Formlist akVoiceList
+| documentation = calls SetOverrideVoiceType with a randomly choice from a formlist of voicetypes and returns the chosen voicetype
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerControls
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetPlayerControls|SetPlayerControls]]
+| kind = Function
+| flags = Native
+| parameters = bool abControls
+| documentation = Set/reset whether player input being sent to the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerResistingArrest
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetPlayerResistingArrest|SetPlayerResistingArrest]]
+| kind = Function
+| flags = Native
+| documentation = Sets the player as resisting arrest from this actor's faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerTeammate
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetPlayerTeammate|SetPlayerTeammate]]
+| kind = Function
+| flags = Native
+| parameters = bool abTeammate = true, bool abCanDoFavor = true, bool abGivePlayerXP = false
+| documentation = Sets or clears this actor as a teammate of the player
+abCanDoFavor - OPTIONAL default is true the teammate can do favors
+abGivePlayerXP - OPTIONAL default is false the teammate will give the player XP for kills and unlocks
+}}
+
+{{Script_Object_Member_Summary
+| title = SetProtected
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetProtected|SetProtected]]
+| kind = Function
+| flags = Native
+| parameters = bool abProtected
+| documentation = overrides the Protected status of the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRace
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetRace|SetRace]]
+| kind = Function
+| flags = Native
+| parameters = Race akRace = none
+| documentation = Sets the actors race
+akRace - OPTIONAL (Def=None) New race for this actor. Default, no race, to switch back to the original race.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRelationshipRank
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetRelationshipRank|SetRelationshipRank]]
+| kind = Function
+| flags = Native
+| parameters = Actor akOther, int aiRank
+| documentation = Sets the relationship rank between this actor and another (See GetRelationshipRank for the ranks)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRestrained
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetRestrained|SetRestrained]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abRestrained = true
+| documentation = Sets this actor as restrained or not - returns false if the state wasn't changed
+}}
+
+{{Script_Object_Member_Summary
+| title = SetSubGraphFloatVariable
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetSubGraphFloatVariable|SetSubGraphFloatVariable]]
+| kind = Function
+| flags = Native
+| parameters = string asVariableName, float afValue
+| documentation = Set a variable on all of an actor's subgraphs
+}}
+
+{{Script_Object_Member_Summary
+| title = SetUnconscious
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetUnconscious|SetUnconscious]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abUnconscious = true
+| documentation = Sets this actor as unconscious or not - returns false if the state wasn't changed
+}}
+
+{{Script_Object_Member_Summary
+| title = SetVehicle
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetVehicle|SetVehicle]]
+| kind = Function
+| flags = Native
+| parameters = Actor akVehicle
+| documentation = Attach the actor to a horse or other vehicle.
+akVehicle is the vehicle ref.  To detach the actor from its current vehicle, set akVehicle to None (or to the Actor itself).
+}}
+
+{{Script_Object_Member_Summary
+| title = SetWantSprinting
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SetWantSprinting|SetWantSprinting]]
+| kind = Function
+| flags = Native
+| parameters = bool abWantSprint
+| documentation = Set that the actor would like to sprint when possible (or turn that off).
+abWantSprint is if we want to sprint currently, false otherwise
+}}
+
+{{Script_Object_Member_Summary
+| title = SheatheWeapon
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SheatheWeapon|SheatheWeapon]]
+| kind = Function
+| flags = Native
+| documentation = Makes this actor sheathe his weapon
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowBarterMenu
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ShowBarterMenu|ShowBarterMenu]]
+| kind = Function
+| flags = Native
+| documentation = Opens the Barter menu
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowCrewAssign
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ShowCrewAssign|ShowCrewAssign]]
+| kind = Function
+| flags = Native
+| parameters = bool abAssign = true
+| documentation = Opens the crew assignment menu
+}}
+
+{{Script_Object_Member_Summary
+| title = StartCombat
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StartCombat|StartCombat]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akTarget, bool abPreferredTarget = false
+| documentation = Starts combat with the target reference - returns true if combat was started
+abPreferredTarget - OPTIONAL (Def=false) True to set the target as the actor's preferred target
+}}
+
+{{Script_Object_Member_Summary
+| title = StartDeferredKill
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StartDeferredKill|StartDeferredKill]]
+| kind = Function
+| flags = Native
+| documentation = Start the Deferred Kill state. Be sure to call EndDeferredKill or the actor will be invulnerable.
+}}
+
+{{Script_Object_Member_Summary
+| title = StartVampireFeed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StartVampireFeed|StartVampireFeed]]
+| kind = Function
+| flags = Native
+| parameters = Actor akTarget
+| documentation = Starts vampire feed with the target
+}}
+
+{{Script_Object_Member_Summary
+| title = StartFrenzyAttack
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StartFrenzyAttack|StartFrenzyAttack]]
+| kind = Function
+| flags = Native
+| parameters = float aChance = 0.1, float aInterval = 0.5
+| documentation = Starts a frenzey attack target selector.
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCombat
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StopCombat|StopCombat]]
+| kind = Function
+| flags = Native
+| documentation = Removes this actor from combat
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCombatAlarm
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StopCombatAlarm|StopCombatAlarm]]
+| kind = Function
+| flags = Native
+| documentation = Stops all combat and alarms against this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SwitchToPowerArmor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SwitchToPowerArmor|SwitchToPowerArmor]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aArmorFurniture
+| documentation = Instantly pop an actor into aArmorFurniture without any animation or repositioning
+}}
+
+{{Script_Object_Member_Summary
+| title = SnapIntoInteraction
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/SnapIntoInteraction|SnapIntoInteraction]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akTarget
+| documentation = (near) Instantly snaps an actor into a furniture or onto a mount
+}}
+
+{{Script_Object_Member_Summary
+| title = TrapSoul
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/TrapSoul|TrapSoul]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akTarget
+| documentation = Returns whether the actor can trap the soul of the given actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnequipAll
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/UnequipAll|UnequipAll]]
+| kind = Function
+| flags = Native
+| documentation = Unequips the all items from this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = UnequipItem
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/UnequipItem|UnequipItem]]
+| kind = Function
+| flags = Native
+| parameters = Form akItem, bool abPreventEquip = false, bool abSilent = false
+| documentation = Unequips the specified item from this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = UnequipItemSlot
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/UnequipItemSlot|UnequipItemSlot]]
+| kind = Function
+| flags = Native
+| parameters = int aiSlot
+| documentation = Unequips the all items in this slot for the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = UnequipSpell
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/UnequipSpell|UnequipSpell]]
+| kind = Function
+| flags = Native
+| parameters = Spell akSpell, int aiSource
+| documentation = Forces this actor to unequip the specified spell. The casting source can be:
+0 - Left hand
+1 - Right hand
+2 - Other
+}}
+
+{{Script_Object_Member_Summary
+| title = UnLockOwnedDoorsInCell
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/UnLockOwnedDoorsInCell|UnLockOwnedDoorsInCell]]
+| kind = Function
+| flags = Native
+| documentation = This actor will unlock all the doors that he qualifies for ownership in his current parentcell
+}}
+
+{{Script_Object_Member_Summary
+| title = WillIntimidateSucceed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/WillIntimidateSucceed|WillIntimidateSucceed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether intimidate will succeed against this actor or not
+}}
+
+{{Script_Object_Member_Summary
+| title = WornCoversBipedSlot
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/WornCoversBipedSlot|WornCoversBipedSlot]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiSlot
+| documentation = Returns whether anything the actor is wearing covers this biped slot
+}}
+
+{{Script_Object_Member_Summary
+| title = WornHasKeyword
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/WornHasKeyword|WornHasKeyword]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword akKeyword
+| documentation = Returns whether anything the actor is wearing has the specified keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = WouldBeStealing
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/WouldBeStealing|WouldBeStealing]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akObject
+| documentation = Returns if actor is stealing taking a ref
+}}
+
+{{Script_Object_Member_Summary
+| title = WouldRefuseCommand
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/WouldRefuseCommand|WouldRefuseCommand]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = ObjectReference akObject
+| documentation = Obtains the ability to do a command on ref for player
+0 - will do the command
+1 - refuse for reasons other then moral/impossible
+2 - Impossible
+3 - Morale refusal
+Returns if actor can do command on ref for player
+}}
+
+{{Script_Object_Member_Summary
+| title = StartSneaking
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/StartSneaking|StartSneaking]]
+| kind = Function
+| flags = Native
+| documentation = Makes this actor start sneaking
+}}
+
+{{Script_Object_Member_Summary
+| title = DrawWeapon
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/DrawWeapon|DrawWeapon]]
+| kind = Function
+| flags = Native
+| documentation = Makes this actor draw his weapon
+}}
+
+{{Script_Object_Member_Summary
+| title = DogPlaceInMouth
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/DogPlaceInMouth|DogPlaceInMouth]]
+| kind = Function
+| flags = Native
+| parameters = Form akItem
+| documentation = Add this object to the dog's mouth
+}}
+
+{{Script_Object_Member_Summary
+| title = DogDropItems
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/DogDropItems|DogDropItems]]
+| kind = Function
+| flags = Native
+| documentation = Drop the dog's items in the world
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceMovementDirection
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceMovementDirection|ForceMovementDirection]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afXAngle = 0.0, float afYAngle = 0.0, float afZAngle = 0.0
+| documentation = **** For Debugging Movement Animations (not in release builds) ****
+Forces the movement direction on the actor
+afXAngle, afYAngle and afZAngle are in degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceMovementSpeed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceMovementSpeed|ForceMovementSpeed]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afSpeedMult
+| documentation = Forces the movement speed on the actor
+afSpeedMult is a speed multiplier based on the current max speeds
+- 0 -> 1 Scales between 0 and the Walk speed
+- 1 -> 2 Scales between Walk speed and Run Speed
+- 2 and above is a multiplier of the run speed (less 1.0 since Run is 2.0)
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceMovementRotationSpeed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceMovementRotationSpeed|ForceMovementRotationSpeed]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afXMult = 0.0, float afYMult = 0.0, float afZMult = 0.0
+| documentation = Forces the movement rotation speed on the actor
+Each component of the rotation speed is a multiplier following these rules:
+- 0 -> 1 Scales between 0 and the Walk speed
+- 1 -> 2 Scales between Walk speed and Run Speed
+- 2 and above is a multiplier of the run speed (less 1.0 since Run is 2.0)
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceMovementDirectionRamp
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceMovementDirectionRamp|ForceMovementDirectionRamp]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afXAngle = 0.0, float afYAngle = 0.0, float afZAngle = 0.0, float afRampTime = 0.1
+| documentation = Ramps the movement direction on the actor to the passed in value over the passed in time
+afXAngle, afYAngle and afZAngle are in degrees
+afRampTime is in seconds
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceMovementSpeedRamp
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceMovementSpeedRamp|ForceMovementSpeedRamp]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afSpeedMult, float afRampTime = 0.1
+| documentation = Ramps the movement speed on the actor to the passed in value over the passed in time
+afSpeedMult is a speed multiplier based on the current max speeds
+- 0 -> 1 Scales between 0 and the Walk speed
+- 1 -> 2 Scales between Walk speed and Run Speed
+- 2 and above is a multiplier of the run speed (less 1.0 since Run is 2.0)
+afRampTime is in seconds
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceMovementRotationSpeedRamp
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceMovementRotationSpeedRamp|ForceMovementRotationSpeedRamp]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afXMult = 0.0, float afYMult = 0.0, float afZMult = 0.0, float afRampTime = 0.1
+| documentation = Ramps the movement rotation speed on the actor to the passed in value over the passed in time
+Each component of the rotation speed is a multiplier following these rules:
+- 0 -> 1 Scales between 0 and the Walk speed
+- 1 -> 2 Scales between Walk speed and Run Speed
+- 2 and above is a multiplier of the run speed (less 1.0 since Run is 2.0)
+afRampTime is in seconds
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceTargetDirection
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceTargetDirection|ForceTargetDirection]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afXAngle = 0.0, float afYAngle = 0.0, float afZAngle = 0.0
+| documentation = Sets the target movement direction on the actor
+afXAngle, afYAngle and afZAngle are in degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceTargetSpeed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceTargetSpeed|ForceTargetSpeed]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afSpeed
+| documentation = Sets the target movement speed on the actor
+afSpeedMult is a speed multiplier based on the current max speeds
+- 0 -> 1 Scales between 0 and the Walk speed
+- 1 -> 2 Scales between Walk speed and Run Speed
+- 2 and above is a multiplier of the run speed (less 1.0 since Run is 2.0)
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceTargetAngle
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ForceTargetAngle|ForceTargetAngle]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = float afXAngle = 0.0, float afYAngle = 0.0, float afZAngle = 0.0
+| documentation = Sets the target facing angle on the actor
+afXAngle, afYAngle and afZAngle are in degrees
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearForcedMovement
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/ClearForcedMovement|ClearForcedMovement]]
+| kind = Function
+| flags = Native DebugOnly
+| documentation = Clears any forced movement on the actor and return it to its standard state
+}}
+
+{{Script_Object_Member_Summary
+| title = CanMoveVertical
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CanMoveVertical|CanMoveVertical]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = bool
+| documentation = Check to see if the actor can move vertically.
+}}
+
+{{Script_Object_Member_Summary
+| title = CanStrafe
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CanStrafe|CanStrafe]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = bool
+| documentation = Check to see if the actor can strafe side to side.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorInDialogueWithRobot
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/GetActorInDialogueWithRobot|GetActorInDialogueWithRobot]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = Actor
+| documentation = Check all possible dialogue targets for the actor the robot is speaking with, including the current scene's last target/speaker. Used by RobotQuestRunner for debugging purposes.
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = PathingResult_Success
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PathingResult_Success|PathingResult_Success]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+| documentation = Constants for PathToReference return codes
+}}
+
+{{Script_Object_Member_Summary
+| title = PathingResult_Failure
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PathingResult_Failure|PathingResult_Failure]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1
+}}
+
+{{Script_Object_Member_Summary
+| title = PathingResult_Stopped
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PathingResult_Stopped|PathingResult_Stopped]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2
+}}
+
+{{Script_Object_Member_Summary
+| title = PathingResult_Cleared
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PathingResult_Cleared|PathingResult_Cleared]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 3
+}}
+
+{{Script_Object_Member_Summary
+| title = PathingResult_Timeout
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/PathingResult_Timeout|PathingResult_Timeout]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_None
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_None|CritStage_None]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+| documentation = Set of read-only properties to essentually make a fake enum for critical stages
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_GooStart
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_GooStart|CritStage_GooStart]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_GooEnd
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_GooEnd|CritStage_GooEnd]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_DisintegrateStart
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_DisintegrateStart|CritStage_DisintegrateStart]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 3
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_DisintegrateEnd
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_DisintegrateEnd|CritStage_DisintegrateEnd]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_FreezeStart
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_FreezeStart|CritStage_FreezeStart]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 5
+}}
+
+{{Script_Object_Member_Summary
+| title = CritStage_FreezeEnd
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/CritStage_FreezeEnd|CritStage_FreezeEnd]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 6
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActorActivatedRef
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnActorActivatedRef|OnActorActivatedRef]]
+| kind = Event
+| parameters = ObjectReference akActivatedRef
+| documentation = Event received when this actor activates a ref
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAffinityEvent
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnAffinityEvent|OnAffinityEvent]]
+| kind = Event
+| parameters = AffinityEvent akAffinityEvent, ActorValue akActorValue, GlobalVariable akReactionValue, ObjectReference akTarget
+| documentation = Event received when affinity event is run
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akTarget, int aeCombatState
+| documentation = Event that is triggered when this actor's combat state against the target changes
+State is as follows:
+0 - not in combat
+1 - in combat
+2 - searching
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatListAdded
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCombatListAdded|OnCombatListAdded]]
+| kind = Event
+| parameters = Actor akTarget
+| documentation = Event that is triggered when this actor adds another actor to its combat list.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatListRemoved
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCombatListRemoved|OnCombatListRemoved]]
+| kind = Event
+| parameters = Actor akTarget
+| documentation = Event that is triggered when this actor removes another actor from its combat list.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeCompleteCommand
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCommandModeCompleteCommand|OnCommandModeCompleteCommand]]
+| kind = Event
+| parameters = int aeCommandType, ObjectReference akTarget
+| documentation = Event received when the actor completes a command in command mode.
+Type is as follows:
+0 - None
+1 - Call
+2 - Follow
+3 - Move
+4 - Attack
+5 - Inspect
+6 - Retrieve
+7 - Stay
+8 - Release
+9 - Heal
+10 - Assign
+11 - Ride
+12 - Enter
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeEnter
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCommandModeEnter|OnCommandModeEnter]]
+| kind = Event
+| documentation = Event received when the player begins commanding this actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeExit
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCommandModeExit|OnCommandModeExit]]
+| kind = Event
+| documentation = Event received when the player ends commanding this actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeGiveCommand
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCommandModeGiveCommand|OnCommandModeGiveCommand]]
+| kind = Event
+| parameters = int aeCommandType, ObjectReference akTarget
+| documentation = Event received when the player gives actor a command in command mode.
+Type is as follows:
+0 - None
+1 - Call
+2 - Follow
+3 - Move
+4 - Attack
+5 - Inspect
+6 - Retrieve
+7 - Stay
+8 - Release
+9 - Heal
+10 - Assign
+11 - Ride
+12 - Enter
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCompanionDismiss
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCompanionDismiss|OnCompanionDismiss]]
+| kind = Event
+| documentation = Received when player dismisses teammate companion
+}}
+
+{{Script_Object_Member_Summary
+| title = OnConsciousnessStateChanged
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnConsciousnessStateChanged|OnConsciousnessStateChanged]]
+| kind = Event
+| parameters = bool abUnconscious
+| documentation = Event that is triggered when this actor's consciousness state changes
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCripple
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnCripple|OnCripple]]
+| kind = Event
+| parameters = ActorValue akActorValue, bool abCrippled
+| documentation = Recieved immeadiately after a limb has become crippled or uncrippled.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDeferredKill
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnDeferredKill|OnDeferredKill]]
+| kind = Event
+| parameters = Actor akKiller
+| documentation = Event that is triggered when this actor gets a deferred kill added
+(they were in deferred kill mode and got "killed")
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+| documentation = Event that is triggered when this actor finishes dying
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDifficultyChanged
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnDifficultyChanged|OnDifficultyChanged]]
+| kind = Event
+| parameters = int aOldDifficulty, int aNewDifficulty
+| documentation = Event received when the player changes their difficulty
+Type is as follows:
+0 - Very Easy
+1 - Easy
+2 - Normal
+3 - Hard
+4 - Very Hard
+5 - Survival
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
+| documentation = Event that is triggered when this actor begins to die
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnconscious
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnUnconscious|OnUnconscious]]
+| kind = Event
+| parameters = ObjectReference akAttacker
+| documentation = Event that is triggered when an actor has been "killed" with EM weapons (the actor is still alive)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterBleedout
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnEnterBleedout|OnEnterBleedout]]
+| kind = Event
+| documentation = Event received when an actor enters bleedout.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterOutpostBeaconMode
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnEnterOutpostBeaconMode|OnEnterOutpostBeaconMode]]
+| kind = Event
+| documentation = Event received when the player enters Outpost Beacon placeement mode.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterShipInterior
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnEnterShipInterior|OnEnterShipInterior]]
+| kind = Event
+| parameters = ObjectReference akShip
+| documentation = Event received when an actor enters a ship interior cell
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterSneaking
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnEnterSneaking|OnEnterSneaking]]
+| kind = Event
+| documentation = Event received when an actor enters sneaking.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEscortWaitStart
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnEscortWaitStart|OnEscortWaitStart]]
+| kind = Event
+| documentation = Event received when this actor is in an Escort procedure and begins waiting for the escorted actor to catch up.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEscortWaitStop
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnEscortWaitStop|OnEscortWaitStop]]
+| kind = Event
+| documentation = Event received when this actor is in an Escort procedure and stops waiting because the escorted actor has caught up.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnExitShipInterior
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnExitShipInterior|OnExitShipInterior]]
+| kind = Event
+| parameters = ObjectReference akShip
+| documentation = Event received when an actor exits a ship interior cell
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFollowerWarp
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerFollowerWarp|OnPlayerFollowerWarp]]
+| kind = Event
+| parameters = ObjectReference akFollower
+| documentation = Event received when a player follower is warped
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGetUp
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnGetUp|OnGetUp]]
+| kind = Event
+| parameters = ObjectReference akFurniture
+| documentation = Event that is triggered when this actor leaves the furniture
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHomeShipSet
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnHomeShipSet|OnHomeShipSet]]
+| kind = Event
+| parameters = SpaceshipReference akShip, SpaceshipReference akPrevious
+| documentation = Event that is triggered when the actors home ship is set.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFailedPlotRoute
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerFailedPlotRoute|OnPlayerFailedPlotRoute]]
+| kind = Event
+| parameters = int aeFailedPlotReason
+| documentation = Event received when the player plots a failed starmap route
+Type is as follows:
+0 - Success
+1 - Insufficient Fuel
+2 - Out of Range
+3 - Unexplored System
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerModifiedShip
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerModifiedShip|OnPlayerModifiedShip]]
+| kind = Event
+| parameters = SpaceshipReference akShip
+| documentation = Event that is triggered when an actor modifies a ship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemEquipped
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnItemEquipped|OnItemEquipped]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectReference akReference
+| documentation = Event received when this actor equips something - akReference may be None if object is not persistent
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemUnequipped
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnItemUnequipped|OnItemUnequipped]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectReference akReference
+| documentation = Event received when this actor unequips something - akReference may be None if object is not persistent
+}}
+
+{{Script_Object_Member_Summary
+| title = OnKill
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnKill|OnKill]]
+| kind = Event
+| parameters = ObjectReference akVictim
+| documentation = Event that is triggered when this actor kills another
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLocationChange
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnLocationChange|OnLocationChange]]
+| kind = Event
+| parameters = Location akOldLoc, Location akNewLoc
+| documentation = Event that is triggered when this actor changes from one location to another
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRecoverFromBleedout
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnRecoverFromBleedout|OnRecoverFromBleedout]]
+| kind = Event
+| documentation = Event received when an actor exits bleedout.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPackageChange
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPackageChange|OnPackageChange]]
+| kind = Event
+| parameters = Package akOldPackage
+| documentation = Event received when this actor's package changes
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPackageEnd
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPackageEnd|OnPackageEnd]]
+| kind = Event
+| parameters = Package akOldPackage
+| documentation = Event received when this actor's package ends
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPackageStart
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPackageStart|OnPackageStart]]
+| kind = Event
+| parameters = Package akNewPackage
+| documentation = Event received when this actor starts a new package
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPartialCripple
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPartialCripple|OnPartialCripple]]
+| kind = Event
+| parameters = ActorValue akActorValue, bool abCrippled
+| documentation = Recieved immeadiately after the limb of a robot (or other actor whose race allows sub-segment damage) has become (or ceased to be) partially crippled.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPickLock
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPickLock|OnPickLock]]
+| kind = Event
+| parameters = ObjectReference akLockedRef, bool abCrime, bool abSucceeded, TerminalMenu akLockedTerminalMenu, int aiTerminalMenuItem
+| documentation = Event received when an actor picks a lock
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPickpocketFailed
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPickpocketFailed|OnPickpocketFailed]]
+| kind = Event
+| documentation = Received when the player fails to pickpocket this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerItemAdded
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerItemAdded|OnPlayerItemAdded]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectReference akOwner, ObjectReference akSourceContainer, int aeAcquireType
+| documentation = Received when the player gains an item in their inventory
+aeAcquireType is one of the following:
+0: None
+1: Steal
+2: Buy
+3: Pickpocket
+4: Pickup
+5: Container
+6: Dead body
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCompleteResearch
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerCompleteResearch|OnPlayerCompleteResearch]]
+| kind = Event
+| parameters = ObjectReference akBench, Location akLocation, ResearchProject akProject
+| documentation = Received when player completes research
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCraftItem
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerCraftItem|OnPlayerCraftItem]]
+| kind = Event
+| parameters = ObjectReference akBench, Location akLocation, Form akCreatedItem
+| documentation = Received when player crafts an item
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCreateRobot
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerCreateRobot|OnPlayerCreateRobot]]
+| kind = Event
+| parameters = Actor akNewRobot
+| documentation = Received when player creates a new robot
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerEnterVertibird
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerEnterVertibird|OnPlayerEnterVertibird]]
+| kind = Event
+| parameters = ObjectReference akVertibird
+| documentation = Received when player enters vertibird
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFallLongDistance
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerFallLongDistance|OnPlayerFallLongDistance]]
+| kind = Event
+| parameters = float afDamage
+| documentation = Received when player takes fall damage
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFireWeapon
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerFireWeapon|OnPlayerFireWeapon]]
+| kind = Event
+| parameters = Form akBaseObject
+| documentation = Received when player fires a weapon out of combat and based on timer
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerHealTeammate
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerHealTeammate|OnPlayerHealTeammate]]
+| kind = Event
+| parameters = Actor akTeammate
+| documentation = Received when player heals his teammate
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerLoadGame
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerLoadGame|OnPlayerLoadGame]]
+| kind = Event
+| documentation = Received immediately after the player has loaded a save game. A good time to check for additional content.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerLoiteringBegin
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerLoiteringBegin|OnPlayerLoiteringBegin]]
+| kind = Event
+| documentation = Received when player starts loitering
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerLoiteringEnd
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerLoiteringEnd|OnPlayerLoiteringEnd]]
+| kind = Event
+| documentation = Received when player stops loitering
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerModArmorWeapon
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerModArmorWeapon|OnPlayerModArmorWeapon]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectMod akModBaseObject
+| documentation = Received when player mods a weapon or armor in the menu.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerModRobot
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerModRobot|OnPlayerModRobot]]
+| kind = Event
+| parameters = Actor akRobot, ObjectMod akModBaseObject
+| documentation = Received when the player mods a robot
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerSwimming
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerSwimming|OnPlayerSwimming]]
+| kind = Event
+| documentation = Received when player starts swimming
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerUseWorkBench
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerUseWorkBench|OnPlayerUseWorkBench]]
+| kind = Event
+| parameters = ObjectReference akWorkBench
+| documentation = Received when player uses a workbench
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRaceSwitchComplete
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnRaceSwitchComplete|OnRaceSwitchComplete]]
+| kind = Event
+| documentation = Event received when this actor finishes changing its race
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSit
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnSit|OnSit]]
+| kind = Event
+| parameters = ObjectReference akFurniture
+| documentation = Event that is triggered when this actor sits in the furniture
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpeechChallengeAvailable
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnSpeechChallengeAvailable|OnSpeechChallengeAvailable]]
+| kind = Event
+| parameters = ObjectReference akSpeaker
+| documentation = Received when player gets a speech challenge in dialogue
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerPlanetSurveyComplete
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerPlanetSurveyComplete|OnPlayerPlanetSurveyComplete]]
+| kind = Event
+| parameters = Planet akPlanet
+| documentation = Received when player completely surveyed a planet
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerScannedObject
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerScannedObject|OnPlayerScannedObject]]
+| kind = Event
+| parameters = ObjectReference akScannedRef
+| documentation = Received by the player when they scan an object
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOutpostPlaced
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnOutpostPlaced|OnOutpostPlaced]]
+| kind = Event
+| parameters = ObjectReference akOutpostBeacon
+| documentation = Received when player placed an outpost beacon
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerArrested
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerArrested|OnPlayerArrested]]
+| kind = Event
+| parameters = ObjectReference akGuard, Location akLocation, int aeCrimeType
+| documentation = Event that is triggered when the player is arrested.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerAssaultActor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerAssaultActor|OnPlayerAssaultActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, Location akLocation, bool aeCrime
+| documentation = Event that is triggered when the player assaults someone.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCrimeGold
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerCrimeGold|OnPlayerCrimeGold]]
+| kind = Event
+| parameters = ObjectReference akVictim, Form akFaction, int aeCrimeGold, int aeCrimeType
+| documentation = Event that is triggered when the player gets crimegold .
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerJail
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerJail|OnPlayerJail]]
+| kind = Event
+| parameters = ObjectReference akGuard, Form akFaction, Location akLocation, int aeCrimeGold
+| documentation = Event that is triggered when the player goes to jail.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerPayFine
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerPayFine|OnPlayerPayFine]]
+| kind = Event
+| parameters = ObjectReference akGuard, Form akFaction, int aeCrimeGold
+| documentation = Event that is triggered when the player pays fine.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerMurderActor
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerMurderActor|OnPlayerMurderActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, Location akLocation, bool aeCrime
+| documentation = Event that is triggered when the player murders someone.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerTrespass
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerTrespass|OnPlayerTrespass]]
+| kind = Event
+| parameters = ObjectReference akVictim, Location akLocation, bool aeCrime
+| documentation = Event that is triggered when the player trespassing.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerBuyShip
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerBuyShip|OnPlayerBuyShip]]
+| kind = Event
+| parameters = SpaceshipReference akShip
+| documentation = Event that is triggered when the player buys a ship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerSellShip
+| script = [[SFM:Script-Actor|Actor]]
+| name = [[SFM:Script-Actor/OnPlayerSellShip|OnPlayerSellShip]]
+| kind = Event
+| parameters = SpaceshipReference akShip
+| documentation = Event that is triggered when the player sells a ship
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

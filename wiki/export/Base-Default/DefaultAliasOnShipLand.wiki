@@ -1,0 +1,86 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnShipLand
+| name = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnShipLand.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnShipLand Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnShipLand.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias lands.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = LocationToCheck_Optional_Properties
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/LocationToCheck_Optional_Properties|LocationToCheck_Optional_Properties]]
+| kind = Group
+| documentation = **************************************************************************************************************
+*************************	   <BEGIN> LocationToCheck Properties	  *************************
+**************************************************************************************************************
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetLocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/GetLocationsToCheckAgainst|GetLocationsToCheckAgainst]]
+| kind = Function
+| returns = Location[]
+| documentation = OVERRIDEN PARENT FUNCTONS
+These function should usually return the value of the child script's property of the same name.
+(We do this because different children will want different default values for that property and so need to define the property on themselves, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/GetLocationAliasesToCheckAgainst|GetLocationAliasesToCheckAgainst]]
+| kind = Function
+| returns = LocationAlias[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/GetLocationMatchIfChild|GetLocationMatchIfChild]]
+| kind = Function
+| returns = bool
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnShipLanding
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/OnShipLanding|OnShipLanding]]
+| kind = Event
+| parameters = bool abComplete
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

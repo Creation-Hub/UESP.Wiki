@@ -1,0 +1,74 @@
+{{Script_Object_Summary
+| title = Package
+| name = [[SFM:Script-Package|Package]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Package.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Package Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Package.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetOwningQuest
+| script = [[SFM:Script-Package|Package]]
+| name = [[SFM:Script-Package/GetOwningQuest|GetOwningQuest]]
+| kind = Function
+| flags = Native
+| returns = Quest
+| documentation = Returns the quest that owns this package
+}}
+
+{{Script_Object_Member_Summary
+| title = GetTemplate
+| script = [[SFM:Script-Package|Package]]
+| name = [[SFM:Script-Package/GetTemplate|GetTemplate]]
+| kind = Function
+| flags = Native
+| returns = Package
+| documentation = Obtains the package that is the parent template of this one (if any)
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnStart
+| script = [[SFM:Script-Package|Package]]
+| name = [[SFM:Script-Package/OnStart|OnStart]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event called when the package first starts (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-Package|Package]]
+| name = [[SFM:Script-Package/OnEnd|OnEnd]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event called when the package ends (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnChange
+| script = [[SFM:Script-Package|Package]]
+| name = [[SFM:Script-Package/OnChange|OnChange]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event called when the package changes (in parallel with the fragment)
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

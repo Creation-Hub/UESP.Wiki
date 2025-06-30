@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Flora
+| name = [[SFM:Script-Flora|Flora]]
+| extends = [[SFM:Script-Activator|Activator]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Flora.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Flora Extends Activator Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Flora.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Flora.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

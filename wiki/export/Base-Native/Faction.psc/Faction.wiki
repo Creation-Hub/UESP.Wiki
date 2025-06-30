@@ -1,0 +1,282 @@
+{{Script_Object_Summary
+| title = Faction
+| name = [[SFM:Script-Faction|Faction]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Faction.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Faction Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Faction.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = CanPayCrimeGold
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/CanPayCrimeGold|CanPayCrimeGold]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if the player can pay the crime gold for this faction
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCrimeGold
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetCrimeGold|GetCrimeGold]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets the amount of gold the player is to pay to this faction for crimes
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCrimeGoldNonViolent
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetCrimeGoldNonViolent|GetCrimeGoldNonViolent]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets the amount of gold the player is to pay to this faction for non-violent crimes
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCrimeGoldViolent
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetCrimeGoldViolent|GetCrimeGoldViolent]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets the amount of gold the player is to pay to this faction for violent crimes
+}}
+
+{{Script_Object_Member_Summary
+| title = GetInfamy
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetInfamy|GetInfamy]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Get the player's "infamy" with this faction (accumulated crime gold)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetInfamyNonViolent
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetInfamyNonViolent|GetInfamyNonViolent]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Get the player's "non-violent infamy" with this faction (accumulated non-violent crime gold)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetInfamyViolent
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetInfamyViolent|GetInfamyViolent]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Get the player's "violent infamy" with this faction (accumulated violent crime gold)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionReaction
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetFactionReaction|GetFactionReaction]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Actor akOther
+| documentation = Obtains this factions faction-based reaction to the actor
+0 - Neutral
+1 - Enemy
+2 - Ally
+3 - Friend
+}}
+
+{{Script_Object_Member_Summary
+| title = GetStolenItemValueCrime
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetStolenItemValueCrime|GetStolenItemValueCrime]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains the value of all items stolen by the player from this faction that was witnessed
+}}
+
+{{Script_Object_Member_Summary
+| title = GetStolenItemValueNoCrime
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/GetStolenItemValueNoCrime|GetStolenItemValueNoCrime]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains the value of all items stolen by the player from this faction that was NOT witnessed
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFactionInCrimeGroup
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/IsFactionInCrimeGroup|IsFactionInCrimeGroup]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Faction akOther
+| documentation = Is the passed in faction in this faction's crime group
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerEnemy
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/IsPlayerEnemy|IsPlayerEnemy]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the player an enemy of this faction?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerExpelled
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/IsPlayerExpelled|IsPlayerExpelled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the player expelled from this faction?
+}}
+
+{{Script_Object_Member_Summary
+| title = ModCrimeGold
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/ModCrimeGold|ModCrimeGold]]
+| kind = Function
+| flags = Native
+| parameters = int aiAmount, bool abViolent = false
+| documentation = Modifies the amount of crime gold for this faction - violent or non-violent
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerPayCrimeGold
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/PlayerPayCrimeGold|PlayerPayCrimeGold]]
+| kind = Function
+| flags = Native
+| parameters = bool abRemoveStolenItems = true, bool abGoToJail = true
+| documentation = Has the player pay the crime gold for this faction
+}}
+
+{{Script_Object_Member_Summary
+| title = RemovePlayerContrabandAndStolenItems
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/RemovePlayerContrabandAndStolenItems|RemovePlayerContrabandAndStolenItems]]
+| kind = Function
+| flags = Native
+| documentation = Removes all contraband and stolen items from the player, their ship, and crew
+}}
+
+{{Script_Object_Member_Summary
+| title = SendAssaultAlarm
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SendAssaultAlarm|SendAssaultAlarm]]
+| kind = Function
+| flags = Native
+| documentation = Finds a nearby NPC in this faction and has them behave as if assaulted
+}}
+
+{{Script_Object_Member_Summary
+| title = SendPlayerToJail
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SendPlayerToJail|SendPlayerToJail]]
+| kind = Function
+| flags = Native
+| parameters = bool abRemoveInventory = true, bool abRealJail = false
+| documentation = Sends the player to this faction's jail - removing inventory if requested, and to a "real" jail or not
+}}
+
+{{Script_Object_Member_Summary
+| title = SendPlayerToJailEx
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SendPlayerToJailEx|SendPlayerToJailEx]]
+| kind = Function
+| flags = Native
+| parameters = bool abRemoveInventory = true, bool abRealJail = false, bool abSilent = false
+| documentation = Sends the player to this faction's jail - removing inventory if requested, and to a "real" jail or not, silent param to supress warnings
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAlly
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SetAlly|SetAlly]]
+| kind = Function
+| flags = Native
+| parameters = Faction akOther, bool abSelfIsFriendToOther = false, bool abOtherIsFriendToSelf = false
+| documentation = Sets this faction and the other as allies or friends - if the friend booleans are true - the specified one-way relationship
+is a friend instead of an ally
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCrimeGold
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SetCrimeGold|SetCrimeGold]]
+| kind = Function
+| flags = Native
+| parameters = int aiGold
+| documentation = Sets the non-violent crime gold on this faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCrimeGoldViolent
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SetCrimeGoldViolent|SetCrimeGoldViolent]]
+| kind = Function
+| flags = Native
+| parameters = int aiGold
+| documentation = Sets the violent crime gold on this faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetEnemy
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SetEnemy|SetEnemy]]
+| kind = Function
+| flags = Native
+| parameters = Faction akOther, bool abSelfIsNeutralToOther = false, bool abOtherIsNeutralToSelf = false
+| documentation = Sets this faction and the other as enemies or neutral - if the friend booleans are true - the specified one-way relationship
+is a neutral instead of an enemy
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerEnemy
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SetPlayerEnemy|SetPlayerEnemy]]
+| kind = Function
+| flags = Native
+| parameters = bool abIsEnemy = true
+| documentation = Sets or clears the player as an enemy of this faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerExpelled
+| script = [[SFM:Script-Faction|Faction]]
+| name = [[SFM:Script-Faction/SetPlayerExpelled|SetPlayerExpelled]]
+| kind = Function
+| flags = Native
+| parameters = bool abIsExpelled = true
+| documentation = Sets or clears the expelled flag for this faction on the player
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]
