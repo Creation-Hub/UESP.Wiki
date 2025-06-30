@@ -1,0 +1,38 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuestRefColIncOnDestroyD
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroyD|DefaultCounterQuestRefColIncOnDestroyD]]
+| extends = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCounterQuestRefColIncOnDestroyD.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuestRefColIncOnDestroyD Extends DefaultCounterQuestRefColIncOnDestroy Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterQuestRefColIncOnDestroyD.psc</code> source file documentation comments for this script.
+
+<source>
+Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuestA script.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroyD|DefaultCounterQuestRefColIncOnDestroyD]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroyD/Increment|Increment]]
+| kind = Function
+| parameters = ObjectReference akSenderRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

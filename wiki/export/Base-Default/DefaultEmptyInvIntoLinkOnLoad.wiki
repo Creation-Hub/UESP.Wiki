@@ -1,0 +1,44 @@
+{{Script_Object_Summary
+| title = DefaultEmptyInvIntoLinkOnLoad
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultEmptyInvIntoLinkOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Removes items from self and puts them into Linked Ref OnLoad()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = WaitForLoad
+| script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad/WaitForLoad|WaitForLoad]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

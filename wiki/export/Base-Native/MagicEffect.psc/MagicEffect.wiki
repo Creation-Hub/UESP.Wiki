@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = MagicEffect
+| name = [[SFM:Script-MagicEffect|MagicEffect]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>MagicEffect.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName MagicEffect Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>MagicEffect.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetAssociatedSkill
+| script = [[SFM:Script-MagicEffect|MagicEffect]]
+| name = [[SFM:Script-MagicEffect/GetAssociatedSkill|GetAssociatedSkill]]
+| kind = Function
+| flags = Native
+| returns = ActorValue
+| documentation = Get the Associated Skill for this MagicEffect
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

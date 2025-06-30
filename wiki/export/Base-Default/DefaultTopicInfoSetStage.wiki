@@ -1,0 +1,54 @@
+{{Script_Object_Summary
+| title = DefaultTopicInfoSetStage
+| name = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| extends = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]] → [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultTopicInfoSetStage.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicInfoSetStage Extends DefaultTopicInfo Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultTopicInfoSetStage.psc</code> source file documentation comments for this script.
+
+<source>
+Default script for setting a different quest's stage from a topic info.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

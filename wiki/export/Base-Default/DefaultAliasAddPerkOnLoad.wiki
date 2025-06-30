@@ -1,0 +1,66 @@
+{{Script_Object_Summary
+| title = DefaultAliasAddPerkOnLoad
+| name = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasAddPerkOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasAddPerkOnLoad Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasAddPerkOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Adds the specified perk to the actor on load.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = PerkToAdd
+| script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultAliasAddPerkOnLoad/PerkToAdd|PerkToAdd]]
+| kind = Property
+| flags = Auto Const
+| returns = Perk
+| documentation = The perk that should be added to the actor upon load.
+}}
+
+{{Script_Object_Member_Summary
+| title = DoOnce
+| script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultAliasAddPerkOnLoad/DoOnce|DoOnce]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Whether the Perk should only be added on first load. Default=TRUE
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Ready
+| script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultAliasAddPerkOnLoad/Ready|Ready]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultAliasAddPerkOnLoad/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

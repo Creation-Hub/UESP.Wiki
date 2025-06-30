@@ -1,0 +1,80 @@
+{{Script_Object_Summary
+| title = DefaultCollectionSetGroupFaction
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionSetGroupFaction.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionSetGroupFaction Extends RefCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionSetGroupFaction.psc</code> source file documentation comments for this script.
+
+<source>
+sets a group faction on the aliased actors
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = GroupFaction
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/GroupFaction|GroupFaction]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = Faction
+| documentation = group faction to set on the aliased actors
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = SetGroupFactionOnAll
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/SetGroupFactionOnAll|SetGroupFactionOnAll]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGroupFaction
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/SetGroupFaction|SetGroupFaction]]
+| kind = Function
+| parameters = Actor actorToUpdate
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

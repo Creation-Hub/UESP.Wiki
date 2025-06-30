@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = DefaultRefOnEnterBleedout
+| name = [[SFM:Script-DefaultRefOnEnterBleedout|DefaultRefOnEnterBleedout]]
+| extends = [[SFM:Script-DefaultActorParent|DefaultActorParent]] → [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnEnterBleedout.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnEnterBleedout Extends DefaultActorParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnEnterBleedout.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS actor enters bleedout.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnEnterBleedout
+| script = [[SFM:Script-DefaultRefOnEnterBleedout|DefaultRefOnEnterBleedout]]
+| name = [[SFM:Script-DefaultRefOnEnterBleedout/OnEnterBleedout|OnEnterBleedout]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

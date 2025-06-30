@@ -1,0 +1,4452 @@
+{{Script_Object_Summary
+| title = ObjectReference
+| name = [[SFM:Script-ObjectReference|ObjectReference]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ObjectReference.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ObjectReference Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ObjectReference.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetCurrentShipRef
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetCurrentShipRef|GetCurrentShipRef]]
+| kind = Function
+| returns = SpaceshipReference
+| documentation = Function to get the ObjectReference for the ship I am in
+}}
+
+{{Script_Object_Member_Summary
+| title = Unlock
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Unlock|Unlock]]
+| kind = Function
+| parameters = bool abAsOwner = false
+| documentation = convenient way to call Lock(False) on a door
+}}
+
+{{Script_Object_Member_Summary
+| title = RampRumble
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RampRumble|RampRumble]]
+| kind = Function
+| returns = bool
+| parameters = float power = 0.5, float duration = 0.25, float falloff = 1600.0
+}}
+
+{{Script_Object_Member_Summary
+| title = IsNearPlayer
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsNearPlayer|IsNearPlayer]]
+| kind = Function
+| returns = bool
+| documentation = Function to know if I'm near the player (whether I can be safely enabled or disabled)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInInterior
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsInInterior|IsInInterior]]
+| kind = Function
+| returns = bool
+| documentation = Returns !IsInExterior()
+jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToIfUnloaded
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveToIfUnloaded|MoveToIfUnloaded]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akTarget, float afXOffset = 0.0, float afYOffset = 0.0, float afZOffset = 0.0
+| documentation = Calls MoveTo if the calling ObjectReference is currently unloaded. Doesn't do anything if it IS loaded. No waiting or while loops. Returns true if it does the moveto
+kkuhlmann:
+}}
+
+{{Script_Object_Member_Summary
+| title = HasRefType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasRefType|HasRefType]]
+| kind = Function
+| returns = bool
+| parameters = LocationRefType akRefType
+| documentation = Returns if this reference has the specified location ref type (for backwards compatibility with function rename
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToWhenUnloaded
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveToWhenUnloaded|MoveToWhenUnloaded]]
+| kind = Function
+| parameters = ObjectReference akTarget, float afXOffset = 0.0, float afYOffset = 0.0, float afZOffset = 0.0
+| documentation = DEPRECATED: DO NOT USE. Calls MoveTo if both the calling ObjectReference and the akTarget ObjectReference have current locations that are not loaded.
+jduvall:
+}}
+
+{{Script_Object_Member_Summary
+| title = Get
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Get|Get]]
+| kind = Function
+| returns = float
+}}
+
+{{Script_Object_Member_Summary
+| title = Activate
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Activate|Activate]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akActivator, bool abDefaultProcessingOnly = false
+| documentation = Have akActivator activate this reference. If abDefaultProcessingOnly is true then any block will be bypassed
+and no OnActivate event will be sent. The function returns true if default processing ran, and succeeded. If
+default processing has been blocked, will always return false.
+}}
+
+{{Script_Object_Member_Summary
+| title = AddDependentAnimatedObjectReference
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddDependentAnimatedObjectReference|AddDependentAnimatedObjectReference]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akDependent
+| documentation = Sets up a dependent animated object
+This function should be used only with a coder supervision.  It is left undocumented because it can cause dangling pointers as well as very broken functionality
+for the dependent object if used improperly.
+}}
+
+{{Script_Object_Member_Summary
+| title = AddDynamicTerminalMenuItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddDynamicTerminalMenuItem|AddDynamicTerminalMenuItem]]
+| kind = Function
+| flags = Native
+| parameters = TerminalMenu akTemplateSource, int aiTemplateIndex, int aiItemID, Form[] akTagReplacementForms
+| documentation = Adds a dynamically created terminal menu item to a terminal ref.
+}}
+
+{{Script_Object_Member_Summary
+| title = AddAliasedItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddAliasedItem|AddAliasedItem]]
+| kind = Function
+| parameters = Form akItemToAdd, Alias akAlias, int aiCount = 1, bool abSilent = true
+| documentation = Creates an item, fills an alias with that item, then adds it to this container.
+aiCount can be greater than 1 if we are adding to a RefCollection.
+}}
+
+{{Script_Object_Member_Summary
+| title = AddAliasedItemSingle
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddAliasedItemSingle|AddAliasedItemSingle]]
+| kind = Function
+| returns = ObjectReference
+| parameters = Form akItemToAdd, Alias akAlias, bool abSilent = true
+}}
+
+{{Script_Object_Member_Summary
+| title = AddAliasedItemWithKeywords
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddAliasedItemWithKeywords|AddAliasedItemWithKeywords]]
+| kind = Function
+| parameters = Form akItemToAdd, Alias akAlias, int aiCount = 1, bool abSilent = true, Keyword[] keywords = none
+}}
+
+{{Script_Object_Member_Summary
+| title = AddAliasedItemWithKeywordsSingle
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddAliasedItemWithKeywordsSingle|AddAliasedItemWithKeywordsSingle]]
+| kind = Function
+| returns = ObjectReference
+| parameters = Form akItemToAdd, Alias akAlias, bool abSilent = true, Keyword[] keywords = none
+}}
+
+{{Script_Object_Member_Summary
+| title = AddItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddItem|AddItem]]
+| kind = Function
+| flags = Native
+| parameters = Form akItemToAdd, int aiCount = 1, bool abSilent = false
+| documentation = Adds the specified base object or object reference to this object reference's container/inventory
+Note that you cannot add more then one copy of a reference to a container (a warning will be printed if you try)
+}}
+
+{{Script_Object_Member_Summary
+| title = AddKeyword
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddKeyword|AddKeyword]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword
+| documentation = Adds a keyword to this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = AddKeyIfNeeded
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddKeyIfNeeded|AddKeyIfNeeded]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aLockedRef
+| documentation = Adds a gets the key for the given locked reference and adds it to this reference's inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = AddSpell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddSpell|AddSpell]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Spell akSpell, bool abVerbose = true
+| documentation = Adds the specified spell to this reference - returns true on success
+}}
+
+{{Script_Object_Member_Summary
+| title = AddTextReplacementData
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddTextReplacementData|AddTextReplacementData]]
+| kind = Function
+| flags = Native
+| parameters = string asTokenLabel, Form akForm
+| documentation = Adds the given text replacement pair to this ref
+}}
+
+{{Script_Object_Member_Summary
+| title = AddTextReplacementValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddTextReplacementValue|AddTextReplacementValue]]
+| kind = Function
+| flags = Native
+| parameters = string asTokenLabel, float aValue
+| documentation = Adds the given text replacement value to this ref
+}}
+
+{{Script_Object_Member_Summary
+| title = AddToMap
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddToMap|AddToMap]]
+| kind = Function
+| flags = Native
+| parameters = bool abAllowFastTravel = false
+| documentation = Adds this reference (which is a map marker) to the map, optionally making it available for fast travel
+}}
+
+{{Script_Object_Member_Summary
+| title = AddToMapScanned
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddToMapScanned|AddToMapScanned]]
+| kind = Function
+| parameters = bool abAllowFastTravel = false
+| documentation = KMK - replacement function to also scan the map marker so it shows clearly on the compass
+}}
+
+{{Script_Object_Member_Summary
+| title = AddTransferLink
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AddTransferLink|AddTransferLink]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akTarget
+| documentation = Add a transfer link from this reference to another.
+}}
+
+{{Script_Object_Member_Summary
+| title = AssignCrew
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AssignCrew|AssignCrew]]
+| kind = Function
+| flags = Native
+| parameters = Actor aCrewMember
+| documentation = Assigns the specified actor as a member of the references crew
+}}
+
+{{Script_Object_Member_Summary
+| title = ApplyConveyorBelt
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ApplyConveyorBelt|ApplyConveyorBelt]]
+| kind = Function
+| flags = Native
+| parameters = string aTarget, float aLinVelX, float aLinVelY, float aLinVelZ, bool abOn = true, bool abReverse = false
+| documentation = Add conveyor belt to this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ApplyHavokImpulse
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ApplyHavokImpulse|ApplyHavokImpulse]]
+| kind = Function
+| flags = Native
+| parameters = float afX, float afY, float afZ, float afMagnitude
+| documentation = Apply an impulse to this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ApplyFanMotor
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ApplyFanMotor|ApplyFanMotor]]
+| kind = Function
+| flags = Native
+| parameters = string aTarget, float aAxisX, float aAxisY, float aAxisZ, float aForce, bool abOn = true
+| documentation = Add fan motor to this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = AreAllInTrigger
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AreAllInTrigger|AreAllInTrigger]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference[] refsToCheck
+| documentation = Are all refs in refsToCheck in this trigger?
+}}
+
+{{Script_Object_Member_Summary
+| title = AreAnyInTrigger
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AreAnyInTrigger|AreAnyInTrigger]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference[] refsToCheck
+| documentation = Are any refs in refsToCheck in this trigger?
+}}
+
+{{Script_Object_Member_Summary
+| title = FanMotorOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/FanMotorOn|FanMotorOn]]
+| kind = Function
+| flags = Native
+| parameters = bool abOn = true
+| documentation = Set fan motor on.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFanMotorOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsFanMotorOn|IsFanMotorOn]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Check if fan motor on.
+}}
+
+{{Script_Object_Member_Summary
+| title = AttachMod
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AttachMod|AttachMod]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectMod akMod, int aiAttachIndex = 0
+| documentation = Attach a mod to this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = AttachModToInventoryItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AttachModToInventoryItem|AttachModToInventoryItem]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Form akItem, ObjectMod akMod
+| documentation = Attach a mod to an inventory item in this reference's inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = AttachTo
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/AttachTo|AttachTo]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akParent
+| documentation = Attach this reference to the specified parent (only works on created refs)
+}}
+
+{{Script_Object_Member_Summary
+| title = BlockActivation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/BlockActivation|BlockActivation]]
+| kind = Function
+| flags = Native
+| parameters = bool abBlocked = true, bool abHideActivateText = false
+| documentation = Turns on and off blocking of normal activation - OnActivate events will still be sent
+}}
+
+{{Script_Object_Member_Summary
+| title = CalculateEncounterLevel
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CalculateEncounterLevel|CalculateEncounterLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = int aiDifficulty = 4
+| documentation = Calculate's this references encounter level based on the requested difficulty level
+0 - Easy
+1 - Medium
+2 - Hard
+3 - Very Hard
+4 - None
+}}
+
+{{Script_Object_Member_Summary
+| title = CanFastTravelToMarker
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CanFastTravelToMarker|CanFastTravelToMarker]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Can the map marker be fast traveled to?
+}}
+
+{{Script_Object_Member_Summary
+| title = CanProduceForWorkshop
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CanProduceForWorkshop|CanProduceForWorkshop]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Can the reference produce resources for a Workshop?
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearDestruction
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ClearDestruction|ClearDestruction]]
+| kind = Function
+| flags = Native
+| documentation = Clears all effects of destruction from this object
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearDynamicTerminalMenuItems
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ClearDynamicTerminalMenuItems|ClearDynamicTerminalMenuItems]]
+| kind = Function
+| flags = Native
+| documentation = Clears dynamically created terminal menu items from a terminal ref.
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearFromOldLocations
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ClearFromOldLocations|ClearFromOldLocations]]
+| kind = Function
+| flags = Native
+| documentation = Clears this object from data on all invalid locations
+}}
+
+{{Script_Object_Member_Summary
+| title = ConveyorBeltOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ConveyorBeltOn|ConveyorBeltOn]]
+| kind = Function
+| flags = Native
+| parameters = bool abOn = true
+| documentation = Set conveyor belt on.
+}}
+
+{{Script_Object_Member_Summary
+| title = CountActorsLinkedToMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CountActorsLinkedToMe|CountActorsLinkedToMe]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Keyword apLinkKeyword = none, Keyword apExcludeKeyword = none
+| documentation = Get the count of all instantiated Actors (across all process levels) that link to this reference.
+The actor must link to this ref with a keyworded linkedref using the keyword (apLinkKeyword).
+Can optionally specify another keyword (apExcludeKeyword); actors with a linkedref using that keyword will be skipped when building the array.
+(NOTE: if you're also necessarily going to call GetActorsLinkedToMe, just do that and check its size, instead of calling this.)
+}}
+
+{{Script_Object_Member_Summary
+| title = CountLinkedRefChain
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CountLinkedRefChain|CountLinkedRefChain]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Keyword apKeyword = none, int maxExpectedLinkedRefs = 100
+| documentation = This function  counts the number of linked refs that are in a linked Ref chain (ie object is linked to A, A is linked to B, etc. this then counts all the linked refs.)
+Aborts early if it detects a loop
+}}
+
+{{Script_Object_Member_Summary
+| title = CountRefsLinkedToMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CountRefsLinkedToMe|CountRefsLinkedToMe]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Keyword apLinkKeyword = none, Keyword apExcludeKeyword = none
+| documentation = Get the count of all instantiated ObjectReferences that link to this reference.
+They must link to this ref with a keyworded linkedref, using the keyword (apLinkKeyword).
+Can optionally specify another keyword (apExcludeKeyword); refs with a linkedref using that keyword will be skipped when building the array.
+(NOTE: if you're also necessarily going to call GetRefsLinkedToMe, just do that and check its size, instead of calling this.)
+}}
+
+{{Script_Object_Member_Summary
+| title = CreateDetectionEvent
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CreateDetectionEvent|CreateDetectionEvent]]
+| kind = Function
+| flags = Native
+| parameters = Actor akOwner, int aiSoundLevel = 0
+| documentation = Create a detection event at this reference, with the specified owner. Sound level is between 0 and 100
+}}
+
+{{Script_Object_Member_Summary
+| title = DamageObject
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DamageObject|DamageObject]]
+| kind = Function
+| flags = Native
+| parameters = float afDamage
+| documentation = Damages this object and advances the destruction stage - does not return until the object is damaged
+}}
+
+{{Script_Object_Member_Summary
+| title = DamageValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DamageValue|DamageValue]]
+| kind = Function
+| flags = Native
+| parameters = ActorValue akAV, float afDamage
+| documentation = Damages the given actor value
+}}
+
+{{Script_Object_Member_Summary
+| title = Delete
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Delete|Delete]]
+| kind = Function
+| flags = Native
+| documentation = Delets this object
+}}
+
+{{Script_Object_Member_Summary
+| title = Disable
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Disable|Disable]]
+| kind = Function
+| flags = Native
+| parameters = bool abFadeOut = false
+| documentation = Disables this object - fading out if requested
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableLinkChain
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DisableLinkChain|DisableLinkChain]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword = none, bool abFadeOut = false
+| documentation = Disables all of the references that are linked, in a chain, to this one. (But NOT this one)
+Does not wait for everything to disable before returning
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableNoWait
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DisableNoWait|DisableNoWait]]
+| kind = Function
+| flags = Native
+| parameters = bool abFadeOut = false
+| documentation = Disables this object - fading out if requested. Does NOT wait for the fade or disable to finish
+}}
+
+{{Script_Object_Member_Summary
+| title = DispelSpell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DispelSpell|DispelSpell]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Spell akSpell
+| documentation = Dispel a spell from this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = Drop
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Drop|Drop]]
+| kind = Function
+| flags = Native
+| parameters = bool abSilent = false
+| documentation = Drops this reference from the container it is in. If silent, will not display a message to the
+player if it was in the player's inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = DropFirstObject
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DropFirstObject|DropFirstObject]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = bool abInitiallyDisabled = false
+| documentation = Drops the first object from this object's inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = DropObject
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/DropObject|DropObject]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = Form akObject, int aiCount = 1
+| documentation = Drops the specified object from this object's inventory (will not drop references)
+}}
+
+{{Script_Object_Member_Summary
+| title = Enable
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Enable|Enable]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abFadeIn = false
+| documentation = Enables this object - fading in if requested
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableFastTravel
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/EnableFastTravel|EnableFastTravel]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables the ability to fast travel to this marker - or disables it. Note that if you disable
+fast travel the player will see "You haven't discovered this location" as an error message
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableLinkChain
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/EnableLinkChain|EnableLinkChain]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword = none, bool abFadeIn = false
+| documentation = Enables all of the references that are linked, in a chain, to this one. (But NOT this one)
+Does not wait for everything to enable before returning
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableNoWait
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/EnableNoWait|EnableNoWait]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abFadeIn = false
+| documentation = Enables this object - fading in if requested. Does NOT wait for the fade or enable to finish
+}}
+
+{{Script_Object_Member_Summary
+| title = FindAllReferencesOfType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/FindAllReferencesOfType|FindAllReferencesOfType]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = Form akObjectOrList, float afRadius
+| documentation = Finds all references to objects in the given list in the loaded area within the given radius of the calling
+ref and returns an array of them
+}}
+
+{{Script_Object_Member_Summary
+| title = FindAllReferencesWithKeyword
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/FindAllReferencesWithKeyword|FindAllReferencesWithKeyword]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = Form akKeywordOrList, float afRadius
+| documentation = Finds all references with the given keyword(s) in the loaded area within the given radius of the calling
+ref and returns an array of them
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceAddRagdollToWorld
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ForceAddRagdollToWorld|ForceAddRagdollToWorld]]
+| kind = Function
+| flags = Native
+| documentation = Forcibly adds / removes the ragdoll for a reference to the world
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceRemoveRagdollFromWorld
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ForceRemoveRagdollFromWorld|ForceRemoveRagdollFromWorld]]
+| kind = Function
+| flags = Native
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorBaseForResource
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetActorBaseForResource|GetActorBaseForResource]]
+| kind = Function
+| flags = Native
+| returns = ActorBase
+| parameters = ActorValue akAV
+| documentation = Gets the ActorBase that matches the supplied ActorValue at the ObjectReference's owning Workshop or None if not found.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetActorOwner|GetActorOwner]]
+| kind = Function
+| flags = Native
+| returns = ActorBase
+| documentation = Gets the ActorBase that owns this object (or None if not owned by an ActorBase)
+CAUTION: if owned by an Actor Ref, this will return the ActorBase of that Actor ref.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorRefOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetActorRefOwner|GetActorRefOwner]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| documentation = Gets the Actor (reference) that owns this object (or None if not owned by an Actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorsLinkedToMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetActorsLinkedToMe|GetActorsLinkedToMe]]
+| kind = Function
+| flags = Native
+| returns = Actor[]
+| parameters = Keyword apLinkKeyword = none, Keyword apExcludeKeyword = none
+| documentation = Get an array of all instantiated Actors (across all process levels) that link to this reference.
+The actor must link to this ref with a keyworded linkedref using the keyword (apLinkKeyword).
+Can optionally specify another keyword (apExcludeKeyword); actors with a linkedref using that keyword will be skipped when building the array.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllCrewMembers
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAllCrewMembers|GetAllCrewMembers]]
+| kind = Function
+| flags = Native
+| returns = Actor[]
+| documentation = gets all the crew members for this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllRefsInTrigger
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAllRefsInTrigger|GetAllRefsInTrigger]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| documentation = Get an array of all references currently in the trigger
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAngleX
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAngleX|GetAngleX]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current X angle of this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAngleY
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAngleY|GetAngleY]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current Y angle of this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAngleZ
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAngleZ|GetAngleZ]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current Z angle of this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAnimationVariableBool
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAnimationVariableBool|GetAnimationVariableBool]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string arVariableName
+| documentation = Get a variable from the reference's animation graph (if applicable). Bool version.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAnimationVariableInt
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAnimationVariableInt|GetAnimationVariableInt]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = string arVariableName
+| documentation = Get a variable from the reference's animation graph (if applicable). Int version.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAnimationVariableFloat
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetAnimationVariableFloat|GetAnimationVariableFloat]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = string arVariableName
+| documentation = Get a variable from the reference's animation graph (if applicable). Float version.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetBaseObject
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetBaseObject|GetBaseObject]]
+| kind = Function
+| flags = Native
+| returns = Form
+| documentation = Returns the base object this reference represents
+}}
+
+{{Script_Object_Member_Summary
+| title = GetBaseValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetBaseValue|GetBaseValue]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ActorValue akAV
+| documentation = Gets the base value of the specified actor value - returns 0 and logs an error if the value is unknown
+}}
+
+{{Script_Object_Member_Summary
+| title = GetBiomeActors
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetBiomeActors|GetBiomeActors]]
+| kind = Function
+| flags = Native
+| returns = ActorBase[]
+| parameters = float afMaxPercentageKnown = 1.0
+| documentation = Gets the array of actor bases placed by the biome with a scan percentage less than or equal to specified, between 0.0 and 1.0
+}}
+
+{{Script_Object_Member_Summary
+| title = GetBiomeFlora
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetBiomeFlora|GetBiomeFlora]]
+| kind = Function
+| flags = Native
+| returns = Flora[]
+| parameters = float afMaxPercentageKnown = 1.0
+| documentation = Gets the array of flora placed by the biome with a scan percentage less than or equal to specified
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentDestructionStage
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetCurrentDestructionStage|GetCurrentDestructionStage]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Returns the object's current destruction stage
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentLocation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetCurrentLocation|GetCurrentLocation]]
+| kind = Function
+| flags = Native
+| returns = Location
+| documentation = Returns this reference's current location
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentPlanet
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetCurrentPlanet|GetCurrentPlanet]]
+| kind = Function
+| flags = Native
+| returns = Planet
+| documentation = Returns this reference's current planet if any
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentScene
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetCurrentScene|GetCurrentScene]]
+| kind = Function
+| flags = Native
+| returns = Scene
+| documentation = Returns the scene this reference is currently in - if any
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDayLength
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetDayLength|GetDayLength]]
+| kind = Function
+| returns = float
+| documentation = KMK convenience function
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDebugTextColor
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetDebugTextColor|GetDebugTextColor]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = int[]
+| documentation = Get the color of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDebugTextSize
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetDebugTextSize|GetDebugTextSize]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = int
+| documentation = Get the font size of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDebugTextString
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetDebugTextString|GetDebugTextString]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = string
+| documentation = Get the text string of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDestructibleOutpostObjects
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetDestructibleOutpostObjects|GetDestructibleOutpostObjects]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| documentation = Get the list of destructible objects for an Outpost Beacon reference.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDistance
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetDistance|GetDistance]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ObjectReference akOther
+| documentation = Calculates the distance between this reference and another - both must either be in the same interior, or same worldspace
+}}
+
+{{Script_Object_Member_Summary
+| title = GetEditorLocation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetEditorLocation|GetEditorLocation]]
+| kind = Function
+| flags = Native
+| returns = Location
+| documentation = Returns this reference's editor location
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetFactionOwner|GetFactionOwner]]
+| kind = Function
+| flags = Native
+| returns = Faction
+| documentation = Gets the faction that owns this object (or None if not owned by a Faction)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFloraForResource
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetFloraForResource|GetFloraForResource]]
+| kind = Function
+| flags = Native
+| returns = Flora
+| parameters = ActorValue akAV
+| documentation = Gets the Flora that produces the supplied ActorValue at the ObjectReference's owning Workshop or None if not found.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGravityScale
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetGravityScale|GetGravityScale]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current gravity for this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetHeadingAngle
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetHeadingAngle|GetHeadingAngle]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ObjectReference akOther
+| documentation = Gets the angle between this object's heading and the other object in degrees - in the range from -180 to 180
+}}
+
+{{Script_Object_Member_Summary
+| title = GetHeight
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetHeight|GetHeight]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current height of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetHighestItemCountKeywords
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetHighestItemCountKeywords|GetHighestItemCountKeywords]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Formlist akKeywords, bool abMustMatchAll
+| documentation = Returns the count of the single most prevalant item in this object reference's inventory that has one or all given keywords on them.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetInventoryValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetInventoryValue|GetInventoryValue]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains the value of all objects in this reference's inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = GetItemCount
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetItemCount|GetItemCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Form akItem = none
+| documentation = Returns how many of the specified item is in this object reference's inventory
+If None is passed, it counts every item in the inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = GetItemCountKeywords
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetItemCountKeywords|GetItemCountKeywords]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Formlist akKeywords, bool abMustMatchAll
+| documentation = Returns how many items have one or more given keywords on them, in this object reference's inventory.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetComponentCount
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetComponentCount|GetComponentCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Form akItem = none
+| documentation = Returns how many of the specified components are in this object reference's inventory
+If None is passed, it counts every component in the inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = GetContainer
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetContainer|GetContainer]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Returns the container this reference is in - if any
+}}
+
+{{Script_Object_Member_Summary
+| title = GetItemHealthPercent
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetItemHealthPercent|GetItemHealthPercent]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Returns the smithed health of this object reference (1.0 == 100%)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetKey
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetKey|GetKey]]
+| kind = Function
+| flags = Native
+| returns = Key
+| documentation = Returns the key base object that will unlock this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLength
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetLength|GetLength]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current length of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLinkedCell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetLinkedCell|GetLinkedCell]]
+| kind = Function
+| flags = Native
+| returns = Cell
+| parameters = Keyword akKeyword
+| documentation = Obtain the cell linked to us with the specified keyword (if any)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLinkedRef
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetLinkedRef|GetLinkedRef]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = Keyword apKeyword = none
+| documentation = Get our linked reference
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLinkedRefChain
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetLinkedRefChain|GetLinkedRefChain]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = Keyword apKeyword = none, int iMaxExpectedLinkedRefs = 100
+| documentation = Returns a chain of linked refs as an array,
+Aborts early if it detects a loop
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLockLevel
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetLockLevel|GetLockLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Get the level of the lock on this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocRefTypes
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetLocRefTypes|GetLocRefTypes]]
+| kind = Function
+| flags = Native
+| returns = LocationRefType[]
+| documentation = Get the location ref types for this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetNthLinkedRef
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetNthLinkedRef|GetNthLinkedRef]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = int aiLinkedRef, Keyword apKeyword = none
+| documentation = Returns the Nth linked ref from this reference (0 = self, 1 = GetLinkedRef, 2 = GetLinkedRef.GetLinkedRef, etc)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetMass
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetMass|GetMass]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get this object's mass
+}}
+
+{{Script_Object_Member_Summary
+| title = GetOpenState
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetOpenState|GetOpenState]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Gets the open state of this object. Which can be one of the following:
+0 - None
+1 - Open
+2 - Opening
+3 - Closed
+4 - Closing
+}}
+
+{{Script_Object_Member_Summary
+| title = GetParentCell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetParentCell|GetParentCell]]
+| kind = Function
+| flags = Native
+| returns = Cell
+| documentation = Gets the cell this object is in
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPercentageKnown
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetPercentageKnown|GetPercentageKnown]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Gets the scan percentage of the ref between 0.0 and 1.0
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPositionX
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetPositionX|GetPositionX]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current X position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPositionY
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetPositionY|GetPositionY]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current Y position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPositionZ
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetPositionZ|GetPositionZ]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current Z position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSpacePosition
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetSpacePosition|GetSpacePosition]]
+| kind = Function
+| flags = Native
+| returns = float[]
+| documentation = Get the Cell Space position of the object
+Values are returned in the array in the order:
+position.x, position.y, position.z
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSpaceTransform
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetSpaceTransform|GetSpaceTransform]]
+| kind = Function
+| flags = Native
+| returns = float[]
+| documentation = Get the Cell Space transform of the object
+Values are returned in the array in the order:
+position.x, position.y, position.z,
+xAxis.x, xAxis.y, xAxis.z,
+yAxis.x, yAxis.y, yAxis.z,
+zAxis.x, zAxis.y, zAxis.z
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRadioFrequency
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetRadioFrequency|GetRadioFrequency]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the frequency of this radio receiver (if it is a receiver)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRadioVolume
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetRadioVolume|GetRadioVolume]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the volume of this radio receiver (if it is a receiver)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetResourceDamage
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetResourceDamage|GetResourceDamage]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ActorValue akValue = none
+| documentation = Get the total damage, if any, of the given resource or of all nonzero resource actor values.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSafePosition
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetSafePosition|GetSafePosition]]
+| kind = Function
+| flags = Native
+| returns = float[]
+| parameters = float aSearchRadius = -1.0, float aSafeRadius = -1.0
+| documentation = Gets an array of the x,y,z of a safeRadius radius location within searchRadius of the reference, returns empty array if it fails.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWeight
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWeight|GetWeight]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get this object's weight
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWeightInContainer
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWeightInContainer|GetWeightInContainer]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the weight of all the objects in this container
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRefsLinkedToMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetRefsLinkedToMe|GetRefsLinkedToMe]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = Keyword apLinkKeyword = none, Keyword apExcludeKeyword = none
+| documentation = Get an array of all instantiated refs that link to this reference.
+They must link to this ref with a keyworded linkedref using the keyword (apLinkKeyword).
+Can optionally specify another keyword (apExcludeKeyword); refs with a linkedref using that keyword will be skipped when building the array.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWorkshopOwnedObjects
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWorkshopOwnedObjects|GetWorkshopOwnedObjects]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = Actor akActor
+| documentation = Get all of the workshop objects on this Workbench owned by the given Actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWorkshopResourceDamage
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWorkshopResourceDamage|GetWorkshopResourceDamage]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ActorValue akValue
+| documentation = Get the total damage, if any, of the given resource on the Workshop.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWorkshopResourceObjects
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWorkshopResourceObjects|GetWorkshopResourceObjects]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = ActorValue akAV = none, int aiOption = 0
+| documentation = Get all of the resource-producing objects owned by this Workbench. If akAV is provided,
+only collect objects producing the corresponding resource. If aiOption is provided, use 0 for all nonzero resources, 1 for only damaged resources, 2 for only undamaged resources.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetScale
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetScale|GetScale]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current scale of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSpaceshipAutopilotAI
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetSpaceshipAutopilotAI|GetSpaceshipAutopilotAI]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| documentation = Get the autopilot ai actor for this reference if it has one
+}}
+
+{{Script_Object_Member_Summary
+| title = GetTeleportCell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetTeleportCell|GetTeleportCell]]
+| kind = Function
+| flags = Native
+| returns = Cell
+| documentation = Get the target cell for this teleport ref
+}}
+
+{{Script_Object_Member_Summary
+| title = GetTransitionCell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetTransitionCell|GetTransitionCell]]
+| kind = Function
+| flags = Native
+| returns = Cell
+| documentation = Get the transition cell for this teleport ref
+}}
+
+{{Script_Object_Member_Summary
+| title = GetTransmitterDistance
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetTransmitterDistance|GetTransmitterDistance]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the distance between this radio transmitter and the player
+}}
+
+{{Script_Object_Member_Summary
+| title = GetTriggerObjectCount
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetTriggerObjectCount|GetTriggerObjectCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Get the number of objects inside this trigger (throws warning if not a trigger)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetValue|GetValue]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ActorValue akAV
+| documentation = Gets the specified actor value - returns 0 and logs an error if the value is unknown
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValueInt
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetValueInt|GetValueInt]]
+| kind = Function
+| returns = int
+| parameters = ActorValue akAV
+| documentation = jduvall - convenience function
+returns GetValue() cast as an int
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValuePercentage
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetValuePercentage|GetValuePercentage]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = ActorValue akAV
+| documentation = Gets the specified actor value as a percentage of its max value - from 0 to 1
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValueResources
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetValueResources|GetValueResources]]
+| kind = Function
+| flags = Native
+| returns = Resource[]
+| documentation = Returns all resources that are linked to this object via actor values
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValueEnumGlobal
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetValueEnumGlobal|GetValueEnumGlobal]]
+| kind = Function
+| returns = GlobalVariable
+| parameters = ActorValue akAV, GlobalVariable[] akEnumGlobals
+| documentation = jduvall
+Returns a GlobalVariable with a matching value to the specified actorvalue (if there is more than one match it will return the first)
+akAV: the ActorValue for which you want to return a matching GlobalVariable
+EnumGlobals: an array of possibly matching GlobalVariables to return
+}}
+
+{{Script_Object_Member_Summary
+| title = GetVoiceType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetVoiceType|GetVoiceType]]
+| kind = Function
+| flags = Native
+| returns = VoiceType
+| documentation = Gets the voice type for this reference. Will return None if not an actor or a talking activator
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWidth
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWidth|GetWidth]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the current width of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWorkshop
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWorkshop|GetWorkshop]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Get the Workshop this reference belongs to, if any.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWorldSpace
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetWorldSpace|GetWorldSpace]]
+| kind = Function
+| flags = Native
+| returns = WorldSpace
+| documentation = Get this objects worldspace
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSelfAsActor
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetSelfAsActor|GetSelfAsActor]]
+| kind = Function
+| returns = Actor
+| documentation = Returns self cast as an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = GetSingleRefArray
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/GetSingleRefArray|GetSingleRefArray]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = jduvall - returns a reference array with just this reference in it
+}}
+
+{{Script_Object_Member_Summary
+| title = HasActorRefOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasActorRefOwner|HasActorRefOwner]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns true if there was an Actor (reference) set to own this object (even if that actor was a temp and is now gone).
+}}
+
+{{Script_Object_Member_Summary
+| title = HasCrew
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasCrew|HasCrew]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if this reference has any crew members
+}}
+
+{{Script_Object_Member_Summary
+| title = HasDirectLOS
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasDirectLOS|HasDirectLOS]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akTarget, string asSourceNode = "", string asTargetNode = ""
+| documentation = Checks to see if there is a direct line-of-sight between us and the target, using the specified nodes
+If the node strings are empty, the check will be done from the roots of the objects
+}}
+
+{{Script_Object_Member_Summary
+| title = HasEffectKeyword
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasEffectKeyword|HasEffectKeyword]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword akKeyword
+| documentation = Returns if this reference has an active effect coming from a magic effect with the specified keyword attached
+}}
+
+{{Script_Object_Member_Summary
+| title = HasKeyword
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasKeyword|HasKeyword]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword apKeyword
+| documentation = Returns true if this reference has the specified keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = HasKeywordInFormList
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasKeywordInFormList|HasKeywordInFormList]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = FormList akKeywordList
+| documentation = Returns if this reference has any of the keywords in the list attached
+}}
+
+{{Script_Object_Member_Summary
+| title = HasLocRefType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasLocRefType|HasLocRefType]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = LocationRefType akRefType
+| documentation = Returns if this reference has the specified location ref type
+}}
+
+{{Script_Object_Member_Summary
+| title = HasMagicEffect
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasMagicEffect|HasMagicEffect]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = MagicEffect akMagicEffect
+| documentation = check if this refr is affected by the given effect.
+}}
+
+{{Script_Object_Member_Summary
+| title = HasNode
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasNode|HasNode]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asNodeName
+| documentation = Returns whether the reference has the given node
+}}
+
+{{Script_Object_Member_Summary
+| title = HasOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasOwner|HasOwner]]
+| kind = Function
+| returns = bool
+| documentation = kmk - utility function - is this ref owned in any way?
+}}
+
+{{Script_Object_Member_Summary
+| title = HasSharedPowerGrid
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/HasSharedPowerGrid|HasSharedPowerGrid]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akCompare
+| documentation = Returns true if this reference is on the same power grid as the compare reference.
+}}
+
+{{Script_Object_Member_Summary
+| title = IgnoreFriendlyHits
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IgnoreFriendlyHits|IgnoreFriendlyHits]]
+| kind = Function
+| flags = Native
+| parameters = bool abIgnore = true
+| documentation = Flags this reference as ignoring (or not ignoring) friendly hits
+}}
+
+{{Script_Object_Member_Summary
+| title = InterruptCast
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/InterruptCast|InterruptCast]]
+| kind = Function
+| flags = Native
+| documentation = Interrupts any spell-casting this object may be doing
+}}
+
+{{Script_Object_Member_Summary
+| title = IsActivationBlocked
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsActivationBlocked|IsActivationBlocked]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if activation is currently blocked on this object
+}}
+
+{{Script_Object_Member_Summary
+| title = Is3DLoaded
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Is3DLoaded|Is3DLoaded]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if the 3d for this object is loaded or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsConveyorBeltOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsConveyorBeltOn|IsConveyorBeltOn]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Check if conveyor belt on.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsCreated
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsCreated|IsCreated]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Was this object created in-game?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsCrew
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsCrew|IsCrew]]
+| kind = Function
+| returns = bool
+| parameters = Actor akActor
+| documentation = kmk - returns true if specified actor is crew of this ship
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDebugTextBillboard
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsDebugTextBillboard|IsDebugTextBillboard]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = bool
+| documentation = Get the billboard flag of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDeleted
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsDeleted|IsDeleted]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this object currently flagged for delete?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDestroyed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsDestroyed|IsDestroyed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this object destroyed?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDisabled
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsDisabled|IsDisabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this object currently disabled?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDoorInaccessible
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsDoorInaccessible|IsDoorInaccessible]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this object an inaccessible door
+}}
+
+{{Script_Object_Member_Summary
+| title = IsEnabled
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsEnabled|IsEnabled]]
+| kind = Function
+| returns = bool
+| documentation = Because Shane got tired of remembering which way to call this
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFurnitureInUse
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsFurnitureInUse|IsFurnitureInUse]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abIgnoreReserved = false
+| documentation = Is any marker on this furniture in use?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFurnitureMarkerInUse
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsFurnitureMarkerInUse|IsFurnitureMarkerInUse]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiMarker, bool abIgnoreReserved = false
+| documentation = Is a particular marker on this furniture in use?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsIgnoringFriendlyHits
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsIgnoringFriendlyHits|IsIgnoringFriendlyHits]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this object ignoring friendly hits?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInDialogueWithPlayer
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsInDialogueWithPlayer|IsInDialogueWithPlayer]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this actor or talking activator currently talking to the player?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInTrigger
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsInTrigger|IsInTrigger]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference refToCheck
+| documentation = Is refToCheck in this trigger?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInSpace
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsInSpace|IsInSpace]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this reference in space?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLockBroken
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsLockBroken|IsLockBroken]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the lock on this object broken?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLocked
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsLocked|IsLocked]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the lock on this object locked?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsMapMarkerVisible
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsMapMarkerVisible|IsMapMarkerVisible]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the map marker visible?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsOwnedBy
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsOwnedBy|IsOwnedBy]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Actor akOwner
+| documentation = Is this ref owned by the given actor?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPowered
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsPowered|IsPowered]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if the workshop object is considered powered
+}}
+
+{{Script_Object_Member_Summary
+| title = IsQuestItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsQuestItem|IsQuestItem]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this is a quest item or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsRadioOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsRadioOn|IsRadioOn]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this radio receiver is on or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsScanned
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsScanned|IsScanned]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this object has been scanned
+}}
+
+{{Script_Object_Member_Summary
+| title = IsRefInTransitionCell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsRefInTransitionCell|IsRefInTransitionCell]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akRef
+| documentation = Returns if the given ref is inside this teleport ref's transition cell
+}}
+
+{{Script_Object_Member_Summary
+| title = IsTeleportAreaLoaded
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsTeleportAreaLoaded|IsTeleportAreaLoaded]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if the given ref's teleport area is fully loaded or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSpellTarget
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsSpellTarget|IsSpellTarget]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Form akMagicItemForm
+| documentation = Returns if this ref is a spell target of the given magic item form.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsWithinBuildableArea
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsWithinBuildableArea|IsWithinBuildableArea]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akRef
+| documentation = Returns if this reference is within the given Workshop activator's buildable area
+}}
+
+{{Script_Object_Member_Summary
+| title = KnockAreaEffect
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/KnockAreaEffect|KnockAreaEffect]]
+| kind = Function
+| flags = Native
+| parameters = float afMagnitude, float afRadius
+| documentation = Executes a knock effect to an area
+}}
+
+{{Script_Object_Member_Summary
+| title = Lock
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Lock|Lock]]
+| kind = Function
+| flags = Native
+| parameters = bool abLock = true, bool abAsOwner = false, bool abTraverseLinkedLockables = true
+| documentation = Lock/unlock this object. If told to lock it, it will add a lock if it doesn't have one. If locked/unlocked as the owner on a door,
+the adjoining cell will be made public/private as appropriate. Can also optionally lock or unlock linked lockable reference
+}}
+
+{{Script_Object_Member_Summary
+| title = MakeAliasedRefFromInventory
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MakeAliasedRefFromInventory|MakeAliasedRefFromInventory]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = Form akObject, Alias akAlias
+| documentation = Take an object in this ref's inventory, make a ref to it, force it into an alias, then re-add it to inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = MakeTransmitterRepeater
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MakeTransmitterRepeater|MakeTransmitterRepeater]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTransmitterToRepeat, float afInnerRadius, float afOuterRadius, bool abUnlimitedRange = false
+| documentation = Make this object a radio transmitter which will repeat all transmissions sent by akTransmitterToRepeat.
+}}
+
+{{Script_Object_Member_Summary
+| title = MatchOutpostName
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MatchOutpostName|MatchOutpostName]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akNewNameObject
+| documentation = Match this object's outpost name (must be an outpost beacon) to the full display name of the passed in reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ModValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ModValue|ModValue]]
+| kind = Function
+| flags = Native
+| parameters = ActorValue akAV, float afAmount
+| documentation = Modifies the specified actor value
+}}
+
+{{Script_Object_Member_Summary
+| title = ModValueTo
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ModValueTo|ModValueTo]]
+| kind = Function
+| parameters = ActorValue akAV, float afValue
+| documentation = KMK: convenience function to mod an actor value to a specified final value
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveContainerContentToUnfilledContainers
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveContainerContentToUnfilledContainers|MoveContainerContentToUnfilledContainers]]
+| kind = Function
+| flags = Native
+| documentation = Moves containers content down the line to unfilled containers
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveTo
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveTo|MoveTo]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget, float afXOffset = 0.0, float afYOffset = 0.0, float afZOffset = 0.0, bool abMatchRotation = true, bool abRotateOffset = false
+| documentation = Moves this object to the position of the specified object, with an offset, and optionally matching its rotation
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToMyEditorLocation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveToMyEditorLocation|MoveToMyEditorLocation]]
+| kind = Function
+| flags = Native
+| documentation = Moves this object to its editor location
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToNearestNavmeshLocation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveToNearestNavmeshLocation|MoveToNearestNavmeshLocation]]
+| kind = Function
+| flags = Native
+| documentation = Moves this object to the nearest location on a Navmesh
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToNode
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveToNode|MoveToNode]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget, string asNodeName, string asMatchNodeName = ""
+| documentation = Moves this object (or its specified node if asMatchNodeName is valid) to the position (and rotation) of the specified node on the specified object's 3D
+}}
+
+{{Script_Object_Member_Summary
+| title = OpenOneWayTransferMenu
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OpenOneWayTransferMenu|OpenOneWayTransferMenu]]
+| kind = Function
+| flags = Native
+| parameters = bool aIsGiveOnly, FormList aFilterList = none
+| documentation = Opens this ref's inventory using a one-way transfer menu with optional filter list
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceAtMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceAtMe|PlaceAtMe]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = Form akFormToPlace, int aiCount = 1, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, float[] akOffsetValues = none, Alias akAliasToFill = none, bool abSnapOffsetToNavmesh = true
+| documentation = Create x copies of the passed in form (forcing them to persist if desired) and place them at our location, returning the last object created
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceShipAtMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceShipAtMe|PlaceShipAtMe]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipReference
+| parameters = Form akFormToPlace, int aiLevelMod = 4, bool abPlayFx = true, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, float[] akOffsetValues = none, Alias akAliasToFill = none, Location akEncLoc = none, bool abSnapOffsetToNavmesh = true
+| documentation = Create a copy of the passed in form and place it at our location, returning the ship created
+this must be a ship landing marker for ground placement
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceShipAtMeOffset
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceShipAtMeOffset|PlaceShipAtMeOffset]]
+| kind = Function
+| returns = SpaceshipReference
+| parameters = Form akFormToPlace, float xOffset = 0.0, float yOffset = 0.0, float zOffset = 0.0, int aiLevelMod = 4, bool abPlayFx = true, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, Alias akAliasToFill = none, Location akEncLoc = none, bool abSnapOffsetToNavmesh = true
+| documentation = FBaudoin
+This is a version of PlaceShipAtMe that accepts offset for where the ship is placed instead of an array
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceActorAtMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceActorAtMe|PlaceActorAtMe]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| parameters = ActorBase akActorToPlace, int aiLevelMod = 4, Location akEncLoc = none, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, float[] akOffsetValues = none, bool abSnapOffsetToNavmesh = true
+| documentation = Create an actor at this object's location. Level mod is one of the following:
+0 - Easy
+1 - Medium
+2 - Hard
+3 - Boss
+4 - None
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceDuplicateActorAtMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceDuplicateActorAtMe|PlaceDuplicateActorAtMe]]
+| kind = Function
+| flags = Native
+| returns = Actor
+| parameters = Actor akActorToDuplicate, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, float[] akOffsetValues = none, Alias akAliasToFill = none, bool abSnapOffsetToNavmesh = true
+| documentation = Creates a duplicate of the specified actor at this reference's location, returning the created actor
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceAtNode
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceAtNode|PlaceAtNode]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = string asNodeName, Form akFormToPlace, int aiCount = 1, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, bool abAttach = false
+| documentation = Create x copies of the passed in form (forcing them to persist if desired) and place them at the location of the given node, returning the last object created
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceCellAtMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceCellAtMe|PlaceCellAtMe]]
+| kind = Function
+| flags = Native
+| returns = Cell
+| parameters = Cell akCellToCopy, RefCollectionAlias akRefCollection = none, bool abForcePersist = false, bool abDeleteWhenAble = true, bool abInitiallyDisabled = false, float[] akOffsetValues = none
+| documentation = Create a copy of the cell and place it at this reference's location - only works with refs in space exterior cells
+DPierce: This function will place cells at incorrect locations. See: GEN-388123
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceLockedRefKeyAtMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceLockedRefKeyAtMe|PlaceLockedRefKeyAtMe]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| parameters = ObjectReference aLockedRef, int aiCount = 1, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true
+| documentation = Get the key for the given locked ref and place one of them at this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayAnimation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlayAnimation|PlayAnimation]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asAnimation
+| documentation = Start the specified animation playing - returns true if it succeeds
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayAnimationAndWait
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlayAnimationAndWait|PlayAnimationAndWait]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asAnimation, string asEventName
+| documentation = Start the specified animation playing and wait for the specified event - returns true if succeeds
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayGamebryoAnimation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlayGamebryoAnimation|PlayGamebryoAnimation]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asAnimation, bool abStartOver = false, float afEaseInTime = 0.0
+| documentation = Start the specified Gamebryo animation playing - returns true if it succeeds
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayImpactEffect
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlayImpactEffect|PlayImpactEffect]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ImpactDataSet akImpactEffect, string asNodeName = "", float afPickDirX = 0.0, float afPickDirY = 0.0, float afPickDirZ = -1.0, float afPickLength = 512.0, bool abApplyNodeRotation = false, bool abUseNodeLocalRotation = false
+| documentation = Play the specified impact effect - returns true if it succeeds
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaySyncedAnimationSS
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaySyncedAnimationSS|PlaySyncedAnimationSS]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asAnimation1, ObjectReference akObj2, string asAnimation2
+| documentation = Play two animations at once - one on this object, one on another object
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaySyncedAnimationAndWaitSS
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaySyncedAnimationAndWaitSS|PlaySyncedAnimationAndWaitSS]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asAnimation1, string asEvent1, ObjectReference akObj2, string asAnimation2, string asEvent2
+| documentation = Play two animations at once - one on this object, one on another object - and wait for both
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayTerrainEffect
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlayTerrainEffect|PlayTerrainEffect]]
+| kind = Function
+| flags = Native
+| parameters = string asEffectModelName, string asAttachBoneName
+| documentation = Play a terrain effect that is attached to the specified bone of this object.
+}}
+
+{{Script_Object_Member_Summary
+| title = PauseAudio
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PauseAudio|PauseAudio]]
+| kind = Function
+| flags = Native
+| documentation = Pause the audio file for a ref in a scene
+}}
+
+{{Script_Object_Member_Summary
+| title = PreloadExteriorCell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PreloadExteriorCell|PreloadExteriorCell]]
+| kind = Function
+| flags = Native
+| documentation = Preload only the exterior cell containing this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = PreloadTargetArea
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PreloadTargetArea|PreloadTargetArea]]
+| kind = Function
+| flags = Native
+| documentation = Preload the target interior or exterior area for this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ProcessTrapHit
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ProcessTrapHit|ProcessTrapHit]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTrap, float afDamage, float afPushback, float afXVel, float afYVel, float afZVel, float afXPos, float afYPos, float afZPos, int aeMaterial, float afStagger
+| documentation = Tells this object to process a trap hitting it
+}}
+
+{{Script_Object_Member_Summary
+| title = PromoteToLegendary
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PromoteToLegendary|PromoteToLegendary]]
+| kind = Function
+| flags = Native
+| parameters = int aiRank = 0, LegendaryItem akItemDefinition = none
+| documentation = Turns this object into a legendary item
+}}
+
+{{Script_Object_Member_Summary
+| title = PushActorAway
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PushActorAway|PushActorAway]]
+| kind = Function
+| flags = Native
+| parameters = Actor akActorToPush, float aiKnockbackForce
+| documentation = Pushes the passed-in actor away from this object, using the passed in knockback force to determine the speed
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveAllItems
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveAllItems|RemoveAllItems]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTransferTo = none, bool abKeepOwnership = false, bool abRespectTargetCapacity = false
+| documentation = Removes all items from this container, transferring it to the other object if passed
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveAllItemsEx
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveAllItemsEx|RemoveAllItemsEx]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTransferTo = none, bool abKeepOwnership = false, bool abRespectTargetCapacity = false, bool abSilent = false
+| documentation = Removes all items from this container, transferring it to the other object if passed, silent param to supress warnings
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveResources
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveResources|RemoveResources]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Resource akResource, int aiCount, bool abSilent = false
+| documentation = Removes the specified count of resource from the container, scrapping items, and returning the remainder to said container.
+The function returns the number of resource actually removed from the container
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveItem|RemoveItem]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Form akItemToRemove, int aiCount = 1, bool abSilent = false, ObjectReference akOtherContainer = none
+| documentation = Removes the specified item from this object reference's inventory
+The function returns the actual number of items removed from the container
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveItemByComponent
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveItemByComponent|RemoveItemByComponent]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Form akComponentToRemove, int aiCount = 1, bool abSilent = false, ObjectReference akOtherContainer = none
+| documentation = Removes items from this object reference's inventory containing up to aiCount components
+The function returns the actual number of components removed from the container
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveKeyword
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveKeyword|RemoveKeyword]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword
+| documentation = Removes a keyword from this reference
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveAllMods
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveAllMods|RemoveAllMods]]
+| kind = Function
+| flags = Native
+| documentation = Removes every single mod attached to this reference (warning, for some actors/items this will leave no rendering geometry at all!)
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveAllModsFromInventoryItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveAllModsFromInventoryItem|RemoveAllModsFromInventoryItem]]
+| kind = Function
+| flags = Native
+| parameters = Form akItem
+| documentation = Removes every single mod attach to an item in this reference's inventory. Note that some items won't have any geometry if you do this (handmade guns)
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveMod
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveMod|RemoveMod]]
+| kind = Function
+| flags = Native
+| parameters = ObjectMod akMod
+| documentation = Remove the requested mod from the reference
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveModFromInventoryItem
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveModFromInventoryItem|RemoveModFromInventoryItem]]
+| kind = Function
+| flags = Native
+| parameters = Form akItem, ObjectMod akMod
+| documentation = Remove the requested mod from an item in this reference's inventory
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveDependentAnimatedObjectReference
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveDependentAnimatedObjectReference|RemoveDependentAnimatedObjectReference]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akDependent
+| documentation = Removes a previously added dependent object
+This function should be used only with a coder supervision.  It is left undocumented because it can cause dangling pointers as well as very broken functionality
+for the dependent object if used improperly.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveTransferLink
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RemoveTransferLink|RemoveTransferLink]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget
+| documentation = Removes the transfer link from this reference and another, if any.
+}}
+
+{{Script_Object_Member_Summary
+| title = Repair
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Repair|Repair]]
+| kind = Function
+| flags = Native
+| documentation = Repair this object.
+}}
+
+{{Script_Object_Member_Summary
+| title = Reset
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Reset|Reset]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget = none
+| documentation = Resets this object, optional place the object at the new target
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRequiresScanning
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetRequiresScanning|SetRequiresScanning]]
+| kind = Function
+| flags = Native
+| parameters = bool abRequiresScanning = true
+| documentation = Sets the visibility of this reference (which is a map marker) on the star map
+}}
+
+{{Script_Object_Member_Summary
+| title = ResetKeyword
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ResetKeyword|ResetKeyword]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword
+| documentation = Resets a keyword's add/remove status so the data comes from the base object and aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = RestoreValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RestoreValue|RestoreValue]]
+| kind = Function
+| flags = Native
+| parameters = ActorValue akAV, float afAmount
+| documentation = Restores damage done to the actor value(up to 0 damage)
+}}
+
+{{Script_Object_Member_Summary
+| title = ResumeAudio
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ResumeAudio|ResumeAudio]]
+| kind = Function
+| flags = Native
+| documentation = Resume the audio file for a ref in a scene
+}}
+
+{{Script_Object_Member_Summary
+| title = ReverseConveyorBelt
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ReverseConveyorBelt|ReverseConveyorBelt]]
+| kind = Function
+| flags = Native
+| parameters = bool abReverse = true
+| documentation = Set conveyor belt reverse state.
+}}
+
+{{Script_Object_Member_Summary
+| title = Say
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Say|Say]]
+| kind = Function
+| flags = Native
+| parameters = Topic akTopicToSay, Actor akActorToSpeakAs = none, bool abSpeakInPlayersHead = false, ObjectReference akTarget = none
+| documentation = Has this object "say" the specified topic, as if spoken by the specified actor (if one is
+provided), and potentially "speaking" in the player's head.
+}}
+
+{{Script_Object_Member_Summary
+| title = SayCustom
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SayCustom|SayCustom]]
+| kind = Function
+| flags = Native
+| parameters = Keyword akKeywordToSay, Actor akActorToSpeakAs = none, bool abSpeakInPlayersHead = false, ObjectReference akTarget = none
+| documentation = Has this object "say" a keyworded topic, as if spoken by the specified actor (if one is
+provided), and potentially "speaking" in the player's head.
+}}
+
+{{Script_Object_Member_Summary
+| title = SendStealAlarm
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SendStealAlarm|SendStealAlarm]]
+| kind = Function
+| flags = Native
+| parameters = Actor akThief
+| documentation = Has this object behave as if the specified actor attempted to steal it
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActivateTextOverride
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetActivateTextOverride|SetActivateTextOverride]]
+| kind = Function
+| flags = Native
+| parameters = Message akText
+| documentation = Sets this object's activate text to be the full name of the given message
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActorCause
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetActorCause|SetActorCause]]
+| kind = Function
+| flags = Native
+| parameters = Actor akActor
+| documentation = Sets this object's actor cause to the specified actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActorOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetActorOwner|SetActorOwner]]
+| kind = Function
+| flags = Native
+| parameters = ActorBase akActorBase, bool abNoCrime = false
+| documentation = Sets this object's owner to the specified actor base - None means to remove ownership
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActorRefOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetActorRefOwner|SetActorRefOwner]]
+| kind = Function
+| flags = Native
+| parameters = Actor akActor, bool abNoCrime = false
+| documentation = Sets this object's owner to the specified actor ref - None means to remove ownership
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAngle
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetAngle|SetAngle]]
+| kind = Function
+| flags = Native
+| parameters = float afXAngle, float afYAngle, float afZAngle
+| documentation = Set the orientation of the object (angles are in degrees)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAnimationVariableBool
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetAnimationVariableBool|SetAnimationVariableBool]]
+| kind = Function
+| flags = Native
+| parameters = string arVariableName, bool abNewValue
+| documentation = Set a variable on the reference's animation graph (if applicable). Bool version.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAnimationVariableInt
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetAnimationVariableInt|SetAnimationVariableInt]]
+| kind = Function
+| flags = Native
+| parameters = string arVariableName, int aiNewValue
+| documentation = Set a variable on the reference's animation graph (if applicable). Int version.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAnimationVariableFloat
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetAnimationVariableFloat|SetAnimationVariableFloat]]
+| kind = Function
+| flags = Native
+| parameters = string arVariableName, float afNewValue
+| documentation = Set a variable on the reference's animation graph (if applicable). Float version.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAttractionActive
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetAttractionActive|SetAttractionActive]]
+| kind = Function
+| flags = Native
+| parameters = Keyword apKeyword, bool abActive = true
+| documentation = Sets whether this ref should send attraction-object story manager events for the specified keyword.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetConveyorBeltVelocity
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetConveyorBeltVelocity|SetConveyorBeltVelocity]]
+| kind = Function
+| flags = Native
+| parameters = float afLinVelX, float afLinVelY, float afLinVelZ
+| documentation = Set linear velocity for conveyor belt.
+}}
+
+{{Script_Object_Member_Summary
+| title = RotateCarouselDisplayCase
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/RotateCarouselDisplayCase|RotateCarouselDisplayCase]]
+| kind = Function
+| flags = Native
+| parameters = int aiDirection
+| documentation = Rotate carousel display case.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDebugTextBillboard
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDebugTextBillboard|SetDebugTextBillboard]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = bool abBillboard = true
+| documentation = Set the billboard flag of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDebugTextColor
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDebugTextColor|SetDebugTextColor]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = int aiRed, int aiGreen, int aiBlue, int aiAlpha = 255
+| documentation = Set the color of the debug text (each int is clamped between 0 and 255)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDebugTextSize
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDebugTextSize|SetDebugTextSize]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = int aiFontSize
+| documentation = Set the font size of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDebugTextString
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDebugTextString|SetDebugTextString]]
+| kind = Function
+| flags = Native DebugOnly
+| parameters = string asText
+| documentation = Set the text string of the debug text
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDestroyed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDestroyed|SetDestroyed]]
+| kind = Function
+| flags = Native
+| parameters = bool abDestroyed = true
+| documentation = Sets this object as destroyed or not
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDirectAtTarget
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDirectAtTarget|SetDirectAtTarget]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget
+| documentation = Sets the direct-at target for this reference (or clears it if None is passed)
+Note that the object must have an animation graph with a direct-at modifier on it for this to do anything
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMarkerDiscovered
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMarkerDiscovered|SetMarkerDiscovered]]
+| kind = Function
+| flags = Native
+| documentation = Sets a map marker as discovered
+}}
+
+{{Script_Object_Member_Summary
+| title = SetDoorInaccessible
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetDoorInaccessible|SetDoorInaccessible]]
+| kind = Function
+| flags = Native
+| parameters = bool abInaccessible
+| documentation = Sets this door as inaccessible
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFactionOwner
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetFactionOwner|SetFactionOwner]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction, bool abNoCrime = false
+| documentation = Sets this object's owner to the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetHarvested
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetHarvested|SetHarvested]]
+| kind = Function
+| flags = Native
+| parameters = bool abHarvested
+| documentation = Marks the object as Harvested or not Harvested (if it's Flora)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetLinkedRef
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetLinkedRef|SetLinkedRef]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akLinkedRef, Keyword apKeyword = none, bool abPromoteParentRefr = true
+| documentation = Set our linked reference
+}}
+
+{{Script_Object_Member_Summary
+| title = SetLockLevel
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetLockLevel|SetLockLevel]]
+| kind = Function
+| flags = Native
+| parameters = int aiLockLevel
+| documentation = Sets the lock level on this object. Will add an unlocked lock to it if it doesn't have one
+}}
+
+{{Script_Object_Member_Summary
+| title = SetLocRefType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetLocRefType|SetLocRefType]]
+| kind = Function
+| flags = Native
+| parameters = Location akLoc, LocationRefType akRefType
+| documentation = Sets the an in-game created reference to have the given loc ref type for the given location
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMapMarkerCategory
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMapMarkerCategory|SetMapMarkerCategory]]
+| kind = Function
+| flags = Native
+| parameters = int iCategory = 0
+| documentation = Sets the category of the map marker on the star map.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMapMarkerType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMapMarkerType|SetMapMarkerType]]
+| kind = Function
+| flags = Native
+| parameters = int iType = 0
+| documentation = Sets the type of the map marker on the star map
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMapMarkerUnexploredName
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMapMarkerUnexploredName|SetMapMarkerUnexploredName]]
+| kind = Function
+| flags = Native
+| parameters = Message aName
+| documentation = Sets the unexplored name of the map marker on the star map.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMarkerAllowGravJump
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMarkerAllowGravJump|SetMarkerAllowGravJump]]
+| kind = Function
+| flags = Native
+| parameters = bool aAllowGravJump = true
+| documentation = Sets the map marker on the star map to allow grav jumping, defaults to true.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMarkerUndiscoveredVisibility
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMarkerUndiscoveredVisibility|SetMarkerUndiscoveredVisibility]]
+| kind = Function
+| flags = Native
+| parameters = int iVisibilityEnum = 0
+| documentation = Sets the undiscovered visibilty on the star map
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMarkerVisibleOnStarMap
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMarkerVisibleOnStarMap|SetMarkerVisibleOnStarMap]]
+| kind = Function
+| flags = Native
+| parameters = bool aVisible = true
+| documentation = Sets the visibility of this reference (which is a map marker) on the star map
+}}
+
+{{Script_Object_Member_Summary
+| title = SetMotionType
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetMotionType|SetMotionType]]
+| kind = Function
+| flags = Native
+| parameters = int aeMotionType, bool abImmediatelySimulate = true
+| documentation = Sets the motion type of the reference
+aeMotionType: The type of motion (see properties at end of file)
+abImmediatelySimulate: If true, the object will immedately simulate (i.e. as if the player bumped into it)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetNoFavorAllowed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetNoFavorAllowed|SetNoFavorAllowed]]
+| kind = Function
+| flags = Native
+| parameters = bool abNoFavor = true
+| documentation = Sets this object reference as one that teammates will refuse to do favors on
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOpen
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetOpen|SetOpen]]
+| kind = Function
+| flags = Native
+| parameters = bool abOpen = true
+| documentation = Opens/closes this object
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOverrideName
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetOverrideName|SetOverrideName]]
+| kind = Function
+| flags = Native
+| parameters = Message akText
+| documentation = Sets this object's name to the given message
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPersistLoc
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetPersistLoc|SetPersistLoc]]
+| kind = Function
+| flags = Native
+| parameters = Location akLoc
+| documentation = Sets the persist location on an in-game created reference
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerHasTaken
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetPlayerHasTaken|SetPlayerHasTaken]]
+| kind = Function
+| flags = Native
+| parameters = bool abTaken = true
+| documentation = Flags/unflags this reference as having been taken by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPosition
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetPosition|SetPosition]]
+| kind = Function
+| flags = Native
+| parameters = float afX, float afY, float afZ
+| documentation = Set the position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRadioOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetRadioOn|SetRadioOn]]
+| kind = Function
+| flags = Native
+| parameters = bool abOn = true
+| documentation = Turns on/off this radio receiver
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRadioFrequency
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetRadioFrequency|SetRadioFrequency]]
+| kind = Function
+| flags = Native
+| parameters = float afFrequency
+| documentation = Sets the frequency of this radio receiver
+}}
+
+{{Script_Object_Member_Summary
+| title = SetRadioVolume
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetRadioVolume|SetRadioVolume]]
+| kind = Function
+| flags = Native
+| parameters = float afVolume
+| documentation = Sets the volume of this radio receiver
+}}
+
+{{Script_Object_Member_Summary
+| title = SetWorkshopState
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetWorkshopState|SetWorkshopState]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aState
+| documentation = Attempts to set the state of the given Workshop
+}}
+
+{{Script_Object_Member_Summary
+| title = SetScale
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetScale|SetScale]]
+| kind = Function
+| flags = Native
+| parameters = float afScale
+| documentation = Set the current scale of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = SetScanned
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetScanned|SetScanned]]
+| kind = Function
+| flags = Native
+| parameters = bool abValue = true
+| documentation = Sets the objects scanned status if it is scannable
+}}
+
+{{Script_Object_Member_Summary
+| title = SetValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SetValue|SetValue]]
+| kind = Function
+| flags = Native
+| parameters = ActorValue akAV, float afValue
+| documentation = Sets the specified actor value
+}}
+
+{{Script_Object_Member_Summary
+| title = IncrementLoopingValue
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IncrementLoopingValue|IncrementLoopingValue]]
+| kind = Function
+| returns = int
+| parameters = ActorValue akAV, int aiMaxValue, int aiIncrementAmount = 1
+| documentation = jduvall - convenience function
+Increments an actorvalue, and rolls it over to 0 if incremented value would exceed aiMaxValue
+sets and returns (GetValueInt(akAV) + aiIncrementAmount) % (aiMaxValue + 1)
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowHangarMenu
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ShowHangarMenu|ShowHangarMenu]]
+| kind = Function
+| flags = Native
+| parameters = int aiMode = 0, Actor akVendor = none, SpaceshipReference akMenuTarget = none, bool abOpenToAvailableTab = false
+| documentation = Opens the Hangar Menu for the current reference. Mode 0 = credits (vending), Mode 1 = resources (crafting)
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowWorkshopBuilderMenu
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ShowWorkshopBuilderMenu|ShowWorkshopBuilderMenu]]
+| kind = Function
+| flags = Native
+| documentation = Opens the Workshop Builder Menu for the current reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowWorkshopTargetMenu
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/ShowWorkshopTargetMenu|ShowWorkshopTargetMenu]]
+| kind = Function
+| flags = Native
+| parameters = bool abIncludeSameSystem = true, Keyword akSameSystemRequiredKeyword = none, bool abIncludeIntersystem = true, Keyword akIntersystemRequiredKeyword = none
+| documentation = Opens the Workshop Target Menu for the current reference
+}}
+
+{{Script_Object_Member_Summary
+| title = SplineTranslateTo
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SplineTranslateTo|SplineTranslateTo]]
+| kind = Function
+| flags = Native
+| parameters = float afX, float afY, float afZ, float afXAngle, float afYAngle, float afZAngle, float afTangentMagnitude, float afSpeed, float afMaxRotationSpeed = 0.0
+| documentation = Makes the reference translate to the given position/orientation on a spline
+}}
+
+{{Script_Object_Member_Summary
+| title = SplineTranslateToRef
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SplineTranslateToRef|SplineTranslateToRef]]
+| kind = Function
+| parameters = ObjectReference arTarget, float afTangentMagnitude, float afSpeed, float afMaxRotationSpeed = 0.0
+| documentation = Makes the reference translate to the target ref position/orient on a spline at the given speed
+}}
+
+{{Script_Object_Member_Summary
+| title = SplineTranslateToRefNode
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/SplineTranslateToRefNode|SplineTranslateToRefNode]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference arTarget, string arNodeName, float afTangentMagnitude, float afSpeed, float afMaxRotationSpeed = 0.0
+| documentation = Makes the reference translate to the target node's ref/orient on a spline at the given speed
+}}
+
+{{Script_Object_Member_Summary
+| title = StartSequenceOnReferences
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StartSequenceOnReferences|StartSequenceOnReferences]]
+| kind = Function
+| flags = Native Global
+| parameters = string aSequenceName, ObjectReference[] aRefs, bool aAttach
+| documentation = Starts a named effect sequence on the passed in references.
+Allows you to define if you should attach the effect sequence to the reference
+}}
+
+{{Script_Object_Member_Summary
+| title = StartSequence
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StartSequence|StartSequence]]
+| kind = Function
+| flags = Native
+| parameters = string aSequenceName, bool aAttach, float afWeight = 1.0
+| documentation = Starts a named effect sequence on the reference
+Allows you to define if you should attach the effect sequence to the reference
+Allows providing an optional weight to the sequence
+}}
+
+{{Script_Object_Member_Summary
+| title = StartWorkshop
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StartWorkshop|StartWorkshop]]
+| kind = Function
+| flags = Native
+| parameters = bool abStart = true
+| documentation = Starts/Stops Workshop mode with the given workshop ref
+}}
+
+{{Script_Object_Member_Summary
+| title = StopAllSequencesOnReferences
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StopAllSequencesOnReferences|StopAllSequencesOnReferences]]
+| kind = Function
+| flags = Native Global
+| parameters = ObjectReference[] aRefs
+| documentation = Stops all sequences on the passed in references.
+}}
+
+{{Script_Object_Member_Summary
+| title = StopAllSequences
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StopAllSequences|StopAllSequences]]
+| kind = Function
+| flags = Native
+| documentation = Stops all sequences on the self reference.
+}}
+
+{{Script_Object_Member_Summary
+| title = StopSequence
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StopSequence|StopSequence]]
+| kind = Function
+| flags = Native
+| parameters = string aSequenceName
+| documentation = Stops the named sequence on the self reference.
+}}
+
+{{Script_Object_Member_Summary
+| title = StopTranslation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/StopTranslation|StopTranslation]]
+| kind = Function
+| flags = Native
+| documentation = Stops the reference from moving
+}}
+
+{{Script_Object_Member_Summary
+| title = TranslateTo
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TranslateTo|TranslateTo]]
+| kind = Function
+| flags = Native
+| parameters = float afX, float afY, float afZ, float afXAngle, float afYAngle, float afZAngle, float afSpeed, float afMaxRotationSpeed = 0.0
+| documentation = Makes the reference translate to the given position/orientation
+Note: Rotation speed is entirely dependent on the length of the path and the movement speed
+that is, the rotation will happen such that the reference reaches the goal orientation at the end
+of the translation.
+}}
+
+{{Script_Object_Member_Summary
+| title = TranslateToRef
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TranslateToRef|TranslateToRef]]
+| kind = Function
+| parameters = ObjectReference arTarget, float afSpeed, float afMaxRotationSpeed = 0.0
+| documentation = Makes the reference translate to the target ref position/orient at the given speed
+}}
+
+{{Script_Object_Member_Summary
+| title = UnassignCrew
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/UnassignCrew|UnassignCrew]]
+| kind = Function
+| flags = Native
+| parameters = Actor aCrewMember
+| documentation = Unassigns the specified actor as a member of the references crew
+}}
+
+{{Script_Object_Member_Summary
+| title = WaitForAnimationEvent
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/WaitForAnimationEvent|WaitForAnimationEvent]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = string asEventName
+| documentation = Waits for the animation graph to send the specified event
+}}
+
+{{Script_Object_Member_Summary
+| title = WaitFor3DLoad
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/WaitFor3DLoad|WaitFor3DLoad]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Waits for this object's 3d to load. Returns true if the 3D loaded, or false if it was disabled, the parent cell was unloaded
+or something else is preventing it from loading its 3D
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInLocation
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/IsInLocation|IsInLocation]]
+| kind = Function
+| returns = bool
+| parameters = Location akLocation
+| documentation = Convenience function to check if I'm in a location or any of its children
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToStartCombat
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToStartCombat|TryToStartCombat]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akTarget, bool abPreferredTarget = false
+| documentation = Starts combat with the target if called on a spaceship or an actor AND akTarget matches what you called it on
+returns FALSE if called on something else
+abPreferredTarget - OPTIONAL (Def=false) True to set the target as the actor's preferred target
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToStopCombat
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToStopCombat|TryToStopCombat]]
+| kind = Function
+| returns = bool
+| documentation = Stops combat if called on a spaceship or an actor;
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToStopCombatAlarm
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToStopCombatAlarm|TryToStopCombatAlarm]]
+| kind = Function
+| returns = bool
+| documentation = Stops combat and alarms if called on a spaceship or an actor;
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToAddToFaction
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToAddToFaction|TryToAddToFaction]]
+| kind = Function
+| returns = bool
+| parameters = Faction akFaction
+| documentation = Adds this actor or spaceship to a faction at rank 0 if they aren't already in it
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToRemoveFromFaction
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToRemoveFromFaction|TryToRemoveFromFaction]]
+| kind = Function
+| returns = bool
+| parameters = Faction akFaction
+| documentation = Removes this actor or spaceship from the specified faction
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToRemoveFromAllFactions
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToRemoveFromAllFactions|TryToRemoveFromAllFactions]]
+| kind = Function
+| returns = bool
+| documentation = Removes this actor or spaceship from all factions
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToEvaluatePackage
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToEvaluatePackage|TryToEvaluatePackage]]
+| kind = Function
+| returns = bool
+| documentation = Evaluates this actor or spaceship's package
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToKill
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToKill|TryToKill]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akKiller
+| documentation = Evaulate if you're able to kill the akKiller
+akKiller: The Actor or SpaceshipReference who is the guilty party in killing this one. If the type doesn't match, then the killer will be None.
+(I.e. if this is called on an actor, the killer must also be an actor)
+Returns true if this was called on an actor or spaceship and was killed.
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSetGhost
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToSetGhost|TryToSetGhost]]
+| kind = Function
+| returns = bool
+| parameters = bool bSetGhost = true
+| documentation = Sets ghost flag on actor or spaceship
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSetProtected
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToSetProtected|TryToSetProtected]]
+| kind = Function
+| returns = bool
+| parameters = bool bSetProtected = true
+| documentation = Sets protected flag on actor or spaceship
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSetEssential
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/TryToSetEssential|TryToSetEssential]]
+| kind = Function
+| returns = bool
+| parameters = bool bSetEssential = true
+| documentation = Sets essential flag on actor or spaceship
+returns FALSE if called on something else
+}}
+
+{{Script_Object_Member_Summary
+| title = PlaceShipNearMe
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/PlaceShipNearMe|PlaceShipNearMe]]
+| kind = Function
+| returns = SpaceshipReference
+| parameters = Form akFormToPlace, int positionVal = 0, int distanceVal = 0, int facingVal = 0, int aiLevelMod = 4, bool abPlayFx = true, bool abForcePersist = false, bool abInitiallyDisabled = false, bool abDeleteWhenAble = true, Alias akAliasToFill = none
+| documentation = scornett
+Convenience function that places a ship near a ref, calculating an offset position based on MoveNear's positionVal, distanceVal, and facingVal values.
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveNear
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/MoveNear|MoveNear]]
+| kind = Function
+| parameters = ObjectReference akTarget, int positionVal = 0, int distanceVal = 0, int facingVal = 0
+| documentation = scornett
+Convenience function that moves this ref near another ref, calculating an offset position for it based on the following enums:
+
+positionVal, default=0
+- -2 = Random (0-6)
+- -1 = Dead ahead.
+- 0 = Tight forward arc. ("Half the distance to the outer targeting ring or less.")
+- 1 = Wide forward arc. ("Within the outer targeting ring.")
+- 2 = Behind you.
+- 3 = Above you.
+- 4 = Below you.
+- 5 = On your left/port.
+- 6 = On your right/starboard.
+
+distanceVal, default=0
+- -3 = Random (2-4)
+- -2 = Random (0-4)
+- -1 = Very close. ("As close as possible without colliding.")
+- 0 = Close. ("Nearby, easily visible, at a good hailing distance.")
+- 1 = Short Range. ("Nearby, hailing looks reasonable, a good range for an ambush.")
+- 2 = Moderate Range. ("A good range for standard combat.")
+- 3 = Long Range. ("A smudge in the distance.")
+- 4 = Very Long Range. ("It's out there somewhere.")
+
+facingVal, default=0
+- -3 = Totally at random.
+- -2 = Random (0-7)
+- -1 = Directly at you.
+- 0 = Towards you, small offset. ("Looking at you.")
+- 1 = Towards you, large offset. ("Looking in your general direction.")
+- 2 = Away from you, small offset.
+- 3 = Away from you, large offset.
+- 4 = Left/port side facing you.
+- 5 = Right/starboard side facing you.
+- 6 = Bottom facing you.
+- 7 = Top facing you.
+
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = X
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/X|X]]
+| kind = Property
+| returns = float
+| documentation = Property to obtain the current X position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = Y
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Y|Y]]
+| kind = Property
+| returns = float
+| documentation = Property to obtain the current Y position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = Z
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Z|Z]]
+| kind = Property
+| returns = float
+| documentation = Property to obtain the current Z position of the object
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Min|CONST_NearPosition_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+| documentation = Set of read-only values for the MoveNear convenience function.
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Max|CONST_NearPosition_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 6
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Random
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Random|CONST_NearPosition_Random]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_DeadAhead
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_DeadAhead|CONST_NearPosition_DeadAhead]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_ForwardTight
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_ForwardTight|CONST_NearPosition_ForwardTight]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_ForwardWide
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_ForwardWide|CONST_NearPosition_ForwardWide]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Behind
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Behind|CONST_NearPosition_Behind]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Above
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Above|CONST_NearPosition_Above]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 3
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Below
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Below|CONST_NearPosition_Below]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Left
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Left|CONST_NearPosition_Left]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 5
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_Right
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_Right|CONST_NearPosition_Right]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 6
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_TightArc
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_TightArc|CONST_NearPosition_TightArc]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 0.1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearPosition_WideArc
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearPosition_WideArc|CONST_NearPosition_WideArc]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 0.2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Min|CONST_NearDistance_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Max|CONST_NearDistance_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_RandomFar
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_RandomFar|CONST_NearDistance_RandomFar]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -3
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Random
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Random|CONST_NearDistance_Random]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_VeryClose
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_VeryClose|CONST_NearDistance_VeryClose]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Close
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Close|CONST_NearDistance_Close]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Short
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Short|CONST_NearDistance_Short]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Moderate
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Moderate|CONST_NearDistance_Moderate]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Long
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Long|CONST_NearDistance_Long]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 3
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_VeryLong
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_VeryLong|CONST_NearDistance_VeryLong]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Close_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Close_Min|CONST_NearDistance_Close_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 200
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Close_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Close_Max|CONST_NearDistance_Close_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 400
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Short_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Short_Min|CONST_NearDistance_Short_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 600
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Short_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Short_Max|CONST_NearDistance_Short_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1000
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Moderate_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Moderate_Min|CONST_NearDistance_Moderate_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1200
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Moderate_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Moderate_Max|CONST_NearDistance_Moderate_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2000
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Long_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Long_Min|CONST_NearDistance_Long_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2500
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_Long_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_Long_Max|CONST_NearDistance_Long_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 5000
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_VeryLong_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_VeryLong_Min|CONST_NearDistance_VeryLong_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 6000
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearDistance_VeryLong_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearDistance_VeryLong_Max|CONST_NearDistance_VeryLong_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 10000
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_Min
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_Min|CONST_NearFacing_Min]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_Max
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_Max|CONST_NearFacing_Max]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 7
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_TotallyRandom
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_TotallyRandom|CONST_NearFacing_TotallyRandom]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -3
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_Random
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_Random|CONST_NearFacing_Random]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_Direct
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_Direct|CONST_NearFacing_Direct]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = -1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_TowardSmall
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_TowardSmall|CONST_NearFacing_TowardSmall]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_TowardLarge
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_TowardLarge|CONST_NearFacing_TowardLarge]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_AwaySmall
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_AwaySmall|CONST_NearFacing_AwaySmall]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_AwayLarge
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_AwayLarge|CONST_NearFacing_AwayLarge]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 3
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_LeftSideOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_LeftSideOn|CONST_NearFacing_LeftSideOn]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_RightSideOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_RightSideOn|CONST_NearFacing_RightSideOn]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 5
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_BottomSideOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_BottomSideOn|CONST_NearFacing_BottomSideOn]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 6
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_TopSideOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_TopSideOn|CONST_NearFacing_TopSideOn]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 7
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_HeadingCorrectionToDirectFacing
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_HeadingCorrectionToDirectFacing|CONST_NearFacing_HeadingCorrectionToDirectFacing]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 90.0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_TightAngle
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_TightAngle|CONST_NearFacing_TightAngle]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 15.0
+}}
+
+{{Script_Object_Member_Summary
+| title = CONST_NearFacing_WideAngle
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/CONST_NearFacing_WideAngle|CONST_NearFacing_WideAngle]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = float
+| parameters = 30.0
+}}
+
+{{Script_Object_Member_Summary
+| title = Motion_Fixed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Motion_Fixed|Motion_Fixed]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 0
+| documentation = Constants for SetMotionType:
+}}
+
+{{Script_Object_Member_Summary
+| title = Motion_Dynamic
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Motion_Dynamic|Motion_Dynamic]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 1
+}}
+
+{{Script_Object_Member_Summary
+| title = Motion_Keyframed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/Motion_Keyframed|Motion_Keyframed]]
+| kind = Property
+| flags = AutoReadOnly
+| returns = int
+| parameters = 2
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this reference is activated
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCellAttach
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnCellAttach|OnCellAttach]]
+| kind = Event
+| documentation = Event received when this object's parent cell is attached
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCellDetach
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnCellDetach|OnCellDetach]]
+| kind = Event
+| documentation = Event received when this object's parent cell is detached
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnCellLoad|OnCellLoad]]
+| kind = Event
+| documentation = Event received when every object in this object's parent cell is loaded (TODO: Find restrictions)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnClose
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnClose|OnClose]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this object is closed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+| documentation = Event received when this object enters, exits, or changes containers
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCrewAssigned
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnCrewAssigned|OnCrewAssigned]]
+| kind = Event
+| parameters = Actor akCrew, ObjectReference akAssignmentRef, ObjectReference akPreviousAssignmentRef
+| documentation = Event received when a crew member is assigned.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCrewDismissed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnCrewDismissed|OnCrewDismissed]]
+| kind = Event
+| parameters = Actor akCrew, ObjectReference akPreviousAssignmentRef
+| documentation = Event received when a crew member is dismissed.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDestroyed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnDestroyed|OnDestroyed]]
+| kind = Event
+| parameters = ObjectReference akDestroyer
+| documentation = Event received when this reference is destroyed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDestructionStageChanged
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnDestructionStageChanged|OnDestructionStageChanged]]
+| kind = Event
+| parameters = int aiOldStage, int aiCurrentStage
+| documentation = Event received when this reference's destruction stage has changed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterFurniture
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnEnterFurniture|OnEnterFurniture]]
+| kind = Event
+| parameters = Actor akActionRef
+| documentation = Event received when this furniture is entered.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEquipped
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnEquipped|OnEquipped]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event received when this object is equipped by an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnExitFurniture
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnExitFurniture|OnExitFurniture]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this furniture is exited.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGrab
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnGrab|OnGrab]]
+| kind = Event
+| documentation = Event received when this object is grabbed by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemAdded
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnItemAdded|OnItemAdded]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
+| documentation = Event received when an item is removed from this object's inventory. If the item is a persistant reference, akItemReference
+will point at it - otherwise the parameter will be None. For valid Transfer Reasons please refer to the wiki.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemRemoved
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnItemRemoved|OnItemRemoved]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason
+| documentation = Event received when an item is removed from this object's inventory. If the item is a persistant reference, akItemReference
+will point at it - otherwise the parameter will be None. For valid Transfer Reasons please refer to the wiki.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnLoad|OnLoad]]
+| kind = Event
+| documentation = Event recieved when this object is completely loaded - will be fired every time this object is loaded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLockStateChanged
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnLockStateChanged|OnLockStateChanged]]
+| kind = Event
+| documentation = Event received when the lock on this object changes
+}}
+
+{{Script_Object_Member_Summary
+| title = OnObjectRepaired
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnObjectRepaired|OnObjectRepaired]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when an item has been repaired
+}}
+
+{{Script_Object_Member_Summary
+| title = OnObjectDestroyed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnObjectDestroyed|OnObjectDestroyed]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when an item has been destroyed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOpen
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnOpen|OnOpen]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this object is opened
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOutpostItemPowerOff
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnOutpostItemPowerOff|OnOutpostItemPowerOff]]
+| kind = Event
+| parameters = ObjectReference akPoweredItem
+| documentation = Event received when an Outpost item loses power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOutpostItemPowerOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnOutpostItemPowerOn|OnOutpostItemPowerOn]]
+| kind = Event
+| parameters = ObjectReference akPoweredItem, ObjectReference akPowerGenerator
+| documentation = Event received when an Outpost item receives power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPipboyRadioDetection
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnPipboyRadioDetection|OnPipboyRadioDetection]]
+| kind = Event
+| parameters = bool abDetected
+| documentation = Event that occurs when the Pipboy enters/leaves the outer-radius of this radio ref
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerDialogueTarget
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnPlayerDialogueTarget|OnPlayerDialogueTarget]]
+| kind = Event
+| documentation = Event received when ref goes into dialogue with player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPowerOn
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnPowerOn|OnPowerOn]]
+| kind = Event
+| parameters = ObjectReference akPowerGenerator
+| documentation = Event received when a workshop item receives power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPowerOff
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnPowerOff|OnPowerOff]]
+| kind = Event
+| documentation = Event received when a workshop loses all power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRead
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnRead|OnRead]]
+| kind = Event
+| documentation = Event received when this object, if a book, is read
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRelease
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnRelease|OnRelease]]
+| kind = Event
+| documentation = Event received when this object is released by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnReset
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnReset|OnReset]]
+| kind = Event
+| documentation = Event received when this reference is reset
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSell
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnSell|OnSell]]
+| kind = Event
+| parameters = Actor akSeller
+| documentation = Event received when this reference is sold by an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpellCast
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnSpellCast|OnSpellCast]]
+| kind = Event
+| parameters = Form akSpell
+| documentation = Event received when a spell is cast by this object
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTranslationAlmostComplete
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTranslationAlmostComplete|OnTranslationAlmostComplete]]
+| kind = Event
+| documentation = Event received when translation is almost complete (from a call to TranslateTo, "almost" is determined by a gamesetting, default is 90% of the way)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTranslationComplete
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTranslationComplete|OnTranslationComplete]]
+| kind = Event
+| documentation = Event received when translation is complete (from a call to TranslateTo)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTranslationFailed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTranslationFailed|OnTranslationFailed]]
+| kind = Event
+| documentation = Event received when translation is aborted (from a call to StopTranslateTo)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTrapHitStop
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTrapHitStop|OnTrapHitStop]]
+| kind = Event
+| parameters = ObjectReference akTarget
+| documentation = Event recieved when this stops hitting a target
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this trigger volume is entered
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerLeave
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTriggerLeave|OnTriggerLeave]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this trigger volume is left
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnequipped
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnUnequipped|OnUnequipped]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event received when this object is unequipped by an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnUnload|OnUnload]]
+| kind = Event
+| documentation = Event recieved when this object is being unloaded - will be fired every time this object is unloaded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopFlyCam
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopFlyCam|OnWorkshopFlyCam]]
+| kind = Event
+| parameters = bool aStart
+| documentation = Event received when the player enters or leaves Workshop FlyCam
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopMode
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopMode|OnWorkshopMode]]
+| kind = Event
+| parameters = bool aStart
+| documentation = Event received when the player enters or leaves Workshop Mode
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectGrabbed
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopObjectGrabbed|OnWorkshopObjectGrabbed]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when the player grabs an existing object reference for edit while in Workshop mode.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectMoved
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopObjectMoved|OnWorkshopObjectMoved]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when an existing workshop item is moved in the world
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectPlaced
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopObjectPlaced|OnWorkshopObjectPlaced]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when a workshop item is placed in the world
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectRemoved
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopObjectRemoved|OnWorkshopObjectRemoved]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when a workshop item is removed ( from world and added back to workshop )
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopOutputLink
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopOutputLink|OnWorkshopOutputLink]]
+| kind = Event
+| parameters = ObjectReference akSource, ObjectReference akTarget
+| documentation = Event received when a new Output Link is created at a Workshop.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopNPCTransfer
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopNPCTransfer|OnWorkshopNPCTransfer]]
+| kind = Event
+| parameters = Location akNewWorkshop, Keyword akActionKW
+| documentation = Event that occurs when a workshop NPC is directed to move to another settlement
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTerminalMenuItemRun
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTerminalMenuItemRun|OnTerminalMenuItemRun]]
+| kind = Event
+| parameters = int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
+| documentation = Received if terminal object has menu item clicked
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuickContainerOpened
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnQuickContainerOpened|OnQuickContainerOpened]]
+| kind = Event
+| documentation = Received if the quick container opens
+}}
+
+{{Script_Object_Member_Summary
+| title = OnBuilderMenuSelect
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnBuilderMenuSelect|OnBuilderMenuSelect]]
+| kind = Event
+| parameters = ActorValue akActorValue
+| documentation = Event received when the produced resource on an Workshop producer/builder has changed.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnScanned
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnScanned|OnScanned]]
+| kind = Event
+| documentation = Received when this object is scanned
+}}
+
+{{Script_Object_Member_Summary
+| title = OnMapMarkerDiscovered
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnMapMarkerDiscovered|OnMapMarkerDiscovered]]
+| kind = Event
+| documentation = Received when this map marker is discovered
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopCargoLinkChanged
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnWorkshopCargoLinkChanged|OnWorkshopCargoLinkChanged]]
+| kind = Event
+| parameters = ObjectReference akOldTarget, ObjectReference akNewTarget
+| documentation = Event that is triggered when the target for a cargo link on workshop item changes.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

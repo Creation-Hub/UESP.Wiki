@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Tests:A:B:C:Script
+| name = [[SFM:Script-Tests:A:B:C:Script|Tests:A:B:C:Script]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Const, Hidden
+}}
+
+
+== Definition ==
+The <code>Tests\A\B\C\Script.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Tests:A:B:C:Script Extends ScriptObject Native Const Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Tests\A\B\C\Script.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Tests\A\B\C\Script.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

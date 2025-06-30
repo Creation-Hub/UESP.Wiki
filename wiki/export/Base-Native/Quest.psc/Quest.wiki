@@ -1,0 +1,947 @@
+{{Script_Object_Summary
+| title = Quest
+| name = [[SFM:Script-Quest|Quest]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Quest.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Quest Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Quest.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ModObjectiveGlobal
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/ModObjectiveGlobal|ModObjectiveGlobal]]
+| kind = Function
+| returns = bool
+| parameters = float afModValue, GlobalVariable aModGlobal, int aiObjectiveID = -1, float afTargetValue = -1.0, bool abCountingUp = true, bool abCompleteObjective = true, bool abRedisplayObjective = true, bool abAllowRollbackObjective = false
+| documentation = thread-safe way to modify a global value
+optional parameters:
+aiObjectiveID = objective ID to redisplay
+afTargetValue = value you're counting up (or down) towards -- if included, function will return TRUE when the global reaches the target value
+abCountingUp = by default, function assumes you're counting up towards the target value; make this false to count DOWN towards target value
+abCompleteObjective = by default, function assumes you're completing the objective once you reach the target value; make this false to FAIL the objective
+abRedisplayObjective = by default, function asssume you want to redisplay the objective every time the global is incremeneted; make this FALSE to only display the objectives on complete or failure
+abAllowRollbackObjective = by default, function assumes you do not want to rollback a completed objective; make this TRUE to reopen an already completed objective if aModGlobal goes below/above target value
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAllStages
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetAllStages|SetAllStages]]
+| kind = Function
+| parameters = int lastStage
+| documentation = kmk- for testing - sets all stages up to lastStage
+}}
+
+{{Script_Object_Member_Summary
+| title = SetQuestStage
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetQuestStage|SetQuestStage]]
+| kind = Function
+| flags = Global
+| parameters = QuestStage questStageToSet
+}}
+
+{{Script_Object_Member_Summary
+| title = GetQuestStageDone
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetQuestStageDone|GetQuestStageDone]]
+| kind = Function
+| flags = Global
+| returns = bool
+| parameters = QuestStage questStageToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveSkipped
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveSkipped|SetObjectiveSkipped]]
+| kind = Function
+| parameters = int aiObjectiveID
+| documentation = WJS - function to handle objectives that might have been skipped over. For now, hide them
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveActive
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveActive|SetObjectiveActive]]
+| kind = Function
+| parameters = int aiObjective, bool abForceRedisplay = true
+| documentation = jduvall - convenience function - uncompletes, unfails and displays the objective
+}}
+
+{{Script_Object_Member_Summary
+| title = CompleteAllObjectives
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/CompleteAllObjectives|CompleteAllObjectives]]
+| kind = Function
+| flags = Native
+| documentation = Flags all objectives as complete
+}}
+
+{{Script_Object_Member_Summary
+| title = CompleteQuest
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/CompleteQuest|CompleteQuest]]
+| kind = Function
+| flags = Native
+| documentation = Flags this quest as completed
+}}
+
+{{Script_Object_Member_Summary
+| title = FailAllObjectives
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/FailAllObjectives|FailAllObjectives]]
+| kind = Function
+| flags = Native
+| documentation = Flags all objectives as failed
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAlias
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetAlias|GetAlias]]
+| kind = Function
+| flags = Native
+| returns = Alias
+| parameters = int aiAliasID
+| documentation = Obtains the specified alias on the quest
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentStageID
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetCurrentStageID|GetCurrentStageID]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains the id of the highest completed stage on this quest
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentStageTargets
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetCurrentStageTargets|GetCurrentStageTargets]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| documentation = Returns the array of object reference targets pertinent to the current quest stage
+}}
+
+{{Script_Object_Member_Summary
+| title = GetStage
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetStage|GetStage]]
+| kind = Function
+| returns = int
+| documentation = Alias for GetCurrentStage - obtains the highest completed stage on this quest
+}}
+
+{{Script_Object_Member_Summary
+| title = GetQuestTimeRemaining
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetQuestTimeRemaining|GetQuestTimeRemaining]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = gets the remaining time for the quest timer if any
+}}
+
+{{Script_Object_Member_Summary
+| title = GetStageDone
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/GetStageDone|GetStageDone]]
+| kind = Function
+| returns = bool
+| parameters = int aiStage
+| documentation = Alias for IsStageDone - checks to see whether the given stage is done or not
+}}
+
+{{Script_Object_Member_Summary
+| title = HasObjective
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/HasObjective|HasObjective]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiObjective
+| documentation = Checks to see if the specified objective exists on the quest
+}}
+
+{{Script_Object_Member_Summary
+| title = IsActive
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsActive|IsActive]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this quest "active" (tracked by the player)?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsCompleted
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsCompleted|IsCompleted]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if the quest is completed
+}}
+
+{{Script_Object_Member_Summary
+| title = IsObjectiveCompleted
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsObjectiveCompleted|IsObjectiveCompleted]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiObjective
+| documentation = Checks to see if the specified objective is completed
+}}
+
+{{Script_Object_Member_Summary
+| title = IsObjectiveDisplayed
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsObjectiveDisplayed|IsObjectiveDisplayed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiObjective
+| documentation = Checks to see if the specified objective is displayed
+}}
+
+{{Script_Object_Member_Summary
+| title = IsObjectiveFailed
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsObjectiveFailed|IsObjectiveFailed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiObjective
+| documentation = Checks to see if the specified objective is failed
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveDisplayedAtTop
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveDisplayedAtTop|SetObjectiveDisplayedAtTop]]
+| kind = Function
+| flags = Native
+| parameters = int aiObjective
+| documentation = Sets the specified objective to be displayed at the top of the player's objective list
+}}
+
+{{Script_Object_Member_Summary
+| title = IsQuestTimerPaused
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsQuestTimerPaused|IsQuestTimerPaused]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks if the quest timer is paused; returns true if paused otherwise false which means the timer is running
+}}
+
+{{Script_Object_Member_Summary
+| title = IsRunning
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsRunning|IsRunning]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if the quest is running
+}}
+
+{{Script_Object_Member_Summary
+| title = IsStageDone
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsStageDone|IsStageDone]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiStage
+| documentation = Obtains whether the specified stage is done or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsStarting
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsStarting|IsStarting]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if the quest is enabled but not running yet
+}}
+
+{{Script_Object_Member_Summary
+| title = IsStopping
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsStopping|IsStopping]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if the quest is not enabled anymore but still shutting down
+}}
+
+{{Script_Object_Member_Summary
+| title = IsStopped
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/IsStopped|IsStopped]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Checks to see if the quest is no longer enabled or running
+}}
+
+{{Script_Object_Member_Summary
+| title = ModQuestTimer
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/ModQuestTimer|ModQuestTimer]]
+| kind = Function
+| flags = Native
+| parameters = float afModValue
+| documentation = Modifies a quest timer
+The timer is modified by the given afModValue can be negative or positive but not 0
+}}
+
+{{Script_Object_Member_Summary
+| title = PauseQuestTimer
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/PauseQuestTimer|PauseQuestTimer]]
+| kind = Function
+| flags = Native
+| parameters = bool abPause = true
+| documentation = Pauses the quest timer if abPause is true, resumes it if false. If the timer was already in the requested state nothing happens.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveRequestedPCMQuestLocations
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/RemoveRequestedPCMQuestLocations|RemoveRequestedPCMQuestLocations]]
+| kind = Function
+| flags = Native
+| documentation = Removes PCM locations requested by this quest.
+}}
+
+{{Script_Object_Member_Summary
+| title = Reset
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/Reset|Reset]]
+| kind = Function
+| flags = Native
+| documentation = Resets the quest
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActive
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetActive|SetActive]]
+| kind = Function
+| flags = Native
+| parameters = bool abActive = true
+| documentation = Flags this quest as "active" (tracked by the player)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCurrentStageID
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetCurrentStageID|SetCurrentStageID]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = int aiStageID
+| documentation = Set the quest to the requested stage ID - returns true if stage exists and was set.
+This function is latent and will wait for the quest to start up before returning (if it needed to be started)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveCompleted
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveCompleted|SetObjectiveCompleted]]
+| kind = Function
+| flags = Native
+| parameters = int aiObjective, bool abCompleted = true
+| documentation = Sets the specified objective to completed or not
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveDisplayed
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveDisplayed|SetObjectiveDisplayed]]
+| kind = Function
+| flags = Native
+| parameters = int aiObjective, bool abDisplayed = true, bool abForce = false
+| documentation = Sets the specified objective to displayed or hidden - if abForce is true, will display the objective even if it has already been displayed
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveFailed
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveFailed|SetObjectiveFailed]]
+| kind = Function
+| flags = Native
+| parameters = int aiObjective, bool abFailed = true
+| documentation = Sets the specified objective to failed or not
+}}
+
+{{Script_Object_Member_Summary
+| title = SetObjectiveFailedIfNotCompleted
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetObjectiveFailedIfNotCompleted|SetObjectiveFailedIfNotCompleted]]
+| kind = Function
+| parameters = int aiObjective
+| documentation = jduvall - convenience function
+fails the objective if it's not completed
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStage
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetStage|SetStage]]
+| kind = Function
+| returns = bool
+| parameters = int aiStage
+| documentation = Alias of SetCurrentStage - Set the quest to the requested stage
+This function is latent and will wait for the quest to start up before returning (if it needed to be started)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageNoWait
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/SetStageNoWait|SetStageNoWait]]
+| kind = Function
+| flags = Native
+| parameters = int aiStage
+| documentation = Sets the quest to the requested stage. Will NOT wait for the quest to start up, or for fragments to run. As such, it cannot return whether
+the stage was set or not, unlike SetStage or SetCurrentStageID
+}}
+
+{{Script_Object_Member_Summary
+| title = Start
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/Start|Start]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Starts the quest - returns whether the quest was able to be started or not
+This function is latent and will wait for the quest to start up before returning
+}}
+
+{{Script_Object_Member_Summary
+| title = StartNoWait
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/StartNoWait|StartNoWait]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Starts the quest - returns whether the quest was able to be started or not
+This function does not wait for aliases to fill or fragments to run and returns immediately
+}}
+
+{{Script_Object_Member_Summary
+| title = StartQuestTimer
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/StartQuestTimer|StartQuestTimer]]
+| kind = Function
+| flags = Native
+| parameters = float afTimeInHours = -1.0
+| documentation = Starts this quests timer with the given time or the time saved on the quest itself if none was given.
+Will reset the timer with the new time if the timer was running.
+}}
+
+{{Script_Object_Member_Summary
+| title = Stop
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/Stop|Stop]]
+| kind = Function
+| flags = Native
+| documentation = Stops the quest
+}}
+
+{{Script_Object_Member_Summary
+| title = StopQuestTimer
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/StopQuestTimer|StopQuestTimer]]
+| kind = Function
+| flags = Native
+| documentation = stop the running quest timer
+Will trigger OnQuestTimerEnd
+}}
+
+{{Script_Object_Member_Summary
+| title = UpdateCurrentInstanceGlobal
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/UpdateCurrentInstanceGlobal|UpdateCurrentInstanceGlobal]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = GlobalVariable aUpdateGlobal
+| documentation = Updates current instance's value for the given global
+}}
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = QuestStage
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/QuestStage|QuestStage]]
+| kind = Struct
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnMissionAccepted
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnMissionAccepted|OnMissionAccepted]]
+| kind = Event
+| documentation = Event received when a mission-type quest is accepted via the mission board
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestInit|OnQuestInit]]
+| kind = Event
+| documentation = Event received when the quest is initalized, aliases are filled, and it is about to run the startup stage
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestShutdown
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestShutdown|OnQuestShutdown]]
+| kind = Event
+| documentation = Event received when the quest has been shut down
+Note that the aliases will be empty by the time this event is received
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestStarted
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestStarted|OnQuestStarted]]
+| kind = Event
+| documentation = Event received when the quest has been started
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestRejected
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestRejected|OnQuestRejected]]
+| kind = Event
+| documentation = Event received when the quest is rejected
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestTimerStart
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestTimerStart|OnQuestTimerStart]]
+| kind = Event
+| parameters = int aiReason
+| documentation = aiReason values for OnQuestTimer***** are 0=timer expired, 1=stage triggered, 2=script
+Event received when the quest timer has started
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestTimerEnd
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestTimerEnd|OnQuestTimerEnd]]
+| kind = Event
+| parameters = int aiReason
+| documentation = Event received when the quest timer has ended
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestTimerPause
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestTimerPause|OnQuestTimerPause]]
+| kind = Event
+| parameters = int aiReason
+| documentation = Event received when the quest timer has been paused
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestTimerResume
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestTimerResume|OnQuestTimerResume]]
+| kind = Event
+| parameters = int aiReason
+| documentation = Event received when the quest timer has resumed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuestTimerMod
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnQuestTimerMod|OnQuestTimerMod]]
+| kind = Event
+| parameters = int aiReason
+| documentation = Event received when the quest timer has be modded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnReset
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnReset|OnReset]]
+| kind = Event
+| documentation = Event received when the quest owning this alias is reset
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+| documentation = Event received when a quest stage is set (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpeechChallengeCompletion
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnSpeechChallengeCompletion|OnSpeechChallengeCompletion]]
+| kind = Event
+| parameters = SpeechChallengeObject akSpeechChallenge, bool abSuccess
+| documentation = Event called when a speech challenge is completed (won or lost).
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryActivateActor
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryActivateActor|OnStoryActivateActor]]
+| kind = Event
+| parameters = Location akLocation, ObjectReference akActor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryActorAttach
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryActorAttach|OnStoryActorAttach]]
+| kind = Event
+| parameters = ObjectReference akActor, Location akLocation
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryAddToPlayer
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryAddToPlayer|OnStoryAddToPlayer]]
+| kind = Event
+| parameters = ObjectReference akOwner, ObjectReference akContainer, Location akLocation, Form akItemBase, int aiAcquireType, int aiValue
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryArrest
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryArrest|OnStoryArrest]]
+| kind = Event
+| parameters = ObjectReference akArrestingGuard, ObjectReference akCriminal, Location akLocation, int aiCrime
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryAssaultActor
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryAssaultActor|OnStoryAssaultActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, ObjectReference akAttacker, Location akLocation, bool abCrime
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryAttractionObject
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryAttractionObject|OnStoryAttractionObject]]
+| kind = Event
+| parameters = ObjectReference akActor, ObjectReference akObject, Location akLocation, bool abCommanded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryBribeNPC
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryBribeNPC|OnStoryBribeNPC]]
+| kind = Event
+| parameters = ObjectReference akActor, int aiAmount
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryCastMagic
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryCastMagic|OnStoryCastMagic]]
+| kind = Event
+| parameters = ObjectReference akCastingActor, ObjectReference akSpellTarget, Location akLocation, Form akSpell
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryChangeLocation
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryChangeLocation|OnStoryChangeLocation]]
+| kind = Event
+| parameters = ObjectReference akActor, Location akOldLocation, Location akNewLocation
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryExploredLocation
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryExploredLocation|OnStoryExploredLocation]]
+| kind = Event
+| parameters = Location akOldLocation
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryCraftItem
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryCraftItem|OnStoryCraftItem]]
+| kind = Event
+| parameters = ObjectReference akBench, Location akLocation, Form akCreatedItem
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryCrimeGold
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryCrimeGold|OnStoryCrimeGold]]
+| kind = Event
+| parameters = ObjectReference akVictim, ObjectReference akCriminal, Form akFaction, int aiGoldAmount, int aiCrime
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryCure
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryCure|OnStoryCure]]
+| kind = Event
+| parameters = Form akInfection
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryDialogue
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryDialogue|OnStoryDialogue]]
+| kind = Event
+| parameters = Location akLocation
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryDiscoverDeadBody
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryDiscoverDeadBody|OnStoryDiscoverDeadBody]]
+| kind = Event
+| parameters = ObjectReference akActor, ObjectReference akDeadActor, Location akLocation
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryEscapeJail
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryEscapeJail|OnStoryEscapeJail]]
+| kind = Event
+| parameters = Location akLocation, Form akCrimeGroup
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryFlatterNPC
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryFlatterNPC|OnStoryFlatterNPC]]
+| kind = Event
+| parameters = ObjectReference akActor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryHackTerminal
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryHackTerminal|OnStoryHackTerminal]]
+| kind = Event
+| parameters = ObjectReference akComputer, bool abSucceeded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryHello
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryHello|OnStoryHello]]
+| kind = Event
+| parameters = Location akLocation, ObjectReference akActor1, ObjectReference akActor2
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryIncreaseLevel
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryIncreaseLevel|OnStoryIncreaseLevel]]
+| kind = Event
+| parameters = int aiNewLevel
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryInfection
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryInfection|OnStoryInfection]]
+| kind = Event
+| parameters = ObjectReference akTransmittingActor, Form akInfection
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryIntimidateNPC
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryIntimidateNPC|OnStoryIntimidateNPC]]
+| kind = Event
+| parameters = ObjectReference akActor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryIronSights
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryIronSights|OnStoryIronSights]]
+| kind = Event
+| parameters = ObjectReference akActor, Form akWeapon
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryJail
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryJail|OnStoryJail]]
+| kind = Event
+| parameters = ObjectReference akGuard, Form akCrimeGroup, Location akLocation, int aiCrimeGold
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryKillActor
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryKillActor|OnStoryKillActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, ObjectReference akKiller, Location akLocation, int aiCrimeStatus, int aiRelationshipRank
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryLocationLoaded
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryLocationLoaded|OnStoryLocationLoaded]]
+| kind = Event
+| parameters = Location akLocation
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryMineExplosion
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryMineExplosion|OnStoryMineExplosion]]
+| kind = Event
+| parameters = ObjectReference akVictim, ObjectReference akAttacker
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryNewVoicePower
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryNewVoicePower|OnStoryNewVoicePower]]
+| kind = Event
+| parameters = ObjectReference akActor, Form akVoicePower
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryPayFine
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryPayFine|OnStoryPayFine]]
+| kind = Event
+| parameters = ObjectReference akCriminal, ObjectReference akGuard, Form akCrimeGroup, int aiCrimeGold
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryPickLock
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryPickLock|OnStoryPickLock]]
+| kind = Event
+| parameters = ObjectReference akActor, ObjectReference akLock, bool abCrime
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryPickPocket
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryPickPocket|OnStoryPickPocket]]
+| kind = Event
+| parameters = ObjectReference akVictim, bool abSuccess
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryPiracyActor
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryPiracyActor|OnStoryPiracyActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, ObjectReference akAttacker, Location akLocation, bool abCrime
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryPlayerGetsFavor
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryPlayerGetsFavor|OnStoryPlayerGetsFavor]]
+| kind = Event
+| parameters = ObjectReference akActor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryRelationshipChange
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryRelationshipChange|OnStoryRelationshipChange]]
+| kind = Event
+| parameters = ObjectReference akActor1, ObjectReference akActor2, int aiOldRelationship, int aiNewRelationship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryRemoveFromPlayer
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryRemoveFromPlayer|OnStoryRemoveFromPlayer]]
+| kind = Event
+| parameters = ObjectReference akOwner, ObjectReference akItem, Location akLocation, Form akItemBase, int aiRemoveType, int aiValue
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryScript
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryScript|OnStoryScript]]
+| kind = Event
+| parameters = Keyword akKeyword, Location akLocation, ObjectReference akRef1, ObjectReference akRef2, int aiValue1, int aiValue2
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryServedTime
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryServedTime|OnStoryServedTime]]
+| kind = Event
+| parameters = Location akLocation, Form akCrimeGroup, int aiCrimeGold, int aiDaysJail
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryShipDock
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryShipDock|OnStoryShipDock]]
+| kind = Event
+| parameters = ObjectReference akDockingShip, ObjectReference akDockTargetShip, bool abDocking
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryShipLanding
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryShipLanding|OnStoryShipLanding]]
+| kind = Event
+| parameters = ObjectReference akLandingShip, ObjectReference akLandingMarker
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStorySpeechChallengeCompletion
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStorySpeechChallengeCompletion|OnStorySpeechChallengeCompletion]]
+| kind = Event
+| parameters = SpeechChallengeObject akChallenge, bool abSuccess
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStoryTrespass
+| script = [[SFM:Script-Quest|Quest]]
+| name = [[SFM:Script-Quest/OnStoryTrespass|OnStoryTrespass]]
+| kind = Event
+| parameters = ObjectReference akVictim, ObjectReference akTrespasser, Location akLocation, bool abCrime
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

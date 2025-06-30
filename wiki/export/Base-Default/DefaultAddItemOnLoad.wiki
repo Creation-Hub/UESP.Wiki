@@ -1,0 +1,66 @@
+{{Script_Object_Summary
+| title = DefaultAddItemOnLoad
+| name = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAddItemOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAddItemOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAddItemOnLoad.psc</code> source file documentation comments for this script.
+
+<source>
+Placed on an Object Reference (preferably an actor or container) that will add the selected item OnLoad()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ItemToAdd
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/ItemToAdd|ItemToAdd]]
+| kind = Property
+| flags = Auto Const
+| returns = Form
+| documentation = Base object to add to this reference.
+}}
+
+{{Script_Object_Member_Summary
+| title = Count
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/Count|Count]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 1
+| documentation = Default = 1: Number of this item to add.
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = DoneWaiting
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/DoneWaiting|DoneWaiting]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

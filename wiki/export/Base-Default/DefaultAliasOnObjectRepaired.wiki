@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnObjectRepaired
+| name = [[SFM:Script-DefaultAliasOnObjectRepaired|DefaultAliasOnObjectRepaired]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnObjectRepaired.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnObjectRepaired Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnObjectRepaired.psc</code> source file documentation comments for this script.
+
+<source>
+Default script that sets a stage when the alias is repaired.
+ TODO - TTP 25225 - OnObjectRepaired compiles but isn't listed on the CS Wiki; it's unclear if it works or not.
+ TODO - TTP-27113: Default Scripts: make a Reference version of DefaultAliasOnObjectRepaired
+
+Sets stage when THIS Alias is repaired.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the repairing reference.
+<LocationToCheck> is the current location of THIS Alias.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnObjectRepaired
+| script = [[SFM:Script-DefaultAliasOnObjectRepaired|DefaultAliasOnObjectRepaired]]
+| name = [[SFM:Script-DefaultAliasOnObjectRepaired/OnObjectRepaired|OnObjectRepaired]]
+| kind = Event
+| parameters = ObjectReference akSource
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

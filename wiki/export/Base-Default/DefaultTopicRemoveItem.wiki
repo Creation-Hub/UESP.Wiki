@@ -1,0 +1,104 @@
+{{Script_Object_Summary
+| title = DefaultTopicRemoveItem
+| name = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| extends = [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultTopicRemoveItem.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicRemoveItem Extends TopicInfo Const Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultTopicRemoveItem.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = RemoveItemOnBegin
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/RemoveItemOnBegin|RemoveItemOnBegin]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = Default: false; should we remove the item when the topic starts playing?
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveItemOnEnd
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/RemoveItemOnEnd|RemoveItemOnEnd]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = Default: true; should we remove the item when the topic finishes playing?
+}}
+
+{{Script_Object_Member_Summary
+| title = MiscItemToRemove
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/MiscItemToRemove|MiscItemToRemove]]
+| kind = Property
+| flags = Const Auto
+| returns = MiscObject
+| documentation = Which item should we remove from player?
+}}
+
+{{Script_Object_Member_Summary
+| title = ItemCountToRemove
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/ItemCountToRemove|ItemCountToRemove]]
+| kind = Property
+| flags = Const Auto
+| returns = int
+| parameters = 1
+| documentation = how many items should we remove?
+}}
+
+{{Script_Object_Member_Summary
+| title = ItemCountToRemoveGlobal
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/ItemCountToRemoveGlobal|ItemCountToRemoveGlobal]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = OPTIONAL - if this is provided, it will be used instead of ItemCountToRemove
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = RemoveItem
+| script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+| name = [[SFM:Script-DefaultTopicRemoveItem/RemoveItem|RemoveItem]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

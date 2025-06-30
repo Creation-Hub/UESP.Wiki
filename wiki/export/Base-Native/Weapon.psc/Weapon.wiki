@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = Weapon
+| name = [[SFM:Script-Weapon|Weapon]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Weapon.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Weapon Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Weapon.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Fire
+| script = [[SFM:Script-Weapon|Weapon]]
+| name = [[SFM:Script-Weapon/Fire|Fire]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akSource, Ammo akAmmo = none
+| documentation = Fire this weapon base object from the specified source
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAmmo
+| script = [[SFM:Script-Weapon|Weapon]]
+| name = [[SFM:Script-Weapon/GetAmmo|GetAmmo]]
+| kind = Function
+| flags = Native
+| returns = Ammo
+| documentation = Get the ammo for this weapon base object
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

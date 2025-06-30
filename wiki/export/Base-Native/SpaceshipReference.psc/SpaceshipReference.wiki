@@ -1,0 +1,1242 @@
+{{Script_Object_Summary
+| title = SpaceshipReference
+| name = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>SpaceshipReference.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName SpaceshipReference Extends ObjectReference Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>SpaceshipReference.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddPerk
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/AddPerk|AddPerk]]
+| kind = Function
+| flags = Native
+| parameters = Perk akPerk, bool abNotify = false
+| documentation = Adds the specified perk to this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = AddToFaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/AddToFaction|AddToFaction]]
+| kind = Function
+| parameters = Faction akFaction
+| documentation = Adds this spaceship to a faction at rank 0 if they aren't already in it
+}}
+
+{{Script_Object_Member_Summary
+| title = CanLandAtMarker
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/CanLandAtMarker|CanLandAtMarker]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akLandingMarker
+| documentation = Tests if the spaceship is allowed to land at the given marker based on the maximum allowed ship size.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckContrabandStatus
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/CheckContrabandStatus|CheckContrabandStatus]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = bool abCheckWholeShip = true
+| documentation = Retrieves the ships contraband status. (Only checks ships cargo if abCheckWholeShip is false)
+-1 - Below shielded inventory limit
+0 - At shielded inventory limit
+1 - Above shielded inventory limit
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableWithGravJump
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/DisableWithGravJump|DisableWithGravJump]]
+| kind = Function
+| flags = Native
+| documentation = disable this spaceship with grav jump FX
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableWithGravJumpNoWait
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/DisableWithGravJumpNoWait|DisableWithGravJumpNoWait]]
+| kind = Function
+| flags = Native
+| documentation = disable this spaceship with grav jump FX. Does NOT wait for the FX to finish
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableWithTakeOffOrLanding
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/DisableWithTakeOffOrLanding|DisableWithTakeOffOrLanding]]
+| kind = Function
+| flags = Native
+| documentation = disable this spaceship after playing a takeoff or landing animation (whichever is appropriate)
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableWithTakeOffOrLandingNoWait
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/DisableWithTakeOffOrLandingNoWait|DisableWithTakeOffOrLandingNoWait]]
+| kind = Function
+| flags = Native
+| documentation = disable this spaceship after playing a takeoff or landing animation (whichever is appropriate). Does NOT wait for the animation to complete
+}}
+
+{{Script_Object_Member_Summary
+| title = EnablePartRepair
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EnablePartRepair|EnablePartRepair]]
+| kind = Function
+| flags = Native
+| parameters = ActorValue aSystemHealth, bool abEnable = true
+| documentation = Enable/disable repairing the spaceship part associated with the given System Health actor value
+If no part is specified, all the parts will be affected
+pass true to enable repairing the part(s), false to disable it
+}}
+
+{{Script_Object_Member_Summary
+| title = EvaluatePackage
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EvaluatePackage|EvaluatePackage]]
+| kind = Function
+| flags = Native
+| parameters = bool abResetAI = false
+| documentation = evaluate this spaceships packages.
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableAI
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EnableAI|EnableAI]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true, bool abPauseVoice = false
+| documentation = enable or disable the AI for this ship
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableWithGravJump
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EnableWithGravJump|EnableWithGravJump]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = enable this spaceship with grav jump FX
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableWithGravJumpNoWait
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EnableWithGravJumpNoWait|EnableWithGravJumpNoWait]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = enable this spaceship with grav jump FX - does not wait for 3d to load
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableWithLanding
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EnableWithLanding|EnableWithLanding]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = enable this spaceship and land it at its currently linked landing marker
+}}
+
+{{Script_Object_Member_Summary
+| title = EnableWithLandingNoWait
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/EnableWithLandingNoWait|EnableWithLandingNoWait]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = enable this spaceship and land it at its currently linked landing marker. Does not wait for the animation to complete or the 3d to load
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAllCombatTargets
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetAllCombatTargets|GetAllCombatTargets]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipReference[]
+| documentation = gets all the combat targets for this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCombatTarget
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetCombatTarget|GetCombatTarget]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipReference
+| documentation = gets the current combat target
+}}
+
+{{Script_Object_Member_Summary
+| title = GetContrabandWeight
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetContrabandWeight|GetContrabandWeight]]
+| kind = Function
+| flags = Native
+| returns = float
+| parameters = bool abCheckWholeShip = true
+| documentation = Retrieves the ships contraband weight. (Only checks ships cargo if abCheckWholeShip is false)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCrimeFaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetCrimeFaction|GetCrimeFaction]]
+| kind = Function
+| flags = Native
+| returns = Faction
+| documentation = Get the faction this ship reports crimes to
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentPackage
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetCurrentPackage|GetCurrentPackage]]
+| kind = Function
+| flags = Native
+| returns = Package
+| documentation = Gets this spaceships's current AI package
+}}
+
+{{Script_Object_Member_Summary
+| title = GetExteriorLoadDoors
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetExteriorLoadDoors|GetExteriorLoadDoors]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| documentation = Gets all exterior references for this spaceship which are load doors
+}}
+
+{{Script_Object_Member_Summary
+| title = GetExteriorRefs
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetExteriorRefs|GetExteriorRefs]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| parameters = Keyword apKeyword
+| documentation = Gets this spaceship's exterior references filtered by the given keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionRank
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetFactionRank|GetFactionRank]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Faction akFaction
+| documentation = Obtains this spaceship's rank with the specified faction - returns -1 if the spaceship is not a member
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorFactionReaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetActorFactionReaction|GetActorFactionReaction]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = Actor akOtherActor
+| documentation = returns the faction reation to the other actor
+0 - Neutral
+1 - Enemy
+2 - Ally
+3 - Friend
+}}
+
+{{Script_Object_Member_Summary
+| title = GetDockedShips
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetDockedShips|GetDockedShips]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipReference[]
+| documentation = Retrieve all the spaceships currently docked with this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionReaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetFactionReaction|GetFactionReaction]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = SpaceshipReference akOther
+| documentation = returns the faction reation to the other spaceship
+0 - Neutral
+1 - Enemy
+2 - Ally
+3 - Friend
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFirstDockedShip
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetFirstDockedShip|GetFirstDockedShip]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipReference
+| documentation = Retrieve the first spaceship docked with this spaceship, if any
+}}
+
+{{Script_Object_Member_Summary
+| title = GetKiller
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetKiller|GetKiller]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = get this ship's killer
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLandingRamps
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetLandingRamps|GetLandingRamps]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference[]
+| documentation = Gets all exterior references for this spaceship which are ramps
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLevel
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetLevel|GetLevel]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = get the level of this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLeveledSpaceshipBase
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetLeveledSpaceshipBase|GetLeveledSpaceshipBase]]
+| kind = Function
+| flags = Native
+| returns = SpaceshipBase
+| documentation = get the base object of this spaceship, either the created one for a leveled ship or the editor saved one for a non leveled ship.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetNoBleedoutRecovery
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetNoBleedoutRecovery|GetNoBleedoutRecovery]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = get the no bleedout recovery status for this ship
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPartCount
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetPartCount|GetPartCount]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = int aiShipPartID
+| documentation = Gets the number of parts of a specific type
+valid aiShipPartIDs 0 - Weapons, 1 - Engine, 2 - Shields, 3 - Gravdrive, 4 - Generator
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPartPower
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetPartPower|GetPartPower]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = int aiShipPartID, int aiShipPartIndex
+| documentation = Gets the amount of power allocated to a given part
+valid aiShipPartIDs 0 - Weapons, 1 - Engine, 2 - Shields, 3 - Gravdrive, 4 - Generator
+}}
+
+{{Script_Object_Member_Summary
+| title = GetShipMaxCargoWeight
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetShipMaxCargoWeight|GetShipMaxCargoWeight]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Gets the spaceships maximum weight capacity by summing normal and shielded cargo capacity.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWeaponGroupBaseObject
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetWeaponGroupBaseObject|GetWeaponGroupBaseObject]]
+| kind = Function
+| flags = Native
+| returns = Weapon
+| parameters = ActorValue aWeaponGroupSystemHealth
+| documentation = Returns the weapon associated with a weapon group part
+}}
+
+{{Script_Object_Member_Summary
+| title = HasPerk
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/HasPerk|HasPerk]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Perk akPerk
+| documentation = Checks to see if this speaceship has the given Perk
+}}
+
+{{Script_Object_Member_Summary
+| title = InstantDock
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/InstantDock|InstantDock]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = ObjectReference akTarget
+| documentation = Instantly docks the spaceship with a target which can be another ship or a docking port
+}}
+
+{{Script_Object_Member_Summary
+| title = InstantUndock
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/InstantUndock|InstantUndock]]
+| kind = Function
+| flags = Native
+| documentation = Instantly undocks a spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAIEnabled
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsAIEnabled|IsAIEnabled]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether this spaceship's AI is enabled.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAlarmed
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsAlarmed|IsAlarmed]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this spaceship is alarmed or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAlerted
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsAlerted|IsAlerted]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns if this spaceship is alerted or not
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDead
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsDead|IsDead]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = check if this spaceship is dead
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDetectedBy
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsDetectedBy|IsDetectedBy]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = SpaceshipReference akOther
+| documentation = Returns if this spaceship is detected by the other one
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDocked
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsDocked|IsDocked]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Get whether this spaceship is currently docked
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDockedWith
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsDockedWith|IsDockedWith]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = SpaceshipReference akTarget
+| documentation = Get whether this spaceship is currently docked with a given target
+}}
+
+{{Script_Object_Member_Summary
+| title = IsDockedAsChild
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsDockedAsChild|IsDockedAsChild]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Get whether this spaceship is docked as a child
+}}
+
+{{Script_Object_Member_Summary
+| title = IsEssential
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsEssential|IsEssential]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abIncludeActors = true
+| documentation = get if this spaceship is considered essential
+Included actors are anyone in the ship's interior or exterior
+}}
+
+{{Script_Object_Member_Summary
+| title = IsGhost
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsGhost|IsGhost]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = check if the ship is set to be a ghost
+}}
+
+{{Script_Object_Member_Summary
+| title = IsHostileToSpaceship
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsHostileToSpaceship|IsHostileToSpaceship]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = SpaceshipReference akSpaceship
+| documentation = Is this spaceship hostile to another spaceship?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInCombat
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsInCombat|IsInCombat]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = check if the ship is in combat.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInFaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsInFaction|IsInFaction]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Faction akFaction
+| documentation = Checks to see if this spaceship is a member of the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInScene
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsInScene|IsInScene]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = check if this spaceship is in a scene
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLanded
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsLanded|IsLanded]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = check if this spaceship is landed
+}}
+
+{{Script_Object_Member_Summary
+| title = IsProtected
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsProtected|IsProtected]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = bool abIncludeActors = true
+| documentation = get if this spaceship is considered protected
+Included actors are anyone in the ship's interior or exterior
+}}
+
+{{Script_Object_Member_Summary
+| title = IsRampDown
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsRampDown|IsRampDown]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = check if this spaceship's ramp is connected to the surrounding navmesh yet
+}}
+
+{{Script_Object_Member_Summary
+| title = Kill
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/Kill|Kill]]
+| kind = Function
+| flags = Native
+| parameters = SpaceshipReference akKiller = none
+| documentation = kill this ship with akKiller as the source of the kill
+}}
+
+{{Script_Object_Member_Summary
+| title = KillEssential
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/KillEssential|KillEssential]]
+| kind = Function
+| flags = Native
+| parameters = SpaceshipReference akKiller = none
+| documentation = kill this ship with akKiller as the source of the kill even if the ship or any on board actors are essential.
+}}
+
+{{Script_Object_Member_Summary
+| title = KillSilent
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/KillSilent|KillSilent]]
+| kind = Function
+| flags = Native
+| parameters = SpaceshipReference akKiller = none
+| documentation = kill this ship with akKiller as the source of the kill but do not generate story events
+}}
+
+{{Script_Object_Member_Summary
+| title = ModFactionRank
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/ModFactionRank|ModFactionRank]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction, int aiAmount
+| documentation = modifies the faction rank by the given amount
+}}
+
+{{Script_Object_Member_Summary
+| title = MoveToPackageLocation
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/MoveToPackageLocation|MoveToPackageLocation]]
+| kind = Function
+| flags = Native
+| documentation = Pop this spaceship to the initial location for a package.
+}}
+
+{{Script_Object_Member_Summary
+| title = OpenInventory
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OpenInventory|OpenInventory]]
+| kind = Function
+| flags = Native
+| documentation = Opens this ship's inventory.
+}}
+
+{{Script_Object_Member_Summary
+| title = LockPowerAllocation
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/LockPowerAllocation|LockPowerAllocation]]
+| kind = Function
+| flags = Native
+| parameters = int aiShipPartID, int aiShipPartIndex, bool abLock = true
+| documentation = Lock the power allocation of a specific part to keep the AI from modifying it
+valid aiShipPartIDs 0 - Weapons, 1 - Engine, 2 - Shields, 3 - Gravdrive, 4 - Generator
+pass -1 to aiShipPartIndex to lock/unlock the power of all the parts of the specified type
+This will also keep the AI from repairing a damaged part
+}}
+
+{{Script_Object_Member_Summary
+| title = PathToReference
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/PathToReference|PathToReference]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = ObjectReference aTarget, float afNormalizedSpeed, float afNormalizedRotationSpeed, float afTargetRadius = -1.0, bool abHardRadius = false
+| documentation = Make the spaceship attempt to path to a reference, latent version
+Note: this method doesn't return until the goal is reached or pathing
+failed or was interrupted (by another request for instance)
+Return values (see Actor for PathingResult properties):
+0 - Success
+1 - Failure
+2 - Stopped
+3 - Cleared
+4 - Timeout
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromAllFactions
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/RemoveFromAllFactions|RemoveFromAllFactions]]
+| kind = Function
+| flags = Native
+| documentation = remove the ship from the all factions
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromFaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/RemoveFromFaction|RemoveFromFaction]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = remove the ship from the given faction
+}}
+
+{{Script_Object_Member_Summary
+| title = RemovePerk
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/RemovePerk|RemovePerk]]
+| kind = Function
+| flags = Native
+| parameters = Perk akPerk
+| documentation = Removes the specified perk from this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = SendAssaultAlarm
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SendAssaultAlarm|SendAssaultAlarm]]
+| kind = Function
+| flags = Native
+| documentation = Has this spaceship behave as if assaulted
+}}
+
+{{Script_Object_Member_Summary
+| title = SendPiracyAlarm
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SendPiracyAlarm|SendPiracyAlarm]]
+| kind = Function
+| flags = Native
+| documentation = Have the ship behave as if pirated
+}}
+
+{{Script_Object_Member_Summary
+| title = SendSmugglingAlarm
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SendSmugglingAlarm|SendSmugglingAlarm]]
+| kind = Function
+| flags = Native
+| parameters = bool abCheckWholeShip = true
+| documentation = Have this spaceship behave as if they detected the player smuggling
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAlert
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetAlert|SetAlert]]
+| kind = Function
+| flags = Native
+| parameters = bool abAlerted = true
+| documentation = Sets the spaceship in an alerted state
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAttackShipOnSight
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetAttackShipOnSight|SetAttackShipOnSight]]
+| kind = Function
+| flags = Native
+| parameters = bool abAttackOnSight = true
+| documentation = Sets this ship to be attacked by all other ships on sight
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAvoidPlayer
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetAvoidPlayer|SetAvoidPlayer]]
+| kind = Function
+| flags = Native
+| parameters = bool abAvoid = true
+| documentation = Tells pathing to avoid the player (which it already does by default) or not (for use in scenes where the player is meant to be an incorporeal observer).
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCombatStyle
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetCombatStyle|SetCombatStyle]]
+| kind = Function
+| flags = Native
+| parameters = CombatStyle akCombatStyle
+| documentation = Sets the combatstyle for this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = SetCrimeFaction
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetCrimeFaction|SetCrimeFaction]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = Sets the faction this spaceship reports crimes to
+}}
+
+{{Script_Object_Member_Summary
+| title = SetEssential
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetEssential|SetEssential]]
+| kind = Function
+| flags = Native
+| parameters = bool abEssential
+| documentation = set if this spaceship is considered essential
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFactionRank
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetFactionRank|SetFactionRank]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction, int aiRank
+| documentation = Sets this spaceship's rank with the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGhost
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetGhost|SetGhost]]
+| kind = Function
+| flags = Native
+| parameters = bool abIsGhost = true
+| documentation = sets if this spaceship is a ghost
+}}
+
+{{Script_Object_Member_Summary
+| title = SetNoBleedoutRecovery
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetNoBleedoutRecovery|SetNoBleedoutRecovery]]
+| kind = Function
+| flags = Native
+| parameters = bool abBleedoutRecoveryNotAllowed = true
+| documentation = set the no bleedout recovery status for this ship; pass true to prevent recovery
+}}
+
+{{Script_Object_Member_Summary
+| title = SetNotShowOnStealthMeter
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetNotShowOnStealthMeter|SetNotShowOnStealthMeter]]
+| kind = Function
+| flags = Native
+| parameters = bool abNotShow = true
+| documentation = Sets this spaceship to not effect the detection level on the stealth meter if they are not hostile to the player
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPartPower
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetPartPower|SetPartPower]]
+| kind = Function
+| flags = Native
+| parameters = int aiShipPartID, int aiShipPartIndex, int aiPower
+| documentation = Sets the amount of power allocated to a given part
+valid aiShipPartIDs 0 - Weapons, 1 - Engine, 2 - Shields, 3 - Gravdrive, 4 - Generator
+specify -1 for the aiShipPartIndex to set the power of all the parts of the specified type (such as weapons)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPlayerResistingArrest
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetPlayerResistingArrest|SetPlayerResistingArrest]]
+| kind = Function
+| flags = Native
+| documentation = Sets the player as resisting arrest from this spaceships's faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetProtected
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetProtected|SetProtected]]
+| kind = Function
+| flags = Native
+| parameters = bool abProtected
+| documentation = set if this spaceship is considered protected
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowBarterMenu
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/ShowBarterMenu|ShowBarterMenu]]
+| kind = Function
+| flags = Native
+| documentation = Opens the Barter menu
+}}
+
+{{Script_Object_Member_Summary
+| title = StartCombat
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/StartCombat|StartCombat]]
+| kind = Function
+| flags = Native
+| parameters = SpaceshipReference akTarget, bool abPreferTarget = false
+| documentation = start combat with the given target
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCombat
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/StopCombat|StopCombat]]
+| kind = Function
+| flags = Native
+| documentation = stops combat for this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCombatAlarm
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/StopCombatAlarm|StopCombatAlarm]]
+| kind = Function
+| flags = Native
+| documentation = Stops all combat and alarms against this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = TakeOff
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/TakeOff|TakeOff]]
+| kind = Function
+| flags = Native
+| documentation = Force this spaceship to takeoff immediately (if it isn't in space)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetForwardVelocity
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetForwardVelocity|SetForwardVelocity]]
+| kind = Function
+| flags = Native
+| parameters = float aVelocity
+| documentation = Set the forward velocity of the ship as a percentage of max speed(0-1)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetUnconscious
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetUnconscious|SetUnconscious]]
+| kind = Function
+| flags = Native
+| parameters = bool aUnconscious
+| documentation = Set the autopilot of the ship unonscious or conscious
+}}
+
+{{Script_Object_Member_Summary
+| title = SetIgnoreFriendlyHits
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetIgnoreFriendlyHits|SetIgnoreFriendlyHits]]
+| kind = Function
+| flags = Native
+| parameters = bool aIgnoreFriendlyHits
+| documentation = Set the ship to ignore friendly hits
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGravJumpRange
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetGravJumpRange|GetGravJumpRange]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Gets the spaceships current max grav jump range in light years
+}}
+
+{{Script_Object_Member_Summary
+| title = GetReactorClassKeyword
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/GetReactorClassKeyword|GetReactorClassKeyword]]
+| kind = Function
+| flags = Native
+| returns = Keyword
+| documentation = Get this ship's reactor class keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = IsExteriorLoadDoorInaccessible
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsExteriorLoadDoorInaccessible|IsExteriorLoadDoorInaccessible]]
+| kind = Function
+| returns = bool
+| documentation = scornett
+Is the ship's exterior load door inaccessible? (Checks the state of the first door found, if there are multiple.)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetExteriorLoadDoorInaccessible
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/SetExteriorLoadDoorInaccessible|SetExteriorLoadDoorInaccessible]]
+| kind = Function
+| parameters = bool abInaccessible = true
+| documentation = scornett
+Sets the ship's exterior load door(s) inaccessible.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLandingDeckClear
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/IsLandingDeckClear|IsLandingDeckClear]]
+| kind = Function
+| returns = bool
+| documentation = scornett
+Are there any actors on the ship's exterior landing deck? (That is, any actors in the trigger encompassing the landing deck and ramp?) (Checks the state of the first deck found, if there are multiple.)
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akTarget, int aeCombatState
+| documentation = Event that is triggered when this spaceship's combat state against the target changes
+State is as follows:
+0 - not in combat
+1 - in combat
+2 - searching
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpaceshipCombatListAdded
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnSpaceshipCombatListAdded|OnSpaceshipCombatListAdded]]
+| kind = Event
+| parameters = SpaceshipReference akTarget
+| documentation = Event that is triggered when this ship's pilot adds another ship's pilot to its combat list.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpaceshipCombatListRemoved
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnSpaceshipCombatListRemoved|OnSpaceshipCombatListRemoved]]
+| kind = Event
+| parameters = SpaceshipReference akTarget
+| documentation = Event that is triggered when this ship's pilot removes another ship's pilot from its combat list.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterBleedout
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnEnterBleedout|OnEnterBleedout]]
+| kind = Event
+| documentation = Event received when a ship enters the essential down state.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEscortWaitStart
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnEscortWaitStart|OnEscortWaitStart]]
+| kind = Event
+| documentation = Event received when this spaceship is in an Escort procedure and begins waiting for the escorted spaceship to catch up.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEscortWaitStop
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnEscortWaitStop|OnEscortWaitStop]]
+| kind = Event
+| documentation = Event received when this spaceship is in an Escort procedure and stops waiting because the escorted spaceship has caught up.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLocationChange
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnLocationChange|OnLocationChange]]
+| kind = Event
+| parameters = Location akOldLoc, Location akNewLoc
+| documentation = Event that is triggered when this spaceship changes from one location to another
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRecoverFromBleedout
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnRecoverFromBleedout|OnRecoverFromBleedout]]
+| kind = Event
+| documentation = Event received when a ship exits the essential down state.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipDock
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipDock|OnShipDock]]
+| kind = Event
+| parameters = bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
+| documentation = Event received when a ship initiates and completes docking with a parent
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipFarTravel
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipFarTravel|OnShipFarTravel]]
+| kind = Event
+| parameters = Location aDepartureLocation, Location aArrivalLocation, int aState
+| documentation = Event received when a ship begins or ends far travel - State { Departure = 0, Arrival = 1 }
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipGravJump
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipGravJump|OnShipGravJump]]
+| kind = Event
+| parameters = Location aDestination, int aState
+| documentation = Event received when a ship grav jump event occurs - State { Initiated = 0, AnimStarted = 1, Completed = 2, Failed = 3 }
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipLanding
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipLanding|OnShipLanding]]
+| kind = Event
+| parameters = bool abComplete
+| documentation = Event received when a ship initiates or completes landing
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipRampDown
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipRampDown|OnShipRampDown]]
+| kind = Event
+| documentation = Event recieved when a ship's landing ramp has lowereed all the way and connected to the surrounding navmesh
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipRefueled
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipRefueled|OnShipRefueled]]
+| kind = Event
+| parameters = int aFuelAdded
+| documentation = Event that is triggered when fuel has been added to this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipScan
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipScan|OnShipScan]]
+| kind = Event
+| parameters = Location aPlanet, ObjectReference[] aMarkersArray
+| documentation = Event that is triggered when the player scans a planet with this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSystemPowerChange
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipSystemPowerChange|OnShipSystemPowerChange]]
+| kind = Event
+| parameters = ActorValue akSystem, bool abAddPower, bool abDamagedRelated
+| documentation = Event received when a ship system adds or removes power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSystemDamaged
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipSystemDamaged|OnShipSystemDamaged]]
+| kind = Event
+| parameters = ActorValue akSystem, int aBlocksLost, bool aElectromagneticDamage, bool aFullyDamaged
+| documentation = Event that is triggered when one of this spaceship's systems loses a power block due to damage
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSystemRepaired
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipSystemRepaired|OnShipSystemRepaired]]
+| kind = Event
+| parameters = ActorValue akSystem, int aBlocksGained, bool aElectromagneticDamage
+| documentation = Event that is triggered when one of this spaceship's systems gains a power block due to being repaired
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipTakeOff
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipTakeOff|OnShipTakeOff]]
+| kind = Event
+| parameters = bool abComplete
+| documentation = Event received when a ship initiates or completes takeoff
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+| documentation = Event that is triggered when a spaceship dies
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
+| documentation = Event that is triggered when a spaceship is dying
+}}
+
+{{Script_Object_Member_Summary
+| title = OnKill
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnKill|OnKill]]
+| kind = Event
+| parameters = ObjectReference akVictim
+| documentation = Event that is triggered when a spaceship kills another spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipUndock
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipUndock|OnShipUndock]]
+| kind = Event
+| parameters = bool abComplete, SpaceshipReference akUndocking, SpaceshipReference akParent
+| documentation = Event received when a ship initiates or completes undocking with a parent
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipBought
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipBought|OnShipBought]]
+| kind = Event
+| documentation = Event this is triggered when a ship is bought
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSold
+| script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+| name = [[SFM:Script-SpaceshipReference/OnShipSold|OnShipSold]]
+| kind = Event
+| documentation = Event this is triggered when a ship is sold
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

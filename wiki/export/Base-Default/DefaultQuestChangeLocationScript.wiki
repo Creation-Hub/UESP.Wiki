@@ -1,0 +1,94 @@
+{{Script_Object_Summary
+| title = DefaultQuestChangeLocationScript
+| name = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultQuestChangeLocationScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultQuestChangeLocationScript Extends Quest Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultQuestChangeLocationScript.psc</code> source file documentation comments for this script.
+
+<source>
+set a stage when the player enters or exits a location
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = ChangeLocationStage
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/ChangeLocationStage|ChangeLocationStage]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ChangeLocationStages
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/ChangeLocationStages|ChangeLocationStages]]
+| kind = Property
+| flags = Auto Const
+| returns = ChangeLocationStage[]
+| documentation = array of stage/location data
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShip
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/SQ_PlayerShip|SQ_PlayerShip]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = SQ_PlayerShipScript
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = OverridePrereqStage
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/OverridePrereqStage|OverridePrereqStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = if this is set to a value > -1, ChangeLocationStages will not be checked at all until this stage is set
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = CheckLocationStages
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/CheckLocationStages|CheckLocationStages]]
+| kind = Function
+| parameters = Location akOldLoc, Location akNewLoc, bool isPlayerShip
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckLocation
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/CheckLocation|CheckLocation]]
+| kind = Function
+| parameters = Location targetLocation, ChangeLocationStage changeLocData, Location akOldLoc, Location akNewLoc, bool isPlayerShip
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

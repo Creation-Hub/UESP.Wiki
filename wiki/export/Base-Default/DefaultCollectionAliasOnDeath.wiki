@@ -1,0 +1,81 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnDeath
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnDeath.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnDeath Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnDeath.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members are killed.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference killing each ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DeathComplete
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/DeathComplete|DeathComplete]]
+| kind = Function
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThingForEachValidRef
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/DoSpecificThingForEachValidRef|DoSpecificThingForEachValidRef]]
+| kind = Function
+| parameters = ObjectReference RefCollectionMemberRef, DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

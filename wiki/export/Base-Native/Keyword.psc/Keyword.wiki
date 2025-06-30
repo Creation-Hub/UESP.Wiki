@@ -1,0 +1,47 @@
+{{Script_Object_Summary
+| title = Keyword
+| name = [[SFM:Script-Keyword|Keyword]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Keyword.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Keyword Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Keyword.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = SendStoryEvent
+| script = [[SFM:Script-Keyword|Keyword]]
+| name = [[SFM:Script-Keyword/SendStoryEvent|SendStoryEvent]]
+| kind = Function
+| flags = Native
+| parameters = Location akLoc = none, ObjectReference akRef1 = none, ObjectReference akRef2 = none, int aiValue1 = 0, int aiValue2 = 0
+| documentation = Sends this keyword as a story event to the story manager
+}}
+
+{{Script_Object_Member_Summary
+| title = SendStoryEventAndWait
+| script = [[SFM:Script-Keyword|Keyword]]
+| name = [[SFM:Script-Keyword/SendStoryEventAndWait|SendStoryEventAndWait]]
+| kind = Function
+| flags = Native
+| returns = Quest[]
+| parameters = Location akLoc = none, ObjectReference akRef1 = none, ObjectReference akRef2 = none, int aiValue1 = 0, int aiValue2 = 0
+| documentation = Sends this keyword as a story event to the story manager and waits for it to be processed. Returns the array of quests that were started if any.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

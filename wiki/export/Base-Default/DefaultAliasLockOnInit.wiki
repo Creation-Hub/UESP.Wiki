@@ -1,0 +1,49 @@
+{{Script_Object_Summary
+| title = DefaultAliasLockOnInit
+| name = [[SFM:Script-DefaultAliasLockOnInit|DefaultAliasLockOnInit]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasLockOnInit.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasLockOnInit Extends ReferenceAlias Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasLockOnInit.psc</code> source file documentation comments for this script.
+
+<source>
+Default script used for checking if an alias has been locked/unlocked
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LockLevel
+| script = [[SFM:Script-DefaultAliasLockOnInit|DefaultAliasLockOnInit]]
+| name = [[SFM:Script-DefaultAliasLockOnInit/LockLevel|LockLevel]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Optional: The Lock Level for the door. By default, the lock will be Very Easy
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasLockOnInit|DefaultAliasLockOnInit]]
+| name = [[SFM:Script-DefaultAliasLockOnInit/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

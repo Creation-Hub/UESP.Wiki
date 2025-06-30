@@ -1,0 +1,52 @@
+{{Script_Object_Summary
+| title = DefaultCounterIncrementOnActivate
+| name = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCounterIncrementOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterIncrementOnActivate Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterIncrementOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+Once this is activated (by the PLAYER) it increments the counter on it's LinkedRef's DefaultCounter script.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
+| name = [[SFM:Script-DefaultCounterIncrementOnActivate/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = WaitForActivate
+| script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
+| name = [[SFM:Script-DefaultCounterIncrementOnActivate/WaitForActivate|WaitForActivate]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = DoneWaiting
+| script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
+| name = [[SFM:Script-DefaultCounterIncrementOnActivate/DoneWaiting|DoneWaiting]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

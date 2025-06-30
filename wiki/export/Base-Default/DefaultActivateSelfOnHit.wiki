@@ -1,0 +1,63 @@
+{{Script_Object_Summary
+| title = DefaultActivateSelfOnHit
+| name = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| extends = [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultActivateSelfOnHit.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultActivateSelfOnHit Extends Actor Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultActivateSelfOnHit.psc</code> source file documentation comments for this script.
+
+<source>
+The ref activates itself on hit, typically to trigger an ambush from an ActivateParented actor.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = DoOnce
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/DoOnce|DoOnce]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Initial
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/Initial|Initial]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

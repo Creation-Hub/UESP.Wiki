@@ -1,0 +1,86 @@
+{{Script_Object_Summary
+| title = DefaultTopicAddItem
+| name = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| extends = [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultTopicAddItem.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicAddItem Extends TopicInfo Const Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultTopicAddItem.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AddItemOnBegin
+| script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| name = [[SFM:Script-DefaultTopicAddItem/AddItemOnBegin|AddItemOnBegin]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = Default: false; should we add the item when the topic starts playing?
+}}
+
+{{Script_Object_Member_Summary
+| title = AddItemOnEnd
+| script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| name = [[SFM:Script-DefaultTopicAddItem/AddItemOnEnd|AddItemOnEnd]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = Default: true; should we add the item when the topic finishes playing?
+}}
+
+{{Script_Object_Member_Summary
+| title = ItemToAdd
+| script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| name = [[SFM:Script-DefaultTopicAddItem/ItemToAdd|ItemToAdd]]
+| kind = Property
+| flags = Const Auto
+| returns = Form
+| documentation = Which item should we add to player?
+}}
+
+{{Script_Object_Member_Summary
+| title = AmountToAdd
+| script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| name = [[SFM:Script-DefaultTopicAddItem/AmountToAdd|AmountToAdd]]
+| kind = Property
+| flags = Const Auto
+| returns = int
+| parameters = 1
+| documentation = How many of the item(s) to add.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| name = [[SFM:Script-DefaultTopicAddItem/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+| name = [[SFM:Script-DefaultTopicAddItem/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

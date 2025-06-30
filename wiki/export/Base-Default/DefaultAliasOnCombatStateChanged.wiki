@@ -1,0 +1,95 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnCombatStateChanged
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnCombatStateChanged.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnCombatStateChanged Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnCombatStateChanged.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias's combat state changes.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference THIS Alias is getting into combat with
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akTarget, int aeCombatState
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/Done|Done]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = CombatStateChangedOrHit
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/CombatStateChangedOrHit|CombatStateChangedOrHit]]
+| kind = Function
+| parameters = ObjectReference TargetOrAggressor
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

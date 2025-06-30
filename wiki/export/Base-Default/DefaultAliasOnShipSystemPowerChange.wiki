@@ -1,0 +1,74 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnShipSystemPowerChange
+| name = [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnShipSystemPowerChange.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnShipSystemPowerChange Extends ReferenceAlias Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnShipSystemPowerChange.psc</code> source file documentation comments for this script.
+
+<source>
+sets stages when the ship in this alias changes system power
+
+Actor values for ship systems:
+ SpaceshipBuildableEnginePower
+ SpaceshipBuildableThrusterPower
+ SpaceshipBuildableShieldPower
+ SpaceshipGravJumpPower
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = SystemPowerChangeStage
+| script = [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemPowerChange/SystemPowerChangeStage|SystemPowerChangeStage]]
+| kind = Struct
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = SystemPowerChange_Properties
+| script = [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemPowerChange/SystemPowerChange_Properties|SystemPowerChange_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemPowerChange/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemPowerChange/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnShipSystemPowerChange
+| script = [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+| name = [[SFM:Script-DefaultAliasOnShipSystemPowerChange/OnShipSystemPowerChange|OnShipSystemPowerChange]]
+| kind = Event
+| parameters = ActorValue akSystem, bool abAddPower, bool abDamageRelated
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

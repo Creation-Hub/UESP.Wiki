@@ -1,0 +1,101 @@
+{{Script_Object_Summary
+| title = GlobalVariable
+| name = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>GlobalVariable.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName GlobalVariable Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>GlobalVariable.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetValue
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/GetValue|GetValue]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Obtains the global's current value
+}}
+
+{{Script_Object_Member_Summary
+| title = SetValue
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/SetValue|SetValue]]
+| kind = Function
+| flags = Native
+| parameters = float afNewValue
+| documentation = Sets the global's current value
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValueInt
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/GetValueInt|GetValueInt]]
+| kind = Function
+| returns = int
+| documentation = convenience functions for ints
+}}
+
+{{Script_Object_Member_Summary
+| title = SetValueInt
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/SetValueInt|SetValueInt]]
+| kind = Function
+| parameters = int aiNewValue
+| documentation = Sets the global's current value
+}}
+
+{{Script_Object_Member_Summary
+| title = Get
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/Get|Get]]
+| kind = Function
+| returns = float
+}}
+
+{{Script_Object_Member_Summary
+| title = Set
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/Set|Set]]
+| kind = Function
+| parameters = float afValue
+}}
+
+{{Script_Object_Member_Summary
+| title = Mod
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/Mod|Mod]]
+| kind = Function
+| returns = float
+| parameters = float afHowMuch
+| documentation = the threadsafe way to modify a global variable
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = Value
+| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
+| name = [[SFM:Script-GlobalVariable/Value|Value]]
+| kind = Property
+| flags = Hidden
+| returns = float
+| documentation = Easy access to the global's value
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

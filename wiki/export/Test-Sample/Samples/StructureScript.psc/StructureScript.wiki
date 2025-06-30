@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = Samples:StructureScript
+| name = [[SFM:Script-Samples:StructureScript|Samples:StructureScript]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The <code>Samples\StructureScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Samples:StructureScript
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Samples\StructureScript.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = Data1
+| script = [[SFM:Script-Samples:StructureScript|Samples:StructureScript]]
+| name = [[SFM:Script-Samples:StructureScript/Data1|Data1]]
+| kind = Struct
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,19 @@
+{{Script_Member_Summary
+| title = PropertyFullBool_SetOnly
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/PropertyFullBool_SetOnly|PropertyFullBool_SetOnly]]
+| kind = Property
+| returns = bool
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+This property member has no field initialized value.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

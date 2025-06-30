@@ -1,0 +1,1118 @@
+{{Script_Object_Summary
+| title = ScriptObject
+| name = [[SFM:Script-ScriptObject|ScriptObject]]
+| extends = Nothing
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ScriptObject.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ScriptObject Native Hidden
+</source>
+
+
+== Documentation ==
+The <code>ScriptObject.psc</code> source file documentation comments for this script.
+
+<source>
+Base object for every script in the game, even if that script doesn't explicitly extend anything
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddInventoryEventFilter
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/AddInventoryEventFilter|AddInventoryEventFilter]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = Form akFilter
+| documentation = Add an inventory event filter to this effect. Item added/removed events matching the specified form (or in the specified form list) will now
+be let through. A "None" filter will let everything through.
+Objects without filters CANNOT receive inventory add/remove events!
+}}
+
+{{Script_Object_Member_Summary
+| title = CallFunction
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/CallFunction|CallFunction]]
+| kind = Function
+| flags = Native
+| returns = var
+| parameters = string asFuncName, var[] aParams
+| documentation = Calls a member function on this script specified by name. Note that the compiler cannot check
+that the function exists, nor that the parameters are the right type. It will also not be able
+to auto-cast, so you must pre-cast the parameters to the right type (derived or parent types
+won't work). Will error if the function is not valid or doesn't exist on the object
+}}
+
+{{Script_Object_Member_Summary
+| title = CallFunctionNoWait
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/CallFunctionNoWait|CallFunctionNoWait]]
+| kind = Function
+| flags = Native
+| parameters = string asFuncName, var[] aParams
+| documentation = Calls a member function on this script without waiting for it to return. Note that the compiler
+cannot check that the function exists, nor that the parameters are the right type. It will also not
+be able to auto-cast, so you must pre-cast the parameters to the right type (derived or parent
+types won't work). Will error if the function is not valid or doesn't exist on the object
+}}
+
+{{Script_Object_Member_Summary
+| title = CancelTimer
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/CancelTimer|CancelTimer]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = int aiTimerID = 0
+| documentation = Cancels a pending timer on this script with the specified ID
+}}
+
+{{Script_Object_Member_Summary
+| title = CancelTimerGameTime
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/CancelTimerGameTime|CancelTimerGameTime]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = int aiTimerID = 0
+| documentation = Cancels a pending game-time timer on this script with the specified ID
+}}
+
+{{Script_Object_Member_Summary
+| title = GetPropertyValue
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/GetPropertyValue|GetPropertyValue]]
+| kind = Function
+| flags = Native
+| returns = var
+| parameters = string asPropertyName
+| documentation = Gets the value of a property on this script specified by name. Note that the compiler cannot
+check that the property exists. Will error if the property doesn't exist on the object, or
+is write-only
+}}
+
+{{Script_Object_Member_Summary
+| title = GetState
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/GetState|GetState]]
+| kind = Function
+| flags = Protected SelfOnly
+| returns = string
+| documentation = Obtains the script's current state
+}}
+
+{{Script_Object_Member_Summary
+| title = GotoState
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/GotoState|GotoState]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = string asNewState
+| documentation = Sets the script's current state, calling the appropriate end/begin state events
+}}
+
+{{Script_Object_Member_Summary
+| title = CastAs
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/CastAs|CastAs]]
+| kind = Function
+| flags = Native
+| returns = ScriptObject
+| parameters = string asScriptName
+| documentation = Attempts to cast this object as the specified script. The compiler won't type check this cast,
+and the cast may fail. But this will allow you to point at the specific script you want without
+adding a dependency on said script (for when it is part of a mod or DLC that the user may not
+have installed). If the type doesn't exist or the cast fails it will return None
+}}
+
+{{Script_Object_Member_Summary
+| title = PauseTimer
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/PauseTimer|PauseTimer]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = int aiTimerID, bool abPause = true
+| documentation = Pause or resume the given timer with aiTimerID
+it will attempt to pause if abPause is true or resume if false
+If the timer is already in the requested state nothing happens.
+}}
+
+{{Script_Object_Member_Summary
+| title = PauseTimerGameTime
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/PauseTimerGameTime|PauseTimerGameTime]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = int aiTimerID, bool abPause = true
+| documentation = Pause or resume the given game-time timer with aiTimerID
+It will attempt to pause if abPause is true or resume if false
+If the timer is already in the requested state nothing happens.
+}}
+
+{{Script_Object_Member_Summary
+| title = IsBoundGameObjectAvailable
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/IsBoundGameObjectAvailable|IsBoundGameObjectAvailable]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns true if this object is attached to an in-game object and that object
+is available to be operated on. If this returns false then any form, alias,
+or active magic effect native functions will most likely fail.
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForActorValueChangedEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForActorValueChangedEvent|RegisterForActorValueChangedEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akObjRef, ActorValue akActorValue
+| documentation = Registers to receive an event when an actor value changed for a specified actor and actor value
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForActorValueGreaterThanEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForActorValueGreaterThanEvent|RegisterForActorValueGreaterThanEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akObjRef, ActorValue akActorValue, float afCompareValue
+| documentation = Registers to receive an event when an actor value is changed for a specified actor and actor value to a value that is greater than the given value
+This must be re-registered for everytime it is received if the script wants to keep receiving the event
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForActorValueLessThanEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForActorValueLessThanEvent|RegisterForActorValueLessThanEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akObjRef, ActorValue akActorValue, float afCompareValue
+| documentation = Registers to receive an event when an actor value is changed for a specified actor and actor value to a value that is less than the given value
+This must be re-registered for everytime it is received if the script wants to keep receiving the event
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForAffinityEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForAffinityEvent|RegisterForAffinityEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = AffinityEvent akAffinityEvent
+| documentation = Register for the specified affinity event is fired
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForAnimationEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForAnimationEvent|RegisterForAnimationEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| returns = bool
+| parameters = ObjectReference akSender, string asEventName
+| documentation = Register for the specified animation event from the specified object - returns true if it successfully registered
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForChallengeEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForChallengeEvents|RegisterForChallengeEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Register for challenge events
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForCustomEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForCustomEvent|RegisterForCustomEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akSender, CustomEventName asEventName
+| documentation = Register for a custom event to be sent from the specified sender. The event will be sent to:
+Event <type>.<event>(<type> akSender, Var[] akParams)
+For example, MySpecialEvent on MyQuest would be:
+Event MyQuest.MySpecialEvent(MyQuest akSender, Var[] akParams)
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDetectionLOSGain
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForDetectionLOSGain|RegisterForDetectionLOSGain]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = Actor akViewer, ObjectReference akTarget
+| documentation = Register for only the first detection-based LOS gain event between the viewer and the target
+If the viewer is already looking at the target, an event will be received almost immediately
+If the viewer is not the player, the target must be another actor
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDetectionLOSLost
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForDetectionLOSLost|RegisterForDetectionLOSLost]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = Actor akViewer, ObjectReference akTarget
+| documentation = Register for only the first detection-based LOS lost event between the viewer and the target
+If the viewer is already not looking at the target, an event will be received almost immediately
+If the viewer is not the player, the target must be another actor
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDirectLOSGain
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForDirectLOSGain|RegisterForDirectLOSGain]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akViewer, ObjectReference akTarget, string asViewerNode = "", string asTargetNode = ""
+| documentation = Register for only the first direct LOS gain event between the viewer and the target
+If the viewer is already looking at the target, an event will be received almost immediately
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDirectLOSLost
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForDirectLOSLost|RegisterForDirectLOSLost]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akViewer, ObjectReference akTarget, string asViewerNode = "", string asTargetNode = ""
+| documentation = Register for only the first direct LOS lost event between the viewer and the target
+If the viewer is already not looking at the target, an event will be received almost immediately
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDistanceLessThanEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForDistanceLessThanEvent|RegisterForDistanceLessThanEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akObj1, ScriptObject akObj2, float afDistance, int aiEventID = 0
+| documentation = Register for OnDistanceLessThan when the two objects are less than then afDistance apart. The two objects are interchangable,
+and if you register for the two swapped it will simply update the distance. The objects may be reference or reference aliases.
+use a unique aiEventID to specify multiple events per object. Using the same id for multiple register commands will simply update the distance
+on the existing event
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDistanceGreaterThanEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForDistanceGreaterThanEvent|RegisterForDistanceGreaterThanEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akObj1, ScriptObject akObj2, float afDistance, int aiEventID = 0
+| documentation = Register for OnDistanceGreaterThan when the two objects are greater than then afDistance apart. The two objects are interchangable,
+and if you register for the two swapped it will simply update the distance. The objects may be reference or reference aliases.
+use a unique aiEventID to specify multiple events per object. Using the same id for multiple register commands will simply update the distance
+on the existing event
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForMagicEffectApplyEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForMagicEffectApplyEvent|RegisterForMagicEffectApplyEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget, ScriptObject akCasterFilter = none, Form akEffectFilter = none, bool abMatch = true
+| documentation = Registers for a single magic effect apply event. Filters may be exact forms, base objects of references, keywords, factions,
+reference aliases, ref collection aliases, or form lists containing any or all of them. This also filters any remote magic
+effect apply events that come in.
+Targets can be references, ref aliases, or ref collection aliases
+If abMatch is false, then it matches anything that DOESN'T match the filter (NOTs the whole thing).
+Objects without registrations CANNOT receive magic effect apply events!
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForMenuOpenCloseEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForMenuOpenCloseEvent|RegisterForMenuOpenCloseEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asMenuName
+| documentation = Registers this alias to receive events when menus are opened / closed
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForPlayerSleep
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForPlayerSleep|RegisterForPlayerSleep]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Registers this form to receive events when the player sleeps and wakes up
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForPlayerTeleport
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForPlayerTeleport|RegisterForPlayerTeleport]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Registers this form to receive events when the player teleports (load door, fast travel, moveto)
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForPlayerWait
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForPlayerWait|RegisterForPlayerWait]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Registers this form to receive events when the player waits
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForRadiationDamageEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForRadiationDamageEvent|RegisterForRadiationDamageEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget
+| documentation = Registers for a single radiation damage event from the specified target.
+Targets can be actors, ref aliases, or ref collection aliases
+Objects without registrations CANNOT receive radiation damage events!
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForRemoteEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForRemoteEvent|RegisterForRemoteEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| returns = bool
+| parameters = ScriptObject akEventSource, ScriptEventName asEventName
+| documentation = Register for the specified event from the specified source. Event must be one sent by
+the game itself, and not an event defined in ScriptObject. The event will be sent to:
+Event <type>.<event>(<type> akSender, <event args>)
+For example, OnDeath on an Actor would be:
+Event Actor.OnDeath(Actor akSender, Actor akKiller)
+But OnDeath on a reference alias would be:
+Event ReferenceAlias.OnDeath(ReferenceAlias akSender, Actor akKiller)
+Returns true if the registration succeeded
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForTrackedStatsEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForTrackedStatsEvent|RegisterForTrackedStatsEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asStat, int aiThreshold
+| documentation = Registers this script to receive a single-shot stat event when the stat meets or passes the threshold
+If the stat already meets or passes the threshold the event will be sent immediately
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForStarmapTargetSelectEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForStarmapTargetSelectEvent|RegisterForStarmapTargetSelectEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Registers to receive events from Starmap menu
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForPlanetSiteSelectEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForPlanetSiteSelectEvent|RegisterForPlanetSiteSelectEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Registers to receive events from PlanetLandingSiteSelectMenu
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForTutorialEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForTutorialEvent|RegisterForTutorialEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asEventName
+| documentation = Registers to receive tutorial-related events
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForGameplayOptionChangedEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForGameplayOptionChangedEvent|RegisterForGameplayOptionChangedEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Registers to receive GameplayOptionChanged events from the settings menu
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveAllInventoryEventFilters
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RemoveAllInventoryEventFilters|RemoveAllInventoryEventFilters]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all inventory event filters from this effect - it will no longer receive any inventory add/remove events
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveInventoryEventFilter
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RemoveInventoryEventFilter|RemoveInventoryEventFilter]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = Form akFilter
+| documentation = Remove an inventory event filter from this object. Item added/removed events matching the specified form (or in the
+specified form list) will no longer be let through.
+Objects without filters CANNOT receive inventory add/remove events!
+}}
+
+{{Script_Object_Member_Summary
+| title = SendCustomEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/SendCustomEvent|SendCustomEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = CustomEventName asEvent, var[] akArgs = none
+| documentation = Sends out a custom event from this object. The custom event must be defined using
+"CustomEvent <name of event>" somewhere in the script that sends it or its parents
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPropertyValue
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/SetPropertyValue|SetPropertyValue]]
+| kind = Function
+| flags = Native
+| parameters = string asPropertyName, var aValue
+| documentation = Sets a property value on this script specified by name. Note that the compiler cannot check
+that the property exists, nor that the value is the right type. It will also not be able to
+auto-cast, so you must pre-cast the value to the right type (derived or parent types won't
+work). Will error if the property is not valid, doesn't exist on the object, is read-only
+or an auto-property specified as const.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPropertyValueNoWait
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/SetPropertyValueNoWait|SetPropertyValueNoWait]]
+| kind = Function
+| flags = Native
+| parameters = string asPropertyName, var aValue
+| documentation = Sets a property value on this script without waiting for it to return. Note that the compiler
+cannot check that the property exists, nor that the value is the right type. It will also not
+be able to auto-cast, so you must pre-cast the value to the right type (derived or parent
+types won't work). Will error if the property is not valid, doesn't exist on the object, is
+read-only or an auto-property specified as const.
+}}
+
+{{Script_Object_Member_Summary
+| title = StartTimer
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/StartTimer|StartTimer]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = float afInterval, int aiTimerID = 0
+| documentation = Start a timer on this script with the specified ID. Interval is in seconds and the timer
+event will fire only once.
+}}
+
+{{Script_Object_Member_Summary
+| title = StartTimerGameTime
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/StartTimerGameTime|StartTimerGameTime]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = float afInterval, int aiTimerID = 0
+| documentation = Start a game-time timer on this script with the specified ID. Interval is in hours and the
+timer event will fire only once.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForActorValueChangedEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForActorValueChangedEvent|UnregisterForActorValueChangedEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akObjRef, ActorValue akActorValue
+| documentation = Unregister for the actor value changed event for the specified actor and actor value.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForActorValueGreaterThanEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForActorValueGreaterThanEvent|UnregisterForActorValueGreaterThanEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akObjRef, ActorValue akActorValue, float afCompareValue
+| documentation = Unregister for the actor value greater than event for the specified actor, actor value and comparison value.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForActorValueLessThanEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForActorValueLessThanEvent|UnregisterForActorValueLessThanEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akObjRef, ActorValue akActorValue, float afCompareValue
+| documentation = Unregister for the actor value greater than event for the specified actor, actor value and comparison value.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAffinityEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAffinityEvent|UnregisterForAffinityEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = AffinityEvent akAffinityEvent
+| documentation = Unregister for an affinity event
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllActorValueEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllActorValueEvents|UnregisterForAllActorValueEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregister for all actor value events
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllAffinityEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllAffinityEvents|UnregisterForAllAffinityEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregister for all affinity events
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllEvents|UnregisterForAllEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all event registrations - useful if you're trying to delete something and event registraitons are keeping it around
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllCustomEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllCustomEvents|UnregisterForAllCustomEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all custom event registrations
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllHitEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllHitEvents|UnregisterForAllHitEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget = none
+| documentation = Remove all hit event registrations - if target is None - ALL event registrations for this script are removed
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllMagicEffectApplyEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllMagicEffectApplyEvents|UnregisterForAllMagicEffectApplyEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget = none
+| documentation = Remove all magic effect apply registrations - if target is None - ALL event registrations for this script are removed
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllMenuOpenCloseEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllMenuOpenCloseEvents|UnregisterForAllMenuOpenCloseEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all menu open/close event registrations
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllRadiationDamageEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllRadiationDamageEvents|UnregisterForAllRadiationDamageEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all radiation damage event registrations
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllRemoteEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllRemoteEvents|UnregisterForAllRemoteEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all remote event registrations
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAllTrackedStatsEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAllTrackedStatsEvents|UnregisterForAllTrackedStatsEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Remove all tracked stat event registrations
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForAnimationEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForAnimationEvent|UnregisterForAnimationEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akSender, string asEventName
+| documentation = Unregister for the specified animation event from the specified object
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForChallengeEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForChallengeEvents|UnregisterForChallengeEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters this form to receive events when challenges are completed
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForCustomEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForCustomEvent|UnregisterForCustomEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akSender, CustomEventName asEventName
+| documentation = Unregister for the specified custom event from the specified object
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForDistanceEvents
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForDistanceEvents|UnregisterForDistanceEvents]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akObj1, ScriptObject akObj2, int aiEventID = -1
+| documentation = Unregister for any distance events between the two objects (which are interchangable)
+specify event id to unregister for a specific event, -1 to unregister for all events matching the two objects
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForLOS
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForLOS|UnregisterForLOS]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ObjectReference akViewer, ObjectReference akTarget
+| documentation = Unregister for any LOS events between the viewer and target
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForMagicEffectApplyEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForMagicEffectApplyEvent|UnregisterForMagicEffectApplyEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget, ScriptObject akCasterFilter = none, Form akEffectFilter = none, bool abMatch = true
+| documentation = Unregister for the specified magic effect apply event.
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForMenuOpenCloseEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForMenuOpenCloseEvent|UnregisterForMenuOpenCloseEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asMenuName
+| documentation = Unregister for the specified menu open/close event
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForPlayerSleep
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForPlayerSleep|UnregisterForPlayerSleep]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters this form to receive events when the player sleeps and wakes up
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForPlayerTeleport
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForPlayerTeleport|UnregisterForPlayerTeleport]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters this form to receive events when the player teleports
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForPlayerWait
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForPlayerWait|UnregisterForPlayerWait]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters this form to receive events when the player waits
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForRadiationDamageEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForRadiationDamageEvent|UnregisterForRadiationDamageEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget
+| documentation = Unregister for the specified radiation damage event
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForRemoteEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForRemoteEvent|UnregisterForRemoteEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akEventSource, ScriptEventName asEventName
+| documentation = Unregister this script for the specified event from the specified sender
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForTrackedStatsEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForTrackedStatsEvent|UnregisterForTrackedStatsEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asStat
+| documentation = Unregisters this script from receiving an event for the specified stat
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForTrackedStatsEventThreshold
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForTrackedStatsEventThreshold|UnregisterForTrackedStatsEventThreshold]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asStat, int aiThreshold
+| documentation = Unregisters this script from receiving an event for the specified stat at the specified threshold
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForStarmapTargetSelectEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForStarmapTargetSelectEvent|UnregisterForStarmapTargetSelectEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters from receiving events from Starmap menu
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForPlanetSiteSelectEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForPlanetSiteSelectEvent|UnregisterForPlanetSiteSelectEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters from receiving events from PlanetLandingSiteSelectMenu
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForTutorialEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForTutorialEvent|UnregisterForTutorialEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = string asEventName
+| documentation = Unregisters from receiving tutorial-related events
+}}
+
+{{Script_Object_Member_Summary
+| title = UnregisterForGameplayOptionChangedEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForGameplayOptionChangedEvent|UnregisterForGameplayOptionChangedEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| documentation = Unregisters from receiving GameplayOptionChanged events from the settings menu
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActorValueChanged
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnActorValueChanged|OnActorValueChanged]]
+| kind = Event
+| parameters = ObjectReference akObjRef, ActorValue akActorValue
+| documentation = Event called when an actor value changed for a specified actor and actor value - must register for this event.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActorValueGreaterThan
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnActorValueGreaterThan|OnActorValueGreaterThan]]
+| kind = Event
+| parameters = ObjectReference akObjRef, ActorValue akActorValue
+| documentation = Event called when an actor value changed for a specified actor and actor value to a value greater than the registration compare value
+Must register for this event. Must also re-register everytime it is called.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActorValueLessThan
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnActorValueLessThan|OnActorValueLessThan]]
+| kind = Event
+| parameters = ObjectReference akObjRef, ActorValue akActorValue
+| documentation = Event called when an actor value changed for a specified actor and actor value to a value less than the registration compare value
+Must register for this event. Must also re-register everytime it is called.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAffinityEventSent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnAffinityEventSent|OnAffinityEventSent]]
+| kind = Event
+| parameters = AffinityEvent akAffinityEvent, ObjectReference akTarget
+| documentation = Received when an affinity event is run (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAnimationEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnAnimationEvent|OnAnimationEvent]]
+| kind = Event
+| parameters = ObjectReference akSource, string asEventName
+| documentation = Animation event, sent when an object we are listening to hits one of the events we are listening for
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAnimationEventUnregistered
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnAnimationEventUnregistered|OnAnimationEventUnregistered]]
+| kind = Event
+| parameters = ObjectReference akSource, string asEventName
+| documentation = Event sent when you have been unregistered from receiving an animation event because the target
+object's animation graph has been unloaded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnBeginState
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnBeginState|OnBeginState]]
+| kind = Event
+| parameters = string asOldState
+| documentation = Event called after the script's state changes - passing in the old state
+Not called on auto states when the script is first initialized
+}}
+
+{{Script_Object_Member_Summary
+| title = OnChallengeCompleted
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnChallengeCompleted|OnChallengeCompleted]]
+| kind = Event
+| parameters = ObjectReference akOwner, Challenge akChallenge
+| documentation = Event called when a challenge is completed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceLessThan
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnDistanceLessThan|OnDistanceLessThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+| documentation = Distance event - sent when the two objects are less then the registered distance apart.
+Obj1 and Obj2 are interchangable.
+check the event ID to make sure it's the event you're expecting
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceGreaterThan
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnDistanceGreaterThan|OnDistanceGreaterThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+| documentation = Distance event - sent when the two objects are greater then the registered distance apart.
+Obj1 and Obj2 are interchangable.
+check the event ID to make sure it's the event you're expecting
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEndState
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnEndState|OnEndState]]
+| kind = Event
+| parameters = string asNewState
+| documentation = Event called before the script's state changes - passing in the new state
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGainLOS
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnGainLOS|OnGainLOS]]
+| kind = Event
+| parameters = ObjectReference akViewer, ObjectReference akTarget
+| documentation = LOS event, sent whenever the viewer first sees the target (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnInit|OnInit]]
+| kind = Event
+| documentation = Event sent as soon as all of the scripts properties have received a value, and before any other
+event can be received. This should be used to set up any internal variables you have, but keep
+in mind that the world may not exist or be completely loaded yet.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLostLOS
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnLostLOS|OnLostLOS]]
+| kind = Event
+| parameters = ObjectReference akViewer, ObjectReference akTarget
+| documentation = Lost LOS event, sent whenever the viewer first loses sight of the target (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnMagicEffectApply
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnMagicEffectApply|OnMagicEffectApply]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akCaster, MagicEffect akEffect
+| documentation = Event received when a magic affect is being applied to the target (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnMenuOpenCloseEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnMenuOpenCloseEvent|OnMenuOpenCloseEvent]]
+| kind = Event
+| parameters = string asMenuName, bool abOpening
+| documentation = Event received when a menu opens/closes
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFastTravel
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlayerFastTravel|OnPlayerFastTravel]]
+| kind = Event
+| documentation = Received when the player fast travels(after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerSleepStart
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlayerSleepStart|OnPlayerSleepStart]]
+| kind = Event
+| parameters = float afSleepStartTime, float afDesiredSleepEndTime, ObjectReference akBed
+| documentation = Received when the player sleeps. Start and desired end time are in game time days (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerSleepStop
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlayerSleepStop|OnPlayerSleepStop]]
+| kind = Event
+| parameters = bool abInterrupted, ObjectReference akBed
+| documentation = Received when the player stops sleeping - whether naturally or interrupted (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerTeleport
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlayerTeleport|OnPlayerTeleport]]
+| kind = Event
+| documentation = Received when the player teleports (load door, fast travel, moveto) (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerWaitStart
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlayerWaitStart|OnPlayerWaitStart]]
+| kind = Event
+| parameters = float afWaitStartTime, float afDesiredWaitEndTime
+| documentation = Received when the player waits. Start and desired end time are in game time days (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerWaitStop
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlayerWaitStop|OnPlayerWaitStop]]
+| kind = Event
+| parameters = bool abInterrupted
+| documentation = Received when the player stops waiting - whether naturally or interrupted (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRadiationDamage
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnRadiationDamage|OnRadiationDamage]]
+| kind = Event
+| parameters = ObjectReference akTarget, bool abIngested
+| documentation = Event received when a target takes radiation damage
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTimer
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnTimer|OnTimer]]
+| kind = Event
+| parameters = int aiTimerID
+| documentation = Timer event, sent when a timer on this script expires. The ID of the expired timer is
+passed in as the parameter. This event is sent only once for each timer that expires.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTimerGameTime
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnTimerGameTime|OnTimerGameTime]]
+| kind = Event
+| parameters = int aiTimerID
+| documentation = Timer event, sent when a game-time timer on this script expires. The ID of the expired
+timer is passed in as the parameter. This event is sent only once for each timer that
+expires.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTrackedStatsEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnTrackedStatsEvent|OnTrackedStatsEvent]]
+| kind = Event
+| parameters = string arStatName, int aiStatValue
+| documentation = Event received when a tracked stat is updated for the player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStarmapTargetSelectEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnStarmapTargetSelectEvent|OnStarmapTargetSelectEvent]]
+| kind = Event
+| parameters = Location aSite
+| documentation = Event sent from the Starmap to cue dialogue
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlanetSiteSelectEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnPlanetSiteSelectEvent|OnPlanetSiteSelectEvent]]
+| kind = Event
+| parameters = Location aSite
+| documentation = Event sent from the PlanetLandignSiteSelectMenu to cue dialogue
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTutorialEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnTutorialEvent|OnTutorialEvent]]
+| kind = Event
+| parameters = string asEventName, Message aMessage
+| documentation = Occurrence of a tutorial-related event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGameplayOptionChanged
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnGameplayOptionChanged|OnGameplayOptionChanged]]
+| kind = Event
+| parameters = GameplayOption[] aChangedOptions
+| documentation = Occurence of a GameplayOptionChanged event from the settings menu
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<PapyrusProject
+	xmlns="PapyrusProject.xsd"
+	Flags="Starfield_Papyrus_Flags.flg"
+	Output="..\..\import.asm\Test-Sample"
+	Asm="Only"
+	Optimize="false"
+	Release="false"
+	Final="false">
+	<Imports>
+		<Import>.</Import>
+		<Import>..\Base-Native</Import>
+	</Imports>
+	<Folders>
+		<Folder>.</Folder>
+	</Folders>
+</PapyrusProject>

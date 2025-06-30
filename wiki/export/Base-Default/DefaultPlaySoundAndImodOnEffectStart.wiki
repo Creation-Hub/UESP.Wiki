@@ -1,0 +1,71 @@
+{{Script_Object_Summary
+| title = DefaultPlaySoundAndImodOnEffectStart
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| extends = [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultPlaySoundAndImodOnEffectStart.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultPlaySoundAndImodOnEffectStart Extends ActiveMagicEffect Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultPlaySoundAndImodOnEffectStart.psc</code> source file documentation comments for this script.
+
+<source>
+For playing an imagespace, a sound, or both when Potions are used, typically when these should be played only once the Data Menu is closed.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = OptionalProperties
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/OptionalProperties|OptionalProperties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnEffectStart
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/OnEffectStart|OnEffectStart]]
+| kind = Event
+| parameters = ObjectReference akTarget, Actor akCaster, MagicEffect akBaseEffect, float afMagnitude, float afDuration
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEffectFinish
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/OnEffectFinish|OnEffectFinish]]
+| kind = Event
+| parameters = ObjectReference akTarget, Actor akCaster, MagicEffect akBaseEffect, float afMagnitude, float afDuration
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTimer
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/OnTimer|OnTimer]]
+| kind = Event
+| parameters = int aiTimerID
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = PlayEffects
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/PlayEffects|PlayEffects]]
+| kind = Function
+| parameters = bool startPlaying = true
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

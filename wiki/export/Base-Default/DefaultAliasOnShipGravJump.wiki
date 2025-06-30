@@ -1,0 +1,87 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnShipGravJump
+| name = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnShipGravJump.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnShipGravJump Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnShipGravJump.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias Grav Jumps.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = LocationToCheck_Optional_Properties
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationToCheck_Optional_Properties|LocationToCheck_Optional_Properties]]
+| kind = Group
+| documentation = **************************************************************************************************************
+*************************	   <BEGIN> LocationToCheck Properties	  *************************
+**************************************************************************************************************
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetLocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/GetLocationsToCheckAgainst|GetLocationsToCheckAgainst]]
+| kind = Function
+| returns = Location[]
+| documentation = OVERRIDEN PARENT FUNCTONS
+These function should usually return the value of the child script's property of the same name.
+(We do this because different children will want different default values for that property and so need to define the property on themselves, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/GetLocationAliasesToCheckAgainst|GetLocationAliasesToCheckAgainst]]
+| kind = Function
+| returns = LocationAlias[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/GetLocationMatchIfChild|GetLocationMatchIfChild]]
+| kind = Function
+| returns = bool
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnShipGravJump
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/OnShipGravJump|OnShipGravJump]]
+| kind = Event
+| parameters = Location aDestination, int aState
+| documentation = Event received when a ship grav jump event occurs - State { Initiated = 0, AnimStarted = 1, Completed = 2, Failed = 3 }
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

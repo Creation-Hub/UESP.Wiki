@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = Items
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Items|Items]]
+| kind = Property
+| flags = Auto
+| returns = ItemData[]
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+This property member has no field initialized value.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

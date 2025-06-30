@@ -1,0 +1,81 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnHit
+| name = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnHit.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnHit Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnHit.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias is hit.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference hitting THIS Alias.
+<LocationToCheck> is the current location of THIS Alias.
+
+SEE ALSO DefaultAliasOnCombatStateChanged which includes the ability to also check for OnHit.
+(You probably want to use DefaultAliasOnCombatStateChanged if THIS is an actor and you are testing to see if it's becoming hostile)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| name = [[SFM:Script-DefaultAliasOnHit/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| name = [[SFM:Script-DefaultAliasOnHit/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| name = [[SFM:Script-DefaultAliasOnHit/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| name = [[SFM:Script-DefaultAliasOnHit/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| name = [[SFM:Script-DefaultAliasOnHit/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+| name = [[SFM:Script-DefaultAliasOnHit/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -50,7 +50,10 @@ def symbol(token:str) -> str:
         # Primitive Values
         "none": "none",
         "true": "true",
-        "false": "false"
+        "false": "false",
+        # Special Values
+        "self": "self",
+        "parent": "parent"
     }
     return mapping.get(token.lower(), token)
 
@@ -71,7 +74,7 @@ def script_flags(flags:list[str]) -> list[str]:
 
 def script_type(type_str:str) -> str:
     """
-    Papyrus primitive types are lowercase, object types are CamelCase.
+    Papyrus primitive types are lowercase, object types are PascalCase.
     Handles arrays and 'none'.
     """
     if not type_str:
@@ -94,7 +97,7 @@ def script_type(type_str:str) -> str:
 
 
 def member_name(name:str) -> str:
-    """Ensure member names are CamelCase. Set first letter to uppercase."""
+    """Ensure member names are PascalCase. Set first letter to uppercase."""
     if not name:
         return ""
     return name[0].upper() + name[1:]

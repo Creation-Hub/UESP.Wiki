@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = LeveledSpaceshipBase
+| name = [[SFM:Script-LeveledSpaceshipBase|LeveledSpaceshipBase]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>LeveledSpaceshipBase.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName LeveledSpaceshipBase Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>LeveledSpaceshipBase.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddForm
+| script = [[SFM:Script-LeveledSpaceshipBase|LeveledSpaceshipBase]]
+| name = [[SFM:Script-LeveledSpaceshipBase/AddForm|AddForm]]
+| kind = Function
+| flags = Native
+| parameters = SpaceshipBase apSpaceship, int aiLevel
+| documentation = Adds the given spaceship to this leveled list under the given level
+}}
+
+{{Script_Object_Member_Summary
+| title = Revert
+| script = [[SFM:Script-LeveledSpaceshipBase|LeveledSpaceshipBase]]
+| name = [[SFM:Script-LeveledSpaceshipBase/Revert|Revert]]
+| kind = Function
+| flags = Native
+| documentation = Removes all script added forms from this leveled list
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = Resource
+| name = [[SFM:Script-Resource|Resource]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Resource.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Resource Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Resource.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetCreatedObject
+| script = [[SFM:Script-Resource|Resource]]
+| name = [[SFM:Script-Resource/GetCreatedObject|GetCreatedObject]]
+| kind = Function
+| flags = Native
+| returns = Form
+| documentation = Returns the Created Object of the ResourceItem (Constructible) of this Resource
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

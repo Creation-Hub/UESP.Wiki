@@ -1,0 +1,15 @@
+{{Script_Member_Summary
+| title = Inactive
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Inactive|Inactive]]
+| kind = State
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

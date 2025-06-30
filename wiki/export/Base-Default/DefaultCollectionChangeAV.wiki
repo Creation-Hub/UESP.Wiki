@@ -1,0 +1,57 @@
+{{Script_Object_Summary
+| title = DefaultCollectionChangeAV
+| name = [[SFM:Script-DefaultCollectionChangeAV|DefaultCollectionChangeAV]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionChangeAV.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionChangeAV Extends RefCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionChangeAV.psc</code> source file documentation comments for this script.
+
+<source>
+Sets, mods, or damages one or more actor values when references are added to this collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = ActorValueDatum
+| script = [[SFM:Script-DefaultCollectionChangeAV|DefaultCollectionChangeAV]]
+| name = [[SFM:Script-DefaultCollectionChangeAV/ActorValueDatum|ActorValueDatum]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ActorValueData
+| script = [[SFM:Script-DefaultCollectionChangeAV|DefaultCollectionChangeAV]]
+| name = [[SFM:Script-DefaultCollectionChangeAV/ActorValueData|ActorValueData]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValueDatum[]
+| documentation = Struct of actor values to be changed.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-DefaultCollectionChangeAV|DefaultCollectionChangeAV]]
+| name = [[SFM:Script-DefaultCollectionChangeAV/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

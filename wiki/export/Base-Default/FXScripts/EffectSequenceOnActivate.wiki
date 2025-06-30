@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = FXScripts:EffectSequenceOnActivate
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Const
+}}
+
+
+== Definition ==
+The <code>FXScripts\EffectSequenceOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName FXScripts:EffectSequenceOnActivate Extends ObjectReference Default Const
+</source>
+
+
+== Documentation ==
+The <code>FXScripts\EffectSequenceOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+For any activator that you want to play a single animation each time it's activated.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

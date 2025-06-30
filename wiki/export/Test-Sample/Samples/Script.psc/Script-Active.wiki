@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = Active
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Active|Active]]
+| kind = State
+| documentation = States for state-based behavior
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+States for state-based behavior
+</source>
+
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

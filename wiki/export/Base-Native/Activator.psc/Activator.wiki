@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = Activator
+| name = [[SFM:Script-Activator|Activator]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Activator.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Activator Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Activator.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = IsRadio
+| script = [[SFM:Script-Activator|Activator]]
+| name = [[SFM:Script-Activator/IsRadio|IsRadio]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Returns whether this activator is a radio or not
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

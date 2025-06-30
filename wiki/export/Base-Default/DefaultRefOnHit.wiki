@@ -1,0 +1,65 @@
+{{Script_Object_Summary
+| title = DefaultRefOnHit
+| name = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnHit.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnHit Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnHit.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS object is hit.
+<RefToCheck> is the reference hitting THIS Object.
+<LocationToCheck> is the current location of THIS object.
+
+SEE ALSO DefaultRefOnCombatStateChanged which includes the ability to also check for OnHit.
+(You probably want to use DefaultRefOnCombatStateChanged if THIS is an actor and you are testing to see if it's becoming hostile)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
+| name = [[SFM:Script-DefaultRefOnHit/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
+| name = [[SFM:Script-DefaultRefOnHit/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
+| name = [[SFM:Script-DefaultRefOnHit/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
+| name = [[SFM:Script-DefaultRefOnHit/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

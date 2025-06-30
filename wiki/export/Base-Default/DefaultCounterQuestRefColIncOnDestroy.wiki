@@ -1,0 +1,61 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuestRefColIncOnDestroy
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Hidden
+}}
+
+
+== Definition ==
+The <code>DefaultCounterQuestRefColIncOnDestroy.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuestRefColIncOnDestroy Extends RefCollectionAlias Default Hidden
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterQuestRefColIncOnDestroy.psc</code> source file documentation comments for this script.
+
+<source>
+Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuest script.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = WaitingForDeath
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/WaitingForDeath|WaitingForDeath]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/Increment|Increment]]
+| kind = Function
+| parameters = ObjectReference akSenderRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

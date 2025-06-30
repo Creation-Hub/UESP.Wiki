@@ -1,0 +1,126 @@
+{{Script_Object_Summary
+| title = defaultQuestRespawnScript
+| name = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Hidden
+}}
+
+
+== Definition ==
+The <code>defaultQuestRespawnScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName defaultQuestRespawnScript Extends Quest Default Hidden
+</source>
+
+
+== Documentation ==
+The <code>defaultQuestRespawnScript.psc</code> source file documentation comments for this script.
+
+<source>
+Simple script to respawn Aliases that have the DefaultAliasRespawnScript on them.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Respawn_Markers
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/Respawn_Markers|Respawn_Markers]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Quest_Stages
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/Quest_Stages|Quest_Stages]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Respawning_Values
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/Respawning_Values|Respawning_Values]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = RespawnCount
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnCount|RespawnCount]]
+| kind = Property
+| flags = Auto Hidden
+| returns = int
+| parameters = 0
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Respawn
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/Respawn|Respawn]]
+| kind = Function
+| parameters = ReferenceAlias aliasToRespawn
+| documentation = this will always respawn (ignores all the checks and waits)
+(this is what TryToRespawn calls when ready to respawn)
+}}
+
+{{Script_Object_Member_Summary
+| title = RespawnCollection
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnCollection|RespawnCollection]]
+| kind = Function
+| parameters = RefCollectionAlias collectionToRespawn, Actor actorToRespawn
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToRespawn
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/TryToRespawn|TryToRespawn]]
+| kind = Function
+| parameters = ReferenceAlias aliasToRespawn
+| documentation = call this when you want to try to respawn
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToRespawnCollection
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/TryToRespawnCollection|TryToRespawnCollection]]
+| kind = Function
+| parameters = RefCollectionAlias collectionToRespawn, Actor actorToRespawn
+| documentation = call this when you want to try to respawn
+}}
+
+{{Script_Object_Member_Summary
+| title = ReadyToRespawn
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/ReadyToRespawn|ReadyToRespawn]]
+| kind = Function
+| returns = bool
+| documentation = internal utility function
+checks if respawn is valid
+if not, returns false
+if valid, increments respawn counter and waits random time before returning
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRespawnMarker
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/GetRespawnMarker|GetRespawnMarker]]
+| kind = Function
+| returns = ObjectReference
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

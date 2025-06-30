@@ -1,0 +1,27 @@
+{{Script_Member_Summary
+| title = MyFunctionNative
+| script = [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
+| name = [[SFM:Script-Samples:NativeScript/MyFunctionNative|MyFunctionNative]]
+| kind = Function
+| flags = Native
+| parameters = float afInterval, int aiTimerID = 0
+| documentation = A native function declaration.
+}}
+
+
+== Documentation ==
+The <code>Samples\NativeScript.psc</code> source file documentation comments for this script.
+
+<source>
+A native function declaration.
+</source>
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* float afInterval
+* int aiTimerID = 0
+
+
+[[Category:Starfield_Mod-Papyrus]]

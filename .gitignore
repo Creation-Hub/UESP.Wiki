@@ -2,16 +2,17 @@
 #---------------------------------------------
 # Project specific ignores for this repository.
 
-/_input/
-/wiki/
-# !/wiki/Papyrus/Scripts/Base-Native
-# !/wiki/Papyrus/Scripts/Base-Default
+*.sublime-project
+*.sublime-workspace
 
 
 # Visual Studio Code (VSC)
 #---------------------------------------------
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
+
+# Ignore Visual Studio Code workspace settings
+*.code-workspace
 
 # Local History for Visual Studio Code
 .history/
@@ -29,7 +30,7 @@
 # Uncomment to include the specific VSC workspace files.
 !.vscode/settings.json
 !.vscode/launch.json
-#!.vscode/tasks.json
+!.vscode/tasks.json
 #!.vscode/extensions.json
 #!.vscode/*.code-snippets
 

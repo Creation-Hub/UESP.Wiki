@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnActivate
+| name = [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnActivate Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members are activated.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference activating each ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivate/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThingForEachValidRef
+| script = [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivate/DoSpecificThingForEachValidRef|DoSpecificThingForEachValidRef]]
+| kind = Function
+| parameters = ObjectReference RefCollectionMemberRef, DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams
+| documentation = OVERRIDE THIS IN CHILD SCRIPT
+IMPORTANT: Children need to call this function as well when they override it
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,118 @@
+{{Script_Object_Summary
+| title = Form
+| name = [[SFM:Script-Form|Form]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Form.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Form Extends ScriptObject Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Form.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetFormID
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/GetFormID|GetFormID]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Returns the formID for this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFormEditorID
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/GetFormEditorID|GetFormEditorID]]
+| kind = Function
+| flags = Native DebugOnly
+| returns = string
+| documentation = Returns the editor formID string for this object
+}}
+
+{{Script_Object_Member_Summary
+| title = GetGoldValue
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/GetGoldValue|GetGoldValue]]
+| kind = Function
+| flags = Native
+| returns = int
+| documentation = Obtains this form's value in gold. Will return -1 if the form doesn't have any value (like a quest)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetWeight
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/GetWeight|GetWeight]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get this object's weight
+}}
+
+{{Script_Object_Member_Summary
+| title = HasKeyword
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/HasKeyword|HasKeyword]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = Keyword akKeyword
+| documentation = Returns if this form has the specified keyword attached
+}}
+
+{{Script_Object_Member_Summary
+| title = HasKeywordInFormList
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/HasKeywordInFormList|HasKeywordInFormList]]
+| kind = Function
+| flags = Native
+| returns = bool
+| parameters = FormList akKeywordList
+| documentation = Returns if this form has any of the keywords in the list attached
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerKnows
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/PlayerKnows|PlayerKnows]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is the "Known" flag set for this form?
+}}
+
+{{Script_Object_Member_Summary
+| title = StartObjectProfiling
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/StartObjectProfiling|StartObjectProfiling]]
+| kind = Function
+| flags = Native DebugOnly
+| documentation = Turns on profiling for this specific object and all scripts attached to it - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StopObjectProfiling
+| script = [[SFM:Script-Form|Form]]
+| name = [[SFM:Script-Form/StopObjectProfiling|StopObjectProfiling]]
+| kind = Function
+| flags = Native DebugOnly
+| documentation = Turns off profiling for this specific object and all scripts attached to it - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

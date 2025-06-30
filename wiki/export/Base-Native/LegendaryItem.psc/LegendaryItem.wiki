@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = LegendaryItem
+| name = [[SFM:Script-LegendaryItem|LegendaryItem]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>LegendaryItem.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName LegendaryItem Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>LegendaryItem.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>LegendaryItem.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

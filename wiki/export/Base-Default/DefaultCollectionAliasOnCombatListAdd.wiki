@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnCombatListAdd
+| name = [[SFM:Script-DefaultCollectionAliasOnCombatListAdd|DefaultCollectionAliasOnCombatListAdd]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnCombatListAdd.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnCombatListAdd Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnCombatListAdd.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members add something to their combat list.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference THIS RefCollection's members are adding to their combat list
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnCombatListAdded
+| script = [[SFM:Script-DefaultCollectionAliasOnCombatListAdd|DefaultCollectionAliasOnCombatListAdd]]
+| name = [[SFM:Script-DefaultCollectionAliasOnCombatListAdd/OnCombatListAdded|OnCombatListAdded]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, Actor akTarget
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

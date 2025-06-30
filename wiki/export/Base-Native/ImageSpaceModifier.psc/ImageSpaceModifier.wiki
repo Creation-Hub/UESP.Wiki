@@ -1,0 +1,75 @@
+{{Script_Object_Summary
+| title = ImageSpaceModifier
+| name = [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ImageSpaceModifier.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ImageSpaceModifier Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ImageSpaceModifier.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Apply
+| script = [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+| name = [[SFM:Script-ImageSpaceModifier/Apply|Apply]]
+| kind = Function
+| flags = Native
+| parameters = float afStrength = 1.0
+| documentation = Applies this modifier with the specified strength (which is not clamped)
+}}
+
+{{Script_Object_Member_Summary
+| title = ApplyCrossFade
+| script = [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+| name = [[SFM:Script-ImageSpaceModifier/ApplyCrossFade|ApplyCrossFade]]
+| kind = Function
+| flags = Native
+| parameters = float afFadeDuration = 1.0
+| documentation = Adds this modifier to the cross-fade chain, removing the previous modifier, and fading over the specified duration (in seconds)
+}}
+
+{{Script_Object_Member_Summary
+| title = PopTo
+| script = [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+| name = [[SFM:Script-ImageSpaceModifier/PopTo|PopTo]]
+| kind = Function
+| flags = Native
+| parameters = ImageSpaceModifier akNewModifier, float afStrength = 1.0
+| documentation = Disables this modifier and enables the new one, "popping" between the two. Will not interrupt any running cross-fade (if the modifiers aren't the ones fading)
+}}
+
+{{Script_Object_Member_Summary
+| title = Remove
+| script = [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+| name = [[SFM:Script-ImageSpaceModifier/Remove|Remove]]
+| kind = Function
+| flags = Native
+| documentation = Removes this modifier
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveCrossFade
+| script = [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+| name = [[SFM:Script-ImageSpaceModifier/RemoveCrossFade|RemoveCrossFade]]
+| kind = Function
+| flags = Native Global
+| parameters = float afFadeDuration = 1.0
+| documentation = Removes whatever modifier is on the cross-fade chain, fading it out
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

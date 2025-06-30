@@ -1,0 +1,98 @@
+{{Script_Object_Summary
+| title = DefaultOnEnterMultiActor
+| name = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Conditional, Default
+}}
+
+
+== Definition ==
+The <code>DefaultOnEnterMultiActor.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultOnEnterMultiActor Extends ObjectReference Conditional Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultOnEnterMultiActor.psc</code> source file documentation comments for this script.
+
+<source>
+script to test if one or more actors are in a trigger
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = BAllTargetsInTrigger
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/BAllTargetsInTrigger|BAllTargetsInTrigger]]
+| kind = Property
+| flags = Auto Conditional Hidden
+| returns = bool
+| parameters = false
+| documentation = true when all targets are in trigger
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/OnInit|OnInit]]
+| kind = Event
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/Waiting|Waiting]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ModTargetCount
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/ModTargetCount|ModTargetCount]]
+| kind = Function
+| parameters = int modValue
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckTriggerRef
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/CheckTriggerRef|CheckTriggerRef]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference triggerRef
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerMe
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/TriggerMe|TriggerMe]]
+| kind = Function
+| documentation = what happens when all my targets are in the trigger?
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

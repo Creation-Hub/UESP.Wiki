@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = Counter
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Counter|Counter]]
+| kind = Property
+| flags = Auto Hidden
+| returns = int
+| parameters = 0
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+* 0
+
+
+[[Category:Starfield_Mod-Papyrus]]

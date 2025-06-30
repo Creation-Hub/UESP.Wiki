@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = OnTimer
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnTimer|OnTimer]]
+| kind = Event
+| parameters = int aiTimerID
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* int aiTimerID
+
+
+[[Category:Starfield_Mod-Papyrus]]

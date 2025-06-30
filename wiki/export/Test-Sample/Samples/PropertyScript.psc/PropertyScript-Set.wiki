@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = Set
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/Set|Set]]
+| kind = Function
+| parameters = bool value
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* bool value
+
+
+[[Category:Starfield_Mod-Papyrus]]

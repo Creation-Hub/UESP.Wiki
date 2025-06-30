@@ -1,0 +1,59 @@
+{{Script_Object_Summary
+| title = GameDaysPassedGlobalsQuestScript
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>GameDaysPassedGlobalsQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName GameDaysPassedGlobalsQuestScript Extends Quest Const Default
+</source>
+
+
+== Documentation ==
+The <code>GameDaysPassedGlobalsQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+Used to set globalvariables in terms of gamedays passed.
+Useful for story manager and dialogue conditions like:
+GetGlobalValue NextAllowed <= GameDaysPassed
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = GlobalsDatum
+| script = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript/GlobalsDatum|GlobalsDatum]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = GameDaysPassedGlobalsAndQuestStages
+| script = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript/GameDaysPassedGlobalsAndQuestStages|GameDaysPassedGlobalsAndQuestStages]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalsDatum[]
+| documentation = Holds quest stages and globals to set with GameDaysPassed
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

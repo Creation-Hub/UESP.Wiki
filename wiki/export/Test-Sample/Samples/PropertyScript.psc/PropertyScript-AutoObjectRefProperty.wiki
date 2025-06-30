@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = AutoObjectRefProperty
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/AutoObjectRefProperty|AutoObjectRefProperty]]
+| kind = Property
+| flags = Auto
+| returns = ObjectReference
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+This property member has no field initialized value.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

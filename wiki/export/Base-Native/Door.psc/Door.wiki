@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Door
+| name = [[SFM:Script-Door|Door]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Door.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Door Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Door.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Door.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,39 @@
+{{Script_Object_Summary
+| title = defaultQuestRespawnScriptA
+| name = [[SFM:Script-defaultQuestRespawnScriptA|defaultQuestRespawnScriptA]]
+| extends = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]] → [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>defaultQuestRespawnScriptA.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName defaultQuestRespawnScriptA Extends defaultQuestRespawnScript Default
+</source>
+
+
+== Documentation ==
+The <code>defaultQuestRespawnScriptA.psc</code> source file documentation comments for this script.
+
+<source>
+Simple script to respawn Aliases that have the DefaultAliasRespawnScriptA on them.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = TryToRespawn
+| script = [[SFM:Script-defaultQuestRespawnScriptA|defaultQuestRespawnScriptA]]
+| name = [[SFM:Script-defaultQuestRespawnScriptA/TryToRespawn|TryToRespawn]]
+| kind = Function
+| parameters = ReferenceAlias aliasToRespawn
+| documentation = call this when you want to try to respawn
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

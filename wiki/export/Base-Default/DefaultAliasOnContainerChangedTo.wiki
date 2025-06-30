@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnContainerChangedTo
+| name = [[SFM:Script-DefaultAliasOnContainerChangedTo|DefaultAliasOnContainerChangedTo]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnContainerChangedTo.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnContainerChangedTo Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnContainerChangedTo.psc</code> source file documentation comments for this script.
+
+<source>
+Set stage when THIS object's container changes.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the container THIS object was moved to.
+<LocationToCheck> is the current location of the container THIS object was moved to.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-DefaultAliasOnContainerChangedTo|DefaultAliasOnContainerChangedTo]]
+| name = [[SFM:Script-DefaultAliasOnContainerChangedTo/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,87 @@
+{{Script_Object_Summary
+| title = DefaultFollowerToggleQuestScript
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultFollowerToggleQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultFollowerToggleQuestScript Extends Quest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultFollowerToggleQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+Attach to quest where you have a follower you want to control follower state on using conditions various triggering events.
+
+You can also call this function to trigger a check and toggle accordingly:
+CheckConditions()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Autofill_Properites
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Autofill_Properites|Autofill_Properites]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Properties
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Properties|Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestStarted
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/OnQuestStarted|OnQuestStarted]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = CheckConditionsIfPlayer
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/CheckConditionsIfPlayer|CheckConditionsIfPlayer]]
+| kind = Function
+| parameters = ReferenceAlias akSender, ObjectReference akActionRef
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckConditions
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/CheckConditions|CheckConditions]]
+| kind = Function
+| parameters = ObjectReference TargetRef = none
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

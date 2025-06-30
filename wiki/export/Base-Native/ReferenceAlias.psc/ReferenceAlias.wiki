@@ -1,0 +1,1662 @@
+{{Script_Object_Summary
+| title = ReferenceAlias
+| name = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| extends = [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ReferenceAlias.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ReferenceAlias Extends Alias Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ReferenceAlias.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ApplyToRef
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/ApplyToRef|ApplyToRef]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akRef
+| documentation = Applies the alias data to the given ref without putting the ref in the alias
+}}
+
+{{Script_Object_Member_Summary
+| title = Clear
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/Clear|Clear]]
+| kind = Function
+| flags = Native
+| documentation = Clears the alias - fails on non-optional aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = GetReference
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/GetReference|GetReference]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Get the object reference this alias refers to
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceRefTo
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/ForceRefTo|ForceRefTo]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akNewRef
+| documentation = Forces this alias to use the specified reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceRefIfEmpty
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/ForceRefIfEmpty|ForceRefIfEmpty]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akNewRef
+| documentation = SJML -- tries to force a reference into the alias, but only if it's already empty.
+returns true if the alias now holds the passed reference, false if it was already filled.
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorReference
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/GetActorReference|GetActorReference]]
+| kind = Function
+| returns = Actor
+| documentation = Autocast to Actor
+}}
+
+{{Script_Object_Member_Summary
+| title = GetRef
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/GetRef|GetRef]]
+| kind = Function
+| returns = ObjectReference
+| documentation = Convenience function
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorRef
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/GetActorRef|GetActorRef]]
+| kind = Function
+| returns = Actor
+| documentation = Convenience function
+}}
+
+{{Script_Object_Member_Summary
+| title = GetShipReference
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/GetShipReference|GetShipReference]]
+| kind = Function
+| returns = SpaceshipReference
+| documentation = Autocast to ShipReference
+}}
+
+{{Script_Object_Member_Summary
+| title = GetShipRef
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/GetShipRef|GetShipRef]]
+| kind = Function
+| returns = SpaceshipReference
+| documentation = Convenience function
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromRef
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/RemoveFromRef|RemoveFromRef]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akRef
+| documentation = Removes this data alias from the given ref
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToAddToFaction
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToAddToFaction|TryToAddToFaction]]
+| kind = Function
+| returns = bool
+| parameters = Faction FactionToAddTo
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToRemoveFromFaction
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToRemoveFromFaction|TryToRemoveFromFaction]]
+| kind = Function
+| returns = bool
+| parameters = Faction FactionToRemoveFrom
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToStopCombat
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToStopCombat|TryToStopCombat]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToDisable
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToDisable|TryToDisable]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToDisableNoWait
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToDisableNoWait|TryToDisableNoWait]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - wshen
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToEnable
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToEnable|TryToEnable]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToEnableNoWait
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToEnableNoWait|TryToEnableNoWait]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - wshen
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToEvaluatePackage
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToEvaluatePackage|TryToEvaluatePackage]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToKill
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToKill|TryToKill]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akKiller = none
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToMoveTo
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToMoveTo|TryToMoveTo]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference RefToMoveTo
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToReset
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToReset|TryToReset]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToClear
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToClear|TryToClear]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - sjml
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToDelete
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToDelete|TryToDelete]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToGetCurrentLocation
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToGetCurrentLocation|TryToGetCurrentLocation]]
+| kind = Function
+| returns = Location
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToGetActorValue
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToGetActorValue|TryToGetActorValue]]
+| kind = Function
+| returns = float
+| parameters = ActorValue ActorValueToGet
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToGetValue
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToGetValue|TryToGetValue]]
+| kind = Function
+| returns = float
+| parameters = ActorValue akAV
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSetActorValue
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToSetActorValue|TryToSetActorValue]]
+| kind = Function
+| returns = bool
+| parameters = ActorValue ValueToSet, float afValue
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSetValue
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToSetValue|TryToSetValue]]
+| kind = Function
+| returns = bool
+| parameters = ActorValue akAV, float afValue
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryIsLocked
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryIsLocked|TryIsLocked]]
+| kind = Function
+| returns = bool
+| documentation = Convenience function - jduvall
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSetPlayerResistingArrest
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToSetPlayerResistingArrest|TryToSetPlayerResistingArrest]]
+| kind = Function
+| documentation = kmk - convenience function for actor/ship
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSendPlayerToJail
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToSendPlayerToJail|TryToSendPlayerToJail]]
+| kind = Function
+| parameters = bool abRemoveInventory = true, bool abRealJail = false
+| documentation = kmk - convenience function for actor/ship
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToPlayerPayFine
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToPlayerPayFine|TryToPlayerPayFine]]
+| kind = Function
+| parameters = bool abRemoveStolenItems = true, bool abGoToJail = true
+| documentation = kmk - convenience function for actor/ship
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToSendSmugglingAlarm
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToSendSmugglingAlarm|TryToSendSmugglingAlarm]]
+| kind = Function
+| documentation = kmk - convenience function for ship
+does nothing if called on actor
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToInstantDock
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToInstantDock|TryToInstantDock]]
+| kind = Function
+| returns = bool
+| parameters = ReferenceAlias akTarget
+| documentation = scornett - Convenience function for ships.
+Does nothing if either reference is an actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToMoveNear
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToMoveNear|TryToMoveNear]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akTarget, int positionVal = 0, int distanceVal = 0, int facingVal = 0
+| documentation = scornett
+}}
+
+{{Script_Object_Member_Summary
+| title = TryToGetCrimeFaction
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/TryToGetCrimeFaction|TryToGetCrimeFaction]]
+| kind = Function
+| returns = Faction
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearAndRefillAlias
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/ClearAndRefillAlias|ClearAndRefillAlias]]
+| kind = Function
+| documentation = kmk - first clears, then refills alias (so alias will be empty if nothing is found by RefillAlias call)
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnAliasChanged|OnAliasChanged]]
+| kind = Event
+| parameters = ObjectReference akObject, bool abRemove
+| documentation = Event received when an object has been added/removed to this referencealias
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this reference is activated
+}}
+
+{{Script_Object_Member_Summary
+| title = OnBuilderMenuSelect
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnBuilderMenuSelect|OnBuilderMenuSelect]]
+| kind = Event
+| parameters = ActorValue akActorValue
+| documentation = Event received when the produced resource on an Workshop producer/builder has changed.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCellAttach
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCellAttach|OnCellAttach]]
+| kind = Event
+| documentation = Event received when this object's parent cell is attached
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCellDetach
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCellDetach|OnCellDetach]]
+| kind = Event
+| documentation = Event received when this object's parent cell is detached
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCellLoad|OnCellLoad]]
+| kind = Event
+| documentation = Event received when every object in this object's parent cell is loaded (TODO: Find restrictions)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnClose
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnClose|OnClose]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this object is closed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+| documentation = Event received when this object enters, exits, or changes containers
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDestroyed
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnDestroyed|OnDestroyed]]
+| kind = Event
+| parameters = ObjectReference akDestroyer
+| documentation = Event received when this reference is destroyed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDestructionStageChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnDestructionStageChanged|OnDestructionStageChanged]]
+| kind = Event
+| parameters = int aiOldStage, int aiCurrentStage
+| documentation = Event received when this reference's destruction stage has changed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterFurniture
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEnterFurniture|OnEnterFurniture]]
+| kind = Event
+| parameters = Actor akActionRef
+| documentation = Event received when this furniture is entered.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEquipped
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEquipped|OnEquipped]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event received when this object is equipped by an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnExitFurniture
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnExitFurniture|OnExitFurniture]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this furniture is exited.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGrab
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnGrab|OnGrab]]
+| kind = Event
+| documentation = Event received when this object is grabbed by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemAdded
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnItemAdded|OnItemAdded]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
+| documentation = Event received when an item is added to this object's inventory. If the item is a persistant reference, akItemReference will
+point at it - otherwise the parameter will be None. For valid Transfer Reasons please refer to the wiki.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemRemoved
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnItemRemoved|OnItemRemoved]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason
+| documentation = Event received when an item is removed from this object's inventory. If the item is a persistant reference, akItemReference
+will point at it - otherwise the parameter will be None. For valid Transfer Reasons please refer to the wiki.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnLoad|OnLoad]]
+| kind = Event
+| documentation = Event recieved when this object is completely loaded - will be fired every time this object is loaded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLockStateChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnLockStateChanged|OnLockStateChanged]]
+| kind = Event
+| documentation = Event received when the lock on this object changes
+}}
+
+{{Script_Object_Member_Summary
+| title = OnMapMarkerDiscovered
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnMapMarkerDiscovered|OnMapMarkerDiscovered]]
+| kind = Event
+| documentation = Received when this map marker is discovered
+}}
+
+{{Script_Object_Member_Summary
+| title = OnObjectRepaired
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnObjectRepaired|OnObjectRepaired]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when an item has been repaired
+}}
+
+{{Script_Object_Member_Summary
+| title = OnObjectDestroyed
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnObjectDestroyed|OnObjectDestroyed]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when an item has been destroyed
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOpen
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnOpen|OnOpen]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this object is opened
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOutpostItemPowerOff
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnOutpostItemPowerOff|OnOutpostItemPowerOff]]
+| kind = Event
+| parameters = ObjectReference akPoweredItem
+| documentation = Event received when an Outpost item loses power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOutpostItemPowerOn
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnOutpostItemPowerOn|OnOutpostItemPowerOn]]
+| kind = Event
+| parameters = ObjectReference akPoweredItem, ObjectReference akPowerGenerator
+| documentation = Event received when an Outpost item receives power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPipboyRadioDetection
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPipboyRadioDetection|OnPipboyRadioDetection]]
+| kind = Event
+| parameters = bool abDetected
+| documentation = Event that occurs when the Pipboy enters/leaves the outer-radius of this radio ref
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerDialogueTarget
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerDialogueTarget|OnPlayerDialogueTarget]]
+| kind = Event
+| documentation = Event received when ref goes into dialogue with player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPowerOn
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPowerOn|OnPowerOn]]
+| kind = Event
+| parameters = ObjectReference akPowerGenerator
+| documentation = Event received when a workshop item receives power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPowerOff
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPowerOff|OnPowerOff]]
+| kind = Event
+| documentation = Event received when a workshop loses all power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnQuickContainerOpened
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnQuickContainerOpened|OnQuickContainerOpened]]
+| kind = Event
+| documentation = Received if the quick container opens
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRead
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnRead|OnRead]]
+| kind = Event
+| documentation = Event received when this object, if a book, is read
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRelease
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnRelease|OnRelease]]
+| kind = Event
+| documentation = Event received when this object is released by the player
+}}
+
+{{Script_Object_Member_Summary
+| title = OnReset
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnReset|OnReset]]
+| kind = Event
+| documentation = Event received when this reference is reset
+}}
+
+{{Script_Object_Member_Summary
+| title = OnScanned
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnScanned|OnScanned]]
+| kind = Event
+| documentation = Received when this object is scanned
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSell
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnSell|OnSell]]
+| kind = Event
+| parameters = Actor akSeller
+| documentation = Event received when this reference is sold by an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpellCast
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnSpellCast|OnSpellCast]]
+| kind = Event
+| parameters = Form akSpell
+| documentation = Event received when a spell is cast by this object
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTerminalMenuItemRun
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTerminalMenuItemRun|OnTerminalMenuItemRun]]
+| kind = Event
+| parameters = int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
+| documentation = Received if terminal object has menu item clicked
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTranslationAlmostComplete
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTranslationAlmostComplete|OnTranslationAlmostComplete]]
+| kind = Event
+| documentation = Event received when translation is almost complete (from a call to TranslateTo, "almost" is determined by a gamesetting, default is 90% of the way)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTranslationComplete
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTranslationComplete|OnTranslationComplete]]
+| kind = Event
+| documentation = Event received when translation is complete (from a call to TranslateTo)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTranslationFailed
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTranslationFailed|OnTranslationFailed]]
+| kind = Event
+| documentation = Event received when translation is aborted (from a call to StopTranslateTo)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTrapHitStart
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTrapHitStart|OnTrapHitStart]]
+| kind = Event
+| parameters = ObjectReference akTarget, float afXVel, float afYVel, float afZVel, float afXPos, float afYPos, float afZPos, int aeMaterial, bool abInitialHit, int aeMotionType
+| documentation = Event recieved when this starts hitting a target
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTrapHitStop
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTrapHitStop|OnTrapHitStop]]
+| kind = Event
+| parameters = ObjectReference akTarget
+| documentation = Event recieved when this stops hitting a target
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this trigger volume is entered
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerLeave
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnTriggerLeave|OnTriggerLeave]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+| documentation = Event received when this trigger volume is left
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnequipped
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnUnequipped|OnUnequipped]]
+| kind = Event
+| parameters = Actor akActor
+| documentation = Event received when this object is unequipped by an actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnUnload|OnUnload]]
+| kind = Event
+| documentation = Event recieved when this object is being unloaded - will be fired every time this object is unloaded
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopCargoLinkChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopCargoLinkChanged|OnWorkshopCargoLinkChanged]]
+| kind = Event
+| parameters = ObjectReference akOldTarget, ObjectReference akNewTarget
+| documentation = Event that iakNewLinkRefs triggered when the target for a cargo link on workshop item changes.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopFlyCam
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopFlyCam|OnWorkshopFlyCam]]
+| kind = Event
+| parameters = bool aStart
+| documentation = Event received when the player enters or leaves Workshop FlyCam
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopMode
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopMode|OnWorkshopMode]]
+| kind = Event
+| parameters = bool aStart
+| documentation = Event received when the player enters or leaves Workshop Mode
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectGrabbed
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopObjectGrabbed|OnWorkshopObjectGrabbed]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when the player grabs an existing object reference for edit while in Workshop mode.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectMoved
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopObjectMoved|OnWorkshopObjectMoved]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when an existing workshop item is moved in the world
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectPlaced
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopObjectPlaced|OnWorkshopObjectPlaced]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when a workshop item is placed in the world
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopObjectRemoved
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopObjectRemoved|OnWorkshopObjectRemoved]]
+| kind = Event
+| parameters = ObjectReference akReference
+| documentation = Event received when a workshop item is removed ( from world and added back to workshop )
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopOutputLink
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopOutputLink|OnWorkshopOutputLink]]
+| kind = Event
+| parameters = ObjectReference akSource, ObjectReference akTarget
+| documentation = Event received when a new Output Link is created at a Workshop.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnWorkshopNPCTransfer
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnWorkshopNPCTransfer|OnWorkshopNPCTransfer]]
+| kind = Event
+| parameters = Location akNewWorkshop, Keyword akActionKW
+| documentation = Event that occurs when a workshop NPC is directed to move to another settlement
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActorActivatedRef
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnActorActivatedRef|OnActorActivatedRef]]
+| kind = Event
+| parameters = ObjectReference akActivatedRef
+| documentation = Event received when this actor activates a ref
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAffinityEvent
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnAffinityEvent|OnAffinityEvent]]
+| kind = Event
+| parameters = AffinityEvent akAffinityEvent, ActorValue akActorValue, GlobalVariable akReactionValue, ObjectReference akTarget
+| documentation = Event received when affinity event is run
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatListAdded
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCombatListAdded|OnCombatListAdded]]
+| kind = Event
+| parameters = Actor akTarget
+| documentation = Event that is triggered when this actor adds another actor to its combat list.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatListRemoved
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCombatListRemoved|OnCombatListRemoved]]
+| kind = Event
+| parameters = Actor akTarget
+| documentation = Event that is triggered when this actor removes another actor from its combat list.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akTarget, int aeCombatState
+| documentation = Event that is triggered when this actor's combat state against the target changes
+State is as follows:
+0 - not in combat
+1 - in combat
+2 - searching
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeCompleteCommand
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCommandModeCompleteCommand|OnCommandModeCompleteCommand]]
+| kind = Event
+| parameters = int aeCommandType, ObjectReference akTarget
+| documentation = Event received when the object completes a command in command mode.
+Type is as follows:
+0 - None
+1 - Call
+2 - Follow
+3 - Move
+4 - Attack
+5 - Inspect
+6 - Retrieve
+7 - Stay
+8 - Release
+9 - Heal
+10 - Assign
+11 - Ride
+12 - Enter
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeEnter
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCommandModeEnter|OnCommandModeEnter]]
+| kind = Event
+| documentation = Event received when the player begins commanding this object
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeExit
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCommandModeExit|OnCommandModeExit]]
+| kind = Event
+| documentation = Event received when the player ends commanding this object
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCommandModeGiveCommand
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCommandModeGiveCommand|OnCommandModeGiveCommand]]
+| kind = Event
+| parameters = int aeCommandType, ObjectReference akTarget
+| documentation = Event received when the player gives object a command in command mode.
+Type is as follows:
+0 - None
+1 - Call
+2 - Follow
+3 - Move
+4 - Attack
+5 - Inspect
+6 - Retrieve
+7 - Stay
+8 - Release
+9 - Heal
+10 - Assign
+11 - Ride
+12 - Enter
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCompanionDismiss
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCompanionDismiss|OnCompanionDismiss]]
+| kind = Event
+| documentation = Received when player dismisses teammate companion
+}}
+
+{{Script_Object_Member_Summary
+| title = OnConsciousnessStateChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnConsciousnessStateChanged|OnConsciousnessStateChanged]]
+| kind = Event
+| parameters = bool abUnconscious
+| documentation = Event that is triggered when this actor's consciousness state changes
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCrewAssigned
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCrewAssigned|OnCrewAssigned]]
+| kind = Event
+| parameters = Actor akCrew, ObjectReference akAssignmentRef, ObjectReference akPreviousAssignmentRef
+| documentation = Event received when a reference has a crew member assigned.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCrewDismissed
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCrewDismissed|OnCrewDismissed]]
+| kind = Event
+| parameters = Actor akCrew, ObjectReference akPreviousAssignmentRef
+| documentation = Event received when a reference has a crew member dismissed.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCripple
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnCripple|OnCripple]]
+| kind = Event
+| parameters = ActorValue akActorValue, bool abCrippled
+| documentation = Recieved immeadiately after a limb has become crippled or uncrippled.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDeferredKill
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnDeferredKill|OnDeferredKill]]
+| kind = Event
+| parameters = Actor akKiller
+| documentation = Event that is triggered when this actor gets a deferred kill added
+(they were in deferred kill mode and got "killed")
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+| documentation = Event that is triggered when this actor finishes dying (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDifficultyChanged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnDifficultyChanged|OnDifficultyChanged]]
+| kind = Event
+| parameters = int aOldDifficulty, int aNewDifficulty
+| documentation = Event received when the player changes their difficulty
+Type is as follows:
+0 - Very Easy
+1 - Easy
+2 - Normal
+3 - Hard
+4 - Very Hard
+5 - Survival
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
+| documentation = Event that is triggered when this actor begins dying (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnconscious
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnUnconscious|OnUnconscious]]
+| kind = Event
+| parameters = ObjectReference akAttacker
+| documentation = Event that is triggered when an actor has been "killed" with EM weapons (the actor is still alive)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterBleedout
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEnterBleedout|OnEnterBleedout]]
+| kind = Event
+| documentation = Event received when an actor enters bleedout. (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterOutpostBeaconMode
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEnterOutpostBeaconMode|OnEnterOutpostBeaconMode]]
+| kind = Event
+| documentation = Event received when the player enters Outpost Beacon placeement mode.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterShipInterior
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEnterShipInterior|OnEnterShipInterior]]
+| kind = Event
+| parameters = ObjectReference akShip
+| documentation = Event received when an actor enters a ship interior cell
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnterSneaking
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEnterSneaking|OnEnterSneaking]]
+| kind = Event
+| documentation = Event received when an actor enters sneaking.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEscortWaitStart
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEscortWaitStart|OnEscortWaitStart]]
+| kind = Event
+| documentation = Event received when this actor is in an Escort procedure and begins waiting for the escorted actor to catch up.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEscortWaitStop
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnEscortWaitStop|OnEscortWaitStop]]
+| kind = Event
+| documentation = Event received when this actor is in an Escort procedure and stops waiting because the escorted actor has caught up.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnExitShipInterior
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnExitShipInterior|OnExitShipInterior]]
+| kind = Event
+| parameters = ObjectReference akShip
+| documentation = Event received when an actor exits a ship interior cell
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFollowerWarp
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerFollowerWarp|OnPlayerFollowerWarp]]
+| kind = Event
+| parameters = ObjectReference akFollower
+| documentation = Event received when a player follower is warped
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGetUp
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnGetUp|OnGetUp]]
+| kind = Event
+| parameters = ObjectReference akFurniture
+| documentation = Event that is triggered when this actor leaves the furniture
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHomeShipSet
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnHomeShipSet|OnHomeShipSet]]
+| kind = Event
+| parameters = SpaceshipReference akShip, SpaceshipReference akPrevious
+| documentation = Event that is triggered when the actors home ship is set.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerArrested
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerArrested|OnPlayerArrested]]
+| kind = Event
+| parameters = ObjectReference akGuard, Location akLocation, int aeCrimeType
+| documentation = Event that is triggered when the player is arrested.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerAssaultActor
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerAssaultActor|OnPlayerAssaultActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, Location akLocation, bool aeCrime
+| documentation = Event that is triggered when the player assaults someone.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFailedPlotRoute
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerFailedPlotRoute|OnPlayerFailedPlotRoute]]
+| kind = Event
+| parameters = int aeFailedPlotReason
+| documentation = Event received when the player plots a failed starmap route
+Type is as follows:
+0 - Success
+1 - Insufficient Fuel
+2 - Out of Range
+3 - Unexplored System
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerModifiedShip
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerModifiedShip|OnPlayerModifiedShip]]
+| kind = Event
+| parameters = SpaceshipReference akShip
+| documentation = Event that is triggered when an actor modifies a ship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemEquipped
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnItemEquipped|OnItemEquipped]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectReference akReference
+| documentation = Event received when this actor equips something - akReference may be None if object is not persistent (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemUnequipped
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnItemUnequipped|OnItemUnequipped]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectReference akReference
+| documentation = Event received when this actor unequips something - akReference may be None if object is not persistent (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnKill
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnKill|OnKill]]
+| kind = Event
+| parameters = ObjectReference akVictim
+| documentation = Event that is triggered when this actor kills another
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLocationChange
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnLocationChange|OnLocationChange]]
+| kind = Event
+| parameters = Location akOldLoc, Location akNewLoc
+| documentation = Event that is triggered when this actor changes from one location to another (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnOutpostPlaced
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnOutpostPlaced|OnOutpostPlaced]]
+| kind = Event
+| parameters = ObjectReference akOutpostBeacon
+| documentation = Received when player placed an outpost beacon
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPackageChange
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPackageChange|OnPackageChange]]
+| kind = Event
+| parameters = Package akOldPackage
+| documentation = Event received when this actor's package changes (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPackageEnd
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPackageEnd|OnPackageEnd]]
+| kind = Event
+| parameters = Package akOldPackage
+| documentation = Event received when this actor's package ends (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPackageStart
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPackageStart|OnPackageStart]]
+| kind = Event
+| parameters = Package akNewPackage
+| documentation = Event received when this actor starts a new package (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPartialCripple
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPartialCripple|OnPartialCripple]]
+| kind = Event
+| parameters = ActorValue akActorValue, bool abCrippled
+| documentation = Recieved immeadiately after the limb of a robot (or other actor whose race allows sub-segment damage) has become (or ceased to be) partially crippled.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPickLock
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPickLock|OnPickLock]]
+| kind = Event
+| parameters = ObjectReference akLockedRef, bool abCrime, bool abSucceeded, TerminalMenu akLockedTerminalMenu, int aiTerminalMenuItem
+| documentation = Event received when an actor picks a lock
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPickpocketFailed
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPickpocketFailed|OnPickpocketFailed]]
+| kind = Event
+| documentation = Received when the player fails to pickpocket this actor
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerBuyShip
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerBuyShip|OnPlayerBuyShip]]
+| kind = Event
+| parameters = SpaceshipReference akShip
+| documentation = Event that is triggered when the player buys a ship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCompleteResearch
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerCompleteResearch|OnPlayerCompleteResearch]]
+| kind = Event
+| parameters = ObjectReference akBench, Location akLocation, ResearchProject akProject
+| documentation = Received when player completes research
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCraftItem
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerCraftItem|OnPlayerCraftItem]]
+| kind = Event
+| parameters = ObjectReference akBench, Location akLocation, Form akCreatedItem
+| documentation = Received when player crafts an item
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCreateRobot
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerCreateRobot|OnPlayerCreateRobot]]
+| kind = Event
+| parameters = Actor akNewRobot
+| documentation = Received when player creates a new robot
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerCrimeGold
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerCrimeGold|OnPlayerCrimeGold]]
+| kind = Event
+| parameters = ObjectReference akVictim, Form akFaction, int aeCrimeGold, int aeCrimeType
+| documentation = Event that is triggered when the player gets crimegold .
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerEnterVertibird
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerEnterVertibird|OnPlayerEnterVertibird]]
+| kind = Event
+| parameters = ObjectReference akVertibird
+| documentation = Received when player enters vertibird
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFallLongDistance
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerFallLongDistance|OnPlayerFallLongDistance]]
+| kind = Event
+| parameters = float afDamage
+| documentation = Received when player takes fall damage
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerFireWeapon
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerFireWeapon|OnPlayerFireWeapon]]
+| kind = Event
+| parameters = Form akBaseObject
+| documentation = Received when player fires a weapon out of combat and based on timer
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerJail
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerJail|OnPlayerJail]]
+| kind = Event
+| parameters = ObjectReference akGuard, Form akFaction, Location akLocation, int aeCrimeGold
+| documentation = Event that is triggered when the player goes to jail.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerHealTeammate
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerHealTeammate|OnPlayerHealTeammate]]
+| kind = Event
+| parameters = Actor akTeammate
+| documentation = Received when player heals his teammate
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerItemAdded
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerItemAdded|OnPlayerItemAdded]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectReference akOwner, ObjectReference akSourceContainer, int aeAcquireType
+| documentation = Received when the player gains an item in their inventory
+aeAcquireType is one of the following:
+0: None
+1: Steal
+2: Buy
+3: Pickpocket
+4: Pickup
+5: Container
+6: Dead body
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerLoadGame
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerLoadGame|OnPlayerLoadGame]]
+| kind = Event
+| documentation = Received immediately after the player has loaded a save game. A good time to check for additional content.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerLoiteringBegin
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerLoiteringBegin|OnPlayerLoiteringBegin]]
+| kind = Event
+| documentation = Received when player starts loitering
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerLoiteringEnd
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerLoiteringEnd|OnPlayerLoiteringEnd]]
+| kind = Event
+| documentation = Received when player stops loitering
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerModArmorWeapon
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerModArmorWeapon|OnPlayerModArmorWeapon]]
+| kind = Event
+| parameters = Form akBaseObject, ObjectMod akModBaseObject
+| documentation = Received when player mods a weapon or armor in the menu.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerModRobot
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerModRobot|OnPlayerModRobot]]
+| kind = Event
+| parameters = Actor akRobot, ObjectMod akModBaseObject
+| documentation = Received when the player mods a robot
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerMurderActor
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerMurderActor|OnPlayerMurderActor]]
+| kind = Event
+| parameters = ObjectReference akVictim, Location akLocation, bool aeCrime
+| documentation = Event that is triggered when the player murders someone.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerPayFine
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerPayFine|OnPlayerPayFine]]
+| kind = Event
+| parameters = ObjectReference akGuard, Form akFaction, int aeCrimeGold
+| documentation = Event that is triggered when the player pays fine.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerSellShip
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerSellShip|OnPlayerSellShip]]
+| kind = Event
+| parameters = SpaceshipReference akShip
+| documentation = Event that is triggered when the player sells a ship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerSwimming
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerSwimming|OnPlayerSwimming]]
+| kind = Event
+| documentation = Received when player starts swimming
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerTrespass
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerTrespass|OnPlayerTrespass]]
+| kind = Event
+| parameters = ObjectReference akVictim, Location akLocation, bool aeCrime
+| documentation = Event that is triggered when the player trespassing.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerUseWorkBench
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerUseWorkBench|OnPlayerUseWorkBench]]
+| kind = Event
+| parameters = ObjectReference akWorkBench
+| documentation = Received when player uses a workbench
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRaceSwitchComplete
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnRaceSwitchComplete|OnRaceSwitchComplete]]
+| kind = Event
+| documentation = Event received when this actor finishes changing its race
+}}
+
+{{Script_Object_Member_Summary
+| title = OnRecoverFromBleedout
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnRecoverFromBleedout|OnRecoverFromBleedout]]
+| kind = Event
+| documentation = Event received when an actor exits bleedout. (only if this alias points at an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSit
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnSit|OnSit]]
+| kind = Event
+| parameters = ObjectReference akFurniture
+| documentation = Event that is triggered when this actor sits in the furniture
+}}
+
+{{Script_Object_Member_Summary
+| title = OnSpeechChallengeAvailable
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnSpeechChallengeAvailable|OnSpeechChallengeAvailable]]
+| kind = Event
+| parameters = ObjectReference akSpeaker
+| documentation = Received when player gets a speech challenge in dialogue
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerPlanetSurveyComplete
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerPlanetSurveyComplete|OnPlayerPlanetSurveyComplete]]
+| kind = Event
+| parameters = Planet akPlanet
+| documentation = Received when player completely surveyed a planet
+}}
+
+{{Script_Object_Member_Summary
+| title = OnPlayerScannedObject
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnPlayerScannedObject|OnPlayerScannedObject]]
+| kind = Event
+| parameters = ObjectReference akScannedRef
+| documentation = Received by the player when they scan an object
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipDock
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipDock|OnShipDock]]
+| kind = Event
+| parameters = bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
+| documentation = Event received when a ship initiates and completes docking with a parent
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipFarTravel
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipFarTravel|OnShipFarTravel]]
+| kind = Event
+| parameters = Location aDepartureLocation, Location aArrivalLocation, int aState
+| documentation = Event received when a ship begins or ends far travel - State { Departure = 0, Arrival = 1 }
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipGravJump
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipGravJump|OnShipGravJump]]
+| kind = Event
+| parameters = Location aDestination, int aState
+| documentation = Event received when a ship grav jump event occurs - State { Initiated = 0, AnimStarted = 1, Completed = 2, Failed = 3 }
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipLanding
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipLanding|OnShipLanding]]
+| kind = Event
+| parameters = bool abComplete
+| documentation = Event received when a ship initiates or completes landing
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipRampDown
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipRampDown|OnShipRampDown]]
+| kind = Event
+| documentation = Event recieved when a ship's landing ramp has lowereed all the way and connected to the surrounding navmesh
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipScan
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipScan|OnShipScan]]
+| kind = Event
+| parameters = Location aPlanet, ObjectReference[] aMarkersArray
+| documentation = Event that is triggered when the player scans a planet with this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSystemPowerChange
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipSystemPowerChange|OnShipSystemPowerChange]]
+| kind = Event
+| parameters = ActorValue akSystem, bool abAddPower, bool abDamageRelated
+| documentation = Event received when a ship system adds or removes power
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipTakeOff
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipTakeOff|OnShipTakeOff]]
+| kind = Event
+| parameters = bool abComplete
+| documentation = Event received when a ship initiates or completes takeoff
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipUndock
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipUndock|OnShipUndock]]
+| kind = Event
+| parameters = bool abComplete, SpaceshipReference akUndocking, SpaceshipReference akParent
+| documentation = Event received when a ship initiates or completes undocking with a parent
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSystemDamaged
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipSystemDamaged|OnShipSystemDamaged]]
+| kind = Event
+| parameters = ActorValue akSystem, int aBlocksLost, bool aElectromagneticDamage, bool aFullyDamaged
+| documentation = Event that is triggered when one of this spaceship's systems loses a power block due to damage
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSystemRepaired
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipSystemRepaired|OnShipSystemRepaired]]
+| kind = Event
+| parameters = ActorValue akSystem, int aBlocksGained, bool aElectromagneticDamage
+| documentation = Event that is triggered when one of this spaceship's systems gains a power block due to being repaired
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipRefueled
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipRefueled|OnShipRefueled]]
+| kind = Event
+| parameters = int aFuelAdded
+| documentation = Event that is triggered when fuel has been added to this spaceship
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipBought
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipBought|OnShipBought]]
+| kind = Event
+| documentation = Event this is triggered when a ship is bought
+}}
+
+{{Script_Object_Member_Summary
+| title = OnShipSold
+| script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+| name = [[SFM:Script-ReferenceAlias/OnShipSold|OnShipSold]]
+| kind = Event
+| documentation = Event this is triggered when a ship is sold
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

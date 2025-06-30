@@ -1,0 +1,54 @@
+{{Script_Object_Summary
+| title = DefaultTopicAnimArchetypeSwitch
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| extends = [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultTopicAnimArchetypeSwitch.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicAnimArchetypeSwitch Extends TopicInfo Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultTopicAnimArchetypeSwitch.psc</code> source file documentation comments for this script.
+
+<source>
+Default script for setting a different quest's stage from a topic info.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = KeywordArchetypes
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/KeywordArchetypes|KeywordArchetypes]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

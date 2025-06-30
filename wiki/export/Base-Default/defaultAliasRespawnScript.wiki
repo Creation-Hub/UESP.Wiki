@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = defaultAliasRespawnScript
+| name = [[SFM:Script-defaultAliasRespawnScript|defaultAliasRespawnScript]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>defaultAliasRespawnScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName defaultAliasRespawnScript Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The <code>defaultAliasRespawnScript.psc</code> source file documentation comments for this script.
+
+<source>
+Script for respawning this alias.  For use along with a quest that has the DefaultQuestRespawnScript attached to it.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-defaultAliasRespawnScript|defaultAliasRespawnScript]]
+| name = [[SFM:Script-defaultAliasRespawnScript/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = RespawnIfDead
+| script = [[SFM:Script-defaultAliasRespawnScript|defaultAliasRespawnScript]]
+| name = [[SFM:Script-defaultAliasRespawnScript/RespawnIfDead|RespawnIfDead]]
+| kind = Function
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Normal
+| script = [[SFM:Script-defaultAliasRespawnScript|defaultAliasRespawnScript]]
+| name = [[SFM:Script-defaultAliasRespawnScript/Normal|Normal]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Respawning
+| script = [[SFM:Script-defaultAliasRespawnScript|defaultAliasRespawnScript]]
+| name = [[SFM:Script-defaultAliasRespawnScript/Respawning|Respawning]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

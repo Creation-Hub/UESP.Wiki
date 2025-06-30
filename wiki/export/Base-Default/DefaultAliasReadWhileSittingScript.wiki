@@ -1,0 +1,58 @@
+{{Script_Object_Summary
+| title = DefaultAliasReadWhileSittingScript
+| name = [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasReadWhileSittingScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasReadWhileSittingScript Extends ReferenceAlias Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasReadWhileSittingScript.psc</code> source file documentation comments for this script.
+
+<source>
+script to get an NPC to read in a chair
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ReadingPackages
+| script = [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
+| name = [[SFM:Script-DefaultAliasReadWhileSittingScript/ReadingPackages|ReadingPackages]]
+| kind = Property
+| flags = Auto Const
+| returns = Package[]
+| documentation = list of packages where you want the NPC reading while sitting
+}}
+
+{{Script_Object_Member_Summary
+| title = IdleBookReadStart
+| script = [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
+| name = [[SFM:Script-DefaultAliasReadWhileSittingScript/IdleBookReadStart|IdleBookReadStart]]
+| kind = Property
+| flags = Const Auto
+| returns = Idle
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnSit
+| script = [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
+| name = [[SFM:Script-DefaultAliasReadWhileSittingScript/OnSit|OnSit]]
+| kind = Event
+| parameters = ObjectReference akFurniture
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

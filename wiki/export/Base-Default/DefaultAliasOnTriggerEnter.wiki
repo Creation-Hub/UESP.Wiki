@@ -1,0 +1,67 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnTriggerEnter
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnTriggerEnter.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnTriggerEnter Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnTriggerEnter.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias entered.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference triggering THIS Alias.
+<LocationToCheck> is the current location of THIS Alias.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+CHILDREN SCRIPTS RE-IMPLEMENTING THIS SHOULD CALL THE PARENT VERSION
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

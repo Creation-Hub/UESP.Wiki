@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = EffectShader
+| name = [[SFM:Script-EffectShader|EffectShader]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>EffectShader.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName EffectShader Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>EffectShader.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Play
+| script = [[SFM:Script-EffectShader|EffectShader]]
+| name = [[SFM:Script-EffectShader/Play|Play]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akObject, float afDuration = -1.0
+| documentation = Starts playing this effect shader on the specified object for the specified length of time in seconds. Negative values indiciate "infinite"
+}}
+
+{{Script_Object_Member_Summary
+| title = Stop
+| script = [[SFM:Script-EffectShader|EffectShader]]
+| name = [[SFM:Script-EffectShader/Stop|Stop]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akObject
+| documentation = Stops playing this effect shader on the specified object
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

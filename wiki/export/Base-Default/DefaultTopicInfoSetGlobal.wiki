@@ -1,0 +1,61 @@
+{{Script_Object_Summary
+| title = DefaultTopicInfoSetGlobal
+| name = [[SFM:Script-DefaultTopicInfoSetGlobal|DefaultTopicInfoSetGlobal]]
+| extends = [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultTopicInfoSetGlobal.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultTopicInfoSetGlobal Extends TopicInfo Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultTopicInfoSetGlobal.psc</code> source file documentation comments for this script.
+
+<source>
+Sets a global to a specified value (default 1)
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Globals
+| script = [[SFM:Script-DefaultTopicInfoSetGlobal|DefaultTopicInfoSetGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoSetGlobal/Globals|Globals]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Values
+| script = [[SFM:Script-DefaultTopicInfoSetGlobal|DefaultTopicInfoSetGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoSetGlobal/Values|Values]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicInfoSetGlobal|DefaultTopicInfoSetGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoSetGlobal/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetGlobal|DefaultTopicInfoSetGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoSetGlobal/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

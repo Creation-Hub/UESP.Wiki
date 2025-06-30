@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = DLC03:SFTA00_FollowerToggleQuestScript
+| name = [[SFM:Script-DLC03:SFTA00_FollowerToggleQuestScript|DLC03:SFTA00_FollowerToggleQuestScript]]
+| extends = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]] → [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DLC03\SFTA00_FollowerToggleQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DLC03:SFTA00_FollowerToggleQuestScript Extends DefaultFollowerToggleQuestScript Default
+</source>
+
+
+== Documentation ==
+The <code>DLC03\SFTA00_FollowerToggleQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+Attach to quest where you have a follower you want to control follower state on using conditions various triggering events.
+
+You can also call this function to trigger a check and toggle accordingly:
+CheckConditions()
+</source>
+
+
+== Member ==
+No members were defined in the <code>DLC03\SFTA00_FollowerToggleQuestScript.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

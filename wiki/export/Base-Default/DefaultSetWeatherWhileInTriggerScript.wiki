@@ -1,0 +1,57 @@
+{{Script_Object_Summary
+| title = DefaultSetWeatherWhileInTriggerScript
+| name = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultSetWeatherWhileInTriggerScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultSetWeatherWhileInTriggerScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultSetWeatherWhileInTriggerScript.psc</code> source file documentation comments for this script.
+
+<source>
+Set the weather that should display while the player is in this trigger.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = WeatherToSetActive
+| script = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
+| name = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript/WeatherToSetActive|WeatherToSetActive]]
+| kind = Property
+| flags = Auto Mandatory Const
+| returns = Weather
+| documentation = Defaults to CommonwealthClear
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
+| name = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerLeave
+| script = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
+| name = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript/OnTriggerLeave|OnTriggerLeave]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

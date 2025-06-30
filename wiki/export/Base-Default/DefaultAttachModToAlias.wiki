@@ -1,0 +1,76 @@
+{{Script_Object_Summary
+| title = DefaultAttachModToAlias
+| name = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAttachModToAlias.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAttachModToAlias Extends Quest Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAttachModToAlias.psc</code> source file documentation comments for this script.
+
+<source>
+Attaches mods to the object of a Reference Alias that will be used for quest reward items.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = RewardMods
+| script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+| name = [[SFM:Script-DefaultAttachModToAlias/RewardMods|RewardMods]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = ObjectMod[]
+| documentation = Mods to attach to the reward item
+}}
+
+{{Script_Object_Member_Summary
+| title = RewardAlias
+| script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+| name = [[SFM:Script-DefaultAttachModToAlias/RewardAlias|RewardAlias]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = ReferenceAlias
+| documentation = Reference Alias for the quest reward item
+}}
+
+{{Script_Object_Member_Summary
+| title = RewardContainer
+| script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+| name = [[SFM:Script-DefaultAttachModToAlias/RewardContainer|RewardContainer]]
+| kind = Property
+| flags = Const Auto
+| returns = ReferenceAlias
+| documentation = If the reward is in a container's inventory, what is that container
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+| name = [[SFM:Script-DefaultAttachModToAlias/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AttachMods
+| script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+| name = [[SFM:Script-DefaultAttachModToAlias/AttachMods|AttachMods]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

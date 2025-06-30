@@ -1,0 +1,175 @@
+{{Script_Object_Summary
+| title = Cell
+| name = [[SFM:Script-Cell|Cell]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Cell.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Cell Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Cell.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = EnableFastTravel
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/EnableFastTravel|EnableFastTravel]]
+| kind = Function
+| flags = Native
+| parameters = bool abEnable = true
+| documentation = Enables/disables fast travel in this cell
+}}
+
+{{Script_Object_Member_Summary
+| title = GetActorOwner
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/GetActorOwner|GetActorOwner]]
+| kind = Function
+| flags = Native
+| returns = ActorBase
+| documentation = Gets the actor that owns this cell (or none if not owned by an actor)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionOwner
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/GetFactionOwner|GetFactionOwner]]
+| kind = Function
+| flags = Native
+| returns = Faction
+| documentation = Gets the faction that owns this cell (or none if not owned by a faction)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetParentRef
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/GetParentRef|GetParentRef]]
+| kind = Function
+| flags = Native
+| returns = ObjectReference
+| documentation = Gets the 'parent' reference for this cell, if any (i.e. the ship if this is a ship interior/exterior cell)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsAttached
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/IsAttached|IsAttached]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this cell "attached"? (In the loaded area)
+}}
+
+{{Script_Object_Member_Summary
+| title = IsInterior
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/IsInterior|IsInterior]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this cell an interior cell?
+}}
+
+{{Script_Object_Member_Summary
+| title = IsLoaded
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/IsLoaded|IsLoaded]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this cell currently loaded?
+}}
+
+{{Script_Object_Member_Summary
+| title = Reset
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/Reset|Reset]]
+| kind = Function
+| flags = Native
+| documentation = Flags the cell for reset on next load
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActorOwner
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetActorOwner|SetActorOwner]]
+| kind = Function
+| flags = Native
+| parameters = ActorBase akActor
+| documentation = Sets this cell's owner as the specified actor
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFactionOwner
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetFactionOwner|SetFactionOwner]]
+| kind = Function
+| flags = Native
+| parameters = Faction akFaction
+| documentation = Sets this cell's owner as the specified faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFogPlanes
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetFogPlanes|SetFogPlanes]]
+| kind = Function
+| flags = Native
+| parameters = float afNear, float afFar
+| documentation = Adjusts this cell's fog near and far planes (interior, non-sky-lit cells only)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetFogPower
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetFogPower|SetFogPower]]
+| kind = Function
+| flags = Native
+| parameters = float afPower
+| documentation = Sets the fog power for this cell (interior, non-sky-lit cells only)
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGravityScale
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetGravityScale|SetGravityScale]]
+| kind = Function
+| flags = Native
+| parameters = float aScale
+| documentation = Sets the gravity scale on this cell, works on interiors only
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOffLimits
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetOffLimits|SetOffLimits]]
+| kind = Function
+| flags = Native
+| parameters = bool abOffLimits = true
+| documentation = Sets the OffLimits flag on this cell
+}}
+
+{{Script_Object_Member_Summary
+| title = SetPublic
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetPublic|SetPublic]]
+| kind = Function
+| flags = Native
+| parameters = bool abPublic = true
+| documentation = Sets this cell as public or private
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

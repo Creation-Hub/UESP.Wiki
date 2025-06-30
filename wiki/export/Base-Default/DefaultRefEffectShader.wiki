@@ -1,0 +1,56 @@
+{{Script_Object_Summary
+| title = DefaultRefEffectShader
+| name = [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefEffectShader.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefEffectShader Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefEffectShader.psc</code> source file documentation comments for this script.
+
+<source>
+Default script used for applying an effect shader on the reference when it loads loads into a cell, or when the cell loads around it.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = FXS
+| script = [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
+| name = [[SFM:Script-DefaultRefEffectShader/FXS|FXS]]
+| kind = Property
+| flags = Auto Const
+| returns = EffectShader
+}}
+
+{{Script_Object_Member_Summary
+| title = ApplyOnLoad
+| script = [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
+| name = [[SFM:Script-DefaultRefEffectShader/ApplyOnLoad|ApplyOnLoad]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
+| name = [[SFM:Script-DefaultRefEffectShader/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

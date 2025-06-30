@@ -1,0 +1,72 @@
+{{Script_Object_Summary
+| title = DefaultEnableAliasesQuestScript
+| name = [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultEnableAliasesQuestScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultEnableAliasesQuestScript Extends Quest Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultEnableAliasesQuestScript.psc</code> source file documentation comments for this script.
+
+<source>
+enabled aliases on start or quest stages
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = AliasEnableDatum
+| script = [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+| name = [[SFM:Script-DefaultEnableAliasesQuestScript/AliasEnableDatum|AliasEnableDatum]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AliasEnableData
+| script = [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+| name = [[SFM:Script-DefaultEnableAliasesQuestScript/AliasEnableData|AliasEnableData]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = AliasEnableDatum[]
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestStarted
+| script = [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+| name = [[SFM:Script-DefaultEnableAliasesQuestScript/OnQuestStarted|OnQuestStarted]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+| name = [[SFM:Script-DefaultEnableAliasesQuestScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = EnableAliasByStage
+| script = [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+| name = [[SFM:Script-DefaultEnableAliasesQuestScript/EnableAliasByStage|EnableAliasByStage]]
+| kind = Function
+| parameters = int EnableStage
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

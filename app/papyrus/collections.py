@@ -5,6 +5,9 @@ from typing import Optional
 from app.papyrus.code import Script
 
 
+# Specialized
+#---------------------------------------------
+
 class ScriptDictionary:
     """
     A keyed collection for Script objects.
@@ -58,10 +61,10 @@ class ScriptDictionary:
         """Return all script objects in this collection."""
         return list(self._scripts.values())
 
-    def names(self) -> List[str]:
-        """Return all script names within this collection."""
-        return [str(script.header.name) for script in self._scripts.values()]
-
     def clear(self) -> None:
         """Remove all scripts from this collection."""
         self._scripts.clear()
+
+    def names(self) -> List[str]:
+        """Return all script names within this collection."""
+        return [str(script.header.name) for script in self._scripts.values()]

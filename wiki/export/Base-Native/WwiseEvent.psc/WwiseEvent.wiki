@@ -1,0 +1,285 @@
+{{Script_Object_Summary
+| title = WwiseEvent
+| name = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>WwiseEvent.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName WwiseEvent Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>WwiseEvent.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = WwiseSwitchParam
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/WwiseSwitchParam|WwiseSwitchParam]]
+| kind = Struct
+| documentation = A single Wwise Switch parameter
+}}
+
+{{Script_Object_Member_Summary
+| title = WwiseRTPCParam
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/WwiseRTPCParam|WwiseRTPCParam]]
+| kind = Struct
+| documentation = A single Wwise RTPC parameter
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = MakeNewWwiseSwitchParam
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/MakeNewWwiseSwitchParam|MakeNewWwiseSwitchParam]]
+| kind = Function
+| flags = Global
+| returns = WwiseSwitchParam
+| parameters = string aGroupName, string aStateName
+| documentation = Helper function to construct a WwiseSwitchParam
+}}
+
+{{Script_Object_Member_Summary
+| title = MakeNewWwiseRTPCParam
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/MakeNewWwiseRTPCParam|MakeNewWwiseRTPCParam]]
+| kind = Function
+| flags = Global
+| returns = WwiseRTPCParam
+| parameters = string aName, float aValue
+| documentation = Helper function to construct a WwiseRTPCParam
+}}
+
+{{Script_Object_Member_Summary
+| title = Play
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/Play|Play]]
+| kind = Function
+| returns = int
+| parameters = ObjectReference akSource, WwiseSwitchParam[] aSwitchParams = none, WwiseRTPCParam[] aRTPCParams = none
+| documentation = Play this sound base object from the specified source
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayUI
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayUI|PlayUI]]
+| kind = Function
+| returns = int
+| parameters = WwiseSwitchParam[] aSwitchParams = none, WwiseRTPCParam[] aRTPCParams = none
+| documentation = Play this sound base object as a UI sound
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayAndWait
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayAndWait|PlayAndWait]]
+| kind = Function
+| returns = bool
+| parameters = ObjectReference akSource, WwiseSwitchParam[] aSwitchParams = none, WwiseRTPCParam[] aRTPCParams = none
+| documentation = Play this sound base object from the specified source, and wait for it to finish
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayUIAndWait
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayUIAndWait|PlayUIAndWait]]
+| kind = Function
+| returns = bool
+| parameters = WwiseSwitchParam[] aSwitchParams = none, WwiseRTPCParam[] aRTPCParams = none
+| documentation = Play this sound base object as a UI sound, and wait for it to finish
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayWithRTPC
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayWithRTPC|PlayWithRTPC]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = ObjectReference akSource, string asRTPCName, float afRTPCValue
+| documentation = Play this sound base object from the specified source and set an RTPC on the instance before playing
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayUIWithRTPC
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayUIWithRTPC|PlayUIWithRTPC]]
+| kind = Function
+| flags = Native
+| returns = int
+| parameters = string asRTPCName, float afRTPCValue
+| documentation = Play this sound base object as UI and set an RTPC on the instance before playing
+}}
+
+{{Script_Object_Member_Summary
+| title = StopInstance
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/StopInstance|StopInstance]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiPlaybackInstance
+| documentation = Stops a given playback instance of a sound
+}}
+
+{{Script_Object_Member_Summary
+| title = UpdateInstanceRTPC
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/UpdateInstanceRTPC|UpdateInstanceRTPC]]
+| kind = Function
+| flags = Native Global
+| parameters = int aiPlaybackInstance, string asRTPCName, float afRTPCValue
+| documentation = Update a single RTPC value on a given playback instance of a sound
+}}
+
+{{Script_Object_Member_Summary
+| title = UpdateInstanceRTPCs
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/UpdateInstanceRTPCs|UpdateInstanceRTPCs]]
+| kind = Function
+| flags = Global
+| parameters = int aiPlaybackInstance, WwiseRTPCParam[] aRTPCParams
+| documentation = Update a set of RTPC values on a given playback instance of a sound
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGlobalRTPC
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/SetGlobalRTPC|SetGlobalRTPC]]
+| kind = Function
+| flags = Native Global
+| parameters = string asRTPCName, float afRTPCValue
+| documentation = Sets the global value of a Wwise real-time parameter control
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGlobalState
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/SetGlobalState|SetGlobalState]]
+| kind = Function
+| flags = Native Global
+| parameters = string asStateGroup, string asStateName
+| documentation = Sets a global Wwise State Group to the given named state
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayMenuSound
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayMenuSound|PlayMenuSound]]
+| kind = Function
+| flags = Native Global
+| parameters = string asSoundID
+| documentation = Called by the VM to play a UI sound by the ID of sound
+}}
+
+{{Script_Object_Member_Summary
+| title = ExtractSwitchGroups
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/ExtractSwitchGroups|ExtractSwitchGroups]]
+| kind = Function
+| flags = Global Private
+| returns = string[]
+| parameters = WwiseSwitchParam[] aSwitchParams
+| documentation = For internal use only. Extracts an array of Switch Group names from an array of WwiseSwitchParam.
+}}
+
+{{Script_Object_Member_Summary
+| title = ExtractSwitchStates
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/ExtractSwitchStates|ExtractSwitchStates]]
+| kind = Function
+| flags = Global Private
+| returns = string[]
+| parameters = WwiseSwitchParam[] aSwitchParams
+| documentation = For internal use only. Extracts an array of Switch State names from an array of WwiseSwitchParam.
+}}
+
+{{Script_Object_Member_Summary
+| title = ExtractRTPCNames
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/ExtractRTPCNames|ExtractRTPCNames]]
+| kind = Function
+| flags = Global Private
+| returns = string[]
+| parameters = WwiseRTPCParam[] aRTPCParams
+| documentation = For internal use only. Extracts an array of RTPC names from an array of WwiseRTPCParam.
+}}
+
+{{Script_Object_Member_Summary
+| title = ExtractRTPCValues
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/ExtractRTPCValues|ExtractRTPCValues]]
+| kind = Function
+| flags = Global Private
+| returns = float[]
+| parameters = WwiseRTPCParam[] aRTPCParams
+| documentation = For internal use only. Extracts an array of RTPC values from an array of WwiseRTPCParam.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayImpl
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayImpl|PlayImpl]]
+| kind = Function
+| flags = Native Private
+| returns = int
+| parameters = ObjectReference akSource, string[] aSwitchGroups, string[] aSwitchStates, string[] aRTPCNames, float[] aRTPCValues
+| documentation = For internal use only. Users should call the Play function defined above. Play this Wwise Event from the given ObjectReference with an optional set of control parameters.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayUIImpl
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayUIImpl|PlayUIImpl]]
+| kind = Function
+| flags = Native Private
+| returns = int
+| parameters = string[] aSwitchGroups, string[] aSwitchStates, string[] aRTPCNames, float[] aRTPCValues
+| documentation = For internal use only. Users should call the PlayUI function defined above. Plays this Wwise Event as a UI sound with an optional set of control parameters.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayAndWaitImpl
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayAndWaitImpl|PlayAndWaitImpl]]
+| kind = Function
+| flags = Native Private
+| returns = bool
+| parameters = ObjectReference akSource, string[] aSwitchGroups, string[] aSwitchStates, string[] aRTPCNames, float[] aRTPCValues
+| documentation = For internal use only. Users should call the PlayAndWait function defined above. Play this Wwise Event from the given ObjectReference with an optional set of control parameters, and wait for it to finish before resuming execution.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayUIAndWaitImpl
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/PlayUIAndWaitImpl|PlayUIAndWaitImpl]]
+| kind = Function
+| flags = Native Private
+| returns = bool
+| parameters = string[] aSwitchGroups, string[] aSwitchStates, string[] aRTPCNames, float[] aRTPCValues
+| documentation = For internal use only. Users should call the PlayUIAndWait function defined above. Plays this Wwise Event as a UI sound with an optional set of control parameters, and wait for it to finish before resuming execution.
+}}
+
+{{Script_Object_Member_Summary
+| title = UpdateInstanceRTPCsImpl
+| script = [[SFM:Script-WwiseEvent|WwiseEvent]]
+| name = [[SFM:Script-WwiseEvent/UpdateInstanceRTPCsImpl|UpdateInstanceRTPCsImpl]]
+| kind = Function
+| flags = Native Global Private
+| parameters = int aiPlaybackInstance, string[] aRTPCNames, float[] aRTPCValues
+| documentation = For internal use only. Users should call the UpdateInstanceRTPCs function defined above. Updates a set of RTPC values on a given playback instance.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

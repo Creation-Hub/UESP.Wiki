@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasAddPerkOnLoad
+| name = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasAddPerkOnLoad.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasAddPerkOnLoad Extends RefCollectionAlias Const Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultCollectionAliasAddPerkOnLoad.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = PerkToAdd
+| script = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad/PerkToAdd|PerkToAdd]]
+| kind = Property
+| flags = Auto Const
+| returns = Perk
+| documentation = The perk that should be added to actors in the collection upon load.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad/OnLoad|OnLoad]]
+| kind = Event
+| parameters = ObjectReference akSenderRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

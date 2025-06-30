@@ -1,0 +1,97 @@
+{{Script_Object_Summary
+| title = DefaultCollectionOnCombatStateChanged
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionOnCombatStateChanged.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionOnCombatStateChanged Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionOnCombatStateChanged.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members' combat state changes.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference THIS RefCollection's members are getting into combat with
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/OnLoad|OnLoad]]
+| kind = Event
+| parameters = ObjectReference akSenderRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/OnUnload|OnUnload]]
+| kind = Event
+| parameters = ObjectReference akSenderRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akTarget, int aeCombatState
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/Done|Done]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = CombatStateChangedOrHit
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/CombatStateChangedOrHit|CombatStateChangedOrHit]]
+| kind = Function
+| parameters = ObjectReference akSenderRef, ObjectReference TargetOrAggressor
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

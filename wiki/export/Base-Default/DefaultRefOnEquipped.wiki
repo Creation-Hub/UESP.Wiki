@@ -1,0 +1,40 @@
+{{Script_Object_Summary
+| title = DefaultRefOnEquipped
+| name = [[SFM:Script-DefaultRefOnEquipped|DefaultRefOnEquipped]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnEquipped.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnEquipped Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnEquipped.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference's is equipped.
+<RefToCheck> is the equipping actor.
+<LocationToCheck> is the current location of the equipping actor.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnEquipped
+| script = [[SFM:Script-DefaultRefOnEquipped|DefaultRefOnEquipped]]
+| name = [[SFM:Script-DefaultRefOnEquipped/OnEquipped|OnEquipped]]
+| kind = Event
+| parameters = Actor akActor
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

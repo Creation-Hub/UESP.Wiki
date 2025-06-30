@@ -1,0 +1,69 @@
+{{Script_Object_Summary
+| title = DefaultQuestShutdownScript
+| name = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultQuestShutdownScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultQuestShutdownScript Extends Quest Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultQuestShutdownScript.psc</code> source file documentation comments for this script.
+
+<source>
+shuts the quest down when a timer expires
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = StartTimerStage
+| script = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
+| name = [[SFM:Script-DefaultQuestShutdownScript/StartTimerStage|StartTimerStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 10
+| documentation = quest stage which will start the shutdown timer
+}}
+
+{{Script_Object_Member_Summary
+| title = ShutdownTimerDuration
+| script = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
+| name = [[SFM:Script-DefaultQuestShutdownScript/ShutdownTimerDuration|ShutdownTimerDuration]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 1.0
+| documentation = time (in game hours) before shutdown
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
+| name = [[SFM:Script-DefaultQuestShutdownScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTimerGameTime
+| script = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
+| name = [[SFM:Script-DefaultQuestShutdownScript/OnTimerGameTime|OnTimerGameTime]]
+| kind = Event
+| parameters = int aiTimerID
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

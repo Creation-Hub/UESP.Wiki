@@ -1,0 +1,144 @@
+{{Script_Object_Summary
+| title = Alias
+| name = [[SFM:Script-Alias|Alias]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Alias.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Alias Extends ScriptObject Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Alias.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetOwningQuest
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/GetOwningQuest|GetOwningQuest]]
+| kind = Function
+| flags = Native
+| returns = Quest
+| documentation = Returns the quest that owns this alias
+}}
+
+{{Script_Object_Member_Summary
+| title = RefillAlias
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/RefillAlias|RefillAlias]]
+| kind = Function
+| flags = Native
+| documentation = Refills this alias. Function won't return until alias has been re-filled.
+}}
+
+{{Script_Object_Member_Summary
+| title = RefillDependentAliases
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/RefillDependentAliases|RefillDependentAliases]]
+| kind = Function
+| flags = Native
+| documentation = Refills the dependent aliases of this alias
+}}
+
+{{Script_Object_Member_Summary
+| title = StartObjectProfiling
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/StartObjectProfiling|StartObjectProfiling]]
+| kind = Function
+| flags = Native DebugOnly
+| documentation = Turns on profiling for this specific object and all scripts attached to it - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = StopObjectProfiling
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/StopObjectProfiling|StopObjectProfiling]]
+| kind = Function
+| flags = Native DebugOnly
+| documentation = Turns off profiling for this specific object and all scripts attached to it - setting doesn't persist across saves
+Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
+}}
+
+{{Script_Object_Member_Summary
+| title = IsFilled
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/IsFilled|IsFilled]]
+| kind = Function
+| returns = bool
+| documentation = jduvall -- convenience function
+checks to see if there is anything in this alias
+}}
+
+{{Script_Object_Member_Summary
+| title = IsSameType
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/IsSameType|IsSameType]]
+| kind = Function
+| returns = bool
+| parameters = Alias AliasToCheck
+| documentation = jduvall - convenience function
+checks to see if the passed in alias is the same type (ReferenceAlias, RefCollectionAlias, or LocationAlias)
+}}
+
+{{Script_Object_Member_Summary
+| title = CopyIntoAlias
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/CopyIntoAlias|CopyIntoAlias]]
+| kind = Function
+| returns = bool
+| parameters = Alias TargetAlias, bool SkipIfEmpty = true, bool CopyOver = true
+| documentation = jduvall - convenience function
+Copies contents of this alias over the contents of the TargetAlias, if it's the same type (both are ReferenceAlias, both are RefCollectionAliases, both are LocationAliases)
+skipIfEmpty: if true (default), it will NOT copy if this alias is empty.
+CopyOver: if true (default), it will copy over contents in TargetAlias. If false, it will only copy if TargetAlias is empty.
+returns true if it copied; returns false if it did not copy
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/OnAliasInit|OnAliasInit]]
+| kind = Event
+| documentation = Event received when this alias is initialized and filled - before quest startup stage is run
+(other aliases on the same quest will also be filled)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasReset
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/OnAliasReset|OnAliasReset]]
+| kind = Event
+| documentation = Event received when the quest owning this alias is reset
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasShutdown
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/OnAliasShutdown|OnAliasShutdown]]
+| kind = Event
+| documentation = Event received when the alias has been shut down (because the quest has been shut down)
+Note that the alias will be empty by the time this event is received
+}}
+
+{{Script_Object_Member_Summary
+| title = OnAliasStarted
+| script = [[SFM:Script-Alias|Alias]]
+| name = [[SFM:Script-Alias/OnAliasStarted|OnAliasStarted]]
+| kind = Event
+| documentation = Event received when this alias has been started - after quest startup is run
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

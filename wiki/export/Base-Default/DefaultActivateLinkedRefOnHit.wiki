@@ -1,0 +1,67 @@
+{{Script_Object_Summary
+| title = DefaultActivateLinkedRefOnHit
+| name = [[SFM:Script-DefaultActivateLinkedRefOnHit|DefaultActivateLinkedRefOnHit]]
+| extends = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]] → [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultActivateLinkedRefOnHit.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultActivateLinkedRefOnHit Extends DefaultRefOnHit Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultActivateLinkedRefOnHit.psc</code> source file documentation comments for this script.
+
+<source>
+Activates the specified linked ref when THIS object is hit.
+<RefToCheck> is the reference hitting THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultActivateLinkedRefOnHit|DefaultActivateLinkedRefOnHit]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnHit/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultActivateLinkedRefOnHit|DefaultActivateLinkedRefOnHit]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnHit/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetRefsToDoSpecificThingsWith
+| script = [[SFM:Script-DefaultActivateLinkedRefOnHit|DefaultActivateLinkedRefOnHit]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnHit/GetRefsToDoSpecificThingsWith|GetRefsToDoSpecificThingsWith]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = Reimplementing Parent's empty function
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultActivateLinkedRefOnHit|DefaultActivateLinkedRefOnHit]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnHit/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

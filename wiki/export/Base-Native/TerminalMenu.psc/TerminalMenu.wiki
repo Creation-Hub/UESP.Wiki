@@ -1,0 +1,95 @@
+{{Script_Object_Summary
+| title = TerminalMenu
+| name = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>TerminalMenu.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName TerminalMenu Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>TerminalMenu.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTerminalMenuItemRun
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/OnTerminalMenuItemRun|OnTerminalMenuItemRun]]
+| kind = Event
+| parameters = int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
+| documentation = Event called when a terminal menu item is run, with the specified target and terminal owner (in parallel with the fragment)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTerminalMenuEnter
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/OnTerminalMenuEnter|OnTerminalMenuEnter]]
+| kind = Event
+| parameters = TerminalMenu akTerminalBase, ObjectReference akTerminalRef
+| documentation = Event called when this terminal menu is entered, with the specified target
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddDynamicMenuItem
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/AddDynamicMenuItem|AddDynamicMenuItem]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aTerminalRef, int aiTemplateIndex, int aiItemID, Form[] akTagReplacementForms
+| documentation = Adds a dynamic menu item to the TerminalMenu of the specified reference
+}}
+
+{{Script_Object_Member_Summary
+| title = AddDynamicBodyTextItem
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/AddDynamicBodyTextItem|AddDynamicBodyTextItem]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aTerminalRef, int aiTemplateIndex, int aiItemID, Form[] akTagReplacementForms
+| documentation = Adds a dynamic body text item to the TerminalMenu of the specified reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearDynamicMenuItems
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/ClearDynamicMenuItems|ClearDynamicMenuItems]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aTerminalRef
+| documentation = Clears all dynamic menu items from the specified reference
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearDynamicBodyTextItems
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/ClearDynamicBodyTextItems|ClearDynamicBodyTextItems]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference aTerminalRef
+| documentation = Clears all dynamic body text items from the specified reference
+}}
+
+{{Script_Object_Member_Summary
+| title = GetCurrentTerminalObjectRef
+| script = [[SFM:Script-TerminalMenu|TerminalMenu]]
+| name = [[SFM:Script-TerminalMenu/GetCurrentTerminalObjectRef|GetCurrentTerminalObjectRef]]
+| kind = Function
+| flags = Native Global
+| returns = ObjectReference
+| documentation = Get the current terminal reference being used by the player
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

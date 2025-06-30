@@ -1,0 +1,98 @@
+{{Script_Object_Summary
+| title = DefaultQuestDistanceCheckScript
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The <code>DefaultQuestDistanceCheckScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultQuestDistanceCheckScript Extends Quest Const Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultQuestDistanceCheckScript.psc</code> source file documentation comments for this script.
+
+<source>
+Checks alias's distance to player, then sets stage
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = DistanceCheckStage
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/DistanceCheckStage|DistanceCheckStage]]
+| kind = Struct
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = DistanceCheckStages
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/DistanceCheckStages|DistanceCheckStages]]
+| kind = Property
+| flags = Auto Const
+| returns = DistanceCheckStage[]
+| documentation = array of stage/distance check data
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceLessThan
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/OnDistanceLessThan|OnDistanceLessThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceGreaterThan
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/OnDistanceGreaterThan|OnDistanceGreaterThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+}}
+
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+| documentation = watch for prereq stages to be set, to register for the right event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = CheckDistanceStages
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/CheckDistanceStages|CheckDistanceStages]]
+| kind = Function
+| parameters = bool bDistanceLessThan, ObjectReference theRef
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForDistanceCheck
+| script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+| name = [[SFM:Script-DefaultQuestDistanceCheckScript/RegisterForDistanceCheck|RegisterForDistanceCheck]]
+| kind = Function
+| parameters = DistanceCheckStage theDistanceCheck, ObjectReference targetRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

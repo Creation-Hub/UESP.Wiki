@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnLockStateChanged
+| name = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnLockStateChanged.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnLockStateChanged Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnLockStateChanged.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage if THIS Alias's lock state changes.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnLockStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLockStateChanged
+| script = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnLockStateChanged/OnLockStateChanged|OnLockStateChanged]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

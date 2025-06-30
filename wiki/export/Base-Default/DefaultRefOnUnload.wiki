@@ -1,0 +1,37 @@
+{{Script_Object_Summary
+| title = DefaultRefOnUnload
+| name = [[SFM:Script-DefaultRefOnUnload|DefaultRefOnUnload]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnUnload.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnUnload Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnUnload.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference unloads.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultRefOnUnload|DefaultRefOnUnload]]
+| name = [[SFM:Script-DefaultRefOnUnload/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

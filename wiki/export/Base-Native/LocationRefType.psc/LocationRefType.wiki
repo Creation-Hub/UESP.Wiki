@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = LocationRefType
+| name = [[SFM:Script-LocationRefType|LocationRefType]]
+| extends = [[SFM:Script-Keyword|Keyword]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>LocationRefType.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName LocationRefType Extends Keyword Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>LocationRefType.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>LocationRefType.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

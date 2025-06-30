@@ -2,6 +2,7 @@ import os
 import logging
 from app import wiki
 from app.context import AppContext
+from app.papyrus.code import Member
 from app.project import PapyrusProject
 from app.publishing import Sort
 
@@ -47,7 +48,7 @@ def project_start(context:AppContext, project:PapyrusProject) -> bool:
         elif project.publish.sort == Sort.FLAT:
             output_file_path = os.path.join(project.publish.output, f"{str(script.header.name).replace(":", "-")}.wiki")
         elif project.publish.sort == Sort.TREE:
-            output_file_path = os.path.join(project.publish.output, script_file_path, f"{script_file_name}.wiki")
+            output_file_path = os.path.join(project.publish.output, script_file_path+".psc", f"{script_file_name}.wiki")
         else:
             logging.warning(f"[{project.identifier}][{script_file_path}] Skipping this script. The project sorting property could not be determined.")
             continue
@@ -65,7 +66,8 @@ def project_start(context:AppContext, project:PapyrusProject) -> bool:
 
         # Write a wiki page for this script member.
         if project.publish.enable_members:
-            for member in script.members:
+            for key in script.members:
+                member:Member = script.members[key]
                 member_file_name = f"{script_file_name}-{member.name}.wiki"
                 member_file_path = os.path.join(os.path.dirname(output_file_path), member_file_name)
                 wiki.page.write_member(context, project, script, member, member_file_path)
@@ -90,7 +92,7 @@ def start(context:AppContext) -> None:
         project_start(context, context.projects[key])
 
     # Generate the wiki index page.
-    index_path = os.path.join(context.base_directory, "wiki", "Papyrus", "Scripts", "index.wiki")
+    index_path = os.path.join(context.export_directory, "Script_Information.wiki")
     if not os.path.exists(os.path.dirname(index_path)):
         os.makedirs(os.path.dirname(index_path))
         logging.debug(f"Created index directory: {os.path.dirname(index_path)}")

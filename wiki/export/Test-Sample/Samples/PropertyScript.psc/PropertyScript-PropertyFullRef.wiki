@@ -1,0 +1,19 @@
+{{Script_Member_Summary
+| title = PropertyFullRef
+| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+| name = [[SFM:Script-Samples:PropertyScript/PropertyFullRef|PropertyFullRef]]
+| kind = Property
+| returns = ObjectReference
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+This property member has no field initialized value.
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

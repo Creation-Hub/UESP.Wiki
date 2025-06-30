@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuestIncOnDeath
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Hidden
+}}
+
+
+== Definition ==
+The <code>DefaultCounterQuestIncOnDeath.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuestIncOnDeath Extends ReferenceAlias Default Hidden
+</source>
+
+
+== Documentation ==
+The <code>DefaultCounterQuestIncOnDeath.psc</code> source file documentation comments for this script.
+
+<source>
+Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuest script.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = WaitingForDeath
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/WaitingForDeath|WaitingForDeath]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = AlreadyDied
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/AlreadyDied|AlreadyDied]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/Increment|Increment]]
+| kind = Function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

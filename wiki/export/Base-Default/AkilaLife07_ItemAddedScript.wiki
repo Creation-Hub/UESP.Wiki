@@ -1,0 +1,32 @@
+{{Script_Object_Summary
+| title = AkilaLife07_ItemAddedScript
+| name = [[SFM:Script-AkilaLife07_ItemAddedScript|AkilaLife07_ItemAddedScript]]
+| extends = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]] → [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>AkilaLife07_ItemAddedScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName AkilaLife07_ItemAddedScript Extends DefaultAliasOnItemAddedScript Default
+</source>
+
+
+== Documentation ==
+The <code>AkilaLife07_ItemAddedScript.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when items are added to this Alias.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the PLAYER.
+<LocationToCheck> is the current location of THIS alias.
+</source>
+
+
+== Member ==
+No members were defined in the <code>AkilaLife07_ItemAddedScript.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]

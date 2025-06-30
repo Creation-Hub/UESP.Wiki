@@ -1,0 +1,65 @@
+{{Script_Object_Summary
+| title = DefaultRefOnTriggerLeave
+| name = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnTriggerLeave.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnTriggerLeave Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnTriggerLeave.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS object's trigger is left.
+<RefToCheck> is the reference triggering THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+| name = [[SFM:Script-DefaultRefOnTriggerLeave/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+| name = [[SFM:Script-DefaultRefOnTriggerLeave/OnInit|OnInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerLeave
+| script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+| name = [[SFM:Script-DefaultRefOnTriggerLeave/OnTriggerLeave|OnTriggerLeave]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+| name = [[SFM:Script-DefaultRefOnTriggerLeave/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,40 @@
+{{Script_Object_Summary
+| title = DefaultRefOnOpen
+| name = [[SFM:Script-DefaultRefOnOpen|DefaultRefOnOpen]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnOpen.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnOpen Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnOpen.psc</code> source file documentation comments for this script.
+
+<source>
+Sets quest stage when this reference is opened.
+<RefToCheck> is the reference opening THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnOpen
+| script = [[SFM:Script-DefaultRefOnOpen|DefaultRefOnOpen]]
+| name = [[SFM:Script-DefaultRefOnOpen/OnOpen|OnOpen]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,56 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnItemRemoved
+| name = [[SFM:Script-DefaultCollectionAliasOnItemRemoved|DefaultCollectionAliasOnItemRemoved]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasOnItemRemoved.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnItemRemoved Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasOnItemRemoved.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS RefCollection's members have items removed.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the PLAYER.
+<LocationToCheck> is the current location of each ref in THIS collection.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnItemRemoved|DefaultCollectionAliasOnItemRemoved]]
+| name = [[SFM:Script-DefaultCollectionAliasOnItemRemoved/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionAliasOnItemRemoved|DefaultCollectionAliasOnItemRemoved]]
+| name = [[SFM:Script-DefaultCollectionAliasOnItemRemoved/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemRemoved
+| script = [[SFM:Script-DefaultCollectionAliasOnItemRemoved|DefaultCollectionAliasOnItemRemoved]]
+| name = [[SFM:Script-DefaultCollectionAliasOnItemRemoved/OnItemRemoved|OnItemRemoved]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer, int aiTransferReason
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

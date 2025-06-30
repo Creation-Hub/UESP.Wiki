@@ -1,0 +1,35 @@
+{{Script_Object_Summary
+| title = Topic
+| name = [[SFM:Script-Topic|Topic]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>Topic.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Topic Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Topic.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Add
+| script = [[SFM:Script-Topic|Topic]]
+| name = [[SFM:Script-Topic/Add|Add]]
+| kind = Function
+| flags = Native
+| documentation = Adds this topic to the list the player knows about
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

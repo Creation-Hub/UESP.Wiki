@@ -1,0 +1,138 @@
+{{Script_Object_Summary
+| title = Samples:Script
+| name = [[SFM:Script-Samples:Script|Samples:Script]]
+| extends = [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Conditional, Hidden
+}}
+
+
+== Definition ==
+The <code>Samples\Script.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Samples:Script Extends Samples:NativeScript Conditional Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Samples\Script.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Struct ===
+{{Script_Object_Member_Summary
+| title = ItemData
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/ItemData|ItemData]]
+| kind = Struct
+| documentation = Custom structure definition
+}}
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = Description
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Description|Description]]
+| kind = Property
+| flags = description" Auto
+| returns = string
+| parameters = "Default
+| documentation = Properties with various flags
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerRef
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/PlayerRef|PlayerRef]]
+| kind = Property
+| flags = Auto Mandatory
+| returns = Actor
+| documentation = The player reference - this is a documentation block for the property
+}}
+
+{{Script_Object_Member_Summary
+| title = Counter
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Counter|Counter]]
+| kind = Property
+| flags = Auto Hidden
+| returns = int
+| parameters = 0
+}}
+
+{{Script_Object_Member_Summary
+| title = Items
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Items|Items]]
+| kind = Property
+| flags = Auto
+| returns = ItemData[]
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnInit|OnInit]]
+| kind = Event
+| documentation = Events
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTimer
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnTimer|OnTimer]]
+| kind = Event
+| parameters = int aiTimerID
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = AddItems
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/AddItems|AddItems]]
+| kind = Function
+| returns = int
+| parameters = string itemName, int amount, bool abSilent = false
+| documentation = Functions with different return types and parameters
+}}
+
+{{Script_Object_Member_Summary
+| title = IsPlayerNearby
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/IsPlayerNearby|IsPlayerNearby]]
+| kind = Function
+| flags = Global
+| returns = bool
+| parameters = ObjectReference this
+| documentation = Global function
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Active
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Active|Active]]
+| kind = State
+| documentation = States for state-based behavior
+}}
+
+{{Script_Object_Member_Summary
+| title = Inactive
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/Inactive|Inactive]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

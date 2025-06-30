@@ -1,0 +1,75 @@
+{{Script_Object_Summary
+| title = DefaultActivateLinkOnUnlock
+| name = [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultActivateLinkOnUnlock.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultActivateLinkOnUnlock Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultActivateLinkOnUnlock.psc</code> source file documentation comments for this script.
+
+<source>
+Activates the specified linked ref when THIS object is Unlocked.
+<RefToCheck> is the PLAYER.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+| name = [[SFM:Script-DefaultActivateLinkOnUnlock/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+| name = [[SFM:Script-DefaultActivateLinkOnUnlock/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLockStateChanged
+| script = [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+| name = [[SFM:Script-DefaultActivateLinkOnUnlock/OnLockStateChanged|OnLockStateChanged]]
+| kind = Event
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetRefsToDoSpecificThingsWith
+| script = [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+| name = [[SFM:Script-DefaultActivateLinkOnUnlock/GetRefsToDoSpecificThingsWith|GetRefsToDoSpecificThingsWith]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = Reimplementing Parent's empty function
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+| name = [[SFM:Script-DefaultActivateLinkOnUnlock/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

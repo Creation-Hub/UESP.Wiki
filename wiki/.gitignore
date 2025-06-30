@@ -1,0 +1,29 @@
+# Input
+# Directory contains the imported files
+#---------------------------------------------
+*.txt
+*.bat
+*.flg
+*.zip
+/import/*
+!/import/Base-Native/
+!/import/Base-Shared-Default/
+!/import/Base-Default/
+!/import/Base-Game/
+!/import/SFSE/
+!/import/Test-Sample/
+
+# Input
+# Directory contains the assembly files
+#---------------------------------------------
+/import.asm/*
+
+# Output
+# Directory contains the exported files
+#---------------------------------------------
+/export/*
+!/export/Script_Information.wiki
+!/export/Base-Native/
+!/export/Base-Shared-Default/
+!/export/Base-Default/
+!/export/Test-Sample/

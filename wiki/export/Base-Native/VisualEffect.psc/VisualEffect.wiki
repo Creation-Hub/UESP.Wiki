@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = VisualEffect
+| name = [[SFM:Script-VisualEffect|VisualEffect]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>VisualEffect.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName VisualEffect Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>VisualEffect.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Play
+| script = [[SFM:Script-VisualEffect|VisualEffect]]
+| name = [[SFM:Script-VisualEffect/Play|Play]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akObject, float afTime = -1.0, ObjectReference akFacingObject = none
+| documentation = Plays this visual effect on the specified object, for a certain length of time (negative for infinite) and possibly facing another object
+}}
+
+{{Script_Object_Member_Summary
+| title = Stop
+| script = [[SFM:Script-VisualEffect|VisualEffect]]
+| name = [[SFM:Script-VisualEffect/Stop|Stop]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akObject
+| documentation = Stops this visual effect from playing in the specified object
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

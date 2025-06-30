@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = AffinityEvent
+| name = [[SFM:Script-AffinityEvent|AffinityEvent]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>AffinityEvent.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName AffinityEvent Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>AffinityEvent.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Send
+| script = [[SFM:Script-AffinityEvent|AffinityEvent]]
+| name = [[SFM:Script-AffinityEvent/Send|Send]]
+| kind = Function
+| flags = Native
+| parameters = ObjectReference akTarget = none
+| documentation = Run the affinity event on all actors that qualify
+}}
+
+{{Script_Object_Member_Summary
+| title = Reset
+| script = [[SFM:Script-AffinityEvent|AffinityEvent]]
+| name = [[SFM:Script-AffinityEvent/Reset|Reset]]
+| kind = Function
+| flags = Native
+| documentation = Reset the flags and timers on this affinity event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,438 @@
+= Projects =
+This page lists all Papyrus project information for each import.
+
+
+== Base-Native ==
+* Imports: 0 (Nothing)
+* Scripts: 101
+
+==== Member Statistics ====
+This project overall contains 2150 total members spread over 101 scripts.
+* Function was used 1409 times.
+* Event was used 670 times.
+* Property was used 68 times.
+* Struct was used 3 times.
+
+==== Inheritance Statistics ====
+The most common extended parent scripts:
+* The [[SFM:Script-Form|Form]] script was extended 79 times.
+* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 9 times.
+* The [[SFM:Script-MiscObject|MiscObject]] script was extended 3 times.
+
+
+==== Scripts ====
+There are 101 scripts that belong to this project:
+* [[SFM:Script-Action|Action]]
+* [[SFM:Script-Activator|Activator]]
+* [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]]
+* [[SFM:Script-Actor|Actor]]
+* [[SFM:Script-ActorBase|ActorBase]]
+* [[SFM:Script-ActorValue|ActorValue]]
+* [[SFM:Script-AffinityEvent|AffinityEvent]]
+* [[SFM:Script-Alias|Alias]]
+* [[SFM:Script-Ammo|Ammo]]
+* [[SFM:Script-Armor|Armor]]
+* [[SFM:Script-AssociationType|AssociationType]]
+* [[SFM:Script-Book|Book]]
+* [[SFM:Script-CameraShot|CameraShot]]
+* [[SFM:Script-Cell|Cell]]
+* [[SFM:Script-Challenge|Challenge]]
+* [[SFM:Script-Class|Class]]
+* [[SFM:Script-CombatStyle|CombatStyle]]
+* [[SFM:Script-ConditionForm|ConditionForm]]
+* [[SFM:Script-ConstructibleObject|ConstructibleObject]]
+* [[SFM:Script-Container|Container]]
+* [[SFM:Script-Curve|Curve]]
+* [[SFM:Script-Debug|Debug]]
+* [[SFM:Script-Door|Door]]
+* [[SFM:Script-EffectShader|EffectShader]]
+* [[SFM:Script-Enchantment|Enchantment]]
+* [[SFM:Script-Explosion|Explosion]]
+* [[SFM:Script-Faction|Faction]]
+* [[SFM:Script-Flora|Flora]]
+* [[SFM:Script-Form|Form]]
+* [[SFM:Script-FormList|FormList]]
+* [[SFM:Script-Furniture|Furniture]]
+* [[SFM:Script-Game|Game]]
+* [[SFM:Script-GameplayOption|GameplayOption]]
+* [[SFM:Script-GlobalVariable|GlobalVariable]]
+* [[SFM:Script-Hazard|Hazard]]
+* [[SFM:Script-HeadPart|HeadPart]]
+* [[SFM:Script-Idle|Idle]]
+* [[SFM:Script-IdleMarker|IdleMarker]]
+* [[SFM:Script-ImageSpaceModifier|ImageSpaceModifier]]
+* [[SFM:Script-ImpactDataSet|ImpactDataSet]]
+* [[SFM:Script-Ingredient|Ingredient]]
+* [[SFM:Script-InputEnableLayer|InputEnableLayer]]
+* [[SFM:Script-InstanceNamingRules|InstanceNamingRules]]
+* [[SFM:Script-Key|Key]]
+* [[SFM:Script-Keyword|Keyword]]
+* [[SFM:Script-LegendaryItem|LegendaryItem]]
+* [[SFM:Script-LeveledActor|LeveledActor]]
+* [[SFM:Script-LeveledItem|LeveledItem]]
+* [[SFM:Script-LeveledSpaceshipBase|LeveledSpaceshipBase]]
+* [[SFM:Script-LeveledSpell|LeveledSpell]]
+* [[SFM:Script-Light|Light]]
+* [[SFM:Script-Location|Location]]
+* [[SFM:Script-LocationAlias|LocationAlias]]
+* [[SFM:Script-LocationRefType|LocationRefType]]
+* [[SFM:Script-MagicEffect|MagicEffect]]
+* [[SFM:Script-Math|Math]]
+* [[SFM:Script-Message|Message]]
+* [[SFM:Script-MiscObject|MiscObject]]
+* [[SFM:Script-MovableStatic|MovableStatic]]
+* [[SFM:Script-MusicType|MusicType]]
+* [[SFM:Script-Note|Note]]
+* [[SFM:Script-ObjectMod|ObjectMod]]
+* [[SFM:Script-ObjectReference|ObjectReference]]
+* [[SFM:Script-Outfit|Outfit]]
+* [[SFM:Script-Package|Package]]
+* [[SFM:Script-PackIn|PackIn]]
+* [[SFM:Script-Perk|Perk]]
+* [[SFM:Script-Planet|Planet]]
+* [[SFM:Script-Potion|Potion]]
+* [[SFM:Script-Projectile|Projectile]]
+* [[SFM:Script-Quest|Quest]]
+* [[SFM:Script-Race|Race]]
+* [[SFM:Script-RefCollectionAlias|RefCollectionAlias]]
+* [[SFM:Script-ReferenceAlias|ReferenceAlias]]
+* [[SFM:Script-ResearchProject|ResearchProject]]
+* [[SFM:Script-Resource|Resource]]
+* [[SFM:Script-Scene|Scene]]
+* [[SFM:Script-ScriptObject|ScriptObject]]
+* [[SFM:Script-Scroll|Scroll]]
+* [[SFM:Script-ShaderParticleGeometry|ShaderParticleGeometry]]
+* [[SFM:Script-Shout|Shout]]
+* [[SFM:Script-SoulGem|SoulGem]]
+* [[SFM:Script-SpaceshipBase|SpaceshipBase]]
+* [[SFM:Script-SpaceshipReference|SpaceshipReference]]
+* [[SFM:Script-SpeechChallengeObject|SpeechChallengeObject]]
+* [[SFM:Script-Spell|Spell]]
+* [[SFM:Script-Static|Static]]
+* [[SFM:Script-TalkingActivator|TalkingActivator]]
+* [[SFM:Script-Terminal|Terminal]]
+* [[SFM:Script-TerminalMenu|TerminalMenu]]
+* [[SFM:Script-TextureSet|TextureSet]]
+* [[SFM:Script-Topic|Topic]]
+* [[SFM:Script-TopicInfo|TopicInfo]]
+* [[SFM:Script-Utility|Utility]]
+* [[SFM:Script-VisualEffect|VisualEffect]]
+* [[SFM:Script-VoiceType|VoiceType]]
+* [[SFM:Script-Weapon|Weapon]]
+* [[SFM:Script-Weather|Weather]]
+* [[SFM:Script-WordOfPower|WordOfPower]]
+* [[SFM:Script-WorldSpace|WorldSpace]]
+* [[SFM:Script-WwiseEvent|WwiseEvent]]
+
+
+== Base-Shared-Default ==
+* Imports: 1 (Base-Native)
+* Scripts: 11
+
+==== Member Statistics ====
+This project overall contains 141 total members spread over 11 scripts.
+* Group was used 44 times.
+* Function was used 80 times.
+* Property was used 4 times.
+* Event was used 5 times.
+* State was used 8 times.
+
+==== Inheritance Statistics ====
+The most common extended parent scripts:
+* The [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] script was extended 2 times.
+* The [[SFM:Script-DefaultActorParent|DefaultActorParent]] script was extended 1 times.
+* The [[SFM:Script-Actor|Actor]] script was extended 1 times.
+
+
+==== Scripts ====
+There are 11 scripts that belong to this project:
+* [[SFM:Script-DefaultActor|DefaultActor]]
+* [[SFM:Script-DefaultActorParent|DefaultActorParent]]
+* [[SFM:Script-DefaultAlias|DefaultAlias]]
+* [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+* [[SFM:Script-DefaultAliasParent|DefaultAliasParent]]
+* [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]]
+* [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
+* [[SFM:Script-DefaultQuest|DefaultQuest]]
+* [[SFM:Script-DefaultRef|DefaultRef]]
+* [[SFM:Script-DefaultRefParent|DefaultRefParent]]
+* [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
+
+
+== Base-Default ==
+* Imports: 2 (Base-Shared-Default, Base-Native)
+* Scripts: 208
+
+==== Member Statistics ====
+This project overall contains 761 total members spread over 208 scripts.
+* Property was used 83 times.
+* Function was used 195 times.
+* Group was used 191 times.
+* Event was used 220 times.
+* State was used 54 times.
+* Struct was used 18 times.
+
+==== Inheritance Statistics ====
+The most common extended parent scripts:
+* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 26 times.
+* The [[SFM:Script-ReferenceAlias|ReferenceAlias]] script was extended 24 times.
+* The [[SFM:Script-DefaultAlias|DefaultAlias]] script was extended 18 times.
+
+
+==== Scripts ====
+There are 208 scripts that belong to this project:
+* [[SFM:Script-AkilaLife07_ItemAddedScript|AkilaLife07_ItemAddedScript]]
+* [[SFM:Script-DebugStopAllScenesQuestScript|DebugStopAllScenesQuestScript]]
+* [[SFM:Script-DefaultActivateLinkedRefOnActivate|DefaultActivateLinkedRefOnActivate]]
+* [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+* [[SFM:Script-DefaultActivateLinkedRefOnHit|DefaultActivateLinkedRefOnHit]]
+* [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+* [[SFM:Script-DefaultActivateLinkOnUnlock|DefaultActivateLinkOnUnlock]]
+* [[SFM:Script-DefaultActivateSelf|DefaultActivateSelf]]
+* [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+* [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+* [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+* [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
+* [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+* [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+* [[SFM:Script-DefaultAliasLockOnInit|DefaultAliasLockOnInit]]
+* [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+* [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
+* [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+* [[SFM:Script-DefaultAliasOnActivateA|DefaultAliasOnActivateA]]
+* [[SFM:Script-DefaultAliasOnActivateGiveItem|DefaultAliasOnActivateGiveItem]]
+* [[SFM:Script-DefaultAliasOnActivateRemoveItems|DefaultAliasOnActivateRemoveItems]]
+* [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+* [[SFM:Script-DefaultAliasOnCellLoad|DefaultAliasOnCellLoad]]
+* [[SFM:Script-DefaultAliasOnClose|DefaultAliasOnClose]]
+* [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+* [[SFM:Script-DefaultAliasOnCombatStateChangedA|DefaultAliasOnCombatStateChangedA]]
+* [[SFM:Script-DefaultAliasOnContainerChangedFrom|DefaultAliasOnContainerChangedFrom]]
+* [[SFM:Script-DefaultAliasOnContainerChangedTo|DefaultAliasOnContainerChangedTo]]
+* [[SFM:Script-DefaultAliasOnContainerChangedToA|DefaultAliasOnContainerChangedToA]]
+* [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+* [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+* [[SFM:Script-DefaultAliasOnDestructionStateChanged|DefaultAliasOnDestructionStateChanged]]
+* [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+* [[SFM:Script-DefaultAliasOnEnterBleedout|DefaultAliasOnEnterBleedout]]
+* [[SFM:Script-DefaultAliasOnEquipped|DefaultAliasOnEquipped]]
+* [[SFM:Script-DefaultAliasOnHit|DefaultAliasOnHit]]
+* [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+* [[SFM:Script-DefaultAliasOnItemAddedScriptA|DefaultAliasOnItemAddedScriptA]]
+* [[SFM:Script-DefaultAliasOnItemAddedScriptB|DefaultAliasOnItemAddedScriptB]]
+* [[SFM:Script-DefaultAliasOnItemAddedScriptC|DefaultAliasOnItemAddedScriptC]]
+* [[SFM:Script-DefaultAliasOnItemAddedScriptD|DefaultAliasOnItemAddedScriptD]]
+* [[SFM:Script-DefaultAliasOnItemRemoved|DefaultAliasOnItemRemoved]]
+* [[SFM:Script-DefaultAliasOnLoad|DefaultAliasOnLoad]]
+* [[SFM:Script-defaultaliasonlocationchangeA|defaultaliasonlocationchangeA]]
+* [[SFM:Script-defaultaliasonlocationchangeB|defaultaliasonlocationchangeB]]
+* [[SFM:Script-defaultaliasonlocationchangeC|defaultaliasonlocationchangeC]]
+* [[SFM:Script-defaultaliasonlocationchangeD|defaultaliasonlocationchangeD]]
+* [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
+* [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+* [[SFM:Script-DefaultAliasOnObjectRepaired|DefaultAliasOnObjectRepaired]]
+* [[SFM:Script-DefaultAliasOnOpen|DefaultAliasOnOpen]]
+* [[SFM:Script-DefaultAliasOnRead|DefaultAliasOnRead]]
+* [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+* [[SFM:Script-DefaultAliasOnShipDockA|DefaultAliasOnShipDockA]]
+* [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+* [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+* [[SFM:Script-DefaultAliasOnShipRefueled|DefaultAliasOnShipRefueled]]
+* [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
+* [[SFM:Script-DefaultAliasOnShipSystemPowerChange|DefaultAliasOnShipSystemPowerChange]]
+* [[SFM:Script-DefaultAliasOnShipSystemRepaired|DefaultAliasOnShipSystemRepaired]]
+* [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
+* [[SFM:Script-DefaultAliasOnShipUndock|DefaultAliasOnShipUndock]]
+* [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+* [[SFM:Script-DefaultAliasOnTriggerEnterA|DefaultAliasOnTriggerEnterA]]
+* [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
+* [[SFM:Script-DefaultAliasOnTriggerEnterMultiActorA|DefaultAliasOnTriggerEnterMultiActorA]]
+* [[SFM:Script-DefaultAliasOnTriggerLeave|DefaultAliasOnTriggerLeave]]
+* [[SFM:Script-DefaultAliasOnUnequipped|DefaultAliasOnUnequipped]]
+* [[SFM:Script-DefaultAliasOnUnload|DefaultAliasOnUnload]]
+* [[SFM:Script-DefaultAliasRandomVoiceType|DefaultAliasRandomVoiceType]]
+* [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
+* [[SFM:Script-defaultAliasRespawnScript|defaultAliasRespawnScript]]
+* [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
+* [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+* [[SFM:Script-DefaultAliasSetAVOnDeath|DefaultAliasSetAVOnDeath]]
+* [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+* [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
+* [[SFM:Script-DefaultAliasSurfaceBoardingEncounter|DefaultAliasSurfaceBoardingEncounter]]
+* [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
+* [[SFM:Script-DefaultBlockActivationOnLoad|DefaultBlockActivationOnLoad]]
+* [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+* [[SFM:Script-DefaultClearInventoryOnUnload|DefaultClearInventoryOnUnload]]
+* [[SFM:Script-DefaultCollAliasSendEventOnActivate|DefaultCollAliasSendEventOnActivate]]
+* [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+* [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]]
+* [[SFM:Script-DefaultCollectionAliasOnActivateGive|DefaultCollectionAliasOnActivateGive]]
+* [[SFM:Script-DefaultCollectionAliasOnCombatListAdd|DefaultCollectionAliasOnCombatListAdd]]
+* [[SFM:Script-DefaultCollectionAliasOnContainerTo|DefaultCollectionAliasOnContainerTo]]
+* [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+* [[SFM:Script-DefaultCollectionAliasOnDeathA|DefaultCollectionAliasOnDeathA]]
+* [[SFM:Script-DefaultCollectionAliasOnDeathB|DefaultCollectionAliasOnDeathB]]
+* [[SFM:Script-DefaultCollectionAliasOnDeathCount|DefaultCollectionAliasOnDeathCount]]
+* [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+* [[SFM:Script-DefaultCollectionAliasOnItemRemoved|DefaultCollectionAliasOnItemRemoved]]
+* [[SFM:Script-DefaultCollectionAliasOnLoad|DefaultCollectionAliasOnLoad]]
+* [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
+* [[SFM:Script-DefaultCollectionAliasOnOpen|DefaultCollectionAliasOnOpen]]
+* [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
+* [[SFM:Script-DefaultCollectionChangeAV|DefaultCollectionChangeAV]]
+* [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+* [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+* [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+* [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+* [[SFM:Script-defaultCounter|defaultCounter]]
+* [[SFM:Script-DefaultCounterAliasColIncOnDeathA|DefaultCounterAliasColIncOnDeathA]]
+* [[SFM:Script-DefaultCounterAliasColIncOnDeathB|DefaultCounterAliasColIncOnDeathB]]
+* [[SFM:Script-DefaultCounterAliasColIncOnDeathC|DefaultCounterAliasColIncOnDeathC]]
+* [[SFM:Script-DefaultCounterAliasColIncOnDeathD|DefaultCounterAliasColIncOnDeathD]]
+* [[SFM:Script-DefaultCounterAliasColIncOnDeathE|DefaultCounterAliasColIncOnDeathE]]
+* [[SFM:Script-DefaultCounterAliasIncOnceOnActivateA|DefaultCounterAliasIncOnceOnActivateA]]
+* [[SFM:Script-DefaultCounterAliasIncOnceOnActivateB|DefaultCounterAliasIncOnceOnActivateB]]
+* [[SFM:Script-DefaultCounterAliasIncOnceOnActivateC|DefaultCounterAliasIncOnceOnActivateC]]
+* [[SFM:Script-DefaultCounterAliasIncOnceOnDeathA|DefaultCounterAliasIncOnceOnDeathA]]
+* [[SFM:Script-DefaultCounterAliasIncOnceOnDeathB|DefaultCounterAliasIncOnceOnDeathB]]
+* [[SFM:Script-DefaultCounterAliasIncOnceOnDeathC|DefaultCounterAliasIncOnceOnDeathC]]
+* [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
+* [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+* [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+* [[SFM:Script-DefaultCounterQuestA|DefaultCounterQuestA]]
+* [[SFM:Script-DefaultCounterQuestB|DefaultCounterQuestB]]
+* [[SFM:Script-DefaultCounterQuestC|DefaultCounterQuestC]]
+* [[SFM:Script-DefaultCounterQuestD|DefaultCounterQuestD]]
+* [[SFM:Script-DefaultCounterQuestE|DefaultCounterQuestE]]
+* [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+* [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+* [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+* [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+* [[SFM:Script-DefaultCounterQuestRefColIncOnDestroyA|DefaultCounterQuestRefColIncOnDestroyA]]
+* [[SFM:Script-DefaultCounterQuestRefColIncOnDestroyC|DefaultCounterQuestRefColIncOnDestroyC]]
+* [[SFM:Script-DefaultCounterQuestRefColIncOnDestroyD|DefaultCounterQuestRefColIncOnDestroyD]]
+* [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+* [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+* [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+* [[SFM:Script-DefaultEnableAliasesQuestScript|DefaultEnableAliasesQuestScript]]
+* [[SFM:Script-DefaultEnableDisableOnDeathScript|DefaultEnableDisableOnDeathScript]]
+* [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+* [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+* [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+* [[SFM:Script-DefaultMessageOnEffectStart|DefaultMessageOnEffectStart]]
+* [[SFM:Script-DefaultMoveToEditorLocationOnLoad|DefaultMoveToEditorLocationOnLoad]]
+* [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+* [[SFM:Script-DefaultMusicActivateScript|DefaultMusicActivateScript]]
+* [[SFM:Script-DefaultMusicTriggerScript|DefaultMusicTriggerScript]]
+* [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+* [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+* [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+* [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+* [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+* [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
+* [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+* [[SFM:Script-defaultQuestRespawnScriptA|defaultQuestRespawnScriptA]]
+* [[SFM:Script-defaultQuestRespawnScriptB|defaultQuestRespawnScriptB]]
+* [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
+* [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
+* [[SFM:Script-DefaultRefEnableLinkedRefOnActivate|DefaultRefEnableLinkedRefOnActivate]]
+* [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger|DefaultRefEnableLinkedRefOnTrigger]]
+* [[SFM:Script-DefaultRefMapMarkerOnDiscoveryScript|DefaultRefMapMarkerOnDiscoveryScript]]
+* [[SFM:Script-DefaultRefOnActivate|DefaultRefOnActivate]]
+* [[SFM:Script-DefaultRefOnCellDetach|DefaultRefOnCellDetach]]
+* [[SFM:Script-DefaultRefOnCellLoad|DefaultRefOnCellLoad]]
+* [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+* [[SFM:Script-DefaultRefOnContainerChangedFrom|DefaultRefOnContainerChangedFrom]]
+* [[SFM:Script-DefaultRefOnContainerChangedTo|DefaultRefOnContainerChangedTo]]
+* [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+* [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+* [[SFM:Script-DefaultRefOnEnterBleedout|DefaultRefOnEnterBleedout]]
+* [[SFM:Script-DefaultRefOnEquipped|DefaultRefOnEquipped]]
+* [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
+* [[SFM:Script-DefaultRefOnLoad|DefaultRefOnLoad]]
+* [[SFM:Script-DefaultRefOnLocationChangeOutfit|DefaultRefOnLocationChangeOutfit]]
+* [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+* [[SFM:Script-DefaultRefOnOpen|DefaultRefOnOpen]]
+* [[SFM:Script-DefaultRefOnRead|DefaultRefOnRead]]
+* [[SFM:Script-DefaultRefOnTriggerEnter|DefaultRefOnTriggerEnter]]
+* [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+* [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+* [[SFM:Script-DefaultRefOnUnequipped|DefaultRefOnUnequipped]]
+* [[SFM:Script-DefaultRefOnUnload|DefaultRefOnUnload]]
+* [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+* [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+* [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+* [[SFM:Script-DefaultSendStoryEventOnLoad|DefaultSendStoryEventOnLoad]]
+* [[SFM:Script-DefaultSendStoryEventOnTrigger|DefaultSendStoryEventOnTrigger]]
+* [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+* [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
+* [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
+* [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+* [[SFM:Script-DefaultShowMessageOnActivateRef|DefaultShowMessageOnActivateRef]]
+* [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+* [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+* [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+* [[SFM:Script-DefaultToggleLinkRefChainOnActivate|DefaultToggleLinkRefChainOnActivate]]
+* [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
+* [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+* [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+* [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+* [[SFM:Script-DefaultTopicInfoSetGlobal|DefaultTopicInfoSetGlobal]]
+* [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+* [[SFM:Script-DefaultTopicInfoStopDialogueCamera|DefaultTopicInfoStopDialogueCamera]]
+* [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
+* [[SFM:Script-DefaultUnlockLinkedRefOnTrigger|DefaultUnlockLinkedRefOnTrigger]]
+* [[SFM:Script-DefaultUnlockLinkOnActivate|DefaultUnlockLinkOnActivate]]
+* [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+* [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+* [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+* [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+* [[SFM:Script-DLC03:SFTA00_FollowerToggleQuestScript|DLC03:SFTA00_FollowerToggleQuestScript]]
+* [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+
+
+== Test-Sample ==
+* Imports: 1 (Base-Native)
+* Scripts: 6
+
+==== Member Statistics ====
+This project overall contains 26 total members spread over 6 scripts.
+* Function was used 6 times.
+* Event was used 5 times.
+* Property was used 11 times.
+* Struct was used 2 times.
+* State was used 2 times.
+
+==== Inheritance Statistics ====
+The most common extended parent scripts:
+* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 3 times.
+* The [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] script was extended 2 times.
+* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 1 times.
+
+
+==== Scripts ====
+There are 6 scripts that belong to this project:
+* [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
+* [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
+* [[SFM:Script-Samples:Script|Samples:Script]]
+* [[SFM:Script-Samples:StructureScript|Samples:StructureScript]]
+* [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+* [[SFM:Script-Tests:A:B:C:Script|Tests:A:B:C:Script]]
+
+
+== Cassiopeia ==
+* Imports: 1 (Base-Native)
+* Scripts: 0
+
+==== Member Statistics ====
+There are no scripts defined in this project, so no member statistics can be provided.
+
+==== Inheritance Statistics ====
+There are no scripts defined in this project, so no inheritance statistics can be provided.
+
+
+==== Scripts ====
+There are no scripts defined in this project.
+
+
+

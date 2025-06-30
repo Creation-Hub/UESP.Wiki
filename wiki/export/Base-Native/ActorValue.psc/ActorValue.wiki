@@ -1,0 +1,36 @@
+{{Script_Object_Summary
+| title = ActorValue
+| name = [[SFM:Script-ActorValue|ActorValue]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>ActorValue.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName ActorValue Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>ActorValue.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetResource
+| script = [[SFM:Script-ActorValue|ActorValue]]
+| name = [[SFM:Script-ActorValue/GetResource|GetResource]]
+| kind = Function
+| flags = Native
+| returns = Resource
+| documentation = Get the Resource this ActorValue is pointing to, if any
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

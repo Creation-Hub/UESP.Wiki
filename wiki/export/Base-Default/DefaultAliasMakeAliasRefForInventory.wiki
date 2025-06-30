@@ -1,0 +1,72 @@
+{{Script_Object_Summary
+| title = DefaultAliasMakeAliasRefForInventory
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasMakeAliasRefForInventory.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasMakeAliasRefForInventory Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultAliasMakeAliasRefForInventory.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = RequiredProperties
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/RequiredProperties|RequiredProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = OptionalProperties
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OptionalProperties|OptionalProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemAdded
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OnItemAdded|OnItemAdded]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ProcessMakingRef
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/ProcessMakingRef|ProcessMakingRef]]
+| kind = Function
+| parameters = Form akBaseItem
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

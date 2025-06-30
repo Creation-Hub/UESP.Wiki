@@ -1,0 +1,57 @@
+{{Script_Object_Summary
+| title = DefaultCollectionRandomVoiceType
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionRandomVoiceType.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionRandomVoiceType Extends RefCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionRandomVoiceType.psc</code> source file documentation comments for this script.
+
+<source>
+used to use a random voice from a formlist of voicetypes to reference(s) in the alias
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = VoicesList
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/VoicesList|VoicesList]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = FormList
+| documentation = The formlist with random voices you want to select from.
+IMPORTANT: make sure the alias has the same formlist in the Export drop down if they are getting new dialogue in this quest.
+}}
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

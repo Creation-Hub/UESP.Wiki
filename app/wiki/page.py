@@ -1,8 +1,14 @@
+from collections import defaultdict
+from typing import DefaultDict
 from app import wiki
 from app.context import AppContext
-from app.papyrus.code import Member, Script
 from app.project import PapyrusProject
-
+from app.papyrus.code import Script
+from app.papyrus.code import Member
+from app.papyrus.code import Function
+from app.papyrus.code import Event
+from app.papyrus.code import Variable
+from app.papyrus.code import Property
 
 # Writer: Script Object
 #---------------------------------------------
@@ -44,17 +50,18 @@ def write_script(context:AppContext, project:PapyrusProject, script:Script, outp
             file.write(f"No members were defined in the <code>{source_file_path}</code> source file.\n\n")
         else:
             file.write("The members that belong to this script, grouped by kind.\n\n")
+
             # Group members by kind
-            from collections import defaultdict
-            from typing import DefaultDict
             members_by_kind:DefaultDict[str, list[Member]] = defaultdict(list)
-            for member in script.members:
+            for member_key in script.members:
+                member:Member = script.members[member_key]
                 members_by_kind[member.kind].append(member)
-            # Write each kind section
+
+            # Write each section of members by kind
             for kind, members in members_by_kind.items():
                 file.write(f"=== {kind} ===\n")
-                for member in members:
-                    file.write(wiki.template.script_object_member_summary(script, member, game_version))
+                for member_key in members:
+                    file.write(wiki.template.script_object_member_summary(script, member_key, game_version))
                     file.write("\n")
 
         # Page Categories
@@ -87,15 +94,17 @@ def write_member(context:AppContext, project:PapyrusProject, script:Script, memb
             file.write("</source>\n")
             file.write("\n\n")
 
-        # Member Parameters
-        if member.kind == "Property":
+        # Member Auto Value
+        if isinstance(member, Property) or isinstance(member, Variable):
             file.write("== Field Initializer ==\n")
-            if not member.parameters:
+            if not member.value_auto:
                 file.write(f"This {str.lower(member.kind)} member has no field initialized value.\n\n")
             else:
-                file.write("* " + member.parameters[0])
+                file.write("* " + member.value_auto)
                 file.write("\n")
-        else:
+
+        # Member Parameters
+        if isinstance(member, Function) or isinstance(member, Event):
             file.write("== Parameters ==\n")
             if not member.parameters:
                 file.write(f"This {str.lower(member.kind)} member has no parameters.\n\n")

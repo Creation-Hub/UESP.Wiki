@@ -1,0 +1,114 @@
+{{Script_Object_Summary
+| title = DefaultActivateLinkedRefOnCombat
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| extends = [[SFM:Script-DefaultActor|DefaultActor]] → [[SFM:Script-DefaultActorParent|DefaultActorParent]] → [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultActivateLinkedRefOnCombat.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultActivateLinkedRefOnCombat Extends DefaultActor Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultActivateLinkedRefOnCombat.psc</code> source file documentation comments for this script.
+
+<source>
+Activates THIS actor's linked ref when THIS actor's combat state changes.
+<RefToCheck> is the reference THIS actor is getting into combat with.
+<LocationToCheck> is the current location of THIS actor's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akTarget, int aeCombatState
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/Done|Done]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetRefsToDoSpecificThingsWith
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/GetRefsToDoSpecificThingsWith|GetRefsToDoSpecificThingsWith]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = Reimplementing Parent's empty function
+}}
+
+{{Script_Object_Member_Summary
+| title = CombatStateChangedOrHit
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/CombatStateChangedOrHit|CombatStateChangedOrHit]]
+| kind = Function
+| parameters = ObjectReference TargetOrAggressor
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnCombat/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

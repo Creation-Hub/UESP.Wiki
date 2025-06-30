@@ -1,0 +1,65 @@
+{{Script_Object_Summary
+| title = GameplayOption
+| name = [[SFM:Script-GameplayOption|GameplayOption]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>GameplayOption.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName GameplayOption Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>GameplayOption.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetRewardValue
+| script = [[SFM:Script-GameplayOption|GameplayOption]]
+| name = [[SFM:Script-GameplayOption/GetRewardValue|GetRewardValue]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get the numerical reward value for the current setting on this GameplayOption form
+}}
+
+{{Script_Object_Member_Summary
+| title = GetValue
+| script = [[SFM:Script-GameplayOption|GameplayOption]]
+| name = [[SFM:Script-GameplayOption/GetValue|GetValue]]
+| kind = Function
+| flags = Native
+| returns = float
+| documentation = Get this GameplayOption form's current value. Bools are represented as 0 for false and non-zero for true
+}}
+
+{{Script_Object_Member_Summary
+| title = GetXPTotal
+| script = [[SFM:Script-GameplayOption|GameplayOption]]
+| name = [[SFM:Script-GameplayOption/GetXPTotal|GetXPTotal]]
+| kind = Function
+| flags = Native Global
+| returns = float
+| documentation = Get the sum total of all active XP modifiers across every GameplayOption
+}}
+
+{{Script_Object_Member_Summary
+| title = NotifyGameplayOptionUpdateFinished
+| script = [[SFM:Script-GameplayOption|GameplayOption]]
+| name = [[SFM:Script-GameplayOption/NotifyGameplayOptionUpdateFinished|NotifyGameplayOptionUpdateFinished]]
+| kind = Function
+| flags = Native Global
+| documentation = Notify native code that script is finished updating values related to GameplayOptions and may operate on the new state
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

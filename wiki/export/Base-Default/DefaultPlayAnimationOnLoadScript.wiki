@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = DefaultPlayAnimationOnLoadScript
+| name = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultPlayAnimationOnLoadScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultPlayAnimationOnLoadScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultPlayAnimationOnLoadScript.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AnimationToPlay
+| script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+| name = [[SFM:Script-DefaultPlayAnimationOnLoadScript/AnimationToPlay|AnimationToPlay]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = string
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayAnimationOnlyOnce
+| script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+| name = [[SFM:Script-DefaultPlayAnimationOnLoadScript/PlayAnimationOnlyOnce|PlayAnimationOnlyOnce]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = PlayAnim
+| script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+| name = [[SFM:Script-DefaultPlayAnimationOnLoadScript/PlayAnim|PlayAnim]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+| name = [[SFM:Script-DefaultPlayAnimationOnLoadScript/Done|Done]]
+| kind = State
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

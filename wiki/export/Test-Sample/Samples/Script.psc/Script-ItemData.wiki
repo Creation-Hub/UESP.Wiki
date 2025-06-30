@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = ItemData
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/ItemData|ItemData]]
+| kind = Struct
+| documentation = Custom structure definition
+}}
+
+
+== Documentation ==
+The <code>Samples\Script.psc</code> source file documentation comments for this script.
+
+<source>
+Custom structure definition
+</source>
+
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

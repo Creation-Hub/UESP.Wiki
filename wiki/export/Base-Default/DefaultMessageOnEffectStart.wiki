@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = DefaultMessageOnEffectStart
+| name = [[SFM:Script-DefaultMessageOnEffectStart|DefaultMessageOnEffectStart]]
+| extends = [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultMessageOnEffectStart.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultMessageOnEffectStart Extends ActiveMagicEffect Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultMessageOnEffectStart.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = MessageToShow
+| script = [[SFM:Script-DefaultMessageOnEffectStart|DefaultMessageOnEffectStart]]
+| name = [[SFM:Script-DefaultMessageOnEffectStart/MessageToShow|MessageToShow]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Message
+| documentation = The message to show when this effect starts.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnEffectStart
+| script = [[SFM:Script-DefaultMessageOnEffectStart|DefaultMessageOnEffectStart]]
+| name = [[SFM:Script-DefaultMessageOnEffectStart/OnEffectStart|OnEffectStart]]
+| kind = Event
+| parameters = ObjectReference akTarget, Actor akCaster, MagicEffect akBaseEffect, float afMagnitude, float afDuration
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

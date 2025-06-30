@@ -1,0 +1,63 @@
+{{Script_Object_Summary
+| title = LocationAlias
+| name = [[SFM:Script-LocationAlias|LocationAlias]]
+| extends = [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The <code>LocationAlias.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName LocationAlias Extends Alias Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>LocationAlias.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Clear
+| script = [[SFM:Script-LocationAlias|LocationAlias]]
+| name = [[SFM:Script-LocationAlias/Clear|Clear]]
+| kind = Function
+| flags = Native
+| documentation = Clears the alias - fails on non-optional aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocation
+| script = [[SFM:Script-LocationAlias|LocationAlias]]
+| name = [[SFM:Script-LocationAlias/GetLocation|GetLocation]]
+| kind = Function
+| flags = Native
+| returns = Location
+| documentation = Get the object reference this alias refers to
+}}
+
+{{Script_Object_Member_Summary
+| title = ForceLocationTo
+| script = [[SFM:Script-LocationAlias|LocationAlias]]
+| name = [[SFM:Script-LocationAlias/ForceLocationTo|ForceLocationTo]]
+| kind = Function
+| flags = Native
+| parameters = Location akNewLocation
+| documentation = Forces this alias to the specified location
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearAndRefillAlias
+| script = [[SFM:Script-LocationAlias|LocationAlias]]
+| name = [[SFM:Script-LocationAlias/ClearAndRefillAlias|ClearAndRefillAlias]]
+| kind = Function
+| documentation = kmk - first clears, then refills alias (so alias will be empty if nothing is found by RefillAlias call)
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,61 @@
+{{Script_Object_Summary
+| title = DefaultReleaseToHavokScript
+| name = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultReleaseToHavokScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultReleaseToHavokScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultReleaseToHavokScript.psc</code> source file documentation comments for this script.
+
+<source>
+Releases an object to Havok OnHit or OnActivate.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Properties
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/Properties|Properties]]
+| kind = Group
+}}
+
+=== State ===
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Released
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/Released|Released]]
+| kind = State
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = ReleaseToHavok
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/ReleaseToHavok|ReleaseToHavok]]
+| kind = Function
+| documentation = Empty State functions.
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

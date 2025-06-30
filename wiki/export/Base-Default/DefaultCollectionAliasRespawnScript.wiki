@@ -1,0 +1,46 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasRespawnScript
+| name = [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultCollectionAliasRespawnScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasRespawnScript Extends RefCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultCollectionAliasRespawnScript.psc</code> source file documentation comments for this script.
+
+<source>
+Script for respawning this collection alias.  For use along with a quest that has the DefaultQuestRespawnScript attached to it.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
+| name = [[SFM:Script-DefaultCollectionAliasRespawnScript/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
+| name = [[SFM:Script-DefaultCollectionAliasRespawnScript/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

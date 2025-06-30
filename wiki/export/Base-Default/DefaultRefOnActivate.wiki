@@ -1,0 +1,40 @@
+{{Script_Object_Summary
+| title = DefaultRefOnActivate
+| name = [[SFM:Script-DefaultRefOnActivate|DefaultRefOnActivate]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultRefOnActivate.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnActivate Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultRefOnActivate.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage if a reference is activated.
+<RefToCheck> is the reference activating THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultRefOnActivate|DefaultRefOnActivate]]
+| name = [[SFM:Script-DefaultRefOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

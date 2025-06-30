@@ -1,0 +1,119 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnDestroyed
+| name = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The <code>DefaultAliasOnDestroyed.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnDestroyed Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The <code>DefaultAliasOnDestroyed.psc</code> source file documentation comments for this script.
+
+<source>
+Sets stage when THIS Alias is destroyed.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the destroyer of THIS Alias's reference.
+<LocationToCheck> is the current location of THIS Alias's reference.
+</source>
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Group ===
+{{Script_Object_Member_Summary
+| title = RefToCheck_Optional_Properties
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/RefToCheck_Optional_Properties|RefToCheck_Optional_Properties]]
+| kind = Group
+| documentation = **************************************************************************************************************
+*************************	   <BEGIN> RefToCheck And LocationToCheck Properties	  *************************
+**************************************************************************************************************
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationToCheck_Optional_Properties
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/LocationToCheck_Optional_Properties|LocationToCheck_Optional_Properties]]
+| kind = Group
+}}
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = GetPlayerOnly
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetPlayerOnly|GetPlayerOnly]]
+| kind = Function
+| returns = bool
+| documentation = OVERRIDEN PARENT FUNCTONS
+These function should usually return the value of the child script's property of the same name.
+(We do this because different children will want different default values for that property and so need to define the property on themselves, but we want all the functions to live on the inital ancestor parent script.)
+}}
+
+{{Script_Object_Member_Summary
+| title = GetReferencesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetReferencesToCheckAgainst|GetReferencesToCheckAgainst]]
+| kind = Function
+| returns = ObjectReference[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetAliasesToCheckAgainst|GetAliasesToCheckAgainst]]
+| kind = Function
+| returns = ReferenceAlias[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetFactionsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetFactionsToCheckAgainst|GetFactionsToCheckAgainst]]
+| kind = Function
+| returns = Faction[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetLocationsToCheckAgainst|GetLocationsToCheckAgainst]]
+| kind = Function
+| returns = Location[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetLocationAliasesToCheckAgainst|GetLocationAliasesToCheckAgainst]]
+| kind = Function
+| returns = LocationAlias[]
+}}
+
+{{Script_Object_Member_Summary
+| title = GetLocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/GetLocationMatchIfChild|GetLocationMatchIfChild]]
+| kind = Function
+| returns = bool
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDestroyed
+| script = [[SFM:Script-DefaultAliasOnDestroyed|DefaultAliasOnDestroyed]]
+| name = [[SFM:Script-DefaultAliasOnDestroyed/OnDestroyed|OnDestroyed]]
+| kind = Event
+| parameters = ObjectReference akDestroyer
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]
