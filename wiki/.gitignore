@@ -1,17 +1,21 @@
+# Input
 # Directory contains the imported files
 #---------------------------------------------
+*.txt
 *.bat
 *.flg
 *.zip
-/_compiled/
-/import/
-# !/import/Base-Native/
-# !/import/Base-Shared-Default/
-# !/import/Base-Default/
-# !/import/Base-Game/
-# !/import/SFSE/
-# !/import/Test-Sample/
+/import.asm/
+/import/*
+!/import/Base-Native/
+!/import/Base-Shared-Default/
+!/import/Base-Default/
+!/import/Base-Game/
+!/import/SFSE/
+!/import/Test-Sample/
 
+
+# Output
 # Directory contains the exported files
 #---------------------------------------------
 *.wiki

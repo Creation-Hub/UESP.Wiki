@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<PapyrusProject
+	xmlns="PapyrusProject.xsd"
+	Flags="Starfield_Papyrus_Flags.flg"
+	Output="..\..\import.asm\Base-Shared-Default"
+	Asm="Only"
+	Optimize="false"
+	Release="false"
+	Final="false">
+	<Imports>
+		<Import>.</Import>
+		<Import>..\Base-Game</Import>
+		<Import>..\Base-Native</Import>
+	</Imports>
+	<Scripts>
+		<Script>DefaultActor</Script>
+		<Script>DefaultActorParent</Script>
+		<Script>DefaultAlias</Script>
+		<Script>DefaultAliasOnLocationChange</Script>
+		<Script>DefaultAliasParent</Script>
+		<Script>DefaultCollectionAlias</Script>
+		<Script>DefaultCollectionAliasParent</Script>
+		<Script>DefaultQuest</Script>
+		<Script>DefaultRef</Script>
+		<Script>DefaultRefParent</Script>
+		<Script>DefaultTopicInfo</Script>
+	</Scripts>
+</PapyrusProject>

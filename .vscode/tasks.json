@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Base-Native (Assemble)",
+            "type": "shell",
+            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "args": [
+                "${workspaceFolder}\\wiki\\import\\Test-Sample\\Test-Sample.ppj"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Base-Shared-Default (Assemble)",
+            "type": "shell",
+            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "args": [
+                "${workspaceFolder}\\wiki\\import\\Base-Shared-Default\\Base-Shared-Default.ppj"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Base-Default (Assemble)",
+            "type": "shell",
+            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "args": [
+                "${workspaceFolder}\\wiki\\import\\Base-Default\\Base-Default.ppj"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Test-Sample (Assemble)",
+            "type": "shell",
+            "command": "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe\"",
+            "args": [
+                "${workspaceFolder}\\wiki\\import\\Test-Sample\\Test-Sample.ppj"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

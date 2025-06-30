@@ -2,7 +2,8 @@
 #---------------------------------------------
 # Project specific ignores for this repository.
 
-# <project specific patterns here>
+*.sublime-project
+*.sublime-workspace
 
 
 # Visual Studio Code (VSC)
@@ -29,7 +30,7 @@
 # Uncomment to include the specific VSC workspace files.
 !.vscode/settings.json
 !.vscode/launch.json
-#!.vscode/tasks.json
+!.vscode/tasks.json
 #!.vscode/extensions.json
 #!.vscode/*.code-snippets
 
