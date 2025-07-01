@@ -4,6 +4,20 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Assemble All",
+            "dependsOn": [
+                "Base-Native (Assemble)",
+                "Base-Shared-Default (Assemble)",
+                "Base-Default (Assemble)",
+                "Test-Sample (Assemble)"
+            ],
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "Base-Native (Assemble)",
             "type": "shell",
             "command": "\"${config:papyrus.compiler.path}\"",
