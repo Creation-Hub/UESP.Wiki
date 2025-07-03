@@ -125,7 +125,7 @@ def write(context:AppContext, output_file_path:str) -> None:
         file.write("\n\n")
 
         # Write each project wiki section.
-        for identifier in context.projects:
-            project:PapyrusProject = context.projects[identifier]
+        for identifier in context.papyrus.projects:
+            project:PapyrusProject = context.papyrus.projects[identifier]
             write_section(file, project)
             file.write("\n\n")

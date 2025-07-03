@@ -1,5 +1,6 @@
 from typing import Any, Dict
-from app.project import PapyrusProject
+from app.project import PapyrusContext, PapyrusProject
+from app.settings import Configuration
 
 # Context
 #---------------------------------------------
@@ -15,9 +16,10 @@ class AppContext:
         self.publish_info:dict[str, Any] = {}
         """Information about the game and editor for publishing."""
 
-        self.projects:Dict[str, PapyrusProject] = {}
-        """A list of Papyrus projects defined in the application settings file."""
+        self.configurations:Dict[str, Configuration] = {}
+        self.papyrus:PapyrusContext = PapyrusContext()
+
 
     def add(self, project:PapyrusProject):
         """Adds a project to the application context."""
-        self.projects[project.identifier] = project
+        self.papyrus.add(project)

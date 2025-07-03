@@ -3,12 +3,12 @@ from app import wiki
 from app.context import AppContext
 from app.papyrus import inheritance
 from app.project import PapyrusProject
-from app.papyrus.code import Script
-from app.papyrus.code import Member
 from app.papyrus.code import Function
-from app.papyrus.code import Event
-from app.papyrus.code import Variable
+from app.papyrus.code import Member
+from app.papyrus.code import Method
 from app.papyrus.code import Property
+from app.papyrus.code import Script
+from app.papyrus.code import Variable
 
 
 # Inheritance
@@ -55,17 +55,33 @@ def get_script_extends_link(script:Script) -> str:
         return wiki.style.link_script_object("ScriptObject")
 
 
+def variable_to_string(variable:Variable) -> str:
+        string_variable:str = f"{variable.type} {variable.name}"
+        if variable.value:
+            string_variable += f" = {variable.value}"
+        return string_variable
+
+
+def variable_to_string_list(variables:list[Variable]) -> list[str]:
+    string_variables:list[str] = []
+    for variable in variables:
+        string_variable:str = variable_to_string(variable)
+        string_variables.append(string_variable)
+    return string_variables
+
+
 def get_member_parameters_string(member:Member) -> str:
     """
     Gets the parameters string for a member template.
     Templates need to have minimal parameters that accommodate several member types.
     """
-    parameters_string:str = ""
-    if isinstance(member, Function) or isinstance(member, Event):
-        parameters_string = ", ".join(member.parameters)
-    elif isinstance(member, Variable) or isinstance(member, Property):
-        parameters_string = member.value_auto
-    return parameters_string
+    # Process types from the most specialized to the least.
+    if isinstance(member, Method):
+        return ", ".join(variable_to_string_list(member.parameters))
+    elif isinstance(member, Variable):
+        return member.value
+    else:
+        return ""
 
 
 def get_member_type_string(member:Member) -> str:

@@ -1,37 +1,38 @@
 import logging
-from typing import List
+from typing import Dict, List
 from app import papyrus
 from app.papyrus.code import Script
 from app.papyrus.collections import ScriptDictionary
-from app.publishing import PublishOption
 
 
-# Types
+# Project
 #---------------------------------------------
 
 class PapyrusProject:
     def __init__(self):
         self.identifier:str = ""
-        """ The project identifier is used for Papyrus imports. """
+        """The project identifier is used for Papyrus imports."""
+
         self.root:str = ""
-        """ The root directory of the project containing Papyrus scripts. """
+        """The root directory of the project containing Papyrus scripts."""
+
         self.imports:List[str] = []
-        """ A list of other project identifiers to import scripts from. """
+        """A list of other project identifiers to import scripts from."""
+
         self.scripts:ScriptDictionary = ScriptDictionary()
-        """ A list of Papyrus scripts in this project. """
-        self.publish:PublishOption = PublishOption()
-        """ Options for publishing the project scripts. """
+        """A list of Papyrus scripts in this project."""
 
     def load(self) -> bool:
-        """ Loads the Papyrus scripts from the project root directory.
+        """
+        Loads the Papyrus scripts from the project root directory.
         Returns:
-            bool: True if scripts were loaded successfully, False otherwise.
+            bool: `True` if scripts were loaded successfully, `False` otherwise.
         """
         # Clear any existing scripts.
         self.scripts.clear()
 
         # Parser: Search for source files in the project script directory.
-        paths = papyrus.find_files(self.root)
+        paths:list[str] = papyrus.find_files(self.root)
         if not paths:
             logging.warning(f"[{self.identifier}] No scripts found in this project.")
             return False
@@ -41,6 +42,7 @@ class PapyrusProject:
         count:int = 0
         for path in paths:
             count += 1
+            # Start parsing the script file.
             script:Script = papyrus.parser.parse(path)
             if script:
                 self.scripts.add(script)
@@ -49,4 +51,29 @@ class PapyrusProject:
                 logging.warning(f"[{self.identifier}] #{count} The script could not be parsed: {path}")
 
         logging.info(f"[{self.identifier}] Done loading scripts for this project. ({len(self.scripts)} of {len(paths)})")
+        return True
+
+
+# Context
+#---------------------------------------------
+
+class PapyrusContext:
+    def __init__(self):
+        self.projects:Dict[str, PapyrusProject] = {}
+
+    def add(self, project:PapyrusProject):
+        """Adds a project to the Papyrus context."""
+        self.projects[project.identifier] = project
+
+    def load(self) -> bool:
+        """Load all projects in the Papyrus context."""
+        if not self.projects:
+            logging.warning("No projects found in the Papyrus context.")
+            return False
+
+        for project in self.projects.values():
+            if not project.load():
+                logging.warning(f"[{project.identifier}] Failed to load scripts from the project root directory: '{project.root}'")
+
+        logging.info(f"Loaded {len(self.projects)} projects in the Papyrus context.")
         return True

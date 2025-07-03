@@ -55,7 +55,7 @@ class Member(Element):
         super().__init__()
 
 
-# Element Attributes
+# Element Mixins
 #---------------------------------------------
 
 class FlagsAttribute():
@@ -70,13 +70,8 @@ class ValueTypeAttribute():
 
 class ValueAutoAttribute():
     def __init__(self):
-        self.value_auto:str = ""
+        self.value:str = ""
         """The field initialized auto value for this member."""
-
-class ParameterAttribute():
-    def __init__(self):
-        self.parameters:list[str] = []
-        """The parameters for this member."""
 
 
 # Header
@@ -113,18 +108,26 @@ class Header(Code):
 # Members
 #---------------------------------------------
 
-class Guard(Member):
-    def __init__(self):
-        super().__init__()
-        self._kind = "Guard"
-
-
 class Variable(Member, ValueTypeAttribute, ValueAutoAttribute):
     def __init__(self):
         super().__init__()
         ValueTypeAttribute.__init__(self)
         ValueAutoAttribute.__init__(self)
         self._kind = "Variable"
+
+class ParametersAttribute():
+    def __init__(self):
+        self.parameters:list[Variable] = []
+        """The parameters for this member."""
+
+
+# Members
+#---------------------------------------------
+
+class Guard(Member):
+    def __init__(self):
+        super().__init__()
+        self._kind = "Guard"
 
 
 class Structure(Member):
@@ -137,7 +140,7 @@ class Structure(Member):
 # Properties
 #---------------------------------------------
 
-class Property(Member, ValueTypeAttribute, ValueAutoAttribute):
+class Property(Variable, ValueTypeAttribute, ValueAutoAttribute):
     def __init__(self):
         super().__init__()
         ValueTypeAttribute.__init__(self)
@@ -160,10 +163,10 @@ class PropertyGroup(Member):
 # Methods
 #---------------------------------------------
 
-class Method(Member, ParameterAttribute):
+class Method(Member, ParametersAttribute):
     def __init__(self):
         super().__init__()
-        ParameterAttribute.__init__(self)
+        ParametersAttribute.__init__(self)
 
 
 class Function(Method, ValueTypeAttribute):

@@ -1,3 +1,4 @@
+import logging
 import re
 from re import Match
 from app.common.mutable import MutableBool
@@ -15,6 +16,8 @@ from app.papyrus.code import Variable
 
 # Regular Expressions
 #---------------------------------------------
+
+# TODO: Consolidate and optimize these regex patterns.
 
 # Regular Patterns
 #---------------------------------------------
@@ -62,16 +65,16 @@ VARIABLE_PATTERN = re.compile(
 )
 
 PARAMETERS_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
+    r'^'                               # Start of sequence match
+    r'\s*'                             # Whitespace optional (0+)
     # Type (Required)
-    r'(?P<type>\w+(?:\[\])?)'       # Parameter type
-    r'\s+'                          # Whitespace required (1+)
+    r'(?P<type>\w+(?::\w+)?(?:\[\])?)' # Parameter type (with optional namespace and array brackets)
+    r'\s+'                             # Whitespace required (1+)
     # Name (Required)
-    r'(?P<name>\w+)'                # Parameter name
+    r'(?P<name>\w+)'                   # Parameter name
     # Initializer (Optional)
-    r'(\s*=\s*.+)?'                 # Optional default value
-    r'$',                           # End of sequence match
+    r'(?:\s*=\s*(?P<value>.+))?'       # Optional default value with equals sign
+    r'$',                              # End of sequence match
     re.IGNORECASE
 )
 
@@ -331,41 +334,17 @@ def parse_flags(text:str) -> list[str]:
     if text:
         text = papyrus.normalize.strip_comments(text)
         tokens:list[str] = text.split()
-        for flag in tokens:
-            flag = flag.strip()
-            if not flag: continue
-            else: flags.append(papyrus.normalize.symbol(flag))
+        for token in tokens:
+            token = token.strip()
+            if not token: continue
+            else: flags.append(papyrus.normalize.flag(token))
     return flags
 
 
-def parse_initializer(initializer_text:str) -> str:
-    if initializer_text:
-        return papyrus.normalize.symbol(initializer_text)
+def parse_initializer(text:str) -> str:
+    if text:
+        return papyrus.normalize.symbol(text)
     return ""
-
-
-def parse_parameters(parameters_line:str) -> list[str]:
-    """Parse a Papyrus parameter string into a list of normalized parameter strings."""
-    parameters:list[str] = []
-    if parameters_line:
-        parameters_line = papyrus.normalize.strip_comments(parameters_line)
-        tokens:list[str] = parameters_line.split(",")
-        for token in tokens:
-            token = token.strip()
-            if not token:
-                continue
-            parameter_match = PARAMETERS_PATTERN.match(token)
-            if parameter_match:
-                type:str = parameter_match.group(1)
-                name:str = parameter_match.group(2)
-                initial:str = parameter_match.group(3) or ""
-                if initial:
-                    initial = papyrus.normalize.default_value(initial)
-                parameter:str = f"{papyrus.normalize.script_type(type)} {name}{(' ' + initial) if initial else ''}".strip()
-                parameters.append(parameter)
-            else:
-                parameters.append(token)
-    return parameters
 
 
 # Header
@@ -435,24 +414,37 @@ def parse_header(lines:list[str]) -> Header:
 
 def parse_variable(variable_match:Match[str], lines:list[str], line_index:int) -> Variable:
     variable:Variable = Variable()
-    variable.name = papyrus.normalize.member_name(variable_match.group("name"))
+    variable.name = papyrus.normalize.member_name_upper(variable_match.group("name"))
     variable.index = line_index
     variable.index_end = line_index
     variable.definition = lines[line_index]
     variable.documentation = parse_documentation(lines, line_index)
     variable.type = papyrus.normalize.script_type(variable_match.group("type"))
     variable.flags = parse_flags(variable_match.group("flags"))
-    variable.value_auto = parse_initializer(variable_match.group("initializer"))
+    variable.value = parse_initializer(variable_match.group("initializer"))
     return variable
+
+
+def parse_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
+    property:Property = Property()
+    property.index = line_index
+    property.index_end = line_index
+    property.definition = lines[line_index]
+    property.documentation = parse_documentation(lines, line_index)
+    property.name = papyrus.normalize.member_name_upper(property_match.group("name"))
+    property.flags = parse_flags(property_match.group("flags"))
+    property.type = papyrus.normalize.script_type(property_match.group("type"))
+    property.value = parse_initializer(property_match.group("initializer"))
+    return property
 
 
 def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
     structure:Structure = Structure()
-    structure.name = papyrus.normalize.member_name(struct_match.group("name"))
     structure.index = line_index
     structure.index_end = line_index
     structure.definition = lines[line_index]
     structure.documentation = parse_documentation(lines, line_index)
+    structure.name = papyrus.normalize.member_name_upper(struct_match.group("name"))
 
     line_index += 1
     while line_index < len(lines):
@@ -474,22 +466,35 @@ def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) ->
     return structure
 
 
-def parse_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
-    property:Property = Property()
-    property.index = line_index
-    property.index_end = line_index
-    property.definition = lines[line_index]
-    property.documentation = parse_documentation(lines, line_index)
-    property.name = papyrus.normalize.member_name(property_match.group("name"))
-    property.flags = parse_flags(property_match.group("flags"))
-    property.type = papyrus.normalize.script_type(property_match.group("type"))
-    property.value_auto = parse_initializer(property_match.group("initializer"))
-    return property
+def parse_parameters(parameters_line:str) -> list[Variable]:
+    """Parse a Papyrus parameter string into a list of normalized parameter strings."""
+    parameters:list[Variable] = []
+    if parameters_line:
+        parameters_line = papyrus.normalize.strip_comments(parameters_line)
+        tokens:list[str] = parameters_line.split(",")
+        for token in tokens:
+            token = token.strip()
+            if not token:
+                continue
+            parameter_match = PARAMETERS_PATTERN.match(token)
+            if parameter_match:
+                parameter:Variable = Variable()
+                parameter.type = papyrus.normalize.script_type(parameter_match.group("type"))
+                parameter.name = papyrus.normalize.member_name(parameter_match.group("name"))
+
+                # TODO: Handle non-primitive default values.
+                parameter.value = papyrus.normalize.primitive_value(parameter_match.group("value"))
+                parameters.append(parameter)
+            else:
+                logging.warning(f"Invalid parameter format: '{token}'")
+
+    # Return the list of parsed parameters
+    return parameters
 
 
 def parse_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
     function:Function = Function()
-    function.name = papyrus.normalize.member_name(function_match.group("name"))
+    function.name = papyrus.normalize.member_name_upper(function_match.group("name"))
     function.index = line_index
     function.index_end = line_index
     function.definition = lines[line_index]
@@ -502,7 +507,7 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
 
 def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
     event:Event = Event()
-    event.name = papyrus.normalize.member_name(event_match.group("name"))
+    event.name = papyrus.normalize.member_name_upper(event_match.group("name"))
     event.index = line_index
     event.index_end = line_index
     event.definition = lines[line_index]
@@ -552,7 +557,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
     state.index_end = line_index
     state.definition = lines[line_index]
     state.documentation = parse_documentation(lines, line_index)
-    state.name = papyrus.normalize.member_name(state_match.group("name"))
+    state.name = papyrus.normalize.member_name_upper(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
 
     line_index += 1

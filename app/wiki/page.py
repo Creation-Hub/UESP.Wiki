@@ -97,10 +97,10 @@ def write_member(context:AppContext, project:PapyrusProject, script:Script, memb
         # Member Auto Value
         if isinstance(member, Property) or isinstance(member, Variable):
             file.write("== Field Initializer ==\n")
-            if not member.value_auto:
+            if not member.value:
                 file.write(f"This {str.lower(member.kind)} member has no field initialized value.\n\n")
             else:
-                file.write("* " + member.value_auto)
+                file.write("* " + member.value)
                 file.write("\n")
 
         # Member Parameters
@@ -110,9 +110,9 @@ def write_member(context:AppContext, project:PapyrusProject, script:Script, memb
                 file.write(f"This {str.lower(member.kind)} member has no parameters.\n\n")
             else:
                 file.write("The parameters that belong to this script.\n\n")
-                for parameter in member.parameters:
-                    file.write("* " + parameter)
-                    file.write("\n")
+                items = wiki.template.variable_to_string_list(member.parameters)
+                for item in items:
+                    file.write(f"* {item}\n")
 
         # Page Categories
         # TODO: Should this be a different category for members?

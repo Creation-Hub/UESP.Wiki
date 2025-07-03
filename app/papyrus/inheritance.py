@@ -25,20 +25,21 @@ def find_extends(context:AppContext, project:PapyrusProject, script:Script, scri
 
     # Check in imported projects
     for identifier in project.imports:
-        if identifier in context.projects:
-            imported:PapyrusProject = context.projects[identifier]
+        if identifier in context.papyrus.projects:
+            imported:PapyrusProject = context.papyrus.projects[identifier]
             if script_name in imported.scripts:
                 return imported.scripts[script_name]
 
     # Not found in any project
-    imports_list = ", ".join(project.imports)
-    error = f"Cannot find parent script '{script_name}' for '{script.header.name}' in project '{project.identifier}' "
+    imports_list:str = ", ".join(project.imports)
+    error:str = ""
+    error += f"Cannot find parent script '{script_name}' for '{script.header.name}' in project '{project.identifier}' "
     error += f"or its imports: [{imports_list}]. "
     error += "Check your project imports configuration or add the missing dependency project."
     raise ValueError(error)
 
 
-def get_chain(context: AppContext, project: PapyrusProject, script: Script) -> List[Script]:
+def get_chain(context:AppContext, project:PapyrusProject, script:Script) -> List[Script]:
     """
     Get the inheritance chain for a script, excluding the script itself.
     Searches across projects using the project's imports list.
@@ -57,8 +58,10 @@ def get_chain(context: AppContext, project: PapyrusProject, script: Script) -> L
     Raises:
         ValueError: If a parent script cannot be found in the current project or its imports
     """
-    chain: List[Script] = []
-    visited: Set[str] = set()
+    chain:List[Script] = []
+    visited:Set[str] = set()
+
+    script_object:Script | None = None
 
     # Skip if this is ScriptObject itself
     script_name = str(script.header.name)
@@ -81,7 +84,7 @@ def get_chain(context: AppContext, project: PapyrusProject, script: Script) -> L
         return chain
 
     # Try to find the parent script
-    current_script = find_extends(context, project, script, parent_name)
+    current_script:Script = find_extends(context, project, script, parent_name)
 
     # Add the first parent to the chain
     chain.append(current_script)
@@ -108,7 +111,7 @@ def get_chain(context: AppContext, project: PapyrusProject, script: Script) -> L
             break
 
         # Find the next parent
-        next_script = find_extends(context, project, script, next_parent_name)
+        next_script:Script = find_extends(context, project, script, next_parent_name)
         chain.append(next_script)
         visited.add(next_parent_name)
 

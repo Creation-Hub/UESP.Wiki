@@ -3,25 +3,27 @@ import logging
 from app import wiki
 from app.context import AppContext
 from app.papyrus.code import Member
-from app.project import PapyrusProject
 from app.publishing import Sort
+from app.settings import Configuration
 
 # Project
 #---------------------------------------------
 
-def project_start(context:AppContext, project:PapyrusProject) -> bool:
+def project_start(context:AppContext, configuration:Configuration) -> bool:
+    project = configuration.project
+
     # Skip any disabled projects.
-    if not project.publish.enable:
+    if not configuration.publish.enable:
         logging.info(f"[{project.identifier}] Skipping this project. The project is disabled.")
         return False
 
     # Skip any projects without a publish sorting option.
-    if not project.publish.sort:
+    if not configuration.publish.sort:
         logging.warning(f"[{project.identifier}] Skipping this project. The project publish sorting property cannot be a None value.")
         return False
 
     # Validate provided project configuration.
-    if not project.root or not project.publish.output:
+    if not project.root or not configuration.publish.output:
         logging.warning(f"[{project.identifier}] Skipping this project. The path values were not set in the project options.")
         return False
 
@@ -43,12 +45,12 @@ def project_start(context:AppContext, project:PapyrusProject) -> bool:
 
         # Get the output file path based on the project sorting option.
         output_file_path = ""
-        if project.publish.sort == Sort.DEFAULT:
-            output_file_path = os.path.join(project.publish.output, f"{script_file_path}.wiki")
-        elif project.publish.sort == Sort.FLAT:
-            output_file_path = os.path.join(project.publish.output, f"{str(script.header.name).replace(":", "-")}.wiki")
-        elif project.publish.sort == Sort.TREE:
-            output_file_path = os.path.join(project.publish.output, script_file_path+".psc", f"{script_file_name}.wiki")
+        if configuration.publish.sort == Sort.DEFAULT:
+            output_file_path = os.path.join(configuration.publish.output, f"{script_file_path}.wiki")
+        elif configuration.publish.sort == Sort.FLAT:
+            output_file_path = os.path.join(configuration.publish.output, f"{str(script.header.name).replace(":", "-")}.wiki")
+        elif configuration.publish.sort == Sort.TREE:
+            output_file_path = os.path.join(configuration.publish.output, script_file_path+".psc", f"{script_file_name}.wiki")
         else:
             logging.warning(f"[{project.identifier}][{script_file_path}] Skipping this script. The project sorting property could not be determined.")
             continue
@@ -60,12 +62,12 @@ def project_start(context:AppContext, project:PapyrusProject) -> bool:
             logging.debug(f"[{project.identifier}][{script_file_path}] Created the output directory: {output_file_directory}")
 
         # Write a wiki page for this script object.
-        if project.publish.enable_objects:
+        if configuration.publish.enable_objects:
             wiki.page.write_script(context, project, script, output_file_path)
             logging.debug(f"[{project.identifier}]<{script_file_path}> -> {script_file_path_full} -> {output_file_path}")
 
         # Write a wiki page for this script member.
-        if project.publish.enable_members:
+        if configuration.publish.enable_members:
             for key in script.members:
                 member:Member = script.members[key]
                 member_file_name = f"{script_file_name}-{member.name}.wiki"
@@ -81,15 +83,16 @@ def project_start(context:AppContext, project:PapyrusProject) -> bool:
 #---------------------------------------------
 
 def start(context:AppContext) -> None:
-    if not context.projects:
-        logging.info(f"No projects found.")
+    if not context.configurations:
+        logging.warning(f"No configurations found.")
         return
     else:
-        logging.info(f"Found {len(context.projects)} projects.")
+        logging.info(f"Found {len(context.configurations)} configurations.")
 
     # Generate wiki pages for each project.
-    for key in context.projects:
-        project_start(context, context.projects[key])
+    for key in context.configurations:
+        configuration:Configuration = context.configurations[key]
+        project_start(context, configuration)
 
     # Generate the wiki index page.
     index_path = os.path.join(context.export_directory, "Script_Information.wiki")
