@@ -100,7 +100,7 @@ class Header(Code):
         """The flags associated with the script."""
 
     def __str__(self) -> str:
-        """Returns the string representation of this class."""
+        """Returns a string that represents the current object."""
         if self.name: return str(self.name)
         else: return ""
 
@@ -204,9 +204,10 @@ class Script:
         self.members:Dict[str, Member] = {}
         """The members that belong to this script."""
 
+    @property
+    def name(self) -> str:
+        return self.header.name.key
+
     def __str__(self) -> str:
-        """Returns the string representation of this class."""
-        if self.header.name:
-            return str(self.header.name)
-        else:
-            return ""
+        """Returns a string that represents the current object."""
+        return self.name

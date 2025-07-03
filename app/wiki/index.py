@@ -18,7 +18,7 @@ def statistics_project(project:PapyrusProject) -> \
 
     # Iterate through each script to count each use of extends
     for script in project.scripts:
-        script_name:str = script.header.extends.value
+        script_name:str = script.header.extends.key
         if not script_name: script_name = "ScriptObject"
         script_extends_counter[script_name] += 1
 

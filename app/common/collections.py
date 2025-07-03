@@ -19,10 +19,6 @@ class KeyedObject:
         """Returns a string that represents the current object."""
         return self._key
 
-    def __repr__(self) -> str:
-        """Returns a string that represents the current object."""
-        return self.__str__()
-
     @property
     def key(self) -> str:
         return self._key
@@ -37,12 +33,8 @@ class KeyedCollection(Generic[T]):
         self._items:Dict[str, T] = {}
 
     def __str__(self) -> str:
-        """Gets the string representation of this collection."""
+        """Returns a string that represents the current object."""
         return f"{KeyedCollection.__name__}({len(self._items)})"
-
-    def __repr__(self) -> str:
-        """Gets the string representation of this collection."""
-        return self.__str__()
 
     def add(self, item:T) -> None:
         """Adds an item to this collection."""
@@ -55,11 +47,7 @@ class KeyedCollection(Generic[T]):
         return self._items.get(key)
 
     def __getitem__(self, key:str) -> T:
-        """
-        Provides item access by key through dictionary sub-script notation.
-
-        Example: `items['MyItem']`
-        """
+        """Provides item access by key through dictionary sub-script notation."""
         key = key.upper()
         if key not in self._items:
             raise KeyError(f"Item '{key}' not found")

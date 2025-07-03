@@ -47,9 +47,9 @@ def get_script_extends_link(script:Script) -> str:
     """
     Gets the link to the script extends for the script index page.
     """
-    if script.header.name.value == "ScriptObject":
+    if script.header.name.key == "ScriptObject":
         return "Nothing"
-    elif script.header.extends.value:
+    elif script.header.extends.key:
         return wiki.style.link_script_object(str(script.header.extends))
     else:
         return wiki.style.link_script_object("ScriptObject")
@@ -106,7 +106,7 @@ def script_object_summary(context:AppContext, project:PapyrusProject, script:Scr
     """
     script_title:str = str(script.header.name)
     script_name:str = wiki.style.link_script_object(str(script.header.name))
-    inheritance_chain:list[Script] = inheritance.get_chain(context, project, script)
+    inheritance_chain:list[Script] = inheritance.get_chain(context.papyrus, project, script)
     script_extends:str = get_inheritance_extends_string(inheritance_chain)
     script_flags:str = wiki.style.to_list_csv(script.header.flags)
     #---------------------------------------------
