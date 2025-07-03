@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import DefaultDict
 from app import wiki
 from app.context import AppContext
-from app.project import PapyrusProject
+from app.papyrus.project import PapyrusProject
 from app.papyrus.code import Script
 from app.papyrus.code import Member
 from app.papyrus.code import Function

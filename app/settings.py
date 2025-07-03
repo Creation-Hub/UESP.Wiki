@@ -3,7 +3,7 @@ import json
 from typing import Any
 from app.configuration import Configuration
 from app.context import AppContext
-from app.project import PapyrusProject
+from app.papyrus.project import PapyrusProject
 from app.publishing import PublishOption
 from app.publishing import Sort
 

@@ -1,4 +1,4 @@
-from app.project import PapyrusProject
+from app.papyrus.project import PapyrusProject
 from app.publishing import PublishOption
 
 class Configuration:

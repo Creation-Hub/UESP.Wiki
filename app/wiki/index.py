@@ -4,7 +4,7 @@ from typing import TextIO
 from app import wiki
 from app.context import AppContext
 from app.papyrus.code import Member
-from app.project import PapyrusProject
+from app.papyrus.project import PapyrusProject
 
 
 # Information

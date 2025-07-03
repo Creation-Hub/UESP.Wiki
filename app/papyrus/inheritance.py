@@ -1,6 +1,6 @@
 from typing import List, Set
 from app.context import AppContext
-from app.project import PapyrusProject
+from app.papyrus.project import PapyrusProject
 from app.papyrus.code import Script
 
 

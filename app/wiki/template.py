@@ -2,7 +2,7 @@ from typing import Iterable
 from app import wiki
 from app.context import AppContext
 from app.papyrus import inheritance
-from app.project import PapyrusProject
+from app.papyrus.project import PapyrusProject
 from app.papyrus.code import Function
 from app.papyrus.code import Member
 from app.papyrus.code import Method
