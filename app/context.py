@@ -1,6 +1,8 @@
 from typing import Any, Dict
-from app.papyrus.project import PapyrusContext, PapyrusProject
 from app.settings import Configuration
+from app.papyrus.project import PapyrusContext
+from app.papyrus.project import PapyrusProject
+
 
 # Context
 #---------------------------------------------

@@ -67,7 +67,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
         return chain
 
     # Tracks the ScriptObject if needed
-    script_object:Script | None = None
+    script_object:Script|None = None
 
 
     # Start with the parent of the current script
@@ -97,7 +97,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
 
     # Continue chain if parent was found
     while current_script:
-        next_parent_name = current_script.header.extends.key
+        next_parent_name:str = current_script.header.extends.key
         if not next_parent_name:
             # If we've reached a script with no explicit parent and it's not ScriptObject,
             # add ScriptObject as the ultimate parent

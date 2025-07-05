@@ -1,8 +1,22 @@
 import logging
+import os
 from typing import Dict, List
-from app import papyrus
+from app.papyrus import source
 from app.papyrus.code import Script
 from app.papyrus.collections import ScriptDictionary
+
+
+# Files
+#---------------------------------------------
+
+def find_files(directory:str) -> list[str]:
+    """Searches for Papyrus scripts in the given Papyrus root import directory."""
+    search:list[str] = []
+    for root, _, files in os.walk(directory):
+        for file_name in files:
+            if file_name.lower().endswith(".psc"):
+                search.append(os.path.join(root, file_name))
+    return search
 
 
 # Project
@@ -32,7 +46,7 @@ class PapyrusProject:
         self.scripts.clear()
 
         # Parser: Search for source files in the project script directory.
-        paths:list[str] = papyrus.find_files(self.root)
+        paths:list[str] = find_files(self.root)
         if not paths:
             logging.warning(f"[{self.identifier}] No scripts found in this project.")
             return False
@@ -43,7 +57,7 @@ class PapyrusProject:
         for path in paths:
             count += 1
             # Start parsing the script file.
-            script:Script = papyrus.parser.parse(path)
+            script:Script = source.parse(path)
             if script:
                 self.scripts.add(script)
                 logging.debug(f"[{self.identifier}] #{count} {script.header.name.file_path()}")

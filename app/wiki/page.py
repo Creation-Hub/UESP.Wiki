@@ -10,6 +10,7 @@ from app.papyrus.code import Event
 from app.papyrus.code import Variable
 from app.papyrus.code import Property
 
+
 # Writer: Script Object
 #---------------------------------------------
 

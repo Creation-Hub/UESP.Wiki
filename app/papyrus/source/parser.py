@@ -1,8 +1,6 @@
 import logging
-import re
 from re import Match
 from app.common.mutable import MutableBool
-from app import papyrus
 from app.papyrus.code import Event
 from app.papyrus.code import Function
 from app.papyrus.code import Header
@@ -13,213 +11,8 @@ from app.papyrus.code import ScriptName
 from app.papyrus.code import State
 from app.papyrus.code import Structure
 from app.papyrus.code import Variable
-
-# Regular Expressions
-#---------------------------------------------
-
-# TODO: Consolidate and optimize these regex patterns.
-
-# Regular Patterns
-#---------------------------------------------
-
-HEADER_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Name (Required)
-    r'scriptname'                   # Papyrus keyword 'scriptname' and at least one space
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>[^\s]+)'             # Capture required `name`, non-whitespace
-    # Extends (Optional)
-    r'(?:\s+extends\s+'             # Papyrus keyword 'extends' and parent name
-    r'(?P<extends>[^\s]+))?'        # Capture parent script name (non-whitespace)
-    # Flags (Optional)
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>(?:\s+\w+)*)'       # Capture optional flags (zero or more flag words)
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-#-------------------------
-
-# TODO: This does not match lines correctly
-VARIABLE_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Type (Required)
-    r'(?P<type>\w+(?:\[\])?)'       # Capture required `type` (with optional array brackets)
-    r'\s+'                          # Whitespace required (1+)
-    # Name (Required)
-    r'(?P<name>\w+)'                # Capture required `name`
-    # Initializer (Optional)
-    r'(?:'                          # Start optional group for initializer (non-capturing)
-    r'\s*'                          # Whitespace optional (0+)
-    r'='                            # Papyrus equals sign
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<initializer>[^\s;]+)'     # Capture optional `initializer` (non-whitespace, non-semicolon)
-    r')?'                           # End optional initializer group
-    # Flags (Optional)
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Capture optional `flags` (rest of line)
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-PARAMETERS_PATTERN = re.compile(
-    r'^'                               # Start of sequence match
-    r'\s*'                             # Whitespace optional (0+)
-    # Type (Required)
-    r'(?P<type>\w+(?::\w+)?(?:\[\])?)' # Parameter type (with optional namespace and array brackets)
-    r'\s+'                             # Whitespace required (1+)
-    # Name (Required)
-    r'(?P<name>\w+)'                   # Parameter name
-    # Initializer (Optional)
-    r'(?:\s*=\s*(?P<value>.+))?'       # Optional default value with equals sign
-    r'$',                              # End of sequence match
-    re.IGNORECASE
-)
-
-#-------------------------
-
-STRUCT_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Name (Required)
-    r'struct'                       # Papyrus keyword 'struct'
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)',               # Capture required `name`
-    re.IGNORECASE
-)
-
-STRUCT_END_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    r'endstruct'                    # Papyrus keyword 'endstruct'
-    r'\b',                          # Word boundary
-    re.IGNORECASE
-)
-
-#-------------------------
-
-GROUP_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Name (Required)
-    r'group'                        # Papyrus keyword 'group'
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Capture required `name`
-    # Flags (Optional)
-    r'(?P<flags>.*)'                # Capture optional `flags`
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-GROUP_END_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    r'endgroup'                     # Papyrus keyword 'endgroup'
-    r'\s*'                          # Whitespace optional (0+)
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-PROPERTY_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Property (Required)
-    r'(?P<type>\w+(?:\[\])?)'       # Capture required `type`
-    r'\s+'                          # Whitespace required (1+)
-    r'property'                     # Papyrus keyword 'property'
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Capture required `name`
-    # Initializer (Optional)
-    r'(?:'                          # Capture-Start with discard
-    r'\s*'                          # Whitespace optional (0+)
-    r'='                            # Equals sign for initializer
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<initializer>[^\s]+)'      # Capture optional `initializer`
-    r')?'                           # Capture-End as optional
-    # Flags (Optional)
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Capture optional `flags`
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-PROPERTY_END_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    r'endproperty'                  # Papyrus keyword 'endproperty'
-    r'\b',                          # Word boundary
-    re.IGNORECASE
-)
-
-#-------------------------
-
-STATE_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Flag Auto (Optional)
-    r'(?P<flag_auto>auto\s+)?'      # Capture optional 'auto' flag
-    # Name (Required)
-    r'state'                        # Papyrus keyword 'state'
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Capture required `name`
-    # Flags (Optional)
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Capture optional `flags`
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-STATE_END_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    r'endstate'                     # Papyrus keyword 'endstate'
-    r'\s*'                          # Whitespace optional (0+)
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-EVENT_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Name (Required)
-    r'event'                        # Papyrus keyword 'event'
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Event name
-    r'\s*'                          # Whitespace optional (0+)
-    # Parameters (Required)
-    r'\('                           # Opening parenthesis
-    r'(?P<params>[^\)]*)'           # Parameters
-    r'\)'                           # Closing parenthesis
-    # Flags (Optional)
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Optional flags
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
-
-FUNCTION_PATTERN = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    # Type (Optional)
-    r'(?P<rtype>\w+(?:\[\])?)?'     # Optional return type (with optional [])
-    r'\s*'                          # Whitespace optional (0+)
-    # Name (Required)
-    r'function'                     # Papyrus keyword 'function'
-    r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Function name
-    r'\s*'                          # Whitespace optional (0+)
-    # Parameters (Required)
-    r'\('                           # Opening parenthesis
-    r'(?P<params>[^\)]*)'           # Parameters (anything except ')' character)
-    r'\)'                           # Closing parenthesis
-    # Flags (Optional)
-    r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Optional flags (rest of line)
-    r'$',                           # End of sequence match
-    re.IGNORECASE
-)
+from app.papyrus.source import normalize
+from app.papyrus.source import regex
 
 
 # Documentation
@@ -332,18 +125,18 @@ def parse_flags(text:str) -> list[str]:
     """Parse a Papyrus flags string into a list of normalized flag strings."""
     flags:list[str] = []
     if text:
-        text = papyrus.normalize.strip_comments(text)
+        text = normalize.strip_comments(text)
         tokens:list[str] = text.split()
         for token in tokens:
             token = token.strip()
             if not token: continue
-            else: flags.append(papyrus.normalize.flag(token))
+            else: flags.append(normalize.flag(token))
     return flags
 
 
 def parse_initializer(text:str) -> str:
     if text:
-        return papyrus.normalize.symbol(text)
+        return normalize.symbol(text)
     return ""
 
 
@@ -391,16 +184,16 @@ def parse_header(lines:list[str]) -> Header:
         if skip(inside_comment_block, line): continue
 
         # Normalize the line by stripping comments and whitespace
-        line = papyrus.normalize.strip_comments(line)
-        line = papyrus.normalize.whitespace(line)
+        line = normalize.strip_comments(line)
+        line = normalize.whitespace(line)
 
         # Check if this line matches the header pattern
-        header_match = HEADER_PATTERN.match(line)
+        header_match = regex.HEADER_PATTERN.match(line)
         if header_match:
             header:Header = Header()
             header.index = line_index
             header.index_end = line_index
-            header.definition = papyrus.normalize.script_definition(line)
+            header.definition = normalize.script_definition(line)
             header.documentation = parse_documentation(lines, line_index)
             header.name = ScriptName(header_match.group("name"))
             header.extends = ScriptName(header_match.group("extends"))
@@ -414,12 +207,12 @@ def parse_header(lines:list[str]) -> Header:
 
 def parse_variable(variable_match:Match[str], lines:list[str], line_index:int) -> Variable:
     variable:Variable = Variable()
-    variable.name = papyrus.normalize.member_name_upper(variable_match.group("name"))
+    variable.name = normalize.member_name_upper(variable_match.group("name"))
     variable.index = line_index
     variable.index_end = line_index
     variable.definition = lines[line_index]
     variable.documentation = parse_documentation(lines, line_index)
-    variable.type = papyrus.normalize.script_type(variable_match.group("type"))
+    variable.type = normalize.script_type(variable_match.group("type"))
     variable.flags = parse_flags(variable_match.group("flags"))
     variable.value = parse_initializer(variable_match.group("initializer"))
     return variable
@@ -431,9 +224,9 @@ def parse_property(property_match:Match[str], lines:list[str], line_index:int) -
     property.index_end = line_index
     property.definition = lines[line_index]
     property.documentation = parse_documentation(lines, line_index)
-    property.name = papyrus.normalize.member_name_upper(property_match.group("name"))
+    property.name = normalize.member_name_upper(property_match.group("name"))
     property.flags = parse_flags(property_match.group("flags"))
-    property.type = papyrus.normalize.script_type(property_match.group("type"))
+    property.type = normalize.script_type(property_match.group("type"))
     property.value = parse_initializer(property_match.group("initializer"))
     return property
 
@@ -444,17 +237,17 @@ def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) ->
     structure.index_end = line_index
     structure.definition = lines[line_index]
     structure.documentation = parse_documentation(lines, line_index)
-    structure.name = papyrus.normalize.member_name_upper(struct_match.group("name"))
+    structure.name = normalize.member_name_upper(struct_match.group("name"))
 
     line_index += 1
     while line_index < len(lines):
         line:str = lines[line_index]
 
         # Terminate this loop if we reach the block end.
-        if STRUCT_END_PATTERN.match(line):
+        if regex.STRUCT_END_PATTERN.match(line):
             break
 
-        variable_match = VARIABLE_PATTERN.match(line)
+        variable_match = regex.VARIABLE_PATTERN.match(line)
         if variable_match:
             variable:Variable = parse_variable(variable_match, lines, line_index)
             structure.variables[variable.name] = variable
@@ -470,20 +263,20 @@ def parse_parameters(parameters_line:str) -> list[Variable]:
     """Parse a Papyrus parameter string into a list of normalized parameter strings."""
     parameters:list[Variable] = []
     if parameters_line:
-        parameters_line = papyrus.normalize.strip_comments(parameters_line)
+        parameters_line = normalize.strip_comments(parameters_line)
         tokens:list[str] = parameters_line.split(",")
         for token in tokens:
             token = token.strip()
             if not token:
                 continue
-            parameter_match = PARAMETERS_PATTERN.match(token)
+            parameter_match = regex.PARAMETERS_PATTERN.match(token)
             if parameter_match:
                 parameter:Variable = Variable()
-                parameter.type = papyrus.normalize.script_type(parameter_match.group("type"))
-                parameter.name = papyrus.normalize.member_name(parameter_match.group("name"))
+                parameter.type = normalize.script_type(parameter_match.group("type"))
+                parameter.name = normalize.member_name(parameter_match.group("name"))
 
                 # TODO: Handle non-primitive default values.
-                parameter.value = papyrus.normalize.primitive_value(parameter_match.group("value"))
+                parameter.value = normalize.primitive_value(parameter_match.group("value"))
                 parameters.append(parameter)
             else:
                 logging.warning(f"Invalid parameter format: '{token}'")
@@ -494,12 +287,12 @@ def parse_parameters(parameters_line:str) -> list[Variable]:
 
 def parse_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
     function:Function = Function()
-    function.name = papyrus.normalize.member_name_upper(function_match.group("name"))
+    function.name = normalize.member_name_upper(function_match.group("name"))
     function.index = line_index
     function.index_end = line_index
     function.definition = lines[line_index]
     function.documentation = parse_documentation(lines, line_index)
-    function.type = papyrus.normalize.script_type(function_match.group("rtype"))
+    function.type = normalize.script_type(function_match.group("rtype"))
     function.flags = parse_flags(function_match.group("flags"))
     function.parameters = parse_parameters(function_match.group("params"))
     return function
@@ -507,7 +300,7 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
 
 def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
     event:Event = Event()
-    event.name = papyrus.normalize.member_name_upper(event_match.group("name"))
+    event.name = normalize.member_name_upper(event_match.group("name"))
     event.index = line_index
     event.index_end = line_index
     event.definition = lines[line_index]
@@ -534,11 +327,11 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
         line:str = lines[line_index]
 
         # Terminate this loop if we reach the block end.
-        if GROUP_END_PATTERN.match(line):
+        if regex.GROUP_END_PATTERN.match(line):
             break
 
         # Parse members inside the group
-        property_match = PROPERTY_PATTERN.match(line)
+        property_match = regex.PROPERTY_PATTERN.match(line)
         if property_match:
             property:Property = parse_property(property_match, lines, line_index)
             if property:
@@ -557,7 +350,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
     state.index_end = line_index
     state.definition = lines[line_index]
     state.documentation = parse_documentation(lines, line_index)
-    state.name = papyrus.normalize.member_name_upper(state_match.group("name"))
+    state.name = normalize.member_name_upper(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
 
     line_index += 1
@@ -565,11 +358,11 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
         line:str = lines[line_index]
 
         # Terminate this loop if we reach the block end.
-        if STATE_END_PATTERN.match(line):
+        if regex.STATE_END_PATTERN.match(line):
             break
 
         # Parse any function methods inside this state.
-        function_match = FUNCTION_PATTERN.match(line)
+        function_match = regex.FUNCTION_PATTERN.match(line)
         if function_match:
             function:Function = parse_function(function_match, lines, line_index)
             if function:
@@ -578,7 +371,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
             continue
 
         # Parse any event methods inside this state.
-        event_match = EVENT_PATTERN.match(line)
+        event_match = regex.EVENT_PATTERN.match(line)
         if event_match:
             event:Event = parse_event(event_match, lines, line_index)
             if event:
@@ -597,6 +390,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
 #---------------------------------------------
 
 def parse(script_file_path:str) -> Script:
+    """Parses a Papyrus script file and returns a Script object."""
     with open(script_file_path, encoding="utf-8") as file:
         lines:list[str] = file.readlines()
 
@@ -608,7 +402,7 @@ def parse(script_file_path:str) -> Script:
         line:str = lines[line_index]
 
         # Group Block
-        group_match = GROUP_PATTERN.match(line)
+        group_match = regex.GROUP_PATTERN.match(line)
         if group_match:
             group:PropertyGroup = parse_property_group(group_match, lines, line_index)
             script.members[group.name] = group
@@ -616,7 +410,7 @@ def parse(script_file_path:str) -> Script:
             continue
 
         # State Block
-        state_match = STATE_PATTERN.match(line)
+        state_match = regex.STATE_PATTERN.match(line)
         if state_match:
             state:State = parse_state(state_match, lines, line_index)
             script.members[state.name] = state
@@ -624,7 +418,7 @@ def parse(script_file_path:str) -> Script:
             continue
 
         # Property
-        property_match = PROPERTY_PATTERN.match(line)
+        property_match = regex.PROPERTY_PATTERN.match(line)
         if property_match:
             property:Property = parse_property(property_match, lines, line_index)
             if property:
@@ -633,7 +427,7 @@ def parse(script_file_path:str) -> Script:
             continue
 
         # Function
-        function_match = FUNCTION_PATTERN.match(line)
+        function_match = regex.FUNCTION_PATTERN.match(line)
         if function_match:
             function:Function = parse_function(function_match, lines, line_index)
             if function:
@@ -642,7 +436,7 @@ def parse(script_file_path:str) -> Script:
             continue
 
         # Event
-        event_match = EVENT_PATTERN.match(line)
+        event_match = regex.EVENT_PATTERN.match(line)
         if event_match:
             event:Event = parse_event(event_match, lines, line_index)
             if event:
@@ -651,7 +445,7 @@ def parse(script_file_path:str) -> Script:
             continue
 
         # Struct
-        struct_match = STRUCT_PATTERN.match(line)
+        struct_match = regex.STRUCT_PATTERN.match(line)
         if struct_match:
             structure:Structure = parse_structure(struct_match, lines, line_index)
             if structure:
@@ -662,7 +456,7 @@ def parse(script_file_path:str) -> Script:
         # Variable
         # TODO: This does not match lines correctly, it is disabled for now.
         if False:
-            variable_match = VARIABLE_PATTERN.match(line)
+            variable_match = regex.VARIABLE_PATTERN.match(line)
             if variable_match:
                 variable:Variable = parse_variable(variable_match, lines, line_index)
                 if variable:

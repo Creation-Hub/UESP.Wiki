@@ -6,6 +6,7 @@ from app.papyrus.code import Member
 from app.publishing import Sort
 from app.settings import Configuration
 
+
 # Project
 #---------------------------------------------
 

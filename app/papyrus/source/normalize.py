@@ -1,6 +1,8 @@
 import re
 from typing import ChainMap, Dict
 
+# Canonical Name Mappings
+#---------------------------------------------
 
 MAP_KEYWORDS:Dict[str, str] = {
     "SCRIPTNAME": "ScriptName",
@@ -104,7 +106,7 @@ def primitive_type(token:str) -> str:
 
 
 def primitive_value(token:str) -> str:
-    """Normalize primitive default values (none, true, false) (numbers, strings)."""
+    """Normalize primitive default values (none, true, false) (not numbers or strings)."""
     if token: return MAP_PRIMITIVE_VALUES.get(token.upper(), token)
     else: return token
 
