@@ -16,7 +16,7 @@
 # Input
 # Directory contains the assembly files
 #---------------------------------------------
-/import.asm/*
+/import.asm/
 
 # Output
 # Directory contains the exported files

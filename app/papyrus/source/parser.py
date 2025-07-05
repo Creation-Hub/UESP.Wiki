@@ -214,7 +214,7 @@ def parse_variable(variable_match:Match[str], lines:list[str], line_index:int) -
     variable.documentation = parse_documentation(lines, line_index)
     variable.type = normalize.script_type(variable_match.group("type"))
     variable.flags = parse_flags(variable_match.group("flags"))
-    variable.value = parse_initializer(variable_match.group("initializer"))
+    variable.value = parse_initializer(variable_match.group("value"))
     return variable
 
 
@@ -227,7 +227,7 @@ def parse_property(property_match:Match[str], lines:list[str], line_index:int) -
     property.name = normalize.member_name_upper(property_match.group("name"))
     property.flags = parse_flags(property_match.group("flags"))
     property.type = normalize.script_type(property_match.group("type"))
-    property.value = parse_initializer(property_match.group("initializer"))
+    property.value = parse_initializer(property_match.group("value"))
     return property
 
 
@@ -401,6 +401,24 @@ def parse(script_file_path:str) -> Script:
     while line_index < len(lines):
         line:str = lines[line_index]
 
+        if False:
+            # Skip Papyrus line carries (lines ending with '\')
+            if line.endswith("\\\n"):
+                logging.warning(f"'{script_file_path}' Line {line_index} ends with line carry.")
+                line_index += 1
+                continue
+
+            # Variable
+            # TODO: This does not match lines correctly, it is disabled for now.
+            variable_match = regex.VARIABLE_PATTERN.match(line)
+            if variable_match:
+                variable:Variable = parse_variable(variable_match, lines, line_index)
+                if variable:
+                    script.members[variable.name] = variable
+                line_index += 1
+                continue
+
+
         # Group Block
         group_match = regex.GROUP_PATTERN.match(line)
         if group_match:
@@ -452,17 +470,6 @@ def parse(script_file_path:str) -> Script:
                 script.members[structure.name] = structure
             line_index += 1
             continue
-
-        # Variable
-        # TODO: This does not match lines correctly, it is disabled for now.
-        if False:
-            variable_match = regex.VARIABLE_PATTERN.match(line)
-            if variable_match:
-                variable:Variable = parse_variable(variable_match, lines, line_index)
-                if variable:
-                    script.members[variable.name] = variable
-                line_index += 1
-                continue
 
         # Skip other lines
         line_index += 1

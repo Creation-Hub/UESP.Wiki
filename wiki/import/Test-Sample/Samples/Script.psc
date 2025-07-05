@@ -26,6 +26,7 @@ ItemData[] Property Items Auto
 
 ; Global variables at script level
 bool isActive = false
+bool never
 float fTimer = 1.5
 
 ; Events
