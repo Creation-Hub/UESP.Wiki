@@ -7,6 +7,17 @@ from re import Pattern
 
 # TODO: Consolidate and optimize these regex patterns.
 
+SCRIPT_NAME:str = r'(?P<name>[^\s]+)'
+SCRIPT_FLAGS:str = r'(?P<flags>(?:\s+\w+)*)'
+
+NAME:str = r'(?P<name>\w+)'
+FLAGS:str = r'(?P<flags>.*)'
+PARAMETERS:str = r'(?P<params>[^\)]*)'
+TYPE_RETURN:str    = r'(?P<type>\w+(?:\[\])?)?'
+TYPE_VARIABLE:str  = r'(?P<type>\w+(?:\[\])?)'
+TYPE_PARAMETER:str = r'(?P<type>\w+(?::\w+)?(?:\[\])?)'
+
+
 # Regular Patterns
 #---------------------------------------------
 
@@ -16,13 +27,13 @@ HEADER_PATTERN:Pattern[str] = re.compile(
     # Name (Required)
     r'scriptname'                   # Papyrus keyword 'scriptname' and at least one space
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>[^\s]+)'             # Capture required `name`, non-whitespace
+    f'{SCRIPT_NAME}'                # Capture required `name`, non-whitespace
     # Extends (Optional)
     r'(?:\s+extends\s+'             # Papyrus keyword 'extends' and parent name
     r'(?P<extends>[^\s]+))?'        # Capture parent script name (non-whitespace)
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>(?:\s+\w+)*)'       # Capture optional flags (zero or more flag words)
+    f'{SCRIPT_FLAGS}'               # Capture optional flags (zero or more flag words)
     r'$',                           # End of sequence match
     re.IGNORECASE
 )
@@ -34,11 +45,11 @@ VARIABLE_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     # Type (Required)
-    r'(?P<type>\w+(?:\[\])?)'       # Capture required `type` (with optional array brackets)
+    f'{TYPE_VARIABLE}'              # Capture required `type` (with optional array brackets)
     r'\s+'                          # Whitespace required (1+)
     # Name (Required)
-    r'(?P<name>\w+)'                # Capture required `name`
-    # Initializer (Optional)
+    f'{NAME}'                       # Capture required `name`
+    # Value Initializer (Optional)
     r'(?:'                          # Start optional group for initializer (non-capturing)
     r'\s*'                          # Whitespace optional (0+)
     r'='                            # Papyrus equals sign
@@ -47,7 +58,7 @@ VARIABLE_PATTERN:Pattern[str] = re.compile(
     r')?'                           # End optional initializer group
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Capture optional `flags` (rest of line)
+    f'{FLAGS}'                      # Capture optional `flags` (rest of line)
     r'$',                           # End of sequence match
     re.IGNORECASE
 )
@@ -56,11 +67,11 @@ PARAMETERS_PATTERN:Pattern[str] = re.compile(
     r'^'                               # Start of sequence match
     r'\s*'                             # Whitespace optional (0+)
     # Type (Required)
-    r'(?P<type>\w+(?::\w+)?(?:\[\])?)' # Parameter type (with optional namespace and array brackets)
+    f'{TYPE_PARAMETER}'                # Parameter type (with optional namespace and array brackets)
     r'\s+'                             # Whitespace required (1+)
     # Name (Required)
-    r'(?P<name>\w+)'                   # Parameter name
-    # Initializer (Optional)
+    f'{NAME}'                          # Parameter name
+    # Value Initializer (Optional)
     r'(?:\s*=\s*(?P<value>.+))?'       # Optional default value with equals sign
     r'$',                              # End of sequence match
     re.IGNORECASE
@@ -74,7 +85,7 @@ STRUCT_PATTERN:Pattern[str] = re.compile(
     # Name (Required)
     r'struct'                       # Papyrus keyword 'struct'
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)',               # Capture required `name`
+    f'{NAME}',                      # Capture required `name`
     re.IGNORECASE
 )
 
@@ -94,9 +105,9 @@ GROUP_PATTERN:Pattern[str] = re.compile(
     # Name (Required)
     r'group'                        # Papyrus keyword 'group'
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Capture required `name`
+    f'{NAME}'                       # Capture required `name`
     # Flags (Optional)
-    r'(?P<flags>.*)'                # Capture optional `flags`
+    f'{FLAGS}'                      # Capture optional `flags`
     r'$',                           # End of sequence match
     re.IGNORECASE
 )
@@ -114,11 +125,11 @@ PROPERTY_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     # Property (Required)
-    r'(?P<type>\w+(?:\[\])?)'       # Capture required `type`
+    f'{TYPE_VARIABLE}'              # Capture required `type`
     r'\s+'                          # Whitespace required (1+)
     r'property'                     # Papyrus keyword 'property'
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Capture required `name`
+    f'{NAME}'                       # Capture required `name`
     # Initializer (Optional)
     r'(?:'                          # Capture-Start with discard
     r'\s*'                          # Whitespace optional (0+)
@@ -128,7 +139,7 @@ PROPERTY_PATTERN:Pattern[str] = re.compile(
     r')?'                           # Capture-End as optional
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Capture optional `flags`
+    f'{FLAGS}'                      # Capture optional `flags`
     r'$',                           # End of sequence match
     re.IGNORECASE
 )
@@ -151,10 +162,10 @@ STATE_PATTERN:Pattern[str] = re.compile(
     # Name (Required)
     r'state'                        # Papyrus keyword 'state'
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Capture required `name`
+    f'{NAME}'                       # Capture required `name`
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Capture optional `flags`
+    f'{FLAGS}'                      # Capture optional `flags`
     r'$',                           # End of sequence match
     re.IGNORECASE
 )
@@ -168,21 +179,23 @@ STATE_END_PATTERN:Pattern[str] = re.compile(
     re.IGNORECASE
 )
 
+#-------------------------
+
 EVENT_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     # Name (Required)
     r'event'                        # Papyrus keyword 'event'
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Event name
+    f'{NAME}'                       # Event name
     r'\s*'                          # Whitespace optional (0+)
     # Parameters (Required)
     r'\('                           # Opening parenthesis
-    r'(?P<params>[^\)]*)'           # Parameters
+    f'{PARAMETERS}'                 # Parameters
     r'\)'                           # Closing parenthesis
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Optional flags
+    f'{FLAGS}'                      # Optional flags
     r'$',                           # End of sequence match
     re.IGNORECASE
 )
@@ -191,20 +204,20 @@ FUNCTION_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     # Type (Optional)
-    r'(?P<rtype>\w+(?:\[\])?)?'     # Optional return type (with optional [])
+    f'{TYPE_RETURN}'                # Optional return type (with optional [])
     r'\s*'                          # Whitespace optional (0+)
     # Name (Required)
     r'function'                     # Papyrus keyword 'function'
     r'\s+'                          # Whitespace required (1+)
-    r'(?P<name>\w+)'                # Function name
+    f'{NAME}'                       # Function name
     r'\s*'                          # Whitespace optional (0+)
     # Parameters (Required)
     r'\('                           # Opening parenthesis
-    r'(?P<params>[^\)]*)'           # Parameters (anything except ')' character)
+    f'{PARAMETERS}'                 # Parameters (anything except ')' character)
     r'\)'                           # Closing parenthesis
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
-    r'(?P<flags>.*)'                # Optional flags (rest of line)
+    f'{FLAGS}'                      # Optional flags (rest of line)
     r'$',                           # End of sequence match
     re.IGNORECASE
 )

@@ -292,7 +292,7 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
     function.index_end = line_index
     function.definition = lines[line_index]
     function.documentation = parse_documentation(lines, line_index)
-    function.type = normalize.script_type(function_match.group("rtype"))
+    function.type = normalize.script_type(function_match.group("type"))
     function.flags = parse_flags(function_match.group("flags"))
     function.parameters = parse_parameters(function_match.group("params"))
     return function
