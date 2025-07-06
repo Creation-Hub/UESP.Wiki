@@ -122,6 +122,15 @@ The members that belong to this script, grouped by kind.
 }}
 
 {{Script_Object_Member_Summary
+| title = SetFogColor
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetFogColor|SetFogColor]]
+| kind = Function
+| flags = Native
+| parameters = int aiNearRed, int aiNearGreen, int aiNearBlue, int aiFarRed, int aiFarGreen, int aiFarBlue
+}}
+
+{{Script_Object_Member_Summary
 | title = SetFogPlanes
 | script = [[SFM:Script-Cell|Cell]]
 | name = [[SFM:Script-Cell/SetFogPlanes|SetFogPlanes]]

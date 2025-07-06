@@ -316,6 +316,42 @@ on the existing event
 }}
 
 {{Script_Object_Member_Summary
+| title = RegisterForHitEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEvent|RegisterForHitEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget, ScriptObject akAggressorFilter = none, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEventAggressorRefArray
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEventAggressorRefArray|RegisterForHitEventAggressorRefArray]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = ScriptObject akTarget, ObjectReference[] akAggressorFilterRefArray, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEventAggressorRefAliasArray
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEventAggressorRefAliasArray|RegisterForHitEventAggressorRefAliasArray]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = ScriptObject akTarget, ReferenceAlias[] akAggressorFilterRefAliasArray, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEventAggressorFactionArray
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEventAggressorFactionArray|RegisterForHitEventAggressorFactionArray]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = ScriptObject akTarget, Faction[] akAggressorFilterFactionArray, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
 | title = RegisterForMagicEffectApplyEvent
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
 | name = [[SFM:Script-ScriptObject/RegisterForMagicEffectApplyEvent|RegisterForMagicEffectApplyEvent]]
@@ -700,6 +736,15 @@ specify event id to unregister for a specific event, -1 to unregister for all ev
 }}
 
 {{Script_Object_Member_Summary
+| title = UnregisterForHitEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForHitEvent|UnregisterForHitEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget, ScriptObject akAggressorFilter = none, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
 | title = UnregisterForLOS
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
 | name = [[SFM:Script-ScriptObject/UnregisterForLOS|UnregisterForLOS]]
@@ -948,6 +993,14 @@ check the event ID to make sure it's the event you're expecting
 | kind = Event
 | parameters = ObjectReference akViewer, ObjectReference akTarget
 | documentation = LOS event, sent whenever the viewer first sees the target (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
 }}
 
 {{Script_Object_Member_Summary

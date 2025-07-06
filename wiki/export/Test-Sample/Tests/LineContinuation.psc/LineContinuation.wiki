@@ -1,0 +1,33 @@
+{{Script_Object_Summary
+| title = Tests:LineContinuation
+| name = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The <code>Tests\LineContinuation.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Tests:LineContinuation
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Tests\LineContinuation.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Foo1
+| script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
+| name = [[SFM:Script-Tests:LineContinuation/Foo1|Foo1]]
+| kind = Function
+| parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

@@ -1,0 +1,25 @@
+{{Script_Member_Summary
+| title = Foo1
+| script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
+| name = [[SFM:Script-Tests:LineContinuation/Foo1|Foo1]]
+| kind = Function
+| parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* string arg1
+* string arg2
+* string arg3
+* string arg4
+* string arg5
+* string arg6
+
+
+[[Category:Starfield_Mod-Papyrus]]

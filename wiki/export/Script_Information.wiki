@@ -7,9 +7,9 @@ This page lists all Papyrus project information for each import.
 * Scripts: 101
 
 ==== Member Statistics ====
-This project overall contains 2150 total members spread over 101 scripts.
-* Function was used 1409 times.
-* Event was used 670 times.
+This project overall contains 2159 total members spread over 101 scripts.
+* Function was used 1415 times.
+* Event was used 673 times.
 * Property was used 68 times.
 * Struct was used 3 times.
 
@@ -393,11 +393,11 @@ There are 208 scripts that belong to this project:
 
 == Test-Sample ==
 * Imports: 1 (Base-Native)
-* Scripts: 6
+* Scripts: 7
 
 ==== Member Statistics ====
-This project overall contains 26 total members spread over 6 scripts.
-* Function was used 6 times.
+This project overall contains 27 total members spread over 7 scripts.
+* Function was used 7 times.
 * Event was used 5 times.
 * Property was used 11 times.
 * Struct was used 2 times.
@@ -405,18 +405,19 @@ This project overall contains 26 total members spread over 6 scripts.
 
 ==== Inheritance Statistics ====
 The most common extended parent scripts:
-* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 3 times.
+* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 4 times.
 * The [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] script was extended 2 times.
 * The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 1 times.
 
 
 ==== Scripts ====
-There are 6 scripts that belong to this project:
+There are 7 scripts that belong to this project:
 * [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
 * [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
 * [[SFM:Script-Samples:Script|Samples:Script]]
 * [[SFM:Script-Samples:StructureScript|Samples:StructureScript]]
 * [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+* [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
 * [[SFM:Script-Tests:A:B:C:Script|Tests:A:B:C:Script]]
 
 

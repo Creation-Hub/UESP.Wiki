@@ -10,6 +10,7 @@
 	<Imports>
 		<Import>.</Import>
 		<Import>..\Base-Shared-Default</Import>
+		<Import>..\Base-Game</Import>
 		<Import>..\Base-Native</Import>
 	</Imports>
 	<Scripts>

@@ -506,6 +506,14 @@ will point at it - otherwise the parameter will be None. For valid Transfer Reas
 }}
 
 {{Script_Object_Member_Summary
+| title = OnTrapHitStart
+| script = [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]]
+| name = [[SFM:Script-ActiveMagicEffect/OnTrapHitStart|OnTrapHitStart]]
+| kind = Event
+| parameters = ObjectReference akTarget, float afXVel, float afYVel, float afZVel, float afXPos, float afYPos, float afZPos, int aeMaterial, bool abInitialHit, int aeMotionType
+}}
+
+{{Script_Object_Member_Summary
 | title = OnTrapHitStop
 | script = [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]]
 | name = [[SFM:Script-ActiveMagicEffect/OnTrapHitStop|OnTrapHitStop]]

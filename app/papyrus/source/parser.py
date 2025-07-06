@@ -389,27 +389,51 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
 # Parse
 #---------------------------------------------
 
+def collect_line_continuation(lines:list[str], line_index:int) -> tuple[str, int]:
+    """
+    Collects any Papyrus line continuations into a single line.
+    Example:
+        Papyrus line continuations are indicated by a trailing backslash `\\` and newline.
+    Returns:
+        If the line is a continuation, returns a merged line and the index of the last line that was merged.
+        If the line is not a continuation, returns the original line and the current index.
+    """
+    line:str = lines[line_index]
+    index_end:int = line_index
+    if line.endswith("\\\n"):
+        while index_end + 1 < len(lines) and line.endswith("\\\n"):
+            line = line.strip()[:-1] # Remove the trailing backslash and whitespace
+            line += lines[index_end + 1].strip() # Append the next line
+            index_end += 1
+        return line, index_end
+    else:
+        return line, line_index
+
+
 def parse(script_file_path:str) -> Script:
     """Parses a Papyrus script file and returns a Script object."""
     with open(script_file_path, encoding="utf-8") as file:
         lines:list[str] = file.readlines()
+        logging.debug(f"'{script_file_path}': Read with {len(lines)} lines.")
 
     script:Script = Script()
     script.header = parse_header(lines)
 
+    # Start parsing the script body after the header.
     line_index:int = script.header.index + 1
+    logging.debug(f"'{script.header.name.file_path()}'@{line_index}: Parsing...")
+
     while line_index < len(lines):
-        line:str = lines[line_index]
 
+        # Handle any line continuations.
+        (line_merged, index_end) = collect_line_continuation(lines, line_index)
+        line:str = line_merged
+        line_index = index_end
+
+        #---------------------------------------------
+
+        # TODO: This does not match lines correctly, it is disabled for now.
         if False:
-            # Skip Papyrus line carries (lines ending with '\')
-            if line.endswith("\\\n"):
-                logging.warning(f"'{script_file_path}' Line {line_index} ends with line carry.")
-                line_index += 1
-                continue
-
-            # Variable
-            # TODO: This does not match lines correctly, it is disabled for now.
             variable_match = regex.VARIABLE_PATTERN.match(line)
             if variable_match:
                 variable:Variable = parse_variable(variable_match, lines, line_index)
@@ -417,7 +441,6 @@ def parse(script_file_path:str) -> Script:
                     script.members[variable.name] = variable
                 line_index += 1
                 continue
-
 
         # Group Block
         group_match = regex.GROUP_PATTERN.match(line)
