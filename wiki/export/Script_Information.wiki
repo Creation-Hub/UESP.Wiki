@@ -393,25 +393,27 @@ There are 208 scripts that belong to this project:
 
 == Test-Sample ==
 * Imports: 1 (Base-Native)
-* Scripts: 7
+* Scripts: 9
 
 ==== Member Statistics ====
-This project overall contains 27 total members spread over 7 scripts.
-* Function was used 7 times.
-* Event was used 5 times.
-* Property was used 11 times.
-* Struct was used 2 times.
+This project overall contains 33 total members spread over 9 scripts.
+* Struct was used 3 times.
+* Function was used 8 times.
+* Property was used 14 times.
+* Event was used 6 times.
 * State was used 2 times.
 
 ==== Inheritance Statistics ====
 The most common extended parent scripts:
-* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 4 times.
+* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 5 times.
+* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 2 times.
 * The [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] script was extended 2 times.
-* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 1 times.
 
 
 ==== Scripts ====
-There are 7 scripts that belong to this project:
+There are 9 scripts that belong to this project:
+* [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+* [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
 * [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
 * [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
 * [[SFM:Script-Samples:Script|Samples:Script]]

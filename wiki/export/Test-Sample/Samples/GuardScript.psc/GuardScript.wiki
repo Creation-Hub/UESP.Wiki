@@ -1,0 +1,64 @@
+{{Script_Object_Summary
+| title = Samples:GuardScript
+| name = [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The <code>Samples\GuardScript.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Samples:GuardScript Extends ObjectReference
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Samples\GuardScript.psc</code> source file.
+
+
+== Member ==
+The members that belong to this script, grouped by kind.
+
+=== Property ===
+{{Script_Object_Member_Summary
+| title = MyProperty1
+| script = [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
+| name = [[SFM:Script-Samples:GuardScript/MyProperty1|MyProperty1]]
+| kind = Property
+| flags = Auto Hidden Conditional RequiresGuard(MyPropertyGuard)
+| returns = int
+| parameters = 2
+}}
+
+{{Script_Object_Member_Summary
+| title = MyProperty2
+| script = [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
+| name = [[SFM:Script-Samples:GuardScript/MyProperty2|MyProperty2]]
+| kind = Property
+| flags = Auto Hidden Conditional RequiresGuard(MyPropertyGuard)
+| returns = int
+| parameters = 4
+}}
+
+{{Script_Object_Member_Summary
+| title = MyProperty3
+| script = [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
+| name = [[SFM:Script-Samples:GuardScript/MyProperty3|MyProperty3]]
+| kind = Property
+| flags = Auto Hidden Conditional RequiresGuard(MyPropertyGuard)
+| returns = int
+| parameters = 8
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
+| name = [[SFM:Script-Samples:GuardScript/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+}}
+
+
+[[Category:Starfield_Mod-Papyrus]]

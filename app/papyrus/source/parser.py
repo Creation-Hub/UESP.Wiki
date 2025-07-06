@@ -432,16 +432,6 @@ def parse(script_file_path:str) -> Script:
 
         #---------------------------------------------
 
-        # TODO: This does not match lines correctly, it is disabled for now.
-        if False:
-            variable_match = regex.VARIABLE_PATTERN.match(line)
-            if variable_match:
-                variable:Variable = parse_variable(variable_match, lines, line_index)
-                if variable:
-                    script.members[variable.name] = variable
-                line_index += 1
-                continue
-
         # Group Block
         group_match = regex.GROUP_PATTERN.match(line)
         if group_match:
@@ -493,6 +483,19 @@ def parse(script_file_path:str) -> Script:
                 script.members[structure.name] = structure
             line_index += 1
             continue
+
+
+        # TODO: This does not match lines correctly, it is disabled for now.
+        #    This should be matched after Guards.
+        if False:
+            variable_match = regex.VARIABLE_PATTERN.match(line)
+            if variable_match:
+                variable:Variable = parse_variable(variable_match, lines, line_index)
+                if variable:
+                    script.members[variable.name] = variable
+                line_index += 1
+                continue
+
 
         # Skip other lines
         line_index += 1
