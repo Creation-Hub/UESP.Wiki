@@ -218,47 +218,6 @@ def parse_variable(variable_match:Match[str], lines:list[str], line_index:int) -
     return variable
 
 
-def parse_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
-    property:Property = Property()
-    property.index = line_index
-    property.index_end = line_index
-    property.definition = lines[line_index]
-    property.documentation = parse_documentation(lines, line_index)
-    property.name = normalize.member_name_upper(property_match.group("name"))
-    property.flags = parse_flags(property_match.group("flags"))
-    property.type = normalize.script_type(property_match.group("type"))
-    property.value = parse_initializer(property_match.group("value"))
-    return property
-
-
-def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
-    structure:Structure = Structure()
-    structure.index = line_index
-    structure.index_end = line_index
-    structure.definition = lines[line_index]
-    structure.documentation = parse_documentation(lines, line_index)
-    structure.name = normalize.member_name_upper(struct_match.group("name"))
-
-    line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
-
-        # Terminate this loop if we reach the block end.
-        if regex.STRUCT_END_PATTERN.match(line):
-            break
-
-        variable_match = regex.VARIABLE_PATTERN.match(line)
-        if variable_match:
-            variable:Variable = parse_variable(variable_match, lines, line_index)
-            structure.variables[variable.name] = variable
-
-        line_index += 1
-
-    # The last visited `line_index` will be the `index_end` of this structure block.
-    structure.index_end = line_index
-    return structure
-
-
 def parse_parameters(parameters_line:str) -> list[Variable]:
     """Parse a Papyrus parameter string into a list of normalized parameter strings."""
     parameters:list[Variable] = []
@@ -285,6 +244,110 @@ def parse_parameters(parameters_line:str) -> list[Variable]:
     return parameters
 
 
+# Block
+def parse_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
+    property:Property = Property()
+    property.index = line_index
+    property.index_end = line_index
+    property.definition = lines[line_index]
+    property.documentation = parse_documentation(lines, line_index)
+    property.name = normalize.member_name_upper(property_match.group("name"))
+    property.flags = parse_flags(property_match.group("flags"))
+    property.type = normalize.script_type(property_match.group("type"))
+    property.value = parse_initializer(property_match.group("value"))
+
+    if "Auto" in property.flags or "AutoReadOnly" in property.flags:
+        return property
+
+    line_index += 1
+    while line_index < len(lines):
+        line:str = lines[line_index]
+
+        # Terminate this loop if we reach the block end.
+        if regex.STRUCT_END_PATTERN.match(line):
+            property.index_end = line_index
+            break
+
+        # Advance to next index.
+        line_index += 1
+
+    # Warn on unincremented block indexes.
+    if property.index == property.index_end:
+        logging.warning(f"Property '{property.name}' at line {property.index} has an unincremented block index.")
+
+    logging.debug(f"'{property.name}'@{line_index}: Found {property.index_end - property.index} lines until end of block.")
+    return property
+
+
+# Block
+def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
+    structure:Structure = Structure()
+    structure.index = line_index
+    structure.index_end = line_index
+    structure.definition = lines[line_index]
+    structure.documentation = parse_documentation(lines, line_index)
+    structure.name = normalize.member_name_upper(struct_match.group("name"))
+
+    line_index += 1
+    while line_index < len(lines):
+        line:str = lines[line_index]
+        # Terminate this loop if we reach the block end.
+        if regex.STRUCT_END_PATTERN.match(line):
+            structure.index_end = line_index
+            break
+
+        # Match any variable definitions inside this structure.
+        variable_match = regex.VARIABLE_PATTERN.match(line)
+        if variable_match:
+            variable:Variable = parse_variable(variable_match, lines, line_index)
+            structure.variables[variable.name] = variable
+
+        # Advance to next index.
+        line_index += 1
+
+    # Warn on unincremented block indexes.
+    if structure.index == structure.index_end:
+        logging.warning(f"Structure '{structure.name}' at line {structure.index} has an unincremented block index.")
+
+    logging.debug(f"'{structure.name}'@{line_index}: Found {structure.index_end - structure.index} lines until end of block.")
+    return structure
+
+
+# Block
+def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
+    event:Event = Event()
+    event.name = normalize.member_name_upper(event_match.group("name"))
+    event.index = line_index
+    event.index_end = line_index
+    event.definition = lines[line_index]
+    event.documentation = parse_documentation(lines, line_index)
+    event.flags = parse_flags(event_match.group("flags"))
+    event.parameters = parse_parameters(event_match.group("params"))
+
+    if "Native" in event.flags:
+        return event
+
+    line_index += 1
+    while line_index < len(lines):
+        line:str = lines[line_index]
+
+        # Terminate this loop if we reach the block end.
+        if regex.EVENT_END_PATTERN.match(line):
+            event.index_end = line_index
+            break
+
+        # Advance to next index.
+        line_index += 1
+
+    # Warn on unincremented block indexes.
+    if event.index == event.index_end:
+        logging.warning(f"Event '{event.name}' at line {event.index} has an unincremented block index.")
+
+    logging.debug(f"'{event.name}'@{line_index}: Found {event.index_end - event.index} lines until end of block.")
+    return event
+
+
+# Block
 def parse_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
     function:Function = Function()
     function.name = normalize.member_name_upper(function_match.group("name"))
@@ -295,19 +358,28 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
     function.type = normalize.script_type(function_match.group("type"))
     function.flags = parse_flags(function_match.group("flags"))
     function.parameters = parse_parameters(function_match.group("params"))
+
+    if "Native" in function.flags:
+        return function
+
+    line_index += 1
+    while line_index < len(lines):
+        line:str = lines[line_index]
+
+        # Terminate this loop if we reach the block end.
+        if regex.FUNCTION_END_PATTERN.match(line):
+            function.index_end = line_index
+            break
+
+        # Advance to next index.
+        line_index += 1
+
+    # Warn on unincremented block indexes.
+    if function.index == function.index_end:
+        logging.warning(f"Function '{function.name}' at line {function.index} has an unincremented block index.")
+
+    logging.debug(f"'{function.name}'@{line_index}: Found {function.index_end - function.index} lines until end of block.")
     return function
-
-
-def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
-    event:Event = Event()
-    event.name = normalize.member_name_upper(event_match.group("name"))
-    event.index = line_index
-    event.index_end = line_index
-    event.definition = lines[line_index]
-    event.documentation = parse_documentation(lines, line_index)
-    event.flags = parse_flags(event_match.group("flags"))
-    event.parameters = parse_parameters(event_match.group("params"))
-    return event
 
 
 # Blocks
@@ -328,6 +400,7 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
 
         # Terminate this loop if we reach the block end.
         if regex.GROUP_END_PATTERN.match(line):
+            group.index_end = line_index
             break
 
         # Parse members inside the group
@@ -337,10 +410,14 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
             if property:
                 group.properties[property.name] = property
 
+        # Advance to next index.
         line_index += 1
 
-    # The last visited `line_index` will be the `index_end` of this group block.
-    group.index_end = line_index
+    # Warn on unincremented block indexes.
+    if group.index == group.index_end:
+        logging.warning(f"Group '{group.name}' at line {group.index} has an unincremented block index.")
+
+    logging.debug(f"'{group.name}'@{line_index}: Found {group.index_end - group.index} lines until end of block.")
     return group
 
 
@@ -359,6 +436,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
 
         # Terminate this loop if we reach the block end.
         if regex.STATE_END_PATTERN.match(line):
+            state.index_end = line_index
             break
 
         # Parse any function methods inside this state.
@@ -381,8 +459,11 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
 
         line_index += 1
 
-    # The last visited `line_index` will be the `index_end` of this state block.
-    state.index_end = line_index
+    # Warn on unincremented block indexes.
+    if state.index == state.index_end:
+        logging.warning(f"State '{state.name}' at line {state.index} has an unincremented block index.")
+
+    logging.debug(f"'{state.name}'@{line_index}: Found {state.index_end - state.index} lines until end of block.")
     return state
 
 
@@ -433,7 +514,7 @@ def parse(script_file_path:str) -> Script:
         #---------------------------------------------
 
         # Group Block
-        group_match = regex.GROUP_PATTERN.match(line)
+        group_match:Match[str]|None = regex.GROUP_PATTERN.match(line)
         if group_match:
             group:PropertyGroup = parse_property_group(group_match, lines, line_index)
             script.members[group.name] = group
@@ -441,61 +522,70 @@ def parse(script_file_path:str) -> Script:
             continue
 
         # State Block
-        state_match = regex.STATE_PATTERN.match(line)
+        state_match:Match[str]|None = regex.STATE_PATTERN.match(line)
         if state_match:
             state:State = parse_state(state_match, lines, line_index)
             script.members[state.name] = state
             line_index = state.index_end + 1
             continue
 
-        # Property
-        property_match = regex.PROPERTY_PATTERN.match(line)
+        # Property Block
+        property_match:Match[str]|None = regex.PROPERTY_PATTERN.match(line)
         if property_match:
             property:Property = parse_property(property_match, lines, line_index)
-            if property:
-                script.members[property.name] = property
-            line_index += 1
+            script.members[property.name] = property
+            line_index = property.index_end + 1
             continue
 
-        # Function
-        function_match = regex.FUNCTION_PATTERN.match(line)
+        # Function Block
+        function_match:Match[str]|None = regex.FUNCTION_PATTERN.match(line)
         if function_match:
             function:Function = parse_function(function_match, lines, line_index)
-            if function:
-                script.members[function.name] = function
-            line_index += 1
+            script.members[function.name] = function
+            line_index = function.index_end + 1
             continue
 
-        # Event
-        event_match = regex.EVENT_PATTERN.match(line)
+        # Event Block
+        event_match:Match[str]|None = regex.EVENT_PATTERN.match(line)
         if event_match:
             event:Event = parse_event(event_match, lines, line_index)
-            if event:
-                script.members[event.name] = event
-            line_index += 1
+            script.members[event.name] = event
+            line_index = event.index_end + 1
             continue
 
-        # Struct
-        struct_match = regex.STRUCT_PATTERN.match(line)
+        # Struct Block
+        struct_match:Match[str]|None = regex.STRUCT_PATTERN.match(line)
         if struct_match:
             structure:Structure = parse_structure(struct_match, lines, line_index)
-            if structure:
-                script.members[structure.name] = structure
+            script.members[structure.name] = structure
+            line_index = structure.index_end + 1
+            continue
+
+        # CustomEvent
+        event_custom_match:Match[str]|None = regex.CUSTOM_EVENT_PATTERN.match(line)
+        if event_custom_match:
+            logging.debug(f"'{script_file_path}'@{line_index}: Skipped custom event: '{line.strip()}'")
             line_index += 1
             continue
 
+        # Guard
+        guard_match:Match[str]|None = regex.GUARD_PATTERN.match(line)
+        if guard_match:
+            logging.debug(f"'{script_file_path}'@{line_index}: Skipped guard: '{line.strip()}'")
+            line_index += 1
+            continue
 
-        # TODO: This does not match lines correctly, it is disabled for now.
-        #    This should be matched after Guards.
-        if False:
-            variable_match = regex.VARIABLE_PATTERN.match(line)
-            if variable_match:
+        # Variable
+        variable_match:Match[str]|None = regex.VARIABLE_PATTERN.match(line)
+        if variable_match:
+            logging.debug(f"'{script_file_path}'@{line_index}: Skipped variable: '{line.strip()}'")
+            # TODO: This does not match lines correctly, it is disabled for now.
+            if False:
                 variable:Variable = parse_variable(variable_match, lines, line_index)
                 if variable:
                     script.members[variable.name] = variable
-                line_index += 1
-                continue
-
+            line_index += 1
+            continue
 
         # Skip other lines
         line_index += 1

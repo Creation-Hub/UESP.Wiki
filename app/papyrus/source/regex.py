@@ -113,6 +113,16 @@ EVENT_PATTERN:Pattern[str] = re.compile(
     re.IGNORECASE
 )
 
+EVENT_END_PATTERN:Pattern[str] = re.compile(
+    r'^'                            # Start of sequence match
+    r'\s*'                          # Whitespace optional (0+)
+    r'endevent'                     # Papyrus keyword 'endevent'
+    r'\b',                          # Word boundary
+    re.IGNORECASE
+)
+
+#-------------------------
+
 FUNCTION_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
@@ -128,6 +138,14 @@ FUNCTION_PATTERN:Pattern[str] = re.compile(
     r'\s*'                          # Whitespace optional (0+)
     f'{FLAGS}'                      # Optional flags (rest of line)
     r'$',                           # End of sequence match
+    re.IGNORECASE
+)
+
+FUNCTION_END_PATTERN:Pattern[str] = re.compile(
+    r'^'                            # Start of sequence match
+    r'\s*'                          # Whitespace optional (0+)
+    r'endfunction'                  # Papyrus keyword 'endfunction'
+    r'\b',                          # Word boundary
     re.IGNORECASE
 )
 
@@ -193,5 +211,32 @@ STATE_END_PATTERN:Pattern[str] = re.compile(
     r'endstate'                     # Papyrus keyword 'endstate'
     r'\s*'                          # Whitespace optional (0+)
     r'$',                           # End of sequence match
+    re.IGNORECASE
+)
+
+#-------------------------
+
+CUSTOM_EVENT_PATTERN: Pattern[str] = re.compile(
+    r'^'                           # Start of sequence match
+    r'\s*'                         # Whitespace optional (0+)
+    r'customevent'                 # Papyrus keyword 'customevent'
+    r'\s+'                         # Whitespace required (1+)
+    f'{NAME}'                      # Capture required custom event name
+    r'\s*'                         # Whitespace optional (0+)
+    r'$',                          # End of sequence match
+    re.IGNORECASE
+)
+
+#-------------------------
+
+GUARD_PATTERN: Pattern[str] = re.compile(
+    r'^'                           # Start of sequence match
+    r'\s*'                         # Whitespace optional (0+)
+    r'guard'                       # Papyrus keyword 'guard'
+    r'\s+'                         # Whitespace required (1+)
+    f'{NAME}'                      # Capture required guard name
+    r'(?:\s+(?P<flag>\w+))?'       # Capture optional flag `ProtectsFunctionLogic`
+    r'\s*'                         # Whitespace optional (0+)
+    r'$',                          # End of sequence match
     re.IGNORECASE
 )
