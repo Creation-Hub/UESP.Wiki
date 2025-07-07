@@ -1,1 +1,5 @@
-import .text # type: ignore
+"""
+This module provides support for working with Papyrus scripts.
+"""
+
+from . import text # type: ignore
