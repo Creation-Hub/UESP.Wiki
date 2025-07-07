@@ -1,7 +1,7 @@
 import logging
 import os
 from typing import Dict, List
-from app.papyrus import source
+from app import papyrus
 from app.papyrus.code import Script
 from app.papyrus.collections import ScriptDictionary
 
@@ -57,7 +57,7 @@ class PapyrusProject:
         for path in paths:
             count += 1
             # Start parsing the script file.
-            script:Script = source.parse(path)
+            script:Script = papyrus.text.parse(path)
             if script:
                 self.scripts.add(script)
                 logging.debug(f"[{self.identifier}] #{count} {script.header.name.file_path()}")

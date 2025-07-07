@@ -11,8 +11,9 @@ from app.papyrus.code import ScriptName
 from app.papyrus.code import State
 from app.papyrus.code import Structure
 from app.papyrus.code import Variable
-from app.papyrus.source import normalize
-from app.papyrus.source import regex
+from app.papyrus.text import normalize
+from app.papyrus.text import regex
+from app.papyrus.text.cursor import Cursor, Position
 
 
 # Documentation
@@ -502,6 +503,8 @@ def parse(script_file_path:str) -> Script:
 
     # Start parsing the script body after the header.
     line_index:int = script.header.index + 1
+    cursor:Cursor = Cursor(lines)
+    cursor.position = Position(line_index, 0)
     logging.debug(f"'{script.header.name.file_path()}'@{line_index}: Parsing...")
 
     while line_index < len(lines):
