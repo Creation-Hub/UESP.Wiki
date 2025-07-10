@@ -36,6 +36,44 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = IncludeOnHitEvent
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/IncludeOnHitEvent|IncludeOnHitEvent]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), exceute script functionality when THIS actor is hit in combat and <RefToCheck> will be the aggressor.
+}}
+
+{{Script_Object_Member_Summary
+| title = SpellHits_HostileOnly
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/SpellHits_HostileOnly|SpellHits_HostileOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = (Default: true) If true, stage will be set when hits from spells are flagged as "hostile". If false, stage will be set from any kind of spell hit.
+		NOTE: this only matters if IncludeOnHitEvent = true
+}}
+
+{{Script_Object_Member_Summary
+| title = CombatStateToCheckFor
+| script = [[SFM:Script-DefaultAliasOnCombatStateChanged|DefaultAliasOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnCombatStateChanged/CombatStateToCheckFor|CombatStateToCheckFor]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 4
+| documentation = 0: Not In Combat
+	1: In Combat
+	2: Searching
+	4 (Default): In Combat or Searching
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnAliasInit

@@ -35,6 +35,46 @@ The members that belong to this script, grouped by kind.
 
 === Property ===
 {{Script_Object_Member_Summary
+| title = HavokOnHit
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/HavokOnHit|HavokOnHit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = Start Havok Sim when hit? DEFAULT: FALSE
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnActivate
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/HavokOnActivate|HavokOnActivate]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = Start Havok Sim when activated? DEFAULT: FALSE
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnZKey
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/HavokOnZKey|HavokOnZKey]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = Start Havok Sim when grabbed by player? DEFAULT: FALSE
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkHavokPartner
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/LinkHavokPartner|LinkHavokPartner]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Link with this keyword and that ref will also sim with myself
+}}
+
+{{Script_Object_Member_Summary
 | title = BeenSimmed
 | script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
 | name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/BeenSimmed|BeenSimmed]]

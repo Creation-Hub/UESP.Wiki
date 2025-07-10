@@ -36,6 +36,31 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SetStageWhenDockingComplete
+| script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| name = [[SFM:Script-DefaultAliasOnShipDock/SetStageWhenDockingComplete|SetStageWhenDockingComplete]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), stage will be set when docking is complete; if false, stage will be set when docking begins.
+}}
+
+{{Script_Object_Member_Summary
+| title = WhichShipToCheck
+| script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| name = [[SFM:Script-DefaultAliasOnShipDock/WhichShipToCheck|WhichShipToCheck]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 0
+| documentation = 0 = check both docking ships
+	 1 = check this ship only
+	 2 = check the other ship only
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnShipDock

@@ -14,7 +14,11 @@ ScriptName Tests:LineContinuation
 
 
 == Documentation ==
-No documentation comments were provided in the <code>Tests\LineContinuation.psc</code> source file.
+The <code>Tests\LineContinuation.psc</code> source file documentation comments for this script.
+
+<source>
+Testing for line continuations.
+</source>
 
 
 == Member ==
@@ -22,11 +26,31 @@ The members that belong to this script, grouped by kind.
 
 === Function ===
 {{Script_Object_Member_Summary
+| title = Foo
+| script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
+| name = [[SFM:Script-Tests:LineContinuation/Foo|Foo]]
+| kind = Function
+| parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
+| documentation = This is the Papyrus doc-string for `Foo`.
+This is the documentation line comment for `Foo`.
+}}
+
+{{Script_Object_Member_Summary
 | title = Foo1
 | script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
 | name = [[SFM:Script-Tests:LineContinuation/Foo1|Foo1]]
 | kind = Function
 | parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
+| documentation = This is the Papyrus doc-string for `Foo1`.
+}}
+
+{{Script_Object_Member_Summary
+| title = Foo2
+| script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
+| name = [[SFM:Script-Tests:LineContinuation/Foo2|Foo2]]
+| kind = Function
+| parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
+| documentation = This is the Papyrus doc-string for `Foo2`.
 }}
 
 

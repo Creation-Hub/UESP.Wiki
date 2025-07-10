@@ -33,6 +33,30 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = CheckForOnDyingInstead
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/CheckForOnDyingInstead|CheckForOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true the Increment will happen when this actor recieves the OnDying() event instead, which happens the instant the actor dies, unlike the
+	OnDeath() event which can happen several seconds later.
+}}
+
+{{Script_Object_Member_Summary
+| title = SupportRespawning
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/SupportRespawning|SupportRespawning]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true then this script will reset after incrementing in order to allow the next respawned actor that fills it to increment upon death as well.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
@@ -46,6 +70,23 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
 | name = [[SFM:Script-DefaultCounterQuestIncOnDeath/AlreadyDied|AlreadyDied]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
 }}
 
 === Function ===

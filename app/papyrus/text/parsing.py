@@ -13,7 +13,7 @@ from app.papyrus.code import Structure
 from app.papyrus.code import Variable
 from app.papyrus.text import normalize
 from app.papyrus.text import regex
-from app.papyrus.text.parser import Parser, Position
+from app.papyrus.text.parser import TextReader
 
 
 # Documentation
@@ -144,63 +144,16 @@ def parse_initializer(text:str) -> str:
 # Header
 #---------------------------------------------
 
-def skip(inside_comment_block:MutableBool, line:str) -> bool:
-    """
-    Determines if a line should be skipped based on whitespace and comment conditions.
-    """
-    line = line.strip()
-    if line == "":
-        # If the line is empty, skip it
-        return True
-    elif line.startswith(";/") and line.endswith("/;"):
-        # This is a single-line block comment, skip it
-        return True
-    elif line.startswith(";/"):
-        # This is the start of a multi-line block comment, skip it
-        inside_comment_block.value = True
-        return True
-    elif line.endswith("/;"):
-        # This is the end of a multi-line block comment, skip it
-        inside_comment_block.value = False
-        return True
-    elif line.startswith(";"):
-        # This is a single-line comment, skip it
-        return True
-    elif inside_comment_block.value:
-        # If we are in a multi-line block comment, skip it
-        return True
-    else:
-        return False
-
-
-def parse_header(lines:list[str]) -> Header:
-    """
-    Finds the script header line information.
-    Returns values or raises ValueError if `ScriptName` is not found.
-    """
-    inside_comment_block:MutableBool = MutableBool()
-    for line_index, line in enumerate(lines):
-
-        # Skip lines that are inside a comment block
-        if skip(inside_comment_block, line): continue
-
-        # Normalize the line by stripping comments and whitespace
-        line = normalize.strip_comments(line)
-        line = normalize.whitespace(line)
-
-        # Check if this line matches the header pattern
-        header_match = regex.HEADER_PATTERN.match(line)
-        if header_match:
-            header:Header = Header()
-            header.index = line_index
-            header.index_end = line_index
-            header.definition = normalize.script_definition(line)
-            header.documentation = parse_documentation(lines, line_index)
-            header.name = ScriptName(header_match.group("name"))
-            header.extends = ScriptName(header_match.group("extends"))
-            header.flags = parse_flags(header_match.group("flags"))
-            return header
-    raise ValueError("ScriptName not found")
+def parse_header(header_match:Match[str], lines:list[str], line_index:int) -> Header:
+    header:Header = Header()
+    header.index = line_index
+    header.index_end = line_index
+    header.definition = normalize.definition(lines[line_index])
+    header.documentation = parse_documentation(lines, line_index)
+    header.name = ScriptName(header_match.group("name"))
+    header.extends = ScriptName(header_match.group("extends"))
+    header.flags = parse_flags(header_match.group("flags"))
+    return header
 
 
 # Members
@@ -211,7 +164,7 @@ def parse_variable(variable_match:Match[str], lines:list[str], line_index:int) -
     variable.name = normalize.member_name_upper(variable_match.group("name"))
     variable.index = line_index
     variable.index_end = line_index
-    variable.definition = lines[line_index]
+    variable.definition = normalize.definition(lines[line_index])
     variable.documentation = parse_documentation(lines, line_index)
     variable.type = normalize.script_type(variable_match.group("type"))
     variable.flags = parse_flags(variable_match.group("flags"))
@@ -250,7 +203,7 @@ def parse_property(property_match:Match[str], lines:list[str], line_index:int) -
     property:Property = Property()
     property.index = line_index
     property.index_end = line_index
-    property.definition = lines[line_index]
+    property.definition = normalize.definition(lines[line_index])
     property.documentation = parse_documentation(lines, line_index)
     property.name = normalize.member_name_upper(property_match.group("name"))
     property.flags = parse_flags(property_match.group("flags"))
@@ -285,7 +238,7 @@ def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) ->
     structure:Structure = Structure()
     structure.index = line_index
     structure.index_end = line_index
-    structure.definition = lines[line_index]
+    structure.definition = normalize.definition(lines[line_index])
     structure.documentation = parse_documentation(lines, line_index)
     structure.name = normalize.member_name_upper(struct_match.group("name"))
 
@@ -320,7 +273,7 @@ def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Even
     event.name = normalize.member_name_upper(event_match.group("name"))
     event.index = line_index
     event.index_end = line_index
-    event.definition = lines[line_index]
+    event.definition = normalize.definition(lines[line_index])
     event.documentation = parse_documentation(lines, line_index)
     event.flags = parse_flags(event_match.group("flags"))
     event.parameters = parse_parameters(event_match.group("params"))
@@ -354,7 +307,7 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
     function.name = normalize.member_name_upper(function_match.group("name"))
     function.index = line_index
     function.index_end = line_index
-    function.definition = lines[line_index]
+    function.definition = normalize.definition(lines[line_index])
     function.documentation = parse_documentation(lines, line_index)
     function.type = normalize.script_type(function_match.group("type"))
     function.flags = parse_flags(function_match.group("flags"))
@@ -390,7 +343,7 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
     group:PropertyGroup = PropertyGroup()
     group.index = line_index
     group.index_end = line_index
-    group.definition = lines[line_index]
+    group.definition = normalize.definition(lines[line_index])
     group.documentation = parse_documentation(lines, line_index)
     group.name = group_match.group("name")
     group.flags = parse_flags(group_match.group("flags"))
@@ -426,7 +379,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
     state:State = State()
     state.index = line_index
     state.index_end = line_index
-    state.definition = lines[line_index]
+    state.definition = normalize.definition(lines[line_index])
     state.documentation = parse_documentation(lines, line_index)
     state.name = normalize.member_name_upper(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
@@ -471,127 +424,186 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
 # Parse
 #---------------------------------------------
 
-def collect_line_continuation(lines:list[str], line_index:int) -> tuple[str, int]:
+def load(script_file_path:str) -> list[str]:
+    with open(script_file_path, encoding="utf-8") as file:
+        lines:list[str] = file.readlines()
+        logging.debug(f"'{script_file_path}': Read with {len(lines)} lines.")
+    return lines
+
+
+def skip(inside_comment_block:MutableBool, line:str) -> bool:
     """
-    Collects any Papyrus line continuations into a single line.
+    Determines if a line should be skipped based on whitespace and comment conditions.
+    """
+    line = line.strip()
+    if line == "":
+        # If the line is empty, skip it
+        return True
+    elif line.startswith(";/") and line.endswith("/;"):
+        # This is a single-line block comment, skip it
+        return True
+    elif line.startswith(";/"):
+        # This is the start of a multi-line block comment, skip it
+        inside_comment_block.value = True
+        return True
+    elif line.endswith("/;"):
+        # This is the end of a multi-line block comment, skip it
+        inside_comment_block.value = False
+        return True
+    elif line.startswith(";"):
+        # This is a single-line comment, skip it
+        return True
+    elif inside_comment_block.value:
+        # If we are in a multi-line block comment, skip it
+        return True
+    else:
+        return False
+
+
+def squash_continuation(lines:list[str], line_index:int) -> tuple[str, int]:
+    """
+    Collects any Papyrus line continuations by squashing them into a single line.
     Example:
         Papyrus line continuations are indicated by a trailing backslash `\\` and newline.
     Returns:
         If the line is a continuation, returns a merged line and the index of the last line that was merged.
         If the line is not a continuation, returns the original line and the current index.
     """
+    index:int = line_index
     line:str = lines[line_index]
-    index_end:int = line_index
-    if line.endswith("\\\n"):
-        while index_end + 1 < len(lines) and line.endswith("\\\n"):
-            line = line.strip()[:-1] # Remove the trailing backslash and whitespace
-            line += lines[index_end + 1].strip() # Append the next line
-            index_end += 1
-        return line, index_end
-    else:
-        return line, line_index
+    while index < len(lines) and line.rstrip().endswith("\\"):
+        line = line.rstrip()
+        line = line.rstrip("\\")
+        index += 1 # move to the next line
+        if index >= len(lines):
+            raise IndexError(f"Missing next line continuation: Next index at {index} is out of bounds for {len(lines)} length.")
+        # Append the next line to the current line.
+        line += lines[index].strip()
+    return line, index
 
+
+# Parsing
+#---------------------------------------------
 
 def parse(script_file_path:str) -> Script:
     """Parses a Papyrus script file and returns a Script object."""
-    with open(script_file_path, encoding="utf-8") as file:
-        lines:list[str] = file.readlines()
-        logging.debug(f"'{script_file_path}': Read with {len(lines)} lines.")
-
-    # The script object to be populated.
+    reader:TextReader = TextReader(load(script_file_path))
     script:Script = Script()
-    script.header = parse_header(lines)
 
-    # The parser instance is initialized with a position after the header.
-    parser:Parser = Parser(lines)
-    parser.cursor = Position(script.header.index + 1)
+    # Header Parsing Loop
+    #---------------------------------------------
+    inside_comment_block:MutableBool = MutableBool()
+    while reader.has_next():
+        line:str = reader.move_next()
+        line_index:int = reader.cursor
 
-    # The main parsing loop.
-    logging.debug(f"'{script.header.name.file_path()}'@{parser.cursor.line}: Parsing...")
-    while parser.cursor.line < len(lines):
+        # Skip lines that are inside any comment blocks.
+        if skip(inside_comment_block, line):
+            continue
 
-        # Handle any line continuations.
-        (line_merged, index_end) = collect_line_continuation(lines, parser.cursor.line)
-        line:str = line_merged
-        parser.cursor.line = index_end
+        # Normalize the line by stripping comments and whitespace.
+        line = normalize.strip_comments(line)
+        line = normalize.whitespace(line)
 
+        # Check if this line matches the header pattern.
+        header_match:Match[str]|None = regex.HEADER_PATTERN.match(line)
+        if header_match:
+            header:Header = parse_header(header_match, reader.lines, line_index)
+            script.header = header
+            break
+
+    # Raise an error if no header was found.
+    if not script.header:
+        message:str = (
+            f"File: '{script_file_path}'\n"
+            "The `ScriptName` element was not found in the source file. "
+            "Check for missing or malformed header in the script file. "
+            "Ensure the first non-comment line contains a valid `ScriptName` declaration."
+        )
+        raise ValueError(message)
+
+
+    # Main Parsing Loop
+    #---------------------------------------------
+    logging.debug(f"'{script.header.name.file_path()}'@{reader.cursor}: Parsing...")
+    while reader.has_next():
+        line:str = reader.move_next()
+        line_index:int = reader.cursor
+
+        # Squash any line continuations.
+        # TODO: Line squashing may affect documentation parsing because it searches above and below the definition line.
+        (line_squashed, line_squashed_end) = squash_continuation(reader.lines, reader.cursor)
+
+        # Update the line and cursor position after squashing.
+        line = line_squashed
+        reader.cursor = line_squashed_end
+
+        # Types
         #---------------------------------------------
 
         # Group Block
         group_match:Match[str]|None = regex.GROUP_PATTERN.match(line)
         if group_match:
-            group:PropertyGroup = parse_property_group(group_match, lines, parser.cursor.line)
+            group:PropertyGroup = parse_property_group(group_match, reader.lines, reader.cursor)
             script.members[group.name] = group
-            parser.cursor.line = group.index_end + 1
             continue
 
         # State Block
         state_match:Match[str]|None = regex.STATE_PATTERN.match(line)
         if state_match:
-            state:State = parse_state(state_match, lines, parser.cursor.line)
+            state:State = parse_state(state_match, reader.lines, reader.cursor)
             script.members[state.name] = state
-            parser.cursor.line = state.index_end + 1
             continue
 
         # Property Block
         property_match:Match[str]|None = regex.PROPERTY_PATTERN.match(line)
         if property_match:
-            property:Property = parse_property(property_match, lines, parser.cursor.line)
+            property:Property = parse_property(property_match, reader.lines, reader.cursor)
             script.members[property.name] = property
-            parser.cursor.line = property.index_end + 1
             continue
 
         # Function Block
         function_match:Match[str]|None = regex.FUNCTION_PATTERN.match(line)
         if function_match:
-            function:Function = parse_function(function_match, lines, parser.cursor.line)
+            function:Function = parse_function(function_match, reader.lines, reader.cursor)
             script.members[function.name] = function
-            parser.cursor.line = function.index_end + 1
             continue
 
         # Event Block
         event_match:Match[str]|None = regex.EVENT_PATTERN.match(line)
         if event_match:
-            event:Event = parse_event(event_match, lines, parser.cursor.line)
+            event:Event = parse_event(event_match, reader.lines, reader.cursor)
             script.members[event.name] = event
-            parser.cursor.line = event.index_end + 1
             continue
 
         # Struct Block
         struct_match:Match[str]|None = regex.STRUCT_PATTERN.match(line)
         if struct_match:
-            structure:Structure = parse_structure(struct_match, lines, parser.cursor.line)
+            structure:Structure = parse_structure(struct_match, reader.lines, reader.cursor)
             script.members[structure.name] = structure
-            parser.cursor.line = structure.index_end + 1
             continue
 
         # CustomEvent
         event_custom_match:Match[str]|None = regex.CUSTOM_EVENT_PATTERN.match(line)
         if event_custom_match:
-            logging.debug(f"'{script_file_path}'@{parser.cursor.line}: Skipped custom event: '{line.strip()}'")
-            parser.cursor.line += 1
+            logging.debug(f"'{script_file_path}'@{reader.cursor}: Skipped custom event: '{line.strip()}'")
             continue
 
         # Guard
         guard_match:Match[str]|None = regex.GUARD_PATTERN.match(line)
         if guard_match:
-            logging.debug(f"'{script_file_path}'@{parser.cursor.line}: Skipped guard: '{line.strip()}'")
-            parser.cursor.line += 1
+            logging.debug(f"'{script_file_path}'@{reader.cursor}: Skipped guard: '{line.strip()}'")
             continue
 
         # Variable
         variable_match:Match[str]|None = regex.VARIABLE_PATTERN.match(line)
         if variable_match:
-            logging.debug(f"'{script_file_path}'@{parser.cursor.line}: Skipped variable: '{line.strip()}'")
             # TODO: This does not match lines correctly, it is disabled for now.
             if False:
-                variable:Variable = parse_variable(variable_match, lines, parser.cursor.line)
-                if variable:
-                    script.members[variable.name] = variable
-            parser.cursor.line += 1
-            continue
-
-        # Skip other lines
-        parser.cursor.line += 1
+                variable:Variable = parse_variable(variable_match, reader.lines, reader.cursor)
+                script.members[variable.name] = variable
+            else:
+                logging.debug(f"'{script_file_path}'@{reader.cursor}: Skipped variable: '{line.strip()}'")
+                continue
 
     return script

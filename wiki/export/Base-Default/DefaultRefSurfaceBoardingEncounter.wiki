@@ -43,6 +43,28 @@ The members that belong to this script, grouped by kind.
 
 === Property ===
 {{Script_Object_Member_Summary
+| title = CrewSizePercent
+| script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/CrewSizePercent|CrewSizePercent]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 1.0
+| documentation = DEFAULT=1.0. Multiply the Boarding Encounter's base crew and corpse counts by this value.
+	For example, if your encounter spawns actors outside the ship to fight the player, you might want half the usual crew in the ship (0.5).
+	Note that reducing a ship's crew size with this multiplier also reduces its default loot accordingly.
+}}
+
+{{Script_Object_Member_Summary
+| title = BEEncounterTypeSurface
+| script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
+| name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/BEEncounterTypeSurface|BEEncounterTypeSurface]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+}}
+
+{{Script_Object_Member_Summary
 | title = MyBoardingEncounterQuest
 | script = [[SFM:Script-DefaultRefSurfaceBoardingEncounter|DefaultRefSurfaceBoardingEncounter]]
 | name = [[SFM:Script-DefaultRefSurfaceBoardingEncounter/MyBoardingEncounterQuest|MyBoardingEncounterQuest]]

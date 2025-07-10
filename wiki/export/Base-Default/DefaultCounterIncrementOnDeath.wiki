@@ -33,6 +33,29 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LinkedRefKeyword
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/LinkedRefKeyword|LinkedRefKeyword]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = The keyword of the LinkedRef to the Counter. Defaults to the unnamed linkedref.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckForOnDyingInstead
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/CheckForOnDyingInstead|CheckForOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true the Increment will happen when this actor recieves the OnDying() event instead, which happens the instant the actor dies, unlike the
+	OnDeath() event which can happen several seconds later.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
@@ -46,6 +69,23 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
 | name = [[SFM:Script-DefaultCounterIncrementOnDeath/AlreadyDied|AlreadyDied]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
+| name = [[SFM:Script-DefaultCounterIncrementOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
 }}
 
 

@@ -33,6 +33,18 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SetStageOnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/SetStageOnEnd|SetStageOnEnd]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), set stage on end. If false, set stage on begin.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnBegin

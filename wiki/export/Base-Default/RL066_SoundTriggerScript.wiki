@@ -33,6 +33,38 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SoundToPlayEvent
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/SoundToPlayEvent|SoundToPlayEvent]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = WwiseEvent[]
+| documentation = The sounds to be played.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkCustom01
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/LinkCustom01|LinkCustom01]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = play the sound from this link
+}}
+
+{{Script_Object_Member_Summary
+| title = StopSound
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/StopSound|StopSound]]
+| kind = Property
+| flags = Auto
+| returns = bool
+| parameters = false
+| documentation = stops playing sounds if true
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = Waiting
@@ -46,6 +78,15 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
 | name = [[SFM:Script-RL066_SoundTriggerScript/Done|Done]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference triggerRef
 }}
 
 

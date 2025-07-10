@@ -52,6 +52,90 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = UseOnDyingInstead
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/UseOnDyingInstead|UseOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, stage will be set when OnDying() event is sent. If false, stage will be sent with OnDeath() event is sent.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerOnly
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/PlayerOnly|PlayerOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true, <RefToCheck> must be player and all other <RefToCheck> properties will be IGNORED.
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferencesToCheckAgainst
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/ReferencesToCheckAgainst|ReferencesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = ObjectReference[]
+| documentation = <RefToCheck> must be one of these references. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = AliasesToCheckAgainst
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/AliasesToCheckAgainst|AliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = ReferenceAlias[]
+| documentation = <RefToCheck> must be one in one of these references. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = FactionsToCheckAgainst
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/FactionsToCheckAgainst|FactionsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Faction[]
+| documentation = <RefToCheck> must be in one of these factions. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultRefOnDeath|DefaultRefOnDeath]]
+| name = [[SFM:Script-DefaultRefOnDeath/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = GetPlayerOnly

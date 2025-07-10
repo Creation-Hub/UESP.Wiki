@@ -36,6 +36,50 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ShouldDisableAfterSuccessfulActivation
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/ShouldDisableAfterSuccessfulActivation|ShouldDisableAfterSuccessfulActivation]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, disable after being successfully activated
+}}
+
+{{Script_Object_Member_Summary
+| title = ShouldHideActivationAfterSuccessfulActivation
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/ShouldHideActivationAfterSuccessfulActivation|ShouldHideActivationAfterSuccessfulActivation]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, hide activation (button prompt) after being successfully activated
+}}
+
+{{Script_Object_Member_Summary
+| title = AllowDuringCombat
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/AllowDuringCombat|AllowDuringCombat]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = Default=true. If true, do not set a stage if the activator is in combat.
+}}
+
+{{Script_Object_Member_Summary
+| title = NotAllowedDuringCombat
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/NotAllowedDuringCombat|NotAllowedDuringCombat]]
+| kind = Property
+| flags = Const Auto
+| returns = Message
+| documentation = Message to display if AllowDuringCombat=False, and the player is the activator, and they sit while in combat.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnActivate

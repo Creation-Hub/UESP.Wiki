@@ -33,6 +33,16 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LinkAddItem
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/LinkAddItem|LinkAddItem]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = Waiting
@@ -46,6 +56,14 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
 | name = [[SFM:Script-DefaultContainerAddRefsOnLoad/Done|Done]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/OnCellLoad|OnCellLoad]]
+| kind = Event
 }}
 
 

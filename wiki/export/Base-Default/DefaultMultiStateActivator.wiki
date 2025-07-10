@@ -50,6 +50,27 @@ The members that belong to this script, grouped by kind.
 
 === Property ===
 {{Script_Object_Member_Summary
+| title = AnimationStateData
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/AnimationStateData|AnimationStateData]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = AnimationStateDatum[]
+| documentation = A list of the object's animation states.
+}}
+
+{{Script_Object_Member_Summary
+| title = StartStateName
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/StartStateName|StartStateName]]
+| kind = Property
+| flags = Auto Const
+| returns = string
+| parameters = ""
+| documentation = The StateName of the animation state to start in. If "" (the default), this defaults to AnimationState[0].
+}}
+
+{{Script_Object_Member_Summary
 | title = CurrentStateIndex
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
 | name = [[SFM:Script-DefaultMultiStateActivator/CurrentStateIndex|CurrentStateIndex]]
@@ -75,6 +96,14 @@ The members that belong to this script, grouped by kind.
 | name = [[SFM:Script-DefaultMultiStateActivator/Main|Main]]
 | kind = State
 | documentation = On subsequent loads, make sure we're in the animation state we want to be in.
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
+| name = [[SFM:Script-DefaultMultiStateActivator/OnLoad|OnLoad]]
+| kind = Event
 }}
 
 === Function ===

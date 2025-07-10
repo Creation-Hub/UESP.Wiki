@@ -45,6 +45,59 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = XxxPlaceHolderForEmptyGroup2xxx
+| script = [[SFM:Script-DefaultAliasOnActivateRemoveItems|DefaultAliasOnActivateRemoveItems]]
+| name = [[SFM:Script-DefaultAliasOnActivateRemoveItems/XxxPlaceHolderForEmptyGroup2xxx|XxxPlaceHolderForEmptyGroup2xxx]]
+| kind = Property
+| flags = Const Auto Hidden
+| returns = bool
+| documentation = `TTP-27034: Papyrus: Need a way to manage groups across parents and children`
+}}
+
+{{Script_Object_Member_Summary
+| title = ItemToRemove
+| script = [[SFM:Script-DefaultAliasOnActivateRemoveItems|DefaultAliasOnActivateRemoveItems]]
+| name = [[SFM:Script-DefaultAliasOnActivateRemoveItems/ItemToRemove|ItemToRemove]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Form
+| documentation = Remove this item from RefToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = AmountToRemove
+| script = [[SFM:Script-DefaultAliasOnActivateRemoveItems|DefaultAliasOnActivateRemoveItems]]
+| name = [[SFM:Script-DefaultAliasOnActivateRemoveItems/AmountToRemove|AmountToRemove]]
+| kind = Property
+| flags = Const Auto
+| returns = int
+| parameters = 1
+| documentation = The amount to give
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveSilently
+| script = [[SFM:Script-DefaultAliasOnActivateRemoveItems|DefaultAliasOnActivateRemoveItems]]
+| name = [[SFM:Script-DefaultAliasOnActivateRemoveItems/RemoveSilently|RemoveSilently]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = (Default false) If true, give the item silently. If true, show message when giving item.
+}}
+
+{{Script_Object_Member_Summary
+| title = InsufficientItemsMessage
+| script = [[SFM:Script-DefaultAliasOnActivateRemoveItems|DefaultAliasOnActivateRemoveItems]]
+| name = [[SFM:Script-DefaultAliasOnActivateRemoveItems/InsufficientItemsMessage|InsufficientItemsMessage]]
+| kind = Property
+| flags = Auto Const
+| returns = Message
+| documentation = Message to display if RefToCheck doesn't have AmountToRemove or more ItemToRemove in their inventory
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = DoSpecificThing

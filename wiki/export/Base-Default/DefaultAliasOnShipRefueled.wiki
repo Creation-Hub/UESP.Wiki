@@ -45,6 +45,59 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipRefueled|DefaultAliasOnShipRefueled]]
+| name = [[SFM:Script-DefaultAliasOnShipRefueled/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipRefueled|DefaultAliasOnShipRefueled]]
+| name = [[SFM:Script-DefaultAliasOnShipRefueled/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipRefueled|DefaultAliasOnShipRefueled]]
+| name = [[SFM:Script-DefaultAliasOnShipRefueled/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = SpaceshipGravJumpFuel
+| script = [[SFM:Script-DefaultAliasOnShipRefueled|DefaultAliasOnShipRefueled]]
+| name = [[SFM:Script-DefaultAliasOnShipRefueled/SpaceshipGravJumpFuel|SpaceshipGravJumpFuel]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = The actor value which holds current/max fuel value for ships
+}}
+
+{{Script_Object_Member_Summary
+| title = RequireFullyRefueled
+| script = [[SFM:Script-DefaultAliasOnShipRefueled|DefaultAliasOnShipRefueled]]
+| name = [[SFM:Script-DefaultAliasOnShipRefueled/RequireFullyRefueled|RequireFullyRefueled]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true (default), stage will be set when fueling is complete, only if completely refueled; if false, stage will be set when fueling completes, regardless of much fuel was added.
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst

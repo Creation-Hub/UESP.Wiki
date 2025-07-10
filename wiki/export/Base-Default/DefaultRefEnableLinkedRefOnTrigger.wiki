@@ -44,6 +44,49 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = XxxPlaceHolderForEmptyGroup2xxx
+| script = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger|DefaultRefEnableLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger/XxxPlaceHolderForEmptyGroup2xxx|XxxPlaceHolderForEmptyGroup2xxx]]
+| kind = Property
+| flags = Const Auto Hidden
+| returns = bool
+| documentation = `TTP-27034: Papyrus: Need a way to manage groups across parents and children`
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkedRefKeyword
+| script = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger|DefaultRefEnableLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger/LinkedRefKeyword|LinkedRefKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = The Keyword of the LinkedRef you want to enable when THIS object is triggered.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShouldEnable
+| script = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger|DefaultRefEnableLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger/ShouldEnable|ShouldEnable]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default) linkedref will be enabled. If false, linked ref will be disabled.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShouldUseLinkedRefChain
+| script = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger|DefaultRefEnableLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultRefEnableLinkedRefOnTrigger/ShouldUseLinkedRefChain|ShouldUseLinkedRefChain]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will execute over the entire Linked Ref Chain.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnInit

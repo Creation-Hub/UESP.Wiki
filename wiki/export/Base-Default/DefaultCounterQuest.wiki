@@ -39,6 +39,18 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = TargetValue
+| script = [[SFM:Script-DefaultCounterQuest|DefaultCounterQuest]]
+| name = [[SFM:Script-DefaultCounterQuest/TargetValue|TargetValue]]
+| kind = Property
+| flags = Auto
+| returns = int
+| parameters = 0
+| documentation = The needed value to trigger this script's functionality.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = AllowCounting

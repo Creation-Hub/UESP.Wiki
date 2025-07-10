@@ -44,6 +44,49 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckNewLocation
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/CheckNewLocation|CheckNewLocation]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true (default), <LocationToCheck> is the New Location. If false, <LocationToCheck> is the Old Location
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst

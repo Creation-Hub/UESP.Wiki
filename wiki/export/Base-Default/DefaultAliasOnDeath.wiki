@@ -53,6 +53,101 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = UseOnDyingInstead
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/UseOnDyingInstead|UseOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, stage will be set when OnDying() event is sent. If false, stage will be sent with OnDeath() event is sent.
+}}
+
+{{Script_Object_Member_Summary
+| title = ClearAliasOnDeath
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/ClearAliasOnDeath|ClearAliasOnDeath]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: False) If true, this alias will be cleared when the Actor dies. Note the Alias must be Optional to successfully clear.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerOnly
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/PlayerOnly|PlayerOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true, <RefToCheck> must be player and all other <RefToCheck> properties will be IGNORED.
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferencesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/ReferencesToCheckAgainst|ReferencesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = ObjectReference[]
+| documentation = <RefToCheck> must be one of these references. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = AliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/AliasesToCheckAgainst|AliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = ReferenceAlias[]
+| documentation = <RefToCheck> must be one in one of these references. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = FactionsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/FactionsToCheckAgainst|FactionsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Faction[]
+| documentation = <RefToCheck> must be in one of these factions. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnDeath|DefaultAliasOnDeath]]
+| name = [[SFM:Script-DefaultAliasOnDeath/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = GetPlayerOnly

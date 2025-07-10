@@ -58,6 +58,195 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SQ_Captive
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_Captive|SQ_Captive]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = SQ_CaptiveScript
+}}
+
+{{Script_Object_Member_Summary
+| title = CaptiveFaction
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/CaptiveFaction|CaptiveFaction]]
+| kind = Property
+| flags = Mandatory Auto Const
+| returns = Faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_Link_CaptiveFurniture
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_Link_CaptiveFurniture|SQ_Link_CaptiveFurniture]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = Keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = BoundFaction
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/BoundFaction|BoundFaction]]
+| kind = Property
+| flags = Mandatory Auto Const
+| returns = Faction
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_CaptiveState
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_CaptiveState|SQ_CaptiveState]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = ActorValue
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_CaptiveState_0_Unset
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_CaptiveState_0_Unset|SQ_CaptiveState_0_Unset]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = GlobalVariable
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_CaptiveState_1_Captive
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_CaptiveState_1_Captive|SQ_CaptiveState_1_Captive]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = GlobalVariable
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_CaptiveState_2_Freed
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_CaptiveState_2_Freed|SQ_CaptiveState_2_Freed]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = GlobalVariable
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_Captive_DialogueSubtype_FreedPrisonerGratitude
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_Captive_DialogueSubtype_FreedPrisonerGratitude|SQ_Captive_DialogueSubtype_FreedPrisonerGratitude]]
+| kind = Property
+| flags = Mandatory Auto Const
+| returns = Keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_Captive_FurnitureType_Bound
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_Captive_FurnitureType_Bound|SQ_Captive_FurnitureType_Bound]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = Keyword
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_Followers
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_Followers|SQ_Followers]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = SQ_FollowersScript
+}}
+
+{{Script_Object_Member_Summary
+| title = StartBound
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/StartBound|StartBound]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true, captive is bound
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableOnUnload
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/DisableOnUnload|DisableOnUnload]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = after being freed, this actor will disable when unloaded
+}}
+
+{{Script_Object_Member_Summary
+| title = AlsoRemoveFromCaptiveFaction
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/AlsoRemoveFromCaptiveFaction|AlsoRemoveFromCaptiveFaction]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = after being freed, this actor will also be removed from the CaptiveFaction
+		Use this for actors that will be attacked while fleeing
+}}
+
+{{Script_Object_Member_Summary
+| title = QuestToSet
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/QuestToSet|QuestToSet]]
+| kind = Property
+| flags = Auto
+| returns = Quest
+| documentation = If this is set, set the stage on this quest if StageToSetWhenFreed is not -1
+		If QuestToSet is NOT set, it will try to set the stage on the owning quest
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSetWhenFreed
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/StageToSetWhenFreed|StageToSetWhenFreed]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = this stage will be set when the prisoner is freed
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSetOnCleanUp
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/StageToSetOnCleanUp|StageToSetOnCleanUp]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = this stage will be set when we try to clean up the actor
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromFactions
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/RemoveFromFactions|RemoveFromFactions]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true (default), will remove from factions added by this script when cleaned up
+}}
+
+{{Script_Object_Member_Summary
+| title = DeleteWhenCleanedUp
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/DeleteWhenCleanedUp|DeleteWhenCleanedUp]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = if true, will delete when cleaned up
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnAliasInit

@@ -33,6 +33,18 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = DestructionStateToCheckFor
+| script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+| name = [[SFM:Script-DefaultRefOnDestructionStateChanged/DestructionStateToCheckFor|DestructionStateToCheckFor]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 1
+| documentation = Set the stage when this destruction state is reached.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnDestructionStageChanged

@@ -48,6 +48,46 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = CrowdEventManagers
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/CrowdEventManagers|CrowdEventManagers]]
+| kind = Property
+| flags = Const Auto
+| returns = DefaultCrowdEventManager[]
+| documentation = Pointer to quests whose CrowdEvent you are going to listen to. Quest must have a DefaultCrowdEventManager script attached.
+}}
+
+{{Script_Object_Member_Summary
+| title = EventData
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/EventData|EventData]]
+| kind = Property
+| flags = Const Auto
+| returns = EventDatum[]
+| documentation = Add keywords and correspond topics to say.
+Note: You can define multiple responses to the same event, but they will stop processing after responding to the first event the pass for, until the cool down.
+}}
+
+{{Script_Object_Member_Summary
+| title = ControllingQuest
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/ControllingQuest|ControllingQuest]]
+| kind = Property
+| flags = Auto Const
+| returns = Quest
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableOnStage
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/DisableOnStage|DisableOnStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnInit

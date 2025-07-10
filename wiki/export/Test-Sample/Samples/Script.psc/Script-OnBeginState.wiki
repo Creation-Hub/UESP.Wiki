@@ -1,0 +1,20 @@
+{{Script_Member_Summary
+| title = OnBeginState
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnBeginState|OnBeginState]]
+| kind = Event
+| parameters = string asOldState
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Parameters ==
+The parameters that belong to this script.
+
+* string asOldState
+
+
+[[Category:Starfield_Mod-Papyrus]]

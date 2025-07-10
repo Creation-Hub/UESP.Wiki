@@ -40,6 +40,37 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = KeywordToSend
+| script = [[SFM:Script-DefaultCollAliasSendEventOnActivate|DefaultCollAliasSendEventOnActivate]]
+| name = [[SFM:Script-DefaultCollAliasSendEventOnActivate/KeywordToSend|KeywordToSend]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = Keyword to send for story event
+}}
+
+{{Script_Object_Member_Summary
+| title = BlockingKeyword
+| script = [[SFM:Script-DefaultCollAliasSendEventOnActivate|DefaultCollAliasSendEventOnActivate]]
+| name = [[SFM:Script-DefaultCollAliasSendEventOnActivate/BlockingKeyword|BlockingKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Check to ensure player doesn't have this keyword before sending event
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultCollAliasSendEventOnActivate|DefaultCollAliasSendEventOnActivate]]
+| name = [[SFM:Script-DefaultCollAliasSendEventOnActivate/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = set to true to see traces. Note, you will need to run with archive builds or locally compailed DefaultScriptFunctions script to see the traces.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnActivate

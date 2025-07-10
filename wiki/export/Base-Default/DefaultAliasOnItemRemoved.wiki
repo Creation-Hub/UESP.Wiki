@@ -36,6 +36,17 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ItemFilter
+| script = [[SFM:Script-DefaultAliasOnItemRemoved|DefaultAliasOnItemRemoved]]
+| name = [[SFM:Script-DefaultAliasOnItemRemoved/ItemFilter|ItemFilter]]
+| kind = Property
+| flags = Const Auto
+| returns = Form
+| documentation = The item filter defining the items we care about being removed from the container. See "AddInventoryEventFilter" function documentation for details
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnAliasInit

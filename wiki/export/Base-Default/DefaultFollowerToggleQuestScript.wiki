@@ -50,6 +50,182 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SQ_Followers
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/SQ_Followers|SQ_Followers]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = SQ_FollowersScript
+}}
+
+{{Script_Object_Member_Summary
+| title = PotentialFollower
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/PotentialFollower|PotentialFollower]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = ReferenceAlias
+| documentation = An alias holding an actor that should toggle between being a player follower and not being one.
+}}
+
+{{Script_Object_Member_Summary
+| title = FollowConditions
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/FollowConditions|FollowConditions]]
+| kind = Property
+| flags = Mandatory Auto Const
+| returns = ConditionForm
+| documentation = ConditionForm that is evaluated for when the actor should become a follower
+}}
+
+{{Script_Object_Member_Summary
+| title = FollowConditions_RequiredOutput
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/FollowConditions_RequiredOutput|FollowConditions_RequiredOutput]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = What do FollowConditions need to evaulate for actor to become a follower?
+
+	If true (default), actor becomes a follower when FollowConditions evaluate true
+    if false, actor becomes a follower when FollowConditions evaluate false
+}}
+
+{{Script_Object_Member_Summary
+| title = StopFollowConditions
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/StopFollowConditions|StopFollowConditions]]
+| kind = Property
+| flags = Mandatory Auto Const
+| returns = ConditionForm
+| parameters = none
+| documentation = ConditionForm that is evaluated for when the actor should stop being a follower.
+NOTE: normally this will be THE SAME condition form as the FollowConditions (See StopFollowConditions_RequiredOutput below for why)
+}}
+
+{{Script_Object_Member_Summary
+| title = StopFollowConditions_RequiredOutput
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/StopFollowConditions_RequiredOutput|StopFollowConditions_RequiredOutput]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = What do StopFollowConditions need to evaulate for actor to stop being a follower?
+
+	If false (default), actor stops being a follower when StopFollow_Conditions evaluate false
+    if true, actor stops being a follower when StopFollow_Conditions evaluate true
+	NOTE: A value of false (default) lets you use the same condition form for both Follow and StopFollow as a mutally exclusive toggle)
+}}
+
+{{Script_Object_Member_Summary
+| title = Triggering_OnQuestInit
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Triggering_OnQuestInit|Triggering_OnQuestInit]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), will evaluate Conditions when the quest inits)
+}}
+
+{{Script_Object_Member_Summary
+| title = Triggering_LocationAliases
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Triggering_LocationAliases|Triggering_LocationAliases]]
+| kind = Property
+| flags = Const Auto
+| returns = LocationAlias[]
+| documentation = player entering or leaving these locations will evaluate Conditions. Example: dungeon location
+}}
+
+{{Script_Object_Member_Summary
+| title = Triggering_ActivationRefAliases
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Triggering_ActivationRefAliases|Triggering_ActivationRefAliases]]
+| kind = Property
+| flags = Const Auto
+| returns = ReferenceAlias[]
+| documentation = player activating any of these references will evaluate Conditions. Example: a door.
+}}
+
+{{Script_Object_Member_Summary
+| title = Triggering_EnterLeaveRefAliases
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Triggering_EnterLeaveRefAliases|Triggering_EnterLeaveRefAliases]]
+| kind = Property
+| flags = Const Auto
+| returns = ReferenceAlias[]
+| documentation = player entering or leaving any of these references will evaluate Conditions. Example: a trigger box.
+}}
+
+{{Script_Object_Member_Summary
+| title = Triggering_Stages
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Triggering_Stages|Triggering_Stages]]
+| kind = Property
+| flags = Const Auto
+| returns = int[]
+| documentation = Quest being set to any of these stages will evaluate Conditions.
+}}
+
+{{Script_Object_Member_Summary
+| title = Trigger_AnyLocation
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Trigger_AnyLocation|Trigger_AnyLocation]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| documentation = Normally you will use Triggering_LocationAliases to specify, but if you have complex conditions, like when you are in any location on a particular planet, etc.
+	You can use this to test conditions anytime the player changes location
+}}
+
+{{Script_Object_Member_Summary
+| title = TeleportToPlayerOnStartFollow
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/TeleportToPlayerOnStartFollow|TeleportToPlayerOnStartFollow]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| documentation = If true, whenever conditions are checked, if the PotentialFollower is far away and FollowConditions are true, they will be moveto'd the player.
+}}
+
+{{Script_Object_Member_Summary
+| title = TeleportDistance
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/TeleportDistance|TeleportDistance]]
+| kind = Property
+| flags = Const Auto
+| returns = float
+| parameters = 100.0
+| documentation = if TeleportToPlayerOnStartFollow is true, PotentialFollower will be teleported to player if at or greater than this distance away
+}}
+
+{{Script_Object_Member_Summary
+| title = SetUnavailableWhenStopFollow
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/SetUnavailableWhenStopFollow|SetUnavailableWhenStopFollow]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = passed to SQ_Followers.SetRoleInactive as the AlsoSetUnavailable parameter - removes follower from AvailableFollowers collection
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnQuestStarted

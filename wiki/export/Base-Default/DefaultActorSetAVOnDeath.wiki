@@ -47,6 +47,61 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AVToSet
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/AVToSet|AVToSet]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = Actor value to set when this actor is killed.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetAVOnKiller
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/SetAVOnKiller|SetAVOnKiller]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If TRUE, AVToSet will be set on the killer of the actor. If False, it will be set on the dead actor.
+}}
+
+{{Script_Object_Member_Summary
+| title = UseOnDying
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/UseOnDying|UseOnDying]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If TRUE, use the "OnDying" event instead of "OnDeath".
+}}
+
+{{Script_Object_Member_Summary
+| title = AVNewValue
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/AVNewValue|AVNewValue]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 1.0
+| documentation = Value to set AVToSet to when this actor is killed.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultActorSetAVOnDeath|DefaultActorSetAVOnDeath]]
+| name = [[SFM:Script-DefaultActorSetAVOnDeath/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnDeath

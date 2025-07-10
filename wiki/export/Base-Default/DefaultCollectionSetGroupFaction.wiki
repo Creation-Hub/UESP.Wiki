@@ -36,6 +36,17 @@ The members that belong to this script, grouped by kind.
 | documentation = group faction to set on the aliased actors
 }}
 
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultCollectionSetGroupFaction|DefaultCollectionSetGroupFaction]]
+| name = [[SFM:Script-DefaultCollectionSetGroupFaction/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
 === Group ===
 {{Script_Object_Member_Summary
 | title = Debug_Properties

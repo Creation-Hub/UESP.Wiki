@@ -33,6 +33,27 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = OnBeginArchetype
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/OnBeginArchetype|OnBeginArchetype]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Switch to this Archetype OnBegin
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEndArchetype
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/OnEndArchetype|OnEndArchetype]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Switch to this Archetype OnEnd
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnBegin

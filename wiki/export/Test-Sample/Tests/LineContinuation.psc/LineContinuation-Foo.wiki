@@ -1,10 +1,11 @@
 {{Script_Member_Summary
-| title = Foo1
+| title = Foo
 | script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
-| name = [[SFM:Script-Tests:LineContinuation/Foo1|Foo1]]
+| name = [[SFM:Script-Tests:LineContinuation/Foo|Foo]]
 | kind = Function
 | parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
-| documentation = This is the Papyrus doc-string for `Foo1`.
+| documentation = This is the Papyrus doc-string for `Foo`.
+This is the documentation line comment for `Foo`.
 }}
 
 
@@ -12,7 +13,8 @@
 The <code>Tests\LineContinuation.psc</code> source file documentation comments for this script.
 
 <source>
-This is the Papyrus doc-string for `Foo1`.
+This is the Papyrus doc-string for `Foo`.
+This is the documentation line comment for `Foo`.
 </source>
 
 

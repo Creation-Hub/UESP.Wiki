@@ -45,6 +45,59 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShip
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/SQ_PlayerShip|SQ_PlayerShip]]
+| kind = Property
+| flags = Auto Const
+| returns = SQ_PlayerShipScript
+| documentation = optional, if you want the ship to check for landing zone trigger to clear creatures when the ship lands
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageWhenLandingComplete
+| script = [[SFM:Script-DefaultAliasOnShipLand|DefaultAliasOnShipLand]]
+| name = [[SFM:Script-DefaultAliasOnShipLand/SetStageWhenLandingComplete|SetStageWhenLandingComplete]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), stage will be set when landing is complete; if false, stage will be set when landing begins.
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst

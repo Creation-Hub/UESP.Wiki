@@ -40,6 +40,15 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = Increment

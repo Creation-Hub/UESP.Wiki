@@ -47,6 +47,94 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = MessageToShow
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/MessageToShow|MessageToShow]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Message
+| documentation = The message to show when I'm activated.
+}}
+
+{{Script_Object_Member_Summary
+| title = Button0StageToSet
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/Button0StageToSet|Button0StageToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage you want to set when Button 0 is clicked.
+}}
+
+{{Script_Object_Member_Summary
+| title = Button1StageToSet
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/Button1StageToSet|Button1StageToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage you want to set when Button 1 is clicked.
+}}
+
+{{Script_Object_Member_Summary
+| title = Button2StageToSet
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/Button2StageToSet|Button2StageToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage you want to set when Button 2 is clicked.
+}}
+
+{{Script_Object_Member_Summary
+| title = Button3StageToSet
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/Button3StageToSet|Button3StageToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage you want to set when Button 3 is clicked.
+}}
+
+{{Script_Object_Member_Summary
+| title = MessageStage
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/MessageStage|MessageStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage that must be set for this script's functionality to execute (ie show MessageBox)
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowIfStageIsSet
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/ShowIfStageIsSet|ShowIfStageIsSet]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will show message if stage is set. If false will show message until stage is set.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
+| name = [[SFM:Script-DefaultShowMessageOnActivateAlias/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnActivate

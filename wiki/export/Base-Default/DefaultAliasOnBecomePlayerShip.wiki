@@ -34,6 +34,27 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShip
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/SQ_PlayerShip|SQ_PlayerShip]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = SQ_PlayerShipScript
+| documentation = autofill - used to register for player ship change event
+}}
+
+{{Script_Object_Member_Summary
+| title = FactionsToRemove
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/FactionsToRemove|FactionsToRemove]]
+| kind = Property
+| flags = Auto Const
+| returns = Faction[]
+| documentation = factions to remove when this ship becomes the player ship
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnAliasInit

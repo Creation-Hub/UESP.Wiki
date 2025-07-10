@@ -49,6 +49,27 @@ The members that belong to this script, grouped by kind.
 
 === Property ===
 {{Script_Object_Member_Summary
+| title = TriggerAliases
+| script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor/TriggerAliases|TriggerAliases]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ReferenceAlias[]
+| documentation = Ref Aliases the trigger is looking for. All of these actors must be in the trigger in order to set the stage.
+}}
+
+{{Script_Object_Member_Summary
+| title = DisableWhenTriggered
+| script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor/DisableWhenTriggered|DisableWhenTriggered]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Delete this trigger once triggered.
+}}
+
+{{Script_Object_Member_Summary
 | title = AllTargetsInTrigger
 | script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
 | name = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor/AllTargetsInTrigger|AllTargetsInTrigger]]

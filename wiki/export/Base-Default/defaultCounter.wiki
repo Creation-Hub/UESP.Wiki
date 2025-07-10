@@ -43,6 +43,72 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = TargetValue
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/TargetValue|TargetValue]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| documentation = The first value at which the counter will trigger.
+}}
+
+{{Script_Object_Member_Summary
+| title = QuestToSet
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/QuestToSet|QuestToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = Quest
+| documentation = Quest containing the Stage to set
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSet
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/StageToSet|StageToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage to Set
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkedRefKeyword
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/LinkedRefKeyword|LinkedRefKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = The keyword for the LinkedRef to perform the action on. Defaults to the unnamed linkedref.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkedRefAction
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/LinkedRefAction|LinkedRefAction]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| documentation = Determines what action to perform on the object's linkedref.
+	0: Activate (default)
+	1: Toggle Enable/Disable
+	2: Enable Only
+	3: Disable Only
+}}
+
+{{Script_Object_Member_Summary
+| title = AllowDecrementing
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/AllowDecrementing|AllowDecrementing]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = (Default: false) If true, we Decrementing via calls to "Decrement()", undoing the specified action (where possible) if the value falls below the target.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = AllowCounting

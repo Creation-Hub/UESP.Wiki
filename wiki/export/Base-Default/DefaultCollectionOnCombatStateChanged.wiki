@@ -36,6 +36,32 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = IncludeOnHitEvent
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/IncludeOnHitEvent|IncludeOnHitEvent]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), exceute script functionality when THIS actor is hit in combat and <RefToCheck> will be the aggressor.
+}}
+
+{{Script_Object_Member_Summary
+| title = CombatStateToCheckFor
+| script = [[SFM:Script-DefaultCollectionOnCombatStateChanged|DefaultCollectionOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultCollectionOnCombatStateChanged/CombatStateToCheckFor|CombatStateToCheckFor]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 4
+| documentation = 0: Not In Combat
+1: In Combat
+2: Searching
+4 (Default): In Combat or Searching
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnAliasInit

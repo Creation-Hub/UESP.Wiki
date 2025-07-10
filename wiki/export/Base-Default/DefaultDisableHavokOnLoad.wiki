@@ -40,6 +40,83 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = HavokOnHit
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokOnHit|HavokOnHit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Start Havok Sim when hit? DEFAULT: False
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnActivate
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokOnActivate|HavokOnActivate]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Start Havok Sim when activated? DEFAULT: False
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnZKey
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokOnZKey|HavokOnZKey]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Start Havok Sim when grabbed by player? DEFAULT: False
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkHavokPartner
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/LinkHavokPartner|LinkHavokPartner]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Link with this keyword and that ref will also sim with myself
+}}
+
+{{Script_Object_Member_Summary
+| title = BeenSimmed
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/BeenSimmed|BeenSimmed]]
+| kind = Property
+| flags = Auto Hidden
+| returns = bool
+| parameters = false
+| documentation = Prevent an object that has been havok'd in-game from going static
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokImpulseMagnitude
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokImpulseMagnitude|HavokImpulseMagnitude]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 0.07
+| documentation = havok impulse to apply when released to havok sim
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default = False, Set to True if you want the traces in this script to show up in the log.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnContainerChanged

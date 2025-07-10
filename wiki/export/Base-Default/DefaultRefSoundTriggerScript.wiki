@@ -40,6 +40,60 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SoundToPlayEvent
+| script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+| name = [[SFM:Script-DefaultRefSoundTriggerScript/SoundToPlayEvent|SoundToPlayEvent]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = WwiseEvent
+| documentation = The sound to be played.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayerTriggerOnly
+| script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+| name = [[SFM:Script-DefaultRefSoundTriggerScript/PlayerTriggerOnly|PlayerTriggerOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = DEFAULT: True. Should we trigger this for the player only?
+}}
+
+{{Script_Object_Member_Summary
+| title = UseLinkKeyword
+| script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+| name = [[SFM:Script-DefaultRefSoundTriggerScript/UseLinkKeyword|UseLinkKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = DEFAULT: True. If True, play the sound using the LinkKeyword (next item). If False, just play the sound from this ref.
+}}
+
+{{Script_Object_Member_Summary
+| title = PlayOnceOnly
+| script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+| name = [[SFM:Script-DefaultRefSoundTriggerScript/PlayOnceOnly|PlayOnceOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = DEFAULT: True. Should we play this sound only once?
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkKeyword
+| script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+| name = [[SFM:Script-DefaultRefSoundTriggerScript/LinkKeyword|LinkKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = DEFAULT: NONE. If this is linked to another ref with keyword LinkKeyword, play the sound from that ref. Otherwise, play the sound from the triggering ref.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = Waiting
@@ -53,6 +107,15 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
 | name = [[SFM:Script-DefaultRefSoundTriggerScript/Done|Done]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
+| name = [[SFM:Script-DefaultRefSoundTriggerScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference triggerRef
 }}
 
 

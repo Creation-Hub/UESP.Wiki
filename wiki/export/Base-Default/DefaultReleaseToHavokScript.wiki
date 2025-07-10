@@ -33,6 +33,52 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = HavokOnHit
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/HavokOnHit|HavokOnHit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default: TRUE. Should we release the object to Havok when it's hit?
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnActivate
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/HavokOnActivate|HavokOnActivate]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default: TRUE. Should we release the object to Havok when it's activated?
+}}
+
+{{Script_Object_Member_Summary
+| title = ReleaseAllLinkedHavokPartners
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/ReleaseAllLinkedHavokPartners|ReleaseAllLinkedHavokPartners]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default: TRUE.
+	 If True, release all objects linked to or from this object with LinkHavokPartner to Havok. Assumes this object is part of a simple chain; branching is NOT supported.
+	 If False, release only objects linked from this object with LinkHavokPartner to Havok.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkHavokPartner
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/LinkHavokPartner|LinkHavokPartner]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = The chain of objects linked with this keyword will be released to Havok when this object is released.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = Waiting
@@ -46,6 +92,30 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
 | name = [[SFM:Script-DefaultReleaseToHavokScript/Released|Released]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference triggerRef
 }}
 
 === Function ===

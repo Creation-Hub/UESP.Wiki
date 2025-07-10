@@ -130,10 +130,10 @@ There are 101 scripts that belong to this project:
 * Scripts: 11
 
 ==== Member Statistics ====
-This project overall contains 141 total members spread over 11 scripts.
+This project overall contains 237 total members spread over 11 scripts.
 * Group was used 44 times.
+* Property was used 100 times.
 * Function was used 80 times.
-* Property was used 4 times.
 * Event was used 5 times.
 * State was used 8 times.
 
@@ -164,11 +164,11 @@ There are 11 scripts that belong to this project:
 * Scripts: 208
 
 ==== Member Statistics ====
-This project overall contains 761 total members spread over 208 scripts.
-* Property was used 83 times.
+This project overall contains 1228 total members spread over 208 scripts.
+* Property was used 520 times.
 * Function was used 195 times.
 * Group was used 191 times.
-* Event was used 220 times.
+* Event was used 250 times.
 * State was used 54 times.
 * Struct was used 18 times.
 
@@ -396,11 +396,11 @@ There are 208 scripts that belong to this project:
 * Scripts: 9
 
 ==== Member Statistics ====
-This project overall contains 33 total members spread over 9 scripts.
+This project overall contains 37 total members spread over 9 scripts.
 * Struct was used 3 times.
-* Function was used 8 times.
+* Function was used 10 times.
 * Property was used 14 times.
-* Event was used 6 times.
+* Event was used 8 times.
 * State was used 2 times.
 
 ==== Inheritance Statistics ====

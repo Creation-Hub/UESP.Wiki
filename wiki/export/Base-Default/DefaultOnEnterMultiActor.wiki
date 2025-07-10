@@ -42,6 +42,39 @@ The members that belong to this script, grouped by kind.
 
 === Property ===
 {{Script_Object_Member_Summary
+| title = TriggerActors
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/TriggerActors|TriggerActors]]
+| kind = Property
+| flags = Auto Const
+| returns = ActorBase[]
+| documentation = actors that trigger is looking for - all actors in array must be in trigger
+	NOTE: There must be at least one item in either TriggerActors or TriggerAliases
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerAliases
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/TriggerAliases|TriggerAliases]]
+| kind = Property
+| flags = Auto Const
+| returns = ReferenceAlias[]
+| documentation = Ref Aliases that trigger is looking for - all actors in array must be in trigger
+	NOTE: There must be at least one item in either TriggerActors or TriggerAliases
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
+}}
+
+{{Script_Object_Member_Summary
 | title = BAllTargetsInTrigger
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
 | name = [[SFM:Script-DefaultOnEnterMultiActor/BAllTargetsInTrigger|BAllTargetsInTrigger]]
@@ -58,6 +91,22 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
 | name = [[SFM:Script-DefaultOnEnterMultiActor/OnInit|OnInit]]
 | kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference triggerRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerLeave
+| script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
+| name = [[SFM:Script-DefaultOnEnterMultiActor/OnTriggerLeave|OnTriggerLeave]]
+| kind = Event
+| parameters = ObjectReference triggerRef
 }}
 
 === State ===

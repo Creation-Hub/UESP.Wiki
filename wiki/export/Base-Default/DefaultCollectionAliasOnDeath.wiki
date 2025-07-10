@@ -36,6 +36,50 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = UseOnDyingInstead
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/UseOnDyingInstead|UseOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, stage will be set when OnDying() event is sent. If false, stage will be sent with OnDeath() event is sent.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromRefCollection
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/RemoveFromRefCollection|RemoveFromRefCollection]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, after executing script functionality, will remove each reference from the collection when it dies.
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShip
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/SQ_PlayerShip|SQ_PlayerShip]]
+| kind = Property
+| flags = Auto Const
+| returns = SQ_PlayerShipScript
+| documentation = autofill (but optional) - used to register for player ship change event
+}}
+
+{{Script_Object_Member_Summary
+| title = CountShipTakeover
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/CountShipTakeover|CountShipTakeover]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = only valid if SQ_PlayerShip is filled in; for spaceships, consider the player taking over a ship as killing it
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnAliasInit

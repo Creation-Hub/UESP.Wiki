@@ -40,6 +40,39 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = AmbushTriggered
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/AmbushTriggered|AmbushTriggered]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkAmbushTrigger
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/LinkAmbushTrigger|LinkAmbushTrigger]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerIfAnyLinkedActorEntersCombat
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerIfAnyLinkedActorEntersCombat|TriggerIfAnyLinkedActorEntersCombat]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = TRUE = any linked actor that enters combat sets AmbushTriggered to 1
+	  FALSE = only set AmbushTrigger to 1 if player enters me
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnCellLoad

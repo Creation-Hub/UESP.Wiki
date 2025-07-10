@@ -33,6 +33,19 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = RespawningOn
+| script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
+| name = [[SFM:Script-defaultAliasRespawnScriptA/RespawningOn|RespawningOn]]
+| kind = Property
+| flags = Auto
+| returns = bool
+| parameters = true
+| documentation = Set to false to stop this alias from auto-respawning when it dies
+	defaults to TRUE
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = RespawnIfDead
@@ -54,6 +67,15 @@ The members that belong to this script, grouped by kind.
 | script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
 | name = [[SFM:Script-defaultAliasRespawnScriptA/Respawning|Respawning]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
+| name = [[SFM:Script-defaultAliasRespawnScriptA/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
 }}
 
 

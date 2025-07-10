@@ -111,6 +111,236 @@ The members that belong to this script, grouped by kind.
 
 === Property ===
 {{Script_Object_Member_Summary
+| title = SQ_Groups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SQ_Groups|SQ_Groups]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = SQ_Groups_QuestScript
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupA_Definition
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupA_Definition|SpawnGroupA_Definition]]
+| kind = Property
+| flags = Auto
+| returns = SpawnGroup_DefinitionDatum
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupA_AllowedGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupA_AllowedGroups|SpawnGroupA_AllowedGroups]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Faction_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupA_AllowedOccupations
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupA_AllowedOccupations|SpawnGroupA_AllowedOccupations]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupOccupationScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Occupation_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupA_SpawnData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupA_SpawnData|SpawnGroupA_SpawnData]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = SpawnGroup_SpawnDatum[]
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupB_Definition
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupB_Definition|SpawnGroupB_Definition]]
+| kind = Property
+| flags = Auto
+| returns = SpawnGroup_DefinitionDatum
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupB_AllowedGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupB_AllowedGroups|SpawnGroupB_AllowedGroups]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Faction_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupB_AllowedOccupations
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupB_AllowedOccupations|SpawnGroupB_AllowedOccupations]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupOccupationScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Occupation_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupB_SpawnData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupB_SpawnData|SpawnGroupB_SpawnData]]
+| kind = Property
+| flags = Auto Const
+| returns = SpawnGroup_SpawnDatum[]
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupC_Definition
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupC_Definition|SpawnGroupC_Definition]]
+| kind = Property
+| flags = Auto
+| returns = SpawnGroup_DefinitionDatum
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupC_AllowedGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupC_AllowedGroups|SpawnGroupC_AllowedGroups]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Faction_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupC_AllowedOccupations
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupC_AllowedOccupations|SpawnGroupC_AllowedOccupations]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupOccupationScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Occupation_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupC_SpawnData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupC_SpawnData|SpawnGroupC_SpawnData]]
+| kind = Property
+| flags = Auto Const
+| returns = SpawnGroup_SpawnDatum[]
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupD_Definition
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupD_Definition|SpawnGroupD_Definition]]
+| kind = Property
+| flags = Auto
+| returns = SpawnGroup_DefinitionDatum
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupD_AllowedGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupD_AllowedGroups|SpawnGroupD_AllowedGroups]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Faction_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupD_AllowedOccupations
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupD_AllowedOccupations|SpawnGroupD_AllowedOccupations]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupOccupationScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Occupation_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupD_SpawnData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupD_SpawnData|SpawnGroupD_SpawnData]]
+| kind = Property
+| flags = Auto Const
+| returns = SpawnGroup_SpawnDatum[]
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupE_Definition
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupE_Definition|SpawnGroupE_Definition]]
+| kind = Property
+| flags = Auto
+| returns = SpawnGroup_DefinitionDatum
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupE_AllowedGroups
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupE_AllowedGroups|SpawnGroupE_AllowedGroups]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Faction_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupE_AllowedOccupations
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupE_AllowedOccupations|SpawnGroupE_AllowedOccupations]]
+| kind = Property
+| flags = Const Auto
+| returns = FormList[]
+| documentation = formlist of Activators with SQ_GroupOccupationScript attached - you MUST have either AllowedGroups or AllowedOccupations
+		Filter for: SQ_Group_Occupation_
+}}
+
+{{Script_Object_Member_Summary
+| title = SpawnGroupE_SpawnData
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SpawnGroupE_SpawnData|SpawnGroupE_SpawnData]]
+| kind = Property
+| flags = Auto Const
+| returns = SpawnGroup_SpawnDatum[]
+}}
+
+{{Script_Object_Member_Summary
+| title = LocalScriptName
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/LocalScriptName|LocalScriptName]]
+| kind = Property
+| flags = Auto
+| returns = string
+| parameters = "DefaultGroupSpawnQuestScript"
+| documentation = Inherits the LocalScriptName from OEScript, if used. Otherwise, the value set here is used.
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_Group_RandomOccupationIndexOverride
+| script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
+| name = [[SFM:Script-DefaultGroupSpawnQuestScript/SQ_Group_RandomOccupationIndexOverride|SQ_Group_RandomOccupationIndexOverride]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = Global that overrides the random occupation selection behavior. Set at runtime to force spawning NPCs from the Spawn Group's allowed occupations array.
+}}
+
+{{Script_Object_Member_Summary
 | title = GroupSetupCompleted
 | script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
 | name = [[SFM:Script-DefaultGroupSpawnQuestScript/GroupSetupCompleted|GroupSetupCompleted]]

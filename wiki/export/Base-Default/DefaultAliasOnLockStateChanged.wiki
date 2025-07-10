@@ -34,6 +34,18 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = CheckForUnlock
+| script = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnLockStateChanged/CheckForUnlock|CheckForUnlock]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), exceute this script if the lock state changes to Unlocked. If false, if the lock state changes to Locked.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnLockStateChanged

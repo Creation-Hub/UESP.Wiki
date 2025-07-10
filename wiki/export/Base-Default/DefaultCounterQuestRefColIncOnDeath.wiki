@@ -33,12 +33,86 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = TargetRemainingCount
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/TargetRemainingCount|TargetRemainingCount]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = After incrementing, if there are this many objects left in the collection or fewer, set RemainingStage.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemainingStage
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/RemainingStage|RemainingStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = After incrementing, if there are TargetRemainingCount objects left in the collection or fewer, set this stage.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckForOnDyingInstead
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/CheckForOnDyingInstead|CheckForOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = DefaultL FALSE. If true the Increment will happen when this actor recieves the OnDying() event instead, which happens the instant the actor dies, unlike the
+	OnDeath() event which can happen several seconds later.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveWhenDead
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/RemoveWhenDead|RemoveWhenDead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default: FALSE. After incrementing, remove the alias from the collection. If MaintainTargetValue=TRUE, also decrement the counter by 1. It essentially stays at 0 while the list shrinks.
+}}
+
+{{Script_Object_Member_Summary
+| title = MaintainTargetValue
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/MaintainTargetValue|MaintainTargetValue]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default: FALSE. Before incrementing, always set the counter's Target Value to match the length of this collection.
+}}
+
 === State ===
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
 | name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/WaitingForDeath|WaitingForDeath]]
 | kind = State
+}}
+
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
 }}
 
 === Function ===

@@ -36,6 +36,18 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = ShouldDisableAfterSuccessfulActivation
+| script = [[SFM:Script-DefaultCollectionAliasOnActivate|DefaultCollectionAliasOnActivate]]
+| name = [[SFM:Script-DefaultCollectionAliasOnActivate/ShouldDisableAfterSuccessfulActivation|ShouldDisableAfterSuccessfulActivation]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, disable after being successfully activated
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnActivate

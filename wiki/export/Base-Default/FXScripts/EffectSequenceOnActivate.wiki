@@ -33,6 +33,18 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SequenceName
+| script = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate/SequenceName|SequenceName]]
+| kind = Property
+| flags = Auto Const
+| returns = string
+| parameters = "Play01"
+| documentation = Effect Sequence to play when this is activated.
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnActivate

@@ -35,6 +35,14 @@ The members that belong to this script, grouped by kind.
 
 === Event ===
 {{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
 | name = [[SFM:Script-DefaultTopicInfoSetActorValue/OnBegin|OnBegin]]
@@ -42,12 +50,62 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 }}
 
+=== Property ===
 {{Script_Object_Member_Summary
-| title = OnEnd
+| title = SetOnSpeaker
 | script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
-| name = [[SFM:Script-DefaultTopicInfoSetActorValue/OnEnd|OnEnd]]
-| kind = Event
-| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/SetOnSpeaker|SetOnSpeaker]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Set to true if you want the value to be set on the line's speaker.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetOnPlayer
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/SetOnPlayer|SetOnPlayer]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Set to true if you want the value to be set on the line's player.
+
+NOTE: topic infos in scenes will NOT have a target.
+}}
+
+{{Script_Object_Member_Summary
+| title = ValueToModify
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/ValueToModify|ValueToModify]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = The Actor Value to set
+}}
+
+{{Script_Object_Member_Summary
+| title = NewValue
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/NewValue|NewValue]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 1.0
+| documentation = The new value for the given actor value
+}}
+
+{{Script_Object_Member_Summary
+| title = SetActorValueToNewValue
+| script = [[SFM:Script-DefaultTopicInfoSetActorValue|DefaultTopicInfoSetActorValue]]
+| name = [[SFM:Script-DefaultTopicInfoSetActorValue/SetActorValueToNewValue|SetActorValueToNewValue]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = TRUE = will call SetValue(ValueToModify, newValue)
+                FALSE = will call ModValue(ValueToModify, newValue)
 }}
 
 === Function ===

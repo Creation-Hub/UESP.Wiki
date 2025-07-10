@@ -33,6 +33,38 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SoundEvent
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/SoundEvent|SoundEvent]]
+| kind = Property
+| flags = Const Auto
+| returns = WwiseEvent
+| documentation = Optional: The Sound Event to play.
+}}
+
+{{Script_Object_Member_Summary
+| title = TheImod
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/TheImod|TheImod]]
+| kind = Property
+| flags = Const Auto
+| returns = ImageSpaceModifier
+| documentation = Optional: The Imagespace Modifier to play.
+}}
+
+{{Script_Object_Member_Summary
+| title = StartWhenGameIsRunning
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/StartWhenGameIsRunning|StartWhenGameIsRunning]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Optional: If true, VFX/SFX won't start playing until game is not paused (e.g. if effect starts from using a potion from inventory)
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnEffectStart

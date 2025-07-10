@@ -114,9 +114,11 @@ def primitive_value(token:str) -> str:
 # Script
 #---------------------------------------------
 
-def script_definition(line:str) -> str:
-    """Normalizes the given Papyrus header."""
-    tokens:list[str] = line.strip().split()
+def definition(line:str) -> str:
+    """Normalizes the given Papyrus definition line."""
+    line = strip_comments(line)
+    line = whitespace(line)
+    tokens:list[str] = line.split()
     return " ".join(symbol(token) for token in tokens)
 
 

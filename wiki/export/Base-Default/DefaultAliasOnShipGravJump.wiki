@@ -45,6 +45,71 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageWhenJumpingComplete
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/SetStageWhenJumpingComplete|SetStageWhenJumpingComplete]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default) stage will be set when Jump is complete; if false, stage will be set when jump begins.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageIfJumpingFails
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/SetStageIfJumpingFails|SetStageIfJumpingFails]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) if true, stage will be set if Jump fails; if false, stage will be set if Jump does not fail.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckDestinationLocation
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/CheckDestinationLocation|CheckDestinationLocation]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true (default), <LocationToCheck> is the destination Location. If false, <LocationToCheck> is the starting location
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst

@@ -62,5 +62,13 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+=== Event ===
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultAliasAddPerkOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
 
 [[Category:Starfield_Mod-Papyrus]]

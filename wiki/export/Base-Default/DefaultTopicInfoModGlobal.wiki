@@ -40,6 +40,49 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+=== Property ===
+{{Script_Object_Member_Summary
+| title = SetGlobalOnBegin
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/SetGlobalOnBegin|SetGlobalOnBegin]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = Which global to modify when the info starts
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGlobalOnEnd
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/SetGlobalOnEnd|SetGlobalOnEnd]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = Which global to modify when the info starts
+}}
+
+{{Script_Object_Member_Summary
+| title = OnBeginMod
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/OnBeginMod|OnBeginMod]]
+| kind = Property
+| flags = Const Auto
+| returns = float
+| parameters = 1.0
+| documentation = Default: 1; what value do we modify the global by when the info starts
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEndMod
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/OnEndMod|OnEndMod]]
+| kind = Property
+| flags = Const Auto
+| returns = float
+| parameters = 1.0
+| documentation = Default: 1; what value do we modify the global by when the info ends
+}}
+
 === Event ===
 {{Script_Object_Member_Summary
 | title = OnBegin
