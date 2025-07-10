@@ -17,7 +17,7 @@ from app.papyrus.code import Structure
 from app.papyrus.code import Variable
 from app.papyrus.text import normalize
 from app.papyrus.text import regex
-from app.papyrus.text.parser import TextReader
+from app.papyrus.text.reader import TextReader
 
 
 # Documentation
