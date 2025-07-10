@@ -83,5 +83,13 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = Actor.OnPlayerPlanetSurveyComplete
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/Actor.OnPlayerPlanetSurveyComplete|Actor.OnPlayerPlanetSurveyComplete]]
+| kind = Event
+| parameters = Actor akSource, Planet akPlanet
+}}
+
 
 [[Category:Starfield_Mod-Papyrus]]

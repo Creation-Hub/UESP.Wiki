@@ -113,6 +113,22 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_ParentScript.SQ_PlanetTraitDiscovered
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/SQ_ParentScript.SQ_PlanetTraitDiscovered|SQ_ParentScript.SQ_PlanetTraitDiscovered]]
+| kind = Event
+| parameters = SQ_ParentScript akSender, var[] akArgs
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_ParentScript.SQ_PlanetTraitUpdated
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/SQ_ParentScript.SQ_PlanetTraitUpdated|SQ_ParentScript.SQ_PlanetTraitUpdated]]
+| kind = Event
+| parameters = SQ_ParentScript akSender, var[] akArgs
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = HandlePlanetTraitEvent

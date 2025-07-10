@@ -89,6 +89,16 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+{{Script_Object_Member_Summary
+| title = Actor.OnCombatStateChanged
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Actor.OnCombatStateChanged|Actor.OnCombatStateChanged]]
+| kind = Event
+| parameters = Actor akSource, ObjectReference akTarget, int aeCombatState
+| documentation = This was causing part of GEN-296983 "AI: Ambush procedure seems to be able to be overriden by ally going into combat"
+Adding this back in, only to trigger on combat, should only apply to actors linked to this ref.
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = TriggerAmbush

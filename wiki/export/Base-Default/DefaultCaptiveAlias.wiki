@@ -284,6 +284,14 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_CaptiveScript.CaptiveSetFree
+| script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
+| name = [[SFM:Script-DefaultCaptiveAlias/SQ_CaptiveScript.CaptiveSetFree|SQ_CaptiveScript.CaptiveSetFree]]
+| kind = Event
+| parameters = SQ_CaptiveScript akSender, var[] akArgs
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = AddToFactions

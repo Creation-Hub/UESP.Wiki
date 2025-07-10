@@ -248,36 +248,43 @@ def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
     structure.documentation = parse_documentation(reader)
     structure.name = normalize.member_name_upper(struct_match.group("name"))
 
-    line_index:int = reader.cursor
-    line_index += 1
-    while line_index < len(reader):
-        line:str = reader[line_index]
+    while reader.has_next():
+        line:str = reader.move()
+
         # Terminate this loop if we reach the block end.
         if regex.STRUCT_END_PATTERN.match(line):
-            structure.index_end = line_index
+            structure.index_end = reader.cursor
             break
 
         # Match any variable definitions inside this structure.
-        variable_match = regex.VARIABLE_PATTERN.match(line)
-        if variable_match:
-            variable:Variable = parse_variable(reader, variable_match)
-            structure.variables[variable.name] = variable
-
-        # Advance to next index.
-        line_index += 1
+        # TODO: Disabled for now due to context issues.
+        if False:
+            variable_match = regex.VARIABLE_PATTERN.match(line)
+            if variable_match:
+                variable:Variable = parse_variable(reader, variable_match)
+                structure.variables[variable.name] = variable
 
     # Warn on unincremented block indexes.
     if structure.index == structure.index_end:
         logging.warning(f"Structure '{structure.name}' at line {structure.index} has an unincremented block index.")
 
-    logging.debug(f"'{structure.name}'@{line_index}: Found {structure.index_end - structure.index} lines until end of block.")
+    logging.debug(f"Structure '{structure.name}' @({structure.index}-{structure.index_end}) with {structure.index_end - structure.index} lines.")
     return structure
 
 
 # Block
 def parse_event(reader:TextReader, event_match:Match[str]) -> Event:
     event:Event = Event()
-    event.name = normalize.member_name_upper(event_match.group("name"))
+
+    name:str = ""
+    g_name:str = event_match.group("name")
+    g_remote:str = event_match.group("remote")
+    if g_remote:
+        name = g_name + g_remote
+    else:
+        name = g_name
+
+    event.name = normalize.member_name_upper(name)
     event.index = reader.cursor
     event.index_end = reader.cursor
     event.definition = normalize.definition(reader.line())
@@ -288,24 +295,19 @@ def parse_event(reader:TextReader, event_match:Match[str]) -> Event:
     if "Native" in event.flags:
         return event
 
-    line_index:int = reader.cursor
-    line_index += 1
-    while line_index < len(reader):
-        line:str = reader[line_index]
+    while reader.has_next():
+        line:str = reader.move()
 
         # Terminate this loop if we reach the block end.
         if regex.EVENT_END_PATTERN.match(line):
-            event.index_end = line_index
+            event.index_end = reader.cursor
             break
-
-        # Advance to next index.
-        line_index += 1
 
     # Warn on unincremented block indexes.
     if event.index == event.index_end:
         logging.warning(f"Event '{event.name}' at line {event.index} has an unincremented block index.")
 
-    logging.debug(f"'{event.name}'@{line_index}: Found {event.index_end - event.index} lines until end of block.")
+    logging.debug(f"Event '{event.name}' @({event.index}-{event.index_end}) with {event.index_end - event.index} lines.")
     return event
 
 
@@ -324,24 +326,19 @@ def parse_function(reader:TextReader, function_match:Match[str]) -> Function:
     if "Native" in function.flags:
         return function
 
-    line_index:int = reader.cursor
-    line_index += 1
-    while line_index < len(reader):
-        line:str = reader[line_index]
+    while reader.has_next():
+        line:str = reader.move()
 
         # Terminate this loop if we reach the block end.
         if regex.FUNCTION_END_PATTERN.match(line):
-            function.index_end = line_index
+            function.index_end = reader.cursor
             break
-
-        # Advance to next index.
-        line_index += 1
 
     # Warn on unincremented block indexes.
     if function.index == function.index_end:
         logging.warning(f"Function '{function.name}' at line {function.index} has an unincremented block index.")
 
-    logging.debug(f"'{function.name}'@{line_index}: Found {function.index_end - function.index} lines until end of block.")
+    logging.debug(f"Function '{function.name}' @({function.index}-{function.index_end}) with {function.index_end - function.index} lines.")
     return function
 
 
@@ -357,14 +354,12 @@ def parse_property_group(reader:TextReader, group_match:Match[str]) -> PropertyG
     group.name = group_match.group("name")
     group.flags = parse_flags(group_match.group("flags"))
 
-    line_index:int = reader.cursor
-    line_index += 1
-    while line_index < len(reader):
-        line:str = reader[line_index]
+    while reader.has_next():
+        line:str = reader.move()
 
         # Terminate this loop if we reach the block end.
         if regex.GROUP_END_PATTERN.match(line):
-            group.index_end = line_index
+            group.index_end = reader.cursor
             break
 
         # Parse members inside the group
@@ -374,14 +369,11 @@ def parse_property_group(reader:TextReader, group_match:Match[str]) -> PropertyG
             if property:
                 group.properties[property.name] = property
 
-        # Advance to next index.
-        line_index += 1
-
     # Warn on unincremented block indexes.
     if group.index == group.index_end:
         logging.warning(f"Group '{group.name}' at line {group.index} has an unincremented block index.")
 
-    logging.debug(f"'{group.name}'@{line_index}: Found {group.index_end - group.index} lines until end of block.")
+    logging.debug(f"Group '{group.name}' @({group.index}-{group.index_end}) with {group.index_end - group.index} lines.")
     return group
 
 
@@ -394,41 +386,33 @@ def parse_state(reader:TextReader, state_match:Match[str]) -> State:
     state.name = normalize.member_name_upper(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
 
-    line_index:int = reader.cursor
-    line_index += 1
-    while line_index < len(reader):
-        line:str = reader[line_index]
+    while reader.has_next():
+        line:str = reader.move()
 
         # Terminate this loop if we reach the block end.
         if regex.STATE_END_PATTERN.match(line):
-            state.index_end = line_index
+            state.index_end = reader.cursor
             break
-
-        # Parse any function methods inside this state.
-        function_match = regex.FUNCTION_PATTERN.match(line)
-        if function_match:
-            function:Function = parse_function(reader, function_match)
-            if function:
-                state.methods[function.name] = function
-            line_index += 1
-            continue
 
         # Parse any event methods inside this state.
         event_match = regex.EVENT_PATTERN.match(line)
         if event_match:
             event:Event = parse_event(reader, event_match)
-            if event:
-                state.methods[event.name] = event
-            line_index += 1
+            state.methods[event.name] = event
             continue
 
-        line_index += 1
+        # Parse any function methods inside this state.
+        function_match = regex.FUNCTION_PATTERN.match(line)
+        if function_match:
+            function:Function = parse_function(reader, function_match)
+            state.methods[function.name] = function
+            continue
 
     # Warn on unincremented block indexes.
     if state.index == state.index_end:
         logging.warning(f"State '{state.name}' at line {state.index} has an unincremented block index.")
 
-    logging.debug(f"'{state.name}'@{line_index}: Found {state.index_end - state.index} lines until end of block.")
+    logging.debug(f"State '{state.name}' @({state.index}-{state.index_end}) with {state.index_end - state.index} lines.")
     return state
 
 
@@ -554,6 +538,8 @@ def parse(script_file_path:str) -> Script:
         if group_match:
             group:PropertyGroup = parse_property_group(reader, group_match)
             script.members[group.name] = group
+            for property in group.properties.values():
+                script.members[property.name] = property
             continue
 
         # State Block
@@ -561,6 +547,8 @@ def parse(script_file_path:str) -> Script:
         if state_match:
             state:State = parse_state(reader, state_match)
             script.members[state.name] = state
+            for method in state.methods.values():
+                script.members[method.name] = method
             continue
 
         # Property Block
@@ -612,7 +600,7 @@ def parse(script_file_path:str) -> Script:
             # distinguishes between class fields and local/parameter variables based on current scope.
             # Consider implementing scope tracking or updating block parsers to handle their own variables.
             if False:
-                variable:Variable = parse_variable(variable_match, reader)
+                variable:Variable = parse_variable(reader, variable_match)
                 script.members[variable.name] = variable
             else:
                 logging.debug(f"'{script_file_path}'@{reader.cursor}: Skipped variable: '{line.strip()}'")

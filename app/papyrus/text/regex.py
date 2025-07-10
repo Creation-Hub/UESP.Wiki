@@ -21,6 +21,8 @@ TYPE_PARAMETER:str = r'(?P<type>\w+' + NAMESPACE + ARRAY_BRACKETS + r'?)'
 PARAMETER_INITIALIZER:str = r'(?:\s*=\s*(?P<value>.+))?'
 VARIABLE_INITIALIZER:str  = r'(?:\s*=\s*(?P<value>[^\s;]+))?'
 PROPERTY_INITIALIZER:str  = r'(?:\s*=\s*(?P<value>[^\s]+))?'
+#-------------------------
+EVENT_NAME:str = NAME + r'(?P<remote>\.\w+)?'
 
 
 # Regular Patterns
@@ -102,7 +104,7 @@ EVENT_PATTERN:Pattern[str] = re.compile(
     r'\s*'                          # Whitespace optional (0+)
     r'event'                        # Papyrus keyword 'event'
     r'\s+'                          # Whitespace required (1+)
-    f'{NAME}'                       # Event name
+    f'{EVENT_NAME}'
     r'\s*'                          # Whitespace optional (0+)
     r'\('                           # Opening parenthesis
     f'{PARAMETERS}'                 # Parameters

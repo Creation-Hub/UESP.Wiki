@@ -73,6 +73,22 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = Actor.OnLocationChange
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/Actor.OnLocationChange|Actor.OnLocationChange]]
+| kind = Event
+| parameters = Actor akSender, Location akOldLoc, Location akNewLoc
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnLocationChange
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/ReferenceAlias.OnLocationChange|ReferenceAlias.OnLocationChange]]
+| kind = Event
+| parameters = ReferenceAlias akSender, Location akOldLoc, Location akNewLoc
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = CheckLocationStages

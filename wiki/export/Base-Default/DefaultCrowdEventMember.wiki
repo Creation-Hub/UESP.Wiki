@@ -104,5 +104,13 @@ Note: You can define multiple responses to the same event, but they will stop pr
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = DefaultCrowdEventManager.CrowdEvent
+| script = [[SFM:Script-DefaultCrowdEventMember|DefaultCrowdEventMember]]
+| name = [[SFM:Script-DefaultCrowdEventMember/DefaultCrowdEventManager.CrowdEvent|DefaultCrowdEventManager.CrowdEvent]]
+| kind = Event
+| parameters = DefaultCrowdEventManager akSender, var[] akArgs
+}}
+
 
 [[Category:Starfield_Mod-Papyrus]]

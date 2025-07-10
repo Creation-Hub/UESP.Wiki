@@ -127,6 +127,14 @@ The members that belong to this script, grouped by kind.
 }}
 
 {{Script_Object_Member_Summary
+| title = Quest.OnStageSet
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/Quest.OnStageSet|Quest.OnStageSet]]
+| kind = Event
+| parameters = Quest akSenderRef, int auiStageID, int auiItemID
+}}
+
+{{Script_Object_Member_Summary
 | title = OnItemAdded
 | script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
 | name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OnItemAdded|OnItemAdded]]

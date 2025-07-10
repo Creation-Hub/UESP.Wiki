@@ -120,6 +120,14 @@ The members that belong to this script, grouped by kind.
 }}
 
 {{Script_Object_Member_Summary
+| title = Quest.OnStageSet
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/Quest.OnStageSet|Quest.OnStageSet]]
+| kind = Event
+| parameters = Quest akSender, int auiStageID, int auiItemID
+}}
+
+{{Script_Object_Member_Summary
 | title = OnDistanceLessThan
 | script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
 | name = [[SFM:Script-OE_AliasOnDistanceLessThan/OnDistanceLessThan|OnDistanceLessThan]]

@@ -260,11 +260,83 @@ you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passen
 }}
 
 {{Script_Object_Member_Summary
+| title = ReferenceAlias.OnAliasChanged
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ReferenceAlias.OnAliasChanged|ReferenceAlias.OnAliasChanged]]
+| kind = Event
+| parameters = ReferenceAlias akSender, ObjectReference akObject, bool abRemove
+}}
+
+{{Script_Object_Member_Summary
+| title = RefCollectionAlias.OnAliasChanged
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/RefCollectionAlias.OnAliasChanged|RefCollectionAlias.OnAliasChanged]]
+| kind = Event
+| parameters = RefCollectionAlias akSender, ObjectReference akObject, bool abRemove
+}}
+
+{{Script_Object_Member_Summary
+| title = RefCollectionAlias.OnDeath
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/RefCollectionAlias.OnDeath|RefCollectionAlias.OnDeath]]
+| kind = Event
+| parameters = RefCollectionAlias akSender, ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = RefCollectionAlias.OnUnload
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/RefCollectionAlias.OnUnload|RefCollectionAlias.OnUnload]]
+| kind = Event
+| parameters = RefCollectionAlias akSender, ObjectReference akSenderRef
+}}
+
+{{Script_Object_Member_Summary
+| title = RefCollectionAlias.OnExitShipInterior
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/RefCollectionAlias.OnExitShipInterior|RefCollectionAlias.OnExitShipInterior]]
+| kind = Event
+| parameters = RefCollectionAlias akSender, ObjectReference akSenderRef, ObjectReference akShip
+}}
+
+{{Script_Object_Member_Summary
 | title = OnDistanceLessThan
 | script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
 | name = [[SFM:Script-DefaultPassengerQuestScript/OnDistanceLessThan|OnDistanceLessThan]]
 | kind = Event
 | parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnShipLanding
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ReferenceAlias.OnShipLanding|ReferenceAlias.OnShipLanding]]
+| kind = Event
+| parameters = ReferenceAlias akSender, bool abComplete
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnShipTakeOff
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ReferenceAlias.OnShipTakeOff|ReferenceAlias.OnShipTakeOff]]
+| kind = Event
+| parameters = ReferenceAlias akSender, bool abComplete
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnShipDock
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ReferenceAlias.OnShipDock|ReferenceAlias.OnShipDock]]
+| kind = Event
+| parameters = ReferenceAlias akSender, bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnShipUndock
+| script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
+| name = [[SFM:Script-DefaultPassengerQuestScript/ReferenceAlias.OnShipUndock|ReferenceAlias.OnShipUndock]]
+| kind = Event
+| parameters = ReferenceAlias akSender, bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
 }}
 
 === Function ===

@@ -104,6 +104,14 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akSenderRef, ObjectReference akKiller
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShipScript.SQ_PlayerShipChanged
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/SQ_PlayerShipScript.SQ_PlayerShipChanged|SQ_PlayerShipScript.SQ_PlayerShipChanged]]
+| kind = Event
+| parameters = SQ_PlayerShipScript akSender, var[] akArgs
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = DeathComplete

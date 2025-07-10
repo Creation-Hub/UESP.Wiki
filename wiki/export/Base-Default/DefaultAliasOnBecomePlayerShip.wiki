@@ -63,6 +63,14 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShipScript.SQ_PlayerShipChanged
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/SQ_PlayerShipScript.SQ_PlayerShipChanged|SQ_PlayerShipScript.SQ_PlayerShipChanged]]
+| kind = Event
+| parameters = SQ_PlayerShipScript akSender, var[] akArgs
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = DoSpecificThing

@@ -242,6 +242,38 @@ NOTE: normally this will be THE SAME condition form as the FollowConditions (See
 | parameters = int auiStageID, int auiItemID
 }}
 
+{{Script_Object_Member_Summary
+| title = Actor.OnLocationChange
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/Actor.OnLocationChange|Actor.OnLocationChange]]
+| kind = Event
+| parameters = Actor akSender, Location akOldLoc, Location akNewLoc
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnActivate
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/ReferenceAlias.OnActivate|ReferenceAlias.OnActivate]]
+| kind = Event
+| parameters = ReferenceAlias akSender, ObjectReference akActionRef
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnTriggerEnter
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/ReferenceAlias.OnTriggerEnter|ReferenceAlias.OnTriggerEnter]]
+| kind = Event
+| parameters = ReferenceAlias akSender, ObjectReference akActionRef
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnTriggerLeave
+| script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
+| name = [[SFM:Script-DefaultFollowerToggleQuestScript/ReferenceAlias.OnTriggerLeave|ReferenceAlias.OnTriggerLeave]]
+| kind = Event
+| parameters = ReferenceAlias akSender, ObjectReference akActionRef
+}}
+
 === Function ===
 {{Script_Object_Member_Summary
 | title = CheckConditionsIfPlayer
