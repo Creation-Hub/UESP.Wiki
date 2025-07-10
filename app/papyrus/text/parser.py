@@ -70,11 +70,10 @@ class TextReader:
         if self.valid(index):
             self.cursor = index
         else:
-            message:str = (
+            raise IndexError(
                 f"Cannot move cursor from index '{self.cursor}' to index '{index}'. "
                 f"Destination index is out of bounds ({self.min} - {self.max})."
             )
-            raise IndexError(message)
 
 
     def get_line(self) -> str:
@@ -82,11 +81,10 @@ class TextReader:
         if self.valid(self.cursor):
             return self.lines[self.cursor]
         else:
-            message:str = (
+            raise IndexError(
                 f"Cannot get line at cursor index '{self.cursor}'. "
                 f"The index is out of bounds ({self.min} - {self.max})."
             )
-            raise IndexError(message)
 
 
     def move_next(self) -> str:
