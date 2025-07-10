@@ -100,14 +100,6 @@ jduvall:
 }}
 
 {{Script_Object_Member_Summary
-| title = Get
-| script = [[SFM:Script-ObjectReference|ObjectReference]]
-| name = [[SFM:Script-ObjectReference/Get|Get]]
-| kind = Function
-| returns = float
-}}
-
-{{Script_Object_Member_Summary
 | title = Activate
 | script = [[SFM:Script-ObjectReference|ObjectReference]]
 | name = [[SFM:Script-ObjectReference/Activate|Activate]]

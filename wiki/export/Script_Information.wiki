@@ -7,8 +7,8 @@ This page lists all Papyrus project information for each import.
 * Scripts: 101
 
 ==== Member Statistics ====
-This project overall contains 2159 total members spread over 101 scripts.
-* Function was used 1415 times.
+This project overall contains 2156 total members spread over 101 scripts.
+* Function was used 1412 times.
 * Event was used 673 times.
 * Property was used 68 times.
 * Struct was used 3 times.
@@ -396,9 +396,9 @@ There are 208 scripts that belong to this project:
 * Scripts: 9
 
 ==== Member Statistics ====
-This project overall contains 37 total members spread over 9 scripts.
+This project overall contains 35 total members spread over 9 scripts.
 * Struct was used 3 times.
-* Function was used 10 times.
+* Function was used 8 times.
 * Property was used 14 times.
 * Event was used 8 times.
 * State was used 2 times.

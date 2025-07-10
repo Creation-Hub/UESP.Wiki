@@ -61,22 +61,6 @@ The members that belong to this script, grouped by kind.
 }}
 
 {{Script_Object_Member_Summary
-| title = Get
-| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
-| name = [[SFM:Script-GlobalVariable/Get|Get]]
-| kind = Function
-| returns = float
-}}
-
-{{Script_Object_Member_Summary
-| title = Set
-| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
-| name = [[SFM:Script-GlobalVariable/Set|Set]]
-| kind = Function
-| parameters = float afValue
-}}
-
-{{Script_Object_Member_Summary
 | title = Mod
 | script = [[SFM:Script-GlobalVariable|GlobalVariable]]
 | name = [[SFM:Script-GlobalVariable/Mod|Mod]]

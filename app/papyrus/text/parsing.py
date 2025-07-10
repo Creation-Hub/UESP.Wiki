@@ -218,24 +218,31 @@ def parse_property(reader:TextReader, property_match:Match[str]) -> Property:
     if "Auto" in property.flags or "AutoReadOnly" in property.flags:
         return property
 
-    line_index:int = reader.cursor
-    line_index += 1
-    while line_index < len(reader):
-        line:str = reader[line_index]
+    while reader.has_next():
+        line:str = reader.move()
 
         # Terminate this loop if we reach the block end.
-        if regex.STRUCT_END_PATTERN.match(line):
-            property.index_end = line_index
+        if regex.PROPERTY_END_PATTERN.match(line):
+            property.index_end = reader.cursor
             break
 
-        # Advance to next index.
-        line_index += 1
+        # Function Block
+        function_match:Match[str]|None = regex.FUNCTION_PATTERN.match(line)
+        if function_match:
+            function:Function = parse_function(reader, function_match)
+            if function.name == "Get":
+                property.getter = function
+            elif function.name == "Set":
+                property.setter = function
+            else:
+                logging.warning(f"Property '{property.name}' has a function '{function.name}' that is neither a getter nor a setter.")
+            continue
 
     # Warn on unincremented block indexes.
     if property.index == property.index_end:
         logging.warning(f"Property '{property.name}' at line {property.index} has an unincremented block index.")
 
-    logging.debug(f"'{property.name}'@{line_index}: Found {property.index_end - property.index} lines until end of block.")
+    logging.debug(f"Property '{property.name}' @({property.index}-{property.index_end}) with {property.index_end - property.index} lines.")
     return property
 
 

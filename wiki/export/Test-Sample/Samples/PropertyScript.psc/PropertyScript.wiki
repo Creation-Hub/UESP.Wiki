@@ -83,22 +83,5 @@ The members that belong to this script, grouped by kind.
 | parameters = none
 }}
 
-=== Function ===
-{{Script_Object_Member_Summary
-| title = Get
-| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
-| name = [[SFM:Script-Samples:PropertyScript/Get|Get]]
-| kind = Function
-| returns = bool
-}}
-
-{{Script_Object_Member_Summary
-| title = Set
-| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
-| name = [[SFM:Script-Samples:PropertyScript/Set|Set]]
-| kind = Function
-| parameters = bool value
-}}
-
 
 [[Category:Starfield_Mod-Papyrus]]
