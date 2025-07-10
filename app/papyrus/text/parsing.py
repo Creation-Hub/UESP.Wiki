@@ -144,12 +144,12 @@ def parse_initializer(text:str) -> str:
 # Header
 #---------------------------------------------
 
-def parse_header(header_match:Match[str], lines:list[str], line_index:int) -> Header:
+def parse_header(reader:TextReader, header_match:Match[str]) -> Header:
     header:Header = Header()
-    header.index = line_index
-    header.index_end = line_index
-    header.definition = normalize.definition(lines[line_index])
-    header.documentation = parse_documentation(lines, line_index)
+    header.index = reader.cursor
+    header.index_end = reader.cursor
+    header.definition = normalize.definition(reader.lines[reader.cursor])
+    header.documentation = parse_documentation(reader.lines, reader.cursor)
     header.name = ScriptName(header_match.group("name"))
     header.extends = ScriptName(header_match.group("extends"))
     header.flags = parse_flags(header_match.group("flags"))
@@ -159,13 +159,13 @@ def parse_header(header_match:Match[str], lines:list[str], line_index:int) -> He
 # Members
 #---------------------------------------------
 
-def parse_variable(variable_match:Match[str], lines:list[str], line_index:int) -> Variable:
+def parse_variable(reader:TextReader, variable_match:Match[str]) -> Variable:
     variable:Variable = Variable()
     variable.name = normalize.member_name_upper(variable_match.group("name"))
-    variable.index = line_index
-    variable.index_end = line_index
-    variable.definition = normalize.definition(lines[line_index])
-    variable.documentation = parse_documentation(lines, line_index)
+    variable.index = reader.cursor
+    variable.index_end = reader.cursor
+    variable.definition = normalize.definition(reader.lines[reader.cursor])
+    variable.documentation = parse_documentation(reader.lines, reader.cursor)
     variable.type = normalize.script_type(variable_match.group("type"))
     variable.flags = parse_flags(variable_match.group("flags"))
     variable.value = parse_initializer(variable_match.group("value"))
@@ -199,12 +199,12 @@ def parse_parameters(parameters_line:str) -> list[Variable]:
 
 
 # Block
-def parse_property(property_match:Match[str], lines:list[str], line_index:int) -> Property:
+def parse_property(reader:TextReader, property_match:Match[str]) -> Property:
     property:Property = Property()
-    property.index = line_index
-    property.index_end = line_index
-    property.definition = normalize.definition(lines[line_index])
-    property.documentation = parse_documentation(lines, line_index)
+    property.index = reader.cursor
+    property.index_end = reader.cursor
+    property.definition = normalize.definition(reader.lines[reader.cursor])
+    property.documentation = parse_documentation(reader.lines, reader.cursor)
     property.name = normalize.member_name_upper(property_match.group("name"))
     property.flags = parse_flags(property_match.group("flags"))
     property.type = normalize.script_type(property_match.group("type"))
@@ -213,9 +213,10 @@ def parse_property(property_match:Match[str], lines:list[str], line_index:int) -
     if "Auto" in property.flags or "AutoReadOnly" in property.flags:
         return property
 
+    line_index:int = reader.cursor
     line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
+    while line_index < len(reader):
+        line:str = reader.lines[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.STRUCT_END_PATTERN.match(line):
@@ -234,17 +235,18 @@ def parse_property(property_match:Match[str], lines:list[str], line_index:int) -
 
 
 # Block
-def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) -> Structure:
+def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
     structure:Structure = Structure()
-    structure.index = line_index
-    structure.index_end = line_index
-    structure.definition = normalize.definition(lines[line_index])
-    structure.documentation = parse_documentation(lines, line_index)
+    structure.index = reader.cursor
+    structure.index_end = reader.cursor
+    structure.definition = normalize.definition(reader.lines[reader.cursor])
+    structure.documentation = parse_documentation(reader.lines, reader.cursor)
     structure.name = normalize.member_name_upper(struct_match.group("name"))
 
+    line_index:int = reader.cursor
     line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
+    while line_index < len(reader):
+        line:str = reader.lines[line_index]
         # Terminate this loop if we reach the block end.
         if regex.STRUCT_END_PATTERN.match(line):
             structure.index_end = line_index
@@ -253,7 +255,7 @@ def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) ->
         # Match any variable definitions inside this structure.
         variable_match = regex.VARIABLE_PATTERN.match(line)
         if variable_match:
-            variable:Variable = parse_variable(variable_match, lines, line_index)
+            variable:Variable = parse_variable(reader, variable_match)
             structure.variables[variable.name] = variable
 
         # Advance to next index.
@@ -268,7 +270,10 @@ def parse_structure(struct_match:Match[str], lines:list[str], line_index:int) ->
 
 
 # Block
-def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Event:
+def parse_event(reader:TextReader, event_match:Match[str]) -> Event:
+    lines:list[str] = reader.lines
+    line_index:int = reader.cursor
+
     event:Event = Event()
     event.name = normalize.member_name_upper(event_match.group("name"))
     event.index = line_index
@@ -302,13 +307,13 @@ def parse_event(event_match:Match[str], lines:list[str], line_index:int) -> Even
 
 
 # Block
-def parse_function(function_match:Match[str], lines:list[str], line_index:int) -> Function:
+def parse_function(reader:TextReader, function_match:Match[str]) -> Function:
     function:Function = Function()
     function.name = normalize.member_name_upper(function_match.group("name"))
-    function.index = line_index
-    function.index_end = line_index
-    function.definition = normalize.definition(lines[line_index])
-    function.documentation = parse_documentation(lines, line_index)
+    function.index = reader.cursor
+    function.index_end = reader.cursor
+    function.definition = normalize.definition(reader.lines[reader.cursor])
+    function.documentation = parse_documentation(reader.lines, reader.cursor)
     function.type = normalize.script_type(function_match.group("type"))
     function.flags = parse_flags(function_match.group("flags"))
     function.parameters = parse_parameters(function_match.group("params"))
@@ -316,9 +321,10 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
     if "Native" in function.flags:
         return function
 
+    line_index:int = reader.cursor
     line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
+    while line_index < len(reader):
+        line:str = reader.lines[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.FUNCTION_END_PATTERN.match(line):
@@ -339,18 +345,19 @@ def parse_function(function_match:Match[str], lines:list[str], line_index:int) -
 # Blocks
 #---------------------------------------------
 
-def parse_property_group(group_match:Match[str], lines:list[str], line_index:int) -> PropertyGroup:
+def parse_property_group(reader:TextReader, group_match:Match[str]) -> PropertyGroup:
     group:PropertyGroup = PropertyGroup()
-    group.index = line_index
-    group.index_end = line_index
-    group.definition = normalize.definition(lines[line_index])
-    group.documentation = parse_documentation(lines, line_index)
+    group.index = reader.cursor
+    group.index_end = reader.cursor
+    group.definition = normalize.definition(reader.lines[reader.cursor])
+    group.documentation = parse_documentation(reader.lines, reader.cursor)
     group.name = group_match.group("name")
     group.flags = parse_flags(group_match.group("flags"))
 
+    line_index:int = reader.cursor
     line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
+    while line_index < len(reader):
+        line:str = reader.lines[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.GROUP_END_PATTERN.match(line):
@@ -360,7 +367,7 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
         # Parse members inside the group
         property_match = regex.PROPERTY_PATTERN.match(line)
         if property_match:
-            property:Property = parse_property(property_match, lines, line_index)
+            property:Property = parse_property(reader, property_match)
             if property:
                 group.properties[property.name] = property
 
@@ -375,18 +382,19 @@ def parse_property_group(group_match:Match[str], lines:list[str], line_index:int
     return group
 
 
-def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> State:
+def parse_state(reader:TextReader, state_match:Match[str]) -> State:
     state:State = State()
-    state.index = line_index
-    state.index_end = line_index
-    state.definition = normalize.definition(lines[line_index])
-    state.documentation = parse_documentation(lines, line_index)
+    state.index = reader.cursor
+    state.index_end = reader.cursor
+    state.definition = normalize.definition(reader.lines[reader.cursor])
+    state.documentation = parse_documentation(reader.lines, reader.cursor)
     state.name = normalize.member_name_upper(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
 
+    line_index:int = reader.cursor
     line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
+    while line_index < len(reader):
+        line:str = reader.lines[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.STATE_END_PATTERN.match(line):
@@ -396,7 +404,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
         # Parse any function methods inside this state.
         function_match = regex.FUNCTION_PATTERN.match(line)
         if function_match:
-            function:Function = parse_function(function_match, lines, line_index)
+            function:Function = parse_function(reader, function_match)
             if function:
                 state.methods[function.name] = function
             line_index += 1
@@ -405,7 +413,7 @@ def parse_state(state_match:Match[str], lines:list[str], line_index:int) -> Stat
         # Parse any event methods inside this state.
         event_match = regex.EVENT_PATTERN.match(line)
         if event_match:
-            event:Event = parse_event(event_match, lines, line_index)
+            event:Event = parse_event(reader, event_match)
             if event:
                 state.methods[event.name] = event
             line_index += 1
@@ -460,7 +468,7 @@ def skip(inside_comment_block:MutableBool, line:str) -> bool:
         return False
 
 
-def squash_continuation(lines:list[str], line_index:int) -> tuple[str, int]:
+def squash_continuation(reader:TextReader) -> tuple[str, int]:
     """
     Collects any Papyrus line continuations by squashing them into a single line.
     Example:
@@ -469,6 +477,9 @@ def squash_continuation(lines:list[str], line_index:int) -> tuple[str, int]:
         If the line is a continuation, returns a merged line and the index of the last line that was merged.
         If the line is not a continuation, returns the original line and the current index.
     """
+    lines:list[str] = reader.lines
+    line_index:int = reader.cursor
+
     index:int = line_index
     line:str = lines[line_index]
     while index < len(lines) and line.rstrip().endswith("\\"):
@@ -495,7 +506,6 @@ def parse(script_file_path:str) -> Script:
     inside_comment_block:MutableBool = MutableBool()
     while reader.has_next():
         line:str = reader.move_next()
-        line_index:int = reader.cursor
 
         # Skip lines that are inside any comment blocks.
         if skip(inside_comment_block, line):
@@ -508,19 +518,18 @@ def parse(script_file_path:str) -> Script:
         # Check if this line matches the header pattern.
         header_match:Match[str]|None = regex.HEADER_PATTERN.match(line)
         if header_match:
-            header:Header = parse_header(header_match, reader.lines, line_index)
+            header:Header = parse_header(reader, header_match)
             script.header = header
             break
 
     # Raise an error if no header was found.
     if not script.header:
-        message:str = (
+        raise ValueError(
             f"File: '{script_file_path}'\n"
             "The `ScriptName` element was not found in the source file. "
             "Check for missing or malformed header in the script file. "
             "Ensure the first non-comment line contains a valid `ScriptName` declaration."
         )
-        raise ValueError(message)
 
 
     # Main Parsing Loop
@@ -528,11 +537,10 @@ def parse(script_file_path:str) -> Script:
     logging.debug(f"'{script.header.name.file_path()}'@{reader.cursor}: Parsing...")
     while reader.has_next():
         line:str = reader.move_next()
-        line_index:int = reader.cursor
 
         # Squash any line continuations.
         # TODO: Line squashing may affect documentation parsing because it searches above and below the definition line.
-        (line_squashed, line_squashed_end) = squash_continuation(reader.lines, reader.cursor)
+        (line_squashed, line_squashed_end) = squash_continuation(reader)
 
         # Update the line and cursor position after squashing.
         line = line_squashed
@@ -544,42 +552,42 @@ def parse(script_file_path:str) -> Script:
         # Group Block
         group_match:Match[str]|None = regex.GROUP_PATTERN.match(line)
         if group_match:
-            group:PropertyGroup = parse_property_group(group_match, reader.lines, reader.cursor)
+            group:PropertyGroup = parse_property_group(reader, group_match)
             script.members[group.name] = group
             continue
 
         # State Block
         state_match:Match[str]|None = regex.STATE_PATTERN.match(line)
         if state_match:
-            state:State = parse_state(state_match, reader.lines, reader.cursor)
+            state:State = parse_state(reader, state_match)
             script.members[state.name] = state
             continue
 
         # Property Block
         property_match:Match[str]|None = regex.PROPERTY_PATTERN.match(line)
         if property_match:
-            property:Property = parse_property(property_match, reader.lines, reader.cursor)
+            property:Property = parse_property(reader, property_match)
             script.members[property.name] = property
             continue
 
         # Function Block
         function_match:Match[str]|None = regex.FUNCTION_PATTERN.match(line)
         if function_match:
-            function:Function = parse_function(function_match, reader.lines, reader.cursor)
+            function:Function = parse_function(reader, function_match)
             script.members[function.name] = function
             continue
 
         # Event Block
         event_match:Match[str]|None = regex.EVENT_PATTERN.match(line)
         if event_match:
-            event:Event = parse_event(event_match, reader.lines, reader.cursor)
+            event:Event = parse_event(reader, event_match)
             script.members[event.name] = event
             continue
 
         # Struct Block
         struct_match:Match[str]|None = regex.STRUCT_PATTERN.match(line)
         if struct_match:
-            structure:Structure = parse_structure(struct_match, reader.lines, reader.cursor)
+            structure:Structure = parse_structure(reader, struct_match)
             script.members[structure.name] = structure
             continue
 
