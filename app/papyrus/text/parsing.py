@@ -20,6 +20,20 @@ from app.papyrus.text import regex
 from app.papyrus.text.reader import TextReader
 
 
+# Messages
+#---------------------------------------------
+
+def message_block_warning(name:str, start_index:int) -> str:
+    """Format a block validation warning message."""
+    return f"'{name}' at line {start_index} has an unincremented block index."
+
+
+def message_block_success(name:str, start_index:int, end_index:int) -> str:
+    """Format a block parsing debug message."""
+    line_count = end_index - start_index
+    return f"'{name}' @({start_index}-{end_index}) with {line_count} lines."
+
+
 # Documentation
 #---------------------------------------------
 
@@ -240,9 +254,9 @@ def parse_property(reader:TextReader, property_match:Match[str]) -> Property:
 
     # Warn on unincremented block indexes.
     if property.index == property.index_end:
-        logging.warning(f"Property '{property.name}' at line {property.index} has an unincremented block index.")
+        logging.warning(message_block_warning(property.name, property.index))
 
-    logging.debug(f"Property '{property.name}' @({property.index}-{property.index_end}) with {property.index_end - property.index} lines.")
+    logging.debug(message_block_success(property.name, property.index, property.index_end))
     return property
 
 
@@ -273,9 +287,9 @@ def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
 
     # Warn on unincremented block indexes.
     if structure.index == structure.index_end:
-        logging.warning(f"Structure '{structure.name}' at line {structure.index} has an unincremented block index.")
+        logging.warning(message_block_warning(structure.name, structure.index))
 
-    logging.debug(f"Structure '{structure.name}' @({structure.index}-{structure.index_end}) with {structure.index_end - structure.index} lines.")
+    logging.debug(message_block_success(structure.name, structure.index, structure.index_end))
     return structure
 
 
@@ -312,9 +326,9 @@ def parse_event(reader:TextReader, event_match:Match[str]) -> Event:
 
     # Warn on unincremented block indexes.
     if event.index == event.index_end:
-        logging.warning(f"Event '{event.name}' at line {event.index} has an unincremented block index.")
+        logging.warning(message_block_warning(event.name, event.index))
 
-    logging.debug(f"Event '{event.name}' @({event.index}-{event.index_end}) with {event.index_end - event.index} lines.")
+    logging.debug(message_block_success(event.name, event.index, event.index_end))
     return event
 
 
@@ -343,9 +357,9 @@ def parse_function(reader:TextReader, function_match:Match[str]) -> Function:
 
     # Warn on unincremented block indexes.
     if function.index == function.index_end:
-        logging.warning(f"Function '{function.name}' at line {function.index} has an unincremented block index.")
+        logging.warning(message_block_warning(function.name, function.index))
 
-    logging.debug(f"Function '{function.name}' @({function.index}-{function.index_end}) with {function.index_end - function.index} lines.")
+    logging.debug(message_block_success(function.name, function.index, function.index_end))
     return function
 
 
@@ -378,9 +392,9 @@ def parse_property_group(reader:TextReader, group_match:Match[str]) -> PropertyG
 
     # Warn on unincremented block indexes.
     if group.index == group.index_end:
-        logging.warning(f"Group '{group.name}' at line {group.index} has an unincremented block index.")
+        logging.warning(message_block_warning(group.name, group.index))
 
-    logging.debug(f"Group '{group.name}' @({group.index}-{group.index_end}) with {group.index_end - group.index} lines.")
+    logging.debug(message_block_success(group.name, group.index, group.index_end))
     return group
 
 
@@ -417,9 +431,9 @@ def parse_state(reader:TextReader, state_match:Match[str]) -> State:
 
     # Warn on unincremented block indexes.
     if state.index == state.index_end:
-        logging.warning(f"State '{state.name}' at line {state.index} has an unincremented block index.")
+        logging.warning(message_block_warning(state.name, state.index))
 
-    logging.debug(f"State '{state.name}' @({state.index}-{state.index_end}) with {state.index_end - state.index} lines.")
+    logging.debug(message_block_success(state.name, state.index, state.index_end))
     return state
 
 
