@@ -1,23 +1,27 @@
 class TextReader:
     """
     Represents a cursor position in text and encapsulates parsing state with line-by-line navigation.
+    The cursor starts at index `-1`, before the first line.
     """
+
     def __init__(self, lines:list[str]):
-        self.lines:list[str] = lines
-        self.cursor:int = -1
+        self._lines:list[str] = lines.copy()
+        self._cursor:int = -1
 
-
-    # Python Collections
-    #---------------------------------------------
 
     def __len__(self) -> int:
         """Provides the number of lines in this collection."""
-        return len(self.lines)
+        return len(self._lines)
 
 
     def __getitem__(self, index:int) -> str:
         """Provides access to lines by index using array sub-script notation."""
-        return self.lines[index]
+        return self._lines[index]
+
+
+    def __str__(self) -> str:
+        """Provides a string representation of this object."""
+        return f"TextReader(cursor={self._cursor}, lines={len(self)})"
 
 
     # Cursor Boundaries
@@ -34,16 +38,49 @@ class TextReader:
         return len(self) - 1
 
     def valid_min(self, index:int) -> bool:
-        """Determines if the given `index` is within the valid minimum range of lines."""
+        """Determines if the given `index` satisfies the valid minimum range of lines."""
         return index >= self.min
 
     def valid_max(self, index:int) -> bool:
-        """Determines if the given `index` is within the valid maximum range of lines."""
+        """Determines if the given `index` satisfies the valid maximum range of lines."""
         return index <= self.max
 
     def valid(self, index:int) -> bool:
         """Determines if the given `index` is within the valid range of lines."""
         return self.valid_min(index) and self.valid_max(index)
+
+
+    # Cursor
+    #---------------------------------------------
+
+    @property
+    def cursor(self) -> int:
+        """An index for the current line in this collection."""
+        return self._cursor
+
+    @cursor.setter
+    def cursor(self, index:int) -> None:
+        if self.valid(index):
+            self._cursor = index
+        else:
+            raise IndexError(
+                f"Cannot set cursor @'{self._cursor}' to index '{index}'. "
+                f"The index is out of bounds ({self.min} - {self.max})."
+            )
+
+
+    # Line
+    #---------------------------------------------
+
+    def line(self) -> str:
+        """Gets the current line of text at the cursor position."""
+        if self.valid(self.cursor):
+            return self._lines[self.cursor]
+        else:
+            raise IndexError(
+                f"Cannot get line at cursor index '{self.cursor}'. "
+                f"The index is out of bounds ({self.min} - {self.max})."
+            )
 
 
     # Cursor Navigation
@@ -65,29 +102,7 @@ class TextReader:
     # Cursor Positioning
     #---------------------------------------------
 
-    def move(self, offset:int = 1) -> None:
-        index:int = self.cursor + offset
-        if self.valid(index):
-            self.cursor = index
-        else:
-            raise IndexError(
-                f"Cannot move cursor from index '{self.cursor}' to index '{index}'. "
-                f"Destination index is out of bounds ({self.min} - {self.max})."
-            )
-
-
-    def get_line(self) -> str:
-        """Gets the current line of text at the cursor position."""
-        if self.valid(self.cursor):
-            return self.lines[self.cursor]
-        else:
-            raise IndexError(
-                f"Cannot get line at cursor index '{self.cursor}'. "
-                f"The index is out of bounds ({self.min} - {self.max})."
-            )
-
-
-    def move_next(self) -> str:
-        """Gets the current line and advances the cursor to the next line."""
-        self.move()
-        return self.get_line()
+    def move(self, offset:int = 1) -> str:
+        """Advances the cursor by `offset` lines and returns the new current line."""
+        self.cursor = self.cursor + offset
+        return self.line()

@@ -1,3 +1,7 @@
+"""
+Provides functionality to parse Papyrus script text into structured objects.
+The main loop acts as a "coarse parser" that advances through the file, while the block parsers handle their internal content independently.
+"""
 import logging
 from re import Match
 from app.common.mutable import MutableBool
@@ -19,29 +23,29 @@ from app.papyrus.text.parser import TextReader
 # Documentation
 #---------------------------------------------
 
-def collect_braced_docstring(lines:list[str], line_index:int) -> str:
+def collect_braced_docstring(reader:TextReader) -> str:
     """
     Collects a braced docstring { ... } immediately below the code element at line_index.
     Allows blank lines between the element and the docstring, but nothing else.
     Returns the docstring content or an empty string if not found.
     """
-    search_index:int = line_index + 1
+    search_index:int = reader.cursor + 1
 
     # Skip blank lines
-    while search_index < len(lines) and lines[search_index].strip() == "":
+    while search_index < len(reader) and reader[search_index].strip() == "":
         search_index += 1
 
     # Check for opening brace
-    if search_index < len(lines) and lines[search_index].lstrip().startswith("{"):
-        brace_line:str = lines[search_index].lstrip()
+    if search_index < len(reader) and reader[search_index].lstrip().startswith("{"):
+        brace_line:str = reader[search_index].lstrip()
         doc_lines:list[str] = []
 
         # If the opening brace is on a line by itself, skip it
         if brace_line.strip() == "{":
             search_index += 1
             # Collect until closing brace
-            while search_index < len(lines):
-                line:str = lines[search_index]
+            while search_index < len(reader):
+                line:str = reader[search_index]
                 closing_brace_pos:int = line.find("}")
                 if closing_brace_pos != -1:
                     doc_lines.append(line[:closing_brace_pos])
@@ -60,8 +64,8 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
                 # No closing brace on this line, collect as before
                 doc_lines.append(after_brace.rstrip())
                 search_index += 1
-                while search_index < len(lines):
-                    line:str = lines[search_index]
+                while search_index < len(reader):
+                    line:str = reader[search_index]
                     closing_brace_pos:int = line.find("}")
                     if closing_brace_pos != -1:
                         doc_lines.append(line[:closing_brace_pos])
@@ -73,24 +77,24 @@ def collect_braced_docstring(lines:list[str], line_index:int) -> str:
     return ""
 
 
-def collect_contiguous_comments(lines:list[str], line_index:int) -> str:
+def collect_contiguous_comments(reader:TextReader) -> str:
     """
     Collects contiguous line/block comments immediately above the code element at line_index.
     Stops at the first blank or non-comment line.
     Returns the comments as a single string (joined by newlines), or an empty string if none found.
     """
     comment_lines:list[str] = []
-    search_index:int = line_index - 1
+    search_index:int = reader.cursor - 1
     while search_index >= 0:
-        line:str = lines[search_index]
+        line:str = reader[search_index]
         if line.strip() == "":
-            break  # Blank line breaks the comment block
+            break # Blank line ends the comment block
         stripped:str = line.lstrip()
         if stripped.startswith(";") or stripped.startswith(";/"):
             comment_lines.append(stripped)
             search_index -= 1
         else:
-            break  # Non-comment line breaks the comment block
+            break # Non-comment line ends the comment block
     if comment_lines:
         # Comments are collected in reverse order, so reverse them
         comments:list[str] = [l for l in reversed(comment_lines)]
@@ -100,15 +104,16 @@ def collect_contiguous_comments(lines:list[str], line_index:int) -> str:
     return ""
 
 
-def parse_documentation(lines:list[str], line_index:int) -> str:
+# TODO: The line squashing logic (line continuations) in the main parsing loop breaks line comments.
+def parse_documentation(reader:TextReader) -> str:
     """
     Collects Papyrus documentation for a code element at line_index.
     - Collects braced docstring below (with blank lines allowed, but nothing else in between).
     - Collects contiguous line/block comments above (no blank lines allowed).
     - If both exist, combines them (docstring first, then comments).
     """
-    docstring:str = collect_braced_docstring(lines, line_index)
-    comments:str = collect_contiguous_comments(lines, line_index)
+    docstring:str = collect_braced_docstring(reader)
+    comments:str = collect_contiguous_comments(reader)
     if docstring and comments:
         return f"{docstring}\n{comments}"
     elif docstring:
@@ -148,8 +153,8 @@ def parse_header(reader:TextReader, header_match:Match[str]) -> Header:
     header:Header = Header()
     header.index = reader.cursor
     header.index_end = reader.cursor
-    header.definition = normalize.definition(reader.lines[reader.cursor])
-    header.documentation = parse_documentation(reader.lines, reader.cursor)
+    header.definition = normalize.definition(reader.line())
+    header.documentation = parse_documentation(reader)
     header.name = ScriptName(header_match.group("name"))
     header.extends = ScriptName(header_match.group("extends"))
     header.flags = parse_flags(header_match.group("flags"))
@@ -164,8 +169,8 @@ def parse_variable(reader:TextReader, variable_match:Match[str]) -> Variable:
     variable.name = normalize.member_name_upper(variable_match.group("name"))
     variable.index = reader.cursor
     variable.index_end = reader.cursor
-    variable.definition = normalize.definition(reader.lines[reader.cursor])
-    variable.documentation = parse_documentation(reader.lines, reader.cursor)
+    variable.definition = normalize.definition(reader.line())
+    variable.documentation = parse_documentation(reader)
     variable.type = normalize.script_type(variable_match.group("type"))
     variable.flags = parse_flags(variable_match.group("flags"))
     variable.value = parse_initializer(variable_match.group("value"))
@@ -203,8 +208,8 @@ def parse_property(reader:TextReader, property_match:Match[str]) -> Property:
     property:Property = Property()
     property.index = reader.cursor
     property.index_end = reader.cursor
-    property.definition = normalize.definition(reader.lines[reader.cursor])
-    property.documentation = parse_documentation(reader.lines, reader.cursor)
+    property.definition = normalize.definition(reader.line())
+    property.documentation = parse_documentation(reader)
     property.name = normalize.member_name_upper(property_match.group("name"))
     property.flags = parse_flags(property_match.group("flags"))
     property.type = normalize.script_type(property_match.group("type"))
@@ -216,7 +221,7 @@ def parse_property(reader:TextReader, property_match:Match[str]) -> Property:
     line_index:int = reader.cursor
     line_index += 1
     while line_index < len(reader):
-        line:str = reader.lines[line_index]
+        line:str = reader[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.STRUCT_END_PATTERN.match(line):
@@ -239,14 +244,14 @@ def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
     structure:Structure = Structure()
     structure.index = reader.cursor
     structure.index_end = reader.cursor
-    structure.definition = normalize.definition(reader.lines[reader.cursor])
-    structure.documentation = parse_documentation(reader.lines, reader.cursor)
+    structure.definition = normalize.definition(reader.line())
+    structure.documentation = parse_documentation(reader)
     structure.name = normalize.member_name_upper(struct_match.group("name"))
 
     line_index:int = reader.cursor
     line_index += 1
     while line_index < len(reader):
-        line:str = reader.lines[line_index]
+        line:str = reader[line_index]
         # Terminate this loop if we reach the block end.
         if regex.STRUCT_END_PATTERN.match(line):
             structure.index_end = line_index
@@ -271,24 +276,22 @@ def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
 
 # Block
 def parse_event(reader:TextReader, event_match:Match[str]) -> Event:
-    lines:list[str] = reader.lines
-    line_index:int = reader.cursor
-
     event:Event = Event()
     event.name = normalize.member_name_upper(event_match.group("name"))
-    event.index = line_index
-    event.index_end = line_index
-    event.definition = normalize.definition(lines[line_index])
-    event.documentation = parse_documentation(lines, line_index)
+    event.index = reader.cursor
+    event.index_end = reader.cursor
+    event.definition = normalize.definition(reader.line())
+    event.documentation = parse_documentation(reader)
     event.flags = parse_flags(event_match.group("flags"))
     event.parameters = parse_parameters(event_match.group("params"))
 
     if "Native" in event.flags:
         return event
 
+    line_index:int = reader.cursor
     line_index += 1
-    while line_index < len(lines):
-        line:str = lines[line_index]
+    while line_index < len(reader):
+        line:str = reader[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.EVENT_END_PATTERN.match(line):
@@ -312,8 +315,8 @@ def parse_function(reader:TextReader, function_match:Match[str]) -> Function:
     function.name = normalize.member_name_upper(function_match.group("name"))
     function.index = reader.cursor
     function.index_end = reader.cursor
-    function.definition = normalize.definition(reader.lines[reader.cursor])
-    function.documentation = parse_documentation(reader.lines, reader.cursor)
+    function.definition = normalize.definition(reader.line())
+    function.documentation = parse_documentation(reader)
     function.type = normalize.script_type(function_match.group("type"))
     function.flags = parse_flags(function_match.group("flags"))
     function.parameters = parse_parameters(function_match.group("params"))
@@ -324,7 +327,7 @@ def parse_function(reader:TextReader, function_match:Match[str]) -> Function:
     line_index:int = reader.cursor
     line_index += 1
     while line_index < len(reader):
-        line:str = reader.lines[line_index]
+        line:str = reader[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.FUNCTION_END_PATTERN.match(line):
@@ -349,15 +352,15 @@ def parse_property_group(reader:TextReader, group_match:Match[str]) -> PropertyG
     group:PropertyGroup = PropertyGroup()
     group.index = reader.cursor
     group.index_end = reader.cursor
-    group.definition = normalize.definition(reader.lines[reader.cursor])
-    group.documentation = parse_documentation(reader.lines, reader.cursor)
+    group.definition = normalize.definition(reader.line())
+    group.documentation = parse_documentation(reader)
     group.name = group_match.group("name")
     group.flags = parse_flags(group_match.group("flags"))
 
     line_index:int = reader.cursor
     line_index += 1
     while line_index < len(reader):
-        line:str = reader.lines[line_index]
+        line:str = reader[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.GROUP_END_PATTERN.match(line):
@@ -386,15 +389,15 @@ def parse_state(reader:TextReader, state_match:Match[str]) -> State:
     state:State = State()
     state.index = reader.cursor
     state.index_end = reader.cursor
-    state.definition = normalize.definition(reader.lines[reader.cursor])
-    state.documentation = parse_documentation(reader.lines, reader.cursor)
+    state.definition = normalize.definition(reader.line())
+    state.documentation = parse_documentation(reader)
     state.name = normalize.member_name_upper(state_match.group("name"))
     state.flags = parse_flags(state_match.group("flags"))
 
     line_index:int = reader.cursor
     line_index += 1
     while line_index < len(reader):
-        line:str = reader.lines[line_index]
+        line:str = reader[line_index]
 
         # Terminate this loop if we reach the block end.
         if regex.STATE_END_PATTERN.match(line):
@@ -477,19 +480,16 @@ def squash_continuation(reader:TextReader) -> tuple[str, int]:
         If the line is a continuation, returns a merged line and the index of the last line that was merged.
         If the line is not a continuation, returns the original line and the current index.
     """
-    lines:list[str] = reader.lines
-    line_index:int = reader.cursor
-
-    index:int = line_index
-    line:str = lines[line_index]
-    while index < len(lines) and line.rstrip().endswith("\\"):
+    index:int = reader.cursor
+    line:str = reader.line()
+    while index < len(reader) and line.rstrip().endswith("\\"):
         line = line.rstrip()
         line = line.rstrip("\\")
         index += 1 # move to the next line
-        if index >= len(lines):
-            raise IndexError(f"Missing next line continuation: Next index at {index} is out of bounds for {len(lines)} length.")
+        if index >= len(reader):
+            raise IndexError(f"Missing next line continuation: Next index at {index} is out of bounds for {len(reader)} length.")
         # Append the next line to the current line.
-        line += lines[index].strip()
+        line += reader[index].strip()
     return line, index
 
 
@@ -505,7 +505,7 @@ def parse(script_file_path:str) -> Script:
     #---------------------------------------------
     inside_comment_block:MutableBool = MutableBool()
     while reader.has_next():
-        line:str = reader.move_next()
+        line:str = reader.move()
 
         # Skip lines that are inside any comment blocks.
         if skip(inside_comment_block, line):
@@ -536,7 +536,7 @@ def parse(script_file_path:str) -> Script:
     #---------------------------------------------
     logging.debug(f"'{script.header.name.file_path()}'@{reader.cursor}: Parsing...")
     while reader.has_next():
-        line:str = reader.move_next()
+        line:str = reader.move()
 
         # Squash any line continuations.
         # TODO: Line squashing may affect documentation parsing because it searches above and below the definition line.
@@ -606,9 +606,13 @@ def parse(script_file_path:str) -> Script:
         # Variable
         variable_match:Match[str]|None = regex.VARIABLE_PATTERN.match(line)
         if variable_match:
-            # TODO: This does not match lines correctly, it is disabled for now.
+            # TODO: Fix variable parsing context issue
+            # Variables inside function/event/property blocks are incorrectly parsed as class-level fields
+            # when the main loop advances past block parsers. Need context-aware variable parsing that
+            # distinguishes between class fields and local/parameter variables based on current scope.
+            # Consider implementing scope tracking or updating block parsers to handle their own variables.
             if False:
-                variable:Variable = parse_variable(variable_match, reader.lines, reader.cursor)
+                variable:Variable = parse_variable(variable_match, reader)
                 script.members[variable.name] = variable
             else:
                 logging.debug(f"'{script_file_path}'@{reader.cursor}: Skipped variable: '{line.strip()}'")
