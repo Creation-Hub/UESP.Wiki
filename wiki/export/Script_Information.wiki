@@ -393,10 +393,10 @@ There are 208 scripts that belong to this project:
 
 == Test-Sample ==
 * Imports: 1 (Base-Native)
-* Scripts: 9
+* Scripts: 10
 
 ==== Member Statistics ====
-This project overall contains 35 total members spread over 9 scripts.
+This project overall contains 35 total members spread over 10 scripts.
 * Struct was used 3 times.
 * Function was used 8 times.
 * Property was used 14 times.
@@ -406,18 +406,19 @@ This project overall contains 35 total members spread over 9 scripts.
 ==== Inheritance Statistics ====
 The most common extended parent scripts:
 * The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 5 times.
-* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 2 times.
+* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 3 times.
 * The [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] script was extended 2 times.
 
 
 ==== Scripts ====
-There are 9 scripts that belong to this project:
+There are 10 scripts that belong to this project:
 * [[SFM:Script-Samples:EventScript|Samples:EventScript]]
 * [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
 * [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
 * [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
 * [[SFM:Script-Samples:Script|Samples:Script]]
 * [[SFM:Script-Samples:StructureScript|Samples:StructureScript]]
+* [[SFM:Script-Tests:Comments|Tests:Comments]]
 * [[SFM:Script-Tests:FooBar|Tests:FooBar]]
 * [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
 * [[SFM:Script-Tests:A:B:C:Script|Tests:A:B:C:Script]]

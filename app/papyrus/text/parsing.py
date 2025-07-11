@@ -278,12 +278,10 @@ def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
             break
 
         # Match any variable definitions inside this structure.
-        # TODO: Disabled for now due to context issues.
-        if False:
-            variable_match = regex.VARIABLE_PATTERN.match(line)
-            if variable_match:
-                variable:Variable = parse_variable(reader, variable_match)
-                structure.variables[variable.name] = variable
+        variable_match = regex.VARIABLE_PATTERN.match(line)
+        if variable_match:
+            variable:Variable = parse_variable(reader, variable_match)
+            structure.variables[variable.name] = variable
 
     # Warn on unincremented block indexes.
     if structure.index == structure.index_end:
@@ -297,15 +295,14 @@ def parse_structure(reader:TextReader, struct_match:Match[str]) -> Structure:
 def parse_event(reader:TextReader, event_match:Match[str]) -> Event:
     event:Event = Event()
 
-    name:str = ""
-    g_name:str = event_match.group("name")
-    g_remote:str = event_match.group("remote")
-    if g_remote:
-        name = g_name + g_remote
+    name:str = event_match.group("name")
+    remote:str = event_match.group("remote")
+    if remote:
+        name = normalize.member_name_upper(name) + normalize.member_name_upper(remote)
     else:
-        name = g_name
+        name = normalize.member_name_upper(name)
 
-    event.name = normalize.member_name_upper(name)
+    event.name = name
     event.index = reader.cursor
     event.index_end = reader.cursor
     event.definition = normalize.definition(reader.line())
@@ -384,7 +381,7 @@ def parse_property_group(reader:TextReader, group_match:Match[str]) -> PropertyG
             break
 
         # Parse members inside the group
-        property_match = regex.PROPERTY_PATTERN.match(line)
+        property_match:Match[str]|None = regex.PROPERTY_PATTERN.match(line)
         if property_match:
             property:Property = parse_property(reader, property_match)
             if property:
@@ -416,14 +413,14 @@ def parse_state(reader:TextReader, state_match:Match[str]) -> State:
             break
 
         # Parse any event methods inside this state.
-        event_match = regex.EVENT_PATTERN.match(line)
+        event_match:Match[str]|None = regex.EVENT_PATTERN.match(line)
         if event_match:
             event:Event = parse_event(reader, event_match)
             state.methods[event.name] = event
             continue
 
         # Parse any function methods inside this state.
-        function_match = regex.FUNCTION_PATTERN.match(line)
+        function_match:Match[str]|None = regex.FUNCTION_PATTERN.match(line)
         if function_match:
             function:Function = parse_function(reader, function_match)
             state.methods[function.name] = function
@@ -615,6 +612,7 @@ def parse(script_file_path:str) -> Script:
         # Variable
         variable_match:Match[str]|None = regex.VARIABLE_PATTERN.match(line)
         if variable_match:
+            # TODO: Fix variable parsing comment issue
             # TODO: Fix variable parsing context issue
             # Variables inside function/event/property blocks are incorrectly parsed as class-level fields
             # when the main loop advances past block parsers. Need context-aware variable parsing that

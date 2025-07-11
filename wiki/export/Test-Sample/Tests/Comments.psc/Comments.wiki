@@ -1,0 +1,35 @@
+{{Script_Object_Summary
+| title = Tests:Comments
+| name = [[SFM:Script-Tests:Comments|Tests:Comments]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The <code>Tests\Comments.psc</code> source file header definition for this script.
+
+<source lang="papyrus">
+ScriptName Tests:Comments Extends ObjectReference
+</source>
+
+
+== Documentation ==
+The <code>Tests\Comments.psc</code> source file documentation comments for this script.
+
+<source>
+This will test Papyrus doc-string comments.
+  ; This is a comment inside a doc-string.
+	;/
+	This is a block comment inside a doc-string.
+	/;
+//;
+This is a comment line.
+
+</source>
+
+
+== Member ==
+No members were defined in the <code>Tests\Comments.psc</code> source file.
+
+
+[[Category:Starfield_Mod-Papyrus]]
