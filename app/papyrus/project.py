@@ -1,6 +1,5 @@
 import logging
 import os
-from typing import Dict, List
 from app.papyrus.code import Script
 from app.papyrus.collections import ScriptDictionary
 from app.papyrus.text import FileReader
@@ -23,18 +22,19 @@ def find_files(directory:str) -> list[str]:
 #---------------------------------------------
 
 class PapyrusProject:
-    def __init__(self):
+    def __init__(self) -> None:
         self.identifier:str = ""
         """The project identifier is used for Papyrus imports."""
 
         self.root:str = ""
         """The root directory of the project containing Papyrus scripts."""
 
-        self.imports:List[str] = []
+        self.imports:list[str] = []
         """A list of other project identifiers to import scripts from."""
 
         self.scripts:ScriptDictionary = ScriptDictionary()
         """A list of Papyrus scripts in this project."""
+
 
     def load(self) -> bool:
         """
@@ -48,7 +48,7 @@ class PapyrusProject:
         # Parser: Search for source files in the project script directory.
         paths:list[str] = find_files(self.root)
         if not paths:
-            logging.warning(f"[{self.identifier}] No scripts found in this project.")
+            logging.error(f"[{self.identifier}] No scripts found in '{self.root}'")
             return False
 
         # Parser: Deserialize each source file into application data.
@@ -60,7 +60,8 @@ class PapyrusProject:
                 self.scripts.add(script)
                 logging.debug(f"[{self.identifier}] Added '{path}'")
             else:
-                logging.warning(f"[{self.identifier}] Failed '{path}'")
+                logging.error(f"[{self.identifier}] Failed '{path}'")
+                return False
 
         logging.info(f"[{self.identifier}] Loaded ({len(self.scripts)} of {len(paths)}) scripts from '{self.root}'")
         return True
@@ -70,22 +71,34 @@ class PapyrusProject:
 #---------------------------------------------
 
 class PapyrusContext:
-    def __init__(self):
-        self.projects:Dict[str, PapyrusProject] = {}
+    def __init__(self) -> None:
+        self.projects:dict[str, PapyrusProject] = {}
 
-    def add(self, project:PapyrusProject):
+
+    def add(self, project:PapyrusProject) -> None:
         """Adds a project to the Papyrus context."""
         self.projects[project.identifier] = project
 
+
+    def _valid_imports(self, project:PapyrusProject) -> bool:
+        for imported in project.imports:
+            if imported not in self.projects:
+                logging.error(f"[{project.identifier}] The imported '{imported}' project dependency does not exist.")
+                return False
+        return True
+
+
     def load(self) -> bool:
-        """Load all projects in the Papyrus context."""
         if not self.projects:
-            logging.warning("No projects found in the Papyrus context.")
+            logging.warning("No projects found in this Papyrus context.")
             return False
 
         for project in self.projects.values():
-            if not project.load():
-                logging.warning(f"[{project.identifier}] Failed to load scripts from the project root directory: '{project.root}'")
+            if not self._valid_imports(project):
+                logging.error(f"[{project.identifier}] There was a problem with one or more imported projects.")
+                return False
 
-        logging.info(f"Loaded {len(self.projects)} projects in the Papyrus context.")
+            if not project.load():
+                logging.error(f"[{project.identifier}] Failed to load project scripts.")
+
         return True

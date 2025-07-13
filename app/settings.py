@@ -3,7 +3,6 @@ import json
 from typing import Any
 from app.configuration import Configuration
 from app.context import AppContext
-from app.papyrus.project import PapyrusProject
 from app.publishing import PublishOption
 from app.publishing import Sort
 
@@ -12,18 +11,16 @@ from app.publishing import Sort
 #---------------------------------------------
 
 def get_property_path(data:dict[str, Any], property:str, directory:str) -> str:
-    path = data.get(property, None)
-    # os.path.abspath(path)
+    path:str = data.get(property, "")
     if not path: return ""
     elif os.path.isabs(path): return path
     else: return os.path.join(directory, path)
 
 
 def get_property_sort(data:dict[str, Any], property:str) -> Sort:
-    value = data.get(property, None)
-    if value is None: return Sort.DEFAULT
-    try: return Sort[value.upper()]
-    except KeyError: return Sort.DEFAULT
+    value:str = data.get(property, "DEFAULT")
+    if not value: return Sort.DEFAULT
+    else: return Sort[value.upper()]
 
 
 # Settings
@@ -48,14 +45,10 @@ def read(settings_file_path:str) -> AppContext:
 
         # Read the configuration for projects.
         for data_project in data.get("projects", []):
-            # Get the identifier for the project.
-            identifier:str = data_project.get("identifier", "UNNAMED")
+            data_project:dict[str, Any] = data_project
 
-            # Create the Papyrus project.
-            project:PapyrusProject = PapyrusProject()
-            project.identifier = identifier
-            project.imports = data_project.get("source.imports", [])
-            project.root = get_property_path(data_project, "source.directory", context.base_directory)
+            # Get the identifier for this configuration.
+            identifier:str = data_project.get("identifier", "UNNAMED")
 
             # Create the Publish options.
             publish:PublishOption = PublishOption()
@@ -68,12 +61,10 @@ def read(settings_file_path:str) -> AppContext:
             # Create the configuration to the context.
             configuration:Configuration = Configuration()
             configuration.identifier = identifier
-            configuration.project = project
+            configuration.imports = data_project.get("source.imports", [])
+            configuration.root = get_property_path(data_project, "source.directory", context.base_directory)
             configuration.publish = publish
             context.configurations[configuration.identifier] = configuration
-
-            # Add the project to the context.
-            context.add(project)
 
     # Return the application context.
     return context

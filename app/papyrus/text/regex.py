@@ -4,6 +4,7 @@ from re import Pattern
 
 # Regular Expressions
 #---------------------------------------------
+
 SCRIPT_NAME:str = r'(?P<name>[^\s]+)'
 SCRIPT_FLAGS:str = r'(?P<flags>(?:\s+\w+)*)'
 #-------------------------

@@ -1,9 +1,6 @@
 from app.common.collections import KeyedObject
 
 
-# Script Identifier
-#---------------------------------------------
-
 # TODO: Test this on a concrete KeyedCollection.
 class ScriptName(KeyedObject):
     """
@@ -11,7 +8,7 @@ class ScriptName(KeyedObject):
     The value format is `Namespace1:Namespace2:ScriptName`.
     """
 
-    def __init__(self, key:str = ""):
+    def __init__(self, key:str = "") -> None:
         """Initializes this class with an optional script name value."""
         KeyedObject.__init__(self, key)
 
@@ -21,7 +18,7 @@ class ScriptName(KeyedObject):
         return self._key
 
     @key.setter
-    def key(self, value:str):
+    def key(self, value:str) -> None:
         """Sets the script name value, which may include namespaces."""
         self._key = value.strip() if value else ""
 

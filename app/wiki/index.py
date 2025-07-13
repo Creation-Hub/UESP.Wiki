@@ -1,5 +1,6 @@
 from collections import Counter
 from collections.abc import ItemsView
+import logging
 from typing import TextIO
 from app import wiki
 from app.context import AppContext
@@ -38,7 +39,7 @@ def statistics_project(project:PapyrusProject) -> \
 # MediaWiki
 #---------------------------------------------
 
-def wiki_list_project_imports(project:PapyrusProject):
+def wiki_list_project_imports(project:PapyrusProject) -> str:
     return ", ".join(project.imports) if project.imports else "Nothing"
 
 
@@ -126,6 +127,11 @@ def write(context:AppContext, output_file_path:str) -> None:
 
         # Write each project wiki section.
         for identifier in context.papyrus.projects:
+            configuration = context.configurations[identifier]
+            if not configuration.publish.enable:
+                logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
+                continue
+
             project:PapyrusProject = context.papyrus.projects[identifier]
             write_section(file, project)
             file.write("\n\n")

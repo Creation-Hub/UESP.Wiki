@@ -1,8 +1,16 @@
-from app.papyrus.project import PapyrusProject
 from app.publishing import PublishOption
 
+
 class Configuration:
-    def __init__(self):
+    def __init__(self) -> None:
         self.identifier:str = ""
-        self.project:PapyrusProject = PapyrusProject()
+        """The indentifier for this configuration."""
+
+        self.root:str = ""
+        """The root directory containing Papyrus scripts for this configuration."""
+
+        self.imports:list[str] = []
+        """A list of other configuration identifiers to import Papyrus scripts from."""
+
         self.publish:PublishOption = PublishOption()
+        """The publish options for this configuration."""

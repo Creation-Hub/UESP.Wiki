@@ -14,9 +14,9 @@ from app.papyrus.code import Property
 # Writer: Script Object
 #---------------------------------------------
 
-def write_script(context:AppContext, project:PapyrusProject, script:Script, output_file_path:str):
+def write_script(context:AppContext, project:PapyrusProject, script:Script, output_file_path:str) -> None:
     """Generates a MediaWiki page for a given Papyrus script source file."""
-    game_version = ""
+    game_version:str = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
 
     # Write the wiki page text content
@@ -73,8 +73,8 @@ def write_script(context:AppContext, project:PapyrusProject, script:Script, outp
 # Writer: Script Member
 #---------------------------------------------
 
-def write_member(context:AppContext, project:PapyrusProject, script:Script, member:Member, output_file_path:str):
-    game_version = ""
+def write_member(context:AppContext, project:PapyrusProject, script:Script, member:Member, output_file_path:str) -> None:
+    game_version:str = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
 
     # Write the wiki page text content

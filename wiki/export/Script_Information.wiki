@@ -424,19 +424,3 @@ There are 10 scripts that belong to this project:
 * [[SFM:Script-Tests:A:B:C:Script|Tests:A:B:C:Script]]
 
 
-== Cassiopeia ==
-* Imports: 1 (Base-Native)
-* Scripts: 0
-
-==== Member Statistics ====
-There are no scripts defined in this project, so no member statistics can be provided.
-
-==== Inheritance Statistics ====
-There are no scripts defined in this project, so no inheritance statistics can be provided.
-
-
-==== Scripts ====
-There are no scripts defined in this project.
-
-
-

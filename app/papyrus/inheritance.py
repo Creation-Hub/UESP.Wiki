@@ -1,5 +1,4 @@
 import logging
-from typing import List, Set
 from app.papyrus.project import PapyrusContext
 from app.papyrus.project import PapyrusProject
 from app.papyrus.code import Script
@@ -40,7 +39,7 @@ def find_extends(context:PapyrusContext, project:PapyrusProject, this:Script, pa
     raise ValueError(error)
 
 
-def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> List[Script]:
+def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> list[Script]:
     """
     Get the inheritance chain for a script, excluding the script itself.
     Searches across projects using the project's imports list.
@@ -59,7 +58,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
     Raises:
         ValueError: If a parent script cannot be found in the current project or its imports
     """
-    chain:List[Script] = []
+    chain:list[Script] = []
 
     # Skip if this is ScriptObject itself
     script_name = str(script.header.name)
@@ -91,7 +90,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
     chain.append(current_script)
 
     # Track visited scripts to avoid infinite loops
-    visited:Set[str] = set()
+    visited:set[str] = set()
     visited.add(script_name)  # Mark current script as visited
     visited.add(parent_name)  # Mark parent as visited
 

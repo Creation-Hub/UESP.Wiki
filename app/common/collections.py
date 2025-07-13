@@ -1,18 +1,13 @@
 from typing import Iterator
-from typing import List
-from typing import Dict
-from typing import Generic, TypeVar, Optional
+from typing import Generic, TypeVar
 
-
-# Keyed
-#---------------------------------------------
 
 class KeyedObject:
     """
     Represents an object with a unique identifying key.
     The key is for use with `KeyedCollections`.
     """
-    def __init__(self, key:str):
+    def __init__(self, key:str) -> None:
         self._key = key
 
     def __str__(self) -> str:
@@ -29,8 +24,8 @@ class KeyedCollection(Generic[T]):
     """
     Provides a dictionary-like collection for objects whose keys are embedded in the values.
     """
-    def __init__(self):
-        self._items:Dict[str, T] = {}
+    def __init__(self) -> None:
+        self._items:dict[str, T] = {}
 
     def __str__(self) -> str:
         """Returns a string that represents the current object."""
@@ -41,7 +36,7 @@ class KeyedCollection(Generic[T]):
         key:str = item.key.upper()
         self._items[key] = item
 
-    def get(self, key:str) -> Optional[T]:
+    def get(self, key:str) -> T | None:
         """Get an item by key (case-insensitive)"""
         key = key.upper()
         return self._items.get(key)
@@ -65,11 +60,11 @@ class KeyedCollection(Generic[T]):
         """Provides support for item value iteration in this collection."""
         return iter(self._items.values())
 
-    def keys(self) -> List[str]:
+    def keys(self) -> list[str]:
         """Gets a copy of all keys in this collection."""
         return list(self._items.keys())
 
-    def values(self) -> List[T]:
+    def values(self) -> list[T]:
         """Gets a copy of all items in this collection."""
         return list(self._items.values())
 

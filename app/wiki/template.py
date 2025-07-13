@@ -98,7 +98,7 @@ def get_member_type_string(member:Member) -> str:
 # Script Object
 #---------------------------------------------
 
-def script_object_summary(context:AppContext, project:PapyrusProject, script:Script, game_version:str):
+def script_object_summary(context:AppContext, project:PapyrusProject, script:Script, game_version:str) -> str:
     """
     Gets the 'Script_Object_Summary' wiki template as a string.
 
@@ -132,7 +132,7 @@ def script_object_summary(context:AppContext, project:PapyrusProject, script:Scr
     return template_text
 
 
-def script_object_member_summary(script:Script, member:Member, game_version:str):
+def script_object_member_summary(script:Script, member:Member, game_version:str) -> str:
     """
     Gets the 'Script_Object_Member_Summary' wiki template as a string.
 

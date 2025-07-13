@@ -5,7 +5,7 @@ class LineReader:
     The underlying line buffer is immutable.
     """
 
-    def __init__(self, lines:list[str]):
+    def __init__(self, lines:list[str]) -> None:
         self._lines:list[str] = lines.copy()
         self._cursor:int = -1
 

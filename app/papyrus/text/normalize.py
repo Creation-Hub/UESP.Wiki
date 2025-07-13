@@ -1,10 +1,11 @@
 import re
-from typing import ChainMap, Dict
+from typing import ChainMap
+
 
 # Canonical Name Mappings
 #---------------------------------------------
 
-MAP_KEYWORDS:Dict[str, str] = {
+MAP_KEYWORDS:dict[str, str] = {
     "SCRIPTNAME": "ScriptName",
     "EXTENDS": "Extends",
     "STATE": "State",
@@ -18,7 +19,7 @@ MAP_KEYWORDS:Dict[str, str] = {
     "CUSTOMEVENT": "CustomEvent"
 }
 
-MAP_FLAGS:Dict[str, str] = {
+MAP_FLAGS:dict[str, str] = {
     "NATIVE": "Native",
     "CONST": "Const",
     "HIDDEN": "Hidden",
@@ -35,7 +36,7 @@ MAP_FLAGS:Dict[str, str] = {
     "BETAONLY": "BetaOnly"
 }
 
-MAP_PRIMITIVE_TYPES:Dict[str, str] = {
+MAP_PRIMITIVE_TYPES:dict[str, str] = {
     "INT": "int",
     "FLOAT": "float",
     "BOOL": "bool",
@@ -43,7 +44,7 @@ MAP_PRIMITIVE_TYPES:Dict[str, str] = {
     "VAR": "var"
 }
 
-MAP_PRIMITIVE_VALUES:Dict[str, str] = {
+MAP_PRIMITIVE_VALUES:dict[str, str] = {
     "NONE": "none",
     "TRUE": "true",
     "FALSE": "false"
@@ -76,7 +77,7 @@ def strip_comments(line:str) -> str:
     >>> strip_comments('Function Foo(int x = 5) ; This is a comment')
     >>> strip_comments('Function Foo(int ;/This is a comment/; x = 5)')
     """
-    # Remove block comments: ;/.../;
+    # Remove single line block comments: ;/.../;
     line = re.sub(r';/.*?/;', '', line)
 
     # Remove line comments: ;...

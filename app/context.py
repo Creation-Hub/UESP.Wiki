@@ -1,14 +1,10 @@
-from typing import Any, Dict
+from typing import Any
 from app.settings import Configuration
 from app.papyrus.project import PapyrusContext
-from app.papyrus.project import PapyrusProject
 
-
-# Context
-#---------------------------------------------
 
 class AppContext:
-    def __init__(self):
+    def __init__(self) -> None:
         self.base_directory:str = ""
         """The base directory of the settings file."""
 
@@ -18,10 +14,8 @@ class AppContext:
         self.publish_info:dict[str, Any] = {}
         """Information about the game and editor for publishing."""
 
-        self.configurations:Dict[str, Configuration] = {}
+        self.configurations:dict[str, Configuration] = {}
+        """The app configurations loaded from the settings file."""
+
         self.papyrus:PapyrusContext = PapyrusContext()
-
-
-    def add(self, project:PapyrusProject):
-        """Adds a project to the application context."""
-        self.papyrus.add(project)
+        """The Papyrus context for script analysis."""
