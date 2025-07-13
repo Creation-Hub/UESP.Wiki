@@ -1,9 +1,9 @@
 import logging
 import os
 from typing import Dict, List
-from app import papyrus
 from app.papyrus.code import Script
 from app.papyrus.collections import ScriptDictionary
+from app.papyrus.text import FileReader
 
 
 # Files
@@ -52,19 +52,17 @@ class PapyrusProject:
             return False
 
         # Parser: Deserialize each source file into application data.
-        logging.info(f"[{self.identifier}] Loading {len(paths)} scripts for this project...")
-        count:int = 0
         for path in paths:
-            count += 1
             # Start parsing the script file.
-            script:Script = papyrus.text.parse(path)
+            reader:FileReader = FileReader(path)
+            script:Script = reader.read()
             if script:
                 self.scripts.add(script)
-                logging.debug(f"[{self.identifier}] #{count} {script.header.name.file_path()}")
+                logging.debug(f"[{self.identifier}] Added '{path}'")
             else:
-                logging.warning(f"[{self.identifier}] #{count} The script could not be parsed: {path}")
+                logging.warning(f"[{self.identifier}] Failed '{path}'")
 
-        logging.info(f"[{self.identifier}] Done loading scripts for this project. ({len(self.scripts)} of {len(paths)})")
+        logging.info(f"[{self.identifier}] Loaded ({len(self.scripts)} of {len(paths)}) scripts from '{self.root}'")
         return True
 
 

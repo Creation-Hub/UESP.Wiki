@@ -1,7 +1,8 @@
-class TextReader:
+class LineReader:
     """
     Represents a cursor position in text and encapsulates parsing state with line-by-line navigation.
     The cursor starts at index `-1`, before the first line.
+    The underlying line buffer is immutable.
     """
 
     def __init__(self, lines:list[str]):

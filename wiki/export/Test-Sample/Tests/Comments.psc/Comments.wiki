@@ -29,7 +29,15 @@ This is a comment line.
 
 
 == Member ==
-No members were defined in the <code>Tests\Comments.psc</code> source file.
+The members that belong to this script, grouped by kind.
+
+=== Function ===
+{{Script_Object_Member_Summary
+| title = Foo
+| script = [[SFM:Script-Tests:Comments|Tests:Comments]]
+| name = [[SFM:Script-Tests:Comments/Foo|Foo]]
+| kind = Function
+}}
 
 
 [[Category:Starfield_Mod-Papyrus]]

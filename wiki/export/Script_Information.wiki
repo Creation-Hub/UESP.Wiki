@@ -396,9 +396,9 @@ There are 208 scripts that belong to this project:
 * Scripts: 10
 
 ==== Member Statistics ====
-This project overall contains 35 total members spread over 10 scripts.
+This project overall contains 36 total members spread over 10 scripts.
 * Struct was used 3 times.
-* Function was used 8 times.
+* Function was used 9 times.
 * Property was used 14 times.
 * Event was used 8 times.
 * State was used 2 times.

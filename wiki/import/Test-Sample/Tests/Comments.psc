@@ -25,3 +25,9 @@ This will test Papyrus doc-string comments.
 	This is a block comment inside a doc-string.
 	/;
 }
+
+
+
+
+;//;Function Foo();//;
+EndFunction
