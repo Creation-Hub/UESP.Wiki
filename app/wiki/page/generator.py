@@ -1,3 +1,7 @@
+"""
+Generates MediaWiki pages for Papyrus scripts and their members.
+    Module: `app.wiki.page.generator`
+"""
 from collections import defaultdict
 from typing import DefaultDict
 from app import wiki
@@ -22,7 +26,7 @@ def write_script(context:AppContext, project:PapyrusProject, script:Script, outp
     # Write the wiki page text content
     with open(output_file_path, "w", encoding="utf-8") as file:
         # Script Summary Template
-        file.write(wiki.template.script_object_summary(context, project, script, game_version))
+        file.write(wiki.template.generator.script_object_summary(context, project, script, game_version))
         file.write("\n\n")
 
         # Script Definition
@@ -62,7 +66,7 @@ def write_script(context:AppContext, project:PapyrusProject, script:Script, outp
             for kind, members in members_by_kind.items():
                 file.write(f"=== {kind} ===\n")
                 for member_key in members:
-                    file.write(wiki.template.script_object_member_summary(script, member_key, game_version))
+                    file.write(wiki.template.generator.script_object_member_summary(script, member_key, game_version))
                     file.write("\n")
 
         # Page Categories
@@ -80,7 +84,7 @@ def write_member(context:AppContext, project:PapyrusProject, script:Script, memb
     # Write the wiki page text content
     with open(output_file_path, "w", encoding="utf-8") as file:
         # Member Summary Template
-        file.write(wiki.template.script_member_summary(script, member, game_version))
+        file.write(wiki.template.generator.script_member_summary(script, member, game_version))
         file.write("\n\n")
 
         # Member Documentation
@@ -111,7 +115,7 @@ def write_member(context:AppContext, project:PapyrusProject, script:Script, memb
                 file.write(f"This {str.lower(member.kind)} member has no parameters.\n\n")
             else:
                 file.write("The parameters that belong to this script.\n\n")
-                items = wiki.template.variable_to_string_list(member.parameters)
+                items = wiki.data.script.variable_to_string_list(member.parameters)
                 for item in items:
                     file.write(f"* {item}\n")
 

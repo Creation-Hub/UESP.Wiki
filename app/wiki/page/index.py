@@ -1,3 +1,7 @@
+"""
+Generates a MediaWiki page that summarizes information about all Papyrus projects.
+    Module: `app.wiki.page.index`
+"""
 from collections import Counter
 from collections.abc import ItemsView
 import logging
@@ -59,7 +63,7 @@ def wiki_list_extends_most_common(script_extends_counter:Counter[str]) -> str:
         return "There are no common scripts in this project."
     entries:list[str] = []
     for script_name, count in common_parent_names:
-        entries.append(f"* The {wiki.style.link_script_object(script_name)} script was extended {count} times.")
+        entries.append(f"* The {wiki.formatter.link_script_object(script_name)} script was extended {count} times.")
     return "\n".join(entries)
 
 
@@ -68,7 +72,7 @@ def wiki_list_script_names(project:PapyrusProject) -> str:
         return "There are no scripts defined in this project."
     entries:list[str] = []
     for script in project.scripts:
-        entries.append(f"* {wiki.style.link_script_object(str(script.header.name))}")
+        entries.append(f"* {wiki.formatter.link_script_object(str(script.header.name))}")
     return "\n".join(entries)
 
 

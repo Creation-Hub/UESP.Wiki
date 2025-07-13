@@ -1,3 +1,9 @@
+"""
+Provides MediaWiki formatting specific to the UESP website.
+    Module: `app.wiki.formatter`
+"""
+
+
 def link_script_object(script_name:str) -> str:
     """Return a MediaWiki link for script object page."""
     return f"[[SFM:Script-{script_name}|{script_name}]]"

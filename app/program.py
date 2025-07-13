@@ -61,7 +61,7 @@ def project_start(context:AppContext, configuration:Configuration) -> bool:
 
         # Write a wiki page for this script object.
         if configuration.publish.enable_objects:
-            wiki.page.write_script(context, project, script, output_file_path)
+            wiki.page.generator.write_script(context, project, script, output_file_path)
             logging.debug(f"[{project.identifier}]<{script_file_path}> -> {script_file_path_full} -> {output_file_path}")
 
         # Write a wiki page for this script member.
@@ -70,7 +70,7 @@ def project_start(context:AppContext, configuration:Configuration) -> bool:
                 member:Member = script.members[key]
                 member_file_name:str = f"{script_file_name}-{member.name}.wiki"
                 member_file_path:str = os.path.join(os.path.dirname(output_file_path), member_file_name)
-                wiki.page.write_member(context, project, script, member, member_file_path)
+                wiki.page.generator.write_member(context, project, script, member, member_file_path)
                 logging.debug(f"[{project.identifier}]<{script_file_path}>::{member.name} -> {member_file_path}")
 
     return True
@@ -82,7 +82,7 @@ def write_page_index(context:AppContext) -> None:
         os.makedirs(os.path.dirname(index_path))
         logging.debug(f"Created index directory: {os.path.dirname(index_path)}")
     try:
-        wiki.index.write(context, index_path)
+        wiki.page.index.write(context, index_path)
     except Exception as exception:
         logging.error(f"Failed to write projects index: {str(exception)}")
 
