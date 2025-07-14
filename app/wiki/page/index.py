@@ -5,7 +5,6 @@ Generates a MediaWiki page that summarizes information about all Papyrus project
 from collections import Counter
 from collections.abc import ItemsView
 import logging
-from typing import TextIO
 from app import wiki
 from app.context import AppContext
 from app.papyrus.code import Member
@@ -79,7 +78,7 @@ def wiki_list_script_names(project:PapyrusProject) -> str:
 # Write
 #---------------------------------------------
 
-def write_section(file:TextIO, project:PapyrusProject) -> None:
+def write_section(content:list[str], project:PapyrusProject) -> None:
     ( # Collect information for this project
         project_imports_count,
         project_scripts_count,
@@ -88,54 +87,62 @@ def write_section(file:TextIO, project:PapyrusProject) -> None:
     ) = statistics_project(project)
 
     # Add project summary information
-    file.write(f"== {project.identifier} ==\n")
-    file.write(f"* Imports: {project_imports_count} ({wiki_list_project_imports(project)})\n")
-    file.write(f"* Scripts: {project_scripts_count}\n")
-    file.write("\n")
+    content.append(f"== {project.identifier} ==\n")
+    content.append(f"* Imports: {project_imports_count} ({wiki_list_project_imports(project)})\n")
+    content.append(f"* Scripts: {project_scripts_count}\n")
+    content.append("\n")
 
     # Add script member statistics section
-    file.write("==== Member Statistics ====\n")
+    content.append("==== Member Statistics ====\n")
     if project_scripts_count:
-        file.write(f"This project overall contains {script_member_kind_counter.total()} total members spread over {project_scripts_count} scripts.\n")
-        file.write(wiki_list_member_kinds(script_member_kind_counter)+"\n")
+        content.append(f"This project overall contains {script_member_kind_counter.total()} total members spread over {project_scripts_count} scripts.\n")
+        content.append(wiki_list_member_kinds(script_member_kind_counter)+"\n")
     else:
-        file.write("There are no scripts defined in this project, so no member statistics can be provided.\n")
-    file.write("\n")
+        content.append("There are no scripts defined in this project, so no member statistics can be provided.\n")
+    content.append("\n")
 
     # Add script inheritance statistics section
-    file.write("==== Inheritance Statistics ====\n")
+    content.append("==== Inheritance Statistics ====\n")
     if project_scripts_count:
-        file.write(f"The most common extended parent scripts:\n")
-        file.write(wiki_list_extends_most_common(script_extends_counter)+"\n")
+        content.append(f"The most common extended parent scripts:\n")
+        content.append(wiki_list_extends_most_common(script_extends_counter)+"\n")
     else:
-        file.write("There are no scripts defined in this project, so no inheritance statistics can be provided.\n")
-    file.write("\n")
+        content.append("There are no scripts defined in this project, so no inheritance statistics can be provided.\n")
+    content.append("\n")
 
     # List script statistics section
-    file.write("\n")
-    file.write("==== Scripts ====\n")
+    content.append("\n")
+    content.append("==== Scripts ====\n")
     if project_scripts_count:
-        file.write(f"There are {project_scripts_count} scripts that belong to this project:\n")
-        file.write(wiki_list_script_names(project))
+        content.append(f"There are {project_scripts_count} scripts that belong to this project:\n")
+        content.append(wiki_list_script_names(project))
     else:
-        file.write("There are no scripts defined in this project.\n")
-    file.write("\n")
+        content.append("There are no scripts defined in this project.\n")
+    content.append("\n")
+
+
+def content(context:AppContext) -> list[str]:
+    content:list[str] = []
+
+    # Write the wiki page header.
+    content.append("= Projects =\n")
+    content.append("This page lists all Papyrus project information for each import.\n")
+    content.append("\n\n")
+
+    # Write each project wiki section.
+    for identifier in context.papyrus.projects:
+        configuration = context.configurations[identifier]
+        if not configuration.publish.enable:
+            logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
+            continue
+
+        project:PapyrusProject = context.papyrus.projects[identifier]
+        write_section(content, project)
+        content.append("\n\n")
+    return content
 
 
 def write(context:AppContext, output_file_path:str) -> None:
+    lines:list[str] = content(context)
     with open(output_file_path, "w", encoding="utf-8") as file:
-        # Write the wiki page header.
-        file.write("= Projects =\n")
-        file.write("This page lists all Papyrus project information for each import.\n")
-        file.write("\n\n")
-
-        # Write each project wiki section.
-        for identifier in context.papyrus.projects:
-            configuration = context.configurations[identifier]
-            if not configuration.publish.enable:
-                logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
-                continue
-
-            project:PapyrusProject = context.papyrus.projects[identifier]
-            write_section(file, project)
-            file.write("\n\n")
+        file.writelines(lines)
