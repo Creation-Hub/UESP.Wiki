@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Message.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Message.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Message Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Message.psc</code> source f
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Show
 | script = [[SFM:Script-Message|Message]]
@@ -81,6 +84,8 @@ before returning - returning the button the user hit. If not a message box, or s
 | parameters = ObjectReference[] aDoorRefsToAdd
 | documentation = Assigns the given array of load doors to each option in the message respectively.  References passed must be of type door.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

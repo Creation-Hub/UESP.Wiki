@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultDisableHavokOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultDisableHavokOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultDisableHavokOnLoad Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultDisableHavokOnLoad Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultDisableHavokOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultDisableHavokOnLoad.psc</code> source file.
 
 <source>
 Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivate(), or OnGrab()
@@ -23,9 +23,12 @@ Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivat
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = HavokOnHit
 | script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
@@ -117,7 +124,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Default = False, Set to True if you want the traces in this script to show up in the log.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnContainerChanged
 | script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
@@ -163,13 +174,19 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ReleaseToHavok
 | script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
 | name = [[SFM:Script-DefaultDisableHavokOnLoad/ReleaseToHavok|ReleaseToHavok]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

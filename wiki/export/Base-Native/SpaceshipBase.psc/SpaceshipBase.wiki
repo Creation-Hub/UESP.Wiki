@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>SpaceshipBase.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>SpaceshipBase.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName SpaceshipBase Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>SpaceshipBase.psc</code> so
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = IsUnique
 | script = [[SFM:Script-SpaceshipBase|SpaceshipBase]]
@@ -31,6 +34,8 @@ The members that belong to this script, grouped by kind.
 | returns = bool
 | documentation = Is this base unique?
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

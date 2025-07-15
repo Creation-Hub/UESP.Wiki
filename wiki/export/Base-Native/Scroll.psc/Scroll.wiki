@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Scroll.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Scroll.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Scroll Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Scroll.psc</code> source fi
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Cast
 | script = [[SFM:Script-Scroll|Scroll]]
@@ -31,6 +34,8 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akSource, ObjectReference akTarget = none
 | documentation = Cast this scroll from an ObjectReference, optionally toward another.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

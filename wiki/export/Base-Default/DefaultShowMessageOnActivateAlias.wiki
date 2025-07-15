@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultShowMessageOnActivateAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultShowMessageOnActivateAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultShowMessageOnActivateAlias Extends ReferenceAlias Default Const
@@ -15,7 +15,7 @@ ScriptName DefaultShowMessageOnActivateAlias Extends ReferenceAlias Default Cons
 
 
 == Documentation ==
-The <code>DefaultShowMessageOnActivateAlias.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultShowMessageOnActivateAlias.psc</code> source file.
 
 <source>
 Show the selected message when this ALIAS is activate.
@@ -23,9 +23,12 @@ Show the selected message when this ALIAS is activate.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
@@ -47,7 +50,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = MessageToShow
 | script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
@@ -135,7 +142,11 @@ The members that belong to this script, grouped by kind.
 | documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActivate
 | script = [[SFM:Script-DefaultShowMessageOnActivateAlias|DefaultShowMessageOnActivateAlias]]
@@ -143,6 +154,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akActionRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

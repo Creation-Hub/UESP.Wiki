@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>ActiveMagicEffect.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>ActiveMagicEffect.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName ActiveMagicEffect Extends ScriptObject Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>ActiveMagicEffect.psc</code
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Dispel
 | script = [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]]
@@ -131,7 +134,11 @@ Will do nothing on release console builds, and if the Papyrus:bEnableProfiling i
 Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnEffectStart
 | script = [[SFM:Script-ActiveMagicEffect|ActiveMagicEffect]]
@@ -1410,6 +1417,8 @@ aeAcquireType is one of the following:
 | parameters = bool abComplete, SpaceshipReference akUndocking, SpaceshipReference akParent
 | documentation = Event received when a ship initiates or completes undocking with a parent
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

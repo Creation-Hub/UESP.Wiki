@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasMakeAliasRefForInventory.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasMakeAliasRefForInventory.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasMakeAliasRefForInventory Extends ReferenceAlias Default
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>DefaultAliasMakeAliasRefFor
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = RequiredProperties
 | script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
@@ -43,7 +46,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = TargetObject
 | script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
@@ -118,7 +125,11 @@ The members that belong to this script, grouped by kind.
 | documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
@@ -142,7 +153,11 @@ The members that belong to this script, grouped by kind.
 | parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ProcessMakingRef
 | script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
@@ -150,6 +165,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = Form akBaseItem
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

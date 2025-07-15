@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterIncrementOnActivate.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterIncrementOnActivate.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterIncrementOnActivate Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultCounterIncrementOnActivate Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultCounterIncrementOnActivate.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterIncrementOnActivate.psc</code> source file.
 
 <source>
 Once this is activated (by the PLAYER) it increments the counter on it's LinkedRef's DefaultCounter script.
@@ -23,9 +23,12 @@ Once this is activated (by the PLAYER) it increments the counter on it's LinkedR
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = LinkedRefKeyword
 | script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
@@ -54,7 +61,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Optional; defaults to False. Should every other action decrement the counter instead of incrementing it?
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitForActivate
 | script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
@@ -69,7 +80,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActivate
 | script = [[SFM:Script-DefaultCounterIncrementOnActivate|DefaultCounterIncrementOnActivate]]
@@ -77,6 +92,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akActionRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

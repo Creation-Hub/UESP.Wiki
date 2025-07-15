@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultTopicAddItem.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultTopicAddItem.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultTopicAddItem Extends TopicInfo Const Default
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>DefaultTopicAddItem.psc</co
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddItemOnBegin
 | script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
@@ -65,7 +68,11 @@ The members that belong to this script, grouped by kind.
 | documentation = How many of the item(s) to add.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-DefaultTopicAddItem|DefaultTopicAddItem]]
@@ -81,6 +88,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

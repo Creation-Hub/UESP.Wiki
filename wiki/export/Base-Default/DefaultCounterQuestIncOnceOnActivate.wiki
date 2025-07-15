@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterQuestIncOnceOnActivate Extends ReferenceAlias Default Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultCounterQuestIncOnceOnActivate Extends ReferenceAlias Default H
 
 
 == Documentation ==
-The <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file.
 
 <source>
 Once this ALIAS is activated (by the PLAYER) it increments the counter on its Quest's DefaultCounterQuest script
@@ -23,9 +23,12 @@ Once this ALIAS is activated (by the PLAYER) it increments the counter on its Qu
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitForActivate
 | script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActivate
 | script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
@@ -49,13 +56,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Increment
 | script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
 | name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/Increment|Increment]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

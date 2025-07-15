@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasMapMarkerScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasMapMarkerScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasMapMarkerScript Extends ReferenceAlias Default Const
@@ -15,7 +15,7 @@ ScriptName DefaultAliasMapMarkerScript Extends ReferenceAlias Default Const
 
 
 == Documentation ==
-The <code>DefaultAliasMapMarkerScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasMapMarkerScript.psc</code> source file.
 
 <source>
 default script to set map marker data on a map marker in an alias
@@ -23,9 +23,12 @@ default script to set map marker data on a map marker in an alias
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AllowGravJump
 | script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
@@ -118,7 +121,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Enables the map marker on init (usually irrelevant but required for default space cell map markers which are all initially disabled)
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
@@ -134,13 +141,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akObject, bool abRemove
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = UpdateMapMarkerFlags
 | script = [[SFM:Script-DefaultAliasMapMarkerScript|DefaultAliasMapMarkerScript]]
 | name = [[SFM:Script-DefaultAliasMapMarkerScript/UpdateMapMarkerFlags|UpdateMapMarkerFlags]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

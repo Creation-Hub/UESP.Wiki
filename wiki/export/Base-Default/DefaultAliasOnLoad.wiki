@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnLoad Extends DefaultAliasParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnLoad Extends DefaultAliasParent Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnLoad.psc</code> source file.
 
 <source>
 Sets quest stage when this Alias loads.
@@ -24,15 +24,20 @@ Sets quest stage when this Alias loads.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultAliasOnLoad|DefaultAliasOnLoad]]
 | name = [[SFM:Script-DefaultAliasOnLoad/OnLoad|OnLoad]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

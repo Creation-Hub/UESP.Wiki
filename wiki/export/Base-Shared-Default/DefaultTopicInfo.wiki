@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultTopicInfo.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultTopicInfo.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultTopicInfo Extends TopicInfo Const Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultTopicInfo Extends TopicInfo Const Hidden
 
 
 == Documentation ==
-The <code>DefaultTopicInfo.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultTopicInfo.psc</code> source file.
 
 <source>
 Master script for the DefaultTopicInfo scripts.
@@ -25,9 +25,12 @@ TODO `TTP-27142: Default Script: reimplement DefaultTopicInfo`
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
@@ -49,7 +52,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = StageToSet
 | script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
@@ -116,13 +123,19 @@ The members that belong to this script, grouped by kind.
 | documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = TryToSetStage
 | script = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
 | name = [[SFM:Script-DefaultTopicInfo/TryToSetStage|TryToSetStage]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnShipSystemDamaged.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnShipSystemDamaged.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnShipSystemDamaged Extends ReferenceAlias Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnShipSystemDamaged Extends ReferenceAlias Const Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnShipSystemDamaged.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnShipSystemDamaged.psc</code> source file.
 
 <source>
 sets stages when the ship in this alias takes system damage
@@ -29,9 +29,12 @@ Actor values for ship systems:
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = SystemDamageStage
 | script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
@@ -39,7 +42,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = SystemDamage_Properties
 | script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
@@ -61,7 +68,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SystemDamageStages
 | script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
@@ -116,7 +127,11 @@ The members that belong to this script, grouped by kind.
 | documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnShipSystemDamaged
 | script = [[SFM:Script-DefaultAliasOnShipSystemDamaged|DefaultAliasOnShipSystemDamaged]]
@@ -124,6 +139,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ActorValue akSystem, int aBlocksLost, bool aElectromagneticDamage, bool aFullyDamaged
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

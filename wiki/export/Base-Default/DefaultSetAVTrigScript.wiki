@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultSetAVTrigScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultSetAVTrigScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultSetAVTrigScript Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultSetAVTrigScript Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultSetAVTrigScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultSetAVTrigScript.psc</code> source file.
 
 <source>
 Default trigger script that can set the Actor Values (AVs) of one (or a chain of) linked actors when a trigger is entered.
@@ -23,9 +23,12 @@ Default trigger script that can set the Actor Values (AVs) of one (or a chain of
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -47,7 +50,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AV01
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -202,7 +209,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTriggerEnter
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -211,7 +222,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = SetActorValues
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -220,6 +235,8 @@ The members that belong to this script, grouped by kind.
 | parameters = Actor akActor
 | documentation = Recursive helper function that sets the AVs for a chain of linked actors.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

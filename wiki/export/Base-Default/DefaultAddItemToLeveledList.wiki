@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAddItemToLeveledList.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAddItemToLeveledList.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAddItemToLeveledList Extends Quest Default
@@ -15,7 +15,7 @@ ScriptName DefaultAddItemToLeveledList Extends Quest Default
 
 
 == Documentation ==
-The <code>DefaultAddItemToLeveledList.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAddItemToLeveledList.psc</code> source file.
 
 <source>
 Adds an Item to a Leveled List.
@@ -23,9 +23,12 @@ Adds an Item to a Leveled List.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = LeveledItemDatum
 | script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddOnQuestStart
 | script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
@@ -65,7 +72,11 @@ The members that belong to this script, grouped by kind.
 | documentation = An array of structs that contain the form to add, the level the items will drop at, and the amount of items that will drop
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
@@ -73,13 +84,19 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddItemsToLeveledList
 | script = [[SFM:Script-DefaultAddItemToLeveledList|DefaultAddItemToLeveledList]]
 | name = [[SFM:Script-DefaultAddItemToLeveledList/AddItemsToLeveledList|AddItemsToLeveledList]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultTopicInfoStopDialogueCamera.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultTopicInfoStopDialogueCamera.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultTopicInfoStopDialogueCamera Extends TopicInfo Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultTopicInfoStopDialogueCamera Extends TopicInfo Const Default
 
 
 == Documentation ==
-The <code>DefaultTopicInfoStopDialogueCamera.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultTopicInfoStopDialogueCamera.psc</code> source file.
 
 <source>
 Stop Dialogue Cameras when this Info begins or ends
@@ -23,9 +23,12 @@ Stop Dialogue Cameras when this Info begins or ends
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = StopCameraOnBegin
 | script = [[SFM:Script-DefaultTopicInfoStopDialogueCamera|DefaultTopicInfoStopDialogueCamera]]
@@ -37,7 +40,11 @@ The members that belong to this script, grouped by kind.
 | documentation = If True (default), stop camera when the Info begins. If False then stop camera when the info ends.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-DefaultTopicInfoStopDialogueCamera|DefaultTopicInfoStopDialogueCamera]]
@@ -53,6 +60,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

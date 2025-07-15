@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultActorParent.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultActorParent.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultActorParent Extends Actor Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultActorParent Extends Actor Hidden
 
 
 == Documentation ==
-The <code>DefaultActorParent.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultActorParent.psc</code> source file.
 
 <source>
 Master script for the DefaultActor scripts.
@@ -25,9 +25,12 @@ Master script for the DefaultActor scripts.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultActorParent|DefaultActorParent]]
@@ -70,7 +73,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = QuestToSetOrCheck
 | script = [[SFM:Script-DefaultActorParent|DefaultActorParent]]
@@ -208,7 +215,11 @@ The members that belong to this script, grouped by kind.
 | parameters = false
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-DefaultActorParent|DefaultActorParent]]
@@ -216,7 +227,11 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CheckAndSetStageAndCallDoSpecificThing
 | script = [[SFM:Script-DefaultActorParent|DefaultActorParent]]
@@ -329,7 +344,11 @@ for each item in here, DoSpecificThing will be called, with each reference in th
 | documentation = OVERRIDE THIS IN CHILD SCRIPT
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Busy
 | script = [[SFM:Script-DefaultActorParent|DefaultActorParent]]
@@ -343,6 +362,8 @@ for each item in here, DoSpecificThing will be called, with each reference in th
 | name = [[SFM:Script-DefaultActorParent/Done|Done]]
 | kind = State
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

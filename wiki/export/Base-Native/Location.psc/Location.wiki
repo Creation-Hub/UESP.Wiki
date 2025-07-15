@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Location.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Location.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Location Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Location.psc</code> source 
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddKeyword
 | script = [[SFM:Script-Location|Location]]
@@ -388,7 +391,11 @@ Can optionally specify a keyword that the parent location must have
 | parameters = ActorValue akActorValue, float afAmount
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLocationExplored
 | script = [[SFM:Script-Location|Location]]
@@ -404,6 +411,8 @@ Can optionally specify a keyword that the parent location must have
 | kind = Event
 | documentation = Event sent when a location is loaded
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

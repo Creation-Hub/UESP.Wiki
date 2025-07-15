@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefSoundTriggerScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefSoundTriggerScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefSoundTriggerScript Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefSoundTriggerScript Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultRefSoundTriggerScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefSoundTriggerScript.psc</code> source file.
 
 <source>
 Plays a sound when a ref enters the trigger.
@@ -23,9 +23,12 @@ Plays a sound when a ref enters the trigger.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SoundToPlayEvent
 | script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
@@ -94,7 +101,11 @@ The members that belong to this script, grouped by kind.
 | documentation = DEFAULT: NONE. If this is linked to another ref with keyword LinkKeyword, play the sound from that ref. Otherwise, play the sound from the triggering ref.
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Waiting
 | script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
@@ -109,7 +120,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTriggerEnter
 | script = [[SFM:Script-DefaultRefSoundTriggerScript|DefaultRefSoundTriggerScript]]
@@ -117,6 +132,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference triggerRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

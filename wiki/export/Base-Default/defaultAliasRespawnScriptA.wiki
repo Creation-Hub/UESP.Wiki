@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>defaultAliasRespawnScriptA.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>defaultAliasRespawnScriptA.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName defaultAliasRespawnScriptA Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName defaultAliasRespawnScriptA Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>defaultAliasRespawnScriptA.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>defaultAliasRespawnScriptA.psc</code> source file.
 
 <source>
 Script for respawning this alias.  For use along with a quest that has the DefaultQuestRespawnScript attached to it.
@@ -23,9 +23,12 @@ Script for respawning this alias.  For use along with a quest that has the Defau
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = RespawningOn
 | script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
@@ -46,7 +53,11 @@ The members that belong to this script, grouped by kind.
 	defaults to TRUE
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = RespawnIfDead
 | script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
@@ -54,7 +65,11 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Normal
 | script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
@@ -69,7 +84,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnDeath
 | script = [[SFM:Script-defaultAliasRespawnScriptA|defaultAliasRespawnScriptA]]
@@ -77,6 +96,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akKiller
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

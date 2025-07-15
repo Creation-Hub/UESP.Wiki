@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasSetTimestampOnInit.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasSetTimestampOnInit.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasSetTimestampOnInit Extends ReferenceAlias Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasSetTimestampOnInit Extends ReferenceAlias Const Default
 
 
 == Documentation ==
-The <code>DefaultAliasSetTimestampOnInit.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasSetTimestampOnInit.psc</code> source file.
 
 <source>
 sets a specified AV as a timestamp (with a specified offset from current time) OnAliasInit
@@ -23,9 +23,12 @@ sets a specified AV as a timestamp (with a specified offset from current time) O
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = TimestampAV
 | script = [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
@@ -47,13 +50,19 @@ The members that belong to this script, grouped by kind.
 | documentation = how much to add to GameDaysPassed when setting TimestampAV
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
 | name = [[SFM:Script-DefaultAliasSetTimestampOnInit/OnAliasInit|OnAliasInit]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

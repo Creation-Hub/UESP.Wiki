@@ -6,7 +6,7 @@
 
 
 == Definition ==
-The <code>Tests\LineContinuation.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Tests\LineContinuation.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Tests:LineContinuation
@@ -14,7 +14,7 @@ ScriptName Tests:LineContinuation
 
 
 == Documentation ==
-The <code>Tests\LineContinuation.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>Tests\LineContinuation.psc</code> source file.
 
 <source>
 Testing for line continuations.
@@ -22,9 +22,12 @@ Testing for line continuations.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Foo
 | script = [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
@@ -52,6 +55,8 @@ This is the documentation line comment for `Foo`.
 | parameters = string arg1, string arg2, string arg3, string arg4, string arg5, string arg6
 | documentation = This is the Papyrus doc-string for `Foo2`.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

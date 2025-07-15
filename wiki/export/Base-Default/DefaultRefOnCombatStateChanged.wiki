@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnCombatStateChanged.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnCombatStateChanged.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnCombatStateChanged Extends DefaultActor Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnCombatStateChanged Extends DefaultActor Default
 
 
 == Documentation ==
-The <code>DefaultRefOnCombatStateChanged.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnCombatStateChanged.psc</code> source file.
 
 <source>
 Sets stage when THIS actor's combat state changes.
@@ -25,9 +25,12 @@ Sets stage when THIS actor's combat state changes.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
@@ -35,7 +38,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = IncludeOnHitEvent
 | script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
@@ -61,7 +68,11 @@ The members that belong to this script, grouped by kind.
 4 (Default): In Combat or Searching
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
@@ -92,7 +103,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akTarget, int aeCombatState
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Done
 | script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
@@ -100,7 +115,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CombatStateChangedOrHit
 | script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
@@ -108,6 +127,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = ObjectReference TargetOrAggressor
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

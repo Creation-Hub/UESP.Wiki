@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnShipUndock.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnShipUndock.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnShipUndock Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnShipUndock Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnShipUndock.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnShipUndock.psc</code> source file.
 
 <source>
 Sets stage when this ship undocks from another ship.
@@ -26,9 +26,12 @@ Sets stage when this ship undocks from another ship.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnShipUndock|DefaultAliasOnShipUndock]]
@@ -36,7 +39,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SetStageWhenUndockingComplete
 | script = [[SFM:Script-DefaultAliasOnShipUndock|DefaultAliasOnShipUndock]]
@@ -61,7 +68,11 @@ The members that belong to this script, grouped by kind.
 	 2 = check the other ship only
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnShipUndock
 | script = [[SFM:Script-DefaultAliasOnShipUndock|DefaultAliasOnShipUndock]]
@@ -69,6 +80,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = bool abComplete, SpaceshipReference akUndocking, SpaceshipReference akParent
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

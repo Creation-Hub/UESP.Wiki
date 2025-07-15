@@ -4,3 +4,4 @@ The template generation layer for the wiki module.
 """
 from . import data # type: ignore # noqa: F401
 from . import generator # type: ignore # noqa: F401
+from . import script # type: ignore # noqa: F401

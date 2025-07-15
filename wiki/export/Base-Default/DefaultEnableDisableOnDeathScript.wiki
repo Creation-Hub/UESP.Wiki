@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultEnableDisableOnDeathScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultEnableDisableOnDeathScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultEnableDisableOnDeathScript Extends DefaultActorParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultEnableDisableOnDeathScript Extends DefaultActorParent Default
 
 
 == Documentation ==
-The <code>DefaultEnableDisableOnDeathScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultEnableDisableOnDeathScript.psc</code> source file.
 
 <source>
 Enables/Disables THIS actor's linked ref, when THIS actor dies.
@@ -25,9 +25,12 @@ Enables/Disables THIS actor's linked ref, when THIS actor dies.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultEnableDisableOnDeathScript|DefaultEnableDisableOnDeathScript]]
@@ -52,7 +55,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = UseOnDyingInstead
 | script = [[SFM:Script-DefaultEnableDisableOnDeathScript|DefaultEnableDisableOnDeathScript]]
@@ -157,7 +164,11 @@ The members that belong to this script, grouped by kind.
 | documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetPlayerOnly
 | script = [[SFM:Script-DefaultEnableDisableOnDeathScript|DefaultEnableDisableOnDeathScript]]
@@ -234,7 +245,11 @@ These function should usually return the value of the child script's property of
 | documentation = Reimplementing Parent's empty function
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnDeath
 | script = [[SFM:Script-DefaultEnableDisableOnDeathScript|DefaultEnableDisableOnDeathScript]]
@@ -250,6 +265,8 @@ These function should usually return the value of the child script's property of
 | kind = Event
 | parameters = ObjectReference akKiller
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>FormList.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>FormList.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName FormList Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>FormList.psc</code> source 
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddForm
 | script = [[SFM:Script-FormList|FormList]]
@@ -105,6 +108,8 @@ If not found, returns a negative number
 | flags = Native
 | documentation = Removes all script added forms from this form list
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

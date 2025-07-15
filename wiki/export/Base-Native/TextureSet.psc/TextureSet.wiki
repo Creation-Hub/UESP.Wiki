@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>TextureSet.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>TextureSet.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName TextureSet Extends Form Hidden Native
@@ -20,6 +20,7 @@ No documentation comments were provided in the <code>TextureSet.psc</code> sourc
 
 == Member ==
 No members were defined in the <code>TextureSet.psc</code> source file.
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

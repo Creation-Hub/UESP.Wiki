@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultActivateLinkedRefOnCombat.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultActivateLinkedRefOnCombat.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultActivateLinkedRefOnCombat Extends DefaultActor Default
@@ -15,7 +15,7 @@ ScriptName DefaultActivateLinkedRefOnCombat Extends DefaultActor Default
 
 
 == Documentation ==
-The <code>DefaultActivateLinkedRefOnCombat.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultActivateLinkedRefOnCombat.psc</code> source file.
 
 <source>
 Activates THIS actor's linked ref when THIS actor's combat state changes.
@@ -25,9 +25,12 @@ Activates THIS actor's linked ref when THIS actor's combat state changes.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
@@ -44,7 +47,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = XxxPlaceHolderForEmptyGroup2xxx
 | script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
@@ -112,7 +119,11 @@ The members that belong to this script, grouped by kind.
 | documentation = If true (default), Activate function's akActivator param will be <RefToCheck>. If false, akActivator param will be THIS object.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
@@ -143,7 +154,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akTarget, int aeCombatState
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Done
 | script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
@@ -151,7 +166,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetRefsToDoSpecificThingsWith
 | script = [[SFM:Script-DefaultActivateLinkedRefOnCombat|DefaultActivateLinkedRefOnCombat]]
@@ -177,6 +196,8 @@ The members that belong to this script, grouped by kind.
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = Reimplementing Parent's empty function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

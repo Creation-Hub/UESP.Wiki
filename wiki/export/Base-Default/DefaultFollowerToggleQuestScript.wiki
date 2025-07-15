@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultFollowerToggleQuestScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultFollowerToggleQuestScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultFollowerToggleQuestScript Extends Quest Default
@@ -15,7 +15,7 @@ ScriptName DefaultFollowerToggleQuestScript Extends Quest Default
 
 
 == Documentation ==
-The <code>DefaultFollowerToggleQuestScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultFollowerToggleQuestScript.psc</code> source file.
 
 <source>
 Attach to quest where you have a follower you want to control follower state on using conditions various triggering events.
@@ -26,9 +26,12 @@ CheckConditions()
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Autofill_Properites
 | script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
@@ -50,7 +53,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SQ_Followers
 | script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
@@ -226,7 +233,11 @@ NOTE: normally this will be THE SAME condition form as the FollowConditions (See
 | documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestStarted
 | script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
@@ -274,7 +285,11 @@ NOTE: normally this will be THE SAME condition form as the FollowConditions (See
 | parameters = ReferenceAlias akSender, ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CheckConditionsIfPlayer
 | script = [[SFM:Script-DefaultFollowerToggleQuestScript|DefaultFollowerToggleQuestScript]]
@@ -290,6 +305,8 @@ NOTE: normally this will be THE SAME condition form as the FollowConditions (See
 | kind = Function
 | parameters = ObjectReference TargetRef = none
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

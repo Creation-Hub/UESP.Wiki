@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultEmptyInvIntoLinkOnLoad Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultEmptyInvIntoLinkOnLoad Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file.
 
 <source>
 Removes items from self and puts them into Linked Ref OnLoad()
@@ -23,9 +23,12 @@ Removes items from self and puts them into Linked Ref OnLoad()
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitForLoad
 | script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
@@ -40,13 +43,19 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
 | name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad/OnLoad|OnLoad]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

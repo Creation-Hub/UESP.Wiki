@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterQuestC.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterQuestC.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterQuestC Extends DefaultCounterQuest Default
@@ -15,7 +15,7 @@ ScriptName DefaultCounterQuestC Extends DefaultCounterQuest Default
 
 
 == Documentation ==
-The <code>DefaultCounterQuestC.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterQuestC.psc</code> source file.
 
 <source>
 A simple counter. Placed on an Quest, then increment with another alias script (such as DefaultCounterAliasIncOnceOnActivateC). When the target value is reached, the counter sets a Quest Stage.
@@ -24,6 +24,7 @@ A simple counter. Placed on an Quest, then increment with another alias script (
 
 == Member ==
 No members were defined in the <code>DefaultCounterQuestC.psc</code> source file.
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

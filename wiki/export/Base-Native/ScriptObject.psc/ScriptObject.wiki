@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>ScriptObject.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>ScriptObject.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName ScriptObject Native Hidden
@@ -15,7 +15,7 @@ ScriptName ScriptObject Native Hidden
 
 
 == Documentation ==
-The <code>ScriptObject.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>ScriptObject.psc</code> source file.
 
 <source>
 Base object for every script in the game, even if that script doesn't explicitly extend anything
@@ -23,9 +23,12 @@ Base object for every script in the game, even if that script doesn't explicitly
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddInventoryEventFilter
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
@@ -878,7 +881,11 @@ specify event id to unregister for a specific event, -1 to unregister for all ev
 | documentation = Unregisters from receiving GameplayOptionChanged events from the settings menu
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActorValueChanged
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
@@ -1166,6 +1173,8 @@ expires.
 | parameters = GameplayOption[] aChangedOptions
 | documentation = Occurence of a GameplayOptionChanged event from the settings menu
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

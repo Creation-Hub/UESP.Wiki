@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>ReferenceAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>ReferenceAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName ReferenceAlias Extends Alias Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>ReferenceAlias.psc</code> s
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ApplyToRef
 | script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
@@ -378,7 +381,11 @@ Does nothing if either reference is an actor.
 | documentation = kmk - first clears, then refills alias (so alias will be empty if nothing is found by RefillAlias call)
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasChanged
 | script = [[SFM:Script-ReferenceAlias|ReferenceAlias]]
@@ -1657,6 +1664,8 @@ aeAcquireType is one of the following:
 | kind = Event
 | documentation = Event this is triggered when a ship is sold
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

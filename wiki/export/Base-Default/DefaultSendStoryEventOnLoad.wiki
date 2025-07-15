@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultSendStoryEventOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultSendStoryEventOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultSendStoryEventOnLoad Extends DefaultRefParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultSendStoryEventOnLoad Extends DefaultRefParent Default
 
 
 == Documentation ==
-The <code>DefaultSendStoryEventOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultSendStoryEventOnLoad.psc</code> source file.
 
 <source>
 Calls SendStoryEvent on the specified keyword when this object loads.
@@ -29,9 +29,12 @@ Location: <LocationToCheck>
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultSendStoryEventOnLoad|DefaultSendStoryEventOnLoad]]
@@ -48,7 +51,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = XxxPlaceHolderForEmptyGroup2xxx
 | script = [[SFM:Script-DefaultSendStoryEventOnLoad|DefaultSendStoryEventOnLoad]]
@@ -91,7 +98,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Will be sent as the aiValue1 parameter of the SendStoryEventAndWait() function.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-DefaultSendStoryEventOnLoad|DefaultSendStoryEventOnLoad]]
@@ -106,7 +117,11 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultSendStoryEventOnLoad|DefaultSendStoryEventOnLoad]]
@@ -115,6 +130,8 @@ The members that belong to this script, grouped by kind.
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = Reimplementing Parent's empty function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

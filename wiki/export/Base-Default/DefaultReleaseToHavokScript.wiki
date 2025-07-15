@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultReleaseToHavokScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultReleaseToHavokScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultReleaseToHavokScript Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultReleaseToHavokScript Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultReleaseToHavokScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultReleaseToHavokScript.psc</code> source file.
 
 <source>
 Releases an object to Havok OnHit or OnActivate.
@@ -23,9 +23,12 @@ Releases an object to Havok OnHit or OnActivate.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Properties
 | script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = HavokOnHit
 | script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
@@ -79,7 +86,11 @@ The members that belong to this script, grouped by kind.
 | documentation = The chain of objects linked with this keyword will be released to Havok when this object is released.
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Waiting
 | script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
@@ -94,7 +105,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
@@ -118,7 +133,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference triggerRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ReleaseToHavok
 | script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
@@ -126,6 +145,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | documentation = Empty State functions.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

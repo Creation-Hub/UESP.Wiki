@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCaptiveAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCaptiveAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCaptiveAlias Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultCaptiveAlias Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>DefaultCaptiveAlias.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCaptiveAlias.psc</code> source file.
 
 <source>
 Use this script to gain standard support for bound captive npcs being freed by player.
@@ -27,9 +27,12 @@ Let system design know if this is an important need.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = AutoFillProperties
 | script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
@@ -58,7 +61,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SQ_Captive
 | script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
@@ -247,7 +254,11 @@ The members that belong to this script, grouped by kind.
 | documentation = if true, will delete when cleaned up
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
@@ -292,7 +303,11 @@ The members that belong to this script, grouped by kind.
 | parameters = SQ_CaptiveScript akSender, var[] akArgs
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddToFactions
 | script = [[SFM:Script-DefaultCaptiveAlias|DefaultCaptiveAlias]]
@@ -344,6 +359,8 @@ The members that belong to this script, grouped by kind.
 | name = [[SFM:Script-DefaultCaptiveAlias/ResetAVs|ResetAVs]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

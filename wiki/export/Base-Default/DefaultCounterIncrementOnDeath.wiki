@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterIncrementOnDeath.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterIncrementOnDeath.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterIncrementOnDeath Extends Actor Default
@@ -15,7 +15,7 @@ ScriptName DefaultCounterIncrementOnDeath Extends Actor Default
 
 
 == Documentation ==
-The <code>DefaultCounterIncrementOnDeath.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterIncrementOnDeath.psc</code> source file.
 
 <source>
 Once this actor dies it increments the counter on it's LinkedRef's DefaultCounter script.
@@ -23,9 +23,12 @@ Once this actor dies it increments the counter on it's LinkedRef's DefaultCounte
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = LinkedRefKeyword
 | script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
@@ -56,7 +63,11 @@ The members that belong to this script, grouped by kind.
 	OnDeath() event which can happen several seconds later.
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
 | script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
@@ -71,7 +82,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnDeath
 | script = [[SFM:Script-DefaultCounterIncrementOnDeath|DefaultCounterIncrementOnDeath]]
@@ -87,6 +102,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akKiller
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

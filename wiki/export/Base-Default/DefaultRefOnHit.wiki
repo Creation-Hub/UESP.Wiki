@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnHit.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnHit.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnHit Extends DefaultRef Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnHit Extends DefaultRef Default
 
 
 == Documentation ==
-The <code>DefaultRefOnHit.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnHit.psc</code> source file.
 
 <source>
 Sets stage when THIS object is hit.
@@ -28,9 +28,12 @@ SEE ALSO DefaultRefOnCombatStateChanged which includes the ability to also check
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
@@ -53,13 +56,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Done
 | script = [[SFM:Script-DefaultRefOnHit|DefaultRefOnHit]]
 | name = [[SFM:Script-DefaultRefOnHit/Done|Done]]
 | kind = State
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

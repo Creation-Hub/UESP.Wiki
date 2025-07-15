@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Actor.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Actor.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Actor Extends ObjectReference Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Actor.psc</code> source fil
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ModFavorPoints
 | script = [[SFM:Script-Actor|Actor]]
@@ -2275,7 +2278,11 @@ afXAngle, afYAngle and afZAngle are in degrees
 | documentation = Check all possible dialogue targets for the actor the robot is speaking with, including the current scene's last target/speaker. Used by RobotQuestRunner for debugging purposes.
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = PathingResult_Success
 | script = [[SFM:Script-Actor|Actor]]
@@ -2398,7 +2405,11 @@ afXAngle, afYAngle and afZAngle are in degrees
 | parameters = 6
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActorActivatedRef
 | script = [[SFM:Script-Actor|Actor]]
@@ -3066,6 +3077,8 @@ aeAcquireType is one of the following:
 | parameters = SpaceshipReference akShip
 | documentation = Event that is triggered when the player sells a ship
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasOnDeathB.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasOnDeathB.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasOnDeathB Extends DefaultCollectionAliasOnDeath Default
@@ -15,7 +15,7 @@ ScriptName DefaultCollectionAliasOnDeathB Extends DefaultCollectionAliasOnDeath 
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasOnDeathB.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasOnDeathB.psc</code> source file.
 
 <source>
 Additional version of DefaultCollectionAliasOnDeath so that you can attach it to the same RefCollectionAlias
@@ -28,6 +28,7 @@ Sets stage when THIS RefCollection's members are killed.
 
 == Member ==
 No members were defined in the <code>DefaultCollectionAliasOnDeathB.psc</code> source file.
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

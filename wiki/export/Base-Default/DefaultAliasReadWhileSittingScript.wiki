@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasReadWhileSittingScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasReadWhileSittingScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasReadWhileSittingScript Extends ReferenceAlias Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasReadWhileSittingScript Extends ReferenceAlias Const Defau
 
 
 == Documentation ==
-The <code>DefaultAliasReadWhileSittingScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasReadWhileSittingScript.psc</code> source file.
 
 <source>
 script to get an NPC to read in a chair
@@ -23,9 +23,12 @@ script to get an NPC to read in a chair
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = ReadingPackages
 | script = [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
@@ -45,7 +48,11 @@ The members that belong to this script, grouped by kind.
 | returns = Idle
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnSit
 | script = [[SFM:Script-DefaultAliasReadWhileSittingScript|DefaultAliasReadWhileSittingScript]]
@@ -53,6 +60,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akFurniture
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

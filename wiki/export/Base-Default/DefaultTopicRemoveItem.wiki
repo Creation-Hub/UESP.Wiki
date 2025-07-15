@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultTopicRemoveItem.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultTopicRemoveItem.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultTopicRemoveItem Extends TopicInfo Const Default
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>DefaultTopicRemoveItem.psc<
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = RemoveItemOnBegin
 | script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
@@ -75,7 +78,11 @@ The members that belong to this script, grouped by kind.
 | documentation = OPTIONAL - if this is provided, it will be used instead of ItemCountToRemove
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
@@ -92,13 +99,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = RemoveItem
 | script = [[SFM:Script-DefaultTopicRemoveItem|DefaultTopicRemoveItem]]
 | name = [[SFM:Script-DefaultTopicRemoveItem/RemoveItem|RemoveItem]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

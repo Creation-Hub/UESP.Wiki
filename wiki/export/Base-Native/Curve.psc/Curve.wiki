@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Curve.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Curve.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Curve Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Curve.psc</code> source fil
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = HasValueAt
 | script = [[SFM:Script-Curve|Curve]]
@@ -55,6 +58,8 @@ NOTE: Depending on the curve edge setting, it will clamp/mirror/repeat. Use HasV
 | documentation = jduvall
 gets an array of values for a given array of inputs
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

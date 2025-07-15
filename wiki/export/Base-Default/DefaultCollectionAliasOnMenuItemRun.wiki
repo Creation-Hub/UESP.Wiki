@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasOnMenuItemRun.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasOnMenuItemRun.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasOnMenuItemRun Extends RefCollectionAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultCollectionAliasOnMenuItemRun Extends RefCollectionAlias Defaul
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasOnMenuItemRun.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasOnMenuItemRun.psc</code> source file.
 
 <source>
 Default script to set stages and/or send story events when terminal menu items run.)
@@ -23,9 +23,12 @@ Default script to set stages and/or send story events when terminal menu items r
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = ShowTraces
 | script = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
@@ -52,7 +59,11 @@ The members that belong to this script, grouped by kind.
 | documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTerminalMenuItemRun
 | script = [[SFM:Script-DefaultCollectionAliasOnMenuItemRun|DefaultCollectionAliasOnMenuItemRun]]
@@ -60,6 +71,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSender, int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

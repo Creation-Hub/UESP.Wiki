@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Weather.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Weather.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Weather Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Weather.psc</code> source f
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = EnableAmbientParticles
 | script = [[SFM:Script-Weather|Weather]]
@@ -125,6 +128,8 @@ The members that belong to this script, grouped by kind.
 | parameters = bool abOverride = false, bool abAccelerate = false
 | documentation = Sets the active weather on the sky to be this weather.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

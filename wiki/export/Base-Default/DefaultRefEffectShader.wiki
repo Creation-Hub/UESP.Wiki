@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefEffectShader.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefEffectShader.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefEffectShader Extends ObjectReference Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefEffectShader Extends ObjectReference Const Default
 
 
 == Documentation ==
-The <code>DefaultRefEffectShader.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefEffectShader.psc</code> source file.
 
 <source>
 Default script used for applying an effect shader on the reference when it loads loads into a cell, or when the cell loads around it.
@@ -23,9 +23,12 @@ Default script used for applying an effect shader on the reference when it loads
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = FXS
 | script = [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
@@ -44,13 +47,19 @@ The members that belong to this script, grouped by kind.
 | returns = bool
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultRefEffectShader|DefaultRefEffectShader]]
 | name = [[SFM:Script-DefaultRefEffectShader/OnLoad|OnLoad]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultGroupSpawnQuestScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultGroupSpawnQuestScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultGroupSpawnQuestScript Extends Quest Default
@@ -15,7 +15,7 @@ ScriptName DefaultGroupSpawnQuestScript Extends Quest Default
 
 
 == Documentation ==
-The <code>DefaultGroupSpawnQuestScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultGroupSpawnQuestScript.psc</code> source file.
 
 <source>
 Used to spawn groups defined in SQ_GroupsScript attached to SQ_Groups quest
@@ -26,9 +26,12 @@ You can cast the event's akArgs[0] as DefaultGroupSpawnQuestScript:SpawnEventArg
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = SpawnGroup_DefinitionDatum
 | script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
@@ -58,7 +61,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Autofill
 | script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
@@ -109,7 +116,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SQ_Groups
 | script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
@@ -351,7 +362,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Quest Variables
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = SendSpawnEvent
 | script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
@@ -540,7 +555,11 @@ Defaults will be: Group A and SQ_Group_SpawnType_Ship_0_Any
 | parameters = ScriptObject CallingObject, string asTextToPrint, bool DebugTrace = false, int aiSeverity = 2, bool bShowNormalTrace = false, bool bShowWarning = true, bool bPrefixTraceWithLogNames = true
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultGroupSpawnQuestScript|DefaultGroupSpawnQuestScript]]
@@ -561,6 +580,8 @@ Startup Functions
 | documentation = EVENT: OnStageSet() ensures that each time a stage is set, any NPCs expecting to spawn are selected and considered for spawning.
 Update anything when a Stage is set
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

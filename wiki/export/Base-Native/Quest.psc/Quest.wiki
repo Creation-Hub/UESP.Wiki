@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Quest.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Quest.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Quest Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Quest.psc</code> source fil
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ModObjectiveGlobal
 | script = [[SFM:Script-Quest|Quest]]
@@ -493,7 +496,11 @@ Will trigger OnQuestTimerEnd
 | documentation = Updates current instance's value for the given global
 }}
 
+
+
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = QuestStage
 | script = [[SFM:Script-Quest|Quest]]
@@ -501,7 +508,11 @@ Will trigger OnQuestTimerEnd
 | kind = Struct
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnMissionAccepted
 | script = [[SFM:Script-Quest|Quest]]
@@ -942,6 +953,8 @@ Event received when the quest timer has started
 | kind = Event
 | parameters = ObjectReference akVictim, ObjectReference akTrespasser, Location akLocation, bool abCrime
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>xxDefaultRefAmbushTrigger.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>xxDefaultRefAmbushTrigger.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName xxDefaultRefAmbushTrigger Extends ObjectReference Const Default
@@ -15,7 +15,7 @@ ScriptName xxDefaultRefAmbushTrigger Extends ObjectReference Const Default
 
 
 == Documentation ==
-The <code>xxDefaultRefAmbushTrigger.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>xxDefaultRefAmbushTrigger.psc</code> source file.
 
 <source>
 set the AmbushTriggered actor value on this ref when player enters
@@ -23,9 +23,12 @@ set the AmbushTriggered actor value on this ref when player enters
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AmbushTriggered
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
@@ -73,7 +80,11 @@ The members that belong to this script, grouped by kind.
 	  FALSE = only set AmbushTrigger to 1 if player enters me
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnCellLoad
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
@@ -99,13 +110,19 @@ The members that belong to this script, grouped by kind.
 Adding this back in, only to trigger on combat, should only apply to actors linked to this ref.
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = TriggerAmbush
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
 | name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerAmbush|TriggerAmbush]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

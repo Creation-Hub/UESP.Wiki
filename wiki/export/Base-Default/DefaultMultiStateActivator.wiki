@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultMultiStateActivator.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultMultiStateActivator.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultMultiStateActivator Extends ObjectReference Default Conditional
@@ -15,7 +15,7 @@ ScriptName DefaultMultiStateActivator Extends ObjectReference Default Conditiona
 
 
 == Documentation ==
-The <code>DefaultMultiStateActivator.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultMultiStateActivator.psc</code> source file.
 
 <source>
 Generic script for managing and maintaining the animation state of activators.
@@ -23,9 +23,12 @@ Generic script for managing and maintaining the animation state of activators.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = AnimationStateDatum
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Base_Properties
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
@@ -48,7 +55,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AnimationStateData
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
@@ -81,7 +92,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Variables
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Initial
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
@@ -98,7 +113,11 @@ The members that belong to this script, grouped by kind.
 | documentation = On subsequent loads, make sure we're in the animation state we want to be in.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
@@ -106,7 +125,11 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = SetAnimationState
 | script = [[SFM:Script-DefaultMultiStateActivator|DefaultMultiStateActivator]]
@@ -131,6 +154,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | returns = string
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

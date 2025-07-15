@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>defaultCounter.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>defaultCounter.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName defaultCounter Extends objectReference Default
@@ -15,7 +15,7 @@ ScriptName defaultCounter Extends objectReference Default
 
 
 == Documentation ==
-The <code>defaultCounter.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>defaultCounter.psc</code> source file.
 
 <source>
 A simple counter. Place on an object, then increment with another script (such as defaultCounterIncrementOnDeath). When the target value is reached (or, optionally, exceeded), the counter:
@@ -26,9 +26,12 @@ A simple counter. Place on an object, then increment with another script (such a
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-defaultCounter|defaultCounter]]
@@ -43,7 +46,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = TargetValue
 | script = [[SFM:Script-defaultCounter|defaultCounter]]
@@ -109,7 +116,11 @@ The members that belong to this script, grouped by kind.
 | documentation = (Default: false) If true, we Decrementing via calls to "Decrement()", undoing the specified action (where possible) if the value falls below the target.
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = AllowCounting
 | script = [[SFM:Script-defaultCounter|defaultCounter]]
@@ -124,7 +135,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Increment
 | script = [[SFM:Script-defaultCounter|defaultCounter]]
@@ -138,6 +153,8 @@ The members that belong to this script, grouped by kind.
 | name = [[SFM:Script-defaultCounter/Decrement|Decrement]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

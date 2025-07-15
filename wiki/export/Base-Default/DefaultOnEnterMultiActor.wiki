@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultOnEnterMultiActor.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultOnEnterMultiActor.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultOnEnterMultiActor Extends ObjectReference Conditional Default
@@ -15,7 +15,7 @@ ScriptName DefaultOnEnterMultiActor Extends ObjectReference Conditional Default
 
 
 == Documentation ==
-The <code>DefaultOnEnterMultiActor.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultOnEnterMultiActor.psc</code> source file.
 
 <source>
 script to test if one or more actors are in a trigger
@@ -23,9 +23,12 @@ script to test if one or more actors are in a trigger
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = TriggerActors
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
@@ -85,7 +92,11 @@ The members that belong to this script, grouped by kind.
 | documentation = true when all targets are in trigger
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
@@ -109,7 +120,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference triggerRef
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Waiting
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
@@ -117,7 +132,11 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ModTargetCount
 | script = [[SFM:Script-DefaultOnEnterMultiActor|DefaultOnEnterMultiActor]]
@@ -142,6 +161,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | documentation = what happens when all my targets are in the trigger?
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

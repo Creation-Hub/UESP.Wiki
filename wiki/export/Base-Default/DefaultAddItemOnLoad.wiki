@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAddItemOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAddItemOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAddItemOnLoad Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultAddItemOnLoad Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultAddItemOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAddItemOnLoad.psc</code> source file.
 
 <source>
 Placed on an Object Reference (preferably an actor or container) that will add the selected item OnLoad()
@@ -23,9 +23,12 @@ Placed on an Object Reference (preferably an actor or container) that will add t
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = ItemToAdd
 | script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
@@ -47,7 +50,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Default = 1: Number of this item to add.
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Waiting
 | script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
@@ -62,13 +69,19 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
 | name = [[SFM:Script-DefaultAddItemOnLoad/OnLoad|OnLoad]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

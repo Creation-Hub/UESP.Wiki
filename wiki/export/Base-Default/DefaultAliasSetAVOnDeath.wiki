@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasSetAVOnDeath.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasSetAVOnDeath.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasSetAVOnDeath Extends ReferenceAlias Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasSetAVOnDeath Extends ReferenceAlias Const Default
 
 
 == Documentation ==
-The <code>DefaultAliasSetAVOnDeath.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasSetAVOnDeath.psc</code> source file.
 
 <source>
 Default script used to set an actor value when the actor in this alias is killed.
@@ -23,9 +23,12 @@ Default script used to set an actor value when the actor in this alias is killed
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultAliasSetAVOnDeath|DefaultAliasSetAVOnDeath]]
@@ -47,7 +50,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AVToSet
 | script = [[SFM:Script-DefaultAliasSetAVOnDeath|DefaultAliasSetAVOnDeath]]
@@ -102,7 +109,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnDeath
 | script = [[SFM:Script-DefaultAliasSetAVOnDeath|DefaultAliasSetAVOnDeath]]
@@ -119,7 +130,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akKiller
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ProcessDeathEvent
 | script = [[SFM:Script-DefaultAliasSetAVOnDeath|DefaultAliasSetAVOnDeath]]
@@ -127,6 +142,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = ObjectReference akKiller
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

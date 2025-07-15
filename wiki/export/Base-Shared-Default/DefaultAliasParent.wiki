@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasParent.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasParent.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasParent Extends ReferenceAlias Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultAliasParent Extends ReferenceAlias Hidden
 
 
 == Documentation ==
-The <code>DefaultAliasParent.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasParent.psc</code> source file.
 
 <source>
 Master script for the DefaultAlias scripts.
@@ -26,9 +26,12 @@ Master script for the DefaultAlias scripts.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]]
@@ -79,7 +82,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = StageToSet
 | script = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]]
@@ -207,7 +214,11 @@ The members that belong to this script, grouped by kind.
 | parameters = false
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CheckAndSetStageAndCallDoSpecificThing
 | script = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]]
@@ -320,7 +331,11 @@ for each item in here, DoSpecificThing will be called, with each reference in th
 | documentation = OVERRIDE THIS IN CHILD SCRIPT
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Busy
 | script = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]]
@@ -334,6 +349,8 @@ for each item in here, DoSpecificThing will be called, with each reference in th
 | name = [[SFM:Script-DefaultAliasParent/Done|Done]]
 | kind = State
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

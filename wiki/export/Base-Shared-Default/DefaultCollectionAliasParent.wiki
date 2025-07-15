@@ -6,7 +6,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasParent.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasParent.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasParent Extends RefCollectionAlias
@@ -14,7 +14,7 @@ ScriptName DefaultCollectionAliasParent Extends RefCollectionAlias
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasParent.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasParent.psc</code> source file.
 
 <source>
 Master script for the DefaultCollection scripts.
@@ -25,9 +25,12 @@ Master script for the DefaultCollection scripts.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
@@ -85,7 +88,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = StageToSet
 | script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
@@ -283,7 +290,11 @@ NOTE: This must be false if you want to use AdditionalStageToSetWhenAllRefsAffec
 | parameters = true
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
@@ -306,7 +317,11 @@ NOTE: This must be false if you want to use AdditionalStageToSetWhenAllRefsAffec
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddTriggeredRefAndCheckTriggeredArray
 | script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
@@ -444,7 +459,11 @@ for each item in here, DoSpecificThing will be called, with each reference in th
 | parameters = ObjectReference RefCollectionMemberRef, DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Busy
 | script = [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]]
@@ -458,6 +477,8 @@ for each item in here, DoSpecificThing will be called, with each reference in th
 | name = [[SFM:Script-DefaultCollectionAliasParent/Done|Done]]
 | kind = State
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

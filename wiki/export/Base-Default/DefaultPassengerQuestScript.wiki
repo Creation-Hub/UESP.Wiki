@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultPassengerQuestScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultPassengerQuestScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultPassengerQuestScript Extends Quest Default
@@ -15,7 +15,7 @@ ScriptName DefaultPassengerQuestScript Extends Quest Default
 
 
 == Documentation ==
-The <code>DefaultPassengerQuestScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultPassengerQuestScript.psc</code> source file.
 
 <source>
 Manages handling passengers getting on and off your ship at a destination, and setting quest stages dealing with passengers and delivery.
@@ -33,9 +33,12 @@ You shouldn't need to do this, but if you find a reason you need to manually rem
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = AutofillProperties
 | script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
@@ -73,7 +76,11 @@ you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passen
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = SQ_Playership
 | script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
@@ -251,7 +258,11 @@ you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passen
 | documentation = *Default: "") If not empy, will trace to this log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
@@ -339,7 +350,11 @@ you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passen
 | parameters = ReferenceAlias akSender, bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ShipArriving
 | script = [[SFM:Script-DefaultPassengerQuestScript|DefaultPassengerQuestScript]]
@@ -441,6 +456,8 @@ you need to put DefaultPassengerPackage on the alias you hook up to Alias_Passen
 | kind = Function
 | parameters = GlobalVariable GlobalWithValue
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

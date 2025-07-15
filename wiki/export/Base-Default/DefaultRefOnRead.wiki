@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnRead.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnRead.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnRead Extends DefaultRefParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnRead Extends DefaultRefParent Default
 
 
 == Documentation ==
-The <code>DefaultRefOnRead.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnRead.psc</code> source file.
 
 <source>
 Sets quest stage when this reference has been read.
@@ -23,15 +23,20 @@ Sets quest stage when this reference has been read.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnRead
 | script = [[SFM:Script-DefaultRefOnRead|DefaultRefOnRead]]
 | name = [[SFM:Script-DefaultRefOnRead/OnRead|OnRead]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

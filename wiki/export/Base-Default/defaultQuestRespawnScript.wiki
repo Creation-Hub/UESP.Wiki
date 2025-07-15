@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>defaultQuestRespawnScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>defaultQuestRespawnScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName defaultQuestRespawnScript Extends Quest Default Hidden
@@ -15,7 +15,7 @@ ScriptName defaultQuestRespawnScript Extends Quest Default Hidden
 
 
 == Documentation ==
-The <code>defaultQuestRespawnScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>defaultQuestRespawnScript.psc</code> source file.
 
 <source>
 Simple script to respawn Aliases that have the DefaultAliasRespawnScript on them.
@@ -23,9 +23,12 @@ Simple script to respawn Aliases that have the DefaultAliasRespawnScript on them
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Respawn_Markers
 | script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
@@ -54,7 +57,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = RespawnMarkers
 | script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
@@ -165,7 +172,11 @@ The members that belong to this script, grouped by kind.
 | parameters = 0
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Respawn
 | script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
@@ -221,6 +232,8 @@ if valid, increments respawn counter and waits random time before returning
 | kind = Function
 | returns = ObjectReference
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

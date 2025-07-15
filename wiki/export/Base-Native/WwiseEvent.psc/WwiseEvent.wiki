@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>WwiseEvent.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>WwiseEvent.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName WwiseEvent Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>WwiseEvent.psc</code> sourc
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = WwiseSwitchParam
 | script = [[SFM:Script-WwiseEvent|WwiseEvent]]
@@ -38,7 +41,11 @@ The members that belong to this script, grouped by kind.
 | documentation = A single Wwise RTPC parameter
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = MakeNewWwiseSwitchParam
 | script = [[SFM:Script-WwiseEvent|WwiseEvent]]
@@ -280,6 +287,8 @@ The members that belong to this script, grouped by kind.
 | parameters = int aiPlaybackInstance, string[] aRTPCNames, float[] aRTPCValues
 | documentation = For internal use only. Users should call the UpdateInstanceRTPCs function defined above. Updates a set of RTPC values on a given playback instance.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

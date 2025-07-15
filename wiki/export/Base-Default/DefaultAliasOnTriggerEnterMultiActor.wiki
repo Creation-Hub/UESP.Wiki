@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnTriggerEnterMultiActor.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnTriggerEnterMultiActor.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnTriggerEnterMultiActor Extends DefaultAlias Conditional Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnTriggerEnterMultiActor Extends DefaultAlias Conditional
 
 
 == Documentation ==
-The <code>DefaultAliasOnTriggerEnterMultiActor.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnTriggerEnterMultiActor.psc</code> source file.
 
 <source>
 Default script that sets a stage once all of the specified actors are in a trigger.
@@ -30,9 +30,12 @@ Thanks! :)
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
@@ -47,7 +50,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = TriggerAliases
 | script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
@@ -80,7 +87,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Are all TriggerAliases in this trigger?
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTriggerEnter
 | script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
@@ -97,7 +108,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference triggerRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CheckForTargetsInTrigger
 | script = [[SFM:Script-DefaultAliasOnTriggerEnterMultiActor|DefaultAliasOnTriggerEnterMultiActor]]
@@ -112,6 +127,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | returns = bool
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

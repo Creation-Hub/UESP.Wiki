@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasAddPerkOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasAddPerkOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasAddPerkOnLoad Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasAddPerkOnLoad Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasAddPerkOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasAddPerkOnLoad.psc</code> source file.
 
 <source>
 Adds the specified perk to the actor on load.
@@ -23,9 +23,12 @@ Adds the specified perk to the actor on load.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = PerkToAdd
 | script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
@@ -47,7 +50,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Whether the Perk should only be added on first load. Default=TRUE
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Ready
 | script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
@@ -62,13 +69,19 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultAliasAddPerkOnLoad|DefaultAliasAddPerkOnLoad]]
 | name = [[SFM:Script-DefaultAliasAddPerkOnLoad/OnLoad|OnLoad]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

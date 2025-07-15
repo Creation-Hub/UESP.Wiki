@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>TopicInfo.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>TopicInfo.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName TopicInfo Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>TopicInfo.psc</code> source
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetOwningQuest
 | script = [[SFM:Script-TopicInfo|TopicInfo]]
@@ -42,7 +45,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Returns if the topic info has been said to the player
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-TopicInfo|TopicInfo]]
@@ -60,6 +67,8 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 | documentation = Event called when this topic info ends (in parallel with the fragment)
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

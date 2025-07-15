@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultSetWeatherWhileInTriggerScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultSetWeatherWhileInTriggerScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultSetWeatherWhileInTriggerScript Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultSetWeatherWhileInTriggerScript Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultSetWeatherWhileInTriggerScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultSetWeatherWhileInTriggerScript.psc</code> source file.
 
 <source>
 Set the weather that should display while the player is in this trigger.
@@ -23,9 +23,12 @@ Set the weather that should display while the player is in this trigger.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = WeatherToSetActive
 | script = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
@@ -36,7 +39,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Defaults to CommonwealthClear
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTriggerEnter
 | script = [[SFM:Script-DefaultSetWeatherWhileInTriggerScript|DefaultSetWeatherWhileInTriggerScript]]
@@ -52,6 +59,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akActionRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

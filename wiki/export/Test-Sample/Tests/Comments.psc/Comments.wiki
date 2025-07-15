@@ -6,7 +6,7 @@
 
 
 == Definition ==
-The <code>Tests\Comments.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Tests\Comments.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Tests:Comments Extends ObjectReference
@@ -14,7 +14,7 @@ ScriptName Tests:Comments Extends ObjectReference
 
 
 == Documentation ==
-The <code>Tests\Comments.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>Tests\Comments.psc</code> source file.
 
 <source>
 This will test Papyrus doc-string comments.
@@ -29,15 +29,20 @@ This is a comment line.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Foo
 | script = [[SFM:Script-Tests:Comments|Tests:Comments]]
 | name = [[SFM:Script-Tests:Comments/Foo|Foo]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

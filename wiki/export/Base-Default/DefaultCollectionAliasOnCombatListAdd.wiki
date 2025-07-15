@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasOnCombatListAdd.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasOnCombatListAdd.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasOnCombatListAdd Extends DefaultCollectionAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultCollectionAliasOnCombatListAdd Extends DefaultCollectionAlias 
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasOnCombatListAdd.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasOnCombatListAdd.psc</code> source file.
 
 <source>
 Sets stage when THIS RefCollection's members add something to their combat list.
@@ -26,9 +26,12 @@ Sets stage when THIS RefCollection's members add something to their combat list.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnCombatListAdded
 | script = [[SFM:Script-DefaultCollectionAliasOnCombatListAdd|DefaultCollectionAliasOnCombatListAdd]]
@@ -36,6 +39,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSenderRef, Actor akTarget
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

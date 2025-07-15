@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultQuestShutdownScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultQuestShutdownScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultQuestShutdownScript Extends Quest Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultQuestShutdownScript Extends Quest Const Default
 
 
 == Documentation ==
-The <code>DefaultQuestShutdownScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultQuestShutdownScript.psc</code> source file.
 
 <source>
 shuts the quest down when a timer expires
@@ -23,9 +23,12 @@ shuts the quest down when a timer expires
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = StartTimerStage
 | script = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
@@ -48,7 +51,11 @@ The members that belong to this script, grouped by kind.
 | documentation = time (in game hours) before shutdown
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnStageSet
 | script = [[SFM:Script-DefaultQuestShutdownScript|DefaultQuestShutdownScript]]
@@ -64,6 +71,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = int aiTimerID
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

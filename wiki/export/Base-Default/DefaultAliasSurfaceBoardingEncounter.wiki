@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasSurfaceBoardingEncounter.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasSurfaceBoardingEncounter.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasSurfaceBoardingEncounter Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasSurfaceBoardingEncounter Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasSurfaceBoardingEncounter.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasSurfaceBoardingEncounter.psc</code> source file.
 
 <source>
 Script for ships on the surface of a planet. When the ship lands, start a Boarding Encounter to manage the crew in the ship's interior.
@@ -23,9 +23,12 @@ Script for ships on the surface of a planet. When the ship lands, start a Boardi
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = AliasProperties
 | script = [[SFM:Script-DefaultAliasSurfaceBoardingEncounter|DefaultAliasSurfaceBoardingEncounter]]
@@ -41,7 +44,11 @@ The members that belong to this script, grouped by kind.
 | flags = CollapsedOnBase
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = CrewSizePercent
 | script = [[SFM:Script-DefaultAliasSurfaceBoardingEncounter|DefaultAliasSurfaceBoardingEncounter]]
@@ -75,7 +82,11 @@ The members that belong to this script, grouped by kind.
 TODO - TTP 29661 - Save off the Boarding Encounter Quest so other scripts can find and interact with it.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnShipLanding
 | script = [[SFM:Script-DefaultAliasSurfaceBoardingEncounter|DefaultAliasSurfaceBoardingEncounter]]
@@ -87,6 +98,8 @@ TODO - TTP 29661 - Save off the Boarding Encounter Quest so other scripts can fi
 - akRef2: Enemy ship.
 - aiValue1: CrewSizePercent multiplier.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]
