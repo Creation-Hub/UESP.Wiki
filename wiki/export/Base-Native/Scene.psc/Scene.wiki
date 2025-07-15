@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Scene.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Scene.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Scene Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Scene.psc</code> source fil
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ForceStart
 | script = [[SFM:Script-Scene|Scene]]
@@ -90,7 +93,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Pauses or unpauses the scene
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAction
 | script = [[SFM:Script-Scene|Scene]]
@@ -133,6 +140,8 @@ The members that belong to this script, grouped by kind.
 | parameters = int auiPhaseIndex
 | documentation = Event received when a phase ends (in parallel with the fragment)
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

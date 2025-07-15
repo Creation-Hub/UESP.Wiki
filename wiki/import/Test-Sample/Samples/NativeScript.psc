@@ -7,5 +7,5 @@ Event OnMyEventNative(int aiTimerID) Native
 {A native event declaration.}
 
 Event OnMyEvent(int aiTimerID)
-    {An Event declaration.}
+	{An Event declaration.}
 EndEvent

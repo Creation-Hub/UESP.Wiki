@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterQuestIncOnDeath.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterQuestIncOnDeath.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterQuestIncOnDeath Extends ReferenceAlias Default Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultCounterQuestIncOnDeath Extends ReferenceAlias Default Hidden
 
 
 == Documentation ==
-The <code>DefaultCounterQuestIncOnDeath.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterQuestIncOnDeath.psc</code> source file.
 
 <source>
 Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuest script.
@@ -23,9 +23,12 @@ Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQues
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
@@ -33,7 +36,39 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = CheckForOnDyingInstead
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/CheckForOnDyingInstead|CheckForOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true the Increment will happen when this actor recieves the OnDying() event instead, which happens the instant the actor dies, unlike the
+	OnDeath() event which can happen several seconds later.
+}}
+
+{{Script_Object_Member_Summary
+| title = SupportRespawning
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/SupportRespawning|SupportRespawning]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true then this script will reset after incrementing in order to allow the next respawned actor that fills it to increment upon death as well.
+}}
+
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
 | script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
@@ -48,13 +83,40 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Increment
 | script = [[SFM:Script-DefaultCounterQuestIncOnDeath|DefaultCounterQuestIncOnDeath]]
 | name = [[SFM:Script-DefaultCounterQuestIncOnDeath/Increment|Increment]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

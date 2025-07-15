@@ -1,4 +1,3 @@
-from typing import Dict
 from app.papyrus.language import ScriptName
 
 
@@ -7,7 +6,7 @@ from app.papyrus.language import ScriptName
 
 class Code:
     """A base class for source code elements in a Papyrus script."""
-    def __init__(self):
+    def __init__(self) -> None:
         self.index:int = -1
         """The source code line index for the start of this element."""
 
@@ -31,7 +30,7 @@ class Element(Code):
     """
     Represents an element of a Papyrus script.
     """
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
         self.name:str = ""
@@ -51,32 +50,27 @@ class Element(Code):
 
 
 class Member(Element):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
 
-# Element Attributes
+# Element Mixins
 #---------------------------------------------
 
 class FlagsAttribute():
-    def __init__(self):
+    def __init__(self) -> None:
         self.flags:list[str] = []
         """The flags for this member."""
 
 class ValueTypeAttribute():
-    def __init__(self):
+    def __init__(self) -> None:
         self.type:str = ""
         """The member type is used for variables, properties, and the return type for functions."""
 
 class ValueAutoAttribute():
-    def __init__(self):
-        self.value_auto:str = ""
+    def __init__(self) -> None:
+        self.value:str = ""
         """The field initialized auto value for this member."""
-
-class ParameterAttribute():
-    def __init__(self):
-        self.parameters:list[str] = []
-        """The parameters for this member."""
 
 
 # Header
@@ -90,7 +84,7 @@ class Header(Code):
     """
     Represents the header of a Papyrus script.
     """
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
         # TODO: This overlaps with the inherited `Element` name.
@@ -105,7 +99,7 @@ class Header(Code):
         """The flags associated with the script."""
 
     def __str__(self) -> str:
-        """Returns the string representation of this class."""
+        """Returns a string that represents the current object."""
         if self.name: return str(self.name)
         else: return ""
 
@@ -113,32 +107,40 @@ class Header(Code):
 # Members
 #---------------------------------------------
 
-class Guard(Member):
-    def __init__(self):
-        super().__init__()
-        self._kind = "Guard"
-
-
 class Variable(Member, ValueTypeAttribute, ValueAutoAttribute):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         ValueTypeAttribute.__init__(self)
         ValueAutoAttribute.__init__(self)
         self._kind = "Variable"
 
+class ParametersAttribute():
+    def __init__(self) -> None:
+        self.parameters:list[Variable] = []
+        """The parameters for this member."""
+
+
+# Members
+#---------------------------------------------
+
+class Guard(Member):
+    def __init__(self) -> None:
+        super().__init__()
+        self._kind = "Guard"
+
 
 class Structure(Member):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self._kind = "Struct"
-        self.variables:Dict[str, Variable] = {}
+        self.variables:dict[str, Variable] = {}
 
 
 # Properties
 #---------------------------------------------
 
-class Property(Member, ValueTypeAttribute, ValueAutoAttribute):
-    def __init__(self):
+class Property(Variable, ValueTypeAttribute, ValueAutoAttribute):
+    def __init__(self) -> None:
         super().__init__()
         ValueTypeAttribute.__init__(self)
         ValueAutoAttribute.__init__(self)
@@ -151,30 +153,30 @@ class Property(Member, ValueTypeAttribute, ValueAutoAttribute):
 
 
 class PropertyGroup(Member):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self._kind = "Group"
-        self.properties:Dict[str, Property] = {}
+        self.properties:dict[str, Property] = {}
 
 
 # Methods
 #---------------------------------------------
 
-class Method(Member, ParameterAttribute):
-    def __init__(self):
+class Method(Member, ParametersAttribute):
+    def __init__(self) -> None:
         super().__init__()
-        ParameterAttribute.__init__(self)
+        ParametersAttribute.__init__(self)
 
 
 class Function(Method, ValueTypeAttribute):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         ValueTypeAttribute.__init__(self)
         self._kind = "Function"
 
 
 class Event(Method):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self._kind = "Event"
         self.isRemote:bool = False
@@ -182,10 +184,10 @@ class Event(Method):
 
 
 class State(Member):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self._kind = "State"
-        self.methods:Dict[str, Method] = {}
+        self.methods:dict[str, Method] = {}
 
 
 # Script
@@ -194,16 +196,17 @@ class State(Member):
 class Script:
     """Represents a Papyrus script."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.header:Header = Header()
         """The header information of this script."""
 
-        self.members:Dict[str, Member] = {}
+        self.members:dict[str, Member] = {}
         """The members that belong to this script."""
 
+    @property
+    def name(self) -> str:
+        return self.header.name.key
+
     def __str__(self) -> str:
-        """Returns the string representation of this class."""
-        if self.header.name:
-            return str(self.header.name)
-        else:
-            return ""
+        """Returns a string that represents the current object."""
+        return self.name

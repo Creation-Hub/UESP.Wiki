@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultTopicAnimArchetypeSwitch.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultTopicAnimArchetypeSwitch.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultTopicAnimArchetypeSwitch Extends TopicInfo Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultTopicAnimArchetypeSwitch Extends TopicInfo Const Default
 
 
 == Documentation ==
-The <code>DefaultTopicAnimArchetypeSwitch.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultTopicAnimArchetypeSwitch.psc</code> source file.
 
 <source>
 Default script for setting a different quest's stage from a topic info.
@@ -23,9 +23,12 @@ Default script for setting a different quest's stage from a topic info.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = KeywordArchetypes
 | script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
@@ -33,7 +36,36 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnBeginArchetype
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/OnBeginArchetype|OnBeginArchetype]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Switch to this Archetype OnBegin
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEndArchetype
+| script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
+| name = [[SFM:Script-DefaultTopicAnimArchetypeSwitch/OnEndArchetype|OnEndArchetype]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Switch to this Archetype OnEnd
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-DefaultTopicAnimArchetypeSwitch|DefaultTopicAnimArchetypeSwitch]]
@@ -49,6 +81,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

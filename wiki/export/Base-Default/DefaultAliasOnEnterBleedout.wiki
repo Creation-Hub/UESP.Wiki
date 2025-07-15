@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnEnterBleedout.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnEnterBleedout.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnEnterBleedout Extends DefaultAliasParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnEnterBleedout Extends DefaultAliasParent Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnEnterBleedout.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnEnterBleedout.psc</code> source file.
 
 <source>
 {Sets stage when THIS Alias enters bleedout.
@@ -24,15 +24,20 @@ The <code>DefaultAliasOnEnterBleedout.psc</code> source file documentation comme
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnEnterBleedout
 | script = [[SFM:Script-DefaultAliasOnEnterBleedout|DefaultAliasOnEnterBleedout]]
 | name = [[SFM:Script-DefaultAliasOnEnterBleedout/OnEnterBleedout|OnEnterBleedout]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

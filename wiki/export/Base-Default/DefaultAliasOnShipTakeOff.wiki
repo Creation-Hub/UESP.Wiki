@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnShipTakeOff.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnShipTakeOff.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnShipTakeOff Extends DefaultAliasParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnShipTakeOff Extends DefaultAliasParent Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnShipTakeOff.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnShipTakeOff.psc</code> source file.
 
 <source>
 Sets stage when THIS Alias takes off.
@@ -25,9 +25,12 @@ Sets stage when THIS Alias takes off.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = LocationToCheck_Optional_Properties
 | script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
@@ -45,7 +48,58 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
+| name = [[SFM:Script-DefaultAliasOnShipTakeOff/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
+| name = [[SFM:Script-DefaultAliasOnShipTakeOff/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
+| name = [[SFM:Script-DefaultAliasOnShipTakeOff/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageWhenTakeOffComplete
+| script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
+| name = [[SFM:Script-DefaultAliasOnShipTakeOff/SetStageWhenTakeOffComplete|SetStageWhenTakeOffComplete]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default) stage will be set when take of is complete. If false, stage will be set when take of begins.
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst
 | script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
@@ -73,7 +127,11 @@ These function should usually return the value of the child script's property of
 | returns = bool
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnShipTakeOff
 | script = [[SFM:Script-DefaultAliasOnShipTakeOff|DefaultAliasOnShipTakeOff]]
@@ -81,6 +139,8 @@ These function should usually return the value of the child script's property of
 | kind = Event
 | parameters = bool abComplete
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

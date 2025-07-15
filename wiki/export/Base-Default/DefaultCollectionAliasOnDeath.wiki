@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasOnDeath.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasOnDeath.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasOnDeath Extends DefaultCollectionAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultCollectionAliasOnDeath Extends DefaultCollectionAlias Default
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasOnDeath.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasOnDeath.psc</code> source file.
 
 <source>
 Sets stage when THIS RefCollection's members are killed.
@@ -26,9 +26,12 @@ Sets stage when THIS RefCollection's members are killed.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
@@ -36,7 +39,59 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = UseOnDyingInstead
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/UseOnDyingInstead|UseOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, stage will be set when OnDying() event is sent. If false, stage will be sent with OnDeath() event is sent.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveFromRefCollection
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/RemoveFromRefCollection|RemoveFromRefCollection]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, after executing script functionality, will remove each reference from the collection when it dies.
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShip
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/SQ_PlayerShip|SQ_PlayerShip]]
+| kind = Property
+| flags = Auto Const
+| returns = SQ_PlayerShipScript
+| documentation = autofill (but optional) - used to register for player ship change event
+}}
+
+{{Script_Object_Member_Summary
+| title = CountShipTakeover
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/CountShipTakeover|CountShipTakeover]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = only valid if SQ_PlayerShip is filled in; for spaceships, consider the player taking over a ship as killing it
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
@@ -60,7 +115,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akSenderRef, ObjectReference akKiller
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShipScript.SQ_PlayerShipChanged
+| script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
+| name = [[SFM:Script-DefaultCollectionAliasOnDeath/SQ_PlayerShipScript.SQ_PlayerShipChanged|SQ_PlayerShipScript.SQ_PlayerShipChanged]]
+| kind = Event
+| parameters = SQ_PlayerShipScript akSender, var[] akArgs
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DeathComplete
 | script = [[SFM:Script-DefaultCollectionAliasOnDeath|DefaultCollectionAliasOnDeath]]
@@ -76,6 +143,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = ObjectReference RefCollectionMemberRef, DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

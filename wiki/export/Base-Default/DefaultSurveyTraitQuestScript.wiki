@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultSurveyTraitQuestScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultSurveyTraitQuestScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultSurveyTraitQuestScript Extends Quest Default
@@ -15,7 +15,7 @@ ScriptName DefaultSurveyTraitQuestScript Extends Quest Default
 
 
 == Documentation ==
-The <code>DefaultSurveyTraitQuestScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultSurveyTraitQuestScript.psc</code> source file.
 
 <source>
 default script to set a stage when planet traits are surveyed
@@ -23,9 +23,12 @@ default script to set a stage when planet traits are surveyed
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = PlanetTraitData
 | script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = PlanetTraits
 | script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
@@ -105,7 +112,11 @@ The members that belong to this script, grouped by kind.
 | documentation = optional - stage to set when all planet traits have been surveyed
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
@@ -113,7 +124,27 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_ParentScript.SQ_PlanetTraitDiscovered
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/SQ_ParentScript.SQ_PlanetTraitDiscovered|SQ_ParentScript.SQ_PlanetTraitDiscovered]]
+| kind = Event
+| parameters = SQ_ParentScript akSender, var[] akArgs
+}}
+
+{{Script_Object_Member_Summary
+| title = SQ_ParentScript.SQ_PlanetTraitUpdated
+| script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
+| name = [[SFM:Script-DefaultSurveyTraitQuestScript/SQ_ParentScript.SQ_PlanetTraitUpdated|SQ_ParentScript.SQ_PlanetTraitUpdated]]
+| kind = Event
+| parameters = SQ_ParentScript akSender, var[] akArgs
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = HandlePlanetTraitEvent
 | script = [[SFM:Script-DefaultSurveyTraitQuestScript|DefaultSurveyTraitQuestScript]]
@@ -121,6 +152,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = var[] akArgs, bool isDiscoveredEvent
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

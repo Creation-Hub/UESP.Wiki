@@ -6,7 +6,7 @@
 
 
 == Definition ==
-The <code>Samples\PropertyScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Samples\PropertyScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Samples:PropertyScript Extends Samples:NativeScript
@@ -18,9 +18,12 @@ No documentation comments were provided in the <code>Samples\PropertyScript.psc<
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = PropertyFullRef
 | script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
@@ -83,22 +86,7 @@ The members that belong to this script, grouped by kind.
 | parameters = none
 }}
 
-=== Function ===
-{{Script_Object_Member_Summary
-| title = Get
-| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
-| name = [[SFM:Script-Samples:PropertyScript/Get|Get]]
-| kind = Function
-| returns = bool
-}}
 
-{{Script_Object_Member_Summary
-| title = Set
-| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
-| name = [[SFM:Script-Samples:PropertyScript/Set|Set]]
-| kind = Function
-| parameters = bool value
-}}
 
 
 [[Category:Starfield_Mod-Papyrus]]

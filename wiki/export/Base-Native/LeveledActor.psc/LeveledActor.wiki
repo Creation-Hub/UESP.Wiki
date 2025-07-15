@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>LeveledActor.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>LeveledActor.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName LeveledActor Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>LeveledActor.psc</code> sou
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddForm
 | script = [[SFM:Script-LeveledActor|LeveledActor]]
@@ -40,6 +43,8 @@ The members that belong to this script, grouped by kind.
 | flags = Native
 | documentation = Removes all script added forms from this leveled list
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

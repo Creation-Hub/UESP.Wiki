@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Faction.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Faction.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Faction Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Faction.psc</code> source f
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CanPayCrimeGold
 | script = [[SFM:Script-Faction|Faction]]
@@ -277,6 +280,8 @@ is a neutral instead of an enemy
 | parameters = bool abIsExpelled = true
 | documentation = Sets or clears the expelled flag for this faction on the player
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

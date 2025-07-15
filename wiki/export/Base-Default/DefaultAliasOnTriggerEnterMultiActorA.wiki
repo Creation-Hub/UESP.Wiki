@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnTriggerEnterMultiActorA.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnTriggerEnterMultiActorA.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnTriggerEnterMultiActorA Extends DefaultAliasOnTriggerEnterMultiActor Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnTriggerEnterMultiActorA Extends DefaultAliasOnTriggerEn
 
 
 == Documentation ==
-The <code>DefaultAliasOnTriggerEnterMultiActorA.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnTriggerEnterMultiActorA.psc</code> source file.
 
 <source>
 Default script that sets a stage once all of the specified actors are in a trigger.
@@ -31,6 +31,7 @@ Thanks! :)
 
 == Member ==
 No members were defined in the <code>DefaultAliasOnTriggerEnterMultiActorA.psc</code> source file.
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

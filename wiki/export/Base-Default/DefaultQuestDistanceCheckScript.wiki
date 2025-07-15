@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultQuestDistanceCheckScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultQuestDistanceCheckScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultQuestDistanceCheckScript Extends Quest Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultQuestDistanceCheckScript Extends Quest Const Default
 
 
 == Documentation ==
-The <code>DefaultQuestDistanceCheckScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultQuestDistanceCheckScript.psc</code> source file.
 
 <source>
 Checks alias's distance to player, then sets stage
@@ -23,9 +23,12 @@ Checks alias's distance to player, then sets stage
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = DistanceCheckStage
 | script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = DistanceCheckStages
 | script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
@@ -44,7 +51,11 @@ The members that belong to this script, grouped by kind.
 | documentation = array of stage/distance check data
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
@@ -77,7 +88,11 @@ The members that belong to this script, grouped by kind.
 | documentation = watch for prereq stages to be set, to register for the right event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CheckDistanceStages
 | script = [[SFM:Script-DefaultQuestDistanceCheckScript|DefaultQuestDistanceCheckScript]]
@@ -93,6 +108,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = DistanceCheckStage theDistanceCheck, ObjectReference targetRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

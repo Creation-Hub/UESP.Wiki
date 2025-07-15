@@ -6,7 +6,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnLocationChange.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnLocationChange.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnLocationChange Extends DefaultAliasParent
@@ -14,7 +14,7 @@ ScriptName DefaultAliasOnLocationChange Extends DefaultAliasParent
 
 
 == Documentation ==
-The <code>DefaultAliasOnLocationChange.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnLocationChange.psc</code> source file.
 
 <source>
 Sets stage if a THIS Alias's reference is activated.
@@ -24,9 +24,12 @@ Sets stage if a THIS Alias's reference is activated.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = LocationToCheck_Optional_Properties
 | script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
@@ -44,7 +47,58 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckNewLocation
+| script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
+| name = [[SFM:Script-DefaultAliasOnLocationChange/CheckNewLocation|CheckNewLocation]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true (default), <LocationToCheck> is the New Location. If false, <LocationToCheck> is the Old Location
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst
 | script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
@@ -72,7 +126,11 @@ These function should usually return the value of the child script's property of
 | returns = bool
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLocationChange
 | script = [[SFM:Script-DefaultAliasOnLocationChange|DefaultAliasOnLocationChange]]
@@ -80,6 +138,8 @@ These function should usually return the value of the child script's property of
 | kind = Event
 | parameters = Location akOldLoc, Location akNewLoc
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>OE_AliasOnDistanceLessThan.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>OE_AliasOnDistanceLessThan.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName OE_AliasOnDistanceLessThan Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName OE_AliasOnDistanceLessThan Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>OE_AliasOnDistanceLessThan.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>OE_AliasOnDistanceLessThan.psc</code> source file.
 
 <source>
 Sets a stage when the distance between this an a target alias is less than a target distance.
@@ -23,9 +23,12 @@ Sets a stage when the distance between this an a target alias is less than a tar
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Data
 | script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
@@ -47,12 +50,92 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = TargetAlias
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/TargetAlias|TargetAlias]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ReferenceAlias
+| documentation = The Alias to check versus the Owning Alias
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckPlayer
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/CheckPlayer|CheckPlayer]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = bool
+| documentation = This checks the Player to see if they are
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetDistance
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/TargetDistance|TargetDistance]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = float
+| documentation = The needed distance between this and the target
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSet
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/StageToSet|StageToSet]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+| documentation = Stage to Set
+}}
+
+{{Script_Object_Member_Summary
+| title = PrereqStage
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/PrereqStage|PrereqStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage that must be set for this script's functionality to execute
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
 | name = [[SFM:Script-OE_AliasOnDistanceLessThan/OnAliasInit|OnAliasInit]]
 | kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = Quest.OnStageSet
+| script = [[SFM:Script-OE_AliasOnDistanceLessThan|OE_AliasOnDistanceLessThan]]
+| name = [[SFM:Script-OE_AliasOnDistanceLessThan/Quest.OnStageSet|Quest.OnStageSet]]
+| kind = Event
+| parameters = Quest akSender, int auiStageID, int auiItemID
 }}
 
 {{Script_Object_Member_Summary
@@ -62,6 +145,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

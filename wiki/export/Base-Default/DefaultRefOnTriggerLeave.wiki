@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnTriggerLeave.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnTriggerLeave.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnTriggerLeave Extends DefaultRef Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnTriggerLeave Extends DefaultRef Default
 
 
 == Documentation ==
-The <code>DefaultRefOnTriggerLeave.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnTriggerLeave.psc</code> source file.
 
 <source>
 Sets stage when THIS object's trigger is left.
@@ -25,9 +25,12 @@ Sets stage when THIS object's trigger is left.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
@@ -35,7 +38,27 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = DeleteWhenTriggeredSuccessfully
+| script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
+| name = [[SFM:Script-DefaultRefOnTriggerLeave/DeleteWhenTriggeredSuccessfully|DeleteWhenTriggeredSuccessfully]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), delete THIS object when triggered successfully
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
@@ -51,7 +74,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultRefOnTriggerLeave|DefaultRefOnTriggerLeave]]
@@ -60,6 +87,8 @@ The members that belong to this script, grouped by kind.
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = Reimplementing Parent's empty function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

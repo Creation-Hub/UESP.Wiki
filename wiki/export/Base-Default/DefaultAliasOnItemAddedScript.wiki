@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnItemAddedScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnItemAddedScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnItemAddedScript Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnItemAddedScript Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnItemAddedScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnItemAddedScript.psc</code> source file.
 
 <source>
 Sets quest stage when items are added to this Alias.
@@ -26,9 +26,12 @@ Sets quest stage when items are added to this Alias.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
@@ -36,7 +39,26 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = ItemFilter
+| script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+| name = [[SFM:Script-DefaultAliasOnItemAddedScript/ItemFilter|ItemFilter]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = Form
+| documentation = The item filter defining the items we care about being removed from the container. See "AddInventoryEventFilter" function documentation for details
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
@@ -51,6 +73,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

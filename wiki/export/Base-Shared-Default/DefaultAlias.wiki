@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAlias Extends DefaultAliasParent Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultAlias Extends DefaultAliasParent Hidden
 
 
 == Documentation ==
-The <code>DefaultAlias.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAlias.psc</code> source file.
 
 <source>
 Master script for the DefaultAlias scripts.
@@ -26,9 +26,12 @@ Master script for the DefaultAlias scripts.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = RefToCheck_Optional_Properties
 | script = [[SFM:Script-DefaultAlias|DefaultAlias]]
@@ -46,7 +49,88 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = PlayerOnly
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/PlayerOnly|PlayerOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), <RefToCheck> must be player and all other <RefToCheck> properties will be IGNORED.
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferencesToCheckAgainst
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/ReferencesToCheckAgainst|ReferencesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = ObjectReference[]
+| documentation = <RefToCheck> must be one of these references. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = AliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/AliasesToCheckAgainst|AliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = ReferenceAlias[]
+| documentation = <RefToCheck> must be one in one of these references. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = FactionsToCheckAgainst
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/FactionsToCheckAgainst|FactionsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Faction[]
+| documentation = <RefToCheck> must be in one of these factions. IGNORED if PlayerOnly is true.
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAlias|DefaultAlias]]
+| name = [[SFM:Script-DefaultAlias/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetPlayerOnly
 | script = [[SFM:Script-DefaultAlias|DefaultAlias]]
@@ -114,6 +198,8 @@ These function should usually return the value of the child script's property of
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = OVERRIDE THIS IN CHILD SCRIPT
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

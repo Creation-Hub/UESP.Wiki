@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterQuestRefColIncOnDestroy.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterQuestRefColIncOnDestroy.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterQuestRefColIncOnDestroy Extends RefCollectionAlias Default Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultCounterQuestRefColIncOnDestroy Extends RefCollectionAlias Defa
 
 
 == Documentation ==
-The <code>DefaultCounterQuestRefColIncOnDestroy.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterQuestRefColIncOnDestroy.psc</code> source file.
 
 <source>
 Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuest script.
@@ -23,9 +23,12 @@ Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQues
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
@@ -40,7 +43,82 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = RequiredDestructionStage
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/RequiredDestructionStage|RequiredDestructionStage]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetRemainingCount
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/TargetRemainingCount|TargetRemainingCount]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+| documentation = After incrementing, if there are this many objects left in the collection or fewer, set RemainingStage.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemainingStage
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/RemainingStage|RemainingStage]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+| documentation = After incrementing, if there are TargetRemainingCount objects left in the collection or fewer, set this stage.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckForDestructionStageInstead
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/CheckForDestructionStageInstead|CheckForDestructionStageInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = If true the Increment will happen when this actor recieves the OnDying() event instead, which happens the instant the actor dies, unlike the
+	OnDeath() event which can happen several seconds later.
+}}
+
+{{Script_Object_Member_Summary
+| title = MaintainTargetValue
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/MaintainTargetValue|MaintainTargetValue]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default: FALSE. Before incrementing, always set the counter's Target Value to match the length of this collection.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveWhenDestroyed
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/RemoveWhenDestroyed|RemoveWhenDestroyed]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default: FALSE. After incrementing, remove the alias from the collection. If MaintainTargetValue=TRUE, also decrement the counter by 1. It essentially stays at 0 while the list shrinks.
+}}
+
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
@@ -48,7 +126,24 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnDestructionStageChanged
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy/OnDestructionStageChanged|OnDestructionStageChanged]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, int aiOldStage, int aiCurrentStage
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Increment
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDestroy|DefaultCounterQuestRefColIncOnDestroy]]
@@ -56,6 +151,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = ObjectReference akSenderRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

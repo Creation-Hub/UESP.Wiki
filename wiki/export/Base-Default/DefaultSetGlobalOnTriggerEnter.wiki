@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultSetGlobalOnTriggerEnter.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultSetGlobalOnTriggerEnter.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultSetGlobalOnTriggerEnter Extends ObjectReference Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultSetGlobalOnTriggerEnter Extends ObjectReference Const Default
 
 
 == Documentation ==
-The <code>DefaultSetGlobalOnTriggerEnter.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultSetGlobalOnTriggerEnter.psc</code> source file.
 
 <source>
 Set a global to a specific value when this trigger is entered by the player.
@@ -23,9 +23,12 @@ Set a global to a specific value when this trigger is entered by the player.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = GlobalToSet
 | script = [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
@@ -46,7 +49,11 @@ The members that belong to this script, grouped by kind.
 | documentation = The number we want to set GlobalToSet to.
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTriggerEnter
 | script = [[SFM:Script-DefaultSetGlobalOnTriggerEnter|DefaultSetGlobalOnTriggerEnter]]
@@ -54,6 +61,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akActionRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

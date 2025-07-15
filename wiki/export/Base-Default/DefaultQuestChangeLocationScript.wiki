@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultQuestChangeLocationScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultQuestChangeLocationScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultQuestChangeLocationScript Extends Quest Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultQuestChangeLocationScript Extends Quest Const Default
 
 
 == Documentation ==
-The <code>DefaultQuestChangeLocationScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultQuestChangeLocationScript.psc</code> source file.
 
 <source>
 set a stage when the player enters or exits a location
@@ -23,9 +23,12 @@ set a stage when the player enters or exits a location
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = ChangeLocationStage
 | script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
@@ -33,7 +36,11 @@ The members that belong to this script, grouped by kind.
 | kind = Struct
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = ChangeLocationStages
 | script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
@@ -65,7 +72,11 @@ The members that belong to this script, grouped by kind.
 | documentation = if this is set to a value > -1, ChangeLocationStages will not be checked at all until this stage is set
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
@@ -73,7 +84,27 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = Actor.OnLocationChange
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/Actor.OnLocationChange|Actor.OnLocationChange]]
+| kind = Event
+| parameters = Actor akSender, Location akOldLoc, Location akNewLoc
+}}
+
+{{Script_Object_Member_Summary
+| title = ReferenceAlias.OnLocationChange
+| script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
+| name = [[SFM:Script-DefaultQuestChangeLocationScript/ReferenceAlias.OnLocationChange|ReferenceAlias.OnLocationChange]]
+| kind = Event
+| parameters = ReferenceAlias akSender, Location akOldLoc, Location akNewLoc
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CheckLocationStages
 | script = [[SFM:Script-DefaultQuestChangeLocationScript|DefaultQuestChangeLocationScript]]
@@ -89,6 +120,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = Location targetLocation, ChangeLocationStage changeLocData, Location akOldLoc, Location akNewLoc, bool isPlayerShip
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

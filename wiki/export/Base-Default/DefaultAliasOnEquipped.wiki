@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnEquipped.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnEquipped.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnEquipped Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnEquipped Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnEquipped.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnEquipped.psc</code> source file.
 
 <source>
 Sets quest stage when this reference's is equipped.
@@ -26,9 +26,12 @@ Sets quest stage when this reference's is equipped.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnEquipped
 | script = [[SFM:Script-DefaultAliasOnEquipped|DefaultAliasOnEquipped]]
@@ -36,6 +39,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = Actor akActor
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

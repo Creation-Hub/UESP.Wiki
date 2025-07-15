@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Cell.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Cell.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Cell Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Cell.psc</code> source file
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = EnableFastTravel
 | script = [[SFM:Script-Cell|Cell]]
@@ -122,6 +125,15 @@ The members that belong to this script, grouped by kind.
 }}
 
 {{Script_Object_Member_Summary
+| title = SetFogColor
+| script = [[SFM:Script-Cell|Cell]]
+| name = [[SFM:Script-Cell/SetFogColor|SetFogColor]]
+| kind = Function
+| flags = Native
+| parameters = int aiNearRed, int aiNearGreen, int aiNearBlue, int aiFarRed, int aiFarGreen, int aiFarBlue
+}}
+
+{{Script_Object_Member_Summary
 | title = SetFogPlanes
 | script = [[SFM:Script-Cell|Cell]]
 | name = [[SFM:Script-Cell/SetFogPlanes|SetFogPlanes]]
@@ -170,6 +182,8 @@ The members that belong to this script, grouped by kind.
 | parameters = bool abPublic = true
 | documentation = Sets this cell as public or private
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

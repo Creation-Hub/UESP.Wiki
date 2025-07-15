@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterQuestRefColIncOnDeath.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterQuestRefColIncOnDeath.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterQuestRefColIncOnDeath Extends RefCollectionAlias Default Hidden
@@ -15,7 +15,7 @@ ScriptName DefaultCounterQuestRefColIncOnDeath Extends RefCollectionAlias Defaul
 
 
 == Documentation ==
-The <code>DefaultCounterQuestRefColIncOnDeath.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterQuestRefColIncOnDeath.psc</code> source file.
 
 <source>
 Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQuest script.
@@ -23,9 +23,12 @@ Once this ALIAS dies it increments the counter on its Quest's DefaultCounterQues
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
@@ -33,7 +36,72 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = TargetRemainingCount
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/TargetRemainingCount|TargetRemainingCount]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = After incrementing, if there are this many objects left in the collection or fewer, set RemainingStage.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemainingStage
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/RemainingStage|RemainingStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = After incrementing, if there are TargetRemainingCount objects left in the collection or fewer, set this stage.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckForOnDyingInstead
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/CheckForOnDyingInstead|CheckForOnDyingInstead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = DefaultL FALSE. If true the Increment will happen when this actor recieves the OnDying() event instead, which happens the instant the actor dies, unlike the
+	OnDeath() event which can happen several seconds later.
+}}
+
+{{Script_Object_Member_Summary
+| title = RemoveWhenDead
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/RemoveWhenDead|RemoveWhenDead]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default: FALSE. After incrementing, remove the alias from the collection. If MaintainTargetValue=TRUE, also decrement the counter by 1. It essentially stays at 0 while the list shrinks.
+}}
+
+{{Script_Object_Member_Summary
+| title = MaintainTargetValue
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/MaintainTargetValue|MaintainTargetValue]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default: FALSE. Before incrementing, always set the counter's Target Value to match the length of this collection.
+}}
+
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = WaitingForDeath
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
@@ -41,7 +109,32 @@ The members that belong to this script, grouped by kind.
 | kind = State
 }}
 
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDying
+| script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
+| name = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath/OnDying|OnDying]]
+| kind = Event
+| parameters = ObjectReference akSenderRef, ObjectReference akKiller
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Increment
 | script = [[SFM:Script-DefaultCounterQuestRefColIncOnDeath|DefaultCounterQuestRefColIncOnDeath]]
@@ -49,6 +142,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = ObjectReference akSenderRef
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

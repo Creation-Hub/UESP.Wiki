@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Utility.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Utility.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Utility Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Utility.psc</code> source f
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = CallGlobalFunction
 | script = [[SFM:Script-Utility|Utility]]
@@ -430,6 +433,8 @@ frame capture started at any time
 | parameters = ObjectReference refToCheck01, ObjectReference refToCheck02, ObjectReference refToCheck03 = none, ObjectReference refTocheck04 = none
 | documentation = returns first non-player in list of refs passed in (mainly for use in distance check events)
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

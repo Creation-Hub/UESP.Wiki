@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultTopicInfoModGlobal.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultTopicInfoModGlobal.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultTopicInfoModGlobal Extends TopicInfo Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultTopicInfoModGlobal Extends TopicInfo Const Default
 
 
 == Documentation ==
-The <code>DefaultTopicInfoModGlobal.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultTopicInfoModGlobal.psc</code> source file.
 
 <source>
 Modify a Global by specified amount (default 1). Useful for incrementing or decrementing a Global
@@ -23,9 +23,12 @@ Modify a Global by specified amount (default 1). Useful for incrementing or decr
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Globals
 | script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
@@ -40,7 +43,58 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SetGlobalOnBegin
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/SetGlobalOnBegin|SetGlobalOnBegin]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = Which global to modify when the info starts
+}}
+
+{{Script_Object_Member_Summary
+| title = SetGlobalOnEnd
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/SetGlobalOnEnd|SetGlobalOnEnd]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalVariable
+| documentation = Which global to modify when the info starts
+}}
+
+{{Script_Object_Member_Summary
+| title = OnBeginMod
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/OnBeginMod|OnBeginMod]]
+| kind = Property
+| flags = Const Auto
+| returns = float
+| parameters = 1.0
+| documentation = Default: 1; what value do we modify the global by when the info starts
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEndMod
+| script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
+| name = [[SFM:Script-DefaultTopicInfoModGlobal/OnEndMod|OnEndMod]]
+| kind = Property
+| flags = Const Auto
+| returns = float
+| parameters = 1.0
+| documentation = Default: 1; what value do we modify the global by when the info ends
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnBegin
 | script = [[SFM:Script-DefaultTopicInfoModGlobal|DefaultTopicInfoModGlobal]]
@@ -56,6 +110,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

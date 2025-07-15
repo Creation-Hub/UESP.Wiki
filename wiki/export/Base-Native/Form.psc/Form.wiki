@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Form.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Form.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Form Extends ScriptObject Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Form.psc</code> source file
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetFormID
 | script = [[SFM:Script-Form|Form]]
@@ -113,6 +116,8 @@ Will do nothing on release console builds, and if the Papyrus:bEnableProfiling i
 | documentation = Turns off profiling for this specific object and all scripts attached to it - setting doesn't persist across saves
 Will do nothing on release console builds, and if the Papyrus:bEnableProfiling ini setting is off
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

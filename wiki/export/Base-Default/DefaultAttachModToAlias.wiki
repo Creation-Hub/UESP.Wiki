@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAttachModToAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAttachModToAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAttachModToAlias Extends Quest Default
@@ -15,7 +15,7 @@ ScriptName DefaultAttachModToAlias Extends Quest Default
 
 
 == Documentation ==
-The <code>DefaultAttachModToAlias.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAttachModToAlias.psc</code> source file.
 
 <source>
 Attaches mods to the object of a Reference Alias that will be used for quest reward items.
@@ -23,9 +23,12 @@ Attaches mods to the object of a Reference Alias that will be used for quest rew
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = RewardMods
 | script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
@@ -56,7 +59,11 @@ The members that belong to this script, grouped by kind.
 | documentation = If the reward is in a container's inventory, what is that container
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnQuestInit
 | script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
@@ -64,13 +71,19 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AttachMods
 | script = [[SFM:Script-DefaultAttachModToAlias|DefaultAttachModToAlias]]
 | name = [[SFM:Script-DefaultAttachModToAlias/AttachMods|AttachMods]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

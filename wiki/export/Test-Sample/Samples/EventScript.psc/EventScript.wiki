@@ -1,0 +1,49 @@
+{{Script_Object_Summary
+| title = Samples:EventScript
+| name = [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Samples\EventScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Samples:EventScript
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Samples\EventScript.psc</code> source file.
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Struct ===
+These are the struct members for this script.
+
+{{Script_Object_Member_Summary
+| title = MyEventArgs
+| script = [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+| name = [[SFM:Script-Samples:EventScript/MyEventArgs|MyEventArgs]]
+| kind = Struct
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = Send
+| script = [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+| name = [[SFM:Script-Samples:EventScript/Send|Send]]
+| kind = Function
+}}
+
+
+
+
+[[Category:Starfield_Mod-Papyrus]]

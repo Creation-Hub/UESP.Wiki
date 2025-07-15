@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Keyword.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Keyword.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Keyword Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Keyword.psc</code> source f
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = SendStoryEvent
 | script = [[SFM:Script-Keyword|Keyword]]
@@ -42,6 +45,8 @@ The members that belong to this script, grouped by kind.
 | parameters = Location akLoc = none, ObjectReference akRef1 = none, ObjectReference akRef2 = none, int aiValue1 = 0, int aiValue2 = 0
 | documentation = Sends this keyword as a story event to the story manager and waits for it to be processed. Returns the array of quests that were started if any.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

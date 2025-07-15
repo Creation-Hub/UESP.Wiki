@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnLockStateChanged.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnLockStateChanged.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnLockStateChanged Extends DefaultAliasParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnLockStateChanged Extends DefaultAliasParent Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnLockStateChanged.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnLockStateChanged.psc</code> source file.
 
 <source>
 Sets stage if THIS Alias's lock state changes.
@@ -24,9 +24,12 @@ Sets stage if THIS Alias's lock state changes.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
@@ -34,13 +37,35 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = CheckForUnlock
+| script = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
+| name = [[SFM:Script-DefaultAliasOnLockStateChanged/CheckForUnlock|CheckForUnlock]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), exceute this script if the lock state changes to Unlocked. If false, if the lock state changes to Locked.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLockStateChanged
 | script = [[SFM:Script-DefaultAliasOnLockStateChanged|DefaultAliasOnLockStateChanged]]
 | name = [[SFM:Script-DefaultAliasOnLockStateChanged/OnLockStateChanged|OnLockStateChanged]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

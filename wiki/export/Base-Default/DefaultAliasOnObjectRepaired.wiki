@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnObjectRepaired.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnObjectRepaired.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnObjectRepaired Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnObjectRepaired Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnObjectRepaired.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnObjectRepaired.psc</code> source file.
 
 <source>
 Default script that sets a stage when the alias is repaired.
@@ -30,9 +30,12 @@ Sets stage when THIS Alias is repaired.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnObjectRepaired
 | script = [[SFM:Script-DefaultAliasOnObjectRepaired|DefaultAliasOnObjectRepaired]]
@@ -40,6 +43,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSource
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

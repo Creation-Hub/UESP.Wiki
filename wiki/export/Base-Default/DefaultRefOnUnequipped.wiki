@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnUnequipped.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnUnequipped.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnUnequipped Extends DefaultRef Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnUnequipped Extends DefaultRef Default
 
 
 == Documentation ==
-The <code>DefaultRefOnUnequipped.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnUnequipped.psc</code> source file.
 
 <source>
 Sets quest stage when this reference's is unequipped.
@@ -25,9 +25,12 @@ Sets quest stage when this reference's is unequipped.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnUnequipped
 | script = [[SFM:Script-DefaultRefOnUnequipped|DefaultRefOnUnequipped]]
@@ -35,6 +38,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = Actor akActor
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

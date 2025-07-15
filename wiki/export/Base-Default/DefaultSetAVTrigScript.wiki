@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultSetAVTrigScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultSetAVTrigScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultSetAVTrigScript Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultSetAVTrigScript Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultSetAVTrigScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultSetAVTrigScript.psc</code> source file.
 
 <source>
 Default trigger script that can set the Actor Values (AVs) of one (or a chain of) linked actors when a trigger is entered.
@@ -23,9 +23,12 @@ Default trigger script that can set the Actor Values (AVs) of one (or a chain of
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -47,7 +50,170 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = AV01
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV01|AV01]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = First Actor Value to set.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV01_Value
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV01_Value|AV01_Value]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = float
+| documentation = First Actor Value's new value.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV02
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV02|AV02]]
+| kind = Property
+| flags = Auto Const
+| returns = ActorValue
+| documentation = Second Actor Value to set.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV02_Value
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV02_Value|AV02_Value]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| documentation = Second Actor Value's new value.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV03
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV03|AV03]]
+| kind = Property
+| flags = Auto Const
+| returns = ActorValue
+| documentation = Third Actor Value to set.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV03_Value
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV03_Value|AV03_Value]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| documentation = Third Actor Value's new value.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV04
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV04|AV04]]
+| kind = Property
+| flags = Auto Const
+| returns = ActorValue
+| documentation = Fourth Actor Value to set.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV04_Value
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV04_Value|AV04_Value]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| documentation = Fourth Actor Value's new value.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV05
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV05|AV05]]
+| kind = Property
+| flags = Auto Const
+| returns = ActorValue
+| documentation = Fifth Actor Value to set.
+}}
+
+{{Script_Object_Member_Summary
+| title = AV05_Value
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/AV05_Value|AV05_Value]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| documentation = Fifth Actor Value's new value.
+}}
+
+{{Script_Object_Member_Summary
+| title = OnlyPlayer
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/OnlyPlayer|OnlyPlayer]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default=TRUE. Only accept trigger events from the player?
+}}
+
+{{Script_Object_Member_Summary
+| title = OnlyOnce
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/OnlyOnce|OnlyOnce]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default=TRUE. Only set AVs once? If True, disables and deletes the trigger when done.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkKeyword
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/LinkKeyword|LinkKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Link Keyword for the actor (or chain of actors) whose AVs we're going to set.
+}}
+
+{{Script_Object_Member_Summary
+| title = MaxLinks
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/MaxLinks|MaxLinks]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 25
+| documentation = Maximum number of actors to set AVs on. Acts as a failsafe in case the actors are linked in a loop.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
+| name = [[SFM:Script-DefaultSetAVTrigScript/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTriggerEnter
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -56,7 +222,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = SetActorValues
 | script = [[SFM:Script-DefaultSetAVTrigScript|DefaultSetAVTrigScript]]
@@ -65,6 +235,8 @@ The members that belong to this script, grouped by kind.
 | parameters = Actor akActor
 | documentation = Recursive helper function that sets the AVs for a chain of linked actors.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

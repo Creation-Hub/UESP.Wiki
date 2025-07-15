@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Ingredient.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Ingredient.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Ingredient Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Ingredient.psc</code> sourc
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = IsHostile
 | script = [[SFM:Script-Ingredient|Ingredient]]
@@ -60,6 +63,8 @@ The members that belong to this script, grouped by kind.
 | flags = Native
 | documentation = Flags the all effects as known by the player
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

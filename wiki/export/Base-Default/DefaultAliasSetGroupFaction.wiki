@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasSetGroupFaction.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasSetGroupFaction.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasSetGroupFaction Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasSetGroupFaction Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasSetGroupFaction.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasSetGroupFaction.psc</code> source file.
 
 <source>
 sets a group faction on the aliased actor
@@ -23,9 +23,12 @@ sets a group faction on the aliased actor
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = GroupFaction
 | script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
@@ -36,7 +39,22 @@ The members that belong to this script, grouped by kind.
 | documentation = group faction to set on the aliased actor
 }}
 
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
+| name = [[SFM:Script-DefaultAliasSetGroupFaction/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
+
+
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Debug_Properties
 | script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
@@ -44,7 +62,11 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
@@ -60,13 +82,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akObject, bool abRemove
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = SetGroupFaction
 | script = [[SFM:Script-DefaultAliasSetGroupFaction|DefaultAliasSetGroupFaction]]
 | name = [[SFM:Script-DefaultAliasSetGroupFaction/SetGroupFaction|SetGroupFaction]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

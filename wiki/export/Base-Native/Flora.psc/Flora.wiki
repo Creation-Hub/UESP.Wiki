@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Flora.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Flora.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Flora Extends Activator Native Hidden
@@ -20,6 +20,7 @@ No documentation comments were provided in the <code>Flora.psc</code> source fil
 
 == Member ==
 No members were defined in the <code>Flora.psc</code> source file.
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

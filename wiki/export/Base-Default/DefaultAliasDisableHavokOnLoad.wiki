@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasDisableHavokOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasDisableHavokOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasDisableHavokOnLoad Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasDisableHavokOnLoad Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasDisableHavokOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasDisableHavokOnLoad.psc</code> source file.
 
 <source>
 Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivate(), or OnGrab()
@@ -23,9 +23,12 @@ Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivat
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
@@ -33,7 +36,51 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = HavokOnHit
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/HavokOnHit|HavokOnHit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = Start Havok Sim when hit? DEFAULT: FALSE
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnActivate
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/HavokOnActivate|HavokOnActivate]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = Start Havok Sim when activated? DEFAULT: FALSE
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnZKey
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/HavokOnZKey|HavokOnZKey]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = Start Havok Sim when grabbed by player? DEFAULT: FALSE
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkHavokPartner
+| script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/LinkHavokPartner|LinkHavokPartner]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Link with this keyword and that ref will also sim with myself
+}}
+
 {{Script_Object_Member_Summary
 | title = BeenSimmed
 | script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
@@ -44,7 +91,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Prevent an object that has been havok'd in-game from going static
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
@@ -82,13 +133,19 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = ReleaseToHavok
 | script = [[SFM:Script-DefaultAliasDisableHavokOnLoad|DefaultAliasDisableHavokOnLoad]]
 | name = [[SFM:Script-DefaultAliasDisableHavokOnLoad/ReleaseToHavok|ReleaseToHavok]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

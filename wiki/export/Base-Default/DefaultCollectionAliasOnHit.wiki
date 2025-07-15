@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasOnHit.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasOnHit.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasOnHit Extends DefaultCollectionAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultCollectionAliasOnHit Extends DefaultCollectionAlias Default
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasOnHit.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasOnHit.psc</code> source file.
 
 <source>
 Sets stage when THIS RefCollection's members are hit.
@@ -29,9 +29,12 @@ SEE ALSO DefaultCollectionOnCombatStateChanged which includes the ability to als
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
@@ -39,7 +42,27 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SpellHits_HostileOnly
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/SpellHits_HostileOnly|SpellHits_HostileOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = (Default: true) If true, stage will be set when hits from spells are flagged as "hostile". If false, stage will be set from any kind of spell hit.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
@@ -71,13 +94,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Done
 | script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
 | name = [[SFM:Script-DefaultCollectionAliasOnHit/Done|Done]]
 | kind = State
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

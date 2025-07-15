@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>TerminalMenu.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>TerminalMenu.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName TerminalMenu Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>TerminalMenu.psc</code> sou
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTerminalMenuItemRun
 | script = [[SFM:Script-TerminalMenu|TerminalMenu]]
@@ -40,7 +43,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Event called when this terminal menu is entered, with the specified target
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddDynamicMenuItem
 | script = [[SFM:Script-TerminalMenu|TerminalMenu]]
@@ -90,6 +97,8 @@ The members that belong to this script, grouped by kind.
 | returns = ObjectReference
 | documentation = Get the current terminal reference being used by the player
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

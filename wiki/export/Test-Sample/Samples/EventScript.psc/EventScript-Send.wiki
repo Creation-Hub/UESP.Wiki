@@ -1,9 +1,8 @@
 {{Script_Member_Summary
-| title = Get
-| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
-| name = [[SFM:Script-Samples:PropertyScript/Get|Get]]
+| title = Send
+| script = [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+| name = [[SFM:Script-Samples:EventScript/Send|Send]]
 | kind = Function
-| returns = bool
 }}
 
 

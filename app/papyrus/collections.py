@@ -1,20 +1,14 @@
 from typing import Iterator
-from typing import List
-from typing import Dict
-from typing import Optional
 from app.papyrus.code import Script
 
-
-# Specialized
-#---------------------------------------------
 
 class ScriptDictionary:
     """
     A keyed collection for Script objects.
     """
 
-    def __init__(self):
-        self._scripts:Dict[str, Script] = {}
+    def __init__(self) -> None:
+        self._scripts:dict[str, Script] = {}
 
     def __str__(self) -> str:
         """Gets the string representation of this collection."""
@@ -29,7 +23,7 @@ class ScriptDictionary:
         key:str = self.key(script)
         self._scripts[key] = script
 
-    def get(self, name:str) -> Optional[Script]:
+    def get(self, name:str) -> Script | None:
         """Get a script by name (case-insensitive)"""
         key:str = name.upper()
         return self._scripts.get(key)
@@ -53,11 +47,11 @@ class ScriptDictionary:
         """Iterate over all scripts in this collection."""
         return iter(self._scripts.values())
 
-    def keys(self) -> List[str]:
+    def keys(self) -> list[str]:
         """Return all keys within this collection."""
         return list(self._scripts.keys())
 
-    def values(self) -> List[Script]:
+    def values(self) -> list[Script]:
         """Return all script objects in this collection."""
         return list(self._scripts.values())
 
@@ -65,6 +59,6 @@ class ScriptDictionary:
         """Remove all scripts from this collection."""
         self._scripts.clear()
 
-    def names(self) -> List[str]:
+    def names(self) -> list[str]:
         """Return all script names within this collection."""
         return [str(script.header.name) for script in self._scripts.values()]

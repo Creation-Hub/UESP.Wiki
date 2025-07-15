@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>AffinityEvent.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>AffinityEvent.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName AffinityEvent Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>AffinityEvent.psc</code> so
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Send
 | script = [[SFM:Script-AffinityEvent|AffinityEvent]]
@@ -40,6 +43,8 @@ The members that belong to this script, grouped by kind.
 | flags = Native
 | documentation = Reset the flags and timers on this affinity event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

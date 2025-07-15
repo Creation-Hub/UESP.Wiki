@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>LocationAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>LocationAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName LocationAlias Extends Alias Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>LocationAlias.psc</code> so
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Clear
 | script = [[SFM:Script-LocationAlias|LocationAlias]]
@@ -58,6 +61,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | documentation = kmk - first clears, then refills alias (so alias will be empty if nothing is found by RefillAlias call)
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

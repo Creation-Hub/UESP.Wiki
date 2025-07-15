@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnActivate.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnActivate.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnActivate Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnActivate Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnActivate.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnActivate.psc</code> source file.
 
 <source>
 Sets stage if a THIS Alias's reference is activated.
@@ -26,9 +26,12 @@ Sets stage if a THIS Alias's reference is activated.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
@@ -36,7 +39,59 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = ShouldDisableAfterSuccessfulActivation
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/ShouldDisableAfterSuccessfulActivation|ShouldDisableAfterSuccessfulActivation]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, disable after being successfully activated
+}}
+
+{{Script_Object_Member_Summary
+| title = ShouldHideActivationAfterSuccessfulActivation
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/ShouldHideActivationAfterSuccessfulActivation|ShouldHideActivationAfterSuccessfulActivation]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, hide activation (button prompt) after being successfully activated
+}}
+
+{{Script_Object_Member_Summary
+| title = AllowDuringCombat
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/AllowDuringCombat|AllowDuringCombat]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = Default=true. If true, do not set a stage if the activator is in combat.
+}}
+
+{{Script_Object_Member_Summary
+| title = NotAllowedDuringCombat
+| script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
+| name = [[SFM:Script-DefaultAliasOnActivate/NotAllowedDuringCombat|NotAllowedDuringCombat]]
+| kind = Property
+| flags = Const Auto
+| returns = Message
+| documentation = Message to display if AllowDuringCombat=False, and the player is the activator, and they sit while in combat.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActivate
 | script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
@@ -45,7 +100,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultAliasOnActivate|DefaultAliasOnActivate]]
@@ -55,6 +114,8 @@ The members that belong to this script, grouped by kind.
 | documentation = Reimplementing Parent's empty function
 IMPORTANT: Children need to call this function as well when they override it
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

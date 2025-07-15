@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnCombatStateChangedA.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnCombatStateChangedA.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnCombatStateChangedA Extends DefaultAliasOnCombatStateChanged Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnCombatStateChangedA Extends DefaultAliasOnCombatStateCh
 
 
 == Documentation ==
-The <code>DefaultAliasOnCombatStateChangedA.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnCombatStateChangedA.psc</code> source file.
 
 <source>
 Sets stage when THIS Alias's combat state changes.
@@ -27,6 +27,7 @@ Sets stage when THIS Alias's combat state changes.
 
 == Member ==
 No members were defined in the <code>DefaultAliasOnCombatStateChangedA.psc</code> source file.
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

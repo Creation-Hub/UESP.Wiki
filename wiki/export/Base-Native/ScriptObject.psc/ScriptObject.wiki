@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>ScriptObject.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>ScriptObject.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName ScriptObject Native Hidden
@@ -15,7 +15,7 @@ ScriptName ScriptObject Native Hidden
 
 
 == Documentation ==
-The <code>ScriptObject.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>ScriptObject.psc</code> source file.
 
 <source>
 Base object for every script in the game, even if that script doesn't explicitly extend anything
@@ -23,9 +23,12 @@ Base object for every script in the game, even if that script doesn't explicitly
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddInventoryEventFilter
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
@@ -313,6 +316,42 @@ on the existing event
 and if you register for the two swapped it will simply update the distance. The objects may be reference or reference aliases.
 use a unique aiEventID to specify multiple events per object. Using the same id for multiple register commands will simply update the distance
 on the existing event
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEvent|RegisterForHitEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget, ScriptObject akAggressorFilter = none, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEventAggressorRefArray
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEventAggressorRefArray|RegisterForHitEventAggressorRefArray]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = ScriptObject akTarget, ObjectReference[] akAggressorFilterRefArray, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEventAggressorRefAliasArray
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEventAggressorRefAliasArray|RegisterForHitEventAggressorRefAliasArray]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = ScriptObject akTarget, ReferenceAlias[] akAggressorFilterRefAliasArray, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
+| title = RegisterForHitEventAggressorFactionArray
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/RegisterForHitEventAggressorFactionArray|RegisterForHitEventAggressorFactionArray]]
+| kind = Function
+| flags = Protected SelfOnly
+| parameters = ScriptObject akTarget, Faction[] akAggressorFilterFactionArray, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
 }}
 
 {{Script_Object_Member_Summary
@@ -700,6 +739,15 @@ specify event id to unregister for a specific event, -1 to unregister for all ev
 }}
 
 {{Script_Object_Member_Summary
+| title = UnregisterForHitEvent
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/UnregisterForHitEvent|UnregisterForHitEvent]]
+| kind = Function
+| flags = Native Protected SelfOnly
+| parameters = ScriptObject akTarget, ScriptObject akAggressorFilter = none, Form akSourceFilter = none, Form akProjectileFilter = none, int aiPowerFilter = -1, int aiSneakFilter = -1, int aiBashFilter = -1, int aiBlockFilter = -1, bool abMatch = true
+}}
+
+{{Script_Object_Member_Summary
 | title = UnregisterForLOS
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
 | name = [[SFM:Script-ScriptObject/UnregisterForLOS|UnregisterForLOS]]
@@ -833,7 +881,11 @@ specify event id to unregister for a specific event, -1 to unregister for all ev
 | documentation = Unregisters from receiving GameplayOptionChanged events from the settings menu
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActorValueChanged
 | script = [[SFM:Script-ScriptObject|ScriptObject]]
@@ -948,6 +1000,14 @@ check the event ID to make sure it's the event you're expecting
 | kind = Event
 | parameters = ObjectReference akViewer, ObjectReference akTarget
 | documentation = LOS event, sent whenever the viewer first sees the target (after registering)
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-ScriptObject|ScriptObject]]
+| name = [[SFM:Script-ScriptObject/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
 }}
 
 {{Script_Object_Member_Summary
@@ -1113,6 +1173,8 @@ expires.
 | parameters = GameplayOption[] aChangedOptions
 | documentation = Occurence of a GameplayOptionChanged event from the settings menu
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

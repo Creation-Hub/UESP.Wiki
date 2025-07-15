@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>GlobalVariable.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>GlobalVariable.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName GlobalVariable Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>GlobalVariable.psc</code> s
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetValue
 | script = [[SFM:Script-GlobalVariable|GlobalVariable]]
@@ -61,22 +64,6 @@ The members that belong to this script, grouped by kind.
 }}
 
 {{Script_Object_Member_Summary
-| title = Get
-| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
-| name = [[SFM:Script-GlobalVariable/Get|Get]]
-| kind = Function
-| returns = float
-}}
-
-{{Script_Object_Member_Summary
-| title = Set
-| script = [[SFM:Script-GlobalVariable|GlobalVariable]]
-| name = [[SFM:Script-GlobalVariable/Set|Set]]
-| kind = Function
-| parameters = float afValue
-}}
-
-{{Script_Object_Member_Summary
 | title = Mod
 | script = [[SFM:Script-GlobalVariable|GlobalVariable]]
 | name = [[SFM:Script-GlobalVariable/Mod|Mod]]
@@ -86,7 +73,11 @@ The members that belong to this script, grouped by kind.
 | documentation = the threadsafe way to modify a global variable
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = Value
 | script = [[SFM:Script-GlobalVariable|GlobalVariable]]
@@ -96,6 +87,8 @@ The members that belong to this script, grouped by kind.
 | returns = float
 | documentation = Easy access to the global's value
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

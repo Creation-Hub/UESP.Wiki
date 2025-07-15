@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DebugStopAllScenesQuestScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DebugStopAllScenesQuestScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DebugStopAllScenesQuestScript Extends Quest Const Default
@@ -15,7 +15,7 @@ ScriptName DebugStopAllScenesQuestScript Extends Quest Const Default
 
 
 == Documentation ==
-The <code>DebugStopAllScenesQuestScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DebugStopAllScenesQuestScript.psc</code> source file.
 
 <source>
 Stops all current scenes for specified aliases
@@ -23,9 +23,12 @@ Stops all current scenes for specified aliases
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = Aliases
 | script = [[SFM:Script-DebugStopAllScenesQuestScript|DebugStopAllScenesQuestScript]]
@@ -35,13 +38,19 @@ The members that belong to this script, grouped by kind.
 | returns = ReferenceAlias[]
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = StopAllScenes
 | script = [[SFM:Script-DebugStopAllScenesQuestScript|DebugStopAllScenesQuestScript]]
 | name = [[SFM:Script-DebugStopAllScenesQuestScript/StopAllScenes|StopAllScenes]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

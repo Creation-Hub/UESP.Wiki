@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>defaultQuestRespawnScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>defaultQuestRespawnScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName defaultQuestRespawnScript Extends Quest Default Hidden
@@ -15,7 +15,7 @@ ScriptName defaultQuestRespawnScript Extends Quest Default Hidden
 
 
 == Documentation ==
-The <code>defaultQuestRespawnScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>defaultQuestRespawnScript.psc</code> source file.
 
 <source>
 Simple script to respawn Aliases that have the DefaultAliasRespawnScript on them.
@@ -23,9 +23,12 @@ Simple script to respawn Aliases that have the DefaultAliasRespawnScript on them
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Respawn_Markers
 | script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
@@ -54,7 +57,111 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = RespawnMarkers
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnMarkers|RespawnMarkers]]
+| kind = Property
+| flags = Auto Const
+| returns = ObjectReference[]
+| documentation = array of respawn markers - actors will randomly respawn at these out of player's LOS
+}}
+
+{{Script_Object_Member_Summary
+| title = RespawnMarkerFailsafe
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnMarkerFailsafe|RespawnMarkerFailsafe]]
+| kind = Property
+| flags = Auto Const
+| returns = ObjectReference
+| documentation = this is where I will respawn if player has LOS
+	on other respawn points
+}}
+
+{{Script_Object_Member_Summary
+| title = StartStage
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/StartStage|StartStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 0
+| documentation = Quest stage that needs to be set for respawning
+	to start
+}}
+
+{{Script_Object_Member_Summary
+| title = DoneStage
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/DoneStage|DoneStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 0
+| documentation = Respawning will stop if this stage is set
+}}
+
+{{Script_Object_Member_Summary
+| title = RespawnTimeMin
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnTimeMin|RespawnTimeMin]]
+| kind = Property
+| flags = Auto
+| returns = int
+| parameters = 5
+| documentation = min time between death and respawn in seconds
+}}
+
+{{Script_Object_Member_Summary
+| title = RespawnTimeMax
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnTimeMax|RespawnTimeMax]]
+| kind = Property
+| flags = Auto
+| returns = int
+| parameters = 10
+| documentation = max time between death and respawn in seconds
+}}
+
+{{Script_Object_Member_Summary
+| title = RespawnPool
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/RespawnPool|RespawnPool]]
+| kind = Property
+| flags = Auto
+| returns = int
+| parameters = 0
+| documentation = how many NPCs can be respawned?
+	0 = infinite
+}}
+
+{{Script_Object_Member_Summary
+| title = MinRespawnDistance
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/MinRespawnDistance|MinRespawnDistance]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 512
+| documentation = if the player is within this distance of a respawn point, don't use it
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
+| name = [[SFM:Script-defaultQuestRespawnScript/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default = FALSE, Set to TRUE if you want the traces in this script to show up in the log.
+}}
+
 {{Script_Object_Member_Summary
 | title = RespawnCount
 | script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
@@ -65,7 +172,11 @@ The members that belong to this script, grouped by kind.
 | parameters = 0
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Respawn
 | script = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]]
@@ -121,6 +232,8 @@ if valid, increments respawn counter and waits random time before returning
 | kind = Function
 | returns = ObjectReference
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

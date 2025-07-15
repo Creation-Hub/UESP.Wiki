@@ -4,5 +4,9 @@
 		"editor.detectIndentation": false,
 		"editor.insertSpaces": true,
 		"editor.tabSize": 4
-	}
+	},
+	"[papyrus]": {
+		"editor.detectIndentation": false,
+		"editor.insertSpaces": false
+	},
 }

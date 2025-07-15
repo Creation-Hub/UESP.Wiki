@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnShipGravJump.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnShipGravJump.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnShipGravJump Extends DefaultAliasParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnShipGravJump Extends DefaultAliasParent Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnShipGravJump.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnShipGravJump.psc</code> source file.
 
 <source>
 Sets stage when THIS Alias Grav Jumps.
@@ -25,9 +25,12 @@ Sets stage when THIS Alias Grav Jumps.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = LocationToCheck_Optional_Properties
 | script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
@@ -45,7 +48,80 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = LocationsToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationsToCheckAgainst|LocationsToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = Location[]
+| documentation = <LocationToCheck> must be one of these references
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationAliasesToCheckAgainst
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationAliasesToCheckAgainst|LocationAliasesToCheckAgainst]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias[]
+| documentation = <LocationToCheck> must be in one of these location aliases
+}}
+
+{{Script_Object_Member_Summary
+| title = LocationMatchIfChild
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/LocationMatchIfChild|LocationMatchIfChild]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, <LocationToCheck> may be a child of locations in LocationsToCheck or LocationAliasesToCheck
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageWhenJumpingComplete
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/SetStageWhenJumpingComplete|SetStageWhenJumpingComplete]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default) stage will be set when Jump is complete; if false, stage will be set when jump begins.
+}}
+
+{{Script_Object_Member_Summary
+| title = SetStageIfJumpingFails
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/SetStageIfJumpingFails|SetStageIfJumpingFails]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) if true, stage will be set if Jump fails; if false, stage will be set if Jump does not fail.
+}}
+
+{{Script_Object_Member_Summary
+| title = CheckDestinationLocation
+| script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
+| name = [[SFM:Script-DefaultAliasOnShipGravJump/CheckDestinationLocation|CheckDestinationLocation]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true (default), <LocationToCheck> is the destination Location. If false, <LocationToCheck> is the starting location
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetLocationsToCheckAgainst
 | script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
@@ -73,7 +149,11 @@ These function should usually return the value of the child script's property of
 | returns = bool
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnShipGravJump
 | script = [[SFM:Script-DefaultAliasOnShipGravJump|DefaultAliasOnShipGravJump]]
@@ -82,6 +162,8 @@ These function should usually return the value of the child script's property of
 | parameters = Location aDestination, int aState
 | documentation = Event received when a ship grav jump event occurs - State { Initiated = 0, AnimStarted = 1, Completed = 2, Failed = 3 }
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

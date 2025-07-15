@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultMoveToEditorLocationOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultMoveToEditorLocationOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultMoveToEditorLocationOnLoad Extends ObjectReference Const Default
@@ -15,7 +15,7 @@ ScriptName DefaultMoveToEditorLocationOnLoad Extends ObjectReference Const Defau
 
 
 == Documentation ==
-The <code>DefaultMoveToEditorLocationOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultMoveToEditorLocationOnLoad.psc</code> source file.
 
 <source>
 Script that will move this reference to it's editor location any time it loads.
@@ -23,15 +23,20 @@ Script that will move this reference to it's editor location any time it loads.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnLoad
 | script = [[SFM:Script-DefaultMoveToEditorLocationOnLoad|DefaultMoveToEditorLocationOnLoad]]
 | name = [[SFM:Script-DefaultMoveToEditorLocationOnLoad/OnLoad|OnLoad]]
 | kind = Event
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

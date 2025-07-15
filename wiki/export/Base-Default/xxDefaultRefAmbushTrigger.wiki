@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>xxDefaultRefAmbushTrigger.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>xxDefaultRefAmbushTrigger.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName xxDefaultRefAmbushTrigger Extends ObjectReference Const Default
@@ -15,7 +15,7 @@ ScriptName xxDefaultRefAmbushTrigger Extends ObjectReference Const Default
 
 
 == Documentation ==
-The <code>xxDefaultRefAmbushTrigger.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>xxDefaultRefAmbushTrigger.psc</code> source file.
 
 <source>
 set the AmbushTriggered actor value on this ref when player enters
@@ -23,9 +23,12 @@ set the AmbushTriggered actor value on this ref when player enters
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
@@ -40,7 +43,48 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = AmbushTriggered
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/AmbushTriggered|AmbushTriggered]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkAmbushTrigger
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/LinkAmbushTrigger|LinkAmbushTrigger]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerIfAnyLinkedActorEntersCombat
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerIfAnyLinkedActorEntersCombat|TriggerIfAnyLinkedActorEntersCombat]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = TRUE = any linked actor that enters combat sets AmbushTriggered to 1
+	  FALSE = only set AmbushTrigger to 1 if player enters me
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnCellLoad
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
@@ -56,13 +100,29 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+{{Script_Object_Member_Summary
+| title = Actor.OnCombatStateChanged
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Actor.OnCombatStateChanged|Actor.OnCombatStateChanged]]
+| kind = Event
+| parameters = Actor akSource, ObjectReference akTarget, int aeCombatState
+| documentation = This was causing part of GEN-296983 "AI: Ambush procedure seems to be able to be overriden by ally going into combat"
+Adding this back in, only to trigger on combat, should only apply to actors linked to this ref.
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = TriggerAmbush
 | script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
 | name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerAmbush|TriggerAmbush]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCounterAliasIncOnceOnActivateB.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCounterAliasIncOnceOnActivateB.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCounterAliasIncOnceOnActivateB Extends DefaultCounterQuestIncOnceOnActivate Default
@@ -15,7 +15,7 @@ ScriptName DefaultCounterAliasIncOnceOnActivateB Extends DefaultCounterQuestIncO
 
 
 == Documentation ==
-The <code>DefaultCounterAliasIncOnceOnActivateB.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCounterAliasIncOnceOnActivateB.psc</code> source file.
 
 <source>
 Once this ALIAS is activated (by the PLAYER) it increments the counter on its Quest's DefaultCounterQuestB script
@@ -23,15 +23,20 @@ Once this ALIAS is activated (by the PLAYER) it increments the counter on its Qu
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Increment
 | script = [[SFM:Script-DefaultCounterAliasIncOnceOnActivateB|DefaultCounterAliasIncOnceOnActivateB]]
 | name = [[SFM:Script-DefaultCounterAliasIncOnceOnActivateB/Increment|Increment]]
 | kind = Function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

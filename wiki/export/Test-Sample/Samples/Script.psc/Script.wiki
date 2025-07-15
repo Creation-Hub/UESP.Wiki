@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Samples\Script.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Samples\Script.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Samples:Script Extends Samples:NativeScript Conditional Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Samples\Script.psc</code> s
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = ItemData
 | script = [[SFM:Script-Samples:Script|Samples:Script]]
@@ -30,7 +33,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Custom structure definition
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = Description
 | script = [[SFM:Script-Samples:Script|Samples:Script]]
@@ -71,7 +78,11 @@ The members that belong to this script, grouped by kind.
 | returns = ItemData[]
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-Samples:Script|Samples:Script]]
@@ -96,7 +107,27 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+{{Script_Object_Member_Summary
+| title = OnBeginState
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnBeginState|OnBeginState]]
+| kind = Event
+| parameters = string asOldState
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEndState
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnEndState|OnEndState]]
+| kind = Event
+| parameters = string asNewState
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddItems
 | script = [[SFM:Script-Samples:Script|Samples:Script]]
@@ -118,7 +149,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Global function
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Active
 | script = [[SFM:Script-Samples:Script|Samples:Script]]
@@ -133,6 +168,8 @@ The members that belong to this script, grouped by kind.
 | name = [[SFM:Script-Samples:Script/Inactive|Inactive]]
 | kind = State
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

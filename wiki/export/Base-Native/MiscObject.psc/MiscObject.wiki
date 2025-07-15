@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>MiscObject.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>MiscObject.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName MiscObject Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>MiscObject.psc</code> sourc
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetObjectResourceCount
 | script = [[SFM:Script-MiscObject|MiscObject]]
@@ -32,6 +35,8 @@ The members that belong to this script, grouped by kind.
 | parameters = Resource akResource
 | documentation = Returns the number of the given resource this form has.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

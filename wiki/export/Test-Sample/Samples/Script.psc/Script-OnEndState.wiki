@@ -1,9 +1,9 @@
 {{Script_Member_Summary
-| title = Set
-| script = [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
-| name = [[SFM:Script-Samples:PropertyScript/Set|Set]]
-| kind = Function
-| parameters = bool value
+| title = OnEndState
+| script = [[SFM:Script-Samples:Script|Samples:Script]]
+| name = [[SFM:Script-Samples:Script/OnEndState|OnEndState]]
+| kind = Event
+| parameters = string asNewState
 }}
 
 
@@ -14,7 +14,7 @@ No documentation comments were provided for this member.
 == Parameters ==
 The parameters that belong to this script.
 
-* bool value
+* string asNewState
 
 
 [[Category:Starfield_Mod-Papyrus]]

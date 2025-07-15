@@ -1,19 +1,31 @@
 import logging
+from logging import Formatter, Logger
+from logging import FileHandler, StreamHandler
+from typing import TextIO
 
-def configure():
+
+DATE_FORMAT:str = "%Y-%m-%d %H:%M:%S"
+"""The date format for log messages."""
+
+
+def configure() -> None:
+    """
+    Configure the logging system with both console and file handlers.
+    """
     # Create root logger
-    logger = logging.getLogger()
+    logger:Logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
     # Log File handler
-    file_handler = logging.FileHandler("app.log", mode='w')
-    file_handler.setFormatter(formatter)
+    file_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(module)s:%(funcName)s - %(message)s', datefmt=DATE_FORMAT)
+    file_handler:FileHandler = FileHandler("app.log", mode='w')
+    file_handler.setFormatter(file_formatter)
     file_handler.setLevel(logging.DEBUG)
     logger.addHandler(file_handler)
 
     # Console Stream handler
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
+    console_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt=DATE_FORMAT)
+    console_handler:StreamHandler[TextIO] = StreamHandler()
+    console_handler.setFormatter(console_formatter)
     console_handler.setLevel(logging.INFO)
     logger.addHandler(console_handler)

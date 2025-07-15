@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Perk.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Perk.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Perk Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Perk.psc</code> source file
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnEntryRun
 | script = [[SFM:Script-Perk|Perk]]
@@ -30,6 +33,8 @@ The members that belong to this script, grouped by kind.
 | parameters = int auiEntryID, ObjectReference akTarget, Actor akOwner
 | documentation = Event called when a perk entry is run, with the specified target and perk owner (in parallel with the fragment)
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

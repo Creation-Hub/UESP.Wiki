@@ -1,11 +1,12 @@
 import os
-import argparse
+from argparse import ArgumentParser, Namespace
 
-def arguments():
+
+def arguments() -> Namespace:
     """
-    Parses command line arguments to for this application.
+    Parses the command line arguments for this application.
     """
-    argument_parser = argparse.ArgumentParser(description="UESP Wiki Generator")
+    argument_parser = ArgumentParser(description="UESP Wiki Generator")
     argument_parser.add_argument(
         "--settings",
         type=str,

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultPlayAnimationOnLoadScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultPlayAnimationOnLoadScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultPlayAnimationOnLoadScript Extends ObjectReference Default
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>DefaultPlayAnimationOnLoadS
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = AnimationToPlay
 | script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
@@ -41,7 +44,11 @@ The members that belong to this script, grouped by kind.
 | parameters = false
 }}
 
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = PlayAnim
 | script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
@@ -55,6 +62,20 @@ The members that belong to this script, grouped by kind.
 | name = [[SFM:Script-DefaultPlayAnimationOnLoadScript/Done|Done]]
 | kind = State
 }}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultPlayAnimationOnLoadScript|DefaultPlayAnimationOnLoadScript]]
+| name = [[SFM:Script-DefaultPlayAnimationOnLoadScript/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

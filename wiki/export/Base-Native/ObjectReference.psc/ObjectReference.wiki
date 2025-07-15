@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>ObjectReference.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>ObjectReference.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName ObjectReference Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>ObjectReference.psc</code> 
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = GetCurrentShipRef
 | script = [[SFM:Script-ObjectReference|ObjectReference]]
@@ -97,14 +100,6 @@ kkuhlmann:
 | parameters = ObjectReference akTarget, float afXOffset = 0.0, float afYOffset = 0.0, float afZOffset = 0.0
 | documentation = DEPRECATED: DO NOT USE. Calls MoveTo if both the calling ObjectReference and the akTarget ObjectReference have current locations that are not loaded.
 jduvall:
-}}
-
-{{Script_Object_Member_Summary
-| title = Get
-| script = [[SFM:Script-ObjectReference|ObjectReference]]
-| name = [[SFM:Script-ObjectReference/Get|Get]]
-| kind = Function
-| returns = float
 }}
 
 {{Script_Object_Member_Summary
@@ -3427,7 +3422,11 @@ facingVal, default=0
 
 }}
 
+
+
 === Property ===
+These are the property members for this script.
+
 {{Script_Object_Member_Summary
 | title = X
 | script = [[SFM:Script-ObjectReference|ObjectReference]]
@@ -3977,7 +3976,11 @@ facingVal, default=0
 | parameters = 2
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnActivate
 | script = [[SFM:Script-ObjectReference|ObjectReference]]
@@ -4282,6 +4285,14 @@ will point at it - otherwise the parameter will be None. For valid Transfer Reas
 }}
 
 {{Script_Object_Member_Summary
+| title = OnTrapHitStart
+| script = [[SFM:Script-ObjectReference|ObjectReference]]
+| name = [[SFM:Script-ObjectReference/OnTrapHitStart|OnTrapHitStart]]
+| kind = Event
+| parameters = ObjectReference akTarget, float afXVel, float afYVel, float afZVel, float afXPos, float afYPos, float afZPos, int aeMaterial, bool abInitialHit, int aeMotionType
+}}
+
+{{Script_Object_Member_Summary
 | title = OnTrapHitStop
 | script = [[SFM:Script-ObjectReference|ObjectReference]]
 | name = [[SFM:Script-ObjectReference/OnTrapHitStop|OnTrapHitStop]]
@@ -4447,6 +4458,8 @@ will point at it - otherwise the parameter will be None. For valid Transfer Reas
 | parameters = ObjectReference akOldTarget, ObjectReference akNewTarget
 | documentation = Event that is triggered when the target for a cargo link on workshop item changes.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

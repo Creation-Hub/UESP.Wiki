@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>InputEnableLayer.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>InputEnableLayer.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName InputEnableLayer Extends ScriptObject Native Hidden
@@ -15,7 +15,7 @@ ScriptName InputEnableLayer Extends ScriptObject Native Hidden
 
 
 == Documentation ==
-The <code>InputEnableLayer.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>InputEnableLayer.psc</code> source file.
 
 <source>
 This is a single layer of input enable/disable. The end result of all layers in the game
@@ -24,9 +24,12 @@ determine the actual state of the player's controls.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Create
 | script = [[SFM:Script-InputEnableLayer|InputEnableLayer]]
@@ -497,6 +500,8 @@ keeping it alive).
 | flags = Native
 | documentation = Re-enables all controls currently disabled on this layer
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

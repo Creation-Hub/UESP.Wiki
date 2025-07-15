@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>InstanceNamingRules.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>InstanceNamingRules.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName InstanceNamingRules Extends Form Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>InstanceNamingRules.psc</co
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = MergeWith
 | script = [[SFM:Script-InstanceNamingRules|InstanceNamingRules]]
@@ -30,6 +33,8 @@ The members that belong to this script, grouped by kind.
 | flags = Native
 | parameters = InstanceNamingRules aSource
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

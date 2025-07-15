@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>SpaceshipReference.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>SpaceshipReference.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName SpaceshipReference Extends ObjectReference Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>SpaceshipReference.psc</cod
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddPerk
 | script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
@@ -1015,7 +1018,11 @@ Sets the ship's exterior load door(s) inaccessible.
 Are there any actors on the ship's exterior landing deck? (That is, any actors in the trigger encompassing the landing deck and ramp?) (Checks the state of the first deck found, if there are multiple.)
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnCombatStateChanged
 | script = [[SFM:Script-SpaceshipReference|SpaceshipReference]]
@@ -1237,6 +1244,8 @@ State is as follows:
 | kind = Event
 | documentation = Event this is triggered when a ship is sold
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

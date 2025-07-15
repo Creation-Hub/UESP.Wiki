@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnTriggerEnter.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnTriggerEnter.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnTriggerEnter Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnTriggerEnter Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnTriggerEnter.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnTriggerEnter.psc</code> source file.
 
 <source>
 Sets stage when THIS Alias entered.
@@ -26,9 +26,12 @@ Sets stage when THIS Alias entered.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
@@ -36,7 +39,27 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = DeleteWhenTriggeredSuccessfully
+| script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter/DeleteWhenTriggeredSuccessfully|DeleteWhenTriggeredSuccessfully]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), delete THIS object when triggered successfully
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
@@ -52,7 +75,19 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+{{Script_Object_Member_Summary
+| title = Quest.OnStageSet
+| script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
+| name = [[SFM:Script-DefaultAliasOnTriggerEnter/Quest.OnStageSet|Quest.OnStageSet]]
+| kind = Event
+| parameters = Quest akSource, int auiStageID, int auiItemID
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultAliasOnTriggerEnter|DefaultAliasOnTriggerEnter]]
@@ -62,6 +97,8 @@ The members that belong to this script, grouped by kind.
 | documentation = Reimplementing Parent's empty function
 CHILDREN SCRIPTS RE-IMPLEMENTING THIS SHOULD CALL THE PARENT VERSION
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

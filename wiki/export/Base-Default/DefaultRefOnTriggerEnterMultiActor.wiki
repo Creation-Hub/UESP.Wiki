@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnTriggerEnterMultiActor.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnTriggerEnterMultiActor.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnTriggerEnterMultiActor Extends DefaultOnEnterMultiActor Conditional Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnTriggerEnterMultiActor Extends DefaultOnEnterMultiActor C
 
 
 == Documentation ==
-The <code>DefaultRefOnTriggerEnterMultiActor.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnTriggerEnterMultiActor.psc</code> source file.
 
 <source>
 sets a quest stage when the specified multiple actors enter a trigger
@@ -30,9 +30,12 @@ Thanks! :)
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
@@ -47,7 +50,81 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = QuestToSet
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/QuestToSet|QuestToSet]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Quest
+| documentation = Quest containing the Stage to set
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSet
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/StageToSet|StageToSet]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+| documentation = Stage to Set
+}}
+
+{{Script_Object_Member_Summary
+| title = PrereqStage
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/PrereqStage|PrereqStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage that must be set for this script's functionality to execute
+}}
+
+{{Script_Object_Member_Summary
+| title = TurnOffStage
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/TurnOffStage|TurnOffStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = If stage >= TurnOffStage, this script's functionality is ignored
+}}
+
+{{Script_Object_Member_Summary
+| title = TurnOffStageDone
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/TurnOffStageDone|TurnOffStageDone]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = If this stage is specfically done, this script's functionality is ignored
+}}
+
+{{Script_Object_Member_Summary
+| title = DeleteWhenDone
+| script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
+| name = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor/DeleteWhenDone|DeleteWhenDone]]
+| kind = Property
+| flags = Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default) will delete itself triggered.
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = TryToSetStage
 | script = [[SFM:Script-DefaultRefOnTriggerEnterMultiActor|DefaultRefOnTriggerEnterMultiActor]]
@@ -64,6 +141,8 @@ The members that belong to this script, grouped by kind.
 | documentation = what happens when all my targets are in the trigger?
 override on subclass to change behavior
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

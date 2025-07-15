@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>Math.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>Math.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName Math Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>Math.psc</code> source file
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = Abs
 | script = [[SFM:Script-Math|Math]]
@@ -302,6 +305,8 @@ ExtractDigit(567, 999, 0) == 0
 | parameters = float afDays
 | documentation = return a number of Seconds for a number of days - useful for doing math with GameDaysPassed, etc.
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

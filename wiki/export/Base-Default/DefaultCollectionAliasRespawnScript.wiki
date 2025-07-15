@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultCollectionAliasRespawnScript.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultCollectionAliasRespawnScript.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultCollectionAliasRespawnScript Extends RefCollectionAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultCollectionAliasRespawnScript Extends RefCollectionAlias Defaul
 
 
 == Documentation ==
-The <code>DefaultCollectionAliasRespawnScript.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultCollectionAliasRespawnScript.psc</code> source file.
 
 <source>
 Script for respawning this collection alias.  For use along with a quest that has the DefaultQuestRespawnScript attached to it.
@@ -23,9 +23,12 @@ Script for respawning this collection alias.  For use along with a quest that ha
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Optional_Properties
 | script = [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
@@ -33,7 +36,28 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = RespawningOn
+| script = [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
+| name = [[SFM:Script-DefaultCollectionAliasRespawnScript/RespawningOn|RespawningOn]]
+| kind = Property
+| flags = Auto
+| returns = bool
+| parameters = true
+| documentation = Set to false to stop this alias from auto-respawning when it dies
+	defaults to TRUE
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnDeath
 | script = [[SFM:Script-DefaultCollectionAliasRespawnScript|DefaultCollectionAliasRespawnScript]]
@@ -41,6 +65,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = ObjectReference akSenderRef, ObjectReference akKiller
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,9 +7,9 @@ This page lists all Papyrus project information for each import.
 * Scripts: 101
 
 ==== Member Statistics ====
-This project overall contains 2150 total members spread over 101 scripts.
-* Function was used 1409 times.
-* Event was used 670 times.
+This project overall contains 2156 total members spread over 101 scripts.
+* Function was used 1412 times.
+* Event was used 673 times.
 * Property was used 68 times.
 * Struct was used 3 times.
 
@@ -130,10 +130,10 @@ There are 101 scripts that belong to this project:
 * Scripts: 11
 
 ==== Member Statistics ====
-This project overall contains 141 total members spread over 11 scripts.
+This project overall contains 237 total members spread over 11 scripts.
 * Group was used 44 times.
+* Property was used 100 times.
 * Function was used 80 times.
-* Property was used 4 times.
 * Event was used 5 times.
 * State was used 8 times.
 
@@ -164,11 +164,11 @@ There are 11 scripts that belong to this project:
 * Scripts: 208
 
 ==== Member Statistics ====
-This project overall contains 761 total members spread over 208 scripts.
-* Property was used 83 times.
+This project overall contains 1255 total members spread over 208 scripts.
+* Property was used 520 times.
 * Function was used 195 times.
 * Group was used 191 times.
-* Event was used 220 times.
+* Event was used 277 times.
 * State was used 54 times.
 * Struct was used 18 times.
 
@@ -393,46 +393,34 @@ There are 208 scripts that belong to this project:
 
 == Test-Sample ==
 * Imports: 1 (Base-Native)
-* Scripts: 6
+* Scripts: 10
 
 ==== Member Statistics ====
-This project overall contains 26 total members spread over 6 scripts.
-* Function was used 6 times.
-* Event was used 5 times.
-* Property was used 11 times.
-* Struct was used 2 times.
+This project overall contains 36 total members spread over 10 scripts.
+* Struct was used 3 times.
+* Function was used 9 times.
+* Property was used 14 times.
+* Event was used 8 times.
 * State was used 2 times.
 
 ==== Inheritance Statistics ====
 The most common extended parent scripts:
-* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 3 times.
+* The [[SFM:Script-ScriptObject|ScriptObject]] script was extended 5 times.
+* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 3 times.
 * The [[SFM:Script-Samples:NativeScript|Samples:NativeScript]] script was extended 2 times.
-* The [[SFM:Script-ObjectReference|ObjectReference]] script was extended 1 times.
 
 
 ==== Scripts ====
-There are 6 scripts that belong to this project:
+There are 10 scripts that belong to this project:
+* [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+* [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
 * [[SFM:Script-Samples:NativeScript|Samples:NativeScript]]
 * [[SFM:Script-Samples:PropertyScript|Samples:PropertyScript]]
 * [[SFM:Script-Samples:Script|Samples:Script]]
 * [[SFM:Script-Samples:StructureScript|Samples:StructureScript]]
+* [[SFM:Script-Tests:Comments|Tests:Comments]]
 * [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+* [[SFM:Script-Tests:LineContinuation|Tests:LineContinuation]]
 * [[SFM:Script-Tests:A:B:C:Script|Tests:A:B:C:Script]]
-
-
-== Cassiopeia ==
-* Imports: 1 (Base-Native)
-* Scripts: 0
-
-==== Member Statistics ====
-There are no scripts defined in this project, so no member statistics can be provided.
-
-==== Inheritance Statistics ====
-There are no scripts defined in this project, so no inheritance statistics can be provided.
-
-
-==== Scripts ====
-There are no scripts defined in this project.
-
 
 

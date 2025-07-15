@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>RefCollectionAlias.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>RefCollectionAlias.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName RefCollectionAlias Extends Alias Native Hidden
@@ -19,9 +19,12 @@ No documentation comments were provided in the <code>RefCollectionAlias.psc</cod
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = AddToFaction
 | script = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]]
@@ -482,7 +485,11 @@ If wrapLinks == true : this will not be limited by the link target, but will wra
 | documentation = Takes the specific ref out of the collection
 }}
 
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasChanged
 | script = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]]
@@ -1788,6 +1795,8 @@ aeAcquireType is one of the following:
 | parameters = ObjectReference akSenderRef, Location aPlanet, ObjectReference[] aMarkersArray
 | documentation = Event that is triggered when the player scans a planet with this spaceship
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

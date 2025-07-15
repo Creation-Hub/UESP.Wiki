@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnBecomePlayerShip.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnBecomePlayerShip.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnBecomePlayerShip Extends DefaultAliasParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnBecomePlayerShip Extends DefaultAliasParent Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnBecomePlayerShip.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnBecomePlayerShip.psc</code> source file.
 
 <source>
 sets stage and removes factions from this alias's ship when it becomes the current player ship (i.e. player sits in the pilot seat)
@@ -24,9 +24,12 @@ sets stage and removes factions from this alias's ship when it becomes the curre
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
@@ -34,7 +37,36 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShip
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/SQ_PlayerShip|SQ_PlayerShip]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = SQ_PlayerShipScript
+| documentation = autofill - used to register for player ship change event
+}}
+
+{{Script_Object_Member_Summary
+| title = FactionsToRemove
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/FactionsToRemove|FactionsToRemove]]
+| kind = Property
+| flags = Auto Const
+| returns = Faction[]
+| documentation = factions to remove when this ship becomes the player ship
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnAliasInit
 | script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
@@ -42,7 +74,19 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+{{Script_Object_Member_Summary
+| title = SQ_PlayerShipScript.SQ_PlayerShipChanged
+| script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
+| name = [[SFM:Script-DefaultAliasOnBecomePlayerShip/SQ_PlayerShipScript.SQ_PlayerShipChanged|SQ_PlayerShipScript.SQ_PlayerShipChanged]]
+| kind = Event
+| parameters = SQ_PlayerShipScript akSender, var[] akArgs
+}}
+
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultAliasOnBecomePlayerShip|DefaultAliasOnBecomePlayerShip]]
@@ -51,6 +95,8 @@ The members that belong to this script, grouped by kind.
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = OVERRIDE PARENT SCRIPT
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

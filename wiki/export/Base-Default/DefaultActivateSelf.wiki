@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultActivateSelf.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultActivateSelf.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultActivateSelf Extends DefaultRef Default
@@ -15,7 +15,7 @@ ScriptName DefaultActivateSelf Extends DefaultRef Default
 
 
 == Documentation ==
-The <code>DefaultActivateSelf.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultActivateSelf.psc</code> source file.
 
 <source>
 Activates itself when THIS object's OnTriggerEnter event fires.
@@ -25,9 +25,12 @@ Activates itself when THIS object's OnTriggerEnter event fires.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultActivateSelf|DefaultActivateSelf]]
@@ -44,7 +47,37 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = XxxPlaceHolderForEmptyGroup2xxx
+| script = [[SFM:Script-DefaultActivateSelf|DefaultActivateSelf]]
+| name = [[SFM:Script-DefaultActivateSelf/XxxPlaceHolderForEmptyGroup2xxx|XxxPlaceHolderForEmptyGroup2xxx]]
+| kind = Property
+| flags = Const Auto Hidden
+| returns = bool
+| documentation = `TTP-27034: Papyrus: Need a way to manage groups across parents and children`
+}}
+
+{{Script_Object_Member_Summary
+| title = ActivatorIsRefToCheck
+| script = [[SFM:Script-DefaultActivateSelf|DefaultActivateSelf]]
+| name = [[SFM:Script-DefaultActivateSelf/ActivatorIsRefToCheck|ActivatorIsRefToCheck]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, Activate function's akActivator param will be <RefToCheck>. If false, akActivator param will be THIS object.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-DefaultActivateSelf|DefaultActivateSelf]]
@@ -60,7 +93,11 @@ The members that belong to this script, grouped by kind.
 | parameters = ObjectReference akActionRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultActivateSelf|DefaultActivateSelf]]
@@ -69,6 +106,8 @@ The members that belong to this script, grouped by kind.
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = Reimplementing Parent's empty function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

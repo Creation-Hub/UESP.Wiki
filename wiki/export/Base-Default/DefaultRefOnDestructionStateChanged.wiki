@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultRefOnDestructionStateChanged.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultRefOnDestructionStateChanged.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultRefOnDestructionStateChanged Extends DefaultRefParent Default
@@ -15,7 +15,7 @@ ScriptName DefaultRefOnDestructionStateChanged Extends DefaultRefParent Default
 
 
 == Documentation ==
-The <code>DefaultRefOnDestructionStateChanged.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultRefOnDestructionStateChanged.psc</code> source file.
 
 <source>
 Set stage when THIS object's destruction stage changes.
@@ -23,9 +23,12 @@ Set stage when THIS object's destruction stage changes.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
@@ -33,7 +36,27 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = DestructionStateToCheckFor
+| script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+| name = [[SFM:Script-DefaultRefOnDestructionStateChanged/DestructionStateToCheckFor|DestructionStateToCheckFor]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 1
+| documentation = Set the stage when this destruction state is reached.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnDestructionStageChanged
 | script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
@@ -41,6 +64,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = int aiOldStage, int aiCurrentStage
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

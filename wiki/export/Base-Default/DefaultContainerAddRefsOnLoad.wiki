@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultContainerAddRefsOnLoad.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultContainerAddRefsOnLoad.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultContainerAddRefsOnLoad Extends ObjectReference Default
@@ -15,7 +15,7 @@ ScriptName DefaultContainerAddRefsOnLoad Extends ObjectReference Default
 
 
 == Documentation ==
-The <code>DefaultContainerAddRefsOnLoad.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultContainerAddRefsOnLoad.psc</code> source file.
 
 <source>
 On cell load, find all of the refs linked to or from this container with LinkAddItem, and add those items to the container.
@@ -23,9 +23,12 @@ On cell load, find all of the refs linked to or from this container with LinkAdd
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = AutofillProperties
 | script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
@@ -33,7 +36,25 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = LinkAddItem
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/LinkAddItem|LinkAddItem]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+}}
+
+
+
 === State ===
+These are the state members for this script.
+
 {{Script_Object_Member_Summary
 | title = Waiting
 | script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
@@ -47,6 +68,20 @@ The members that belong to this script, grouped by kind.
 | name = [[SFM:Script-DefaultContainerAddRefsOnLoad/Done|Done]]
 | kind = State
 }}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-DefaultContainerAddRefsOnLoad|DefaultContainerAddRefsOnLoad]]
+| name = [[SFM:Script-DefaultContainerAddRefsOnLoad/OnCellLoad|OnCellLoad]]
+| kind = Event
+}}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

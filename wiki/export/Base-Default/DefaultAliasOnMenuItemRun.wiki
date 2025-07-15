@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnMenuItemRun.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnMenuItemRun.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnMenuItemRun Extends ReferenceAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnMenuItemRun Extends ReferenceAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnMenuItemRun.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnMenuItemRun.psc</code> source file.
 
 <source>
 Default script to set stages and/or send story events when terminal menu items run.
@@ -23,9 +23,12 @@ Default script to set stages and/or send story events when terminal menu items r
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Struct ===
+These are the struct members for this script.
+
 {{Script_Object_Member_Summary
 | title = MenuItemDatum
 | script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
@@ -34,7 +37,11 @@ The members that belong to this script, grouped by kind.
 | documentation = Struct also used by DefaultCollectionAliasOnMenuItemRun
 }}
 
+
+
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Required_Properties
 | script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
@@ -49,7 +56,37 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = MenuItemData
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/MenuItemData|MenuItemData]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = MenuItemDatum[]
+| documentation = Array of stages to set when terminal menu items are run.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
+| name = [[SFM:Script-DefaultAliasOnMenuItemRun/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnTerminalMenuItemRun
 | script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
@@ -58,7 +95,11 @@ The members that belong to this script, grouped by kind.
 | parameters = int auiMenuItemID, TerminalMenu akTerminalBase, ObjectReference akTerminalRef
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = HandleMenuItem
 | script = [[SFM:Script-DefaultAliasOnMenuItemRun|DefaultAliasOnMenuItemRun]]
@@ -68,6 +109,8 @@ The members that belong to this script, grouped by kind.
 | parameters = Alias callingAlias, MenuItemDatum[] MenuItemData, int auiMenuItemID, TerminalMenu akTerminalMenuBase, ObjectReference akTerminalRef, bool ShouldShowTraces
 | documentation = ALSO CALLED BY: DefaultCollectionAliasOnMenuItemRun
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultStartQuestOnTriggerEnter.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultStartQuestOnTriggerEnter.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultStartQuestOnTriggerEnter Extends DefaultRefOnTriggerEnter Default
@@ -15,7 +15,7 @@ ScriptName DefaultStartQuestOnTriggerEnter Extends DefaultRefOnTriggerEnter Defa
 
 
 == Documentation ==
-The <code>DefaultStartQuestOnTriggerEnter.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultStartQuestOnTriggerEnter.psc</code> source file.
 
 <source>
 Starts a quest when THIS reference's trigger is entered.
@@ -25,9 +25,12 @@ Starts a quest when THIS reference's trigger is entered.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Quest_Properties
 | script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
@@ -44,7 +47,36 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = XxxPlaceHolderForEmptyGroup2xxx
+| script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter/XxxPlaceHolderForEmptyGroup2xxx|XxxPlaceHolderForEmptyGroup2xxx]]
+| kind = Property
+| flags = Const Auto Hidden
+| returns = bool
+| documentation = `TTP-27034: Papyrus: Need a way to manage groups across parents and children`
+}}
+
+{{Script_Object_Member_Summary
+| title = QuestToStart
+| script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
+| name = [[SFM:Script-DefaultStartQuestOnTriggerEnter/QuestToStart|QuestToStart]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Quest
+| documentation = Quest that we want to start
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnInit
 | script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
@@ -52,7 +84,11 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = DoSpecificThing
 | script = [[SFM:Script-DefaultStartQuestOnTriggerEnter|DefaultStartQuestOnTriggerEnter]]
@@ -61,6 +97,8 @@ The members that belong to this script, grouped by kind.
 | parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
 | documentation = Reimplementing Parent's empty function
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

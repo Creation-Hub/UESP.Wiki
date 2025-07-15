@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultPlaySoundAndImodOnEffectStart.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultPlaySoundAndImodOnEffectStart.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultPlaySoundAndImodOnEffectStart Extends ActiveMagicEffect Default
@@ -15,7 +15,7 @@ ScriptName DefaultPlaySoundAndImodOnEffectStart Extends ActiveMagicEffect Defaul
 
 
 == Documentation ==
-The <code>DefaultPlaySoundAndImodOnEffectStart.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultPlaySoundAndImodOnEffectStart.psc</code> source file.
 
 <source>
 For playing an imagespace, a sound, or both when Potions are used, typically when these should be played only once the Data Menu is closed.
@@ -23,9 +23,12 @@ For playing an imagespace, a sound, or both when Potions are used, typically whe
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = OptionalProperties
 | script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
@@ -33,7 +36,47 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SoundEvent
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/SoundEvent|SoundEvent]]
+| kind = Property
+| flags = Const Auto
+| returns = WwiseEvent
+| documentation = Optional: The Sound Event to play.
+}}
+
+{{Script_Object_Member_Summary
+| title = TheImod
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/TheImod|TheImod]]
+| kind = Property
+| flags = Const Auto
+| returns = ImageSpaceModifier
+| documentation = Optional: The Imagespace Modifier to play.
+}}
+
+{{Script_Object_Member_Summary
+| title = StartWhenGameIsRunning
+| script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
+| name = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart/StartWhenGameIsRunning|StartWhenGameIsRunning]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Optional: If true, VFX/SFX won't start playing until game is not paused (e.g. if effect starts from using a potion from inventory)
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnEffectStart
 | script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
@@ -58,7 +101,11 @@ The members that belong to this script, grouped by kind.
 | parameters = int aiTimerID
 }}
 
+
+
 === Function ===
+These are the function members for this script.
+
 {{Script_Object_Member_Summary
 | title = PlayEffects
 | script = [[SFM:Script-DefaultPlaySoundAndImodOnEffectStart|DefaultPlaySoundAndImodOnEffectStart]]
@@ -66,6 +113,8 @@ The members that belong to this script, grouped by kind.
 | kind = Function
 | parameters = bool startPlaying = true
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]

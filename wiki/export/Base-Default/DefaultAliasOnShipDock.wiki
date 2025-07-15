@@ -7,7 +7,7 @@
 
 
 == Definition ==
-The <code>DefaultAliasOnShipDock.psc</code> source file header definition for this script.
+The header definition for this script comes from the <code>DefaultAliasOnShipDock.psc</code> source file.
 
 <source lang="papyrus">
 ScriptName DefaultAliasOnShipDock Extends DefaultAlias Default
@@ -15,7 +15,7 @@ ScriptName DefaultAliasOnShipDock Extends DefaultAlias Default
 
 
 == Documentation ==
-The <code>DefaultAliasOnShipDock.psc</code> source file documentation comments for this script.
+The documentation comments for this script come from the <code>DefaultAliasOnShipDock.psc</code> source file.
 
 <source>
 Sets stage when this ship initiates docking with another ship.
@@ -26,9 +26,12 @@ Sets stage when this ship initiates docking with another ship.
 
 
 == Member ==
-The members that belong to this script, grouped by kind.
+These are the members that belong to this script, grouped by kind.
+
 
 === Group ===
+These are the group members for this script.
+
 {{Script_Object_Member_Summary
 | title = Script_Specific_Properties
 | script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
@@ -36,7 +39,40 @@ The members that belong to this script, grouped by kind.
 | kind = Group
 }}
 
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SetStageWhenDockingComplete
+| script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| name = [[SFM:Script-DefaultAliasOnShipDock/SetStageWhenDockingComplete|SetStageWhenDockingComplete]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), stage will be set when docking is complete; if false, stage will be set when docking begins.
+}}
+
+{{Script_Object_Member_Summary
+| title = WhichShipToCheck
+| script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
+| name = [[SFM:Script-DefaultAliasOnShipDock/WhichShipToCheck|WhichShipToCheck]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 0
+| documentation = 0 = check both docking ships
+	 1 = check this ship only
+	 2 = check the other ship only
+}}
+
+
+
 === Event ===
+These are the event members for this script.
+
 {{Script_Object_Member_Summary
 | title = OnShipDock
 | script = [[SFM:Script-DefaultAliasOnShipDock|DefaultAliasOnShipDock]]
@@ -44,6 +80,8 @@ The members that belong to this script, grouped by kind.
 | kind = Event
 | parameters = bool abComplete, SpaceshipReference akDocking, SpaceshipReference akParent
 }}
+
+
 
 
 [[Category:Starfield_Mod-Papyrus]]
