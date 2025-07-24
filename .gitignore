@@ -5,6 +5,15 @@
 *.sublime-project
 *.sublime-workspace
 
+# MediaWiki
+LocalSettings.php
+
+# Output files
+output/
+
+# API Cache
+api_cache/
+
 
 # Visual Studio Code (VSC)
 #---------------------------------------------
@@ -214,3 +223,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# OS files
+#---------------------------------------------
+
+.DS_Store
+Thumbs.db

@@ -1,5 +1,6 @@
 {
 	"python.analysis.typeCheckingMode": "strict",
+	"python.analysis.typeEvaluation.deprecateTypingAliases": true,
 	"[python]": {
 		"editor.detectIndentation": false,
 		"editor.insertSpaces": true,
