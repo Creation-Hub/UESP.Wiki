@@ -5,11 +5,11 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Wiki Generate (Debug)",
+			"name": "Generate",
 			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
-			"module": "app",
+			"module": "scribe",
 			"args": [
 				"generate",
 				"--settings",
@@ -17,11 +17,11 @@
 			]
 		},
 		{
-			"name": "Wiki Upload (Debug)",
+			"name": "Upload",
 			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
-			"module": "app",
+			"module": "scribe",
 			"args": [
 				"upload"
 			]
