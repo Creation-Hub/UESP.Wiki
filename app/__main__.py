@@ -2,7 +2,7 @@ from argparse import Namespace
 import logging
 from typing import Any
 import app
-from app import web
+from app import uploader
 from app.context import AppContext
 
 
@@ -33,11 +33,11 @@ def main_generate(arguments:Namespace) -> None:
     logging.info(f"Editor: {editor_info}")
 
     # Start processing any projects
-    app.program.start(context)
+    app.generator.start(context)
 
 
 def main_upload(arguments:Namespace) -> None:
-    web.main.main()
+    uploader.start()
 
 
 # Main

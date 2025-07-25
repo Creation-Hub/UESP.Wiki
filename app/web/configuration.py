@@ -1,4 +1,8 @@
+"""
+Provides a site configuration for the MediaWiki API client.
+"""
 import json
+
 
 class Site:
     def __init__(self, url:str) -> None:

@@ -3,7 +3,7 @@ import json
 from typing import Any
 import requests
 from requests import Response
-from app.web.clients.site import Site
+from app.web.configuration import Site
 
 
 def help(site:Site) -> str:

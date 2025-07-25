@@ -1,1 +1,3 @@
-from . import main # type: ignore # noqa: F401
+"""
+This module provides a client for interacting with the MediaWiki API.
+"""

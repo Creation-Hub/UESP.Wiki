@@ -6,10 +6,10 @@ Provides the MediaWiki `edit` API.
 """
 from typing import Any
 from requests import Response
-from app.web.wiki.actions import Action
-from app.web.wiki.parameters import ParameterType
-from app.web.wiki.responses import ResponseType
-from app.web.wiki.status import DataFormat, EditResult
+from app.web.site.actions import Action
+from app.web.site.parameters import ParameterType
+from app.web.site.responses import ResponseType
+from app.web.site.status import DataFormat, EditResult
 
 
 class EditParameters(ParameterType):
