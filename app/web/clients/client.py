@@ -1,10 +1,10 @@
 from http import HTTPStatus
 from typing import Any
 from requests import Response, Session
-from uesp.web.clients.site import Site
-from uesp.web.wiki.edit import EditParameters, EditResponse
-from uesp.web.wiki.login import LoginParameters, LoginResponse, TokenResponse, TokenParameters, TokenType
-from uesp.web.wiki.status import LoginStatus
+from app.web.clients.site import Site
+from app.web.wiki.edit import EditParameters, EditResponse
+from app.web.wiki.login import LoginParameters, LoginResponse, TokenResponse, TokenParameters, TokenType
+from app.web.wiki.status import LoginStatus
 
 
 class Client:

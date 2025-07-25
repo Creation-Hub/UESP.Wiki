@@ -1,6 +1,6 @@
 import os
-from uesp.web.clients import api
-from uesp.web.clients.site import Site
+from app.web.clients import api
+from app.web.clients.site import Site
 
 
 def save_to_file(content:str, filename:str) -> None:

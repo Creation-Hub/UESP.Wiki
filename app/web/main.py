@@ -1,11 +1,11 @@
 from http import HTTPStatus
 import os
-from uesp.web.clients.client import Client
-from uesp.web.clients.credentials import Credential, create_credentials
-from uesp.web.clients.site import Site, create_site
-from uesp.web.wiki.edit import EditResponse
-from uesp.web.wiki.login import LoginResponse
-from uesp.web.wiki.status import EditResult, LoginStatus
+from app.web.clients.client import Client
+from app.web.clients.credentials import Credential, create_credentials
+from app.web.clients.site import Site, create_site
+from app.web.wiki.edit import EditResponse
+from app.web.wiki.login import LoginResponse
+from app.web.wiki.status import EditResult, LoginStatus
 
 
 def main() -> None:

@@ -5,21 +5,26 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Wiki: Launch Debug",
+			"name": "Wiki Generate (Debug)",
 			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
 			"module": "app",
 			"args": [
+				"generate",
 				"--settings",
 				"${workspaceFolder}\\app_settings.json"
 			]
 		},
 		{
-			"name": "Wiki-Bot: Launch Debug",
+			"name": "Wiki Upload (Debug)",
+			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
-			"module": "uesp"
+			"module": "app",
+			"args": [
+				"upload"
+			]
 		}
 	]
 }

@@ -17,14 +17,14 @@ def configure() -> None:
     logger.setLevel(logging.DEBUG)
 
     # Log File handler
-    file_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(module)s:%(funcName)s - %(message)s', datefmt=DATE_FORMAT)
+    file_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(module)s:%(funcName)s - %(message)s', DATE_FORMAT)
     file_handler:FileHandler = FileHandler("app.log", mode='w')
     file_handler.setFormatter(file_formatter)
     file_handler.setLevel(logging.DEBUG)
     logger.addHandler(file_handler)
 
     # Console Stream handler
-    console_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt=DATE_FORMAT)
+    console_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(message)s', DATE_FORMAT)
     console_handler:StreamHandler[TextIO] = StreamHandler()
     console_handler.setFormatter(console_formatter)
     console_handler.setLevel(logging.INFO)

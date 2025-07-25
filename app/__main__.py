@@ -1,15 +1,25 @@
+from argparse import Namespace
 import logging
 from typing import Any
 import app
+from app import web
 from app.context import AppContext
 
 
-if __name__ == "__main__":
+def main(arguments:Namespace) -> None:
     """
     Main entry point for this application.
     """
     app.log.configure()
-    arguments = app.cli.arguments()
+    if arguments.mode == "generate":
+        main_generate(arguments)
+    elif arguments.mode == "upload":
+        main_upload(arguments)
+    else:
+        logging.error(f"Unknown mode: {arguments.mode}")
+
+
+def main_generate(arguments:Namespace) -> None:
     context:AppContext = app.settings.read(arguments.settings)
 
     # Get content data for game and editor.
@@ -24,3 +34,14 @@ if __name__ == "__main__":
 
     # Start processing any projects
     app.program.start(context)
+
+
+def main_upload(arguments:Namespace) -> None:
+    web.main.main()
+
+
+# Main
+#---------------------------------------------
+if __name__ == "__main__":
+    arguments:Namespace = app.cli.arguments()
+    main(arguments)
