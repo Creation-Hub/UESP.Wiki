@@ -76,7 +76,7 @@ def project_start(context:AppContext, configuration:Configuration) -> bool:
 
 
 def write_page_index(context:AppContext) -> None:
-    index_path:str = os.path.join(context.export_directory, "Script_Information.wiki")
+    index_path:str = os.path.join(context.settings.export_directory, "Script_Information.wiki")
     if not os.path.exists(os.path.dirname(index_path)):
         os.makedirs(os.path.dirname(index_path))
         logging.debug(f"Created index directory: {os.path.dirname(index_path)}")

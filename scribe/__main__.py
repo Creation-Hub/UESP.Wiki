@@ -1,10 +1,9 @@
 from argparse import Namespace
 import logging
-from typing import Any
 import scribe
 import scribe.app.log
 import scribe.app.cli
-import scribe.app.context
+import scribe.app.settings
 import scribe.bot.generator
 import scribe.bot.uploader
 from scribe.app.context import AppContext
@@ -15,33 +14,22 @@ def main(arguments:Namespace) -> None:
     Main entry point for this application.
     """
     scribe.app.log.configure()
+    app:AppContext = AppContext()
+    app.settings = scribe.app.settings.read(arguments.settings)
+    app.settings.environment = arguments.environment
+
+    # Log application startup details.
+    logging.info(f"Arguments: {arguments}")
+    logging.info(f"Directory: {app.settings.base_directory}")
+    logging.info(f"Game: {app.settings.game_info}")
+    logging.info(f"Editor: {app.settings.editor_info}")
+
     if arguments.mode == "generate":
-        main_generate(arguments)
+        scribe.bot.generator.start(app)
     elif arguments.mode == "upload":
-        main_upload(arguments)
+        scribe.bot.uploader.start(app)
     else:
         logging.error(f"Unknown mode: {arguments.mode}")
-
-
-def main_generate(arguments:Namespace) -> None:
-    context:AppContext = scribe.app.context.read(arguments.settings)
-
-    # Get content data for game and editor.
-    game_info:dict[str, Any] = context.publish_info.get("game", {})
-    editor_info:dict[str, Any] = context.publish_info.get("editor", {})
-
-    # Log some application startup details.
-    logging.info(f"Arguments: {arguments}")
-    logging.info(f"Directory: {context.base_directory}")
-    logging.info(f"Game: {game_info}")
-    logging.info(f"Editor: {editor_info}")
-
-    # Start processing any projects
-    scribe.bot.generator.start(context)
-
-
-def main_upload(arguments:Namespace) -> None:
-    scribe.bot.uploader.start()
 
 
 # Main

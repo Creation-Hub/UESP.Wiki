@@ -11,9 +11,9 @@
 			"request": "launch",
 			"module": "scribe",
 			"args": [
-				"generate",
 				"--settings",
-				"${workspaceFolder}\\app_settings.json"
+				"${workspaceFolder}\\app_settings.json",
+				"generate"
 			]
 		},
 		{
@@ -23,7 +23,11 @@
 			"request": "launch",
 			"module": "scribe",
 			"args": [
-				"upload"
+				"--settings",
+				"${workspaceFolder}\\app_settings.json",
+				"upload",
+				"--environment",
+				"local"
 			]
 		}
 	]

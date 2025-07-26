@@ -15,6 +15,11 @@ output/
 api_cache/
 
 
+# Environment Variables
+#---------------------------------------------
+.env*
+
+
 # Visual Studio Code (VSC)
 #---------------------------------------------
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode

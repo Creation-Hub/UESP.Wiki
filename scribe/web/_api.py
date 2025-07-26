@@ -1,8 +1,9 @@
 from http import HTTPStatus
-import json
-from typing import Any
-import requests
 from requests import Response
+from typing import Any
+import json
+import logging
+import requests
 from scribe.web.configuration import Site
 
 
@@ -15,7 +16,7 @@ def help(site:Site) -> str:
     if response.status_code == HTTPStatus.OK:
         return response.text
     else:
-        print(f"Failed to get API help: Status {response.status_code}")
+        logging.error(f"Failed to get API help: Status {response.status_code}")
         return ""
 
 
@@ -32,7 +33,7 @@ def info(site:Site) -> str:
         dump:str = json.dumps(data, indent=2)
         return dump
     else:
-        print(f"Failed to get site info: Status {response.status_code}")
+        logging.error(f"Failed to get site info: Status {response.status_code}")
         return ""
 
 
@@ -48,7 +49,7 @@ def modules(site:Site) -> str:
         dump:str = json.dumps(data, indent=2)
         return dump
     else:
-        print(f"Failed to get query modules: Status {response.status_code}")
+        logging.error(f"Failed to get query modules: Status {response.status_code}")
         return ""
 
 
@@ -65,5 +66,5 @@ def modules_query(site:Site) -> str:
         dump:str = json.dumps(data, indent=2)
         return dump
     else:
-        print(f"Failed to get query modules: Status {response.status_code}")
+        logging.error(f"Failed to get query modules: Status {response.status_code}")
         return ""
