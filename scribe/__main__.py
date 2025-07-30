@@ -1,9 +1,11 @@
+"""
+The main program module for this application.
+"""
 import logging
 from scribe.app.context import AppContext
 from scribe.app.cli import AppMode
-import scribe.bot.generator
-import scribe.bot.uploader
-
+from scribe.generator import GenerateService
+from scribe.uploader import UploadService
 
 class Program:
     """
@@ -16,15 +18,10 @@ class Program:
         Main entry point for this application.
         """
         app:AppContext = AppContext.create()
-
-        if not app.arguments:
-            logging.error("No command line arguments provided.")
-            return
-
         if app.arguments.mode == AppMode.GENERATE:
-            scribe.bot.generator.start(app)
+            GenerateService.start(app)
         elif app.arguments.mode == AppMode.UPLOAD:
-            scribe.bot.uploader.start(app)
+            UploadService.start(app)
         else:
             logging.error(f"Unknown argument for 'mode': {app.arguments.mode}")
 

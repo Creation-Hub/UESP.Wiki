@@ -4,6 +4,7 @@ from typing import Any
 from .provider import Provider, ProviderType
 from ._configuration import Configuration
 from ._publishing import PublishOption, Sort
+from scribe.app.cli import AppArguments
 
 
 # Json
@@ -45,9 +46,6 @@ class AppSettings:
         self.export_directory:str = ""
         """The export directory for wiki pages."""
 
-        self.environment:str|None = None
-        """The environment to use for the uploader."""
-
         self.providers:dict[str, Provider] = {}
         """The providers loaded from the settings file."""
 
@@ -55,8 +53,27 @@ class AppSettings:
         """The app configurations loaded from the settings file."""
 
 
+        self.upload_configuration_file:str|None = None
+
+        self.environment:str|None = None
+        """The environment to use for the uploader."""
+
+
+
     @staticmethod
-    def read(file_path:str) -> 'AppSettings':
+    def create(arguments:AppArguments) -> 'AppSettings':
+        if not arguments.configuration_file:
+            raise ValueError("No configuration file provided in arguments.")
+
+        this:AppSettings = AppSettings._read(arguments.configuration_file)
+        this.upload_configuration_file = arguments.upload_configuration_file or this.upload_configuration_file
+        this.environment = arguments.upload_environment or this.environment
+
+        return this
+
+
+    @staticmethod
+    def _read(file_path:str) -> 'AppSettings':
         """
         Reads the given application settings file.
         """
@@ -92,6 +109,7 @@ class AppSettings:
             provider.version = version_data.get("number", "")
             provider.version_build = version_data.get("version_build", "")
             provider.version_date = version_data.get("version_date", "")
+
             # Add provider to the settings.
             settings.providers[provider.identifier] = provider
 
@@ -122,3 +140,8 @@ class AppSettings:
 
         # Return the application settings.
         return settings
+
+
+    @staticmethod
+    def _foo() -> None:
+        pass

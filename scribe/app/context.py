@@ -34,14 +34,7 @@ class AppContext():
         this:AppContext = AppContext()
         this.arguments = AppArguments.create()
         this.log = AppLog.create(this.arguments)
-
-        # Initialize application settings.
-        if this.arguments and this.arguments.configuration_file:
-            this.settings = AppSettings.read(this.arguments.configuration_file)
-
-        # Initialize uploader settings.
-        if this.arguments:
-            this.settings.environment = this.arguments.upload_environment
+        this.settings = AppSettings.create(this.arguments)
 
         # Log application startup details.
         logging.info(f"Arguments: {this.arguments}")
