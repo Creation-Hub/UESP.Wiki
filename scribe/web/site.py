@@ -2,47 +2,57 @@
 Provides a site configuration for the MediaWiki API client.
 """
 import json
+from typing import Any
 
 
 class Site:
+    INDEX_PATH:str = "/index.php"
+    API_PATH:str = "/api.php"
+    REST_PATH:str = "/rest.php"
+
+
     def __init__(self, url:str) -> None:
-        self.URL:str = url
-        self.URL_ARTICLE:str = ""
-        self.URL_SCRIPT:str = ""
-        self.URL_INDEX:str = "/index.php"
-        self.URL_API:str = "/api.php"
-        self.URL_REST:str = "/rest.php"
+        self.url:str = url
+        self.article_path:str|None = None
+        self.script_path:str|None = None
+        self.index_path:str = Site.INDEX_PATH
+        self.api_path:str = Site.API_PATH
+        self.rest_path:str = Site.REST_PATH
 
     @property
-    def API(self) -> str:
-        if self.URL_SCRIPT:
-            return self.URL + self.URL_SCRIPT + self.URL_API
+    def article_url(self) -> str:
+        if self.article_path:
+            return self.url + self.article_path
         else:
-            return self.URL + self.URL_API
+            return self.url + self.index_path
 
     @property
-    def REST(self) -> str:
-        if self.URL_SCRIPT:
-            return self.URL + self.URL_SCRIPT + self.URL_REST
+    def api_url(self) -> str:
+        if self.script_path:
+            return self.url + self.script_path + self.api_path
         else:
-            return self.URL + self.URL_REST
+            return self.url + self.api_path
 
     @property
-    def Article(self) -> str:
-        return self.URL + self.URL_ARTICLE
+    def rest_url(self) -> str:
+        if self.script_path:
+            return self.url + self.script_path + self.rest_path
+        else:
+            return self.url + self.rest_path
 
 
-def create_site(path:str, environment:str) -> Site:
+def create_site(path:str, environment_id:str) -> Site:
     with open(path, "r") as file:
-        settings = json.load(file)
+        data:dict[str, Any] = json.load(file)
 
-    configuration:dict[str, str] = settings[environment]
-    url:str = configuration["url"]
+    environments:dict[str, Any] = data.get("environments", [])
+    environment:dict[str, str] = environments.get(environment_id, {})
 
+    url:str = environment.get("url", "")
     site:Site = Site(url)
-    site.URL_SCRIPT = configuration.get("script", site.URL_SCRIPT)
-    site.URL_API = configuration.get("api", site.URL_API)
-    site.URL_REST = configuration.get("rest", site.URL_REST)
-    site.URL_INDEX = configuration.get("index", site.URL_INDEX)
-    site.URL_ARTICLE = configuration.get("article", site.URL_ARTICLE)
+    site.article_path = environment.get("article", site.article_path)
+    site.script_path = environment.get("script", site.script_path)
+    site.api_path = environment.get("api", site.api_path)
+    site.rest_path = environment.get("rest", site.rest_path)
+    site.index_path = environment.get("index", site.index_path)
     return site

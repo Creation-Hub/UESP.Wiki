@@ -12,7 +12,7 @@ def help(site:Site) -> str:
     parameters:dict[str, str] = {
         "action": "help"
     }
-    response:Response = requests.get(site.API, params=parameters)
+    response:Response = requests.get(site.api_url, params=parameters)
     if response.status_code == HTTPStatus.OK:
         return response.text
     else:
@@ -27,7 +27,7 @@ def info(site:Site) -> str:
         "meta": "siteinfo",
         "format": "json"
     }
-    response:Response = requests.get(site.API, params=parameters)
+    response:Response = requests.get(site.api_url, params=parameters)
     if response.status_code == HTTPStatus.OK:
         data:Any = response.json()
         dump:str = json.dumps(data, indent=2)
@@ -43,7 +43,7 @@ def modules(site:Site) -> str:
         "action": "paraminfo",
         "format": "json"
     }
-    response:Response = requests.get(site.API, params=parameters)
+    response:Response = requests.get(site.api_url, params=parameters)
     if response.status_code == HTTPStatus.OK:
         data:Any = response.json()
         dump:str = json.dumps(data, indent=2)
@@ -60,7 +60,7 @@ def modules_query(site:Site) -> str:
         "modules": "query",
         "format": "json"
     }
-    response:Response = requests.get(site.API, params=parameters)
+    response:Response = requests.get(site.api_url, params=parameters)
     if response.status_code == HTTPStatus.OK:
         data:Any = response.json()
         dump:str = json.dumps(data, indent=2)

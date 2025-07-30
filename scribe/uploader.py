@@ -25,11 +25,11 @@ class UploadService:
             logging.error("No environment specified.")
             return
 
-        if not app.arguments.upload_configuration_file:
+        if not app.settings.upload_configuration_file:
             logging.error("No upload configuration specified.")
             return
 
-        site:Site = create_site(app.arguments.upload_configuration_file, app.settings.environment)
+        site:Site = create_site(app.settings.upload_configuration_file, app.settings.environment)
         credential:Credential = create_credentials()
         client:Client = Client(site)
 

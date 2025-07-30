@@ -32,10 +32,10 @@ class Client:
         parameters.username = username
         parameters.password = password
         parameters.login_token = login_token
-        parameters.login_return_url = self.site.Article
+        parameters.login_return_url = self.site.article_url
         arguments:Any = parameters.arguments()
 
-        response:Response = self.session.post(self.site.API, data=arguments)
+        response:Response = self.session.post(self.site.api_url, data=arguments)
         loginResponse:LoginResponse = LoginResponse(response)
 
         if loginResponse.status_code == HTTPStatus.OK and loginResponse.status == LoginStatus.PASS:
@@ -49,7 +49,7 @@ class Client:
         parameters:TokenParameters = TokenParameters()
         parameters.type = TokenType.LOGIN
         arguments:Any = parameters.arguments()
-        response:Response = self.session.get(self.site.API, params=arguments)
+        response:Response = self.session.get(self.site.api_url, params=arguments)
         tokenResponse:TokenResponse = TokenResponse(response)
         return tokenResponse.login
 
@@ -65,7 +65,7 @@ class Client:
         parameters:TokenParameters = TokenParameters()
         parameters.type = TokenType.CSRF
         arguments:Any = parameters.arguments()
-        response:Response = self.session.get(self.site.API, params=arguments)
+        response:Response = self.session.get(self.site.api_url, params=arguments)
         tokenResponse:TokenResponse = TokenResponse(response)
         if tokenResponse.status_code == HTTPStatus.OK:
             self.csrf_token = tokenResponse.csrf
@@ -93,5 +93,5 @@ class Client:
         arguments:dict[str, str] = parameters.to_arguments()
 
         # Post the edit request
-        response:Response = self.session.post(self.site.API, data=arguments)
+        response:Response = self.session.post(self.site.api_url, data=arguments)
         return EditResponse(response)

@@ -1,26 +1,28 @@
 {
-	"local": {
-		"url": "http://localhost:8080",
-		"article": "/wiki/",
-		"script": "/w",
-		"index": "/index.php",
-		"api": "/api.php",
-		"rest": "/rest.php"
-	},
-	"developer": {
-		"url": "https://dev.starfieldwiki.net",
-		"article": "/wiki/",
-		"script": "/w",
-		"index": "/index.php",
-		"api": "/api.php",
-		"rest": "/rest.php"
-	},
-	"production": {
-		"url": "https://starfieldwiki.net",
-		"article": "/wiki/",
-		"script": "/w",
-		"index": "/index.php",
-		"api": "/api.php",
-		"rest": "/rest.php"
-	}
+    "environments": {
+        "local": {
+            "url": "http://localhost:8080",
+            "article": "/wiki/",
+            "script": "/w",
+            "index": "/index.php",
+            "api": "/api.php",
+            "rest": "/rest.php"
+        },
+        "developer": {
+            "url": "https://dev.starfieldwiki.net",
+            "article": "/wiki/",
+            "script": "/w",
+            "index": "/index.php",
+            "api": "/api.php",
+            "rest": "/rest.php"
+        },
+        "production": {
+            "url": "https://starfieldwiki.net",
+            "article": "/wiki/",
+            "script": "/w",
+            "index": "/index.php",
+            "api": "/api.php",
+            "rest": "/rest.php"
+        }
+    }
 }
