@@ -121,7 +121,7 @@ def write_section(content:list[str], project:PapyrusProject) -> None:
     content.append("\n")
 
 
-def content(context:AppContext) -> list[str]:
+def content(app:AppContext) -> list[str]:
     content:list[str] = []
 
     # Write the wiki page header.
@@ -130,19 +130,19 @@ def content(context:AppContext) -> list[str]:
     content.append("\n\n")
 
     # Write each project wiki section.
-    for identifier in context.papyrus.projects:
-        configuration = context.settings.configurations[identifier]
+    for identifier in app.papyrus.projects:
+        configuration = app.settings.configurations[identifier]
         if not configuration.publish.enable:
             logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
             continue
 
-        project:PapyrusProject = context.papyrus.projects[identifier]
+        project:PapyrusProject = app.papyrus.projects[identifier]
         write_section(content, project)
         content.append("\n\n")
     return content
 
 
-def write(context:AppContext, output_file_path:str) -> None:
-    lines:list[str] = content(context)
+def write(app:AppContext, output_file_path:str) -> None:
+    lines:list[str] = content(app)
     with open(output_file_path, "w", encoding="utf-8") as file:
         file.writelines(lines)

@@ -3,7 +3,6 @@ Generates MediaWiki pages for Papyrus members.
     Module: `app.wiki.page.member`
 """
 from scribe import wiki
-from scribe.app.context import AppContext
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
@@ -13,7 +12,7 @@ from scribe.papyrus.code import Variable
 from scribe.papyrus.code import Property
 
 
-def content(context:AppContext, project:PapyrusProject, script:Script, member:Member) -> list[str]:
+def content(project:PapyrusProject, script:Script, member:Member) -> list[str]:
     content:list[str] = []
     game_version:str = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
@@ -64,7 +63,7 @@ def content(context:AppContext, project:PapyrusProject, script:Script, member:Me
 # Write
 #---------------------------------------------
 
-def write(context:AppContext, project:PapyrusProject, script:Script, member:Member, output_file_path:str) -> None:
-    lines:list[str] = content(context, project, script, member)
+def write(project:PapyrusProject, script:Script, member:Member, output_file_path:str) -> None:
+    lines:list[str] = content(project, script, member)
     with open(output_file_path, "w", encoding="utf-8") as file:
         file.writelines(lines)

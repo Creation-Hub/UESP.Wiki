@@ -11,9 +11,10 @@
 			"request": "launch",
 			"module": "scribe",
 			"args": [
-				"--settings",
-				"${workspaceFolder}\\app_settings.json",
-				"generate"
+				"--settings", "${workspaceFolder}\\scribe.json",
+				"--log-file-path", "scribe.generator.log",
+				"generate",
+				"--config", "${workspaceFolder}\\scribe.generator.json"
 			]
 		},
 		{
@@ -23,11 +24,11 @@
 			"request": "launch",
 			"module": "scribe",
 			"args": [
-				"--settings",
-				"${workspaceFolder}\\app_settings.json",
+				"--settings", "${workspaceFolder}\\scribe.json",
+				"--log-file-path", "scribe.uploader.log",
 				"upload",
-				"--environment",
-				"local"
+				"--config", "${workspaceFolder}\\scribe.uploader.json",
+				"--environment", "local"
 			]
 		}
 	]

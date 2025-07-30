@@ -4,8 +4,7 @@ Generates MediaWiki pages for Papyrus scripts.
 """
 from collections import defaultdict
 from scribe import wiki
-from scribe.app.context import AppContext
-from scribe.papyrus.project import PapyrusProject
+from scribe.papyrus.project import PapyrusContext, PapyrusProject
 from scribe.papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from scribe.papyrus.code import Member
 from scribe.papyrus.text.parsing import State
@@ -88,13 +87,13 @@ def item_property_group(property_group:PropertyGroup) -> str:
     return content
 
 
-def content(context:AppContext, project:PapyrusProject, script:Script) -> list[str]:
+def content(papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> list[str]:
     lines:list[str] = []
     game_version:str = ""
     source_file_path:str = script.header.name.file_path() + ".psc"
 
     # Script Summary Template
-    lines.append(wiki.template.generator.script_object_summary(context, project, script, game_version))
+    lines.append(wiki.template.generator.script_object_summary(papyrus, project, script, game_version))
     lines.append("\n\n")
 
     # Script Definition
@@ -147,8 +146,8 @@ def content(context:AppContext, project:PapyrusProject, script:Script) -> list[s
 # Write
 #---------------------------------------------
 
-def write(context:AppContext, project:PapyrusProject, script:Script, output_file_path:str) -> None:
+def write(papyrus:PapyrusContext, project:PapyrusProject, script:Script, output_file_path:str) -> None:
     """Generates a MediaWiki page for a given Papyrus script source file."""
-    lines:list[str] = content(context, project, script)
+    lines:list[str] = content(papyrus, project, script)
     with open(output_file_path, "w", encoding="utf-8") as file:
         file.writelines(lines)

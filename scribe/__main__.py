@@ -1,39 +1,36 @@
-from argparse import Namespace
 import logging
-import scribe
-import scribe.app.log
-import scribe.app.cli
-import scribe.app.settings
+from scribe.app.context import AppContext
+from scribe.app.cli import AppMode
 import scribe.bot.generator
 import scribe.bot.uploader
-from scribe.app.context import AppContext
 
 
-def main(arguments:Namespace) -> None:
+class Program:
     """
-    Main entry point for this application.
+    The main program class for this application.
     """
-    scribe.app.log.configure()
-    app:AppContext = AppContext()
-    app.settings = scribe.app.settings.read(arguments.settings)
-    app.settings.environment = arguments.environment
 
-    # Log application startup details.
-    logging.info(f"Arguments: {arguments}")
-    logging.info(f"Directory: {app.settings.base_directory}")
-    logging.info(f"Game: {app.settings.game_info}")
-    logging.info(f"Editor: {app.settings.editor_info}")
+    @staticmethod
+    def main() -> None:
+        """
+        Main entry point for this application.
+        """
+        app:AppContext = AppContext.create()
 
-    if arguments.mode == "generate":
-        scribe.bot.generator.start(app)
-    elif arguments.mode == "upload":
-        scribe.bot.uploader.start(app)
-    else:
-        logging.error(f"Unknown mode: {arguments.mode}")
+        if not app.arguments:
+            logging.error("No command line arguments provided.")
+            return
+
+        if app.arguments.mode == AppMode.GENERATE:
+            scribe.bot.generator.start(app)
+        elif app.arguments.mode == AppMode.UPLOAD:
+            scribe.bot.uploader.start(app)
+        else:
+            logging.error(f"Unknown argument for 'mode': {app.arguments.mode}")
 
 
 # Main
 #---------------------------------------------
+
 if __name__ == "__main__":
-    arguments:Namespace = scribe.app.cli.arguments()
-    main(arguments)
+    Program.main()

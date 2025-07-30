@@ -4,7 +4,7 @@ from typing import Any
 import json
 import logging
 import requests
-from scribe.web.configuration import Site
+from .site import Site
 
 
 def help(site:Site) -> str:

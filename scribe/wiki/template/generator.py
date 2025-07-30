@@ -3,9 +3,8 @@ Provides wiki template generation features.
     Module: `app.wiki.template.generator`
 """
 from scribe import wiki
-from scribe.app.context import AppContext
 from scribe.papyrus import inheritance
-from scribe.papyrus.project import PapyrusProject
+from scribe.papyrus.project import PapyrusContext, PapyrusProject
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
 from scribe.wiki import template
@@ -14,7 +13,7 @@ from scribe.wiki import template
 # Script Object
 #---------------------------------------------
 
-def script_object_summary(context:AppContext, project:PapyrusProject, script:Script, game_version:str) -> str:
+def script_object_summary(papyrus:PapyrusContext, project:PapyrusProject, script:Script, game_version:str) -> str:
     """
     Gets the 'Script_Object_Summary' wiki template as a string.
 
@@ -22,7 +21,7 @@ def script_object_summary(context:AppContext, project:PapyrusProject, script:Scr
     """
     script_title:str = str(script.header.name)
     script_name:str = wiki.formatter.link_script_object(str(script.header.name))
-    inheritance_chain:list[Script] = inheritance.get_chain(context.papyrus, project, script)
+    inheritance_chain:list[Script] = inheritance.get_chain(papyrus, project, script)
     script_extends:str = wiki.data.inheritance.format_inheritance_chain(inheritance_chain)
     script_flags:str = wiki.formatter.to_list_csv(script.header.flags)
     #---------------------------------------------

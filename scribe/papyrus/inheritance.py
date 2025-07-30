@@ -4,7 +4,7 @@ from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Script
 
 
-def find_extends(context:PapyrusContext, project:PapyrusProject, this:Script, parent_name:str) -> Script:
+def find_extends(papyrus:PapyrusContext, project:PapyrusProject, this:Script, parent_name:str) -> Script:
     """Find a script by its name in the current project or any imported projects.
 
     Arguments:
@@ -25,8 +25,8 @@ def find_extends(context:PapyrusContext, project:PapyrusProject, this:Script, pa
 
     # Check in imported projects
     for identifier in project.imports:
-        if identifier in context.projects:
-            imported:PapyrusProject = context.projects[identifier]
+        if identifier in papyrus.projects:
+            imported:PapyrusProject = papyrus.projects[identifier]
             if parent_name in imported.scripts:
                 return imported.scripts[parent_name]
 
@@ -39,7 +39,7 @@ def find_extends(context:PapyrusContext, project:PapyrusProject, this:Script, pa
     raise ValueError(error)
 
 
-def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> list[Script]:
+def get_chain(papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> list[Script]:
     """
     Get the inheritance chain for a script, excluding the script itself.
     Searches across projects using the project's imports list.
@@ -76,7 +76,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
         if script_name != "ScriptObject":
             # Find ScriptObject script
             try:
-                script_object = find_extends(context, project, script, "ScriptObject")
+                script_object = find_extends(papyrus, project, script, "ScriptObject")
                 chain.append(script_object)
             except ValueError as valueError:
                 logging.warning(f"{valueError} Continuing without it.")
@@ -84,7 +84,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
         return chain
 
     # Try to find the parent script
-    current_script:Script = find_extends(context, project, script, parent_name)
+    current_script:Script = find_extends(papyrus, project, script, parent_name)
 
     # Add the first parent to the chain
     chain.append(current_script)
@@ -102,7 +102,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
             # add ScriptObject as the ultimate parent
             if str(current_script.header.name) != "ScriptObject" and "ScriptObject" not in visited:
                 try:
-                    script_object = find_extends(context, project, script, "ScriptObject")
+                    script_object = find_extends(papyrus, project, script, "ScriptObject")
                     chain.append(script_object)
                     visited.add("ScriptObject")
                 except ValueError as valueError:
@@ -114,7 +114,7 @@ def get_chain(context:PapyrusContext, project:PapyrusProject, script:Script) -> 
             break
 
         # Find the next parent
-        next_script:Script = find_extends(context, project, script, next_parent_name)
+        next_script:Script = find_extends(papyrus, project, script, next_parent_name)
         chain.append(next_script)
         visited.add(next_parent_name)
 

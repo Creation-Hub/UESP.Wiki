@@ -11,8 +11,8 @@ DIV_WIDTH:int = 50
 """The width of divider lines in the log output."""
 
 
-def project_start(context:AppContext, configuration:Configuration) -> bool:
-    project:PapyrusProject = context.papyrus.projects[configuration.identifier]
+def project_start(app:AppContext, configuration:Configuration) -> bool:
+    project:PapyrusProject = app.papyrus.projects[configuration.identifier]
 
     # Skip any disabled projects.
     if not configuration.publish.enable:
@@ -60,7 +60,7 @@ def project_start(context:AppContext, configuration:Configuration) -> bool:
 
         # Write a wiki page for this script object.
         if configuration.publish.enable_objects:
-            wiki.page.script.write(context, project, script, output_file_path)
+            wiki.page.script.write(app.papyrus, project, script, output_file_path)
             logging.debug(f"[{project.identifier}]<{script_file_path}> -> {script_file_path_full} -> {output_file_path}")
 
         # Write a wiki page for this script member.
@@ -69,19 +69,19 @@ def project_start(context:AppContext, configuration:Configuration) -> bool:
                 member:Member = script.members[key]
                 member_file_name:str = f"{script_file_name}-{member.name}.wiki"
                 member_file_path:str = os.path.join(os.path.dirname(output_file_path), member_file_name)
-                wiki.page.member.write(context, project, script, member, member_file_path)
+                wiki.page.member.write(project, script, member, member_file_path)
                 logging.debug(f"[{project.identifier}]<{script_file_path}>::{member.name} -> {member_file_path}")
 
     return True
 
 
-def write_page_index(context:AppContext) -> None:
-    index_path:str = os.path.join(context.settings.export_directory, "Script_Information.wiki")
+def write_page_index(app:AppContext) -> None:
+    index_path:str = os.path.join(app.settings.export_directory, "Script_Information.wiki")
     if not os.path.exists(os.path.dirname(index_path)):
         os.makedirs(os.path.dirname(index_path))
         logging.debug(f"Created index directory: {os.path.dirname(index_path)}")
     try:
-        wiki.page.index.write(context, index_path)
+        wiki.page.index.write(app, index_path)
     except Exception as exception:
         logging.error(f"Failed to write projects index: {str(exception)}")
 
@@ -89,17 +89,17 @@ def write_page_index(context:AppContext) -> None:
 # Program
 #---------------------------------------------
 
-def start(context:AppContext) -> None:
+def start(app:AppContext) -> None:
     # Ensure that configurations exist.
     logging.info(" Configurations ".center(DIV_WIDTH, "-"))
-    if not context.settings.configurations:
+    if not app.settings.configurations:
         logging.error(f"Aborting program. No configurations found.")
         return
 
     # Load each configuration.
-    logging.info(f"Found {len(context.settings.configurations)} configurations.")
-    for key in context.settings.configurations:
-        configuration:Configuration = context.settings.configurations[key]
+    logging.info(f"Found {len(app.settings.configurations)} configurations.")
+    for key in app.settings.configurations:
+        configuration:Configuration = app.settings.configurations[key]
 
         # Ensure the project root directory exists, else skip.
         if not configuration.root:
@@ -114,26 +114,26 @@ def start(context:AppContext) -> None:
         project.identifier = configuration.identifier
         project.imports = configuration.imports
         project.root = configuration.root
-        context.papyrus.add(project)
+        app.papyrus.add(project)
         logging.info(f"[{project.identifier}] Loaded project from configuration.")
 
 
     # Ensure that projects exist.
     logging.info(" Papyrus ".center(DIV_WIDTH, "-"))
-    logging.info(f"Loading {len(context.papyrus.projects)} projects.")
-    if not context.papyrus.load():
+    logging.info(f"Loading {len(app.papyrus.projects)} projects.")
+    if not app.papyrus.load():
         logging.error(f"Aborting program. Failed to load one or more Papyrus projects.")
         return
 
     # Begin writing wiki pages.
     logging.info(" Wiki Generation ".center(DIV_WIDTH, "-"))
-    logging.info(f"Writing wiki pages for {len(context.settings.configurations)} configurations.")
+    logging.info(f"Writing wiki pages for {len(app.settings.configurations)} configurations.")
 
     # Generate the wiki index summary page.
-    write_page_index(context)
+    write_page_index(app)
 
     # Generate wiki pages for each project.
-    for key in context.settings.configurations:
-        configuration:Configuration = context.settings.configurations[key]
-        if not project_start(context, configuration):
+    for key in app.settings.configurations:
+        configuration:Configuration = app.settings.configurations[key]
+        if not project_start(app, configuration):
             logging.error(f"[{configuration.identifier}] Failed to generate one or more wiki pages.")

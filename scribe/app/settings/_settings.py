@@ -1,38 +1,9 @@
 import os
 import json
 from typing import Any
+from .provider import Provider, ProviderType
 from ._configuration import Configuration
 from ._publishing import PublishOption, Sort
-
-
-class AppSettings:
-    """
-    Represents the application settings.
-    """
-    def __init__(self) -> None:
-        self.file_path:str = ""
-        """The settings file path to use."""
-
-        self.base_directory:str = ""
-        """The base directory of the settings file."""
-
-        self.export_directory:str = ""
-        """The export directory for wiki pages."""
-
-        self.environment:str|None = None
-        """The environment to use for the application uploader."""
-
-        self.publish_info:dict[str, Any] = {}
-        """OBSOLETE: Information about the game and editor for publishing."""
-
-        self.configurations:dict[str, Configuration] = {}
-        """The app configurations loaded from the settings file."""
-
-        self.game_info:dict[str, Any] = {}
-        """OBSOLETE: Information about the game for publishing."""
-
-        self.editor_info:dict[str, Any] = {}
-        """OBSOLETE: Information about the editor for publishing."""
 
 
 # Json
@@ -46,60 +17,108 @@ def get_property_path(data:dict[str, Any], property:str, directory:str) -> str:
 
 
 def get_property_sort(data:dict[str, Any], property:str) -> Sort:
-    value:str = data.get(property, "DEFAULT")
+    value:str = data.get(property, Sort.DEFAULT.name)
     if not value: return Sort.DEFAULT
     else: return Sort[value.upper()]
+
+
+def get_property_provider_type(data:dict[str, Any], property:str) -> ProviderType:
+    value:str = data.get(property, ProviderType.DEFAULT)
+    if not value: return ProviderType.DEFAULT
+    else: return ProviderType[value.upper()]
 
 
 # Settings
 #---------------------------------------------
 
-def read(file_path:str) -> AppSettings:
+class AppSettings:
     """
-    Reads the given application settings file.
+    Represents the application settings.
     """
-    settings:AppSettings = AppSettings()
-    settings.file_path = os.path.abspath(file_path)
-    settings.base_directory = os.path.dirname(settings.file_path)
+    def __init__(self) -> None:
+        self.file_path:str = ""
+        """The json file path for these settings."""
 
-    # Ensure the settings file exists.
-    if os.path.exists(file_path):
+        self.base_directory:str = ""
+        """The base directory of the settings file."""
+
+        self.export_directory:str = ""
+        """The export directory for wiki pages."""
+
+        self.environment:str|None = None
+        """The environment to use for the uploader."""
+
+        self.providers:dict[str, Provider] = {}
+        """The providers loaded from the settings file."""
+
+        self.configurations:dict[str, Configuration] = {}
+        """The app configurations loaded from the settings file."""
+
+
+    @staticmethod
+    def read(file_path:str) -> 'AppSettings':
+        """
+        Reads the given application settings file.
+        """
+        # Ensure the settings file exists.
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Settings file not found: {file_path}")
+
         # Read data from the settings file.
         with open(file_path, encoding="utf-8") as file:
             data:dict[str, Any] = json.load(file)
 
+        settings:AppSettings = AppSettings()
+        settings.file_path = os.path.abspath(file_path)
+        settings.base_directory = os.path.dirname(settings.file_path)
+
         # Read the configuration for the application.
         settings.export_directory = get_property_path(data, "export.directory", settings.base_directory)
-        settings.publish_info = data.get("publish", {})
 
-        # Get content data for game and editor.
-        settings.game_info = settings.publish_info.get("game", {})
-        settings.editor_info = settings.publish_info.get("editor", {})
+        for data_provider in data.get("providers", []):
+            data_provider:dict[str, Any] = data_provider
 
-        # Read the configuration for projects.
-        for data_project in data.get("projects", []):
-            data_project:dict[str, Any] = data_project
+            provider:Provider = Provider()
+            provider.identifier = data_provider.get("identifier", "")
+            provider.type = get_property_provider_type(data_provider, "type")
+            provider.name = data_provider.get("name", "")
+            provider.author = data_provider.get("author", "")
+            provider.description = data_provider.get("description", "")
+            provider.platform = data_provider.get("platform", "")
+            provider.url = data_provider.get("url", "")
+            provider.url_id = data_provider.get("url_id", "")
 
-            # Get the identifier for this configuration.
-            identifier:str = data_project.get("identifier", "UNNAMED")
+            version_data:dict[str, Any] = data_provider.get("version", {})
+            provider.version = version_data.get("number", "")
+            provider.version_build = version_data.get("version_build", "")
+            provider.version_date = version_data.get("version_date", "")
+            # Add provider to the settings.
+            settings.providers[provider.identifier] = provider
 
-            # Create the Publish options.
-            publish:PublishOption = PublishOption()
-            publish.output = get_property_path(data_project, "output.directory", settings.base_directory)
-            publish.sort = get_property_sort(data_project, "output.sort")
-            publish.enable = data_project.get("output.enabled", False)
-            publish.enable_objects = data_project.get("output.objects", False)
-            publish.enable_members = data_project.get("output.members", False)
+            # Read the configuration for projects.
+            for data_project in data_provider.get("projects", []):
+                data_project:dict[str, Any] = data_project
 
-            # Create the configuration to the context.
-            configuration:Configuration = Configuration()
-            configuration.identifier = identifier
-            configuration.imports = data_project.get("source.imports", [])
-            configuration.root = get_property_path(data_project, "source.directory", settings.base_directory)
-            configuration.publish = publish
+                # Get the identifier for this configuration.
+                identifier:str = data_project.get("identifier", "UNNAMED")
 
-            # Add the configuration to the settings.
-            settings.configurations[configuration.identifier] = configuration
+                # Create the Publish options.
+                publish:PublishOption = PublishOption()
+                publish.output = get_property_path(data_project, "output.directory", settings.base_directory)
+                publish.sort = get_property_sort(data_project, "output.sort")
+                publish.enable = data_project.get("output.enabled", False)
+                publish.enable_objects = data_project.get("output.objects", False)
+                publish.enable_members = data_project.get("output.members", False)
 
-    # Return the application settings.
-    return settings
+                # Create the configuration.
+                configuration:Configuration = Configuration()
+                configuration.identifier = identifier
+                configuration.imports = data_project.get("source.imports", [])
+                configuration.root = get_property_path(data_project, "source.directory", settings.base_directory)
+                configuration.publish = publish
+
+                # Add the configuration to the settings.
+                settings.configurations[configuration.identifier] = configuration
+
+        # Return the application settings.
+        return settings

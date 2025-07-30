@@ -71,6 +71,9 @@ class PapyrusProject:
 #---------------------------------------------
 
 class PapyrusContext:
+    """
+    The Papyrus context for script analysis.
+    """
     def __init__(self) -> None:
         self.projects:dict[str, PapyrusProject] = {}
 
