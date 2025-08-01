@@ -1,4 +1,24 @@
 from enum import Enum
+from ._publishing import PublishOption
+
+
+class ProviderProject:
+    """
+    Represents a Papyrus project configuration with publishing options.
+    See the `PapyrusProject` and `PublishOption` classes.
+    """
+    def __init__(self) -> None:
+        self.identifier:str = ""
+        """The indentifier for this configuration."""
+
+        self.root:str = ""
+        """The root directory containing Papyrus scripts for this configuration."""
+
+        self.imports:list[str] = []
+        """A list of other configuration identifiers to import Papyrus scripts from."""
+
+        self.publish:PublishOption = PublishOption()
+        """The publish options for this configuration."""
 
 
 class ProviderType(Enum):

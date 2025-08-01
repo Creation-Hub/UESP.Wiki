@@ -1,6 +1,8 @@
 {
-    "environments": {
-        "local": {
+    "environments":
+    {
+        "local":
+        {
             "url": "http://localhost:8080",
             "article": "/wiki/",
             "script": "/w",
@@ -8,7 +10,8 @@
             "api": "/api.php",
             "rest": "/rest.php"
         },
-        "developer": {
+        "developer":
+        {
             "url": "https://dev.starfieldwiki.net",
             "article": "/wiki/",
             "script": "/w",
@@ -16,7 +19,8 @@
             "api": "/api.php",
             "rest": "/rest.php"
         },
-        "production": {
+        "production":
+        {
             "url": "https://starfieldwiki.net",
             "article": "/wiki/",
             "script": "/w",

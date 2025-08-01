@@ -4,23 +4,6 @@ from scribe.papyrus.code import Script
 from scribe.papyrus.collections import ScriptDictionary
 from scribe.papyrus.text import FileReader
 
-
-# Files
-#---------------------------------------------
-
-def find_files(directory:str) -> list[str]:
-    """Searches for Papyrus scripts in the given Papyrus root import directory."""
-    search:list[str] = []
-    for root, _, files in os.walk(directory):
-        for file_name in files:
-            if file_name.lower().endswith(".psc"):
-                search.append(os.path.join(root, file_name))
-    return search
-
-
-# Project
-#---------------------------------------------
-
 class PapyrusProject:
     def __init__(self) -> None:
         self.identifier:str = ""
@@ -46,7 +29,7 @@ class PapyrusProject:
         self.scripts.clear()
 
         # Parser: Search for source files in the project script directory.
-        paths:list[str] = find_files(self.root)
+        paths:list[str] = PapyrusProject.find_files(self.root)
         if not paths:
             logging.error(f"[{self.identifier}] No scripts found in '{self.root}'")
             return False
@@ -67,41 +50,12 @@ class PapyrusProject:
         return True
 
 
-# Context
-#---------------------------------------------
-
-class PapyrusContext:
-    """
-    The Papyrus context for script analysis.
-    """
-    def __init__(self) -> None:
-        self.projects:dict[str, PapyrusProject] = {}
-
-
-    def add(self, project:PapyrusProject) -> None:
-        """Adds a project to the Papyrus context."""
-        self.projects[project.identifier] = project
-
-
-    def _valid_imports(self, project:PapyrusProject) -> bool:
-        for imported in project.imports:
-            if imported not in self.projects:
-                logging.error(f"[{project.identifier}] The imported '{imported}' project dependency does not exist.")
-                return False
-        return True
-
-
-    def load(self) -> bool:
-        if not self.projects:
-            logging.warning("No projects found in this Papyrus context.")
-            return False
-
-        for project in self.projects.values():
-            if not self._valid_imports(project):
-                logging.error(f"[{project.identifier}] There was a problem with one or more imported projects.")
-                return False
-
-            if not project.load():
-                logging.error(f"[{project.identifier}] Failed to load project scripts.")
-
-        return True
+    @staticmethod
+    def find_files(directory:str) -> list[str]:
+        """Searches for Papyrus scripts in the given Papyrus root import directory."""
+        search:list[str] = []
+        for root, _, files in os.walk(directory):
+            for file_name in files:
+                if file_name.lower().endswith(".psc"):
+                    search.append(os.path.join(root, file_name))
+        return search

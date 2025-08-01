@@ -1,12 +1,13 @@
 """
 Used to configure the application context.
-This includes application settings, command line arguments, and domain context.
+This includes command line arguments application settings, and domain context.
 """
 import logging
 from scribe.app.cli import AppArguments
 from scribe.app.log import AppLog
 from scribe.app.settings import AppSettings
-from scribe.papyrus.project import PapyrusContext
+from scribe.papyrus.context import PapyrusContext
+from scribe.wiki.context import WikiContext
 
 class AppContext():
     """
@@ -25,6 +26,9 @@ class AppContext():
         self.papyrus:PapyrusContext = PapyrusContext()
         """The application Papyrus context."""
 
+        self.wiki:WikiContext = WikiContext()
+        """The application wiki context."""
+
 
     @staticmethod
     def create() -> 'AppContext':
@@ -35,14 +39,10 @@ class AppContext():
         this.arguments = AppArguments.create()
         this.log = AppLog.create(this.arguments)
         this.settings = AppSettings.create(this.arguments)
+        this.wiki = WikiContext.create()
 
         # Log application startup details.
-        logging.info(f"Arguments: {this.arguments}")
-        logging.info(f"Settings: {this.settings.file_path}")
-        logging.info(f"Log: {this.log.file_path}")
-        logging.info(f"Directory: {this.settings.base_directory}")
-        logging.info(f"Providers: {len(this.settings.providers)}")
-        for provider in this.settings.providers:
-            logging.info(f"- {provider}")
-
+        logging.info(str(this.arguments))
+        logging.info(str(this.log))
+        logging.info(str(this.settings))
         return this

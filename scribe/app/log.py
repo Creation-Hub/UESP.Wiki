@@ -9,6 +9,7 @@ from logging import Formatter, Logger
 from logging import FileHandler, StreamHandler
 from typing import TextIO
 from scribe.app.cli import AppArguments
+from scribe.debug import Dump
 
 class AppLog:
     """
@@ -42,8 +43,12 @@ class AppLog:
         """The file path for the log file."""
 
 
+    def __str__(self) -> str:
+        return Dump.Any(self)
+
+
     @staticmethod
-    def create(arguments:AppArguments) -> 'AppLog':
+    def create(arguments:AppArguments|None = None) -> 'AppLog':
         """
         Configure the logging system with both console and file handlers.
         """
@@ -54,11 +59,12 @@ class AppLog:
             this.file_level = arguments.log_file_level or this.file_level
             this.file_path = arguments.log_file_path or this.file_path
 
-        # Create root logger
+        # Configure the log handler.
         logger:Logger = logging.getLogger()
+        logger.handlers.clear()
         logger.setLevel(logging.DEBUG)
 
-        # Console Stream handler
+        # Configure the console stream handler.
         console_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(message)s', this.date_format)
         console_handler:StreamHandler[TextIO] = StreamHandler()
         console_handler.setFormatter(console_formatter)
@@ -66,7 +72,7 @@ class AppLog:
         console_handler.setLevel(console_level)
         logger.addHandler(console_handler)
 
-        # Log File handler
+        # Configure the log file handler.
         file_formatter:Formatter = Formatter('%(asctime)s - %(levelname)s - %(module)s:%(funcName)s - %(message)s', this.date_format)
         file_path:str = this.file_path if this.file_path else AppLog.FILE_PATH
         file_handler:FileHandler = FileHandler(file_path, mode='w')
@@ -74,5 +80,4 @@ class AppLog:
         file_handler.setLevel(logging.DEBUG)
         logger.addHandler(file_handler)
 
-        logging.info("Application log started.")
         return this

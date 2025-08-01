@@ -102,7 +102,7 @@ class AppArguments:
     """
 
     parser:ArgumentParser = create_parser()
-    """The command line argument parser. This is essentialy static."""
+    """The command line argument parser. This is essentially static."""
 
 
     def __init__(self) -> None:
@@ -117,6 +117,18 @@ class AppArguments:
         self.log_file_path:str|None = None
         self.upload_configuration_file:str|None = None
         self.upload_environment:str|None = None
+
+
+    def __str__(self) -> str:
+        string:str = f"{self.__class__.__name__}"
+        string += f"\n - parser:"
+        string += f"\n   - prog: {AppArguments.parser.prog}"
+        string += f"\n   - description: {AppArguments.parser.description}"
+        string += f"\n - arguments: {len(self.values.__dict__)}"
+        for key in self.values.__dict__:
+            value = getattr(self.values, key)
+            string += f"\n  - {key}: {value}"
+        return string
 
 
     @staticmethod

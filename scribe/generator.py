@@ -3,11 +3,16 @@ Used to generate wiki page content.
 """
 import os
 import logging
-from scribe import wiki
 from scribe.app.context import AppContext
-from scribe.app.settings import Configuration, Sort
-from scribe.papyrus.code import Member
+from scribe.app.settings import AppSettings, ProviderProject, Sort
+from scribe.papyrus.code import Member, Script
+from scribe.papyrus.context import PapyrusContext
 from scribe.papyrus.project import PapyrusProject
+from scribe.wiki.context import WikiContext
+from scribe.wiki.template import Script_Object_Summary, Template
+from scribe.wiki.pages.index import PageIndex
+from scribe.wiki.pages.member import PageMember
+from scribe.wiki.pages.script import PageScript
 
 class GenerateService:
     """
@@ -17,22 +22,39 @@ class GenerateService:
     DIV_WIDTH:int = 50
     """The width of divider lines in the log output."""
 
+    PAGE_SCRIPT_INDEX_FILE_NAME:str = "Script_Information.wiki"
+    """The file name of the wiki page that summarizes all scripts in a Papyrus project."""
 
-    # Service
-    #---------------------------------------------
 
     @staticmethod
-    def start(app:AppContext) -> None:
-        # Ensure that configurations exist.
+    def start(app:AppContext) -> bool:
         logging.info(" Configurations ".center(GenerateService.DIV_WIDTH, "-"))
+
+        # Ensure that configurations exist.
         if not app.settings.configurations:
             logging.error(f"Aborting program. No configurations found.")
-            return
+            return False
 
+        if not GenerateService.papyrus_start(app.settings, app.papyrus):
+            logging.error(f"Aborting program. Failed to load Papyrus projects.")
+            return False
+
+        if not GenerateService.wiki_start(app.settings, app.wiki, app.papyrus):
+            logging.error(f"Aborting program. Failed to generate wiki pages.")
+            return False
+
+        return True
+
+
+    @staticmethod
+    def papyrus_start(settings:AppSettings, papyrus:PapyrusContext) -> bool:
+        """
+        Start the Papyrus context and load all projects.
+        """
         # Load each configuration.
-        logging.info(f"Found {len(app.settings.configurations)} configurations.")
-        for key in app.settings.configurations:
-            configuration:Configuration = app.settings.configurations[key]
+        logging.info(f"Found {len(settings.configurations)} configurations.")
+        for key in settings.configurations:
+            configuration:ProviderProject = settings.configurations[key]
 
             # Ensure the project root directory exists, else skip.
             if not configuration.root:
@@ -47,46 +69,45 @@ class GenerateService:
             project.identifier = configuration.identifier
             project.imports = configuration.imports
             project.root = configuration.root
-            app.papyrus.add(project)
+
+            # Add project to the Papyrus context.
+            papyrus.add(project)
             logging.info(f"[{project.identifier}] Loaded project from configuration.")
 
-
-        # Ensure that projects exist.
+        # Ensure that projects exist by loading each.
         logging.info(" Papyrus ".center(GenerateService.DIV_WIDTH, "-"))
-        logging.info(f"Loading {len(app.papyrus.projects)} projects.")
-        if not app.papyrus.load():
+        logging.info(f"Loading {len(papyrus.projects)} projects.")
+        if not papyrus.load():
             logging.error(f"Aborting program. Failed to load one or more Papyrus projects.")
-            return
+            return False
+        else:
+            return True
 
-        # Begin writing wiki pages.
+
+    @staticmethod
+    def wiki_start(settings:AppSettings, wiki:WikiContext, papyrus:PapyrusContext) -> bool:
+        """
+        Start the wiki generation process.
+        """
         logging.info(" Wiki Generation ".center(GenerateService.DIV_WIDTH, "-"))
-        logging.info(f"Writing wiki pages for {len(app.settings.configurations)} configurations.")
+        logging.info(f"Writing wiki pages for {len(settings.configurations)} configurations.")
 
         # Generate the wiki index summary page.
-        GenerateService.write_page_index(app)
+        page_file_path:str = os.path.join(settings.export_directory, GenerateService.PAGE_SCRIPT_INDEX_FILE_NAME)
+        index_page:PageIndex = GenerateService.wiki_page_create_index(page_file_path, settings, papyrus)
+        wiki.pages.append(index_page)
 
         # Generate wiki pages for each project.
-        for key in app.settings.configurations:
-            configuration:Configuration = app.settings.configurations[key]
-            if not GenerateService.project_start(app, configuration):
+        for key in settings.configurations:
+            configuration:ProviderProject = settings.configurations[key]
+            if not GenerateService.wiki_projects(wiki, papyrus, configuration):
                 logging.error(f"[{configuration.identifier}] Failed to generate one or more wiki pages.")
+        return True
 
 
     @staticmethod
-    def write_page_index(app:AppContext) -> None:
-        index_path:str = os.path.join(app.settings.export_directory, "Script_Information.wiki")
-        if not os.path.exists(os.path.dirname(index_path)):
-            os.makedirs(os.path.dirname(index_path))
-            logging.debug(f"Created index directory: {os.path.dirname(index_path)}")
-        try:
-            wiki.page.index.write(app, index_path)
-        except Exception as exception:
-            logging.error(f"Failed to write projects index: {str(exception)}")
-
-
-    @staticmethod
-    def project_start(app:AppContext, configuration:Configuration) -> bool:
-        project:PapyrusProject = app.papyrus.projects[configuration.identifier]
+    def wiki_projects(wiki:WikiContext, papyrus:PapyrusContext, configuration:ProviderProject) -> bool:
+        project:PapyrusProject = papyrus.projects[configuration.identifier]
 
         # Skip any disabled projects.
         if not configuration.publish.enable:
@@ -134,7 +155,8 @@ class GenerateService:
 
             # Write a wiki page for this script object.
             if configuration.publish.enable_objects:
-                wiki.page.script.write(app.papyrus, project, script, output_file_path)
+                script_page:PageScript = GenerateService.wiki_page_create_script(output_file_path, papyrus, project, script)
+                wiki.pages.append(script_page)
                 logging.debug(f"[{project.identifier}]<{script_file_path}> -> {script_file_path_full} -> {output_file_path}")
 
             # Write a wiki page for this script member.
@@ -143,7 +165,53 @@ class GenerateService:
                     member:Member = script.members[key]
                     member_file_name:str = f"{script_file_name}-{member.name}.wiki"
                     member_file_path:str = os.path.join(os.path.dirname(output_file_path), member_file_name)
-                    wiki.page.member.write(project, script, member, member_file_path)
+                    script_member_page:PageMember = GenerateService.wiki_page_create_script_member(member_file_path, project, script, member)
+                    wiki.pages.append(script_member_page)
                     logging.debug(f"[{project.identifier}]<{script_file_path}>::{member.name} -> {member_file_path}")
 
         return True
+
+
+    @staticmethod
+    def wiki_page_create_index(file_path:str, settings:AppSettings, papyrus:PapyrusContext) -> PageIndex:
+        page:PageIndex = PageIndex.create(file_path, settings, papyrus)
+        try:
+            page.write()
+        except Exception as exception:
+            logging.error(f"Failed to write projects index: {str(exception)}")
+        return page
+
+
+    @staticmethod
+    def wiki_page_create_script(file_path:str, papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> PageScript:
+        page:PageScript = PageScript.create(file_path, papyrus, project, script)
+        try:
+            page.write()
+        except Exception as exception:
+            logging.error(f"Failed to write projects index: {str(exception)}")
+        return page
+
+
+    @staticmethod
+    def wiki_page_create_script_member(file_path:str, project:PapyrusProject, script:Script, member:Member) -> PageMember:
+        page:PageMember = PageMember.create(file_path, project, script, member)
+        try:
+            page.write()
+        except Exception as exception:
+            logging.error(f"Failed to write projects index: {str(exception)}")
+        return page
+
+
+
+    @staticmethod
+    def wiki_template_script_object_summary(papyrus:PapyrusContext, project:PapyrusProject, script:Script, game_version:str) -> Template:
+        template:Template = Template()
+        template.file_path = "file_path"
+        template.title = "Script_Object_Summary"
+        template.content = []
+        template.categories = ["Category:Infobox_Templates"]
+
+        content:str = Script_Object_Summary.script_object_summary(papyrus, project, script, game_version)
+        template.content.append(content)
+
+        return template
