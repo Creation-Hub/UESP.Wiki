@@ -1,3 +1,3 @@
 """
-Provides features for generating MediaWiki formatted content.
+A module for interacting with MediaWiki.
 """

@@ -1,14 +1,14 @@
+from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.scripts_inheritance import WikiDataInheritance
 from scribe.papyrus.context import PapyrusContext
 from scribe.papyrus.inheritance import PapyrusInheritance
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Script
-from scribe.wiki.data.inheritance import WikiDataInheritance
-from scribe.wiki.formatter import WikiFormatter
-
+from scribe.wiki.data.formatter import WikiFormatter
 
 def summary(papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> list[str]:
     script_title:str = str(script.header.name)
-    script_name:str = WikiFormatter.link_script_object(str(script.header.name))
+    script_name:str = Wiki.link_script_object(str(script.header.name))
     inheritance_chain:list[Script] = PapyrusInheritance.get_chain(papyrus, project, script)
     script_extends:str = WikiDataInheritance.format_inheritance_chain(inheritance_chain)
     script_flags:str = WikiFormatter.to_list_csv(script.header.flags)

@@ -17,5 +17,4 @@ The parameters that belong to this script.
 * ObjectReference akNewContainer
 * ObjectReference akOldContainer
 
-
 [[Category:Starfield_Mod-Papyrus]]

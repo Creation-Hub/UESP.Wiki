@@ -6,6 +6,7 @@ Help:
 """
 from argparse import ArgumentParser, Namespace
 from enum import Enum
+from scribe.shared.objects import Dump
 
 
 class AppMode(str, Enum):
@@ -108,27 +109,52 @@ class AppArguments:
     def __init__(self) -> None:
         self.values:Namespace|None = None
         """The command line argument values."""
-        # The following attributes are set by the parser values.
-        self.configuration_file:str|None = None
-        self.mode:AppMode|None = None
-        self.log_date_format:str|None = None
-        self.log_console_level:int|None = None
-        self.log_file_level:int|None = None
-        self.log_file_path:str|None = None
-        self.upload_configuration_file:str|None = None
-        self.upload_environment:str|None = None
 
 
     def __str__(self) -> str:
-        string:str = f"{self.__class__.__name__}"
-        string += f"\n - parser:"
-        string += f"\n   - prog: {AppArguments.parser.prog}"
-        string += f"\n   - description: {AppArguments.parser.description}"
-        string += f"\n - arguments: {len(self.values.__dict__)}"
-        for key in self.values.__dict__:
-            value = getattr(self.values, key)
-            string += f"\n  - {key}: {value}"
-        return string
+        return Dump.get(self)
+
+
+    @property
+    def configuration_file(self) -> str|None:
+        """Path to the application settings JSON file."""
+        return getattr(self.values, "settings", None) if self.values else None
+
+    @property
+    def mode(self) -> AppMode|None:
+        """The application mode (generate or upload)."""
+        if not self.values: return None
+        return AppArguments.to_AppMode(self.values, "mode")
+
+    @property
+    def log_date_format(self) -> str|None:
+        """Date format for log messages."""
+        return getattr(self.values, "log_date_format", None) if self.values else None
+
+    @property
+    def log_console_level(self) -> int|None:
+        """The logging level for console output."""
+        return getattr(self.values, "log_console_level", None) if self.values else None
+
+    @property
+    def log_file_level(self) -> int|None:
+        """The logging level for file output."""
+        return getattr(self.values, "log_file_level", None) if self.values else None
+
+    @property
+    def log_file_path(self) -> str|None:
+        """The log file path to use."""
+        return getattr(self.values, "log_file_path", None) if self.values else None
+
+    @property
+    def upload_configuration_file(self) -> str|None:
+        """Path to the upload configuration file."""
+        return getattr(self.values, "config", None) if self.values else None
+
+    @property
+    def upload_environment(self) -> str|None:
+        """The upload environment to use."""
+        return getattr(self.values, "environment", None) if self.values else None
 
 
     @staticmethod
@@ -138,14 +164,6 @@ class AppArguments:
         """
         this:AppArguments = AppArguments()
         this.values = AppArguments.parser.parse_args()
-        this.configuration_file = getattr(this.values, "settings", this.configuration_file)
-        this.log_date_format = getattr(this.values, "log_date_format", this.log_date_format)
-        this.log_console_level = getattr(this.values, "log_console_level", this.log_console_level)
-        this.log_file_level = getattr(this.values, "log_file_level", this.log_file_level)
-        this.log_file_path = getattr(this.values, "log_file_path", this.log_file_path)
-        this.mode = AppArguments.to_AppMode(this.values, "mode")
-        this.upload_configuration_file = getattr(this.values, "config", this.upload_configuration_file)
-        this.upload_environment = getattr(this.values, "environment", this.upload_environment)
         return this
 
 

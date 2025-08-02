@@ -23,5 +23,4 @@ The parameters that belong to this script.
 * float afInterval
 * int aiTimerID = 0
 
-
 [[Category:Starfield_Mod-Papyrus]]

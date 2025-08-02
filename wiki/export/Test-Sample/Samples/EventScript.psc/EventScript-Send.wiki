@@ -14,5 +14,4 @@ No documentation comments were provided for this member.
 This function member has no parameters.
 
 
-
 [[Category:Starfield_Mod-Papyrus]]

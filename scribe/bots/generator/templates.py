@@ -1,31 +1,12 @@
-"""
-Provides wiki template generation features.
-"""
+from scribe.bots.generator.constants import Wiki
 from scribe.papyrus.context import PapyrusContext
 from scribe.papyrus.inheritance import PapyrusInheritance
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
-from scribe.wiki.article import Article
-from scribe.wiki.data.inheritance import WikiDataInheritance
-from scribe.wiki.formatter import WikiFormatter
-from scribe.wiki.templates.data import TemplateData
-
-
-class Template(Article):
-    """
-    Represents a MediaWiki template type.
-    """
-    def __init__(self) -> None:
-        super().__init__()
-        # TODO: Add a "help" page reference for templates.
-
-
-    @staticmethod
-    def create(file_path:str) -> 'Template':
-        this:Template = Template()
-        this.file_path = file_path
-        return this
+from scribe.wiki.data.formatter import WikiFormatter
+from scribe.bots.generator.scripts_inheritance import WikiDataInheritance
+from scribe.bots.generator.templates_data import TemplateData
 
 
 class Script_Object_Summary:
@@ -37,7 +18,7 @@ class Script_Object_Summary:
         See: https://starfieldwiki.net/wiki/Template:Script_Object_Summary
         """
         script_title:str = str(script.header.name)
-        script_name:str = WikiFormatter.link_script_object(str(script.header.name))
+        script_name:str = Wiki.link_script_object(str(script.header.name))
         inheritance_chain:list[Script] = PapyrusInheritance.get_chain(papyrus, project, script)
         script_extends:str = WikiDataInheritance.format_inheritance_chain(inheritance_chain)
         script_flags:str = WikiFormatter.to_list_csv(script.header.flags)
@@ -72,9 +53,9 @@ class Script_Object_Member_Summary:
 
         See: https://starfieldwiki.net/wiki/Template:Script_Object_Member_Summary
         """
-        script_name:str = WikiFormatter.link_script_object(str(script.header.name))
+        script_name:str = Wiki.link_script_object(str(script.header.name))
         member_title:str = member.name
-        member_name:str = WikiFormatter.link_script_member(str(script.header.name), member.name)
+        member_name:str = Wiki.link_script_member(str(script.header.name), member.name)
         member_kind:str = member.kind
         member_returns:str = TemplateData.get_member_type_string(member)
         member_flags_string:str = " ".join(member.flags)
@@ -124,9 +105,9 @@ class Script_Member_Summary:
 
         See: https://starfieldwiki.net/wiki/Template:Script_Member_Summary
         """
-        script_name:str = WikiFormatter.link_script_object(str(script.header.name))
+        script_name:str = Wiki.link_script_object(str(script.header.name))
         member_title:str = member.name
-        member_name:str = WikiFormatter.link_script_member(str(script.header.name), member.name)
+        member_name:str = Wiki.link_script_member(str(script.header.name), member.name)
         member_kind:str = member.kind
         member_returns:str = TemplateData.get_member_type_string(member)
         member_flags_string:str = " ".join(member.flags)

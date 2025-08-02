@@ -3,14 +3,16 @@ Used to upload wiki pages to a remote site.
 """
 from http import HTTPStatus
 import logging
+import os
 from scribe.app.context import AppContext
-from scribe.web.client import Client
-from scribe.web.credentials import Credential, create_credentials
-from scribe.web.site import Site, create_site
-from scribe.web.api.edit import EditResponse
-from scribe.web.api.login import LoginResponse
-from scribe.web.api.status import EditResult, LoginStatus
-from scribe.wiki.page import Page
+from scribe.wiki.data.page import Page
+from scribe.wiki.web.client import WebClient
+from scribe.wiki.web.credentials import Credential, create_credentials
+from scribe.wiki.web.site import Site, create_site
+from scribe.wiki.web.api.edit import EditResponse
+from scribe.wiki.web.api.login import LoginResponse
+from scribe.wiki.web.api.status import EditResult, LoginStatus
+from scribe.bots.generator.context import GeneratorContext
 
 class UploadService:
     """
@@ -22,6 +24,10 @@ class UploadService:
 
     @staticmethod
     def start(app:AppContext) -> None:
+        if not app.wiki.articles:
+            logging.error("No wiki pages to upload.")
+            return
+
         if not app.settings.environment:
             logging.error("No environment specified.")
             return
@@ -30,10 +36,22 @@ class UploadService:
             logging.error("No upload configuration specified.")
             return
 
+        # Load wiki context from file
+        wiki_file_path:str = os.path.join(app.settings.export_directory, GeneratorContext.FILENAME)
+        try:
+            app.wiki = GeneratorContext.load(wiki_file_path)
+            logging.info(f"Loaded {len(app.wiki.articles)} pages from wiki.")
+        except FileNotFoundError as fileNotFoundError:
+            logging.error(f"Wiki file not found: '{fileNotFoundError}'")
+            return
+
+
+        # Create site and client
         site:Site = create_site(app.settings.upload_configuration_file, app.settings.environment)
         credential:Credential = create_credentials()
-        client:Client = Client(site)
+        client:WebClient = WebClient(site)
 
+        # Login to the site
         try:
             login:LoginResponse = client.login(credential.username, credential.password)
         except Exception as exception:
@@ -49,28 +67,16 @@ class UploadService:
         else:
             logging.info(f"Login successfull for '{credential.username}' user.")
 
-        user_page:Page = Page()
-        user_page.file_path = "User-Scrivener07.wiki"
-        user_page.title = "User:Scrivener07"
-        user_page.content = ["My name is Scrivener and I have been modding since TES4 Oblivion."]
-        app.wiki.pages.append(user_page)
-
-        bot_page:Page = Page()
-        bot_page.file_path = "User-Scrivener07-Bot.wiki"
-        bot_page.title = "User:Scrivener07/Bot"
-        bot_page.content = ["This is the Scribe Bot wiki page."]
-        app.wiki.pages.append(bot_page)
-
-        if not app.wiki.pages:
-            logging.error("No wiki pages to upload.")
-            return
-
-        for page in app.wiki.pages:
-            UploadService.edit_page(client, page, UploadService.BOT_EDIT_SUMMARY)
+        # Upload each page
+        for article in app.wiki.articles:
+            if isinstance(article, Page):
+                UploadService.edit_page(client, article, UploadService.BOT_EDIT_SUMMARY)
+            else:
+                logging.warning(f"Skipping upload for non-page article: '{article.title}'")
 
 
     @staticmethod
-    def edit(client:Client, title:str, text:str, summary:str) -> None:
+    def edit(client:WebClient, title:str, text:str, summary:str) -> None:
         edit:EditResponse = client.edit(title, text, summary)
         if not edit:
             logging.error("The 'edit' response was None.")
@@ -89,5 +95,5 @@ class UploadService:
 
 
     @staticmethod
-    def edit_page(client:Client, page:Page, summary:str) -> None:
+    def edit_page(client:WebClient, page:Page, summary:str) -> None:
         UploadService.edit(client, page.title, str(page.content), summary)

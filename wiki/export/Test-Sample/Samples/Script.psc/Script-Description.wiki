@@ -21,5 +21,4 @@ Properties with various flags
 == Field Initializer ==
 * "Default
 
-
 [[Category:Starfield_Mod-Papyrus]]

@@ -2,8 +2,8 @@
 Provides methods to format inheritance data for scripts.
 """
 from collections.abc import Iterable
+from scribe.bots.generator.constants import Wiki
 from scribe.papyrus.code import Script
-from scribe.wiki.formatter import WikiFormatter
 
 class WikiDataInheritance:
     """
@@ -15,7 +15,7 @@ class WikiDataInheritance:
 
     @staticmethod
     def _to_names_linked(scripts:list[Script]) -> list[str]:
-        return [WikiFormatter.link_script_object(str(script.header.name)) for script in scripts] if scripts else []
+        return [Wiki.link_script_object(str(script.header.name)) for script in scripts] if scripts else []
 
 
     @staticmethod

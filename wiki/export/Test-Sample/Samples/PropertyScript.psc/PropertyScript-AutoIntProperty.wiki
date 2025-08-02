@@ -16,5 +16,4 @@ No documentation comments were provided for this member.
 This property member has no field initialized value.
 
 
-
 [[Category:Starfield_Mod-Papyrus]]

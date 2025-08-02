@@ -16,5 +16,4 @@ The parameters that belong to this script.
 
 * ObjectReference akActionRef
 
-
 [[Category:Starfield_Mod-Papyrus]]

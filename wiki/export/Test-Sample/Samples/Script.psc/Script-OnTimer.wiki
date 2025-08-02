@@ -16,5 +16,4 @@ The parameters that belong to this script.
 
 * int aiTimerID
 
-
 [[Category:Starfield_Mod-Papyrus]]

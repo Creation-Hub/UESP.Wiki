@@ -8,23 +8,25 @@ from scribe.papyrus.code import Function
 from scribe.papyrus.code import Event
 from scribe.papyrus.code import Variable
 from scribe.papyrus.code import Property
-from scribe.wiki.data.script import WikiDataScript
-from scribe.wiki.page import Page
-from scribe.wiki.template import Script_Member_Summary
+from scribe.wiki.data.article import ArticleType
+from scribe.wiki.data.page import Page
+from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.templates import Script_Member_Summary
+from scribe.bots.generator.scripts import WikiDataScript
 
-class PageMember(Page):
+class PageMember:
     """
     Generates a MediaWiki page for a Papyrus member.
     """
 
-    def __init__(self) -> None:
-        super().__init__()
-
-
     @staticmethod
-    def create(file_path:str, project:PapyrusProject, script:Script, member:Member) -> 'PageMember':
-        this:PageMember = PageMember()
+    def create(file_path:str, project:PapyrusProject, script:Script, member:Member) -> Page:
+        this:Page = Page()
+        this.type = ArticleType.Main
         this.file_path = file_path
+        this.title = PageMember.get_title(script, member)
+        this.categories.append(Wiki.CATEGORY_PAPYRUS)
+
         game_version:str = ""
         source_file_path:str = script.header.name.file_path() + ".psc"
 
@@ -66,6 +68,13 @@ class PageMember(Page):
 
         # Page Categories
         # TODO: Should this be a different category for members?
-        this.content.append("\n\n")
-        this.content.append("[[Category:Starfield_Mod-Papyrus]]\n")
+        # this.content.append("\n\n")
+        # this.content.append(Wiki.CATEGORY_PAPYRUS)
+        # this.content.append("\n")
         return this
+
+
+    @staticmethod
+    def get_title(script:Script, member:Member) -> str:
+        path:str = script.header.name.file_path().replace("\\", "/")
+        return f"{path}/{member.name}"

@@ -24,5 +24,4 @@ The parameters that belong to this script.
 * int amount
 * bool abSilent = false
 
-
 [[Category:Starfield_Mod-Papyrus]]

@@ -1,14 +1,14 @@
 """
 Provides MediaWiki data transformations for Papyrus scripts.
 """
+from scribe.bots.generator.constants import Wiki
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
 from scribe.papyrus.code import Method
 from scribe.papyrus.code import Function
 from scribe.papyrus.code import Property
 from scribe.papyrus.code import Variable
-from scribe.wiki.data.script import WikiDataScript
-from scribe.wiki.formatter import WikiFormatter
+from scribe.bots.generator.scripts import WikiDataScript
 
 class TemplateData:
     """
@@ -24,9 +24,9 @@ class TemplateData:
         if script.header.name.key == "ScriptObject":
             return "Nothing"
         elif script.header.extends.key:
-            return WikiFormatter.link_script_object(str(script.header.extends))
+            return Wiki.link_script_object(str(script.header.extends))
         else:
-            return WikiFormatter.link_script_object("ScriptObject")
+            return Wiki.link_script_object("ScriptObject")
 
 
     @staticmethod

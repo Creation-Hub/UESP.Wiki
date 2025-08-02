@@ -21,5 +21,4 @@ The player reference - this is a documentation block for the property
 This property member has no field initialized value.
 
 
-
 [[Category:Starfield_Mod-Papyrus]]

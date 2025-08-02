@@ -16,5 +16,4 @@ The parameters that belong to this script.
 
 * string asOldState
 
-
 [[Category:Starfield_Mod-Papyrus]]

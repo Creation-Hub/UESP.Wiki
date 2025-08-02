@@ -16,5 +16,4 @@ Custom structure definition
 
 
 
-
 [[Category:Starfield_Mod-Papyrus]]

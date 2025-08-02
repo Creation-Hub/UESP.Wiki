@@ -19,5 +19,4 @@ Events
 This event member has no parameters.
 
 
-
 [[Category:Starfield_Mod-Papyrus]]

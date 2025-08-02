@@ -7,21 +7,23 @@ from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from scribe.papyrus.code import Member
 from scribe.papyrus.text.parsing import State
-from scribe.wiki.page import Page
-from scribe.wiki.template import Script_Object_Member_Summary, Script_Object_Summary
+from scribe.wiki.data.article import ArticleType
+from scribe.wiki.data.page import Page
+from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.templates import Script_Object_Member_Summary, Script_Object_Summary
 
-class PageScript(Page):
+class PageScript:
     """
     Generates MediaWiki pages for Papyrus scripts.
     """
-    def __init__(self) -> None:
-        super().__init__()
-
 
     @staticmethod
-    def create(file_path:str, papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> 'PageScript':
-        this:PageScript = PageScript()
+    def create(file_path:str, papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> Page:
+        this:Page = Page()
+        this.type = ArticleType.Main
         this.file_path = file_path
+        this.title = PageScript.get_title(script)
+        this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         game_version:str = ""
         source_file_path:str = script.header.name.file_path() + ".psc"
@@ -75,9 +77,15 @@ class PageScript(Page):
                 this.content.append("\n\n")
 
         # Page Categories
-        this.content.append("\n")
-        this.content.append("[[Category:Starfield_Mod-Papyrus]]\n")
+        # this.content.append("\n")
+        # this.content.append(Wiki.CATEGORY_PAPYRUS)
+        # this.content.append("\n")
         return this
+
+
+    @staticmethod
+    def get_title(script:Script) -> str:
+        return script.header.name.file_path().replace("\\", "/")
 
 
     @staticmethod

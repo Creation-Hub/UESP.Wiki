@@ -1,13 +1,12 @@
 from http import HTTPStatus
 from typing import Any
 from requests import Response, Session
-from scribe.web.site import Site
-from scribe.web.api.edit import EditParameters, EditResponse
-from scribe.web.api.login import LoginParameters, LoginResponse, TokenResponse, TokenParameters, TokenType
-from scribe.web.api.status import LoginStatus
+from scribe.wiki.web.site import Site
+from scribe.wiki.web.api.edit import EditParameters, EditResponse
+from scribe.wiki.web.api.login import LoginParameters, LoginResponse, TokenResponse, TokenParameters, TokenType
+from scribe.wiki.web.api.status import LoginStatus
 
-
-class Client:
+class WebClient:
     """Handles authenticated MediaWiki API sessions."""
     def __init__(self, site:Site) -> None:
         self.site:Site = site

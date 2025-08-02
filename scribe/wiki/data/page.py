@@ -1,4 +1,4 @@
-from scribe.wiki.article import Article
+from scribe.wiki.data.article import Article
 
 class Page(Article):
     """

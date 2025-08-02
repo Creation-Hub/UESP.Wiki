@@ -9,7 +9,7 @@ from logging import Formatter, Logger
 from logging import FileHandler, StreamHandler
 from typing import TextIO
 from scribe.app.cli import AppArguments
-from scribe.debug import Dump
+from scribe.shared.objects import Dump
 
 class AppLog:
     """
@@ -44,7 +44,7 @@ class AppLog:
 
 
     def __str__(self) -> str:
-        return Dump.Any(self)
+        return Dump.get(self)
 
 
     @staticmethod

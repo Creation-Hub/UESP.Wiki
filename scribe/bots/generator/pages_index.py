@@ -7,22 +7,26 @@ from collections.abc import ItemsView
 from scribe.app.settings import AppSettings, ProviderProject
 from scribe.papyrus.context import PapyrusContext
 from scribe.papyrus.project import PapyrusProject
-from scribe.wiki.data.statistics import PapyrusStatistics
-from scribe.wiki.formatter import WikiFormatter
-from scribe.wiki.page import Page
+from scribe.wiki.data.article import ArticleType
+from scribe.wiki.data.page import Page
+from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.scripts_statistics import PapyrusStatistics
 
-class PageIndex(Page):
+class PageIndex:
     """
     Generates a MediaWiki page that summarizes information about all Papyrus projects.
     """
-    def __init__(self) -> None:
-        super().__init__()
+
+    PAGE_TITLE:str = "Papyrus Projects Index"
 
 
     @staticmethod
-    def create(file_path:str, settings:AppSettings, papyrus:PapyrusContext) -> 'PageIndex':
-        this:PageIndex = PageIndex()
+    def create(file_path:str, settings:AppSettings, papyrus:PapyrusContext) -> 'Page':
+        this:Page = Page()
+        this.type = ArticleType.Main
         this.file_path = file_path
+        this.title = PageIndex.PAGE_TITLE
+        this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         # Write the wiki page header.
         this.content.append("= Projects =\n")
@@ -44,7 +48,7 @@ class PageIndex(Page):
 
 
     @staticmethod
-    def write_section(this:'PageIndex', project:PapyrusProject) -> None:
+    def write_section(this:Page, project:PapyrusProject) -> None:
         statistics:PapyrusStatistics = PapyrusStatistics.create(project)
 
         # Add project summary information
@@ -108,7 +112,7 @@ class PageIndex(Page):
             return "There are no common scripts in this project."
         entries:list[str] = []
         for script_name, count in common_parent_names:
-            entries.append(f"* The {WikiFormatter.link_script_object(script_name)} script was extended {count} times.")
+            entries.append(f"* The {Wiki.link_script_object(script_name)} script was extended {count} times.")
         return "\n".join(entries)
 
 
@@ -118,5 +122,5 @@ class PageIndex(Page):
             return "There are no scripts defined in this project."
         entries:list[str] = []
         for script in project.scripts:
-            entries.append(f"* {WikiFormatter.link_script_object(str(script.header.name))}")
+            entries.append(f"* {Wiki.link_script_object(str(script.header.name))}")
         return "\n".join(entries)

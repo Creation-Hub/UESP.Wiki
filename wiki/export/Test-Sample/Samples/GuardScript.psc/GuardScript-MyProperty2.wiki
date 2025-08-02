@@ -16,5 +16,4 @@ No documentation comments were provided for this member.
 == Field Initializer ==
 * 4
 
-
 [[Category:Starfield_Mod-Papyrus]]

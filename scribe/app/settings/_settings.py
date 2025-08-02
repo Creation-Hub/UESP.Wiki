@@ -2,7 +2,7 @@ import os
 import json
 from typing import Any
 
-from scribe.debug import Dump
+from scribe.shared.objects import Dump
 from ._provider import Provider, ProviderType,ProviderProject
 from ._publishing import PublishOption, Sort
 from scribe.app.cli import AppArguments
@@ -41,14 +41,7 @@ class AppSettings:
 
 
     def __str__(self) -> str:
-        string:str = Dump.Any(self)
-        string += f"\n - providers:"
-        for provider in self.providers:
-            string += f"\n   - {provider}"
-        string += f"\n - configurations:"
-        for configurations in self.configurations:
-            string += f"\n   - {configurations}"
-        return string
+        return Dump.get(self)
 
 
     @staticmethod
