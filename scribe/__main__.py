@@ -3,7 +3,7 @@ The main program module for this application.
 """
 import logging
 from scribe.app.context import AppContext
-from scribe.app.cli import AppMode
+from scribe.app.cli.arguments import AppMode
 from scribe.generator import GenerateService
 from scribe.uploader import UploadService
 

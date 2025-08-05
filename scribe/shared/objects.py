@@ -25,14 +25,27 @@ class Dump():
 
         for attribute_key in this_attributes:
             attribute:Any = getattr(this, attribute_key)
-            list_count:int = 0
 
-            if isinstance(attribute, list) or isinstance(attribute, dict):
+            if isinstance(attribute, list):
                 string += f"\n{attr_indent} - {attribute_key}: [{attribute.__len__()}] ..."
+                list_max_count:int = 0
                 for item in attribute:  # type: ignore
-                    list_count += 1
+                    list_max_count += 1
                     string += f"\n{item_indent} - {item}"
-                    if list_count >= Dump.LIST_MAX:
+                    if list_max_count >= Dump.LIST_MAX:
+                        string += f"\n{item_indent} - ..."
+                        break
+
+            # elif isinstance(attribute, dict):
+            #     string += Dump._Any(attribute, depth + 1)
+
+            elif isinstance(attribute, dict):
+                string += f"\n{attr_indent} - {attribute_key}: [{attribute.__len__()}] ..."
+                list_max_count:int = 0
+                for key, value in attribute.items():  # type: ignore
+                    list_max_count += 1
+                    string += f"\n{item_indent} - {key}: {value}"
+                    if list_max_count >= Dump.LIST_MAX:
                         string += f"\n{item_indent} - ..."
                         break
 

@@ -4,12 +4,12 @@ Generates a MediaWiki page that summarizes information about all Papyrus project
 import logging
 from collections import Counter
 from collections.abc import ItemsView
-from scribe.app.settings import AppSettings, ProviderProject
-from scribe.papyrus.context import PapyrusContext
+from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.project import PapyrusProject
 from scribe.wiki.data.article import ArticleType
 from scribe.wiki.data.page import Page
-from scribe.bots.generator.constants import Wiki
+from scribe.bots.provider import ProviderProject
+from scribe.bots.generator.wiki import Wiki
 from scribe.bots.generator.scripts_statistics import PapyrusStatistics
 
 class PageIndex:
@@ -17,14 +17,13 @@ class PageIndex:
     Generates a MediaWiki page that summarizes information about all Papyrus projects.
     """
 
-    PAGE_TITLE:str = "Papyrus Projects Index"
+    PAGE_TITLE:str = "Script_Information"
 
 
     @staticmethod
-    def create(file_path:str, settings:AppSettings, papyrus:PapyrusContext) -> 'Page':
+    def create(configurations:dict[str, ProviderProject], papyrus:PapyrusClient) -> 'Page':
         this:Page = Page()
         this.type = ArticleType.Main
-        this.file_path = file_path
         this.title = PageIndex.PAGE_TITLE
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
@@ -35,7 +34,7 @@ class PageIndex:
 
         # Write each project wiki section.
         for identifier in papyrus.projects:
-            configuration:ProviderProject = settings.configurations[identifier]
+            configuration:ProviderProject = configurations[identifier]
             if not configuration.publish.enable:
                 logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
                 continue

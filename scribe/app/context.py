@@ -3,11 +3,10 @@ Used to configure the application context.
 This includes command line arguments application settings, and domain context.
 """
 import logging
-from scribe.app.cli import AppArguments
-from scribe.app.log import AppLog
+from scribe.app.configuration import AppConfiguration
 from scribe.app.settings import AppSettings
-from scribe.papyrus.context import PapyrusContext
-from scribe.bots.generator.context import GeneratorContext
+from scribe.app.cli.arguments import AppArguments
+from scribe.app.log.logging import AppLog
 
 class AppContext():
     """
@@ -15,19 +14,16 @@ class AppContext():
     """
     def __init__(self) -> None:
         self.arguments:AppArguments = AppArguments()
-        """The application command line."""
+        """The application command line. This is a configuration provider."""
+
+        self.settings:AppSettings = AppSettings()
+        """The application settings object. This is a configuration provider."""
+
+        self.configuration:AppConfiguration = AppConfiguration()
+        """The application configuration resolves settings providers."""
 
         self.log:AppLog = AppLog()
         """The application log settings."""
-
-        self.settings:AppSettings = AppSettings()
-        """The application settings object."""
-
-        self.papyrus:PapyrusContext = PapyrusContext()
-        """The application Papyrus context."""
-
-        self.wiki:GeneratorContext = GeneratorContext()
-        """The application wiki context."""
 
 
     @staticmethod
@@ -37,12 +33,13 @@ class AppContext():
         """
         this:AppContext = AppContext()
         this.arguments = AppArguments.create()
-        this.log = AppLog.create(this.arguments)
         this.settings = AppSettings.create(this.arguments)
-        this.wiki = GeneratorContext.create()
+        this.configuration = AppConfiguration.create(this.arguments, this.settings)
+        this.log = AppLog.create(this.configuration)
 
         # Log application startup details.
         logging.info(str(this.arguments))
-        logging.info(str(this.log))
         logging.info(str(this.settings))
+        logging.info(str(this.configuration))
+        logging.info(str(this.log))
         return this

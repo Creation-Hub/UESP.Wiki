@@ -1,5 +1,5 @@
 import logging
-from scribe.papyrus.context import PapyrusContext
+from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Script
 
@@ -9,7 +9,7 @@ class PapyrusInheritance:
     """
 
     @staticmethod
-    def get_chain(papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> list[Script]:
+    def get_chain(papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> list[Script]:
         """
         Get the inheritance chain for a script, excluding the script itself.
         Searches across projects using the project's imports list.
@@ -96,7 +96,7 @@ class PapyrusInheritance:
 
 
     @staticmethod
-    def find_extends(papyrus:PapyrusContext, project:PapyrusProject, this:Script, parent_name:str) -> Script:
+    def find_extends(papyrus:PapyrusClient, project:PapyrusProject, this:Script, parent_name:str) -> Script:
         """Find a script by its name in the current project or any imported projects.
 
         Arguments:

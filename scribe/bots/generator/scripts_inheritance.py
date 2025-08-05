@@ -2,7 +2,7 @@
 Provides methods to format inheritance data for scripts.
 """
 from collections.abc import Iterable
-from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.wiki import Wiki
 from scribe.papyrus.code import Script
 
 class WikiDataInheritance:

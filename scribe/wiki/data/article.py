@@ -3,8 +3,6 @@ This module provides MediaWiki data model for articles.
 """
 from enum import Enum
 import json
-import logging
-import os
 from typing import Any
 
 
@@ -24,18 +22,21 @@ class Article:
     """
     Represents a MediaWiki base article type.
     """
+
+    JSON_ENCODING:str = "utf-8"
+    JSON_INDENT:int = 4
+
+
     def __init__(self) -> None:
         self.type:ArticleType = ArticleType.Empty
         """The namespace for this article."""
 
-        # TODO: This should be the object-key, not the file path.
         self.title:str = ""
         """The title of this wiki article."""
 
-        self.file_path:str = ""
-        """The file path of this wiki article."""
-
         # Composed
+        # TODO: Refactor as a dictionary of sections.
+        # Each section can have its own title and content.
         self.content:list[str] = []
         """The text content of this wiki article."""
 
@@ -44,7 +45,7 @@ class Article:
         """The categories of this wiki article."""
 
 
-    def _compose(self) -> list[str]:
+    def compose(self) -> list[str]:
         lines:list[str] = []
         lines.extend(self.content)
         lines.append("\n")
@@ -53,45 +54,42 @@ class Article:
         return lines
 
 
-    def write_compose(self) -> None:
-        """Writes the wiki article text content to the output file."""
-        lines:list[str] = self._compose()
-        if not lines:
-            logging.error(f"Wiki article '{self.file_path}' has no content to write.")
-            return
+    # JSON
+    #---------------------------------------------
 
-        if not os.path.exists(os.path.dirname(self.file_path)):
-            os.makedirs(os.path.dirname(self.file_path))
-            logging.debug(f"Created new directory for file: {os.path.dirname(self.file_path)}")
-
-        with open(self.file_path, "w", encoding="utf-8") as file:
-            file.writelines(lines)
-
-
-    @staticmethod
-    def load_json_data(data:dict[str, Any]) -> 'Article':
-        article:Article = Article()
-        article.type = ArticleType(data.get("type", ArticleType.Empty.value))
-        article.title = data.get("title", "")
-        article.file_path = data.get("file_path", "")
-        article.content = data.get("content", [])
-        article.categories = data.get("categories", [])
-        return article
+    def data_encode(self) -> dict[str, Any]:
+        """The data encoder for this class."""
+        data:dict[str, Any] = {
+            "type": self.type.value,
+            "title": self.title,
+            "content": self.content,
+            "categories": self.categories
+        }
+        return data
 
 
     @staticmethod
-    def load_json(file_path:str) -> 'Article':
+    def data_decode(data:dict[str, Any]) -> 'Article':
+        """The data decoder for this class."""
+        this:Article = Article()
+        this.type = ArticleType(data.get("type", ArticleType.Empty.value))
+        this.title = data.get("title", "")
+        this.content = data.get("content", [])
+        this.categories = data.get("categories", [])
+        return this
+
+
+    def save(self, file_path:str) -> None:
+        data:dict[str, Any] = self.data_encode()
+        with open(file_path, 'w', encoding=Article.JSON_ENCODING) as file:
+            json.dump(data, file, indent=Article.JSON_INDENT)
+
+
+    @staticmethod
+    def load(file_path:str) -> 'Article':
         try:
-            with open(file_path, 'r', encoding='utf-8') as file:
+            with open(file_path, 'r', encoding=Article.JSON_ENCODING) as file:
                 data:dict[str, Any] = json.load(file)
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid wiki file format in {file_path}: {e}")
-        return Article.load_json_data(data)
-
-
-    @staticmethod
-    def load_content(file_path:str) -> list[str]:
-        """Load article content from a *.wiki file."""
-        with open(file_path, 'r', encoding='utf-8') as file:
-            content:list[str] = file.readlines()
-        return content
+        except json.JSONDecodeError as jsonDecodeError:
+            raise ValueError(f"Invalid JSON format in {file_path}: {jsonDecodeError}")
+        return Article.data_decode(data)

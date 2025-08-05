@@ -10,7 +10,7 @@ from scribe.papyrus.code import Variable
 from scribe.papyrus.code import Property
 from scribe.wiki.data.article import ArticleType
 from scribe.wiki.data.page import Page
-from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.wiki import Wiki
 from scribe.bots.generator.templates import Script_Member_Summary
 from scribe.bots.generator.scripts import WikiDataScript
 
@@ -23,7 +23,7 @@ class PageMember:
     def create(file_path:str, project:PapyrusProject, script:Script, member:Member) -> Page:
         this:Page = Page()
         this.type = ArticleType.Main
-        this.file_path = file_path
+        # this.file_path = file_path
         this.title = PageMember.get_title(script, member)
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
@@ -31,7 +31,7 @@ class PageMember:
         source_file_path:str = script.header.name.file_path() + ".psc"
 
         # Member Summary Template
-        this.content.append(Script_Member_Summary.script_member_summary(script, member, game_version))
+        this.content.append(Script_Member_Summary.template(script, member, game_version))
         this.content.append("\n\n")
 
         # Member Documentation
@@ -65,12 +65,6 @@ class PageMember:
                 items = WikiDataScript.variable_to_string_list(member.parameters)
                 for item in items:
                     this.content.append(f"* {item}\n")
-
-        # Page Categories
-        # TODO: Should this be a different category for members?
-        # this.content.append("\n\n")
-        # this.content.append(Wiki.CATEGORY_PAPYRUS)
-        # this.content.append("\n")
         return this
 
 

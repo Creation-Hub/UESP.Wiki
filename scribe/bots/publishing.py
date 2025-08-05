@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Any
 
 
 class Sort(Enum):
@@ -27,6 +28,12 @@ class Sort(Enum):
     Example: `Base-Native\\MyNamespace\\Action\\Action.wiki`
     """
 
+    @staticmethod
+    def json_decode(data:dict[str, Any], property:str) -> 'Sort':
+        value:str = data.get(property, Sort.DEFAULT.name)
+        if not value: return Sort.DEFAULT
+        else: return Sort[value.upper()]
+
 
 class PublishOption:
     """ Publishing options for a project."""
@@ -46,3 +53,14 @@ class PublishOption:
 
         self.enable_members:bool = False
         """ Whether to enable publishing of script member pages. """
+
+
+    @staticmethod
+    def json_decode(data_project:dict[str, Any]) -> 'PublishOption':
+        this:PublishOption = PublishOption()
+        this.output = data_project.get("output.directory", "")
+        this.sort = Sort.json_decode(data_project, "output.sort")
+        this.enable = data_project.get("output.enabled", False)
+        this.enable_objects = data_project.get("output.objects", False)
+        this.enable_members = data_project.get("output.members", False)
+        return this

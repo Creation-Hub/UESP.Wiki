@@ -2,14 +2,14 @@
 Generates MediaWiki pages for Papyrus scripts.
 """
 from collections import defaultdict
-from scribe.papyrus.context import PapyrusContext
+from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from scribe.papyrus.code import Member
 from scribe.papyrus.text.parsing import State
 from scribe.wiki.data.article import ArticleType
 from scribe.wiki.data.page import Page
-from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.wiki import Wiki
 from scribe.bots.generator.templates import Script_Object_Member_Summary, Script_Object_Summary
 
 class PageScript:
@@ -18,10 +18,10 @@ class PageScript:
     """
 
     @staticmethod
-    def create(file_path:str, papyrus:PapyrusContext, project:PapyrusProject, script:Script) -> Page:
+    def create(file_path:str, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
         this:Page = Page()
         this.type = ArticleType.Main
-        this.file_path = file_path
+        # this.file_path = file_path
         this.title = PageScript.get_title(script)
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
@@ -29,7 +29,7 @@ class PageScript:
         source_file_path:str = script.header.name.file_path() + ".psc"
 
         # Script Summary Template
-        this.content.append(Script_Object_Summary.script_object_summary(papyrus, project, script, game_version))
+        this.content.append(Script_Object_Summary.template(papyrus, project, script, game_version))
         this.content.append("\n\n")
 
         # Script Definition
@@ -68,18 +68,13 @@ class PageScript:
                 this.content.append(f"These are the {kind.lower()} members for this script.\n")
                 this.content.append("\n")
                 for member in members:
-                    this.content.append(Script_Object_Member_Summary.script_object_member_summary(script, member, game_version))
+                    this.content.append(Script_Object_Member_Summary.template(script, member, game_version))
 
                     # TODO: Test with typed definitions.
                     # this.content.append(item_member(member))
 
                     this.content.append("\n")
                 this.content.append("\n\n")
-
-        # Page Categories
-        # this.content.append("\n")
-        # this.content.append(Wiki.CATEGORY_PAPYRUS)
-        # this.content.append("\n")
         return this
 
 

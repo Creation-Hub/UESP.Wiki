@@ -1,7 +1,7 @@
 import logging
 from scribe.papyrus.project import PapyrusProject
 
-class PapyrusContext:
+class PapyrusClient:
     """
     The Papyrus context for script analysis.
     """

@@ -1,19 +1,20 @@
 """
 Provides the MediaWiki `login` API.
-	Help:
-        - https://www.mediawiki.org/wiki/API:Login
-        - https://www.mediawiki.org/w/api.php?action=help&modules=login
-        - https://www.mediawiki.org/w/api.php?action=help&modules=clientlogin
-        - https://www.mediawiki.org/wiki/API:Query
-        - https://www.mediawiki.org/wiki/API:Query#Example_5:_Batchcomplete
+
+Documentation:
+    - https://www.mediawiki.org/wiki/API:Login
+    - https://www.mediawiki.org/w/api.php?action=help&modules=login
+    - https://www.mediawiki.org/w/api.php?action=help&modules=clientlogin
+    - https://www.mediawiki.org/wiki/API:Query
+    - https://www.mediawiki.org/wiki/API:Query#Example_5:_Batchcomplete
 """
 from enum import Enum
 from typing import Any
 from requests import Response
 from scribe.wiki.web.api.actions import Action
+from scribe.wiki.web.api.data import DataFormat
 from scribe.wiki.web.api.parameters import ParameterType
 from scribe.wiki.web.api.responses import ResponseType
-from scribe.wiki.web.api.status import DataFormat
 
 
 # Login
@@ -44,11 +45,11 @@ class LoginParameters(ParameterType):
         """Gets a dictionary of API request arguments."""
         arguments:dict[str, str] = {}
         arguments["action"] = Action.CLIENTLOGIN
+        arguments["format"] = self.format
         arguments["username"] = self.username
         arguments["password"] = self.password
         arguments["logintoken"] = self.login_token
         arguments["loginreturnurl"] = self.login_return_url
-        arguments["format"] = self.format
         return arguments
 
 

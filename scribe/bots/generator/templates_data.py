@@ -1,7 +1,7 @@
 """
 Provides MediaWiki data transformations for Papyrus scripts.
 """
-from scribe.bots.generator.constants import Wiki
+from scribe.bots.generator.wiki import Wiki
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
 from scribe.papyrus.code import Method

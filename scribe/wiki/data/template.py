@@ -15,5 +15,4 @@ class Template(Article):
     @staticmethod
     def create(file_path:str) -> 'Template':
         this:Template = Template()
-        this.file_path = file_path
         return this
