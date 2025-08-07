@@ -3,10 +3,9 @@ Used to upload wiki pages to a remote site.
 """
 import logging
 import os
-from typing import Any
+from typing import Any, override
 from http import HTTPStatus
 from scribe.app.context import AppContext
-from scribe.app.settings import AppSettings
 from scribe.shared.objects import Dump
 from scribe.wiki.data.article import Article
 from scribe.wiki.data.client import DataClient
@@ -16,6 +15,7 @@ from scribe.wiki.web.site import Site, create_site
 from scribe.wiki.web.api.edit import EditResponse
 from scribe.wiki.web.api.login import LoginResponse
 from scribe.wiki.web.api.types import EditResult, LoginStatus
+from scribe.bots.common import WikiCommon
 
 class UploadService:
     """
@@ -33,32 +33,35 @@ class UploadService:
 
 
     def __init__(self) -> None:
+        super().__init__()
         self.wiki:DataClient = DataClient()
 
 
+    @override
     def __str__(self) -> str:
         return Dump.get(self)
 
 
     @staticmethod
     def start(app:AppContext) -> bool:
-        if not app.settings.export_directory:
+        if not app.configuration.export_directory:
             logging.error("No export directory specified.")
             return False
 
-        if not app.settings.uploader_environment:
+        if not app.configuration.uploader_environment:
             logging.error("No environment specified.")
             return False
 
-        if not app.settings.uploader_file_path:
+        if not app.configuration.uploader_file_path:
             logging.error("No upload configuration specified.")
             return False
 
         this:UploadService = UploadService()
-        logging.info(f"{UploadService.NAME} - Starting service {str(this)}")
+        logging.info(f"{UploadService.NAME} - Starting")
+        logging.debug(str(this))
 
         # Load wiki context from file
-        wiki_file_path:str = os.path.join(app.settings.export_directory, AppSettings.WIKI_JSON_FILENAME)
+        wiki_file_path:str = os.path.join(app.configuration.export_directory, WikiCommon.WIKI_JSON_FILENAME)
         try:
             this.wiki = DataClient.load(wiki_file_path)
             logging.info(f"Loaded {len(this.wiki.articles)} pages from wiki.")
@@ -72,7 +75,7 @@ class UploadService:
             return False
 
         # Create site and client
-        site:Site = create_site(app.settings.uploader_file_path, app.settings.uploader_environment)
+        site:Site = create_site(app.configuration.uploader_file_path, app.configuration.uploader_environment)
         credential:Credential = create_credentials()
         client:WebClient = WebClient(site)
 
@@ -106,10 +109,7 @@ class UploadService:
     @staticmethod
     def edit(client:WebClient, title:str, text:str, summary:str) -> None:
         edit:EditResponse = client.edit(title, text, summary)
-        if not edit:
-            logging.error("The 'edit' response was None.")
-            return
-        elif edit.status_code != HTTPStatus.OK:
+        if edit.status_code != HTTPStatus.OK:
             logging.error(f"The 'edit' http request failed with status code: {edit.status_code}")
             return
         elif edit.result != EditResult.SUCCESS:

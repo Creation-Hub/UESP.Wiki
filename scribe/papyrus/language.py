@@ -1,3 +1,4 @@
+from typing import override
 from scribe.shared.collections import KeyedObject
 
 
@@ -13,6 +14,7 @@ class ScriptName(KeyedObject):
         KeyedObject.__init__(self, key)
 
     @property
+    @override
     def key(self) -> str:
         """Gets the script name value, which may include namespaces."""
         return self._key

@@ -3,16 +3,18 @@ Used to configure the application context.
 This includes command line arguments application settings, and domain context.
 """
 import logging
-from scribe.app.configuration import AppConfiguration
-from scribe.app.settings import AppSettings
-from scribe.app.cli.arguments import AppArguments
-from scribe.app.log.logging import AppLog
+from .cli.arguments import AppArguments
+from .settings import AppSettings
+from .configuration import AppConfiguration
+from .log.logging import AppLog
 
 class AppContext():
     """
     Provides features for the application context.
     """
     def __init__(self) -> None:
+        super().__init__()
+
         self.arguments:AppArguments = AppArguments()
         """The application command line. This is a configuration provider."""
 
@@ -20,7 +22,7 @@ class AppContext():
         """The application settings object. This is a configuration provider."""
 
         self.configuration:AppConfiguration = AppConfiguration()
-        """The application configuration resolves settings providers."""
+        """The application configuration resolves setting providers."""
 
         self.log:AppLog = AppLog()
         """The application log settings."""
@@ -38,8 +40,8 @@ class AppContext():
         this.log = AppLog.create(this.configuration)
 
         # Log application startup details.
-        logging.info(str(this.arguments))
-        logging.info(str(this.settings))
-        logging.info(str(this.configuration))
-        logging.info(str(this.log))
+        logging.debug(str(this.arguments))
+        logging.debug(str(this.settings))
+        logging.debug(str(this.configuration))
+        logging.debug(str(this.log))
         return this

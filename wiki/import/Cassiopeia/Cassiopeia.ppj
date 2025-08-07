@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<PapyrusProject
+	xmlns="PapyrusProject.xsd"
+	Flags="Starfield_Papyrus_Flags.flg"
+	Output="..\..\import.asm\Cassiopeia"
+	Asm="Only"
+	Optimize="false"
+	Release="false"
+	Final="false">
+	<Imports>
+		<Import>.</Import>
+		<Import>..\Base-Native</Import>
+	</Imports>
+	<Scripts>
+		<Script>CassiopeiaPapyrusExtender</Script>
+	</Scripts>
+</PapyrusProject>

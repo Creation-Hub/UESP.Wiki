@@ -1,29 +1,109 @@
 import json
 from typing import Any
-from scribe.wiki.data.article import Article
+from .article import Article
+from .article import Page, Category, Template
 
 class DataClient:
+    """The wiki data client with provides object relationship management."""
     JSON_ENCODING:str = "utf-8"
     JSON_INDENT:int = 4
 
 
     def __init__(self) -> None:
+        super().__init__()
         self.articles:dict[str, Article] = {}
         """A dictionary of wiki articles indexed by their titles."""
+        self.templates:dict[str, Template] = {}
+        self.categories:dict[str, Category] = {}
+        self.pages:dict[str, Page] = {}
 
 
     # Articles
     #---------------------------------------------
 
-    def get(self, key:str) -> Article:
+    def get_article(self, key:str) -> Article:
         return self.articles[key]
 
 
-    def add(self, article:Article) -> None:
+    def add_article(self, article:Article) -> None:
         """Adds an article to the wiki context."""
         if not article.title:
             raise ValueError("Article title cannot be empty.")
         self.articles[article.title] = article
+
+
+    # Typed
+    #---------------------------------------------
+
+    def add(self, article:Article) -> None:
+        """Add article and maintain typed collections."""
+        if not article.title:
+            raise ValueError("Article title cannot be empty.")
+
+        # Add the article.
+        self.articles[article.title] = article
+
+        # Maintain typed collections
+        if isinstance(article, Category):
+            self.categories[article.title] = article
+        elif isinstance(article, Template):
+            self.templates[article.title] = article
+        elif isinstance(article, Page):
+            self.pages[article.title] = article
+
+
+    #---------------------------------------------
+
+
+    def get_or_create_category(self, name:str) -> Category:
+        """Get existing category or create new one."""
+        if name in self.categories:
+            return self.categories[name]
+
+        category:Category = Category()
+        category.name = name
+        self.add(category)
+        return category
+
+
+    def get_or_create_template(self, name:str) -> Template:
+        """Get existing template or create new one."""
+        if name in self.templates:
+            return self.templates[name]
+
+        template:Template = Template()
+        template.name = name
+        self.add(template)
+        return template
+
+
+    #---------------------------------------------
+
+
+    def link_page_to_category(self, page_title:str, category_name:str) -> None:
+        """Create relationship between page and category."""
+        if page_title not in self.articles:
+            raise ValueError(f"Page not found: {page_title}")
+
+        page:Article = self.articles[page_title]
+        category = self.get_or_create_category(category_name)
+        DataClient.add_category(page, category)
+
+
+    #---------------------------------------------
+
+
+    @staticmethod
+    def add_category(this:Article, category:Category) -> None:
+        """Add a category reference."""
+        if category not in this.categories:
+            this.categories.append(category)
+
+    @staticmethod
+    def add_template(this:Article, template:Template) -> None:
+        """Add a template reference."""
+        if template not in this.templates:
+            this.templates.append(template)
 
 
     # JSON
@@ -46,7 +126,7 @@ class DataClient:
         for article_data in articles.values():
             article_data:dict[str, Any] = article_data
             article:Article = Article.data_decode(article_data)
-            this.add(article)
+            this.add_article(article)
         return this
 
 

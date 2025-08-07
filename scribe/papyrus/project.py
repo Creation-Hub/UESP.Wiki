@@ -1,11 +1,13 @@
 import logging
 import os
-from scribe.papyrus.code import Script
-from scribe.papyrus.collections import ScriptDictionary
-from scribe.papyrus.text import FileReader
+from .code import Script
+from .collections import ScriptDictionary
+from .text.parsing import FileReader
 
 class PapyrusProject:
     def __init__(self) -> None:
+        super().__init__()
+
         self.identifier:str = ""
         """The project identifier is used for Papyrus imports."""
 
@@ -39,12 +41,8 @@ class PapyrusProject:
             # Start parsing the script file.
             reader:FileReader = FileReader(path)
             script:Script = reader.read()
-            if script:
-                self.scripts.add(script)
-                logging.debug(f"[{self.identifier}] Added '{path}'")
-            else:
-                logging.error(f"[{self.identifier}] Failed '{path}'")
-                return False
+            self.scripts.add(script)
+            logging.debug(f"[{self.identifier}] Added '{path}'")
 
         logging.info(f"[{self.identifier}] Loaded ({len(self.scripts)} of {len(paths)}) scripts from '{self.root}'")
         return True

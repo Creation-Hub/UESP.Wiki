@@ -1,6 +1,6 @@
 import logging
 import os
-from scribe.wiki.data.article import Article
+from .article import Article
 
 class ArticleText:
 

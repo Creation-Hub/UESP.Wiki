@@ -1,5 +1,5 @@
 from collections.abc import Iterator
-from typing import Generic, TypeVar
+from typing import Generic, TypeVar, override
 
 
 class KeyedObject:
@@ -8,11 +8,17 @@ class KeyedObject:
     The key is for use with `KeyedCollections`.
     """
     def __init__(self, key:str) -> None:
-        self._key = key
+        super().__init__()
 
+        self._key = key
+        """The unique key for this object."""
+
+
+    @override
     def __str__(self) -> str:
         """Returns a string that represents the current object."""
         return self._key
+
 
     @property
     def key(self) -> str:
@@ -25,8 +31,12 @@ class KeyedCollection(Generic[T]):
     Provides a dictionary-like collection for objects whose keys are embedded in the values.
     """
     def __init__(self) -> None:
-        self._items:dict[str, T] = {}
+        super().__init__()
 
+        self._items:dict[str, T] = {}
+        """The internal dictionary of items."""
+
+    @override
     def __str__(self) -> str:
         """Returns a string that represents the current object."""
         return f"{KeyedCollection.__name__}({len(self._items)})"

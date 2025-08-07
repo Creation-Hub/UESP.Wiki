@@ -12,6 +12,7 @@ class Site:
 
 
     def __init__(self, url:str) -> None:
+        super().__init__()
         self.url:str = url
         self.article_path:str|None = None
         self.script_path:str|None = None

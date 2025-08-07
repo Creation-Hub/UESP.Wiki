@@ -6,25 +6,24 @@ from collections import Counter
 from collections.abc import ItemsView
 from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.project import PapyrusProject
-from scribe.wiki.data.article import ArticleType
-from scribe.wiki.data.page import Page
-from scribe.bots.provider import ProviderProject
-from scribe.bots.generator.wiki import Wiki
-from scribe.bots.generator.scripts_statistics import PapyrusStatistics
+from scribe.wiki.data.article import Page
+from ..jobs import Job
+from .wiki import Wiki
+from .scripts_statistics import PapyrusStatistics
 
 class PageIndex:
     """
     Generates a MediaWiki page that summarizes information about all Papyrus projects.
     """
 
-    PAGE_TITLE:str = "Script_Information"
+    PAGE_NAME:str = "Script_Information"
 
 
     @staticmethod
-    def create(configurations:dict[str, ProviderProject], papyrus:PapyrusClient) -> 'Page':
+    def create(jobs:dict[str, Job], papyrus:PapyrusClient) -> 'Page':
         this:Page = Page()
-        this.type = ArticleType.Main
-        this.title = PageIndex.PAGE_TITLE
+        this.namespace = Wiki.NAMESPACE_MODDING
+        this.name = PageIndex.PAGE_NAME
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         # Write the wiki page header.
@@ -34,8 +33,8 @@ class PageIndex:
 
         # Write each project wiki section.
         for identifier in papyrus.projects:
-            configuration:ProviderProject = configurations[identifier]
-            if not configuration.publish.enable:
+            job:Job = jobs[identifier]
+            if not job.publish.enable:
                 logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
                 continue
 

@@ -5,10 +5,10 @@ from enum import Enum
 from http import HTTPStatus
 from typing import Any
 from requests import Response
-from scribe.wiki.web.site import Site
-from scribe.wiki.web.api.main import Main
-from scribe.wiki.web.api.actions import Action
-from scribe.wiki.web.api.data import DataFormat
+from ..site import Site
+from .main import Main
+from .actions import Action
+from .data import DataFormat
 
 
 class QueryParameter(str, Enum):

@@ -1,6 +1,10 @@
+/*
+Don't set `python.analysis` settings here. Use the `pyrightconfig.json` file instead.
+https://github.com/microsoft/pylance-release/blob/main/README.md#settings-and-customization
+https://github.com/microsoft/pylance-release/wiki/Settings.json-overridden-by-Pyrightconfig.json-or-Pyproject.toml
+*/
 {
-	"python.analysis.typeCheckingMode": "strict",
-	"python.analysis.typeEvaluation.deprecateTypingAliases": true,
+	"python.envFile": "${workspaceFolder}\\.env",
 	"[python]": {
 		"editor.detectIndentation": false,
 		"editor.insertSpaces": true,
@@ -10,4 +14,6 @@
 		"editor.detectIndentation": false,
 		"editor.insertSpaces": false
 	},
+	// Override this in VSC workspace settings.
+	"papyrus.compiler.path": "C:\\Starfield\\Tools\\Papyrus Compiler\\PapyrusCompiler.exe"
 }

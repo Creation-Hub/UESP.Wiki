@@ -42,7 +42,8 @@ HEADER_PATTERN:Pattern[str] = re.compile(
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
     f'{SCRIPT_FLAGS}'               # Capture optional flags (zero or more flag words)
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -58,7 +59,8 @@ VARIABLE_PATTERN:Pattern[str] = re.compile(
     f'{VARIABLE_INITIALIZER}'      # Optional default value with equals sign
     r'\s*'                         # Whitespace optional (0+)
     f'{FLAGS}'                     # Capture optional `flags` (rest of line)
-    r'$',                          # End of sequence match
+    r'$'                           # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -69,7 +71,8 @@ PARAMETERS_PATTERN:Pattern[str] = re.compile(
     r'\s+'                         # Whitespace required (1+)
     f'{NAME}'                      # Parameter name
     f'{PARAMETER_INITIALIZER}'     # Optional default value with equals sign
-    r'$',                          # End of sequence match
+    r'$'                           # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -86,15 +89,17 @@ PROPERTY_PATTERN:Pattern[str] = re.compile(
     f'{PROPERTY_INITIALIZER}'
     r'\s*'                         # Whitespace optional (0+)
     f'{FLAGS}'                     # Capture optional `flags`
-    r'$',                          # End of sequence match
+    r'$'                           # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
 PROPERTY_END_PATTERN:Pattern[str] = re.compile(
-    r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
-    r'endproperty'                  # Papyrus keyword 'endproperty'
-    r'\b',                          # Word boundary
+    r'^'                           # Start of sequence match
+    r'\s*'                         # Whitespace optional (0+)
+    r'endproperty'                 # Papyrus keyword 'endproperty'
+    r'\b'                          # Word boundary
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -112,7 +117,8 @@ EVENT_PATTERN:Pattern[str] = re.compile(
     r'\)'                           # Closing parenthesis
     r'\s*'                          # Whitespace optional (0+)
     f'{FLAGS}'                      # Optional flags
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -120,7 +126,8 @@ EVENT_END_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     r'endevent'                     # Papyrus keyword 'endevent'
-    r'\b',                          # Word boundary
+    r'\b'                           # Word boundary
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -140,7 +147,8 @@ FUNCTION_PATTERN:Pattern[str] = re.compile(
     r'\)'                           # Closing parenthesis
     r'\s*'                          # Whitespace optional (0+)
     f'{FLAGS}'                      # Optional flags (rest of line)
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -148,7 +156,8 @@ FUNCTION_END_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     r'endfunction'                  # Papyrus keyword 'endfunction'
-    r'\b',                          # Word boundary
+    r'\b'                           # Word boundary
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -159,7 +168,8 @@ STRUCT_PATTERN:Pattern[str] = re.compile(
     r'\s*'                          # Whitespace optional (0+)
     r'struct'                       # Papyrus keyword 'struct'
     r'\s+'                          # Whitespace required (1+)
-    f'{NAME}',                      # Capture required `name`
+    f'{NAME}'                       # Capture required `name`
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -167,7 +177,8 @@ STRUCT_END_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
     r'\s*'                          # Whitespace optional (0+)
     r'endstruct'                    # Papyrus keyword 'endstruct'
-    r'\b',                          # Word boundary
+    r'\b'                           # Word boundary
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -180,7 +191,8 @@ GROUP_PATTERN:Pattern[str] = re.compile(
     r'\s+'                          # Whitespace required (1+)
     f'{NAME}'                       # Capture required `name`
     f'{FLAGS}'                      # Capture optional `flags`
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -189,7 +201,8 @@ GROUP_END_PATTERN:Pattern[str] = re.compile(
     r'\s*'                          # Whitespace optional (0+)
     r'endgroup'                     # Papyrus keyword 'endgroup'
     r'\s*'                          # Whitespace optional (0+)
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -204,7 +217,8 @@ STATE_PATTERN:Pattern[str] = re.compile(
     f'{NAME}'                       # Capture required `name`
     r'\s*'                          # Whitespace optional (0+)
     f'{FLAGS}'                      # Capture optional `flags`
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -213,7 +227,8 @@ STATE_END_PATTERN:Pattern[str] = re.compile(
     r'\s*'                          # Whitespace optional (0+)
     r'endstate'                     # Papyrus keyword 'endstate'
     r'\s*'                          # Whitespace optional (0+)
-    r'$',                           # End of sequence match
+    r'$'                            # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -226,7 +241,8 @@ CUSTOM_EVENT_PATTERN: Pattern[str] = re.compile(
     r'\s+'                         # Whitespace required (1+)
     f'{NAME}'                      # Capture required custom event name
     r'\s*'                         # Whitespace optional (0+)
-    r'$',                          # End of sequence match
+    r'$'                           # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )
 
@@ -240,6 +256,7 @@ GUARD_PATTERN: Pattern[str] = re.compile(
     f'{NAME}'                      # Capture required guard name
     r'(?:\s+(?P<flag>\w+))?'       # Capture optional flag `ProtectsFunctionLogic`
     r'\s*'                         # Whitespace optional (0+)
-    r'$',                          # End of sequence match
+    r'$'                           # End of sequence match
+    '', # type: ignore
     re.IGNORECASE
 )

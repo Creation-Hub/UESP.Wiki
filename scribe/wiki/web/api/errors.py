@@ -4,7 +4,7 @@ https://www.mediawiki.org/wiki/API:Errors_and_warnings
 from enum import Enum
 from typing import Any
 from requests import Response
-from scribe.wiki.web.api.responses import ResponseType
+from .responses import ResponseType
 
 
 class ErrorFormat(str, Enum):

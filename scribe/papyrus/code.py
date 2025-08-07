@@ -1,4 +1,5 @@
-from scribe.papyrus.language import ScriptName
+from typing import override
+from .language import ScriptName
 
 
 # Source Code
@@ -7,6 +8,8 @@ from scribe.papyrus.language import ScriptName
 class Code:
     """A base class for source code elements in a Papyrus script."""
     def __init__(self) -> None:
+        super().__init__()
+
         self.index:int = -1
         """The source code line index for the start of this element."""
 
@@ -59,16 +62,19 @@ class Member(Element):
 
 class FlagsAttribute():
     def __init__(self) -> None:
+        super().__init__()
         self.flags:list[str] = []
         """The flags for this member."""
 
 class ValueTypeAttribute():
     def __init__(self) -> None:
+        super().__init__()
         self.type:str = ""
         """The member type is used for variables, properties, and the return type for functions."""
 
 class ValueAutoAttribute():
     def __init__(self) -> None:
+        super().__init__()
         self.value:str = ""
         """The field initialized auto value for this member."""
 
@@ -98,6 +104,7 @@ class Header(Code):
         self.flags:list[str] = []
         """The flags associated with the script."""
 
+    @override
     def __str__(self) -> str:
         """Returns a string that represents the current object."""
         if self.name: return str(self.name)
@@ -116,6 +123,7 @@ class Variable(Member, ValueTypeAttribute, ValueAutoAttribute):
 
 class ParametersAttribute():
     def __init__(self) -> None:
+        super().__init__()
         self.parameters:list[Variable] = []
         """The parameters for this member."""
 
@@ -197,6 +205,8 @@ class Script:
     """Represents a Papyrus script."""
 
     def __init__(self) -> None:
+        super().__init__()
+
         self.header:Header = Header()
         """The header information of this script."""
 
@@ -207,6 +217,7 @@ class Script:
     def name(self) -> str:
         return self.header.name.key
 
+    @override
     def __str__(self) -> str:
         """Returns a string that represents the current object."""
         return self.name

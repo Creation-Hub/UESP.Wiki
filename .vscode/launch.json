@@ -5,6 +5,13 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "(no arguments)",
+			"console": "integratedTerminal",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "scribe"
+		},
+		{
 			"name": "Generate",
 			"console": "integratedTerminal",
 			"type": "debugpy",

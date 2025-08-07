@@ -25,6 +25,7 @@ class WebClient:
 
 
     def __init__(self, site:Site) -> None:
+        super().__init__()
         self.site:Site = site
         self.session:Session = Session()
         self.username:str|None = None
@@ -113,7 +114,7 @@ class WebClient:
         # Create the edit POST request data parameters.
         post_data:dict[str, str] = {}
         post_data[Main.ACTION] = Action.EDIT
-        post_data[Main.FORMAT] = DataFormat.JSON_FM
+        post_data[Main.FORMAT] = DataFormat.JSON # Using JSON_FM breaks the post call.
         post_data[Edit.TITLE] = title
         post_data[Edit.TEXT] = text
         post_data[Edit.SUMMARY] = summary
@@ -144,10 +145,10 @@ class WebClient:
             response_data = response.json()
         except json.JSONDecodeError as jsonDecodeError:
             raise Exception(
-                f"Failed to decode JSON response. "
-                f"\nJSONDecodeError: {jsonDecodeError}"
-                f"\nStatus: {response.status_code}"
-                f"\nContent-Type: {response_content_type}"
+                f"Failed to decode JSON response. " +
+                f"\nJSONDecodeError: {jsonDecodeError}" +
+                f"\nStatus: {response.status_code}" +
+                f"\nContent-Type: {response_content_type}" +
                 f"\nResponse body: {response.text[:200]}..."
             )
 

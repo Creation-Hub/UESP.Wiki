@@ -1,12 +1,12 @@
-from scribe.bots.generator.wiki import Wiki
 from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.inheritance import PapyrusInheritance
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
 from scribe.wiki.data.formatter import WikiFormatter
-from scribe.bots.generator.scripts_inheritance import WikiDataInheritance
-from scribe.bots.generator.templates_data import TemplateData
+from .wiki import Wiki
+from .scripts_inheritance import WikiDataInheritance
+from .templates_data import TemplateData
 
 
 class Script_Object_Summary:

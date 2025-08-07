@@ -8,11 +8,10 @@ from scribe.papyrus.code import Function
 from scribe.papyrus.code import Event
 from scribe.papyrus.code import Variable
 from scribe.papyrus.code import Property
-from scribe.wiki.data.article import ArticleType
-from scribe.wiki.data.page import Page
-from scribe.bots.generator.wiki import Wiki
-from scribe.bots.generator.templates import Script_Member_Summary
-from scribe.bots.generator.scripts import WikiDataScript
+from scribe.wiki.data.article import Page
+from .wiki import Wiki
+from .templates import Script_Member_Summary
+from .scripts import WikiDataScript
 
 class PageMember:
     """
@@ -22,9 +21,8 @@ class PageMember:
     @staticmethod
     def create(file_path:str, project:PapyrusProject, script:Script, member:Member) -> Page:
         this:Page = Page()
-        this.type = ArticleType.Main
-        # this.file_path = file_path
-        this.title = PageMember.get_title(script, member)
+        this.namespace = Wiki.NAMESPACE_MODDING
+        this.name = PageMember.get_title(script, member)
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         game_version:str = ""

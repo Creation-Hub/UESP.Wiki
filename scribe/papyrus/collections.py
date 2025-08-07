@@ -1,6 +1,6 @@
 from collections.abc import Iterator
-from scribe.papyrus.code import Script
-
+from typing import override
+from .code import Script
 
 class ScriptDictionary:
     """
@@ -8,8 +8,10 @@ class ScriptDictionary:
     """
 
     def __init__(self) -> None:
+        super().__init__()
         self._scripts:dict[str, Script] = {}
 
+    @override
     def __str__(self) -> str:
         """Gets the string representation of this collection."""
         return f"ScriptDictionary({len(self._scripts)} scripts)"

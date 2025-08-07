@@ -1,5 +1,8 @@
 """
 This module provides support for working with Papyrus scripts.
 """
+from . import text
 
-from . import text # type: ignore
+__all__ = [
+    "text"
+]

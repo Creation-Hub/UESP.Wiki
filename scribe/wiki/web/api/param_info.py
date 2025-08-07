@@ -5,10 +5,10 @@ from enum import Enum
 from http import HTTPStatus
 from requests import Response
 from typing import Any
-from scribe.wiki.web.api.main import Main
-from scribe.wiki.web.client import DataFormat
-from scribe.wiki.web.site import Site
-from scribe.wiki.web.api.actions import Action
+from ..site import Site
+from .actions import Action
+from .data import DataFormat
+from .main import Main
 
 
 class ParamInfoParameter(str, Enum):

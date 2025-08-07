@@ -1,7 +1,7 @@
 import logging
-from scribe.papyrus.client import PapyrusClient
-from scribe.papyrus.project import PapyrusProject
-from scribe.papyrus.code import Script
+from .client import PapyrusClient
+from .project import PapyrusProject
+from .code import Script
 
 class PapyrusInheritance:
     """

@@ -1,3 +1,6 @@
+from typing import override
+
+
 class LineReader:
     """
     Represents a cursor position in text and encapsulates parsing state with line-by-line navigation.
@@ -6,6 +9,7 @@ class LineReader:
     """
 
     def __init__(self, lines:list[str]) -> None:
+        super().__init__()
         self._lines:list[str] = lines.copy()
         self._cursor:int = -1
 
@@ -20,6 +24,7 @@ class LineReader:
         return self._lines[index]
 
 
+    @override
     def __str__(self) -> str:
         """Provides a string representation of this object."""
         return f"TextReader(cursor={self._cursor}, lines={len(self)})"
@@ -65,7 +70,7 @@ class LineReader:
             self._cursor = index
         else:
             raise IndexError(
-                f"Cannot set cursor @'{self._cursor}' to index '{index}'. "
+                f"Cannot set cursor @'{self._cursor}' to index '{index}'. " +
                 f"The index is out of bounds ({self.min} - {self.max})."
             )
 
@@ -79,7 +84,7 @@ class LineReader:
             return self._lines[self.cursor]
         else:
             raise IndexError(
-                f"Cannot get line at cursor index '{self.cursor}'. "
+                f"Cannot get line at cursor index '{self.cursor}'. " +
                 f"The index is out of bounds ({self.min} - {self.max})."
             )
 

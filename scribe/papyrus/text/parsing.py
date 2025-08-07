@@ -4,19 +4,19 @@ The main loop acts as a "coarse parser" that advances through the file, while th
 """
 import logging
 from re import Match
-from scribe.papyrus.code import Event
-from scribe.papyrus.code import Function
-from scribe.papyrus.code import Header
-from scribe.papyrus.code import Property
-from scribe.papyrus.code import PropertyGroup
-from scribe.papyrus.code import Script
-from scribe.papyrus.code import ScriptName
-from scribe.papyrus.code import State
-from scribe.papyrus.code import Structure
-from scribe.papyrus.code import Variable
-from scribe.papyrus.text import normalize
-from scribe.papyrus.text import regex
-from scribe.papyrus.text.reader import LineReader
+from . import normalize
+from . import regex
+from .reader import LineReader
+from ..code import Event
+from ..code import Function
+from ..code import Header
+from ..code import Property
+from ..code import PropertyGroup
+from ..code import Script
+from ..code import ScriptName
+from ..code import State
+from ..code import Structure
+from ..code import Variable
 
 
 # Messages
@@ -465,6 +465,7 @@ def squash_continuation(reader:LineReader) -> str:
 
 class FileReader:
     def __init__(self, path:str) -> None:
+        super().__init__()
         self._path:str = path
 
 
@@ -589,17 +590,17 @@ class FileReader:
         # Raise an error if no header was found.
         if not script.header:
             raise ValueError(
-                f"File: '{self.path}'\n"
-                "The `ScriptName` element was not found in the source file. "
-                "Check for missing or malformed header in the script file. "
+                f"File: '{self.path}'\n" +
+                "The `ScriptName` element was not found in the source file. " +
+                "Check for missing or malformed header in the script file. " +
                 "Ensure the first non-comment line contains a valid `ScriptName` declaration."
             )
 
         if not script.header.name.key:
             raise ValueError(
-                f"File: '{self.path}'\n"
-                "The `ScriptName` element was found but could not be parsed. "
-                "Check for missing or malformed header in the script file. "
+                f"File: '{self.path}'\n" +
+                "The `ScriptName` element was found but could not be parsed. " +
+                "Check for missing or malformed header in the script file. " +
                 "Ensure the first non-comment line contains a valid `ScriptName` declaration."
             )
 

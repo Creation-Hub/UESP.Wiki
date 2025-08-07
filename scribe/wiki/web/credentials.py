@@ -2,6 +2,7 @@ import os
 
 class Credential():
     def __init__(self, username:str|None, password:str|None) -> None:
+        super().__init__()
         self.username:str|None = username
         self.password:str|None = password
 

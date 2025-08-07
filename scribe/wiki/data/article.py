@@ -1,21 +1,23 @@
 """
 This module provides MediaWiki data model for articles.
 """
-from enum import Enum
 import json
 from typing import Any
 
 
-class ArticleType(str, Enum):
-    Empty = ""
-    Main = "Main"
-    User = "User"
-    Template = "Template"
-    Category = "Category"
-    File = "File"
-    Help = "Help"
-    MediaWiki = "MediaWiki"
-    Special = "Special"
+class Namespace:
+    """
+    Represents the built-in MediaWiki namespaces.
+    """
+    Empty:str = ""
+    Main:str = "Main"
+    User:str = "User"
+    Template:str = "Template"
+    Category:str = "Category"
+    File:str = "File"
+    Help:str = "Help"
+    MediaWiki:str = "MediaWiki"
+    Special:str = "Special"
 
 
 class Article:
@@ -28,29 +30,47 @@ class Article:
 
 
     def __init__(self) -> None:
-        self.type:ArticleType = ArticleType.Empty
+        super().__init__()
+
+        self.name:str = ""
+        """The name of this wiki article. Excludes the namespace."""
+
+        self.namespace:str = Namespace.Empty
         """The namespace for this article."""
 
-        self.title:str = ""
-        """The title of this wiki article."""
-
         # Composed
-        # TODO: Refactor as a dictionary of sections.
+        # TODO: Refactor as a dictionary of sections [str, str].
         # Each section can have its own title and content.
         self.content:list[str] = []
         """The text content of this wiki article."""
 
         # Composed
-        self.categories:list[str] = []
+        self.categories:list[Category] = []
         """The categories of this wiki article."""
+
+        self.templates:list[Template] = []
+
+
+    @property
+    def title(self) -> str:
+        if self.namespace == Namespace.Empty:
+            return f"{self.name}"
+        else:
+            return f"{self.namespace}:{self.name}"
+
+    @property
+    def link(self) -> str:
+        return f"[[{self.title}]]"
+
 
 
     def compose(self) -> list[str]:
-        lines:list[str] = []
-        lines.extend(self.content)
+        """Compose the complete wiki markup."""
+        lines:list[str] = self.content.copy()
         lines.append("\n")
-        lines.extend(self.categories)
-        lines.append("\n")
+        for category in self.categories:
+            lines.append(category.link)
+            lines.append("\n")
         return lines
 
 
@@ -60,10 +80,10 @@ class Article:
     def data_encode(self) -> dict[str, Any]:
         """The data encoder for this class."""
         data:dict[str, Any] = {
-            "type": self.type.value,
-            "title": self.title,
-            "content": self.content,
-            "categories": self.categories
+            "name": self.name,
+            "namespace": self.namespace,
+            "content": self.content[:5], # Limit content size for JSON (TODO: WIP)
+            "categories": [category.name for category in self.categories] # TODO: WIP
         }
         return data
 
@@ -72,10 +92,16 @@ class Article:
     def data_decode(data:dict[str, Any]) -> 'Article':
         """The data decoder for this class."""
         this:Article = Article()
-        this.type = ArticleType(data.get("type", ArticleType.Empty.value))
-        this.title = data.get("title", "")
+        this.namespace = data.get("namespace", "")
+        this.name = data.get("name", "")
         this.content = data.get("content", [])
-        this.categories = data.get("categories", [])
+        # Convert string categories back to Category objects
+        category_names:list[Any] = data.get("categories", [])
+        for name in category_names:
+            if isinstance(name, str):
+                category:Category = Category()
+                category.name = name
+                this.categories.append(category)
         return this
 
 
@@ -93,3 +119,43 @@ class Article:
         except json.JSONDecodeError as jsonDecodeError:
             raise ValueError(f"Invalid JSON format in {file_path}: {jsonDecodeError}")
         return Article.data_decode(data)
+
+
+
+class Page(Article):
+    """
+    Represents a MediaWiki page type.
+    """
+    def __init__(self) -> None:
+        super().__init__()
+        self.namespace = Namespace.Empty
+
+    @staticmethod
+    def create(file_path:str) -> Article:
+        raise NotImplementedError("Page creation is not implemented yet.")
+
+
+class Category(Article):
+    """
+    Represents a MediaWiki category type.
+    """
+    def __init__(self) -> None:
+        super().__init__()
+        self.namespace = Namespace.Category
+
+    @staticmethod
+    def create(file_path:str) -> 'Category':
+        raise NotImplementedError("Category creation is not implemented yet.")
+
+
+class Template(Article):
+    """
+    Represents a MediaWiki template type.
+    """
+    def __init__(self) -> None:
+        super().__init__()
+        self.namespace = Namespace.Template
+
+    @staticmethod
+    def create(file_path:str) -> 'Template':
+        raise NotImplementedError("Template creation is not implemented yet.")

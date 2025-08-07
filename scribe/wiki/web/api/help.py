@@ -5,9 +5,9 @@ import logging
 import requests
 from http import HTTPStatus
 from requests import Response
-from scribe.wiki.web.api.actions import Action
-from scribe.wiki.web.api.main import Main
-from scribe.wiki.web.site import Site
+from ..site import Site
+from .actions import Action
+from .main import Main
 
 
 class Help:

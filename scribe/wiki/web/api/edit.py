@@ -7,11 +7,11 @@ Documentation:
 """
 from enum import Enum
 from requests import Response
-from scribe.wiki.web.api.actions import Action
-from scribe.wiki.web.api.data import DataFormat, DataBoolean
-from scribe.wiki.web.api.main import Main
-from scribe.wiki.web.api.responses import ResponseType
-from scribe.wiki.web.api.types import EditResult
+from .actions import Action
+from .data import DataFormat, DataBoolean
+from .main import Main
+from .responses import ResponseType
+from .types import EditResult
 
 class Edit(str, Enum):
     """

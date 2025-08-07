@@ -13,7 +13,12 @@
 				"number": "1.15.216.0",
 				"build": "18483158",
 				"date": "2024-12-15"
-			}
+			},
+			"jobs": [
+				{
+					"identifier": "Game"
+				}
+			]
 		},
 		{
 			"identifier": "Starfield_Creation_Kit",
@@ -29,7 +34,7 @@
 				"build": "18483730",
 				"date": "2024-12-15"
 			},
-			"projects": [
+			"jobs": [
 				{
 					"identifier": "Base-Native",
 					"source.imports": [],
@@ -89,7 +94,7 @@
 				"number": "4.1.0",
 				"date": "2025-06-25"
 			},
-			"projects": [
+			"jobs": [
 				{
 					"identifier": "Cassiopeia",
 					"source.imports": [ "Base-Native" ],
@@ -105,7 +110,7 @@
 		{
 			"identifier": "Testing",
 			"type": "test",
-			"projects": [
+			"jobs": [
 				{
 					"identifier": "Test-Sample",
 					"source.imports": [ "Base-Native" ],

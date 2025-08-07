@@ -1,7 +1,5 @@
 {
 	"log": {
-		"date_format": "%d-%m-%Y %H:%M:%S",
-		"console_level": "INFO",
 		"file_path": "scribe.app.log"
 	},
 	"export.directory": "wiki/export",

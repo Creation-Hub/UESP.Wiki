@@ -39,6 +39,8 @@ class PublishOption:
     """ Publishing options for a project."""
 
     def __init__(self) -> None:
+        super().__init__()
+
         self.output:str = ""
         """ The output directory for the project wiki pages. """
 

@@ -7,10 +7,9 @@ from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from scribe.papyrus.code import Member
 from scribe.papyrus.text.parsing import State
-from scribe.wiki.data.article import ArticleType
-from scribe.wiki.data.page import Page
-from scribe.bots.generator.wiki import Wiki
-from scribe.bots.generator.templates import Script_Object_Member_Summary, Script_Object_Summary
+from scribe.wiki.data.article import Page
+from .wiki import Wiki
+from .templates import Script_Object_Member_Summary, Script_Object_Summary
 
 class PageScript:
     """
@@ -20,9 +19,8 @@ class PageScript:
     @staticmethod
     def create(file_path:str, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
         this:Page = Page()
-        this.type = ArticleType.Main
-        # this.file_path = file_path
-        this.title = PageScript.get_title(script)
+        this.namespace = Wiki.NAMESPACE_MODDING
+        this.name = PageScript.get_title(script)
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         game_version:str = ""
@@ -94,10 +92,7 @@ class PageScript:
 
     @staticmethod
     def item_member(member:Member) -> str:
-        if not member:
-            raise Exception("Member cannot be 'None'.")
-
-        elif isinstance(member, Function):
+        if isinstance(member, Function):
             return PageScript.item_function(member)
 
         elif isinstance(member, Event):

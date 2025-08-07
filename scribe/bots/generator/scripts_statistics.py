@@ -4,6 +4,7 @@ from scribe.papyrus.project import PapyrusProject
 
 class PapyrusStatistics:
     def __init__(self) -> None:
+        super().__init__()
         self.project_imports_count:int = 0
         self.project_scripts_count:int = 0
         self.script_extends_counter:Counter[str] = Counter()

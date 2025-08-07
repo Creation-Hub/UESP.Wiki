@@ -7,10 +7,10 @@ Help:
 import logging
 from logging import Formatter, Logger
 from logging import FileHandler, StreamHandler
-from typing import TextIO
-from scribe.app.configuration import AppConfiguration
-from scribe.app.log.level import LogLevel
+from typing import TextIO, override
 from scribe.shared.objects import Dump
+from ..configuration import AppConfiguration
+from . import LogLevel
 
 class AppLog:
     """
@@ -31,6 +31,8 @@ class AppLog:
 
 
     def __init__(self) -> None:
+        super().__init__()
+
         self.date_format:str = self.DATE_FORMAT
         """The date format for log messages."""
 
@@ -44,6 +46,7 @@ class AppLog:
         """The file path for the log file."""
 
 
+    @override
     def __str__(self) -> str:
         return Dump.get(self)
 

@@ -2,6 +2,7 @@ from requests import Response
 
 class ResponseType:
     def __init__(self, response:Response) -> None:
+        super().__init__()
         self.response:Response = response
         """The original HTTP response object."""
 

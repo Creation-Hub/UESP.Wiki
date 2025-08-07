@@ -5,10 +5,11 @@ Help:
     - https://docs.python.org/3/library/argparse.html
 """
 from argparse import ArgumentParser, Namespace
-from scribe.app.cli.mode import AppMode
-from scribe.app.cli.parameters import Parameters
-from scribe.app.log.level import LogLevel
+from typing import override
 from scribe.shared.objects import Dump
+from .mode import AppMode
+from .parameters import Parameters
+from ..log import LogLevel
 
 class AppArguments:
     """
@@ -20,10 +21,13 @@ class AppArguments:
 
 
     def __init__(self) -> None:
+        super().__init__()
+
         self.values:Namespace|None = None
         """The command line argument values."""
 
 
+    @override
     def __str__(self) -> str:
         return Dump.get(self)
 
@@ -54,15 +58,13 @@ class AppArguments:
     def log_console_level(self) -> LogLevel|None:
         """The logging level for console output."""
         if not self.values: return None
-        # TODO: Convert from string to LogLevel
-        return getattr(self.values, "log_console_level", None)
+        return LogLevel.convert(getattr(self.values, "log_console_level", None))
 
     @property
     def log_file_level(self) -> LogLevel|None:
         """The logging level for file output."""
         if not self.values: return None
-        # TODO: Convert from string to LogLevel
-        return getattr(self.values, "log_file_level", None)
+        return LogLevel.convert(getattr(self.values, "log_file_level", None))
 
     @property
     def log_file_path(self) -> str|None:
@@ -79,7 +81,7 @@ class AppArguments:
         else: return AppMode[value.upper()]
 
     @property
-    def generator_configuration_file(self) -> str|None:
+    def generator_file_path(self) -> str|None:
         """Path to the generator configuration file."""
         if not self.values: return None
         if self.mode is not AppMode.GENERATE:
@@ -87,7 +89,7 @@ class AppArguments:
         return getattr(self.values, "config", None)
 
     @property
-    def upload_configuration_file(self) -> str|None:
+    def uploader_file_path(self) -> str|None:
         """Path to the upload configuration file."""
         if not self.values: return None
         if self.mode is not AppMode.UPLOAD:

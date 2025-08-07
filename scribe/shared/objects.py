@@ -8,7 +8,7 @@ class Dump():
 
     @staticmethod
     def get(this:Any) -> str:
-        return f"DUMP >> {this.__class__.__name__}:{Dump._Any(this)}"
+        return f"{this.__class__.__name__}: >>>{Dump._Any(this)}"
 
 
     @staticmethod

@@ -11,10 +11,10 @@ Documentation:
 from enum import Enum
 from typing import Any
 from requests import Response
-from scribe.wiki.web.api.actions import Action
-from scribe.wiki.web.api.data import DataFormat
-from scribe.wiki.web.api.parameters import ParameterType
-from scribe.wiki.web.api.responses import ResponseType
+from .actions import Action
+from .data import DataFormat
+from .parameters import ParameterType
+from .responses import ResponseType
 
 
 # Login

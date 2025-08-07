@@ -1,14 +1,14 @@
 """
 Provides MediaWiki data transformations for Papyrus scripts.
 """
-from scribe.bots.generator.wiki import Wiki
 from scribe.papyrus.code import Script
 from scribe.papyrus.code import Member
 from scribe.papyrus.code import Method
 from scribe.papyrus.code import Function
 from scribe.papyrus.code import Property
 from scribe.papyrus.code import Variable
-from scribe.bots.generator.scripts import WikiDataScript
+from .wiki import Wiki
+from .scripts import WikiDataScript
 
 class TemplateData:
     """

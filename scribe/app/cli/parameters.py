@@ -13,7 +13,7 @@ class Parameters:
         )
 
         # App
-        parser.add_argument(
+        _ = parser.add_argument(
             "--settings",
             type=str,
             help="Path to the application settings JSON file."
@@ -21,25 +21,25 @@ class Parameters:
 
 
         # Logging
-        parser.add_argument(
+        _ = parser.add_argument(
             "--log-date-format",
             type=str,
             help="Date format for log messages.",
         )
 
-        parser.add_argument(
+        _ = parser.add_argument(
             "--log-console-level",
             type=str,
             help="The log level to use (DEBUG, INFO, WARNING, ERROR, CRITICAL)."
         )
 
-        parser.add_argument(
+        _ = parser.add_argument(
             "--log-file-level",
             type=str,
             help="The log level to use (DEBUG, INFO, WARNING, ERROR, CRITICAL)."
         )
 
-        parser.add_argument(
+        _ = parser.add_argument(
             "--log-file-path",
             type=str,
             help="The log file path to use."
@@ -59,7 +59,7 @@ class Parameters:
             "generate",
             help="Parse Papyrus scripts and generate MediaWiki files."
         )
-        generate.add_argument(
+        _ = generate.add_argument(
             "--config",
             type=str
         )
@@ -71,12 +71,12 @@ class Parameters:
             help="Upload generated MediaWiki files to the wiki via API."
         )
 
-        upload.add_argument(
+        _ = upload.add_argument(
             "--config",
             type=str
         )
 
-        upload.add_argument(
+        _ = upload.add_argument(
             "--environment",
             type=str
         )

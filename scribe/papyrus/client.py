@@ -1,11 +1,13 @@
 import logging
-from scribe.papyrus.project import PapyrusProject
+from .project import PapyrusProject
 
 class PapyrusClient:
     """
     The Papyrus context for script analysis.
     """
     def __init__(self) -> None:
+        super().__init__()
+
         self.projects:dict[str, PapyrusProject] = {}
         """The list of Papyrus projects in this context."""
 

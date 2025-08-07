@@ -3,10 +3,10 @@ Provides features for application settings management.
 """
 import os
 import json
-from typing import Any
-from scribe.app.log.level import LogLevel
-from scribe.app.cli.arguments import AppArguments
+from typing import Any, override
 from scribe.shared.objects import Dump
+from .log import LogLevel
+from .cli.arguments import AppArguments
 
 class AppSettings:
     """
@@ -18,11 +18,10 @@ class AppSettings:
 
     JSON_ENCODING:str = "utf-8"
 
-    WIKI_JSON_FILENAME:str = "wiki.json"
-    """The file name of the wiki configuration."""
-
 
     def __init__(self) -> None:
+        super().__init__()
+
         self.file_path:str|None = None
         """The json file path for these settings."""
 
@@ -33,6 +32,7 @@ class AppSettings:
         """The raw JSON data for the settings."""
 
 
+    @override
     def __str__(self) -> str:
         return Dump.get(self)
 

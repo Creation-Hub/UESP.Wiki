@@ -19,9 +19,9 @@ class Program:
         """
         app:AppContext = AppContext.create()
         if app.arguments.mode == AppMode.GENERATE:
-            GenerateService.start(app)
+            _ = GenerateService.start(app)
         elif app.arguments.mode == AppMode.UPLOAD:
-            UploadService.start(app)
+            _ = UploadService.start(app)
         else:
             logging.error(f"Unknown argument for 'mode': {app.arguments.mode}")
 
