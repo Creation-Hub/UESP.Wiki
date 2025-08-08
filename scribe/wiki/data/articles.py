@@ -1,8 +1,8 @@
 from typing import override
-from scribe.shared.collections import KeyedCollectionAbstract
+from scribe.shared.collections import KeyedCollection
 from .article import Article
 
-class ArticleCollection(KeyedCollectionAbstract[Article]):
+class ArticleCollection(KeyedCollection[Article]):
 
     @override
     def key_for(self, item:Article) -> str:

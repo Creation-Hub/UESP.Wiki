@@ -2,7 +2,7 @@
 Provides a dictionary-like collection for objects whose keys are embedded in the values.
 Supports both intrinsic and extrinsic key strategies.
 """
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from typing import Generic, TypeVar, override
@@ -64,20 +64,40 @@ class KeyedCollection(Generic[T]):
     #---------------------------------------------
 
     def _get_key(self, item:T) -> str:
-        """Extracts a key from the provided item using an appropriate strategy."""
+        """
+        Extracts a key from the provided item using an appropriate implementation strategy.
+
+        Implementation Strategy:
+        1. Uses intrinsic key if item is a `KeyedObject`.
+        2. Uses the provided `key_extract` lambda function.
+        3. Uses the abstract `key_for()` method as implemented by subclasses.
+        """
         if isinstance(item, KeyedObject):
             return item.key
         elif self._key_extract:
             return self._key_extract(item)
         else:
-            raise ValueError(
-                f"Item of type {type(item)} is not a `KeyedObject` and no `key_extract` provided"
-            )
+            return self.key_for(item)
+
+
+    @abstractmethod
+    def key_for(self, item:T) -> str:
+        """
+        Abstract base for collections that define their own key extraction logic.
+        Used to support the extrinsic key strategy via subclassing.
+
+        **Override this method in subclasses for custom key extraction.**
+        """
+        raise NotImplementedError(
+            f"Cannot extract key from {type(item).__name__}. " +
+            f"Provide key_extract function, use KeyedObject inheritance, or override key_for()."
+        )
+
 
     # Access Methods
     #---------------------------------------------
 
-    def get(self, key:str) -> T | None:
+    def get(self, key:str) -> T|None:
         """Get an item by key."""
         return self._items.get(key)
 
@@ -130,9 +150,7 @@ class KeyedCollection(Generic[T]):
     def add(self, item:T) -> None:
         """Adds an item to this collection."""
         key:str = self._get_key(item)
-        if not key:
-            raise ValueError("Cannot add item with empty key")
-        elif key in self._items:
+        if key in self._items:
             raise KeyError(f"Item with key '{key}' already exists")
         self._items[key] = item
 
@@ -151,25 +169,3 @@ class KeyedCollection(Generic[T]):
     def clear(self) -> None:
         """Remove all identifiers from this collection."""
         self._items.clear()
-
-
-
-class KeyedCollectionAbstract(KeyedCollection[T], ABC):
-    """
-    Abstract base for collections that define their own key extraction logic.
-    Used to support the extrinsic key strategy via subclassing.
-    """
-
-    def __init__(self, items:list[T]|None = None) -> None:
-        # Don't pass `key_extract` function, override with `_get_key` instead.
-        super().__init__(items, None)
-
-    @abstractmethod
-    def key_for(self, item:T) -> str:
-        """Extract key from the given item. Override this method."""
-        raise NotImplementedError("Subclasses must implement the `key_for()` method.")
-
-    @override
-    def _get_key(self, item:T) -> str:
-        """Use the subclass-defined key extraction."""
-        return self.key_for(item)
