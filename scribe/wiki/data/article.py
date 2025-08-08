@@ -46,9 +46,10 @@ class Article:
 
         # Composed
         self.categories:list[Category] = []
-        """The categories of this wiki article."""
+        """The categories this wiki article belongs to."""
 
         self.templates:list[Template] = []
+        """The templates used by this wiki article."""
 
 
     @property
@@ -61,7 +62,6 @@ class Article:
     @property
     def link(self) -> str:
         return f"[[{self.title}]]"
-
 
 
     def compose(self) -> list[str]:

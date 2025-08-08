@@ -4,6 +4,7 @@ Generates a MediaWiki page that summarizes information about all Papyrus project
 import logging
 from collections import Counter
 from collections.abc import ItemsView
+from scribe.shared.collections import KeyedCollection
 from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.project import PapyrusProject
 from scribe.wiki.data.article import Page
@@ -20,7 +21,7 @@ class PageIndex:
 
 
     @staticmethod
-    def create(jobs:dict[str, Job], papyrus:PapyrusClient) -> 'Page':
+    def create(jobs:KeyedCollection[Job], papyrus:PapyrusClient) -> 'Page':
         this:Page = Page()
         this.namespace = Wiki.NAMESPACE_MODDING
         this.name = PageIndex.PAGE_NAME

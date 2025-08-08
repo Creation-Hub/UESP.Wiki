@@ -1,22 +1,22 @@
 """
 Used to generate wiki page content.
 """
-import json
-import os
 import logging
-from typing import Any, override
+import os
+from typing import override
 from scribe.app.configuration import AppConfiguration
 from scribe.app.context import AppContext
+from scribe.shared.collections import KeyedCollection
 from scribe.shared.objects import Dump
 from scribe.papyrus.client import PapyrusClient
 from scribe.papyrus.project import PapyrusProject
 from scribe.papyrus.code import Member, Script
 from scribe.wiki.data.article import Namespace, Page, Template
 from scribe.wiki.data.article_text import ArticleText
-from scribe.wiki.data.client import DataClient
-from scribe.bots.common import WikiCommon
+from scribe.wiki.data.client import ArticleClient
+from scribe.bots.configuration import GenerateConfiguration
 from scribe.bots.publishing import Sort
-from scribe.bots.jobs import JobProvider, Job
+from scribe.bots.jobs import Job
 from scribe.bots.generator.wiki import Wiki
 from scribe.bots.generator.pages_index import PageIndex
 from scribe.bots.generator.pages_member import PageMember
@@ -37,22 +37,20 @@ class GenerateService:
     PAGE_SCRIPT_INDEX_FILE_NAME:str = "Script_Information.wiki"
     """The file name of the wiki page that summarizes all scripts in a Papyrus project."""
 
-    JSON_ENCODING:str = "utf-8"
-
 
     def __init__(self) -> None:
         super().__init__()
 
+        self.configuration:GenerateConfiguration = GenerateConfiguration()
+        """The configuration for this service."""
+
         self.papyrus:PapyrusClient = PapyrusClient()
         """The Papyrus client used to load and manage Papyrus projects."""
 
-        self.wiki:DataClient = DataClient()
+        self.wiki:ArticleClient = ArticleClient()
         """The wiki client used to manage wiki pages."""
 
-        self.providers:dict[str, JobProvider] = {}
-        """The job providers loaded from the settings file."""
-
-        self.jobs:dict[str, Job] = {}
+        self.jobs:KeyedCollection[Job] = KeyedCollection[Job]()
         """All the jobs from all providers consolidated into a single dictionary."""
 
 
@@ -67,25 +65,30 @@ class GenerateService:
             logging.error(f"Aborting program. No generator settings file found in the application configuration.")
             return False
 
-        this:GenerateService = Generate_JSON.json_load(app.configuration.generator_file_path)
+        this:GenerateService = GenerateService()
+        this.configuration = GenerateConfiguration.load(app.configuration.generator_file_path)
 
-        # Populate all jobs from all providers.
-        for provider in this.providers.values():
+        # Populate all jobs from all job providers.
+        for provider in this.configuration.providers.values():
             if not provider.jobs: continue
-            for key, job in provider.jobs.items():
-                this.jobs[key] = job
+            for job in provider.jobs.values():
+                this.jobs.add(job)
 
         logging.info(f"{GenerateService.NAME} - Starting")
         logging.debug(str(this))
 
         # Start the Papyrus context.
-        if not GenerateService.papyrus_start(this.papyrus, this.jobs):
-            logging.error(f"Aborting program. Failed to start Papyrus.")
+        try:
+            GenerateService.papyrus_start(this.papyrus, this.jobs)
+        except Exception as exception:
+            logging.error(f"Aborting program. Failed to start Papyrus. {exception}")
             return False
 
         # Start the wiki context.
-        if not GenerateService.wiki_start(app.configuration, this.wiki, this.papyrus, this.jobs):
-            logging.error(f"Aborting program. Failed to generate wiki pages.")
+        try:
+            GenerateService.wiki_start(app.configuration, this.wiki, this.papyrus, this.jobs)
+        except Exception as exception:
+            logging.error(f"Aborting program. Failed to wiki generator. {exception}")
             return False
 
         return True
@@ -95,7 +98,7 @@ class GenerateService:
     #---------------------------------------------
 
     @staticmethod
-    def papyrus_start(papyrus:PapyrusClient, jobs:dict[str, Job]) -> bool:
+    def papyrus_start(papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> None:
         """
         Start the Papyrus context and load all projects.
         """
@@ -125,17 +128,15 @@ class GenerateService:
         logging.info(" Papyrus ".center(GenerateService.DIV_WIDTH, "-"))
         logging.info(f"Loading {len(papyrus.projects)} projects.")
         if not papyrus.load():
-            logging.error(f"Failed to load one or more Papyrus projects.")
-            return False
-        else:
-            return True
+            raise Exception("Failed to load one or more Papyrus projects.")
+
 
 
     # Wiki
     #---------------------------------------------
 
     @staticmethod
-    def wiki_start(configuration:AppConfiguration, wiki:DataClient, papyrus:PapyrusClient, jobs:dict[str, Job]) -> bool:
+    def wiki_start(configuration:AppConfiguration, wiki:ArticleClient, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> None:
         """
         Start the wiki generation process.
         """
@@ -144,18 +145,18 @@ class GenerateService:
         user_page.name = "Scrivener07"
         user_page.content = ["My name is Scrivener and I have been modding since TES4 Oblivion."]
         user_page.categories = []
-        wiki.add_article(user_page)
+        wiki.add(user_page)
 
         bot_page:Page = Page() # This is for debug purposes.
         bot_page.namespace = Namespace.User
         bot_page.name = "Scrivener07/Bot"
         bot_page.content = ["This is the Scribe Bot wiki page."]
         user_page.categories = []
-        wiki.add_article(bot_page)
+        wiki.add(bot_page)
 
         # Generate the wiki index summary page.
         index_page:Page = Generate_Wiki.wiki_page_create_index(configuration, papyrus, jobs)
-        wiki.add_article(index_page)
+        wiki.add(index_page)
 
         # Generate wiki pages for each project.
         logging.info("Wiki Generation ".center(GenerateService.DIV_WIDTH, "-"))
@@ -168,14 +169,14 @@ class GenerateService:
         if not configuration.export_directory:
             raise ValueError("The export directory for wiki pages is not set in the application configuration.")
 
-        wiki_file_path:str = os.path.join(configuration.export_directory, WikiCommon.WIKI_JSON_FILENAME)
+        wiki_file_path:str = os.path.join(configuration.export_directory, ArticleClient.JSON_FILENAME)
         wiki.save(wiki_file_path)
         logging.info(f"Saved wiki: '{wiki_file_path}'")
-        return True
+
 
 
     @staticmethod
-    def wiki_projects(wiki:DataClient, papyrus:PapyrusClient, job:Job) -> bool:
+    def wiki_projects(wiki:ArticleClient, papyrus:PapyrusClient, job:Job) -> bool:
 
         # TODO: Ensure invalid jobs with not enough info dont get this far, like the `Game` key.
         # Exception has occurred: KeyError
@@ -232,7 +233,7 @@ class GenerateService:
             # Write a wiki page for this script object.
             if job.publish.enable_objects:
                 script_page:Page = Generate_Wiki.wiki_page_create_script(output_file_path, papyrus, project, script)
-                wiki.add_article(script_page)
+                wiki.add(script_page)
                 logging.debug(f"[{project.identifier}]<{script_file_path}> -> {script_file_path_full} -> {output_file_path}")
 
             # Write a wiki page for this script member.
@@ -242,55 +243,25 @@ class GenerateService:
                     member_file_name:str = f"{script_file_name}-{member.name}.wiki"
                     member_file_path:str = os.path.join(os.path.dirname(output_file_path), member_file_name)
                     script_member_page:Page = Generate_Wiki.wiki_page_create_script_member(member_file_path, project, script, member)
-                    wiki.add_article(script_member_page)
+                    wiki.add(script_member_page)
                     logging.debug(f"[{project.identifier}]<{script_file_path}>::{member.name} -> {member_file_path}")
 
         return True
 
 
+
+
 # Temporary Organization (Developer)
 #---------------------------------------------
-
-class Generate_JSON:
-
-    @staticmethod
-    def json_load(file_path:str) -> GenerateService:
-        """
-        Reads the given application settings file.
-        """
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"Settings file not found: {file_path}")
-        with open(file_path, encoding=GenerateService.JSON_ENCODING) as file:
-            data:dict[str, Any] = json.load(file)
-        return Generate_JSON.json_decode(data)
-
-
-    @staticmethod
-    def json_decode(data:dict[str, Any]) -> GenerateService:
-        this:GenerateService = GenerateService()
-        this.providers = Generate_JSON.json_decode_providers(data)
-        return this
-
-
-    @staticmethod
-    def json_decode_providers(data:dict[str, Any]) -> dict[str, JobProvider]:
-        providers:dict[str, JobProvider] = {}
-        data_providers:list[Any] = data.get("providers", [])
-        for data_provider in data_providers:
-            data_provider:dict[str, Any] = data_provider
-            provider:JobProvider = JobProvider.json_decode(data_provider)
-            providers[provider.identifier] = provider
-        return providers
-
 
 class Generate_Wiki:
 
     @staticmethod
-    def wiki_page_create_index(configuration:AppConfiguration, papyrus:PapyrusClient, projects:dict[str, Job]) -> Page:
+    def wiki_page_create_index(configuration:AppConfiguration, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> Page:
         if not configuration.export_directory:
             raise ValueError("The export directory for wiki pages is not set in the application configuration.")
 
-        page:Page = PageIndex.create(projects, papyrus)
+        page:Page = PageIndex.create(jobs, papyrus)
         page_file_path:str = os.path.join(configuration.export_directory, GenerateService.PAGE_SCRIPT_INDEX_FILE_NAME)
         try:
             ArticleText.compose_save(page, page_file_path)
@@ -301,7 +272,7 @@ class Generate_Wiki:
 
     @staticmethod
     def wiki_page_create_script(file_path:str, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
-        page:Page = PageScript.create(file_path, papyrus, project, script)
+        page:Page = PageScript.create(papyrus, project, script)
         try:
             ArticleText.compose_save(page, file_path)
         except Exception as exception:

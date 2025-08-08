@@ -17,7 +17,7 @@ class PageScript:
     """
 
     @staticmethod
-    def create(file_path:str, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
+    def create(papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
         this:Page = Page()
         this.namespace = Wiki.NAMESPACE_MODDING
         this.name = PageScript.get_title(script)

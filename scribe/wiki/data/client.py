@@ -1,17 +1,27 @@
+"""
+The wiki data client provides object relationship management.
+"""
 import json
 from typing import Any
 from .article import Article
 from .article import Page, Category, Template
+from .articles import ArticleCollection
 
-class DataClient:
-    """The wiki data client with provides object relationship management."""
+class ArticleClient:
+
     JSON_ENCODING:str = "utf-8"
+    """The default JSON encoding to use."""
+
     JSON_INDENT:int = 4
+    """The default JSON indentation to use."""
+
+    JSON_FILENAME:str = "wiki.json"
+    """The default JSON file name to use."""
 
 
     def __init__(self) -> None:
         super().__init__()
-        self.articles:dict[str, Article] = {}
+        self.articles:ArticleCollection = ArticleCollection()
         """A dictionary of wiki articles indexed by their titles."""
         self.templates:dict[str, Template] = {}
         self.categories:dict[str, Category] = {}
@@ -25,13 +35,6 @@ class DataClient:
         return self.articles[key]
 
 
-    def add_article(self, article:Article) -> None:
-        """Adds an article to the wiki context."""
-        if not article.title:
-            raise ValueError("Article title cannot be empty.")
-        self.articles[article.title] = article
-
-
     # Typed
     #---------------------------------------------
 
@@ -41,7 +44,7 @@ class DataClient:
             raise ValueError("Article title cannot be empty.")
 
         # Add the article.
-        self.articles[article.title] = article
+        self.articles.add(article)
 
         # Maintain typed collections
         if isinstance(article, Category):
@@ -87,7 +90,7 @@ class DataClient:
 
         page:Article = self.articles[page_title]
         category = self.get_or_create_category(category_name)
-        DataClient.add_category(page, category)
+        ArticleClient.add_category(page, category)
 
 
     #---------------------------------------------
@@ -119,28 +122,28 @@ class DataClient:
 
 
     @staticmethod
-    def data_decode(data:dict[str, Any]) -> 'DataClient':
+    def data_decode(data:dict[str, Any]) -> 'ArticleClient':
         """The data decoder for this class."""
         articles:dict[str, Any] = data.get("articles", {})
-        this:DataClient = DataClient()
+        this:ArticleClient = ArticleClient()
         for article_data in articles.values():
             article_data:dict[str, Any] = article_data
             article:Article = Article.data_decode(article_data)
-            this.add_article(article)
+            this.add(article)
         return this
 
 
     def save(self, file_path:str) -> None:
         data:dict[str, Any] = self.data_encode()
-        with open(file_path, 'w', encoding=DataClient.JSON_ENCODING) as file:
-            json.dump(data, file, indent=DataClient.JSON_INDENT)
+        with open(file_path, 'w', encoding=ArticleClient.JSON_ENCODING) as file:
+            json.dump(data, file, indent=ArticleClient.JSON_INDENT)
 
 
     @staticmethod
-    def load(file_path:str) -> 'DataClient':
+    def load(file_path:str) -> 'ArticleClient':
         try:
-            with open(file_path, 'r', encoding=DataClient.JSON_ENCODING) as file:
+            with open(file_path, 'r', encoding=ArticleClient.JSON_ENCODING) as file:
                 data:dict[str, Any] = json.load(file)
         except json.JSONDecodeError as jsonDecodeError:
             raise ValueError(f"Invalid JSON format in {file_path}: {jsonDecodeError}")
-        return DataClient.data_decode(data)
+        return ArticleClient.data_decode(data)

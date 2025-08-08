@@ -1,5 +1,6 @@
 from enum import Enum
 from typing import Any
+from scribe.shared.collections import KeyedObject
 from .publishing import PublishOption
 
 
@@ -29,13 +30,13 @@ class JobType(Enum):
         else: return JobType[value.upper()]
 
 
-class Job:
+class Job(KeyedObject):
     """
     Represents a Papyrus project configuration with publishing options.
     See the `PapyrusProject` and `PublishOption` classes.
     """
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, identifier:str) -> None:
+        super().__init__(identifier)
 
         self.identifier:str = ""
         """The indentifier for this configuration."""
@@ -52,15 +53,18 @@ class Job:
 
     @staticmethod
     def json_decode(data:dict[str, Any]) -> 'Job':
-        this:Job = Job()
-        this.identifier = data.get("identifier", "UNNAMED")
+        identifier:str|None = data.get("identifier")
+        if not identifier:
+            raise ValueError("An identifier is required.")
+        this:Job = Job(identifier)
+        this.identifier = identifier
         this.imports = data.get("source.imports", [])
         this.root = data.get("source.directory", "")
         this.publish = PublishOption.json_decode(data)
         return this
 
 
-class JobProvider:
+class JobOwner:
     """
     Represents information about the provider.
     """
@@ -85,8 +89,8 @@ class JobProvider:
 
 
     @staticmethod
-    def json_decode(data:dict[str, Any]) -> 'JobProvider':
-        this:JobProvider = JobProvider()
+    def json_decode(data:dict[str, Any]) -> 'JobOwner':
+        this:JobOwner = JobOwner()
         this.identifier = data.get("identifier", "")
         this.type = JobType.json_decode(data, "type")
         # Details
@@ -103,7 +107,7 @@ class JobProvider:
         this.version_build = version_data.get("build", "")
         this.version_date = version_data.get("date", "")
         # Jobs\Papyrus
-        this.jobs = JobProvider.json_decode_jobs(data, "jobs")
+        this.jobs = JobOwner.json_decode_jobs(data, "jobs")
         return this
 
 

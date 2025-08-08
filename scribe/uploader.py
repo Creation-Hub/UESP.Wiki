@@ -8,14 +8,13 @@ from http import HTTPStatus
 from scribe.app.context import AppContext
 from scribe.shared.objects import Dump
 from scribe.wiki.data.article import Article
-from scribe.wiki.data.client import DataClient
+from scribe.wiki.data.client import ArticleClient
 from scribe.wiki.web.client import WebClient
 from scribe.wiki.web.credentials import Credential, create_credentials
 from scribe.wiki.web.site import Site, create_site
 from scribe.wiki.web.api.edit import EditResponse
 from scribe.wiki.web.api.login import LoginResponse
 from scribe.wiki.web.api.types import EditResult, LoginStatus
-from scribe.bots.common import WikiCommon
 
 class UploadService:
     """
@@ -34,7 +33,7 @@ class UploadService:
 
     def __init__(self) -> None:
         super().__init__()
-        self.wiki:DataClient = DataClient()
+        self.wiki:ArticleClient = ArticleClient()
 
 
     @override
@@ -61,9 +60,9 @@ class UploadService:
         logging.debug(str(this))
 
         # Load wiki context from file
-        wiki_file_path:str = os.path.join(app.configuration.export_directory, WikiCommon.WIKI_JSON_FILENAME)
+        wiki_file_path:str = os.path.join(app.configuration.export_directory, ArticleClient.JSON_FILENAME)
         try:
-            this.wiki = DataClient.load(wiki_file_path)
+            this.wiki = ArticleClient.load(wiki_file_path)
             logging.info(f"Loaded {len(this.wiki.articles)} pages from wiki.")
 
         except FileNotFoundError as fileNotFoundError:
@@ -145,5 +144,5 @@ class UploadService:
         """The data decoder for this class."""
         this:UploadService = UploadService()
         wiki_articles_data:dict[str, Any] = data.get("wiki", {})
-        this.wiki = DataClient.data_decode(wiki_articles_data)
+        this.wiki = ArticleClient.data_decode(wiki_articles_data)
         return this

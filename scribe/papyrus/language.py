@@ -19,21 +19,28 @@ class ScriptName(KeyedObject):
         """Gets the script name value, which may include namespaces."""
         return self._key
 
-    @key.setter
-    def key(self, value:str) -> None:
-        """Sets the script name value, which may include namespaces."""
-        self._key = value.strip() if value else ""
 
     def get_array(self) -> list[str]:
         """Returns the script name as a list of strings."""
         if self.key: return self.key.split(":")
         else: return []
 
-    def set_array(self, name:list[str]) -> bool:
+    def set_array(self, name:list[str]) -> 'ScriptName|None':
         """Sets the script name from a list of strings."""
-        if not name: return False
-        self.key = ":".join(name)
-        return True
+        if not name: return None
+        key:str = ":".join(name)
+        return self._with_key(key)
+
+
+    # TODO: This is not fully implemented yet.
+    def _with_key(self, key:str) -> 'ScriptName':
+        """Return a new ScriptName with different key (immutable pattern)"""
+        return ScriptName(key)
+
+        # def _set_key(self, value:str) -> None:
+        # """Sets the script name value, which may include namespaces."""
+        # self._key = value.strip() if value else ""
+
 
     def file_path(self) -> str:
         """Returns the relative path based on the script name."""
