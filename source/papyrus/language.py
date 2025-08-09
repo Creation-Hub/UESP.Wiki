@@ -1,0 +1,54 @@
+from typing import override
+from sharp.collections import KeyedObject
+
+
+# TODO: Test this on a concrete KeyedCollection.
+class ScriptName(KeyedObject):
+    """
+    Represents a Papyrus script name.
+    The value format is `Namespace1:Namespace2:ScriptName`.
+    """
+
+    def __init__(self, key:str = "") -> None:
+        """Initializes this class with an optional script name value."""
+        KeyedObject.__init__(self, key)
+
+    @property
+    @override
+    def key(self) -> str:
+        """Gets the script name value, which may include namespaces."""
+        return self._key
+
+
+    def get_array(self) -> list[str]:
+        """Returns the script name as a list of strings."""
+        if self.key: return self.key.split(":")
+        else: return []
+
+    def set_array(self, name:list[str]) -> 'ScriptName|None':
+        """Sets the script name from a list of strings."""
+        if not name: return None
+        key:str = ":".join(name)
+        return self._with_key(key)
+
+
+    # TODO: This is not fully implemented yet.
+    def _with_key(self, key:str) -> 'ScriptName':
+        """Return a new ScriptName with different key (immutable pattern)"""
+        return ScriptName(key)
+
+        # def _set_key(self, value:str) -> None:
+        # """Sets the script name value, which may include namespaces."""
+        # self._key = value.strip() if value else ""
+
+
+    def file_path(self) -> str:
+        """Returns the relative path based on the script name."""
+        if not self.key: return ""
+        return self.key.replace(":", "\\")
+
+    def file_name(self) -> str:
+        """Returns the script file name without extension."""
+        if not self.key: return ""
+        array = self.get_array()
+        return array[-1] if array else ""

@@ -1,0 +1,15 @@
+[project]
+name = "sharp"
+version = "0.0.1"
+description = "Provides shared utility features for Python packages."
+requires-python = ">=3.13"
+dependencies = []  # No external dependencies
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

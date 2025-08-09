@@ -1,0 +1,17 @@
+[project]
+name = "papyrus"
+version = "0.0.1"
+description = "Papyrus script parsing and analysis library."
+requires-python = ">=3.13"
+dependencies = [
+    "sharp"
+]
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,30 @@
+[project]
+name = "scribe-bot"
+version = "0.1.0"
+description = "Development workspace for UESP Wiki tools."
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.25.0"
+]
+
+# The optional developer dependencies.
+[project.optional-dependencies]
+dev = [
+    "build>=0.10.0"
+]
+
+
+# Development installation script
+[project.scripts]
+scribe = "scribe.__main__:main"
+
+
+# Development mode - installs all packages as editable
+[tool.setuptools.packages.find]
+where = ["source"]
+include = ["scribe*", "sharp*", "papyrus*", "wiki*"]
+
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

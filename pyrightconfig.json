@@ -3,7 +3,13 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md
 */
 {
     // Environment Options
-    "include": ["scribe"],
+    "include": [
+        "source/scribe",
+        "source/shared",
+        "source/papyrus",
+        "source/wiki",
+        "source/_tests"
+    ],
 
     // Type Evaluation Settings
     "deprecateTypingAliases": true,

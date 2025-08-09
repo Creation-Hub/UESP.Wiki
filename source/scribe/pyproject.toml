@@ -1,0 +1,29 @@
+[project]
+name = "scribe"
+version = "0.0.1"
+license = {text = "MIT"}
+readme = "README.md"
+description = "A wiki generator for Papyrus scripts."
+authors = [
+    {name = "Scrivener07"}
+]
+requires-python = ">=3.13"
+dependencies = [
+    "sharp",
+    "papyrus",
+    "wiki"
+]
+
+
+# Terminal entry point
+[project.scripts]
+scribe = "scribe.__main__:main"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -9,7 +9,25 @@
 			"console": "integratedTerminal",
 			"type": "debugpy",
 			"request": "launch",
-			"module": "scribe"
+			"module": "scribe",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}\\source"
+			},
+			// Test for missing required parameter `mode`. Expect an exception to be thrown.
+			"args": []
+		},
+		{
+			"name": "(help)",
+			"console": "integratedTerminal",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "scribe",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}\\source"
+			},
+			"args": ["-h"]
 		},
 		{
 			"name": "Generate",
@@ -17,11 +35,15 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}\\source"
+			},
 			"args": [
-				"--settings", "${workspaceFolder}\\scribe.json",
+				"--settings", "scribe.json",
 				"--log-file-path", "scribe.generator.log",
 				"generate",
-				"--config", "${workspaceFolder}\\scribe.generator.json"
+				"--config", "scribe.generator.json"
 			]
 		},
 		{
@@ -30,11 +52,15 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}\\source"
+			},
+			"cwd": "${workspaceFolder}",
 			"args": [
-				"--settings", "${workspaceFolder}\\scribe.json",
+				"--settings", "scribe.json",
 				"--log-file-path", "scribe.uploader.log",
 				"upload",
-				"--config", "${workspaceFolder}\\scribe.uploader.json",
+				"--config", "scribe.uploader.json",
 				"--environment", "local"
 			]
 		}
