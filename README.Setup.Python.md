@@ -28,10 +28,7 @@ The VS Code terminal will be prefixed with `(.venv)`.
 # Windows
 .venv\Scripts\activate
 ```
-```shell
-# macOS/Linux
-source .venv/bin/activate
-```
+
 
 
 ## Packages (pyproject)
@@ -40,21 +37,28 @@ The package dependencies managed by `pyproject` for this project.
 
 ### Install Packages
 Installs the project source to the `venv` virtual environment as an editable package.
-```shell
-# Install all packages in development mode
-# The `source/testing` module code is NOT installed.
-pip install -e source/sharp
-pip install -e source/papyrus
-pip install -e source/wiki
-pip install -e source/scribe
-```
+The `source/testing` module code is NOT installed.
 
+
+#### Option 1
 Or, install everything at once from root `pyproject.toml` configuration.
 ```shell
 pip install -e .
 ```
+
+Optionally install the `dev` configuration to support the Python package `build` command.
 ```shell
 pip install -e .[dev]
+```
+
+
+#### Option 2
+Install individual packages in development mode.
+```shell
+pip install -e source/sharp
+pip install -e source/papyrus
+pip install -e source/wiki
+pip install -e source/scribe
 ```
 
 

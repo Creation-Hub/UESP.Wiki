@@ -10,7 +10,6 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"cwd": "${workspaceFolder}",
 			"env": {
 				"PYTHONPATH": "${workspaceFolder}\\source"
 			},
@@ -23,7 +22,6 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"cwd": "${workspaceFolder}",
 			"env": {
 				"PYTHONPATH": "${workspaceFolder}\\source"
 			},
@@ -35,7 +33,6 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"cwd": "${workspaceFolder}",
 			"env": {
 				"PYTHONPATH": "${workspaceFolder}\\source"
 			},
@@ -55,7 +52,6 @@
 			"env": {
 				"PYTHONPATH": "${workspaceFolder}\\source"
 			},
-			"cwd": "${workspaceFolder}",
 			"args": [
 				"--settings", "scribe.json",
 				"--log-file-path", "scribe.uploader.log",

@@ -4,6 +4,7 @@ version = "0.0.1"
 description = "Provides methods for interacting with MediaWiki."
 requires-python = ">=3.13"
 dependencies = [
+    "requests>=2.25.0",
     "sharp"
 ]
 

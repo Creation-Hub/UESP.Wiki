@@ -1,6 +1,6 @@
 [project]
 name = "scribe-bot"
-version = "0.1.0"
+version = "0.0.1"
 description = "Development workspace for UESP Wiki tools."
 requires-python = ">=3.13"
 dependencies = [
@@ -16,7 +16,7 @@ dev = [
 
 # Development installation script
 [project.scripts]
-scribe = "scribe.__main__:main"
+scribe-bot = "scribe.__main__:main"
 
 
 # Development mode - installs all packages as editable

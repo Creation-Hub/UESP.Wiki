@@ -5,7 +5,7 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md
     // Environment Options
     "include": [
         "source/scribe",
-        "source/shared",
+        "source/sharp",
         "source/papyrus",
         "source/wiki",
         "source/_tests"
@@ -31,6 +31,7 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md
     "reportUnusedCallResult": "warning",
 
     // Type Check Rule Overrides (suppress)
+    "reportMissingTypeStubs":"none"
     // "reportUnusedImport": "warning",
     // "reportUnusedFunction": "warning",
     // "reportUnusedVariable": "warning"
