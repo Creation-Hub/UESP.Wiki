@@ -226,3 +226,11 @@ class TestPapyrusNormalize(unittest.TestCase):
             Normalize.definition("ScriptName MyScript Extends ParentScript Native"),
             "ScriptName MyScript Extends ParentScript Native"
         )
+
+
+
+# Unit Test Runner
+#---------------------------------------------
+
+if __name__ == "__main__":
+    _ = unittest.main()

@@ -1,37 +1,23 @@
 """
 Unit tests for `papyrus.text.regex` module.
 
-
 This module tests regex patterns designed to parse valid Papyrus source code with "standard variance" in formatting.
-
 The patterns are intentionally tolerant of:
 - Reasonable whitespace variations (extra spaces, leading/trailing whitespace)
 - Case insensitivity for Papyrus keywords (ScriptName, SCRIPTNAME, scriptname)
 - Common formatting inconsistencies found in real-world scripts
 
-
 The regex patterns assume valid, compilable Papyrus source as input.
-
 Patterns are NOT designed to handle:
 - Malformed or invalid syntax that wouldn't compile
 - Extreme edge cases or unusual formatting
 - Complex normalization (handled by separate parsing layers)
-
-
-Each test verifies that regex capture groups extract raw text faithfully,
-preserving original formatting including whitespace. Text normalization and
-cleanup are the responsibility of upstream & downstream parsing functions, maintaining
-clear separation of concerns between pattern matching and data processing.
-
-Test cases focus on realistic patterns encountered in actual Papyrus scripts
-rather than theoretical edge cases, ensuring the regex patterns work reliably
-with standard development practices while remaining maintainable and performant.
 """
 import unittest
 from re import Match
 from papyrus.text.regex import RegEx
 
-class TestPapyrusRegex(unittest.TestCase):
+class TestPapyrusRegEx(unittest.TestCase):
 
 
     def test_header_pattern(self) -> None:
@@ -172,3 +158,11 @@ class TestPapyrusRegex(unittest.TestCase):
             with self.subTest(case=case):
                 match:Match[str]|None = RegEx.VARIABLE_PATTERN.match(case)
                 self.assertIsNotNone(match, f"Failed to match variable: {case}")
+
+
+
+# Unit Test Runner
+#---------------------------------------------
+
+if __name__ == "__main__":
+    _ = unittest.main()
