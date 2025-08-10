@@ -110,14 +110,14 @@ class TestPapyrusRegex(unittest.TestCase):
             {
                 GROUP_NAME: "MyFunc",
                 GROUP_TYPE: None,
-                GROUP_PARAMS: None,
-                GROUP_FLAGS: None
+                GROUP_PARAMS: "",
+                GROUP_FLAGS: ""
             },
             "bool Function MyFunc() Native":
             {
                 GROUP_NAME: "MyFunc",
                 GROUP_TYPE: "bool",
-                GROUP_PARAMS: None,
+                GROUP_PARAMS: "",
                 GROUP_FLAGS: "Native"
             },
             "Function MyFunc(string param1) Native":
@@ -132,13 +132,13 @@ class TestPapyrusRegex(unittest.TestCase):
                 GROUP_NAME: "MyFunc",
                 GROUP_TYPE: "int",
                 GROUP_PARAMS: "string param1",
-                GROUP_FLAGS: None
+                GROUP_FLAGS: ""
             },
             "bool Function MyFunc() Native":
             {
                 GROUP_NAME: "MyFunc",
                 GROUP_TYPE: "bool",
-                GROUP_PARAMS: None,
+                GROUP_PARAMS: "",
                 GROUP_FLAGS: "Native"
             }
         }
