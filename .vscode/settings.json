@@ -5,6 +5,9 @@ https://github.com/microsoft/pylance-release/wiki/Settings.json-overridden-by-Py
 */
 {
 	"python.envFile": "${workspaceFolder}\\.env",
+	"terminal.integrated.env.windows": {
+		"PYTHONPATH": "${workspaceFolder}\\source"
+	},
 	"python.analysis.languageServerMode": "full",
 	"python.testing.pytestEnabled": false,
 	"python.testing.unittestEnabled": true,

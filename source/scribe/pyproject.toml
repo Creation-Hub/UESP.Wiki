@@ -1,3 +1,7 @@
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+
 [project]
 name = "scribe"
 version = "0.0.1"
@@ -22,10 +26,12 @@ dev = [
 ]
 
 
-
-# Terminal entry point
+# Entry Points
+# https://packaging.python.org/en/latest/specifications/entry-points/
+# Note: Entry points can call static class methods directly.
+#       The format is `module:Class.method`
 [project.scripts]
-scribe = "scribe.__main__:main"
+scribe = "scribe.__main__:Program.main"
 
 
 [tool.setuptools.packages.find]
