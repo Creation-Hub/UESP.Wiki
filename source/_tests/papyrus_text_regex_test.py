@@ -29,7 +29,7 @@ with standard development practices while remaining maintainable and performant.
 """
 import unittest
 from re import Match
-from papyrus.text import regex
+from papyrus.text.regex import RegEx
 
 class TestPapyrusRegex(unittest.TestCase):
 
@@ -85,7 +85,7 @@ class TestPapyrusRegex(unittest.TestCase):
         # Compare each case line against the expected group matches.
         for line, expected in cases.items():
             with self.subTest(line=line):
-                match:Match[str]|None = regex.HEADER_PATTERN.match(line)
+                match:Match[str]|None = RegEx.HEADER_PATTERN.match(line)
                 self.assertIsNotNone(match, f"Failed to match: {line}")
                 if match:
                     self.assertEqual(match.group(GROUP_NAME), expected[GROUP_NAME], f"The `{GROUP_NAME}` match group had an unexpected value.")
@@ -146,7 +146,7 @@ class TestPapyrusRegex(unittest.TestCase):
         # Compare each case line against the expected group matches.
         for line, expected in cases.items():
             with self.subTest(line=line):
-                match:Match[str]|None = regex.FUNCTION_PATTERN.match(line)
+                match:Match[str]|None = RegEx.FUNCTION_PATTERN.match(line)
                 self.assertIsNotNone(match, f"Failed to match: {line}")
                 if match:
                     self.assertEqual(match.group(GROUP_NAME), expected[GROUP_NAME], f"The `{GROUP_NAME}` match group had an unexpected value.")
@@ -170,5 +170,5 @@ class TestPapyrusRegex(unittest.TestCase):
 
         for case in cases:
             with self.subTest(case=case):
-                match:Match[str]|None = regex.VARIABLE_PATTERN.match(case)
+                match:Match[str]|None = RegEx.VARIABLE_PATTERN.match(case)
                 self.assertIsNotNone(match, f"Failed to match variable: {case}")
