@@ -1,3 +1,6 @@
+"""
+Provides regular expressions for parsing Papyrus script text.
+"""
 import re
 from re import Pattern
 
@@ -31,17 +34,19 @@ EVENT_NAME:str = NAME + r'(?P<remote>\.\w+)?'
 
 HEADER_PATTERN:Pattern[str] = re.compile(
     r'^'                            # Start of sequence match
-    r'\s*'                          # Whitespace optional (0+)
     # Name (Required)
+    r'\s*'                          # Whitespace optional (0+)
     r'scriptname'                   # Papyrus keyword 'scriptname' and at least one space
     r'\s+'                          # Whitespace required (1+)
     f'{SCRIPT_NAME}'                # Capture required `name`, non-whitespace
     # Extends (Optional)
+    r'\s*'                          # Whitespace optional (0+)
     r'(?:\s+extends\s+'             # Papyrus keyword 'extends' and parent name
     r'(?P<extends>[^\s]+))?'        # Capture parent script name (non-whitespace)
     # Flags (Optional)
     r'\s*'                          # Whitespace optional (0+)
     f'{SCRIPT_FLAGS}'               # Capture optional flags (zero or more flag words)
+    r'\s*'                          # Whitespace optional (0+)
     r'$'                            # End of sequence match
     '', # type: ignore
     re.IGNORECASE
