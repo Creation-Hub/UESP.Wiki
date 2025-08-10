@@ -14,11 +14,11 @@ class TestKeyedCollection(unittest.TestCase):
     # Implementation Patterns
     #---------------------------------------------
 
-    def test_imp_keyed_object(self):
+    def test_imp_keyed_object(self) -> None:
         """Test the `KeyedObject` inheritance pattern."""
 
         class MyItem(KeyedObject):
-            def __init__(self, key:str):
+            def __init__(self, key:str) -> None:
                 super().__init__(key)
 
         items:KeyedCollection[MyItem] = KeyedCollection[MyItem]()
@@ -43,16 +43,16 @@ class TestKeyedCollection(unittest.TestCase):
         self.assertIn("NAME2", names)
 
 
-    def test_imp_lambda_key_complex(self):
+    def test_imp_lambda_key_complex(self) -> None:
         """Test function-based key extraction for complex objects."""
 
         class MyScriptHeader:
-            def __init__(self, name:str = ""):
+            def __init__(self, name:str = "") -> None:
                 super().__init__()
                 self.name:str = name
 
         class MyScript:
-            def __init__(self, name:str = ""):
+            def __init__(self, name:str = "") -> None:
                 super().__init__()
                 self.header:MyScriptHeader = MyScriptHeader(name)
 
@@ -65,11 +65,11 @@ class TestKeyedCollection(unittest.TestCase):
         self.assertIn("TestScript", scripts)
 
 
-    def test_imp_inherit(self):
+    def test_imp_inherit(self) -> None:
         """Test the abstract sub-classing pattern."""
 
         class MyItem:
-            def __init__(self, name:str = ""):
+            def __init__(self, name:str = "") -> None:
                 super().__init__()
                 self.name:str = name
 
@@ -89,11 +89,11 @@ class TestKeyedCollection(unittest.TestCase):
     # Keys
     #---------------------------------------------
 
-    def test_key_empty_allowed(self):
+    def test_key_empty_allowed(self) -> None:
         """Test that empty string keys are allowed."""
 
         class MyItem:
-            def __init__(self, name:str = ""):
+            def __init__(self, name:str = "") -> None:
                 super().__init__()
                 self.name:str = name
 
@@ -115,11 +115,11 @@ class TestKeyedCollection(unittest.TestCase):
         self.assertEqual(some_items[""], empty_item)
 
 
-    def test_key_duplicate_error(self):
+    def test_key_duplicate_error(self) -> None:
         """Test that duplicate keys raise appropriate errors."""
 
         class MyItem(KeyedObject):
-            def __init__(self, key:str):
+            def __init__(self, key:str) -> None:
                 super().__init__(key)
 
         items:KeyedCollection[MyItem] = KeyedCollection[MyItem]()
@@ -134,7 +134,7 @@ class TestKeyedCollection(unittest.TestCase):
         self.assertIn("already exists", str(context.exception))
 
 
-    def test_key_retrieval(self):
+    def test_key_retrieval(self) -> None:
         """Test various ways to retrieve items by key."""
 
         items:KeyedCollection[str] = KeyedCollection[str](key_extract=lambda x: x)
@@ -154,7 +154,7 @@ class TestKeyedCollection(unittest.TestCase):
             _ = items["nonexistent"]
 
 
-    def test_key_preserve_case_sensitivity(self):
+    def test_key_preserve_case_sensitivity(self) -> None:
         """Test that keys are case-sensitive by default (no auto-upper-casing)."""
 
         items:KeyedCollection[str] = KeyedCollection[str](key_extract=lambda x: x)
