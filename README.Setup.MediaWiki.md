@@ -6,7 +6,7 @@ Check the Docker version in use.
 docker --version
 ```
 
-Start the database container.
+Start the My SQL database container.
 ```shell
 # Start database first
 docker run -d --name mediawiki-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mediawiki mysql:8.0

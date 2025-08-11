@@ -10,11 +10,10 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"env": {
-				"PYTHONPATH": "${workspaceFolder}\\source"
-			},
-			// Test for missing required parameter `mode`. Expect an exception to be thrown.
-			"args": []
+			"args": [
+				// Test for missing required parameter `mode`.
+				// Expect a missing parameter error and help message.
+			]
 		},
 		{
 			"name": "(help)",
@@ -22,9 +21,6 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"env": {
-				"PYTHONPATH": "${workspaceFolder}\\source"
-			},
 			"args": ["-h"]
 		},
 		{
@@ -33,9 +29,6 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"env": {
-				"PYTHONPATH": "${workspaceFolder}\\source"
-			},
 			"args": [
 				"--settings", "scribe.json",
 				"--log-file-path", "scribe.generator.log",
@@ -49,9 +42,6 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "scribe",
-			"env": {
-				"PYTHONPATH": "${workspaceFolder}\\source"
-			},
 			"args": [
 				"--settings", "scribe.json",
 				"--log-file-path", "scribe.uploader.log",

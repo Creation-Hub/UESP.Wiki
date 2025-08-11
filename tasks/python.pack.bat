@@ -10,22 +10,22 @@ ECHO "CD:" '%CD%'
 REM Install individual packages first (in dependency order).
 
 ECHO.
-ECHO Installing %CD%"\sharp\pyproject.toml"
+ECHO Installing %CD%\sharp\pyproject.toml
 ECHO ------------------------------
 pip install -e sharp
 
 ECHO.
-ECHO Installing %CD%"\papyrus\pyproject.toml"
+ECHO Installing %CD%\papyrus\pyproject.toml
 ECHO ------------------------------
 pip install -e papyrus
 
 ECHO.
-ECHO Installing %CD%"\wiki\pyproject.toml"
+ECHO Installing %CD%\wiki\pyproject.toml
 ECHO ------------------------------
 pip install -e wiki
 
 ECHO.
-ECHO Installing %CD%"\scribe\pyproject.toml"
+ECHO Installing %CD%\scribe\pyproject.toml
 ECHO ------------------------------
 pip install -e scribe
 
