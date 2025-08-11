@@ -38,6 +38,7 @@ ECHO Modifying %LocalSettings_File_Edited% for short URLs...
     ECHO.
     ECHO # Short URL configuration
     ECHO $wgScriptPath = "/w";
+    ECHO $wgResourceBasePath = $wgScriptPath;
     ECHO $wgArticlePath = "/wiki/$1";
     ECHO $wgUsePathInfo = true;
 ) >> %LocalSettings_File_Edited%
