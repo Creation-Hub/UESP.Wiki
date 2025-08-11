@@ -35,7 +35,7 @@ ECHO Modifying %LocalSettings_File_Edited% for short URLs...
 ) >> %LocalSettings_File_Edited%
 
 
-REM Create .htaccess file, using escaped dollar sign with `$$`
+REM Create .htaccess file
 ECHO Creating .htaccess file...
 ECHO RewriteEngine On > .htaccess
 ECHO RewriteRule ^^wiki/^(.*^)$ /w/index.php/$1 [L] >> .htaccess
