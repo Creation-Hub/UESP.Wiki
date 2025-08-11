@@ -56,7 +56,7 @@ class TestKeyedCollection(unittest.TestCase):
                 super().__init__()
                 self.header:MyScriptHeader = MyScriptHeader(name)
 
-        scripts:KeyedCollection[MyScript] = KeyedCollection[MyScript](key_extract=lambda script: str(script.header.name))
+        scripts:KeyedCollection[MyScript] = KeyedCollection[MyScript](key_extract=lambda item: str(item.header.name))
 
         script:MyScript = MyScript("TestScript")
         scripts.add(script)
