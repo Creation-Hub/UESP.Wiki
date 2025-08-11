@@ -30,7 +30,7 @@ class TestKeyedCollection(unittest.TestCase):
         self.assertEqual(items.get("my_key"), item)
 
 
-    def test_imp_lambda_key(self):
+    def test_imp_lambda_key(self) -> None:
         """Test function-based key extraction for built-in types."""
 
         names:KeyedCollection[str] = KeyedCollection[str](key_extract=lambda item: item.upper())
