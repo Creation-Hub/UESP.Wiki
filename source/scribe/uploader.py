@@ -9,8 +9,8 @@ from sharp.objects import Dump
 from wiki.data.article import Article
 from wiki.data.client import ArticleClient
 from wiki.web.client import WebClient
-from wiki.web.credentials import Credential, create_credentials
-from wiki.web.site import Site, create_site
+from wiki.web.credentials import Credential
+from wiki.web.site import Site
 from wiki.web.api.edit import EditResponse
 from wiki.web.api.login import LoginResponse
 from wiki.web.api.types import EditResult, LoginStatus
@@ -74,8 +74,8 @@ class UploadService:
             return False
 
         # Create site and client
-        site:Site = create_site(app.configuration.uploader_file_path, app.configuration.uploader_environment)
-        credential:Credential = create_credentials()
+        site:Site = Site.create(app.configuration.uploader_file_path, app.configuration.uploader_environment)
+        credential:Credential = Credential.create()
         client:WebClient = WebClient(site)
 
         # Login to the site
