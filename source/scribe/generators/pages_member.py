@@ -8,8 +8,8 @@ from papyrus.code import Function
 from papyrus.code import Event
 from papyrus.code import Variable
 from papyrus.code import Property
-from wiki.data.article import Page
-from .wiki import Wiki
+from scribe.publisher.article import Article
+from scribe.publisher.wiki import Wiki
 from .templates import Script_Member_Summary
 from .scripts import WikiDataScript
 
@@ -19,10 +19,10 @@ class PageMember:
     """
 
     @staticmethod
-    def create(file_path:str, project:PapyrusProject, script:Script, member:Member) -> Page:
-        this:Page = Page()
-        this.namespace = Wiki.NAMESPACE_MODDING
-        this.name = PageMember.get_title(script, member)
+    def create(wiki:Wiki, file_path:str, project:PapyrusProject, script:Script, member:Member) -> Article:
+        name:str = PageMember.get_title(script, member)
+
+        this:Article = Article(name, Wiki.NAMESPACE_MODDING)
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         game_version:str = ""

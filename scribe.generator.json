@@ -130,56 +130,31 @@
 			"identifier": "Base-Native",
 			"owner.key": "Starfield_Creation_Kit",
 			"source.imports": [],
-			"source.directory": "wiki/import/Base-Native",
-			"output.directory": "wiki/export/Base-Native",
-			"output.enabled": true,
-			"output.sort": "TREE",
-			"output.objects": true,
-			"output.members": false
+			"source.directory": "wiki/import/Base-Native"
 		},
 		"Base-Shared-Default": {
 			"identifier": "Base-Shared-Default",
 			"owner.key": "Starfield_Creation_Kit",
 			"source.imports": [ "Base-Native" ],
-			"source.directory": "wiki/import/Base-Shared-Default",
-			"output.directory": "wiki/export/Base-Shared-Default",
-			"output.enabled": true,
-			"output.sort": "DEFAULT",
-			"output.objects": true,
-			"output.members": false
+			"source.directory": "wiki/import/Base-Shared-Default"
 		},
 		"Base-Default": {
 			"identifier": "Base-Default",
 			"owner.key": "Starfield_Creation_Kit",
 			"source.imports": [ "Base-Shared-Default", "Base-Native" ],
-			"source.directory": "wiki/import/Base-Default",
-			"output.directory": "wiki/export/Base-Default",
-			"output.enabled": true,
-			"output.sort": "DEFAULT",
-			"output.objects": true,
-			"output.members": false
+			"source.directory": "wiki/import/Base-Default"
 		},
 		"Cassiopeia": {
 			"identifier": "Cassiopeia",
 			"owner.key": "cassiopeia",
 			"source.imports": [ "Base-Native" ],
-			"source.directory": "wiki/import/Cassiopeia",
-			"output.directory": "wiki/export/Cassiopeia",
-			"output.enabled": false,
-			"output.sort": "DEFAULT",
-			"output.objects": true,
-			"output.members": false
+			"source.directory": "wiki/import/Cassiopeia"
 		},
 		"Testing": {
 			"identifier": "Test-Sample",
 			"owner.key": "Testing",
 			"source.imports": [ "Base-Native" ],
-			"source.directory": "wiki/import/Test-Sample",
-			"output.directory": "wiki/export/Test-Sample",
-			"output.enabled": true,
-			"output.sort": "TREE",
-			"output.objects": true,
-			"output.members": true
+			"source.directory": "wiki/import/Test-Sample"
 		}
 	}
 }

@@ -3,7 +3,8 @@ from .project import PapyrusProject
 
 class PapyrusClient:
     """
-    The Papyrus context for script analysis.
+    Provides a Papyrus context for script analysis.
+    This is also used to load and manage Papyrus projects.
     """
     def __init__(self) -> None:
         super().__init__()

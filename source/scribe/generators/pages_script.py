@@ -7,8 +7,8 @@ from papyrus.project import PapyrusProject
 from papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from papyrus.code import Member
 from papyrus.text.parsing import State
-from wiki.data.article import Page
-from .wiki import Wiki
+from scribe.publisher.article import Article
+from scribe.publisher.wiki import Wiki
 from .templates import Script_Object_Member_Summary, Script_Object_Summary
 
 class PageScript:
@@ -17,10 +17,10 @@ class PageScript:
     """
 
     @staticmethod
-    def create(papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
-        this:Page = Page()
-        this.namespace = Wiki.NAMESPACE_MODDING
-        this.name = PageScript.get_title(script)
+    def create(wiki:Wiki, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Article:
+        name:str = PageScript.get_title(script)
+
+        this:Article = Article(name, Wiki.NAMESPACE_MODDING)
         this.categories.append(Wiki.CATEGORY_PAPYRUS)
 
         game_version:str = ""

@@ -3,11 +3,9 @@ Used to upload wiki pages to a remote site.
 """
 import logging
 import os
-from typing import Any, override
+from typing import override
 from http import HTTPStatus
 from sharp.objects import Dump
-from wiki.data.article import Article
-from wiki.data.client import ArticleClient
 from wiki.web.client import WebClient
 from wiki.web.credentials import Credential
 from wiki.web.site import Site
@@ -15,6 +13,9 @@ from wiki.web.api.edit import EditResponse
 from wiki.web.api.login import LoginResponse
 from wiki.web.api.types import EditResult, LoginStatus
 from scribe.app.context import AppContext
+from scribe.publisher.article import Article
+from scribe.publisher.wiki import Wiki
+from scribe.publisher.wiki_json import WikiJson
 
 class UploadService:
     """
@@ -33,7 +34,6 @@ class UploadService:
 
     def __init__(self) -> None:
         super().__init__()
-        self.wiki:ArticleClient = ArticleClient()
 
 
     @override
@@ -60,16 +60,17 @@ class UploadService:
         logging.debug(str(this))
 
         # Load wiki context from file
-        wiki_file_path:str = os.path.join(app.configuration.export_directory, ArticleClient.JSON_FILENAME)
+        wiki:Wiki = Wiki.create()
+        wiki_file_path:str = os.path.join(app.configuration.export_directory, WikiJson.JSON_FILENAME)
         try:
-            this.wiki = ArticleClient.load(wiki_file_path)
-            logging.info(f"Loaded {len(this.wiki.articles)} pages from wiki.")
+            wiki = WikiJson.load(wiki, wiki_file_path)
+            logging.info(f"Loaded {len(wiki.articles)} pages from wiki.")
 
         except FileNotFoundError as fileNotFoundError:
             logging.error(f"Wiki file not found: '{fileNotFoundError}'")
             return False
 
-        if not this.wiki.articles:
+        if not wiki.articles:
             logging.error("No wiki articles to upload.")
             return False
 
@@ -99,7 +100,7 @@ class UploadService:
             return False
 
         # Upload each page
-        for article in this.wiki.articles.values():
+        for article in wiki.articles.values():
             UploadService.edit_article(client, article, UploadService.BOT_EDIT_SUMMARY)
 
         return True
@@ -125,24 +126,4 @@ class UploadService:
     def edit_article(client:WebClient, article:Article, summary:str) -> None:
         composed:list[str] = article.compose()
         content:str = "".join(composed)
-        UploadService.edit(client, article.title, content, summary)
-
-
-    # Serialization
-    #---------------------------------------------
-
-    def data_encode(self) -> dict[str, Any]:
-        """The data encoder for this class."""
-        data:dict[str, Any] = {
-            "wiki": self.wiki.data_encode()
-        }
-        return data
-
-
-    @staticmethod
-    def data_decode(data:dict[str, Any]) -> 'UploadService':
-        """The data decoder for this class."""
-        this:UploadService = UploadService()
-        wiki_articles_data:dict[str, Any] = data.get("wiki", {})
-        this.wiki = ArticleClient.data_decode(wiki_articles_data)
-        return this
+        UploadService.edit(client, article.title.value, content, summary)

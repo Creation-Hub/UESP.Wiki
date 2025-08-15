@@ -4,8 +4,8 @@ The main program module for this application.
 import logging
 from scribe.app.context import AppContext
 from scribe.app.cli.arguments import AppMode
-from scribe.generator import GenerateService
-from scribe.uploader import UploadService
+from scribe.generate import GenerateService
+from scribe.upload import UploadService
 
 class Program:
     """

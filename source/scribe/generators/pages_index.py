@@ -7,9 +7,9 @@ from collections.abc import ItemsView
 from sharp.collections import KeyedCollection
 from papyrus.client import PapyrusClient
 from papyrus.project import PapyrusProject
-from wiki.data.article import Page
-from ..jobs import Job
-from .wiki import Wiki
+from scribe.publisher.article import Article
+from scribe.bots.jobs import Job
+from scribe.publisher.wiki import Wiki
 from .scripts_statistics import PapyrusStatistics
 
 class PageIndex:
@@ -21,11 +21,9 @@ class PageIndex:
 
 
     @staticmethod
-    def create(jobs:KeyedCollection[Job], papyrus:PapyrusClient) -> 'Page':
-        this:Page = Page()
-        this.namespace = Wiki.NAMESPACE_MODDING
-        this.name = PageIndex.PAGE_NAME
-        this.categories.append(Wiki.CATEGORY_PAPYRUS)
+    def create(wiki:Wiki, jobs:KeyedCollection[Job], papyrus:PapyrusClient) -> Article:
+        this:Article = Article(PageIndex.PAGE_NAME, Wiki.NAMESPACE_MODDING)
+        this.categories.append(wiki.CATEGORY_PAPYRUS)
 
         # Write the wiki page header.
         this.content.append("= Projects =\n")
@@ -47,7 +45,7 @@ class PageIndex:
 
 
     @staticmethod
-    def write_section(this:Page, project:PapyrusProject) -> None:
+    def write_section(this:Article, project:PapyrusProject) -> None:
         statistics:PapyrusStatistics = PapyrusStatistics.create(project)
 
         # Add project summary information

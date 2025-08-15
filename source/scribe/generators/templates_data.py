@@ -7,7 +7,7 @@ from papyrus.code import Method
 from papyrus.code import Function
 from papyrus.code import Property
 from papyrus.code import Variable
-from .wiki import Wiki
+from scribe.publisher.wiki import Wiki
 from .scripts import WikiDataScript
 
 class TemplateData:

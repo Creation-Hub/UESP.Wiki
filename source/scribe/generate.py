@@ -9,19 +9,18 @@ from sharp.collections import KeyedCollection
 from papyrus.client import PapyrusClient
 from papyrus.project import PapyrusProject
 from papyrus.code import Member, Script
-from wiki.data.article import Namespace, Page, Template
-from wiki.data.article_text import ArticleText
-from wiki.data.client import ArticleClient
 from scribe.app.configuration import AppConfiguration
 from scribe.app.context import AppContext
+from scribe.publisher.article import Article
+from scribe.publisher.article_text import ArticleText
 from scribe.bots.configuration import GenerateConfiguration
 from scribe.bots.publishing import Sort
 from scribe.bots.jobs import Job
-from scribe.bots.generator.wiki import Wiki
-from scribe.bots.generator.pages_index import PageIndex
-from scribe.bots.generator.pages_member import PageMember
-from scribe.bots.generator.pages_script import PageScript
-from scribe.bots.generator.templates import Script_Object_Summary
+from scribe.publisher.wiki import Wiki
+from scribe.publisher.wiki_json import WikiJson
+from scribe.generators.pages_index import PageIndex
+from scribe.generators.pages_member import PageMember
+from scribe.generators.pages_script import PageScript
 
 class GenerateService:
     """
@@ -43,12 +42,6 @@ class GenerateService:
 
         self.configuration:GenerateConfiguration = GenerateConfiguration()
         """The configuration for this service."""
-
-        self.papyrus:PapyrusClient = PapyrusClient()
-        """The Papyrus client used to load and manage Papyrus projects."""
-
-        self.wiki:ArticleClient = ArticleClient()
-        """The wiki client used to manage wiki pages."""
 
         self.jobs:KeyedCollection[Job] = KeyedCollection[Job]()
         """All the jobs from all providers consolidated into a single dictionary."""
@@ -78,15 +71,17 @@ class GenerateService:
         logging.debug(str(this))
 
         # Start the Papyrus context.
+        papyrus:PapyrusClient = PapyrusClient()
         try:
-            GenerateService.papyrus_start(this.papyrus, this.jobs)
+            GenerateService.papyrus_start(papyrus, this.jobs)
         except Exception as exception:
             logging.error(f"Aborting program. Failed to start Papyrus. {exception}")
             return False
 
         # Start the wiki context.
+        wiki:Wiki = Wiki.create()
         try:
-            GenerateService.wiki_start(app.configuration, this.wiki, this.papyrus, this.jobs)
+            GenerateService.wiki_start(app.configuration, wiki, papyrus, this.jobs)
         except Exception as exception:
             logging.error(f"Aborting program. Failed to wiki generator. {exception}")
             return False
@@ -131,32 +126,18 @@ class GenerateService:
             raise Exception("Failed to load one or more Papyrus projects.")
 
 
-
     # Wiki
     #---------------------------------------------
 
     @staticmethod
-    def wiki_start(configuration:AppConfiguration, wiki:ArticleClient, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> None:
+    def wiki_start(configuration:AppConfiguration, wiki:Wiki, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> None:
         """
         Start the wiki generation process.
         """
-        user_page:Page = Page() # This is for debug purposes.
-        user_page.namespace = Namespace.User
-        user_page.name = "Scrivener07"
-        user_page.content = ["My name is Scrivener and I have been modding since TES4 Oblivion."]
-        user_page.categories = []
-        wiki.add(user_page)
-
-        bot_page:Page = Page() # This is for debug purposes.
-        bot_page.namespace = Namespace.User
-        bot_page.name = "Scrivener07/Bot"
-        bot_page.content = ["This is the Scribe Bot wiki page."]
-        user_page.categories = []
-        wiki.add(bot_page)
 
         # Generate the wiki index summary page.
-        index_page:Page = Generate_Wiki.wiki_page_create_index(configuration, papyrus, jobs)
-        wiki.add(index_page)
+        index_page:Article = Generate_Wiki.wiki_page_create_index(wiki, configuration, papyrus, jobs)
+        wiki.articles.add(index_page)
 
         # Generate wiki pages for each project.
         logging.info("Wiki Generation ".center(GenerateService.DIV_WIDTH, "-"))
@@ -169,14 +150,14 @@ class GenerateService:
         if not configuration.export_directory:
             raise ValueError("The export directory for wiki pages is not set in the application configuration.")
 
-        wiki_file_path:str = os.path.join(configuration.export_directory, ArticleClient.JSON_FILENAME)
-        wiki.save(wiki_file_path)
+        wiki_file_path:str = os.path.join(configuration.export_directory, WikiJson.JSON_FILENAME)
+        WikiJson.save(wiki, wiki_file_path)
         logging.info(f"Saved wiki: '{wiki_file_path}'")
 
 
 
     @staticmethod
-    def wiki_projects(wiki:ArticleClient, papyrus:PapyrusClient, job:Job) -> bool:
+    def wiki_projects(wiki:Wiki, papyrus:PapyrusClient, job:Job) -> bool:
 
         # TODO: Ensure invalid jobs with not enough info dont get this far, like the `Game` key.
         # Exception has occurred: KeyError
@@ -232,8 +213,8 @@ class GenerateService:
 
             # Write a wiki page for this script object.
             if job.publish.enable_objects:
-                script_page:Page = Generate_Wiki.wiki_page_create_script(output_file_path, papyrus, project, script)
-                wiki.add(script_page)
+                script_page:Article = Generate_Wiki.wiki_page_create_script(wiki, output_file_path, papyrus, project, script)
+                wiki.articles.add(script_page)
                 logging.debug(f"[{project.identifier}]<{script_file_path}> -> {script_file_path_full} -> {output_file_path}")
 
             # Write a wiki page for this script member.
@@ -242,12 +223,11 @@ class GenerateService:
                     member:Member = script.members[key]
                     member_file_name:str = f"{script_file_name}-{member.name}.wiki"
                     member_file_path:str = os.path.join(os.path.dirname(output_file_path), member_file_name)
-                    script_member_page:Page = Generate_Wiki.wiki_page_create_script_member(member_file_path, project, script, member)
-                    wiki.add(script_member_page)
+                    script_member_page:Article = Generate_Wiki.wiki_page_create_script_member(wiki, member_file_path, project, script, member)
+                    wiki.articles.add(script_member_page)
                     logging.debug(f"[{project.identifier}]<{script_file_path}>::{member.name} -> {member_file_path}")
 
         return True
-
 
 
 
@@ -257,11 +237,11 @@ class GenerateService:
 class Generate_Wiki:
 
     @staticmethod
-    def wiki_page_create_index(configuration:AppConfiguration, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> Page:
+    def wiki_page_create_index(wiki:Wiki, configuration:AppConfiguration, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> Article:
         if not configuration.export_directory:
             raise ValueError("The export directory for wiki pages is not set in the application configuration.")
 
-        page:Page = PageIndex.create(jobs, papyrus)
+        page:Article = PageIndex.create(wiki, jobs, papyrus)
         page_file_path:str = os.path.join(configuration.export_directory, GenerateService.PAGE_SCRIPT_INDEX_FILE_NAME)
         try:
             ArticleText.compose_save(page, page_file_path)
@@ -271,8 +251,8 @@ class Generate_Wiki:
 
 
     @staticmethod
-    def wiki_page_create_script(file_path:str, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Page:
-        page:Page = PageScript.create(papyrus, project, script)
+    def wiki_page_create_script(wiki:Wiki, file_path:str, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Article:
+        page:Article = PageScript.create(wiki, papyrus, project, script)
         try:
             ArticleText.compose_save(page, file_path)
         except Exception as exception:
@@ -281,24 +261,10 @@ class Generate_Wiki:
 
 
     @staticmethod
-    def wiki_page_create_script_member(file_path:str, project:PapyrusProject, script:Script, member:Member) -> Page:
-        page:Page = PageMember.create(file_path, project, script, member)
+    def wiki_page_create_script_member(wiki:Wiki, file_path:str, project:PapyrusProject, script:Script, member:Member) -> Article:
+        page:Article = PageMember.create(wiki, file_path, project, script, member)
         try:
             ArticleText.compose_save(page, file_path)
         except Exception as exception:
             logging.error(f"Failed to write projects index: {str(exception)}")
         return page
-
-
-    @staticmethod
-    def _wiki_template_script_object_summary(papyrus:PapyrusClient, project:PapyrusProject, script:Script, game_version:str) -> Template:
-        template:Template = Template()
-        template.name = "Script_Object_Summary"
-        template.content = []
-        template.categories = [Wiki.CATEGORY_TEMPLATES_INFOBOX]
-
-        content:str = Script_Object_Summary.template(papyrus, project, script, game_version)
-        template.content.append(content)
-
-        raise NotImplementedError("The `wiki_template_script_object_summary` method is not implemented yet.")
-        # return template

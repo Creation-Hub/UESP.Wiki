@@ -4,7 +4,7 @@ from papyrus.project import PapyrusProject
 from papyrus.code import Script
 from papyrus.code import Member
 from wiki.data.formatter import WikiFormatter
-from .wiki import Wiki
+from scribe.publisher.wiki import Wiki
 from .scripts_inheritance import WikiDataInheritance
 from .templates_data import TemplateData
 
@@ -13,7 +13,7 @@ class Script_Object_Summary:
 
     # Creates the template definition.
     @staticmethod
-    def create(papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> list[str]:
+    def _create_content(papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> list[str]:
         script_title:str = str(script.header.name)
         script_name:str = Wiki.link_script_object(str(script.header.name))
         inheritance_chain:list[Script] = PapyrusInheritance.get_chain(papyrus, project, script)
@@ -63,6 +63,7 @@ class Script_Object_Summary:
         # content.append("|\n")
         content.append("|}\n")
         content.append("</cleantable>\n")
+
         return content
 
 
