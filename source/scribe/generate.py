@@ -43,7 +43,7 @@ class GenerateService:
         self.configuration:GenerateConfiguration = GenerateConfiguration()
         """The configuration for this service."""
 
-        self.jobs:KeyedCollection[Job] = KeyedCollection[Job]()
+        self.jobs:KeyedCollection[str, Job] = KeyedCollection[str, Job](key_extract=lambda item: item.identifier)
         """All the jobs from all providers consolidated into a single dictionary."""
 
 
@@ -83,7 +83,7 @@ class GenerateService:
         try:
             GenerateService.wiki_start(app.configuration, wiki, papyrus, this.jobs)
         except Exception as exception:
-            logging.error(f"Aborting program. Failed to wiki generator. {exception}")
+            logging.error(f"Aborting program. Failed to start wiki generator. {exception}")
             return False
 
         return True
@@ -93,7 +93,7 @@ class GenerateService:
     #---------------------------------------------
 
     @staticmethod
-    def papyrus_start(papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> None:
+    def papyrus_start(papyrus:PapyrusClient, jobs:KeyedCollection[str, Job]) -> None:
         """
         Start the Papyrus context and load all projects.
         """
@@ -130,7 +130,7 @@ class GenerateService:
     #---------------------------------------------
 
     @staticmethod
-    def wiki_start(configuration:AppConfiguration, wiki:Wiki, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> None:
+    def wiki_start(configuration:AppConfiguration, wiki:Wiki, papyrus:PapyrusClient, jobs:KeyedCollection[str, Job]) -> None:
         """
         Start the wiki generation process.
         """
@@ -237,7 +237,7 @@ class GenerateService:
 class Generate_Wiki:
 
     @staticmethod
-    def wiki_page_create_index(wiki:Wiki, configuration:AppConfiguration, papyrus:PapyrusClient, jobs:KeyedCollection[Job]) -> Article:
+    def wiki_page_create_index(wiki:Wiki, configuration:AppConfiguration, papyrus:PapyrusClient, jobs:KeyedCollection[str, Job]) -> Article:
         if not configuration.export_directory:
             raise ValueError("The export directory for wiki pages is not set in the application configuration.")
 

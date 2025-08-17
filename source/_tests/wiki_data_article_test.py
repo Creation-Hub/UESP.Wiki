@@ -1,4 +1,5 @@
 import unittest
+from wiki.data.title import Title
 from wiki.data.namespaces import Namespace
 from wiki.data.common import Namespaces
 from scribe.publisher.article import Article
@@ -6,7 +7,7 @@ from scribe.publisher.article import Article
 class TestArticle(unittest.TestCase):
 
     def test_new_page(self) -> None:
-        article:Article = Article("Test Page", Namespaces.Main)
+        article:Article = Article(Title("Test Page", Namespaces.Main))
         # Assert
         self.assertEqual(article.title.name, "Test_Page")
         self.assertEqual(article.title.namespace.name, "")
@@ -15,7 +16,7 @@ class TestArticle(unittest.TestCase):
 
 
     def test_new_category(self) -> None:
-        article:Article = Article("Test Category", Namespaces.Category)
+        article:Article = Article(Title("Test Category", Namespaces.Category))
         # Assert
         self.assertEqual(article.title.name, "Test_Category")
         self.assertEqual(article.title.namespace.name, "Category")
@@ -25,7 +26,7 @@ class TestArticle(unittest.TestCase):
 
 
     def test_new_template(self) -> None:
-        article:Article = Article("Test Template", Namespaces.Template)
+        article:Article = Article(Title("Test Template", Namespaces.Template))
         # Assert
         self.assertEqual(article.title.name, "Test_Template")
         self.assertEqual(article.title.namespace.name, "Template")
@@ -36,11 +37,11 @@ class TestArticle(unittest.TestCase):
     def test_name_empty(self) -> None:
         """Test Article with empty name raises an error."""
         with self.assertRaises(ValueError):
-            _ = Article("", Namespaces.Main)
+            _ = Article(Title("", Namespaces.Main))
 
 
     def test_namespace(self) -> None:
-        article:Article = Article(" Test Page: With Symbols & More", Namespace("Starfield_Mod", "SFM"))
+        article:Article = Article(Title(" Test Page: With Symbols & More", Namespace("Starfield_Mod", "SFM")))
         # Assert
         self.assertEqual(article.title.name, "_Test_Page:_With_Symbols_&_More")
         self.assertEqual(article.title.namespace.name, "Starfield_Mod")
@@ -50,7 +51,7 @@ class TestArticle(unittest.TestCase):
 
     def test_namespace_empty(self) -> None:
         """Test Article with empty namespace."""
-        article:Article = Article("Home Page", Namespace(""))
+        article:Article = Article(Title("Home Page", Namespace("")))
         # Assert
         self.assertEqual(article.title.value, "Home_Page")
         self.assertEqual(article.title.link, "[[Home_Page]]")
@@ -58,7 +59,7 @@ class TestArticle(unittest.TestCase):
 
     def test_content_and_categories(self) -> None:
         """Test Article content and category management."""
-        article:Article = Article("TestArticle", Namespaces.Main)
+        article:Article = Article(Title("TestArticle", Namespaces.Main))
         article.content = [
             "Line 1",
             "Line 2",
@@ -66,25 +67,24 @@ class TestArticle(unittest.TestCase):
         ]
 
         # Add a category
-        category:Article = Article("TestCategory", Namespaces.Category)
-        article.categories.append(category)
+        article.categories.append(Title("TestCategory", Namespaces.Category))
 
         self.assertEqual(len(article.content), 3)
         self.assertEqual(len(article.categories), 1)
-        self.assertEqual(article.categories[0].title.name, "TestCategory")
+        self.assertEqual(article.categories[0].name, "TestCategory")
 
 
     def test_compose(self) -> None:
         """Test Article composition with content and categories."""
-        article:Article = Article("TestPage", Namespaces.Main)
+        article:Article = Article(Title("TestPage", Namespaces.Main))
         article.content = [
             "Some content",
             "More content"
         ]
 
         # Add categories
-        category1:Article = Article("Category1", Namespaces.Category)
-        category2:Article = Article("Category2", Namespaces.Category)
+        category1:Title = Title("Category1", Namespaces.Category)
+        category2:Title = Title("Category2", Namespaces.Category)
         article.categories.extend([category1, category2])
 
         # Compose the text content.
@@ -99,7 +99,7 @@ class TestArticle(unittest.TestCase):
 
     def test_compose_empty(self) -> None:
         """Test compose with no content or categories."""
-        article:Article = Article("EmptyPage", Namespaces.Main)
+        article:Article = Article(Title("EmptyPage", Namespaces.Main))
 
         # Compose the text content.
         composed:list[str] = article.compose()
@@ -110,14 +110,13 @@ class TestArticle(unittest.TestCase):
 
     def test_compose_formatting(self) -> None:
         """Test compose produces correct MediaWiki format."""
-        article:Article = Article("TestPage", Namespaces.Main)
+        article:Article = Article(Title("TestPage", Namespaces.Main))
         article.content = [
             "First line",
             "Second line"
         ]
 
-        category = Article("TestCat", Namespaces.Category)
-        article.categories.append(category)
+        article.categories.append(Title("TestCat", Namespaces.Category))
 
         # Compose the text content.
         composed:list[str] = article.compose()

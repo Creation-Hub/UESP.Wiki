@@ -7,8 +7,10 @@ from collections.abc import ItemsView
 from sharp.collections import KeyedCollection
 from papyrus.client import PapyrusClient
 from papyrus.project import PapyrusProject
-from scribe.publisher.article import Article
+from wiki.data.section import SectionLevel
 from scribe.bots.jobs import Job
+from scribe.publisher.article import Article
+from scribe.publisher.builder import ArticleBuilder
 from scribe.publisher.wiki import Wiki
 from .scripts_statistics import PapyrusStatistics
 
@@ -21,14 +23,12 @@ class PageIndex:
 
 
     @staticmethod
-    def create(wiki:Wiki, jobs:KeyedCollection[Job], papyrus:PapyrusClient) -> Article:
-        this:Article = Article(PageIndex.PAGE_NAME, Wiki.NAMESPACE_MODDING)
-        this.categories.append(wiki.CATEGORY_PAPYRUS)
-
-        # Write the wiki page header.
-        this.content.append("= Projects =\n")
-        this.content.append("This page lists all Papyrus project information for each import.\n")
-        this.content.append("\n\n")
+    def create(wiki:Wiki, jobs:KeyedCollection[str, Job], papyrus:PapyrusClient) -> Article:
+        builder:ArticleBuilder = ArticleBuilder(wiki)
+        builder.title(PageIndex.PAGE_NAME, Wiki.NAMESPACE_MODDING)
+        builder.category(Wiki.CATEGORY_PAPYRUS.name)
+        builder.line("This page lists all Papyrus project information for each import.\n")
+        builder.line("\n\n")
 
         # Write each project wiki section.
         for identifier in papyrus.projects:
@@ -38,49 +38,50 @@ class PageIndex:
                 continue
 
             project:PapyrusProject = papyrus.projects[identifier]
-            PageIndex.write_section(this, project)
-            this.content.append("\n\n")
+            PageIndex.project(builder, project)
+            builder.line("\n\n")
 
-        return this
+        return builder.build()
 
 
     @staticmethod
-    def write_section(this:Article, project:PapyrusProject) -> None:
+    def project(builder:ArticleBuilder, project:PapyrusProject) -> None:
+        # Create statistics for the given project.
         statistics:PapyrusStatistics = PapyrusStatistics.create(project)
 
         # Add project summary information
-        this.content.append(f"== {project.identifier} ==\n")
-        this.content.append(f"* Imports: {statistics.project_imports_count} ({PageIndex.wiki_list_project_imports(project)})\n")
-        this.content.append(f"* Scripts: {statistics.project_scripts_count}\n")
-        this.content.append("\n")
+        builder.section(project.identifier, SectionLevel.H3)
+        builder.line(f"* Imports: {statistics.project_imports_count} ({PageIndex.wiki_list_project_imports(project)})\n")
+        builder.line(f"* Scripts: {statistics.project_scripts_count}\n")
+        builder.line("\n")
 
         # Add script member statistics section
-        this.content.append("==== Member Statistics ====\n")
+        builder.section("Member Statistics", SectionLevel.H4)
         if statistics.project_scripts_count:
-            this.content.append(f"This project overall contains {statistics.script_member_kind_counter.total()} total members spread over {statistics.project_scripts_count} scripts.\n")
-            this.content.append(PageIndex.wiki_list_member_kinds(statistics.script_member_kind_counter)+"\n")
+            builder.line(f"This project overall contains {statistics.script_member_kind_counter.total()} total members spread over {statistics.project_scripts_count} scripts.\n")
+            builder.line(PageIndex.wiki_list_member_kinds(statistics.script_member_kind_counter)+"\n")
         else:
-            this.content.append("There are no scripts defined in this project, so no member statistics can be provided.\n")
-        this.content.append("\n")
+            builder.line("There are no scripts defined in this project, so no member statistics can be provided.\n")
+        builder.line("\n")
 
         # Add script inheritance statistics section
-        this.content.append("==== Inheritance Statistics ====\n")
+        builder.section("Inheritance Statistics", SectionLevel.H4)
         if statistics.project_scripts_count:
-            this.content.append(f"The most common extended parent scripts:\n")
-            this.content.append(PageIndex.wiki_list_extends_most_common(statistics.script_extends_counter)+"\n")
+            builder.line(f"The most common extended parent scripts:\n")
+            builder.line(PageIndex.wiki_list_extends_most_common(statistics.script_extends_counter)+"\n")
         else:
-            this.content.append("There are no scripts defined in this project, so no inheritance statistics can be provided.\n")
-        this.content.append("\n")
+            builder.line("There are no scripts defined in this project, so no inheritance statistics can be provided.\n")
+        builder.line("\n")
 
         # List script statistics section
-        this.content.append("\n")
-        this.content.append("==== Scripts ====\n")
+        builder.line("\n")
+        builder.section("Scripts", SectionLevel.H4)
         if statistics.project_scripts_count:
-            this.content.append(f"There are {statistics.project_scripts_count} scripts that belong to this project:\n")
-            this.content.append(PageIndex.wiki_list_script_names(project))
+            builder.line(f"There are {statistics.project_scripts_count} scripts that belong to this project:\n")
+            builder.line(PageIndex.wiki_list_script_names(project))
         else:
-            this.content.append("There are no scripts defined in this project.\n")
-        this.content.append("\n")
+            builder.line("There are no scripts defined in this project.\n")
+        builder.line("\n")
 
 
     # MediaWiki

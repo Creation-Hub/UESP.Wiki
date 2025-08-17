@@ -1,9 +1,10 @@
 from typing import override
 from sharp.collections import KeyedCollection
-from scribe.publisher.article import Article, Namespace
+from scribe.publisher.article import Article
+from wiki.data.namespaces import Namespace
+from wiki.data.title import Title
 
-
-class NamespaceCollection(KeyedCollection[Namespace]):
+class NamespaceCollection(KeyedCollection[str, Namespace]):
 
     def __init__(self, items:list[Namespace]|None=None) -> None:
         super().__init__(items)
@@ -14,11 +15,11 @@ class NamespaceCollection(KeyedCollection[Namespace]):
 
 
 
-class ArticleCollection(KeyedCollection[Article]):
+class ArticleCollection(KeyedCollection[Title, Article]):
 
     def __init__(self) -> None:
         super().__init__()
 
     @override
-    def key_for(self, item:Article) -> str:
-        return item.title.value
+    def key_for(self, item:Article) -> Title:
+        return item.title

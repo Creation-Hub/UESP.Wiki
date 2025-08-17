@@ -1,47 +1,26 @@
 """
 Provides a dictionary-like collection for objects whose keys are embedded in the values.
-Supports both intrinsic and extrinsic key strategies.
 """
 from abc import abstractmethod
 from collections.abc import Callable, Iterator
-from dataclasses import dataclass
 from typing import Generic, TypeVar, override
 
-
-@dataclass(frozen=True)
-class KeyedObject:
-    """
-    Represents an object that provides a unique identifying key.
-    The key is for use with a `KeyedCollection[T]` dictionary abstraction.
-    Used to support the intrinsic key strategy for `KeyedCollection`.
-    """
-
-    _key:str
-    """The unique key for this object."""
-
-    @override
-    def __str__(self) -> str:
-        """Returns a string that represents the current object."""
-        return self._key
-
-    @property
-    def key(self) -> str:
-        return self._key
-
-
-T = TypeVar('T')
-class KeyedCollection(Generic[T]):
+TKey = TypeVar('TKey')
+TValue = TypeVar('TValue')
+class KeyedCollection(Generic[TKey, TValue]):
     """
     A dictionary-like collection for objects whose keys are embedded in the values.
-    Provides a flexible keyed collection supporting both intrinsic and extrinsic key strategies.
+    Provides a flexible keyed collection supporting two key extraction strategies.
     """
-    def __init__(self, items:list[T]|None = None, key_extract:Callable[[T], str]|None = None) -> None:
+
+
+    def __init__(self, items:list[TValue]|None = None, key_extract:Callable[[TValue], TKey]|None = None) -> None:
         super().__init__()
 
-        self._items:dict[str, T] = {}
+        self._items:dict[TKey, TValue] = {}
         """The internal dictionary of items."""
 
-        self._key_extract:Callable[[T], str]|None = key_extract
+        self._key_extract:Callable[[TValue], TKey]|None = key_extract
         """Optional function to extract a key from an item."""
 
         if items: # Initialize with any provided list items.
@@ -63,51 +42,47 @@ class KeyedCollection(Generic[T]):
     # Keys
     #---------------------------------------------
 
-    def _get_key(self, item:T) -> str:
+    def _get_key(self, item:TValue) -> TKey:
         """
-        Extracts a key from the provided item using an appropriate implementation strategy.
+        Extracts a key from the provided item using an appropriate strategy.
 
         Implementation Strategy:
-        1. Uses intrinsic key if item is a `KeyedObject`.
-        2. Uses the provided `key_extract` lambda function.
-        3. Uses the abstract `key_for()` method as implemented by subclasses.
+        1. Uses the provided `key_extract` lambda function.
+        2. Uses the abstract `key_for()` method as implemented by subclasses.
         """
-        if isinstance(item, KeyedObject):
-            return item.key
-        elif self._key_extract:
+        if self._key_extract:
             return self._key_extract(item)
         else:
             return self.key_for(item)
 
 
     @abstractmethod
-    def key_for(self, item:T) -> str:
+    def key_for(self, item:TValue) -> TKey:
         """
-        Abstract base for collections that define their own key extraction logic.
-        Used to support the extrinsic key strategy via subclassing.
+        Abstract method for collections that define their own key extraction logic.
 
         **Override this method in subclasses for custom key extraction.**
         """
         raise NotImplementedError(
             f"Cannot extract key from {type(item).__name__}. " +
-            f"Provide key_extract function, use KeyedObject inheritance, or override key_for()."
+            "Provide constructor with `key_extract` lambda function or override this `key_for()` method in an extending class."
         )
 
 
     # Access Methods
     #---------------------------------------------
 
-    def get(self, key:str) -> T|None:
+    def get(self, key:TKey) -> TValue|None:
         """Get an item by key."""
         return self._items.get(key)
 
-    def __getitem__(self, key:str) -> T:
+    def __getitem__(self, key:TKey) -> TValue:
         """Provides item access by key through dictionary sub-script notation."""
         if key not in self._items:
             raise KeyError(f"Item '{key}' not found")
         return self._items[key]
 
-    def __contains__(self, key:str) -> bool:
+    def __contains__(self, key:TKey) -> bool:
         """Provides support for the 'in' Python operator."""
         return key in self._items
 
@@ -123,7 +98,7 @@ class KeyedCollection(Generic[T]):
         """Provides support for `if collection:` checks."""
         return len(self._items) > 0
 
-    def __iter__(self) -> Iterator[T]:
+    def __iter__(self) -> Iterator[TValue]:
         """Provides support for item value iteration in this collection."""
         return iter(self._items.values())
 
@@ -131,15 +106,15 @@ class KeyedCollection(Generic[T]):
     # Collection Operations
     #---------------------------------------------
 
-    def keys(self) -> list[str]:
+    def keys(self) -> list[TKey]:
         """Gets a copy of all keys in this collection."""
         return list(self._items.keys())
 
-    def values(self) -> list[T]:
+    def values(self) -> list[TValue]:
         """Gets a copy of all items in this collection."""
         return list(self._items.values())
 
-    def items(self) -> list[tuple[str, T]]:
+    def items(self) -> list[tuple[TKey, TValue]]:
         """Gets the key-value pairs for this collection."""
         return list(self._items.items())
 
@@ -147,19 +122,19 @@ class KeyedCollection(Generic[T]):
     # Mutation Methods
     #---------------------------------------------
 
-    def add(self, item:T) -> None:
+    def add(self, item:TValue) -> None:
         """Adds an item to this collection."""
-        key:str = self._get_key(item)
+        key:TKey = self._get_key(item)
         if key in self._items:
             raise KeyError(f"Item with key '{key}' already exists")
         self._items[key] = item
 
-    def update(self, other:'KeyedCollection[T]') -> None:
+    def update(self, other:'KeyedCollection[TKey, TValue]') -> None:
         """Add all items from the given collection to this collection"""
         for item in other:
             self.add(item)
 
-    def remove(self, key:str) -> bool:
+    def remove(self, key:TKey) -> bool:
         """Removes an item from this collection by key."""
         if key in self._items:
             del self._items[key]

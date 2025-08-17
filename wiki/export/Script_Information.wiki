@@ -1,8 +1,7 @@
-= Projects =
 This page lists all Papyrus project information for each import.
 
 
-== Base-Native ==
+=== Base-Native ===
 * Imports: 0 (Nothing)
 * Scripts: 101
 
@@ -125,7 +124,7 @@ There are 101 scripts that belong to this project:
 * [[SFM:Script-WwiseEvent|WwiseEvent]]
 
 
-== Base-Shared-Default ==
+=== Base-Shared-Default ===
 * Imports: 1 (Base-Native)
 * Scripts: 11
 
@@ -159,7 +158,7 @@ There are 11 scripts that belong to this project:
 * [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]]
 
 
-== Base-Default ==
+=== Base-Default ===
 * Imports: 2 (Base-Shared-Default, Base-Native)
 * Scripts: 208
 
@@ -391,7 +390,7 @@ There are 208 scripts that belong to this project:
 * [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
 
 
-== Test-Sample ==
+=== Test-Sample ===
 * Imports: 1 (Base-Native)
 * Scripts: 10
 

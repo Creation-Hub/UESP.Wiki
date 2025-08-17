@@ -1,7 +1,31 @@
+from dataclasses import dataclass
 from typing import override
-from sharp.collections import KeyedObject
 
-# TODO: Test this on a concrete KeyedCollection.
+
+# TODO: DEPRECATED! Merge back into ScriptName.
+@dataclass(frozen=True)
+class KeyedObject:
+    """
+    DEPRECATED!
+
+    Represents an object that provides a unique identifying key.
+    The key is for use with a `KeyedCollection[T]` dictionary abstraction.
+    Used to support the intrinsic key strategy for `KeyedCollection`.
+    """
+
+    _key:str
+    """The unique key for this object."""
+
+    @override
+    def __str__(self) -> str:
+        """Returns a string that represents the current object."""
+        return self._key
+
+    @property
+    def key(self) -> str:
+        return self._key
+
+
 class ScriptName(KeyedObject):
     """
     Represents a Papyrus script name.

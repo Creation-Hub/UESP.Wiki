@@ -13,6 +13,11 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Namespace:
+    """
+    Represents a MediaWiki namespace.
+    The class data is immutable.
+    """
+
     name:str
     """The name of this namespace."""
 

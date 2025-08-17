@@ -4,7 +4,7 @@ Unit tests for the `sharp.collections` module.
 """
 import unittest
 from typing import override
-from sharp.collections import KeyedCollection, KeyedObject
+from sharp.collections import KeyedCollection
 
 
 class TestKeyedCollection(unittest.TestCase):
@@ -14,26 +14,10 @@ class TestKeyedCollection(unittest.TestCase):
     # Implementation Patterns
     #---------------------------------------------
 
-    def test_imp_keyed_object(self) -> None:
-        """Test the `KeyedObject` inheritance pattern."""
-
-        class MyItem(KeyedObject):
-            def __init__(self, key:str) -> None:
-                super().__init__(key)
-
-        items:KeyedCollection[MyItem] = KeyedCollection[MyItem]()
-        item:MyItem = MyItem("my_key")
-        items.add(item)
-
-        self.assertEqual(len(items), 1)
-        self.assertIn("my_key", items)
-        self.assertEqual(items.get("my_key"), item)
-
-
     def test_imp_lambda_key(self) -> None:
         """Test function-based key extraction for built-in types."""
 
-        names:KeyedCollection[str] = KeyedCollection[str](key_extract=lambda item: item.upper())
+        names:KeyedCollection[str, str] = KeyedCollection[str, str](key_extract=lambda item: item.upper())
         names.add("Name1")
         names.add("Name2")
 
@@ -56,7 +40,7 @@ class TestKeyedCollection(unittest.TestCase):
                 super().__init__()
                 self.header:MyScriptHeader = MyScriptHeader(name)
 
-        scripts:KeyedCollection[MyScript] = KeyedCollection[MyScript](key_extract=lambda item: str(item.header.name))
+        scripts:KeyedCollection[str, MyScript] = KeyedCollection[str, MyScript](key_extract=lambda item: str(item.header.name))
 
         script:MyScript = MyScript("TestScript")
         scripts.add(script)
@@ -73,7 +57,7 @@ class TestKeyedCollection(unittest.TestCase):
                 super().__init__()
                 self.name:str = name
 
-        class MyItemCollection(KeyedCollection[MyItem]):
+        class MyItemCollection(KeyedCollection[str, MyItem]):
             @override
             def key_for(self, item:MyItem) -> str:
                 return str(item.name)
@@ -97,7 +81,7 @@ class TestKeyedCollection(unittest.TestCase):
                 super().__init__()
                 self.name:str = name
 
-        class MyItemCollection(KeyedCollection[MyItem]):
+        class MyItemCollection(KeyedCollection[str, MyItem]):
             @override
             def key_for(self, item:MyItem) -> str:
                 return str(item.name)
@@ -118,11 +102,12 @@ class TestKeyedCollection(unittest.TestCase):
     def test_key_duplicate_error(self) -> None:
         """Test that duplicate keys raise appropriate errors."""
 
-        class MyItem(KeyedObject):
+        class MyItem:
             def __init__(self, key:str) -> None:
-                super().__init__(key)
+                super().__init__()
+                self.key:str = key
 
-        items:KeyedCollection[MyItem] = KeyedCollection[MyItem]()
+        items:KeyedCollection[str, MyItem] = KeyedCollection[str, MyItem](key_extract=lambda o: o.key)
         item1:MyItem = MyItem("duplicate_key")
         item2:MyItem = MyItem("duplicate_key")
 
@@ -137,7 +122,7 @@ class TestKeyedCollection(unittest.TestCase):
     def test_key_retrieval(self) -> None:
         """Test various ways to retrieve items by key."""
 
-        items:KeyedCollection[str] = KeyedCollection[str](key_extract=lambda x: x)
+        items:KeyedCollection[str, str] = KeyedCollection[str, str](key_extract=lambda o: o)
         items.add("test_item")
 
         # Test get() with existing key
@@ -157,7 +142,7 @@ class TestKeyedCollection(unittest.TestCase):
     def test_key_preserve_case_sensitivity(self) -> None:
         """Test that keys are case-sensitive by default (no auto-upper-casing)."""
 
-        items:KeyedCollection[str] = KeyedCollection[str](key_extract=lambda x: x)
+        items:KeyedCollection[str, str] = KeyedCollection[str, str](key_extract=lambda o: o)
         items.add("Test")
         items.add("test")  # Should be allowed - different keys
         items.add("TEST")  # Should be allowed - different keys

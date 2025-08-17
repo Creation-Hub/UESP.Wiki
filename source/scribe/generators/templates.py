@@ -3,7 +3,7 @@ from papyrus.inheritance import PapyrusInheritance
 from papyrus.project import PapyrusProject
 from papyrus.code import Script
 from papyrus.code import Member
-from wiki.data.formatter import WikiFormatter
+from wiki.data.formatting import Text
 from scribe.publisher.wiki import Wiki
 from .scripts_inheritance import WikiDataInheritance
 from .templates_data import TemplateData
@@ -18,7 +18,7 @@ class Script_Object_Summary:
         script_name:str = Wiki.link_script_object(str(script.header.name))
         inheritance_chain:list[Script] = PapyrusInheritance.get_chain(papyrus, project, script)
         script_extends:str = WikiDataInheritance.format_inheritance_chain(inheritance_chain)
-        script_flags:str = WikiFormatter.to_list_csv(script.header.flags)
+        script_flags:str = Text.list_csv(script.header.flags)
         editor:str = ""
         base:str = ""
         reference:str = ""
@@ -79,7 +79,7 @@ class Script_Object_Summary:
         script_name:str = Wiki.link_script_object(str(script.header.name))
         inheritance_chain:list[Script] = PapyrusInheritance.get_chain(papyrus, project, script)
         script_extends:str = WikiDataInheritance.format_inheritance_chain(inheritance_chain)
-        script_flags:str = WikiFormatter.to_list_csv(script.header.flags)
+        script_flags:str = Text.list_csv(script.header.flags)
         #---------------------------------------------
         template_text:str = ""
         template_text += "{{Script_Object_Summary\n"

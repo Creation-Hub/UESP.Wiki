@@ -1,7 +1,7 @@
 import json
 from typing import Any
-from wiki.data.common import Namespaces
 from wiki.data.namespaces import Namespace
+from wiki.data.title import Title
 from scribe.publisher.article import Article
 from scribe.publisher.wiki import Wiki
 
@@ -42,10 +42,10 @@ class WikiJson:
     def encode(this:Wiki) -> dict[str, Any]:
         """The data encoder for this class."""
         data:dict[str, Any] = {}
-        data["namespaces"] = this.namespaces.keys()
+        # data["namespaces"] = this.namespaces.keys()
         data["articles"] = {}
         for key, article in this.articles.items():
-            data["articles"][key] = ArticleJson.encode(article)
+            data["articles"][key.name] = ArticleJson.encode(article)
         return data
 
 
@@ -104,7 +104,7 @@ class ArticleJson:
 
         # TODO: WIP
         if this.categories:
-            data["categories"] = [category.title.name for category in this.categories]
+            data["categories"] = [category.name for category in this.categories]
         return data
 
 
@@ -113,15 +113,15 @@ class ArticleJson:
         """The data decoder for this class."""
         this_name:str = ArticleJson._name(data.get("name"))
         this_namespace:Namespace = ArticleJson._namespace(wiki, data.get("namespace"))
-        this:Article = Article(this_name, this_namespace)
-        this.content = data.get("content", [])
-        # Convert string categories back to Category objects
-        category_names:list[Any] = data.get("categories", [])
-        for name in category_names:
-            if isinstance(name, str):
-                category:Article = Article(name, Namespaces.Category)
-                this.categories.append(category)
-        return this
+        this:Title = Title(this_name, this_namespace)
+        # this.content = data.get("content", [])
+        # # Convert string categories back to Category objects
+        # category_names:list[Any] = data.get("categories", [])
+        # for name in category_names:
+        #     if isinstance(name, str):
+        #         category:Title = Title(name, Namespaces.Category)
+        #         this.categories.append(category)
+        return Article(this)
 
 
     @staticmethod

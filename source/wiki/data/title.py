@@ -8,7 +8,10 @@ from .namespaces import Namespace
 
 @dataclass(frozen=True)
 class Title:
-    """Represents a MediaWiki article title."""
+    """
+    Represents a MediaWiki article title.
+    The class data is immutable.
+    """
 
     name:str
     """The article name."""
@@ -36,11 +39,13 @@ class Title:
 
     @property
     def display(self) -> str:
+        """The display version of the title, with spaces instead of underscores."""
         return self.name.replace("_", " ")
 
 
     @property
     def value(self) -> str:
+        """The full title value including namespace prefix if applicable."""
         if self.namespace.name == "":
             return self.name
         else:

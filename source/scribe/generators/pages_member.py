@@ -8,7 +8,9 @@ from papyrus.code import Function
 from papyrus.code import Event
 from papyrus.code import Variable
 from papyrus.code import Property
+from wiki.data.section import SectionLevel
 from scribe.publisher.article import Article
+from scribe.publisher.builder import ArticleBuilder
 from scribe.publisher.wiki import Wiki
 from .templates import Script_Member_Summary
 from .scripts import WikiDataScript
@@ -20,50 +22,52 @@ class PageMember:
 
     @staticmethod
     def create(wiki:Wiki, file_path:str, project:PapyrusProject, script:Script, member:Member) -> Article:
-        name:str = PageMember.get_title(script, member)
-
-        this:Article = Article(name, Wiki.NAMESPACE_MODDING)
-        this.categories.append(Wiki.CATEGORY_PAPYRUS)
-
         game_version:str = ""
         source_file_path:str = script.header.name.file_path() + ".psc"
 
-        # Member Summary Template
-        this.content.append(Script_Member_Summary.template(script, member, game_version))
-        this.content.append("\n\n")
+        # Builder
+        builder:ArticleBuilder = ArticleBuilder(wiki)
+        builder.title(PageMember.get_title(script, member), Wiki.NAMESPACE_MODDING)
+        builder.category(Wiki.CATEGORY_PAPYRUS.name)
 
-        # Member Documentation
-        this.content.append("== Documentation ==\n")
+        # Summary Template
+        builder.line(Script_Member_Summary.template(script, member, game_version))
+        builder.line("\n\n")
+
+        # Documentation
+        builder.section("Documentation", SectionLevel.H2)
         if not member.documentation:
-            this.content.append(f"No documentation comments were provided for this member.\n")
-            this.content.append("\n\n")
+            builder.line(f"No documentation comments were provided for this member.\n")
+            builder.line("\n\n")
         else:
-            this.content.append(f"The <code>{source_file_path}</code> source file documentation comments for this script.\n\n")
-            this.content.append("<source>\n")
-            this.content.append(f"{member.documentation}\n")
-            this.content.append("</source>\n")
-            this.content.append("\n\n")
+            builder.line(f"The <code>{source_file_path}</code> source file documentation comments for this script.\n\n")
+            builder.line("<source>\n")
+            builder.line(f"{member.documentation}\n")
+            builder.line("</source>\n")
+            builder.line("\n\n")
 
         # Member Auto Value
         if isinstance(member, Property) or isinstance(member, Variable):
-            this.content.append("== Field Initializer ==\n")
+            builder.section("Field Initializer", SectionLevel.H2)
             if not member.value:
-                this.content.append(f"This {str.lower(member.kind)} member has no field initialized value.\n\n")
+                builder.line(f"This {str.lower(member.kind)} member has no field initialized value.\n\n")
             else:
-                this.content.append("* " + member.value)
-                this.content.append("\n")
+                builder.line("* " + member.value)
+                builder.line("\n")
 
         # Member Parameters
         if isinstance(member, Function) or isinstance(member, Event):
-            this.content.append("== Parameters ==\n")
+            builder.section("Parameters", SectionLevel.H2)
             if not member.parameters:
-                this.content.append(f"This {str.lower(member.kind)} member has no parameters.\n\n")
+                builder.line(f"This {str.lower(member.kind)} member has no parameters.\n\n")
             else:
-                this.content.append("The parameters that belong to this script.\n\n")
+                builder.line("The parameters that belong to this script.\n\n")
                 items = WikiDataScript.variable_to_string_list(member.parameters)
                 for item in items:
-                    this.content.append(f"* {item}\n")
-        return this
+                    builder.line(f"* {item}\n")
+
+
+        return builder.build()
 
 
     @staticmethod

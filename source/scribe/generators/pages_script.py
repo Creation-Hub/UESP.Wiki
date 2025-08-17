@@ -9,7 +9,10 @@ from papyrus.code import Member
 from papyrus.text.parsing import State
 from scribe.publisher.article import Article
 from scribe.publisher.wiki import Wiki
+from scribe.publisher.builder import ArticleBuilder
+from wiki.data.section import SectionLevel
 from .templates import Script_Object_Member_Summary, Script_Object_Summary
+
 
 class PageScript:
     """
@@ -18,62 +21,64 @@ class PageScript:
 
     @staticmethod
     def create(wiki:Wiki, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Article:
-        name:str = PageScript.get_title(script)
-
-        this:Article = Article(name, Wiki.NAMESPACE_MODDING)
-        this.categories.append(Wiki.CATEGORY_PAPYRUS)
-
         game_version:str = ""
         source_file_path:str = script.header.name.file_path() + ".psc"
 
-        # Script Summary Template
-        this.content.append(Script_Object_Summary.template(papyrus, project, script, game_version))
-        this.content.append("\n\n")
+        # Builder
+        builder:ArticleBuilder = ArticleBuilder(wiki)
+        builder.title(PageScript.get_title(script), Wiki.NAMESPACE_MODDING)
+        builder.category(Wiki.CATEGORY_PAPYRUS.name)
+        builder.line(Script_Object_Summary.template(papyrus, project, script, game_version))
+        builder.line("\n\n")
+        builder.section("Definition", SectionLevel.H2)
+        builder.lines([
+            f"The header definition for this script comes from the <code>{source_file_path}</code> source file.\n\n",
+            "<source lang=\"papyrus\">\n",
+            f"{script.header.definition}\n",
+            "</source>\n",
+            "\n\n"
+        ])
 
-        # Script Definition
-        this.content.append("== Definition ==\n")
-        this.content.append(f"The header definition for this script comes from the <code>{source_file_path}</code> source file.\n\n")
-        this.content.append("<source lang=\"papyrus\">\n")
-        this.content.append(f"{script.header.definition}\n")
-        this.content.append("</source>\n")
-        this.content.append("\n\n")
-
-        # Script Documentation
-        this.content.append("== Documentation ==\n")
+        # Documentation
+        builder.section("Documentation", SectionLevel.H2)
         if not script.header.documentation:
-            this.content.append(f"No documentation comments were provided in the <code>{source_file_path}</code> source file.\n")
-            this.content.append("\n\n")
+            builder.line(f"No documentation comments were provided in the <code>{source_file_path}</code> source file.\n")
+            builder.line("\n\n")
         else:
-            this.content.append(f"The documentation comments for this script come from the <code>{source_file_path}</code> source file.\n\n")
-            this.content.append("<source>\n")
-            this.content.append(f"{script.header.documentation}\n")
-            this.content.append("</source>\n")
-            this.content.append("\n\n")
+            builder.lines([
+                f"The documentation comments for this script come from the <code>{source_file_path}</code> source file.\n\n",
+                "<source>\n",
+                f"{script.header.documentation}\n",
+                "</source>\n",
+                "\n\n"
+            ])
 
-        # Script Members
-        this.content.append("== Member ==\n")
+        # Member
+        builder.section("Member", SectionLevel.H2)
         if not script.members:
-            this.content.append(f"No members were defined in the <code>{source_file_path}</code> source file.\n")
-            this.content.append("\n\n")
+            builder.lines([
+                f"No members were defined in the <code>{source_file_path}</code> source file.\n",
+                "\n\n"
+            ])
         else:
-            this.content.append("These are the members that belong to this script, grouped by kind.\n")
-            this.content.append("\n\n")
+            builder.lines([
+                "These are the members that belong to this script, grouped by kind.\n",
+                "\n\n"
+            ])
 
             # Write each section of members by kind
             members_by_kind:defaultdict[str, list[Member]] = PageScript.sort_members_by_kind(script)
             for kind, members in members_by_kind.items():
-                this.content.append(f"=== {kind} ===\n")
-                this.content.append(f"These are the {kind.lower()} members for this script.\n")
-                this.content.append("\n")
+                builder.section(kind, SectionLevel.H3)
+                builder.lines([
+                    f"These are the {kind.lower()} members for this script.\n",
+                    "\n"
+                ])
                 for member in members:
-                    this.content.append(Script_Object_Member_Summary.template(script, member, game_version))
+                    builder.line(Script_Object_Member_Summary.template(script, member, game_version)+"\n")
+                builder.line("\n\n")
 
-                    # TODO: Test with typed definitions.
-                    # this.content.append(item_member(member))
-
-                    this.content.append("\n")
-                this.content.append("\n\n")
-        return this
+        return builder.build()
 
 
     @staticmethod
@@ -158,6 +163,7 @@ class PageScript:
             content += f"** {variable.definition}\n"
         content += f"\n"
         return content
+
 
     @staticmethod
     def item_property_group(property_group:PropertyGroup) -> str:

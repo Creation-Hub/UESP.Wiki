@@ -21,7 +21,6 @@ optional	optional	required
 - https://www.mediawiki.org/wiki/Help:Categories
 """
 from typing import override
-from wiki.data.namespaces import Namespace
 from wiki.data.title import Title
 
 class Article:
@@ -29,20 +28,19 @@ class Article:
     Represents a MediaWiki base article type.
     """
 
-    def __init__(self, name:str, namespace:Namespace) -> None:
+    def __init__(self, title:Title) -> None:
         super().__init__()
 
-        self.title:Title = Title(name, namespace)
+        self.title:Title = title
         """The full title path of this article."""
 
-        # Composed
         self.content:list[str] = []
         """The text content of this wiki article."""
 
-        self.categories:list[Article] = []
+        self.categories:list[Title] = []
         """The categories this wiki article belongs to."""
 
-        self.templates:list[Article] = []
+        self.templates:list[Title] = []
         """The templates used by this wiki article."""
 
 
@@ -60,7 +58,7 @@ class Article:
         """Compose the complete wiki markup."""
         lines:list[str] = self.content.copy()
         lines.append("\n")
-        for category in self.categories:
-            lines.append(category.title.link)
+        for title in self.categories:
+            lines.append(title.link)
             lines.append("\n")
         return lines

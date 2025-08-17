@@ -1,6 +1,5 @@
 from enum import Enum
 from typing import Any
-from sharp.collections import KeyedObject
 from .publishing import PublishOption
 
 
@@ -30,15 +29,15 @@ class JobType(Enum):
         else: return JobType[value.upper()]
 
 
-class Job(KeyedObject):
+class Job:
     """
     Represents a Papyrus project configuration with publishing options.
     See the `PapyrusProject` and `PublishOption` classes.
     """
     def __init__(self, identifier:str) -> None:
-        super().__init__(identifier)
+        super().__init__()
 
-        self.identifier:str = ""
+        self.identifier:str = identifier
         """The indentifier for this configuration."""
 
         self.root:str = ""

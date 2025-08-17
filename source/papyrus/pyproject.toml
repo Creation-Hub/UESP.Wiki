@@ -3,9 +3,7 @@ name = "papyrus"
 version = "0.0.1"
 description = "Papyrus script parsing and analysis library."
 requires-python = ">=3.13"
-dependencies = [
-    "sharp"
-]
+dependencies = []
 
 
 [tool.setuptools.packages.find]
