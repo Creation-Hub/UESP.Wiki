@@ -7,12 +7,11 @@ from papyrus.project import PapyrusProject
 from papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from papyrus.code import Member
 from papyrus.text.parsing import State
-from scribe.publisher.article import Article
-from scribe.publisher.wiki import Wiki
-from scribe.publisher.builder import ArticleBuilder
+from scribe.composer.article import Article
+from scribe.composer.wiki import Wiki
+from scribe.composer.builder import ArticleBuilder
 from wiki.data.section import SectionLevel
 from .templates import Script_Object_Member_Summary, Script_Object_Summary
-
 
 class PageScript:
     """

@@ -4,8 +4,8 @@ from wiki.data.common import Namespaces
 from wiki.data.title import Title, Namespace
 from wiki.data.formatting import Text
 from wiki.data.section import SectionLevel
-from scribe.publisher.wiki import Wiki
-from scribe.publisher.article import Article
+from .wiki import Wiki
+from .article import Article
 
 @final
 class ArticleBuilder:

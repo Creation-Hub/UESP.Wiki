@@ -76,3 +76,20 @@ class Text:
             for definition in definitions:
                 text += f"\n:{definition}"
         return text
+
+
+
+# TODO: WIP
+class Bold(str):
+    def __new__(cls, text:str) -> str:
+        return super().__new__(cls, f"'''{text}'''")
+
+# TODO: WIP
+class Italic(str):
+    def __new__(cls, text:str) -> str:
+        return super().__new__(cls, f"''{text}''")
+
+# TODO: WIP
+class Code(str):
+    def __new__(cls, text:str) -> str:
+        return super().__new__(cls, f"<code>{text}</code>")

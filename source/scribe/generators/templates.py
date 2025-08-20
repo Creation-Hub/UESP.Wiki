@@ -4,7 +4,7 @@ from papyrus.project import PapyrusProject
 from papyrus.code import Script
 from papyrus.code import Member
 from wiki.data.formatting import Text
-from scribe.publisher.wiki import Wiki
+from scribe.composer.wiki import Wiki
 from .scripts_inheritance import WikiDataInheritance
 from .templates_data import TemplateData
 

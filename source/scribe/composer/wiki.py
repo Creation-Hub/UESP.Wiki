@@ -5,8 +5,8 @@ from sharp.collections import KeyedCollection
 from wiki.data.common import Namespaces
 from wiki.data.title import Title
 from wiki.data.namespaces import Namespace
-from scribe.publisher.article import Article
-from scribe.publisher.wiki_collection import ArticleCollection, NamespaceCollection
+from .article import Article
+from .wiki_collection import ArticleCollection
 
 # Top-Level Modding Category.
 # https://starfieldwiki.net/wiki/Category:Starfield_Mod
@@ -64,8 +64,8 @@ class Wiki:
 
     def __init__(self) -> None:
         super().__init__()
-        self.namespaces:NamespaceCollection = NamespaceCollection()
-        """A dictionary of all recognized namespaces by their names."""
+        # self.namespaces:NamespaceCollection = NamespaceCollection()
+        # """A dictionary of all recognized namespaces by their names."""
 
         self.titles:KeyedCollection[str, Title] = KeyedCollection(key_extract=lambda item: item.value)
 
@@ -76,7 +76,6 @@ class Wiki:
     @staticmethod
     def create() -> 'Wiki':
         this:Wiki = Wiki()
-        this.articles.add(Article(Wiki.CATEGORY_TEMPLATES_INFOBOX))
 
         category_papyrus_documentation_automated:Title = Title("Papyrus_Documentation_Automated", Namespaces.Category)
         category_papyrus_documentation_automated_article:Article = Article(category_papyrus_documentation_automated)

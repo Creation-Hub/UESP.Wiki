@@ -22,7 +22,7 @@
             "type": "shell",
             "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
-                "${workspaceFolder}\\wiki\\import\\Base-Native\\Base-Native.ppj"
+                "${workspaceFolder}\\assets\\papyrus\\Base-Native\\Base-Native.ppj"
             ],
             "group": {
                 "kind": "build"
@@ -34,7 +34,7 @@
             "type": "shell",
             "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
-                "${workspaceFolder}\\wiki\\import\\Base-Shared-Default\\Base-Shared-Default.ppj"
+                "${workspaceFolder}\\assets\\papyrus\\Base-Shared-Default\\Base-Shared-Default.ppj"
             ],
             "group": {
                 "kind": "build"
@@ -46,7 +46,7 @@
             "type": "shell",
             "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
-                "${workspaceFolder}\\wiki\\import\\Base-Default\\Base-Default.ppj"
+                "${workspaceFolder}\\assets\\papyrus\\Base-Default\\Base-Default.ppj"
             ],
             "group": {
                 "kind": "build"
@@ -58,7 +58,7 @@
             "type": "shell",
             "command": "\"${config:papyrus.compiler.path}\"",
             "args": [
-                "${workspaceFolder}\\wiki\\import\\Test-Sample\\Test-Sample.ppj"
+                "${workspaceFolder}\\assets\\papyrus\\Test-Sample\\Test-Sample.ppj"
             ],
             "group": {
                 "kind": "build"

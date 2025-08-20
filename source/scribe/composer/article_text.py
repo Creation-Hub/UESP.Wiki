@@ -23,6 +23,9 @@ class ArticleText:
     @staticmethod
     def compose_load(file_path:str) -> list[str]:
         """Load article content from a *.wiki file."""
+        if not os.path.exists(file_path):
+            logging.warning(f"Wiki article file not found: '{file_path}'")
+            return []
         with open(file_path, 'r', encoding='utf-8') as file:
             content:list[str] = file.readlines()
         return content

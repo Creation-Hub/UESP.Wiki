@@ -2,10 +2,7 @@
 Used to upload wiki pages to a remote site.
 """
 import logging
-import os
-from typing import override
 from http import HTTPStatus
-from sharp.objects import Dump
 from wiki.web.client import WebClient
 from wiki.web.credentials import Credential
 from wiki.web.site import Site
@@ -13,11 +10,10 @@ from wiki.web.api.edit import EditResponse
 from wiki.web.api.login import LoginResponse
 from wiki.web.api.types import EditResult, LoginStatus
 from scribe.app.context import AppContext
-from scribe.publisher.article import Article
-from scribe.publisher.wiki import Wiki
-from scribe.publisher.wiki_json import WikiJson
+from scribe.composer.article import Article
+from scribe.services.composer import ComposerService
 
-class UploadService:
+class UploaderService:
     """
     This service is responsible for uploading wiki pages to a remote site.
     """
@@ -28,17 +24,8 @@ class UploadService:
     BOT_EDIT_SUMMARY:str = "This edit was made by Scribe Bot using the wiki API."
     """The bot edit summary used for uploads."""
 
-    USE_DRY_RUN:bool = False
+    USE_DRY_RUN:bool = True
     """ When True, the upload will not actually be performed."""
-
-
-    def __init__(self) -> None:
-        super().__init__()
-
-
-    @override
-    def __str__(self) -> str:
-        return Dump.get(self)
 
 
     @staticmethod
@@ -55,22 +42,21 @@ class UploadService:
             logging.error("No upload configuration specified.")
             return False
 
-        this:UploadService = UploadService()
-        logging.info(f"{UploadService.NAME} - Starting")
-        logging.debug(str(this))
+        logging.info(f"{UploaderService.NAME} - Starting")
 
         # Load wiki context from file
-        wiki:Wiki = Wiki.create()
-        wiki_file_path:str = os.path.join(app.configuration.export_directory, WikiJson.JSON_FILENAME)
         try:
-            wiki = WikiJson.load(wiki, wiki_file_path)
-            logging.info(f"Loaded {len(wiki.articles)} pages from wiki.")
-
+            composer:ComposerService = ComposerService.create(app.configuration)
+            composer.load()
         except FileNotFoundError as fileNotFoundError:
             logging.error(f"Wiki file not found: '{fileNotFoundError}'")
             return False
+        except ValueError as valueError:
+            logging.error(f"Wiki had an error: '{valueError}'")
+            return False
 
-        if not wiki.articles:
+
+        if not composer.wiki.articles:
             logging.error("No wiki articles to upload.")
             return False
 
@@ -95,15 +81,22 @@ class UploadService:
         else:
             logging.info(f"Login successfull for '{credential.username}' user.")
 
-        if UploadService.USE_DRY_RUN:
+        if UploaderService.USE_DRY_RUN:
             logging.info("Dry run mode enabled. No edits will be made.")
             return False
 
         # Upload each page
-        for article in wiki.articles.values():
-            UploadService.edit_article(client, article, UploadService.BOT_EDIT_SUMMARY)
+        for article in composer.wiki.articles.values():
+            UploaderService.edit_article(client, article, UploaderService.BOT_EDIT_SUMMARY)
 
         return True
+
+
+    @staticmethod
+    def edit_article(client:WebClient, article:Article, summary:str) -> None:
+        composed:list[str] = article.compose()
+        content:str = "".join(composed)
+        UploaderService.edit(client, article.title.value, content, summary)
 
 
     @staticmethod
@@ -120,10 +113,3 @@ class UploadService:
             logging.info(f"The 'edit' result for revision {edit.revision} was successful: {edit.response.content}")
         else:
             logging.warning(f"The 'edit' resulted in no changes: {edit.response.content}")
-
-
-    @staticmethod
-    def edit_article(client:WebClient, article:Article, summary:str) -> None:
-        composed:list[str] = article.compose()
-        content:str = "".join(composed)
-        UploadService.edit(client, article.title.value, content, summary)

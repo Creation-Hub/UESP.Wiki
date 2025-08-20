@@ -2,7 +2,7 @@
 <PapyrusProject
 	xmlns="PapyrusProject.xsd"
 	Flags="Starfield_Papyrus_Flags.flg"
-	Output="..\..\import.asm\Cassiopeia"
+	Output="..\..\papyrus.asm\Base-Game"
 	Asm="Only"
 	Optimize="false"
 	Release="false"
@@ -11,7 +11,4 @@
 		<Import>.</Import>
 		<Import>..\Base-Native</Import>
 	</Imports>
-	<Scripts>
-		<Script>CassiopeiaPapyrusExtender</Script>
-	</Scripts>
 </PapyrusProject>

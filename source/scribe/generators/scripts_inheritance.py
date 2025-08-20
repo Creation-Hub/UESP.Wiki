@@ -3,7 +3,7 @@ Provides methods to format inheritance data for scripts.
 """
 from collections.abc import Iterable
 from papyrus.code import Script
-from scribe.publisher.wiki import Wiki
+from scribe.composer.wiki import Wiki
 
 class WikiDataInheritance:
     """

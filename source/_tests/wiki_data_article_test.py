@@ -2,7 +2,7 @@ import unittest
 from wiki.data.title import Title
 from wiki.data.namespaces import Namespace
 from wiki.data.common import Namespaces
-from scribe.publisher.article import Article
+from scribe.composer.article import Article
 
 class TestArticle(unittest.TestCase):
 

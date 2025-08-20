@@ -8,10 +8,10 @@ from sharp.collections import KeyedCollection
 from papyrus.client import PapyrusClient
 from papyrus.project import PapyrusProject
 from wiki.data.section import SectionLevel
-from scribe.bots.jobs import Job
-from scribe.publisher.article import Article
-from scribe.publisher.builder import ArticleBuilder
-from scribe.publisher.wiki import Wiki
+from scribe.publisher.configuration import PublishPapyrus
+from scribe.composer.article import Article
+from scribe.composer.builder import ArticleBuilder
+from scribe.composer.wiki import Wiki
 from .scripts_statistics import PapyrusStatistics
 
 class PageIndex:
@@ -23,7 +23,7 @@ class PageIndex:
 
 
     @staticmethod
-    def create(wiki:Wiki, jobs:KeyedCollection[str, Job], papyrus:PapyrusClient) -> Article:
+    def create(wiki:Wiki, jobs:KeyedCollection[str, PublishPapyrus], papyrus:PapyrusClient) -> Article:
         builder:ArticleBuilder = ArticleBuilder(wiki)
         builder.title(PageIndex.PAGE_NAME, Wiki.NAMESPACE_MODDING)
         builder.category(Wiki.CATEGORY_PAPYRUS.name)
@@ -32,7 +32,7 @@ class PageIndex:
 
         # Write each project wiki section.
         for identifier in papyrus.projects:
-            job:Job = jobs[identifier]
+            job:PublishPapyrus = jobs[identifier]
             if not job.publish.enable:
                 logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
                 continue

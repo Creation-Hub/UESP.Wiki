@@ -60,9 +60,9 @@ class PublishOption:
     @staticmethod
     def json_decode(data_project:dict[str, Any]) -> 'PublishOption':
         this:PublishOption = PublishOption()
-        this.output = data_project.get("output.directory", "")
-        this.sort = Sort.json_decode(data_project, "output.sort")
-        this.enable = data_project.get("output.enabled", False)
-        this.enable_objects = data_project.get("output.objects", False)
-        this.enable_members = data_project.get("output.members", False)
+        this.output = data_project.get("publish.directory", "")
+        this.sort = Sort.json_decode(data_project, "publish.sort")
+        this.enable = data_project.get("publish.enabled", False)
+        this.enable_objects = data_project.get("publish.objects", False)
+        this.enable_members = data_project.get("publish.members", False)
         return this

@@ -1,0 +1,30 @@
+# Input
+# Directory contains the imported files
+#---------------------------------------------
+*.txt
+*.bat
+*.flg
+*.zip
+/papyrus/*
+!/papyrus/Base-Native/
+!/papyrus/Base-Shared-Default/
+!/papyrus/Base-Default/
+!/papyrus/Base-Game/
+!/papyrus/SFSE/
+!/papyrus/Cassiopeia/
+!/papyrus/Test-Sample/
+
+# Input
+# Directory contains the assembly files
+#---------------------------------------------
+/papyrus.asm/
+
+# Output
+# Directory contains the exported files
+#---------------------------------------------
+/export/*
+!/export/Script_Information.wiki
+!/export/Base-Native/
+!/export/Base-Shared-Default/
+!/export/Base-Default/
+!/export/Test-Sample/

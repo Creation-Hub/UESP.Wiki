@@ -9,9 +9,9 @@ from papyrus.code import Event
 from papyrus.code import Variable
 from papyrus.code import Property
 from wiki.data.section import SectionLevel
-from scribe.publisher.article import Article
-from scribe.publisher.builder import ArticleBuilder
-from scribe.publisher.wiki import Wiki
+from scribe.composer.article import Article
+from scribe.composer.builder import ArticleBuilder
+from scribe.composer.wiki import Wiki
 from .templates import Script_Member_Summary
 from .scripts import WikiDataScript
 

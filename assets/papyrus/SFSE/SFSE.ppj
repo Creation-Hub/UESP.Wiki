@@ -2,7 +2,7 @@
 <PapyrusProject
 	xmlns="PapyrusProject.xsd"
 	Flags="Starfield_Papyrus_Flags.flg"
-	Output="..\..\import.asm\SFSE"
+	Output="..\..\papyrus.asm\SFSE"
 	Asm="Only"
 	Optimize="false"
 	Release="false"

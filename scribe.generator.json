@@ -1,160 +1,120 @@
 {
-	"providers": [
-		{
-			"identifier": "Starfield",
-			"type": "official",
-			"name": "Starfield",
-			"author": "Bethesda Game Studios",
-			"description": "The base game content",
-			"platform": "steam",
-			"url": "https://store.steampowered.com/app/1716740/Starfield/",
-			"url_id": "1716740",
-			"version": {
-				"number": "1.15.216.0",
-				"build": "18483158",
-				"date": "2024-12-15"
-			},
-			"jobs": [
-				{
-					"identifier": "Game"
-				}
-			]
+	"Starfield": {
+		"type": "official",
+		"name": "Starfield",
+		"author": "Bethesda Game Studios",
+		"description": "The base game content",
+		"platform": "steam",
+		"url": "https://store.steampowered.com/app/1716740/Starfield/",
+		"url_id": "1716740",
+		"version": {
+			"number": "1.15.216.0",
+			"build": "18483158",
+			"date": "2024-12-15"
 		},
-		{
-			"identifier": "Starfield_Creation_Kit",
-			"type": "official",
-			"name": "Creation Kit",
-			"author": "Bethesda Game Studios",
-			"description": "The Creation Kit.",
-			"platform": "steam",
-			"url": "https://store.steampowered.com/app/2722710/Starfield_Creation_Kit/",
-			"url_id": "2722710",
-			"version": {
-				"number": "1.15.216.0",
-				"build": "18483730",
-				"date": "2024-12-15"
-			},
-			"jobs": [
-				{
-					"identifier": "Base-Native",
-					"source.imports": [],
-					"source.directory": "wiki/import/Base-Native",
-					"output.directory": "wiki/export/Base-Native",
-					"output.enabled": true,
-					"output.sort": "TREE",
-					"output.objects": true,
-					"output.members": false
-				},
-				{
-					"identifier": "Base-Shared-Default",
-					"source.imports": [ "Base-Native" ],
-					"source.directory": "wiki/import/Base-Shared-Default",
-					"output.directory": "wiki/export/Base-Shared-Default",
-					"output.enabled": true,
-					"output.sort": "DEFAULT",
-					"output.objects": true,
-					"output.members": false
-				},
-				{
-					"identifier": "Base-Default",
-					"source.imports": [ "Base-Shared-Default", "Base-Native" ],
-					"source.directory": "wiki/import/Base-Default",
-					"output.directory": "wiki/export/Base-Default",
-					"output.enabled": true,
-					"output.sort": "DEFAULT",
-					"output.objects": true,
-					"output.members": false
-				}
-			]
-		},
-		{
-			"identifier": "sfse",
-			"type": "community",
-			"name": "Starfield Script Extender",
-			"author": "SFSE Team",
-			"description": "Starfield Script Extender (SFSE) is a tool adding additional scripting capabilities and functionality to the game.",
-			"platform": "nexus",
-			"url": "https://www.nexusmods.com/starfield/mods/106",
-			"url_id": "106",
-			"version": {
-				"number": "0.2.17",
-				"date": "2025-05-23"
+		"papyrus": [
+			{
+				"identifier": "Game"
 			}
+		]
+	},
+	"Starfield_Creation_Kit": {
+		"type": "official",
+		"name": "Creation Kit",
+		"author": "Bethesda Game Studios",
+		"description": "The Creation Kit.",
+		"platform": "steam",
+		"url": "https://store.steampowered.com/app/2722710/Starfield_Creation_Kit/",
+		"url_id": "2722710",
+		"version": {
+			"number": "1.15.216.0",
+			"build": "18483730",
+			"date": "2024-12-15"
 		},
-		{
-			"identifier": "cassiopeia",
-			"type": "community",
-			"name": "Cassiopeia Papyrus Extender",
-			"author": "LarannKiar",
-			"description": "SFSE plugin that expands the capabilities of Papyrus, the Creation Engine's scripting language.",
-			"platform": "nexus",
-			"url": "https://www.nexusmods.com/starfield/mods/10896",
-			"url_id": "10896",
-			"version": {
-				"number": "4.1.0",
-				"date": "2025-06-25"
+		"papyrus": [
+			{
+				"identifier": "Base-Native",
+				"source.imports": [],
+				"source.directory": "assets/papyrus/Base-Native",
+				"publish.directory": "wiki/export/Base-Native",
+				"publish.enabled": true,
+				"publish.sort": "TREE",
+				"publish.objects": true,
+				"publish.members": false
 			},
-			"jobs": [
-				{
-					"identifier": "Cassiopeia",
-					"source.imports": [ "Base-Native" ],
-					"source.directory": "wiki/import/Cassiopeia",
-					"output.directory": "wiki/export/Cassiopeia",
-					"output.enabled": false,
-					"output.sort": "DEFAULT",
-					"output.objects": true,
-					"output.members": false
-				}
-			]
-		},
-		{
-			"identifier": "Testing",
-			"type": "test",
-			"jobs": [
-				{
-					"identifier": "Test-Sample",
-					"source.imports": [ "Base-Native" ],
-					"source.directory": "wiki/import/Test-Sample",
-					"output.directory": "wiki/export/Test-Sample",
-					"output.enabled": true,
-					"output.sort": "TREE",
-					"output.objects": true,
-					"output.members": true
-				}
-			]
+			{
+				"identifier": "Base-Shared-Default",
+				"source.imports": [ "Base-Native" ],
+				"source.directory": "assets/papyrus/Base-Shared-Default",
+				"publish.directory": "wiki/export/Base-Shared-Default",
+				"publish.enabled": true,
+				"publish.sort": "DEFAULT",
+				"publish.objects": true,
+				"publish.members": false
+			},
+			{
+				"identifier": "Base-Default",
+				"source.imports": [ "Base-Shared-Default", "Base-Native" ],
+				"source.directory": "assets/papyrus/Base-Default",
+				"publish.directory": "wiki/export/Base-Default",
+				"publish.enabled": true,
+				"publish.sort": "DEFAULT",
+				"publish.objects": true,
+				"publish.members": false
+			}
+		]
+	},
+	"sfse": {
+		"type": "community",
+		"name": "Starfield Script Extender",
+		"author": "SFSE Team",
+		"description": "Starfield Script Extender (SFSE) is a tool adding additional scripting capabilities and functionality to the game.",
+		"platform": "nexus",
+		"url": "https://www.nexusmods.com/starfield/mods/106",
+		"url_id": "106",
+		"version": {
+			"number": "0.2.17",
+			"date": "2025-05-23"
 		}
-
-	],
-	"papyrus": {
-		"Base-Native": {
-			"identifier": "Base-Native",
-			"owner.key": "Starfield_Creation_Kit",
-			"source.imports": [],
-			"source.directory": "wiki/import/Base-Native"
+	},
+	"cassiopeia": {
+		"type": "community",
+		"name": "Cassiopeia Papyrus Extender",
+		"author": "LarannKiar",
+		"description": "SFSE plugin that expands the capabilities of Papyrus, the Creation Engine's scripting language.",
+		"platform": "nexus",
+		"url": "https://www.nexusmods.com/starfield/mods/10896",
+		"url_id": "10896",
+		"version": {
+			"number": "4.1.0",
+			"date": "2025-06-25"
 		},
-		"Base-Shared-Default": {
-			"identifier": "Base-Shared-Default",
-			"owner.key": "Starfield_Creation_Kit",
-			"source.imports": [ "Base-Native" ],
-			"source.directory": "wiki/import/Base-Shared-Default"
-		},
-		"Base-Default": {
-			"identifier": "Base-Default",
-			"owner.key": "Starfield_Creation_Kit",
-			"source.imports": [ "Base-Shared-Default", "Base-Native" ],
-			"source.directory": "wiki/import/Base-Default"
-		},
-		"Cassiopeia": {
-			"identifier": "Cassiopeia",
-			"owner.key": "cassiopeia",
-			"source.imports": [ "Base-Native" ],
-			"source.directory": "wiki/import/Cassiopeia"
-		},
-		"Testing": {
-			"identifier": "Test-Sample",
-			"owner.key": "Testing",
-			"source.imports": [ "Base-Native" ],
-			"source.directory": "wiki/import/Test-Sample"
-		}
+		"papyrus": [
+			{
+				"identifier": "Cassiopeia",
+				"source.imports": [ "Base-Native" ],
+				"source.directory": "assets/papyrus/Cassiopeia",
+				"publish.directory": "wiki/export/Cassiopeia",
+				"publish.enabled": false,
+				"publish.sort": "DEFAULT",
+				"publish.objects": true,
+				"publish.members": false
+			}
+		]
+	},
+	"Testing": {
+		"type": "test",
+		"papyrus": [
+			{
+				"identifier": "Test-Sample",
+				"source.imports": [ "Base-Native" ],
+				"source.directory": "assets/papyrus/Test-Sample",
+				"publish.directory": "wiki/export/Test-Sample",
+				"publish.enabled": true,
+				"publish.sort": "TREE",
+				"publish.objects": true,
+				"publish.members": true
+			}
+		]
 	}
 }

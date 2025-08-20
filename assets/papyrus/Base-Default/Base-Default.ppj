@@ -2,7 +2,7 @@
 <PapyrusProject
 	xmlns="PapyrusProject.xsd"
 	Flags="Starfield_Papyrus_Flags.flg"
-	Output="..\..\import.asm\Base-Default"
+	Output="..\..\papyrus.asm\Base-Default"
 	Asm="Only"
 	Optimize="false"
 	Release="false"

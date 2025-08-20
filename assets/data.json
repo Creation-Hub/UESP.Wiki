@@ -1,0 +1,1157 @@
+{
+  "NPC_": {
+    "icon": "CK-Object-NPC_.png",
+    "type": "NPC_",
+    "category": "Actors",
+    "name": "Actor",
+    "description": "NPCs, bots, animals, etc."
+  },
+  "AACT": {
+    "icon": "CK-Object-AACT.png",
+    "type": "AACT",
+    "category": "Actors",
+    "name": "Actor Action",
+    "description": ""
+  },
+  "BPTD": {
+    "icon": "CK-Object-BPTD.png",
+    "type": "BPTD",
+    "category": "Actors",
+    "name": "BodyPartData",
+    "description": ""
+  },
+  "CSTY": {
+    "icon": "CK-Object-CSTY.png",
+    "type": "CSTY",
+    "category": "Actors",
+    "name": "CombatStyle",
+    "description": ""
+  },
+  "LVLN": {
+    "icon": "CK-Object-LVLN.png",
+    "type": "LVLN",
+    "category": "Actors",
+    "name": "LeveledCharacter",
+    "description": ""
+  },
+  "PERK": {
+    "icon": "CK-Object-PERK.png",
+    "type": "PERK",
+    "category": "Actors",
+    "name": "Perk",
+    "description": "Everything from adding activation options to increasing carry weight."
+  },
+  "TACT": {
+    "icon": "CK-Object-TACT.png",
+    "type": "TACT",
+    "category": "Actors",
+    "name": "TalkingActivator",
+    "description": ""
+  },
+  "ASPC": {
+    "icon": "CK-Object-ASPC.png",
+    "type": "ASPC",
+    "category": "Audio",
+    "name": "Acoustic Space",
+    "description": ""
+  },
+  "AMBS": {
+    "icon": "",
+    "type": "AMBS",
+    "category": "Audio",
+    "name": "Ambience Set",
+    "description": ""
+  },
+  "STAG": {
+    "icon": "",
+    "type": "STAG",
+    "category": "Audio",
+    "name": "Animation Tag Set",
+    "description": ""
+  },
+  "AOPF": {
+    "icon": "",
+    "type": "AOPF",
+    "category": "Audio",
+    "name": "Audio Occlusion Primitive",
+    "description": ""
+  },
+  "MUST": {
+    "icon": "CK-Object-MUST.png",
+    "type": "MUST",
+    "category": "Audio",
+    "name": "Music Track",
+    "description": ""
+  },
+  "MUSC": {
+    "icon": "CK-Object-MUSC.png",
+    "type": "MUSC",
+    "category": "Audio",
+    "name": "Music Type",
+    "description": ""
+  },
+  "REVB": {
+    "icon": "CK-Object-REVB.png",
+    "type": "REVB",
+    "category": "Audio",
+    "name": "Reverb Parameters",
+    "description": ""
+  },
+  "SECH": {
+    "icon": "",
+    "type": "SECH",
+    "category": "Audio",
+    "name": "Sound Echo Marker",
+    "description": ""
+  },
+  "KSSM": {
+    "icon": "",
+    "type": "KSSM",
+    "category": "Audio",
+    "name": "Sound Keyword Mapping",
+    "description": ""
+  },
+  "SOUN": {
+    "icon": "CK-Object-SOUN.png",
+    "type": "SOUN",
+    "category": "Audio",
+    "name": "Sound Marker",
+    "description": ""
+  },
+  "WWED": {
+    "icon": "",
+    "type": "WWED",
+    "category": "Audio",
+    "name": "Wwise Event",
+    "description": ""
+  },
+  "WKMF": {
+    "icon": "",
+    "type": "WKMF",
+    "category": "Audio",
+    "name": "Wwise Keyword Mapping",
+    "description": ""
+  },
+  "AFFE": {
+    "icon": "",
+    "type": "AFFE",
+    "category": "Character",
+    "name": "Affinity Event",
+    "description": ""
+  },
+  "ASTP": {
+    "icon": "CK-Object-ASTP.png",
+    "type": "ASTP",
+    "category": "Character",
+    "name": "Association Type",
+    "description": ""
+  },
+  "BMOD": {
+    "icon": "",
+    "type": "BMOD",
+    "category": "Character",
+    "name": "Bone Modifier",
+    "description": ""
+  },
+  "CLAS": {
+    "icon": "CK-Object-CLAS.png",
+    "type": "CLAS",
+    "category": "Character",
+    "name": "Class",
+    "description": ""
+  },
+  "EQUP": {
+    "icon": "CK-Object-EQUP.png",
+    "type": "EQUP",
+    "category": "Character",
+    "name": "Equip Slot",
+    "description": ""
+  },
+  "FACT": {
+    "icon": "CK-Object-FACT.png",
+    "type": "FACT",
+    "category": "Character",
+    "name": "Faction",
+    "description": ""
+  },
+  "HDPT": {
+    "icon": "CK-Object-HDPT.png",
+    "type": "HDPT",
+    "category": "Character",
+    "name": "HeadPart",
+    "description": ""
+  },
+  "MRPH": {
+    "icon": "",
+    "type": "MRPH",
+    "category": "Character",
+    "name": "Morphable Object",
+    "description": ""
+  },
+  "MOVT": {
+    "icon": "CK-Object-MOVT.png",
+    "type": "MOVT",
+    "category": "Character",
+    "name": "Movement Type",
+    "description": ""
+  },
+  "PACK": {
+    "icon": "CK-Object-PACK.png",
+    "type": "PACK",
+    "category": "Character",
+    "name": "Package",
+    "description": ""
+  },
+  "QUST": {
+    "icon": "CK-Object-QUST.png",
+    "type": "QUST",
+    "category": "Character",
+    "name": "Quest",
+    "description": "All paths start from, pass through or lead to the Quest."
+  },
+  "RACE": {
+    "icon": "CK-Object-RACE.png",
+    "type": "RACE",
+    "category": "Character",
+    "name": "Race",
+    "description": ""
+  },
+  "RELA": {
+    "icon": "CK-Object-RELA.png",
+    "type": "RELA",
+    "category": "Character",
+    "name": "Relationship",
+    "description": ""
+  },
+  "SPCH": {
+    "icon": "",
+    "type": "SPCH",
+    "category": "Character",
+    "name": "Speech Challenge Object",
+    "description": ""
+  },
+  "SMEN": {
+    "icon": "CK-Object-SMEN.png",
+    "type": "SMEN",
+    "category": "Character",
+    "name": "Story Manager Event Node",
+    "description": ""
+  },
+  "VTYP": {
+    "icon": "CK-Object-VTYP.png",
+    "type": "VTYP",
+    "category": "Character",
+    "name": "VoiceType",
+    "description": ""
+  },
+  "GBFM": {
+    "icon": "",
+    "type": "GBFM",
+    "category": "Generic Forms",
+    "name": "Base Form",
+    "description": ""
+  },
+  "LVLB": {
+    "icon": "",
+    "type": "LVLB",
+    "category": "Generic Forms",
+    "name": "Leveled Base Form",
+    "description": ""
+  },
+  "GBFT": {
+    "icon": "",
+    "type": "GBFT",
+    "category": "Generic Forms",
+    "name": "Template",
+    "description": ""
+  },
+  "AAMD": {
+    "icon": "CK-Object-AAMD.png",
+    "type": "AAMD",
+    "category": "Items",
+    "name": "AimAssist Model",
+    "description": ""
+  },
+  "AAPD": {
+    "icon": "",
+    "type": "AAPD",
+    "category": "Items",
+    "name": "AimAssist Pose Data",
+    "description": ""
+  },
+  "ZOOM": {
+    "icon": "CK-Object-ZOOM.png",
+    "type": "ZOOM",
+    "category": "Items",
+    "name": "AimDownSightData",
+    "description": ""
+  },
+  "AMDL": {
+    "icon": "CK-Object-AMDL.png",
+    "type": "AMDL",
+    "category": "Items",
+    "name": "AimModel",
+    "description": ""
+  },
+  "AOPS": {
+    "icon": "",
+    "type": "AOPS",
+    "category": "Items",
+    "name": "AimOpticalSightModel",
+    "description": ""
+  },
+  "AMMO": {
+    "icon": "CK-Object-AMMO.png",
+    "type": "AMMO",
+    "category": "Items",
+    "name": "Ammo",
+    "description": ""
+  },
+  "ARMO": {
+    "icon": "CK-Object-ARMO.png",
+    "type": "ARMO",
+    "category": "Items",
+    "name": "Armor",
+    "description": ""
+  },
+  "ARMA": {
+    "icon": "CK-Object-ARMA.png",
+    "type": "ARMA",
+    "category": "Items",
+    "name": "ArmorAddon",
+    "description": ""
+  },
+  "BOOK": {
+    "icon": "CK-Object-BOOK.png",
+    "type": "BOOK",
+    "category": "Items",
+    "name": "Book",
+    "description": ""
+  },
+  "COBJ": {
+    "icon": "CK-Object-COBJ.png",
+    "type": "COBJ",
+    "category": "Items",
+    "name": "Constructible Object",
+    "description": ""
+  },
+  "INGR": {
+    "icon": "CK-Object-INGR.png",
+    "type": "INGR",
+    "category": "Items",
+    "name": "Ingrediant",
+    "description": ""
+  },
+  "KEYM": {
+    "icon": "CK-Object-KEYM.png",
+    "type": "KEYM",
+    "category": "Items",
+    "name": "Key",
+    "description": ""
+  },
+  "LGDI": {
+    "icon": "",
+    "type": "LGDI",
+    "category": "Items",
+    "name": "Legendary Item",
+    "description": ""
+  },
+  "LVLI": {
+    "icon": "CK-Object-LVLI.png",
+    "type": "LVLI",
+    "category": "Items",
+    "name": "LeveledItem",
+    "description": ""
+  },
+  "MAAM": {
+    "icon": "CK-Object-MAAM.png",
+    "type": "MAAM",
+    "category": "Items",
+    "name": "Melee AimAssist Model",
+    "description": ""
+  },
+  "MISC": {
+    "icon": "CK-Object-MISC.png",
+    "type": "MISC",
+    "category": "Items",
+    "name": "MiscItem",
+    "description": ""
+  },
+  "NOTE": {
+    "icon": "CK-Object-NOTE.png",
+    "type": "NOTE",
+    "category": "Items",
+    "name": "Note",
+    "description": ""
+  },
+  "OMOD": {
+    "icon": "",
+    "type": "OMOD",
+    "category": "Items",
+    "name": "Object Mod",
+    "description": ""
+  },
+  "OTFT": {
+    "icon": "CK-Object-OTFT.png",
+    "type": "OTFT",
+    "category": "Items",
+    "name": "Outfit",
+    "description": ""
+  },
+  "RSPJ": {
+    "icon": "",
+    "type": "RSPJ",
+    "category": "Items",
+    "name": "Research Project",
+    "description": ""
+  },
+  "WEAP": {
+    "icon": "CK-Object-WEAP.png",
+    "type": "WEAP",
+    "category": "Items",
+    "name": "Weapon",
+    "description": ""
+  },
+  "WBAR": {
+    "icon": "",
+    "type": "WBAR",
+    "category": "Items",
+    "name": "Weapon Barrel Data",
+    "description": ""
+  },
+  "DUAL": {
+    "icon": "CK-Object-DUAL.png",
+    "type": "DUAL",
+    "category": "Magic",
+    "name": "Dual Cast Data",
+    "description": ""
+  },
+  "ENCH": {
+    "icon": "CK-Object-ENCH.png",
+    "type": "ENCH",
+    "category": "Magic",
+    "name": "Enchantment",
+    "description": ""
+  },
+  "LVSP": {
+    "icon": "CK-Object-LVSP.png",
+    "type": "LVSP",
+    "category": "Magic",
+    "name": "LeveledSpell",
+    "description": ""
+  },
+  "MGEF": {
+    "icon": "CK-Object-MGEF.png",
+    "type": "MGEF",
+    "category": "Magic",
+    "name": "Magic Effect",
+    "description": ""
+  },
+  "ALCH": {
+    "icon": "CK-Object-ALCH.png",
+    "type": "ALCH",
+    "category": "Magic",
+    "name": "Potion",
+    "description": ""
+  },
+  "SPEL": {
+    "icon": "CK-Object-SPEL.png",
+    "type": "SPEL",
+    "category": "Magic",
+    "name": "Spell",
+    "description": ""
+  },
+  "AVIF": {
+    "icon": "",
+    "type": "AVIF",
+    "category": "Miscellaneous",
+    "name": "Actor Value",
+    "description": ""
+  },
+  "ANIO": {
+    "icon": "CK-Object-ANIO.png",
+    "type": "ANIO",
+    "category": "Miscellaneous",
+    "name": "AnimObject",
+    "description": ""
+  },
+  "AORU": {
+    "icon": "",
+    "type": "AORU",
+    "category": "Miscellaneous",
+    "name": "AttractionRule",
+    "description": ""
+  },
+  "BNDS": {
+    "icon": "CK-Object-BNDS.png",
+    "type": "BNDS",
+    "category": "Miscellaneous",
+    "name": "BendableSpline",
+    "description": ""
+  },
+  "CHAL": {
+    "icon": "",
+    "type": "CHAL",
+    "category": "Miscellaneous",
+    "name": "Challenge",
+    "description": ""
+  },
+  "COLL": {
+    "icon": "CK-Object-COLL.png",
+    "type": "COLL",
+    "category": "Miscellaneous",
+    "name": "Collision Layer",
+    "description": ""
+  },
+  "CLFM": {
+    "icon": "CK-Object-CLFM.png",
+    "type": "CLFM",
+    "category": "Miscellaneous",
+    "name": "ColorForm",
+    "description": ""
+  },
+  "CNDF": {
+    "icon": "",
+    "type": "CNDF",
+    "category": "Miscellaneous",
+    "name": "Condition Form",
+    "description": ""
+  },
+  "CURV": {
+    "icon": "",
+    "type": "CURV",
+    "category": "Miscellaneous",
+    "name": "Curve",
+    "description": ""
+  },
+  "CUR3": {
+    "icon": "",
+    "type": "CUR3",
+    "category": "Miscellaneous",
+    "name": "Curve3D",
+    "description": ""
+  },
+  "DMGT": {
+    "icon": "",
+    "type": "DMGT",
+    "category": "Miscellaneous",
+    "name": "Damage Type",
+    "description": ""
+  },
+  "DFOB": {
+    "icon": "CK-Object-DFOB.png",
+    "type": "DFOB",
+    "category": "Miscellaneous",
+    "name": "DefaultObject",
+    "description": ""
+  },
+  "FXPD": {
+    "icon": "",
+    "type": "FXPD",
+    "category": "Miscellaneous",
+    "name": "Facial Expression Data",
+    "description": ""
+  },
+  "FFKW": {
+    "icon": "",
+    "type": "FFKW",
+    "category": "Miscellaneous",
+    "name": "Form Folder Keyword List",
+    "description": ""
+  },
+  "FLST": {
+    "icon": "CK-Object-FLST.png",
+    "type": "FLST",
+    "category": "Miscellaneous",
+    "name": "FormList",
+    "description": ""
+  },
+  "GPOF": {
+    "icon": "",
+    "type": "GPOF",
+    "category": "Miscellaneous",
+    "name": "Gameplay Option",
+    "description": "Custom gameplay options accesible in-game from the Settings menu."
+  },
+  "GPOG": {
+    "icon": "",
+    "type": "GPOG",
+    "category": "Miscellaneous",
+    "name": "Gameplay Option Group",
+    "description": "Grouping for custom gameplay options."
+  },
+  "GLOB": {
+    "icon": "CK-Object-GLOB.png",
+    "type": "GLOB",
+    "category": "Miscellaneous",
+    "name": "Global",
+    "description": ""
+  },
+  "IDLM": {
+    "icon": "CK-Object-IDLM.png",
+    "type": "IDLM",
+    "category": "Miscellaneous",
+    "name": "IdleMarker",
+    "description": ""
+  },
+  "INNR": {
+    "icon": "",
+    "type": "INNR",
+    "category": "Miscellaneous",
+    "name": "Instance Naming Rules",
+    "description": ""
+  },
+  "KYWD": {
+    "icon": "CK-Object-KYWD.png",
+    "type": "KYWD",
+    "category": "Miscellaneous",
+    "name": "Keyword",
+    "description": ""
+  },
+  "LAYR": {
+    "icon": "CK-Object-LAYR.png",
+    "type": "LAYR",
+    "category": "Miscellaneous",
+    "name": "Layer",
+    "description": ""
+  },
+  "LMSW": {
+    "icon": "",
+    "type": "LMSW",
+    "category": "Miscellaneous",
+    "name": "Layered Material Swap",
+    "description": ""
+  },
+  "LVSC": {
+    "icon": "",
+    "type": "LVSC",
+    "category": "Miscellaneous",
+    "name": "Leveled Space Cell",
+    "description": ""
+  },
+  "LVLP": {
+    "icon": "CK-Object-LVLP.png",
+    "type": "LVLP",
+    "category": "Miscellaneous",
+    "name": "LeveledPackIn",
+    "description": ""
+  },
+  "LSCR": {
+    "icon": "CK-Object-LSCR.png",
+    "type": "LSCR",
+    "category": "Miscellaneous",
+    "name": "LoadScreen",
+    "description": ""
+  },
+  "MTPT": {
+    "icon": "",
+    "type": "MTPT",
+    "category": "Miscellaneous",
+    "name": "Material Path",
+    "description": ""
+  },
+  "MESG": {
+    "icon": "CK-Object-MESG.png",
+    "type": "MESG",
+    "category": "Miscellaneous",
+    "name": "Message",
+    "description": ""
+  },
+  "PMFT": {
+    "icon": "",
+    "type": "PMFT",
+    "category": "Miscellaneous",
+    "name": "Photo Mode Feature",
+    "description": ""
+  },
+  "SDLT": {
+    "icon": "",
+    "type": "SDLT",
+    "category": "Miscellaneous",
+    "name": "Secondary Damage List",
+    "description": ""
+  },
+  "STBH": {
+    "icon": "",
+    "type": "STBH",
+    "category": "Miscellaneous",
+    "name": "Snap Behavior",
+    "description": ""
+  },
+  "STMP": {
+    "icon": "",
+    "type": "STMP",
+    "category": "Miscellaneous",
+    "name": "SnapTemplate",
+    "description": ""
+  },
+  "STND": {
+    "icon": "",
+    "type": "STND",
+    "category": "Miscellaneous",
+    "name": "SnapTemplateNode",
+    "description": ""
+  },
+  "TXST": {
+    "icon": "CK-Object-TXST.png",
+    "type": "TXST",
+    "category": "Miscellaneous",
+    "name": "TextureSet",
+    "description": ""
+  },
+  "TRNS": {
+    "icon": "",
+    "type": "TRNS",
+    "category": "Miscellaneous",
+    "name": "Transform",
+    "description": ""
+  },
+  "TRAV": {
+    "icon": "",
+    "type": "TRAV",
+    "category": "Miscellaneous",
+    "name": "Traversal",
+    "description": ""
+  },
+  "ADDN": {
+    "icon": "CK-Object-ADDN.png",
+    "type": "ADDN",
+    "category": "SpecialEffect",
+    "name": "AddOnNode",
+    "description": ""
+  },
+  "ARTO": {
+    "icon": "CK-Object-ARTO.png",
+    "type": "ARTO",
+    "category": "SpecialEffect",
+    "name": "Art Object",
+    "description": ""
+  },
+  "CAMS": {
+    "icon": "CK-Object-CAMS.png",
+    "type": "CAMS",
+    "category": "SpecialEffect",
+    "name": "CameraShot",
+    "description": ""
+  },
+  "DEBR": {
+    "icon": "CK-Object-DEBR.png",
+    "type": "DEBR",
+    "category": "SpecialEffect",
+    "name": "Debris",
+    "description": ""
+  },
+  "EFSQ": {
+    "icon": "",
+    "type": "EFSQ",
+    "category": "SpecialEffect",
+    "name": "Effect Sequence",
+    "description": ""
+  },
+  "EFSH": {
+    "icon": "CK-Object-EFSH.png",
+    "type": "EFSH",
+    "category": "SpecialEffect",
+    "name": "EffectShader",
+    "description": ""
+  },
+  "EXPL": {
+    "icon": "CK-Object-EXPL.png",
+    "type": "EXPL",
+    "category": "SpecialEffect",
+    "name": "Explosion",
+    "description": ""
+  },
+  "FSTP": {
+    "icon": "CK-Object-FSTP.png",
+    "type": "FSTP",
+    "category": "SpecialEffect",
+    "name": "Footstep",
+    "description": ""
+  },
+  "FSTS": {
+    "icon": "CK-Object-FSTS.png",
+    "type": "FSTS",
+    "category": "SpecialEffect",
+    "name": "Footstep Set",
+    "description": ""
+  },
+  "FORC": {
+    "icon": "",
+    "type": "FORC",
+    "category": "SpecialEffect",
+    "name": "Force Data",
+    "description": ""
+  },
+  "HAZD": {
+    "icon": "CK-Object-HAZD.png",
+    "type": "HAZD",
+    "category": "SpecialEffect",
+    "name": "Hazard",
+    "description": ""
+  },
+  "IMGS": {
+    "icon": "CK-Object-IMGS.png",
+    "type": "IMGS",
+    "category": "SpecialEffect",
+    "name": "Imagespace",
+    "description": ""
+  },
+  "IMAD": {
+    "icon": "CK-Object-IMAD.png",
+    "type": "IMAD",
+    "category": "SpecialEffect",
+    "name": "Imagespace Modifier",
+    "description": ""
+  },
+  "IPCT": {
+    "icon": "CK-Object-IPCT.png",
+    "type": "IPCT",
+    "category": "SpecialEffect",
+    "name": "ImpactData",
+    "description": ""
+  },
+  "IPDS": {
+    "icon": "CK-Object-IPDS.png",
+    "type": "IPDS",
+    "category": "SpecialEffect",
+    "name": "ImpactDataSet",
+    "description": ""
+  },
+  "LENS": {
+    "icon": "",
+    "type": "LENS",
+    "category": "SpecialEffect",
+    "name": "LensFlare",
+    "description": ""
+  },
+  "MATT": {
+    "icon": "CK-Object-MATT.png",
+    "type": "MATT",
+    "category": "SpecialEffect",
+    "name": "Material Type",
+    "description": ""
+  },
+  "PSDC": {
+    "icon": "",
+    "type": "PSDC",
+    "category": "SpecialEffect",
+    "name": "Particle System Define Collection",
+    "description": ""
+  },
+  "PROJ": {
+    "icon": "CK-Object-PROJ.png",
+    "type": "PROJ",
+    "category": "SpecialEffect",
+    "name": "Projectile",
+    "description": ""
+  },
+  "SPGD": {
+    "icon": "CK-Object-SPGD.png",
+    "type": "SPGD",
+    "category": "SpecialEffect",
+    "name": "Shader Particle Geometry",
+    "description": ""
+  },
+  "VOLI": {
+    "icon": "",
+    "type": "VOLI",
+    "category": "SpecialEffect",
+    "name": "VolumetricLighting",
+    "description": ""
+  },
+  "ATMO": {
+    "icon": "",
+    "type": "ATMO",
+    "category": "WorldData",
+    "name": "Atmosphere",
+    "description": ""
+  },
+  "BIOM": {
+    "icon": "",
+    "type": "BIOM",
+    "category": "WorldData",
+    "name": "Biome",
+    "description": ""
+  },
+  "SFBK": {
+    "icon": "",
+    "type": "SFBK",
+    "category": "WorldData",
+    "name": "Block",
+    "description": ""
+  },
+  "CLMT": {
+    "icon": "CK-Object-CLMT.png",
+    "type": "CLMT",
+    "category": "WorldData",
+    "name": "Climate",
+    "description": ""
+  },
+  "CLDF": {
+    "icon": "",
+    "type": "CLDF",
+    "category": "WorldData",
+    "name": "Clouds",
+    "description": ""
+  },
+  "FOGV": {
+    "icon": "",
+    "type": "FOGV",
+    "category": "WorldData",
+    "name": "Fog Volumes",
+    "description": ""
+  },
+  "GCVR": {
+    "icon": "",
+    "type": "GCVR",
+    "category": "WorldData",
+    "name": "GroundCover",
+    "description": ""
+  },
+  "LTEX": {
+    "icon": "CK-Object-LTEX.png",
+    "type": "LTEX",
+    "category": "WorldData",
+    "name": "LandTexture",
+    "description": ""
+  },
+  "LGTM": {
+    "icon": "CK-Object-LGTM.png",
+    "type": "LGTM",
+    "category": "WorldData",
+    "name": "Lighting Template",
+    "description": ""
+  },
+  "LCTN": {
+    "icon": "CK-Object-LCTN.png",
+    "type": "LCTN",
+    "category": "WorldData",
+    "name": "Location",
+    "description": ""
+  },
+  "LCRT": {
+    "icon": "CK-Object-LCRT.png",
+    "type": "LCRT",
+    "category": "WorldData",
+    "name": "Location Ref Type",
+    "description": ""
+  },
+  "OSWP": {
+    "icon": "",
+    "type": "OSWP",
+    "category": "WorldData",
+    "name": "Object Swap",
+    "description": ""
+  },
+  "SFPT": {
+    "icon": "",
+    "type": "SFPT",
+    "category": "WorldData",
+    "name": "Pattern",
+    "description": ""
+  },
+  "SFPC": {
+    "icon": "",
+    "type": "SFPC",
+    "category": "WorldData",
+    "name": "PatternConfig",
+    "description": ""
+  },
+  "PTST": {
+    "icon": "",
+    "type": "PTST",
+    "category": "WorldData",
+    "name": "PatternStyle",
+    "description": ""
+  },
+  "PNDT": {
+    "icon": "",
+    "type": "PNDT",
+    "category": "WorldData",
+    "name": "Planet",
+    "description": ""
+  },
+  "PCMT": {
+    "icon": "",
+    "type": "PCMT",
+    "category": "WorldData",
+    "name": "Planet Content Manager Tree",
+    "description": ""
+  },
+  "IRES": {
+    "icon": "",
+    "type": "IRES",
+    "category": "WorldData",
+    "name": "Resource",
+    "description": ""
+  },
+  "RSGD": {
+    "icon": "",
+    "type": "RSGD",
+    "category": "WorldData",
+    "name": "Resource Generation Data",
+    "description": ""
+  },
+  "STDT": {
+    "icon": "",
+    "type": "STDT",
+    "category": "WorldData",
+    "name": "Star",
+    "description": ""
+  },
+  "SUNP": {
+    "icon": "",
+    "type": "SUNP",
+    "category": "WorldData",
+    "name": "Sun Preset",
+    "description": ""
+  },
+  "SFTR": {
+    "icon": "",
+    "type": "SFTR",
+    "category": "WorldData",
+    "name": "Surface Tree",
+    "description": ""
+  },
+  "TMLM": {
+    "icon": "",
+    "type": "TMLM",
+    "category": "WorldData",
+    "name": "TerminalMenu",
+    "description": ""
+  },
+  "TODD": {
+    "icon": "",
+    "type": "TODD",
+    "category": "WorldData",
+    "name": "Time Of Day",
+    "description": ""
+  },
+  "WATR": {
+    "icon": "CK-Object-WATR.png",
+    "type": "WATR",
+    "category": "WorldData",
+    "name": "WaterType",
+    "description": ""
+  },
+  "WTHS": {
+    "icon": "",
+    "type": "WTHS",
+    "category": "WorldData",
+    "name": "Weather",
+    "description": ""
+  },
+  "WTHR": {
+    "icon": "CK-Object-WTHR.png",
+    "type": "WTHR",
+    "category": "WorldData",
+    "name": "zDeprecated Weather",
+    "description": ""
+  },
+  "ACTI": {
+    "icon": "CK-Object-ACTI.png",
+    "type": "ACTI",
+    "category": "WorldObjects",
+    "name": "Activator",
+    "description": ""
+  },
+  "BMMO": {
+    "icon": "",
+    "type": "BMMO",
+    "category": "WorldObjects",
+    "name": "Biome Marker Object",
+    "description": ""
+  },
+  "CONT": {
+    "icon": "CK-Object-CONT.png",
+    "type": "CONT",
+    "category": "WorldObjects",
+    "name": "Container",
+    "description": ""
+  },
+  "DOOR": {
+    "icon": "CK-Object-DOOR.png",
+    "type": "DOOR",
+    "category": "WorldObjects",
+    "name": "Door",
+    "description": ""
+  },
+  "FLOR": {
+    "icon": "CK-Object-FLOR.png",
+    "type": "FLOR",
+    "category": "WorldObjects",
+    "name": "Flora",
+    "description": ""
+  },
+  "FURN": {
+    "icon": "CK-Object-FURN.png",
+    "type": "FURN",
+    "category": "WorldObjects",
+    "name": "Furniture",
+    "description": ""
+  },
+  "GRAS": {
+    "icon": "CK-Object-GRAS.png",
+    "type": "GRAS",
+    "category": "WorldObjects",
+    "name": "Grass",
+    "description": ""
+  },
+  "LIGH": {
+    "icon": "CK-Object-LIGH.png",
+    "type": "LIGH",
+    "category": "WorldObjects",
+    "name": "Light",
+    "description": ""
+  },
+  "MSTT": {
+    "icon": "CK-Object-MSTT.png",
+    "type": "MSTT",
+    "category": "WorldObjects",
+    "name": "MovableStatic",
+    "description": ""
+  },
+  "PKIN": {
+    "icon": "CK-Object-PKIN.png",
+    "type": "PKIN",
+    "category": "WorldObjects",
+    "name": "PackIn",
+    "description": ""
+  },
+  "PDCL": {
+    "icon": "",
+    "type": "PDCL",
+    "category": "WorldObjects",
+    "name": "Projected Decal",
+    "description": ""
+  },
+  "STAT": {
+    "icon": "CK-Object-STAT.png",
+    "type": "STAT",
+    "category": "WorldObjects",
+    "name": "Static",
+    "description": ""
+  },
+  "SCOL": {
+    "icon": "CK-Object-SCOL.png",
+    "type": "SCOL",
+    "category": "WorldObjects",
+    "name": "Static Collection",
+    "description": ""
+  },
+  "TERM": {
+    "icon": "",
+    "type": "TERM",
+    "category": "WorldObjects",
+    "name": "Terminal",
+    "description": ""
+  },
+  "WRLD": {
+    "icon": "",
+    "type": "WRLD",
+    "category": "WorldObjects",
+    "name": "WorldSpace",
+    "description": ""
+  }
+}

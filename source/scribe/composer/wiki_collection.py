@@ -1,8 +1,8 @@
 from typing import override
 from sharp.collections import KeyedCollection
-from scribe.publisher.article import Article
 from wiki.data.namespaces import Namespace
 from wiki.data.title import Title
+from .article import Article
 
 class NamespaceCollection(KeyedCollection[str, Namespace]):
 
