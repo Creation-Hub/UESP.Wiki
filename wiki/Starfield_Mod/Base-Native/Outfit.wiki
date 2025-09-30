@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Outfit
+| name = [[SFM:Script-Outfit|Outfit]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Outfit.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Outfit Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Outfit.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Outfit.psc</code> source file.
+
+
+

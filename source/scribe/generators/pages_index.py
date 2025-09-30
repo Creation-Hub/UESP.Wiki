@@ -4,11 +4,11 @@ Generates a MediaWiki page that summarizes information about all Papyrus project
 import logging
 from collections import Counter
 from collections.abc import ItemsView
-from sharp.collections import KeyedCollection
-from papyrus.client import PapyrusClient
 from papyrus.project import PapyrusProject
 from wiki.data.section import SectionLevel
-from scribe.publisher.configuration import PublishPapyrus
+from scribe.assets.papyrus import PapyrusPackage, PapyrusTarget
+from scribe.services.composer import ComposerService
+from scribe.services.papyrus import PapyrusService
 from scribe.composer.article import Article
 from scribe.composer.builder import ArticleBuilder
 from scribe.composer.wiki import Wiki
@@ -23,23 +23,26 @@ class PageIndex:
 
 
     @staticmethod
-    def create(wiki:Wiki, jobs:KeyedCollection[str, PublishPapyrus], papyrus:PapyrusClient) -> Article:
-        builder:ArticleBuilder = ArticleBuilder(wiki)
-        builder.title(PageIndex.PAGE_NAME, Wiki.NAMESPACE_MODDING)
-        builder.category(Wiki.CATEGORY_PAPYRUS.name)
+    def create(papyrus:PapyrusService, composer:ComposerService) -> Article:
+        builder:ArticleBuilder = ArticleBuilder(composer)
+        builder.title(PageIndex.PAGE_NAME, Wiki.SFM_NAMESPACE)
+        builder.category(Wiki.PAPYRUS_CATEGORY)
         builder.line("This page lists all Papyrus project information for each import.\n")
         builder.line("\n\n")
 
-        # Write each project wiki section.
-        for identifier in papyrus.projects:
-            job:PublishPapyrus = jobs[identifier]
-            if not job.publish.enable:
-                logging.info(f"[{identifier}] has disabled publishing. Skipping wiki index summary for this project.")
-                continue
+        for package_key in papyrus.packages:
+            package:PapyrusPackage = papyrus.packages[package_key]
 
-            project:PapyrusProject = papyrus.projects[identifier]
-            PageIndex.project(builder, project)
-            builder.line("\n\n")
+            # Write each project wiki section.
+            for key in package.targets:
+                target:PapyrusTarget = package.targets[key]
+                if not target.publish.enable:
+                    logging.info(f"[{target.identifier}] has disabled publishing. Skipping wiki index summary for this project.")
+                    continue
+
+                project:PapyrusProject = papyrus.client.projects[target.identifier]
+                PageIndex.project(builder, project)
+                builder.line("\n\n")
 
         return builder.build()
 

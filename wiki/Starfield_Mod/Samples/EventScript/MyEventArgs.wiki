@@ -1,0 +1,13 @@
+{{Script_Member_Summary
+| title = MyEventArgs
+| script = [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+| name = [[SFM:Script-Samples:EventScript/MyEventArgs|MyEventArgs]]
+| kind = Struct
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+

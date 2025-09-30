@@ -1,0 +1,1928 @@
+{
+    "articles": {
+        "User:Scrivener07": {
+            "name": "Scrivener07",
+            "namespace": "User",
+            "content": "wiki\\User\\Scrivener07.wiki"
+        },
+        "User:Scribe-Bot": {
+            "name": "Scribe-Bot",
+            "namespace": "User",
+            "content": "wiki\\User\\Scribe-Bot.wiki"
+        },
+        "Category:Papyrus_Documentation_Automated": {
+            "name": "Papyrus_Documentation_Automated",
+            "namespace": "Category",
+            "content": "wiki\\Category\\Papyrus_Documentation_Automated.wiki"
+        },
+        "Category:Starfield_Mod": {
+            "name": "Starfield_Mod",
+            "namespace": "Category",
+            "content": "wiki\\Category\\Starfield_Mod.wiki"
+        },
+        "Category:Starfield_Mod-Papyrus": {
+            "name": "Starfield_Mod-Papyrus",
+            "namespace": "Category",
+            "categories": [
+                "Starfield_Mod"
+            ]
+        },
+        "Category:Starfield_Mod-Scripts": {
+            "name": "Starfield_Mod-Scripts",
+            "namespace": "Category",
+            "categories": [
+                "Starfield_Mod"
+            ]
+        },
+        "Template:Script_Object_Summary": {
+            "name": "Script_Object_Summary",
+            "namespace": "Template",
+            "categories": [
+                "Infobox_Templates"
+            ]
+        },
+        "Category:Starfield": {
+            "name": "Starfield",
+            "namespace": "Category"
+        },
+        "Starfield_Mod:Starfield": {
+            "name": "Starfield",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Starfield.wiki",
+            "categories": [
+                "Starfield"
+            ]
+        },
+        "Category:Creation_Kit": {
+            "name": "Creation_Kit",
+            "namespace": "Category"
+        },
+        "Starfield_Mod:Creation_Kit": {
+            "name": "Creation_Kit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Creation_Kit.wiki",
+            "categories": [
+                "Creation_Kit"
+            ]
+        },
+        "Starfield_Mod:Base-Native:Action": {
+            "name": "Base-Native:Action",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Action.wiki"
+        },
+        "Starfield_Mod:Base-Native:Activator": {
+            "name": "Base-Native:Activator",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Activator.wiki"
+        },
+        "Starfield_Mod:Base-Native:ActiveMagicEffect": {
+            "name": "Base-Native:ActiveMagicEffect",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ActiveMagicEffect.wiki"
+        },
+        "Starfield_Mod:Base-Native:Actor": {
+            "name": "Base-Native:Actor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Actor.wiki"
+        },
+        "Starfield_Mod:Base-Native:ActorBase": {
+            "name": "Base-Native:ActorBase",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ActorBase.wiki"
+        },
+        "Starfield_Mod:Base-Native:ActorValue": {
+            "name": "Base-Native:ActorValue",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ActorValue.wiki"
+        },
+        "Starfield_Mod:Base-Native:AffinityEvent": {
+            "name": "Base-Native:AffinityEvent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\AffinityEvent.wiki"
+        },
+        "Starfield_Mod:Base-Native:Alias": {
+            "name": "Base-Native:Alias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Alias.wiki"
+        },
+        "Starfield_Mod:Base-Native:Ammo": {
+            "name": "Base-Native:Ammo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Ammo.wiki"
+        },
+        "Starfield_Mod:Base-Native:Armor": {
+            "name": "Base-Native:Armor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Armor.wiki"
+        },
+        "Starfield_Mod:Base-Native:AssociationType": {
+            "name": "Base-Native:AssociationType",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\AssociationType.wiki"
+        },
+        "Starfield_Mod:Base-Native:Book": {
+            "name": "Base-Native:Book",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Book.wiki"
+        },
+        "Starfield_Mod:Base-Native:CameraShot": {
+            "name": "Base-Native:CameraShot",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\CameraShot.wiki"
+        },
+        "Starfield_Mod:Base-Native:Cell": {
+            "name": "Base-Native:Cell",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Cell.wiki"
+        },
+        "Starfield_Mod:Base-Native:Challenge": {
+            "name": "Base-Native:Challenge",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Challenge.wiki"
+        },
+        "Starfield_Mod:Base-Native:Class": {
+            "name": "Base-Native:Class",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Class.wiki"
+        },
+        "Starfield_Mod:Base-Native:CombatStyle": {
+            "name": "Base-Native:CombatStyle",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\CombatStyle.wiki"
+        },
+        "Starfield_Mod:Base-Native:ConditionForm": {
+            "name": "Base-Native:ConditionForm",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ConditionForm.wiki"
+        },
+        "Starfield_Mod:Base-Native:ConstructibleObject": {
+            "name": "Base-Native:ConstructibleObject",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ConstructibleObject.wiki"
+        },
+        "Starfield_Mod:Base-Native:Container": {
+            "name": "Base-Native:Container",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Container.wiki"
+        },
+        "Starfield_Mod:Base-Native:Curve": {
+            "name": "Base-Native:Curve",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Curve.wiki"
+        },
+        "Starfield_Mod:Base-Native:Debug": {
+            "name": "Base-Native:Debug",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Debug.wiki"
+        },
+        "Starfield_Mod:Base-Native:Door": {
+            "name": "Base-Native:Door",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Door.wiki"
+        },
+        "Starfield_Mod:Base-Native:EffectShader": {
+            "name": "Base-Native:EffectShader",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\EffectShader.wiki"
+        },
+        "Starfield_Mod:Base-Native:Enchantment": {
+            "name": "Base-Native:Enchantment",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Enchantment.wiki"
+        },
+        "Starfield_Mod:Base-Native:Explosion": {
+            "name": "Base-Native:Explosion",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Explosion.wiki"
+        },
+        "Starfield_Mod:Base-Native:Faction": {
+            "name": "Base-Native:Faction",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Faction.wiki"
+        },
+        "Starfield_Mod:Base-Native:Flora": {
+            "name": "Base-Native:Flora",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Flora.wiki"
+        },
+        "Starfield_Mod:Base-Native:Form": {
+            "name": "Base-Native:Form",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Form.wiki"
+        },
+        "Starfield_Mod:Base-Native:FormList": {
+            "name": "Base-Native:FormList",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\FormList.wiki"
+        },
+        "Starfield_Mod:Base-Native:Furniture": {
+            "name": "Base-Native:Furniture",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Furniture.wiki"
+        },
+        "Starfield_Mod:Base-Native:Game": {
+            "name": "Base-Native:Game",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Game.wiki"
+        },
+        "Starfield_Mod:Base-Native:GameplayOption": {
+            "name": "Base-Native:GameplayOption",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\GameplayOption.wiki"
+        },
+        "Starfield_Mod:Base-Native:GlobalVariable": {
+            "name": "Base-Native:GlobalVariable",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\GlobalVariable.wiki"
+        },
+        "Starfield_Mod:Base-Native:Hazard": {
+            "name": "Base-Native:Hazard",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Hazard.wiki"
+        },
+        "Starfield_Mod:Base-Native:HeadPart": {
+            "name": "Base-Native:HeadPart",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\HeadPart.wiki"
+        },
+        "Starfield_Mod:Base-Native:Idle": {
+            "name": "Base-Native:Idle",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Idle.wiki"
+        },
+        "Starfield_Mod:Base-Native:IdleMarker": {
+            "name": "Base-Native:IdleMarker",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\IdleMarker.wiki"
+        },
+        "Starfield_Mod:Base-Native:ImageSpaceModifier": {
+            "name": "Base-Native:ImageSpaceModifier",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ImageSpaceModifier.wiki"
+        },
+        "Starfield_Mod:Base-Native:ImpactDataSet": {
+            "name": "Base-Native:ImpactDataSet",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ImpactDataSet.wiki"
+        },
+        "Starfield_Mod:Base-Native:Ingredient": {
+            "name": "Base-Native:Ingredient",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Ingredient.wiki"
+        },
+        "Starfield_Mod:Base-Native:InputEnableLayer": {
+            "name": "Base-Native:InputEnableLayer",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\InputEnableLayer.wiki"
+        },
+        "Starfield_Mod:Base-Native:InstanceNamingRules": {
+            "name": "Base-Native:InstanceNamingRules",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\InstanceNamingRules.wiki"
+        },
+        "Starfield_Mod:Base-Native:Key": {
+            "name": "Base-Native:Key",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Key.wiki"
+        },
+        "Starfield_Mod:Base-Native:Keyword": {
+            "name": "Base-Native:Keyword",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Keyword.wiki"
+        },
+        "Starfield_Mod:Base-Native:LegendaryItem": {
+            "name": "Base-Native:LegendaryItem",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LegendaryItem.wiki"
+        },
+        "Starfield_Mod:Base-Native:LeveledActor": {
+            "name": "Base-Native:LeveledActor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LeveledActor.wiki"
+        },
+        "Starfield_Mod:Base-Native:LeveledItem": {
+            "name": "Base-Native:LeveledItem",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LeveledItem.wiki"
+        },
+        "Starfield_Mod:Base-Native:LeveledSpaceshipBase": {
+            "name": "Base-Native:LeveledSpaceshipBase",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LeveledSpaceshipBase.wiki"
+        },
+        "Starfield_Mod:Base-Native:LeveledSpell": {
+            "name": "Base-Native:LeveledSpell",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LeveledSpell.wiki"
+        },
+        "Starfield_Mod:Base-Native:Light": {
+            "name": "Base-Native:Light",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Light.wiki"
+        },
+        "Starfield_Mod:Base-Native:Location": {
+            "name": "Base-Native:Location",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Location.wiki"
+        },
+        "Starfield_Mod:Base-Native:LocationAlias": {
+            "name": "Base-Native:LocationAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LocationAlias.wiki"
+        },
+        "Starfield_Mod:Base-Native:LocationRefType": {
+            "name": "Base-Native:LocationRefType",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\LocationRefType.wiki"
+        },
+        "Starfield_Mod:Base-Native:MagicEffect": {
+            "name": "Base-Native:MagicEffect",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\MagicEffect.wiki"
+        },
+        "Starfield_Mod:Base-Native:Math": {
+            "name": "Base-Native:Math",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Math.wiki"
+        },
+        "Starfield_Mod:Base-Native:Message": {
+            "name": "Base-Native:Message",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Message.wiki"
+        },
+        "Starfield_Mod:Base-Native:MiscObject": {
+            "name": "Base-Native:MiscObject",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\MiscObject.wiki"
+        },
+        "Starfield_Mod:Base-Native:MovableStatic": {
+            "name": "Base-Native:MovableStatic",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\MovableStatic.wiki"
+        },
+        "Starfield_Mod:Base-Native:MusicType": {
+            "name": "Base-Native:MusicType",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\MusicType.wiki"
+        },
+        "Starfield_Mod:Base-Native:Note": {
+            "name": "Base-Native:Note",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Note.wiki"
+        },
+        "Starfield_Mod:Base-Native:ObjectMod": {
+            "name": "Base-Native:ObjectMod",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ObjectMod.wiki"
+        },
+        "Starfield_Mod:Base-Native:ObjectReference": {
+            "name": "Base-Native:ObjectReference",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ObjectReference.wiki"
+        },
+        "Starfield_Mod:Base-Native:Outfit": {
+            "name": "Base-Native:Outfit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Outfit.wiki"
+        },
+        "Starfield_Mod:Base-Native:Package": {
+            "name": "Base-Native:Package",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Package.wiki"
+        },
+        "Starfield_Mod:Base-Native:PackIn": {
+            "name": "Base-Native:PackIn",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\PackIn.wiki"
+        },
+        "Starfield_Mod:Base-Native:Perk": {
+            "name": "Base-Native:Perk",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Perk.wiki"
+        },
+        "Starfield_Mod:Base-Native:Planet": {
+            "name": "Base-Native:Planet",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Planet.wiki"
+        },
+        "Starfield_Mod:Base-Native:Potion": {
+            "name": "Base-Native:Potion",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Potion.wiki"
+        },
+        "Starfield_Mod:Base-Native:Projectile": {
+            "name": "Base-Native:Projectile",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Projectile.wiki"
+        },
+        "Starfield_Mod:Base-Native:Quest": {
+            "name": "Base-Native:Quest",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Quest.wiki"
+        },
+        "Starfield_Mod:Base-Native:Race": {
+            "name": "Base-Native:Race",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Race.wiki"
+        },
+        "Starfield_Mod:Base-Native:RefCollectionAlias": {
+            "name": "Base-Native:RefCollectionAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\RefCollectionAlias.wiki"
+        },
+        "Starfield_Mod:Base-Native:ReferenceAlias": {
+            "name": "Base-Native:ReferenceAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ReferenceAlias.wiki"
+        },
+        "Starfield_Mod:Base-Native:ResearchProject": {
+            "name": "Base-Native:ResearchProject",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ResearchProject.wiki"
+        },
+        "Starfield_Mod:Base-Native:Resource": {
+            "name": "Base-Native:Resource",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Resource.wiki"
+        },
+        "Starfield_Mod:Base-Native:Scene": {
+            "name": "Base-Native:Scene",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Scene.wiki"
+        },
+        "Starfield_Mod:Base-Native:ScriptObject": {
+            "name": "Base-Native:ScriptObject",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ScriptObject.wiki"
+        },
+        "Starfield_Mod:Base-Native:Scroll": {
+            "name": "Base-Native:Scroll",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Scroll.wiki"
+        },
+        "Starfield_Mod:Base-Native:ShaderParticleGeometry": {
+            "name": "Base-Native:ShaderParticleGeometry",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\ShaderParticleGeometry.wiki"
+        },
+        "Starfield_Mod:Base-Native:Shout": {
+            "name": "Base-Native:Shout",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Shout.wiki"
+        },
+        "Starfield_Mod:Base-Native:SoulGem": {
+            "name": "Base-Native:SoulGem",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\SoulGem.wiki"
+        },
+        "Starfield_Mod:Base-Native:SpaceshipBase": {
+            "name": "Base-Native:SpaceshipBase",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\SpaceshipBase.wiki"
+        },
+        "Starfield_Mod:Base-Native:SpaceshipReference": {
+            "name": "Base-Native:SpaceshipReference",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\SpaceshipReference.wiki"
+        },
+        "Starfield_Mod:Base-Native:SpeechChallengeObject": {
+            "name": "Base-Native:SpeechChallengeObject",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\SpeechChallengeObject.wiki"
+        },
+        "Starfield_Mod:Base-Native:Spell": {
+            "name": "Base-Native:Spell",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Spell.wiki"
+        },
+        "Starfield_Mod:Base-Native:Static": {
+            "name": "Base-Native:Static",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Static.wiki"
+        },
+        "Starfield_Mod:Base-Native:TalkingActivator": {
+            "name": "Base-Native:TalkingActivator",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\TalkingActivator.wiki"
+        },
+        "Starfield_Mod:Base-Native:Terminal": {
+            "name": "Base-Native:Terminal",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Terminal.wiki"
+        },
+        "Starfield_Mod:Base-Native:TerminalMenu": {
+            "name": "Base-Native:TerminalMenu",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\TerminalMenu.wiki"
+        },
+        "Starfield_Mod:Base-Native:TextureSet": {
+            "name": "Base-Native:TextureSet",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\TextureSet.wiki"
+        },
+        "Starfield_Mod:Base-Native:Topic": {
+            "name": "Base-Native:Topic",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Topic.wiki"
+        },
+        "Starfield_Mod:Base-Native:TopicInfo": {
+            "name": "Base-Native:TopicInfo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\TopicInfo.wiki"
+        },
+        "Starfield_Mod:Base-Native:Utility": {
+            "name": "Base-Native:Utility",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Utility.wiki"
+        },
+        "Starfield_Mod:Base-Native:VisualEffect": {
+            "name": "Base-Native:VisualEffect",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\VisualEffect.wiki"
+        },
+        "Starfield_Mod:Base-Native:VoiceType": {
+            "name": "Base-Native:VoiceType",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\VoiceType.wiki"
+        },
+        "Starfield_Mod:Base-Native:Weapon": {
+            "name": "Base-Native:Weapon",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Weapon.wiki"
+        },
+        "Starfield_Mod:Base-Native:Weather": {
+            "name": "Base-Native:Weather",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\Weather.wiki"
+        },
+        "Starfield_Mod:Base-Native:WordOfPower": {
+            "name": "Base-Native:WordOfPower",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\WordOfPower.wiki"
+        },
+        "Starfield_Mod:Base-Native:WorldSpace": {
+            "name": "Base-Native:WorldSpace",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\WorldSpace.wiki"
+        },
+        "Starfield_Mod:Base-Native:WwiseEvent": {
+            "name": "Base-Native:WwiseEvent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Native\\WwiseEvent.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultActor": {
+            "name": "Base-Shared-Default:DefaultActor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultActor.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultActorParent": {
+            "name": "Base-Shared-Default:DefaultActorParent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultActorParent.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultAlias": {
+            "name": "Base-Shared-Default:DefaultAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultAlias.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultAliasOnLocationChange": {
+            "name": "Base-Shared-Default:DefaultAliasOnLocationChange",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultAliasOnLocationChange.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultAliasParent": {
+            "name": "Base-Shared-Default:DefaultAliasParent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultAliasParent.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultCollectionAlias": {
+            "name": "Base-Shared-Default:DefaultCollectionAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultCollectionAlias.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultCollectionAliasParent": {
+            "name": "Base-Shared-Default:DefaultCollectionAliasParent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultCollectionAliasParent.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultQuest": {
+            "name": "Base-Shared-Default:DefaultQuest",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultQuest.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultRef": {
+            "name": "Base-Shared-Default:DefaultRef",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultRef.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultRefParent": {
+            "name": "Base-Shared-Default:DefaultRefParent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultRefParent.wiki"
+        },
+        "Starfield_Mod:Base-Shared-Default:DefaultTopicInfo": {
+            "name": "Base-Shared-Default:DefaultTopicInfo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Shared-Default\\DefaultTopicInfo.wiki"
+        },
+        "Starfield_Mod:Base-Default:AkilaLife07_ItemAddedScript": {
+            "name": "Base-Default:AkilaLife07_ItemAddedScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\AkilaLife07_ItemAddedScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DebugStopAllScenesQuestScript": {
+            "name": "Base-Default:DebugStopAllScenesQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DebugStopAllScenesQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateLinkedRefOnActivate": {
+            "name": "Base-Default:DefaultActivateLinkedRefOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateLinkedRefOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateLinkedRefOnCombat": {
+            "name": "Base-Default:DefaultActivateLinkedRefOnCombat",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateLinkedRefOnCombat.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateLinkedRefOnHit": {
+            "name": "Base-Default:DefaultActivateLinkedRefOnHit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateLinkedRefOnHit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateLinkedRefOnTrigger": {
+            "name": "Base-Default:DefaultActivateLinkedRefOnTrigger",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateLinkedRefOnTrigger.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateLinkOnUnlock": {
+            "name": "Base-Default:DefaultActivateLinkOnUnlock",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateLinkOnUnlock.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateSelf": {
+            "name": "Base-Default:DefaultActivateSelf",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateSelf.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActivateSelfOnHit": {
+            "name": "Base-Default:DefaultActivateSelfOnHit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActivateSelfOnHit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultActorSetAVOnDeath": {
+            "name": "Base-Default:DefaultActorSetAVOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultActorSetAVOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAddItemOnLoad": {
+            "name": "Base-Default:DefaultAddItemOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAddItemOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAddItemToLeveledList": {
+            "name": "Base-Default:DefaultAddItemToLeveledList",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAddItemToLeveledList.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasAddPerkOnLoad": {
+            "name": "Base-Default:DefaultAliasAddPerkOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasAddPerkOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasDisableHavokOnLoad": {
+            "name": "Base-Default:DefaultAliasDisableHavokOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasDisableHavokOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasLockOnInit": {
+            "name": "Base-Default:DefaultAliasLockOnInit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasLockOnInit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasMakeAliasRefForInventory": {
+            "name": "Base-Default:DefaultAliasMakeAliasRefForInventory",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasMakeAliasRefForInventory.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasMapMarkerScript": {
+            "name": "Base-Default:DefaultAliasMapMarkerScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasMapMarkerScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnActivate": {
+            "name": "Base-Default:DefaultAliasOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnActivateA": {
+            "name": "Base-Default:DefaultAliasOnActivateA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnActivateA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnActivateGiveItem": {
+            "name": "Base-Default:DefaultAliasOnActivateGiveItem",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnActivateGiveItem.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnActivateRemoveItems": {
+            "name": "Base-Default:DefaultAliasOnActivateRemoveItems",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnActivateRemoveItems.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnBecomePlayerShip": {
+            "name": "Base-Default:DefaultAliasOnBecomePlayerShip",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnBecomePlayerShip.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnCellLoad": {
+            "name": "Base-Default:DefaultAliasOnCellLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnCellLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnClose": {
+            "name": "Base-Default:DefaultAliasOnClose",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnClose.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnCombatStateChanged": {
+            "name": "Base-Default:DefaultAliasOnCombatStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnCombatStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnCombatStateChangedA": {
+            "name": "Base-Default:DefaultAliasOnCombatStateChangedA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnCombatStateChangedA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnContainerChangedFrom": {
+            "name": "Base-Default:DefaultAliasOnContainerChangedFrom",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnContainerChangedFrom.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnContainerChangedTo": {
+            "name": "Base-Default:DefaultAliasOnContainerChangedTo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnContainerChangedTo.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnContainerChangedToA": {
+            "name": "Base-Default:DefaultAliasOnContainerChangedToA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnContainerChangedToA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnDeath": {
+            "name": "Base-Default:DefaultAliasOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnDestroyed": {
+            "name": "Base-Default:DefaultAliasOnDestroyed",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnDestroyed.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnDestructionStateChanged": {
+            "name": "Base-Default:DefaultAliasOnDestructionStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnDestructionStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnDistanceLessThan": {
+            "name": "Base-Default:DefaultAliasOnDistanceLessThan",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnDistanceLessThan.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnEnterBleedout": {
+            "name": "Base-Default:DefaultAliasOnEnterBleedout",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnEnterBleedout.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnEquipped": {
+            "name": "Base-Default:DefaultAliasOnEquipped",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnEquipped.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnHit": {
+            "name": "Base-Default:DefaultAliasOnHit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnHit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnItemAddedScript": {
+            "name": "Base-Default:DefaultAliasOnItemAddedScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnItemAddedScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnItemAddedScriptA": {
+            "name": "Base-Default:DefaultAliasOnItemAddedScriptA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnItemAddedScriptA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnItemAddedScriptB": {
+            "name": "Base-Default:DefaultAliasOnItemAddedScriptB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnItemAddedScriptB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnItemAddedScriptC": {
+            "name": "Base-Default:DefaultAliasOnItemAddedScriptC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnItemAddedScriptC.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnItemAddedScriptD": {
+            "name": "Base-Default:DefaultAliasOnItemAddedScriptD",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnItemAddedScriptD.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnItemRemoved": {
+            "name": "Base-Default:DefaultAliasOnItemRemoved",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnItemRemoved.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnLoad": {
+            "name": "Base-Default:DefaultAliasOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultaliasonlocationchangeA": {
+            "name": "Base-Default:defaultaliasonlocationchangeA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultaliasonlocationchangeA.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultaliasonlocationchangeB": {
+            "name": "Base-Default:defaultaliasonlocationchangeB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultaliasonlocationchangeB.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultaliasonlocationchangeC": {
+            "name": "Base-Default:defaultaliasonlocationchangeC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultaliasonlocationchangeC.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultaliasonlocationchangeD": {
+            "name": "Base-Default:defaultaliasonlocationchangeD",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultaliasonlocationchangeD.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnLockStateChanged": {
+            "name": "Base-Default:DefaultAliasOnLockStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnLockStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnMenuItemRun": {
+            "name": "Base-Default:DefaultAliasOnMenuItemRun",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnMenuItemRun.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnObjectRepaired": {
+            "name": "Base-Default:DefaultAliasOnObjectRepaired",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnObjectRepaired.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnOpen": {
+            "name": "Base-Default:DefaultAliasOnOpen",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnOpen.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnRead": {
+            "name": "Base-Default:DefaultAliasOnRead",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnRead.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipDock": {
+            "name": "Base-Default:DefaultAliasOnShipDock",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipDock.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipDockA": {
+            "name": "Base-Default:DefaultAliasOnShipDockA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipDockA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipGravJump": {
+            "name": "Base-Default:DefaultAliasOnShipGravJump",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipGravJump.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipLand": {
+            "name": "Base-Default:DefaultAliasOnShipLand",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipLand.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipRefueled": {
+            "name": "Base-Default:DefaultAliasOnShipRefueled",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipRefueled.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipSystemDamaged": {
+            "name": "Base-Default:DefaultAliasOnShipSystemDamaged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipSystemDamaged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipSystemPowerChange": {
+            "name": "Base-Default:DefaultAliasOnShipSystemPowerChange",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipSystemPowerChange.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipSystemRepaired": {
+            "name": "Base-Default:DefaultAliasOnShipSystemRepaired",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipSystemRepaired.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipTakeOff": {
+            "name": "Base-Default:DefaultAliasOnShipTakeOff",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipTakeOff.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnShipUndock": {
+            "name": "Base-Default:DefaultAliasOnShipUndock",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnShipUndock.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnTriggerEnter": {
+            "name": "Base-Default:DefaultAliasOnTriggerEnter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnTriggerEnter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnTriggerEnterA": {
+            "name": "Base-Default:DefaultAliasOnTriggerEnterA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnTriggerEnterA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnTriggerEnterMultiActor": {
+            "name": "Base-Default:DefaultAliasOnTriggerEnterMultiActor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnTriggerEnterMultiActor.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnTriggerEnterMultiActorA": {
+            "name": "Base-Default:DefaultAliasOnTriggerEnterMultiActorA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnTriggerEnterMultiActorA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnTriggerLeave": {
+            "name": "Base-Default:DefaultAliasOnTriggerLeave",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnTriggerLeave.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnUnequipped": {
+            "name": "Base-Default:DefaultAliasOnUnequipped",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnUnequipped.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasOnUnload": {
+            "name": "Base-Default:DefaultAliasOnUnload",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasOnUnload.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasRandomVoiceType": {
+            "name": "Base-Default:DefaultAliasRandomVoiceType",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasRandomVoiceType.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasReadWhileSittingScript": {
+            "name": "Base-Default:DefaultAliasReadWhileSittingScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasReadWhileSittingScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultAliasRespawnScript": {
+            "name": "Base-Default:defaultAliasRespawnScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultAliasRespawnScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultAliasRespawnScriptA": {
+            "name": "Base-Default:defaultAliasRespawnScriptA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultAliasRespawnScriptA.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultAliasRespawnScriptB": {
+            "name": "Base-Default:defaultAliasRespawnScriptB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultAliasRespawnScriptB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasSetAVOnDeath": {
+            "name": "Base-Default:DefaultAliasSetAVOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasSetAVOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasSetGroupFaction": {
+            "name": "Base-Default:DefaultAliasSetGroupFaction",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasSetGroupFaction.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasSetTimestampOnInit": {
+            "name": "Base-Default:DefaultAliasSetTimestampOnInit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasSetTimestampOnInit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAliasSurfaceBoardingEncounter": {
+            "name": "Base-Default:DefaultAliasSurfaceBoardingEncounter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAliasSurfaceBoardingEncounter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultAttachModToAlias": {
+            "name": "Base-Default:DefaultAttachModToAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultAttachModToAlias.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultBlockActivationOnLoad": {
+            "name": "Base-Default:DefaultBlockActivationOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultBlockActivationOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCaptiveAlias": {
+            "name": "Base-Default:DefaultCaptiveAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCaptiveAlias.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultClearInventoryOnUnload": {
+            "name": "Base-Default:DefaultClearInventoryOnUnload",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultClearInventoryOnUnload.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollAliasSendEventOnActivate": {
+            "name": "Base-Default:DefaultCollAliasSendEventOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollAliasSendEventOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasAddPerkOnLoad": {
+            "name": "Base-Default:DefaultCollectionAliasAddPerkOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasAddPerkOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnActivate": {
+            "name": "Base-Default:DefaultCollectionAliasOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnActivateGive": {
+            "name": "Base-Default:DefaultCollectionAliasOnActivateGive",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnActivateGive.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnCombatListAdd": {
+            "name": "Base-Default:DefaultCollectionAliasOnCombatListAdd",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnCombatListAdd.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnContainerTo": {
+            "name": "Base-Default:DefaultCollectionAliasOnContainerTo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnContainerTo.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnDeath": {
+            "name": "Base-Default:DefaultCollectionAliasOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnDeathA": {
+            "name": "Base-Default:DefaultCollectionAliasOnDeathA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnDeathA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnDeathB": {
+            "name": "Base-Default:DefaultCollectionAliasOnDeathB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnDeathB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnDeathCount": {
+            "name": "Base-Default:DefaultCollectionAliasOnDeathCount",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnDeathCount.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnHit": {
+            "name": "Base-Default:DefaultCollectionAliasOnHit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnHit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnItemRemoved": {
+            "name": "Base-Default:DefaultCollectionAliasOnItemRemoved",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnItemRemoved.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnLoad": {
+            "name": "Base-Default:DefaultCollectionAliasOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnMenuItemRun": {
+            "name": "Base-Default:DefaultCollectionAliasOnMenuItemRun",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnMenuItemRun.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasOnOpen": {
+            "name": "Base-Default:DefaultCollectionAliasOnOpen",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasOnOpen.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionAliasRespawnScript": {
+            "name": "Base-Default:DefaultCollectionAliasRespawnScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionAliasRespawnScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionChangeAV": {
+            "name": "Base-Default:DefaultCollectionChangeAV",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionChangeAV.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionOnCombatStateChanged": {
+            "name": "Base-Default:DefaultCollectionOnCombatStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionOnCombatStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionRandomVoiceType": {
+            "name": "Base-Default:DefaultCollectionRandomVoiceType",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionRandomVoiceType.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCollectionSetGroupFaction": {
+            "name": "Base-Default:DefaultCollectionSetGroupFaction",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCollectionSetGroupFaction.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultContainerAddRefsOnLoad": {
+            "name": "Base-Default:DefaultContainerAddRefsOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultContainerAddRefsOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultCounter": {
+            "name": "Base-Default:defaultCounter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultCounter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasColIncOnDeathA": {
+            "name": "Base-Default:DefaultCounterAliasColIncOnDeathA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasColIncOnDeathA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasColIncOnDeathB": {
+            "name": "Base-Default:DefaultCounterAliasColIncOnDeathB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasColIncOnDeathB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasColIncOnDeathC": {
+            "name": "Base-Default:DefaultCounterAliasColIncOnDeathC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasColIncOnDeathC.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasColIncOnDeathD": {
+            "name": "Base-Default:DefaultCounterAliasColIncOnDeathD",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasColIncOnDeathD.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasColIncOnDeathE": {
+            "name": "Base-Default:DefaultCounterAliasColIncOnDeathE",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasColIncOnDeathE.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasIncOnceOnActivateA": {
+            "name": "Base-Default:DefaultCounterAliasIncOnceOnActivateA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasIncOnceOnActivateA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasIncOnceOnActivateB": {
+            "name": "Base-Default:DefaultCounterAliasIncOnceOnActivateB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasIncOnceOnActivateB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasIncOnceOnActivateC": {
+            "name": "Base-Default:DefaultCounterAliasIncOnceOnActivateC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasIncOnceOnActivateC.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasIncOnceOnDeathA": {
+            "name": "Base-Default:DefaultCounterAliasIncOnceOnDeathA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasIncOnceOnDeathA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasIncOnceOnDeathB": {
+            "name": "Base-Default:DefaultCounterAliasIncOnceOnDeathB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasIncOnceOnDeathB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterAliasIncOnceOnDeathC": {
+            "name": "Base-Default:DefaultCounterAliasIncOnceOnDeathC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterAliasIncOnceOnDeathC.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterIncrementOnActivate": {
+            "name": "Base-Default:DefaultCounterIncrementOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterIncrementOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterIncrementOnDeath": {
+            "name": "Base-Default:DefaultCounterIncrementOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterIncrementOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuest": {
+            "name": "Base-Default:DefaultCounterQuest",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuest.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestA": {
+            "name": "Base-Default:DefaultCounterQuestA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestB": {
+            "name": "Base-Default:DefaultCounterQuestB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestC": {
+            "name": "Base-Default:DefaultCounterQuestC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestC.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestD": {
+            "name": "Base-Default:DefaultCounterQuestD",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestD.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestE": {
+            "name": "Base-Default:DefaultCounterQuestE",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestE.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestIncOnceOnActivate": {
+            "name": "Base-Default:DefaultCounterQuestIncOnceOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestIncOnceOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestIncOnDeath": {
+            "name": "Base-Default:DefaultCounterQuestIncOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestIncOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestRefColIncOnDeath": {
+            "name": "Base-Default:DefaultCounterQuestRefColIncOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestRefColIncOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestRefColIncOnDestroy": {
+            "name": "Base-Default:DefaultCounterQuestRefColIncOnDestroy",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestRefColIncOnDestroy.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestRefColIncOnDestroyA": {
+            "name": "Base-Default:DefaultCounterQuestRefColIncOnDestroyA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestRefColIncOnDestroyA.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestRefColIncOnDestroyC": {
+            "name": "Base-Default:DefaultCounterQuestRefColIncOnDestroyC",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestRefColIncOnDestroyC.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCounterQuestRefColIncOnDestroyD": {
+            "name": "Base-Default:DefaultCounterQuestRefColIncOnDestroyD",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCounterQuestRefColIncOnDestroyD.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultCrowdEventMember": {
+            "name": "Base-Default:DefaultCrowdEventMember",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultCrowdEventMember.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultDisableHavokOnLoad": {
+            "name": "Base-Default:DefaultDisableHavokOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultDisableHavokOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultEmptyInvIntoLinkOnLoad": {
+            "name": "Base-Default:DefaultEmptyInvIntoLinkOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultEmptyInvIntoLinkOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultEnableAliasesQuestScript": {
+            "name": "Base-Default:DefaultEnableAliasesQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultEnableAliasesQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultEnableDisableOnDeathScript": {
+            "name": "Base-Default:DefaultEnableDisableOnDeathScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultEnableDisableOnDeathScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultFollowerToggleQuestScript": {
+            "name": "Base-Default:DefaultFollowerToggleQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultFollowerToggleQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultForceRefToLinkOnEnterScript": {
+            "name": "Base-Default:DefaultForceRefToLinkOnEnterScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultForceRefToLinkOnEnterScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultGroupSpawnQuestScript": {
+            "name": "Base-Default:DefaultGroupSpawnQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultGroupSpawnQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultMessageOnEffectStart": {
+            "name": "Base-Default:DefaultMessageOnEffectStart",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultMessageOnEffectStart.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultMoveToEditorLocationOnLoad": {
+            "name": "Base-Default:DefaultMoveToEditorLocationOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultMoveToEditorLocationOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultMultiStateActivator": {
+            "name": "Base-Default:DefaultMultiStateActivator",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultMultiStateActivator.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultMusicActivateScript": {
+            "name": "Base-Default:DefaultMusicActivateScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultMusicActivateScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultMusicTriggerScript": {
+            "name": "Base-Default:DefaultMusicTriggerScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultMusicTriggerScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultOnEnterMultiActor": {
+            "name": "Base-Default:DefaultOnEnterMultiActor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultOnEnterMultiActor.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultPassengerQuestScript": {
+            "name": "Base-Default:DefaultPassengerQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultPassengerQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultPlayAnimationOnLoadScript": {
+            "name": "Base-Default:DefaultPlayAnimationOnLoadScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultPlayAnimationOnLoadScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultPlaySoundAndImodOnEffectStart": {
+            "name": "Base-Default:DefaultPlaySoundAndImodOnEffectStart",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultPlaySoundAndImodOnEffectStart.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultQuestChangeLocationScript": {
+            "name": "Base-Default:DefaultQuestChangeLocationScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultQuestChangeLocationScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultQuestDistanceCheckScript": {
+            "name": "Base-Default:DefaultQuestDistanceCheckScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultQuestDistanceCheckScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultQuestRespawnScript": {
+            "name": "Base-Default:defaultQuestRespawnScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultQuestRespawnScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultQuestRespawnScriptA": {
+            "name": "Base-Default:defaultQuestRespawnScriptA",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultQuestRespawnScriptA.wiki"
+        },
+        "Starfield_Mod:Base-Default:defaultQuestRespawnScriptB": {
+            "name": "Base-Default:defaultQuestRespawnScriptB",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\defaultQuestRespawnScriptB.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultQuestShutdownScript": {
+            "name": "Base-Default:DefaultQuestShutdownScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultQuestShutdownScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefEffectShader": {
+            "name": "Base-Default:DefaultRefEffectShader",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefEffectShader.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefEnableLinkedRefOnActivate": {
+            "name": "Base-Default:DefaultRefEnableLinkedRefOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefEnableLinkedRefOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefEnableLinkedRefOnTrigger": {
+            "name": "Base-Default:DefaultRefEnableLinkedRefOnTrigger",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefEnableLinkedRefOnTrigger.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefMapMarkerOnDiscoveryScript": {
+            "name": "Base-Default:DefaultRefMapMarkerOnDiscoveryScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefMapMarkerOnDiscoveryScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnActivate": {
+            "name": "Base-Default:DefaultRefOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnCellDetach": {
+            "name": "Base-Default:DefaultRefOnCellDetach",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnCellDetach.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnCellLoad": {
+            "name": "Base-Default:DefaultRefOnCellLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnCellLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnCombatStateChanged": {
+            "name": "Base-Default:DefaultRefOnCombatStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnCombatStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnContainerChangedFrom": {
+            "name": "Base-Default:DefaultRefOnContainerChangedFrom",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnContainerChangedFrom.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnContainerChangedTo": {
+            "name": "Base-Default:DefaultRefOnContainerChangedTo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnContainerChangedTo.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnDeath": {
+            "name": "Base-Default:DefaultRefOnDeath",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnDeath.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnDestructionStateChanged": {
+            "name": "Base-Default:DefaultRefOnDestructionStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnDestructionStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnEnterBleedout": {
+            "name": "Base-Default:DefaultRefOnEnterBleedout",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnEnterBleedout.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnEquipped": {
+            "name": "Base-Default:DefaultRefOnEquipped",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnEquipped.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnHit": {
+            "name": "Base-Default:DefaultRefOnHit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnHit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnLoad": {
+            "name": "Base-Default:DefaultRefOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnLocationChangeOutfit": {
+            "name": "Base-Default:DefaultRefOnLocationChangeOutfit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnLocationChangeOutfit.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnLockStateChanged": {
+            "name": "Base-Default:DefaultRefOnLockStateChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnLockStateChanged.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnOpen": {
+            "name": "Base-Default:DefaultRefOnOpen",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnOpen.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnRead": {
+            "name": "Base-Default:DefaultRefOnRead",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnRead.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnTriggerEnter": {
+            "name": "Base-Default:DefaultRefOnTriggerEnter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnTriggerEnter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnTriggerEnterMultiActor": {
+            "name": "Base-Default:DefaultRefOnTriggerEnterMultiActor",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnTriggerEnterMultiActor.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnTriggerLeave": {
+            "name": "Base-Default:DefaultRefOnTriggerLeave",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnTriggerLeave.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnUnequipped": {
+            "name": "Base-Default:DefaultRefOnUnequipped",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnUnequipped.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefOnUnload": {
+            "name": "Base-Default:DefaultRefOnUnload",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefOnUnload.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefSoundTriggerScript": {
+            "name": "Base-Default:DefaultRefSoundTriggerScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefSoundTriggerScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultRefSurfaceBoardingEncounter": {
+            "name": "Base-Default:DefaultRefSurfaceBoardingEncounter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultRefSurfaceBoardingEncounter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultReleaseToHavokScript": {
+            "name": "Base-Default:DefaultReleaseToHavokScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultReleaseToHavokScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSendStoryEventOnLoad": {
+            "name": "Base-Default:DefaultSendStoryEventOnLoad",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSendStoryEventOnLoad.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSendStoryEventOnTrigger": {
+            "name": "Base-Default:DefaultSendStoryEventOnTrigger",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSendStoryEventOnTrigger.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSetAVTrigScript": {
+            "name": "Base-Default:DefaultSetAVTrigScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSetAVTrigScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSetGlobalOnTriggerEnter": {
+            "name": "Base-Default:DefaultSetGlobalOnTriggerEnter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSetGlobalOnTriggerEnter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSetWeatherWhileInTriggerScript": {
+            "name": "Base-Default:DefaultSetWeatherWhileInTriggerScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSetWeatherWhileInTriggerScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultShowMessageOnActivateAlias": {
+            "name": "Base-Default:DefaultShowMessageOnActivateAlias",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultShowMessageOnActivateAlias.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultShowMessageOnActivateRef": {
+            "name": "Base-Default:DefaultShowMessageOnActivateRef",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultShowMessageOnActivateRef.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultStartQuestOnTriggerEnter": {
+            "name": "Base-Default:DefaultStartQuestOnTriggerEnter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultStartQuestOnTriggerEnter.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSurveyPlanetQuestScript": {
+            "name": "Base-Default:DefaultSurveyPlanetQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSurveyPlanetQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultSurveyTraitQuestScript": {
+            "name": "Base-Default:DefaultSurveyTraitQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultSurveyTraitQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultToggleLinkRefChainOnActivate": {
+            "name": "Base-Default:DefaultToggleLinkRefChainOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultToggleLinkRefChainOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicAddItem": {
+            "name": "Base-Default:DefaultTopicAddItem",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicAddItem.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicAnimArchetypeSwitch": {
+            "name": "Base-Default:DefaultTopicAnimArchetypeSwitch",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicAnimArchetypeSwitch.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicInfoModGlobal": {
+            "name": "Base-Default:DefaultTopicInfoModGlobal",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicInfoModGlobal.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicInfoSetActorValue": {
+            "name": "Base-Default:DefaultTopicInfoSetActorValue",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicInfoSetActorValue.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicInfoSetGlobal": {
+            "name": "Base-Default:DefaultTopicInfoSetGlobal",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicInfoSetGlobal.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicInfoSetStage": {
+            "name": "Base-Default:DefaultTopicInfoSetStage",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicInfoSetStage.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicInfoStopDialogueCamera": {
+            "name": "Base-Default:DefaultTopicInfoStopDialogueCamera",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicInfoStopDialogueCamera.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultTopicRemoveItem": {
+            "name": "Base-Default:DefaultTopicRemoveItem",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultTopicRemoveItem.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultUnlockLinkedRefOnTrigger": {
+            "name": "Base-Default:DefaultUnlockLinkedRefOnTrigger",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultUnlockLinkedRefOnTrigger.wiki"
+        },
+        "Starfield_Mod:Base-Default:DefaultUnlockLinkOnActivate": {
+            "name": "Base-Default:DefaultUnlockLinkOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DefaultUnlockLinkOnActivate.wiki"
+        },
+        "Starfield_Mod:Base-Default:GameDaysPassedGlobalsQuestScript": {
+            "name": "Base-Default:GameDaysPassedGlobalsQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\GameDaysPassedGlobalsQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:OE_AliasOnDistanceLessThan": {
+            "name": "Base-Default:OE_AliasOnDistanceLessThan",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\OE_AliasOnDistanceLessThan.wiki"
+        },
+        "Starfield_Mod:Base-Default:RL066_SoundTriggerScript": {
+            "name": "Base-Default:RL066_SoundTriggerScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\RL066_SoundTriggerScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:xxDefaultRefAmbushTrigger": {
+            "name": "Base-Default:xxDefaultRefAmbushTrigger",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\xxDefaultRefAmbushTrigger.wiki"
+        },
+        "Starfield_Mod:Base-Default:DLC03/SFTA00_FollowerToggleQuestScript": {
+            "name": "Base-Default:DLC03/SFTA00_FollowerToggleQuestScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\DLC03/SFTA00_FollowerToggleQuestScript.wiki"
+        },
+        "Starfield_Mod:Base-Default:FXScripts/EffectSequenceOnActivate": {
+            "name": "Base-Default:FXScripts/EffectSequenceOnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Base-Default\\FXScripts/EffectSequenceOnActivate.wiki"
+        },
+        "Category:Cassiopeia_Papyrus_Extender": {
+            "name": "Cassiopeia_Papyrus_Extender",
+            "namespace": "Category"
+        },
+        "Starfield_Mod:Cassiopeia_Papyrus_Extender": {
+            "name": "Cassiopeia_Papyrus_Extender",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Cassiopeia_Papyrus_Extender.wiki",
+            "categories": [
+                "Cassiopeia_Papyrus_Extender"
+            ]
+        },
+        "Category:Testing": {
+            "name": "Testing",
+            "namespace": "Category"
+        },
+        "Starfield_Mod:Testing": {
+            "name": "Testing",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Testing.wiki",
+            "categories": [
+                "Testing"
+            ]
+        },
+        "Starfield_Mod:Test-Sample:Samples/EventScript": {
+            "name": "Test-Sample:Samples/EventScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Samples/EventScript.wiki"
+        },
+        "Starfield_Mod:Samples/EventScript/MyEventArgs": {
+            "name": "Samples/EventScript/MyEventArgs",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/EventScript/MyEventArgs.wiki"
+        },
+        "Starfield_Mod:Samples/EventScript/Send": {
+            "name": "Samples/EventScript/Send",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/EventScript/Send.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Samples/GuardScript": {
+            "name": "Test-Sample:Samples/GuardScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Samples/GuardScript.wiki"
+        },
+        "Starfield_Mod:Samples/GuardScript/MyProperty1": {
+            "name": "Samples/GuardScript/MyProperty1",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/GuardScript/MyProperty1.wiki"
+        },
+        "Starfield_Mod:Samples/GuardScript/MyProperty2": {
+            "name": "Samples/GuardScript/MyProperty2",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/GuardScript/MyProperty2.wiki"
+        },
+        "Starfield_Mod:Samples/GuardScript/MyProperty3": {
+            "name": "Samples/GuardScript/MyProperty3",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/GuardScript/MyProperty3.wiki"
+        },
+        "Starfield_Mod:Samples/GuardScript/OnContainerChanged": {
+            "name": "Samples/GuardScript/OnContainerChanged",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/GuardScript/OnContainerChanged.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Samples/NativeScript": {
+            "name": "Test-Sample:Samples/NativeScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Samples/NativeScript.wiki"
+        },
+        "Starfield_Mod:Samples/NativeScript/MyFunctionNative": {
+            "name": "Samples/NativeScript/MyFunctionNative",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/NativeScript/MyFunctionNative.wiki"
+        },
+        "Starfield_Mod:Samples/NativeScript/OnMyEventNative": {
+            "name": "Samples/NativeScript/OnMyEventNative",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/NativeScript/OnMyEventNative.wiki"
+        },
+        "Starfield_Mod:Samples/NativeScript/OnMyEvent": {
+            "name": "Samples/NativeScript/OnMyEvent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/NativeScript/OnMyEvent.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Samples/PropertyScript": {
+            "name": "Test-Sample:Samples/PropertyScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Samples/PropertyScript.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/PropertyFullRef": {
+            "name": "Samples/PropertyScript/PropertyFullRef",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/PropertyFullRef.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/PropertyFullBool_GetOnly": {
+            "name": "Samples/PropertyScript/PropertyFullBool_GetOnly",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/PropertyFullBool_GetOnly.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/PropertyFullBool_SetOnly": {
+            "name": "Samples/PropertyScript/PropertyFullBool_SetOnly",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/PropertyFullBool_SetOnly.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/AutoIntProperty": {
+            "name": "Samples/PropertyScript/AutoIntProperty",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/AutoIntProperty.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/AutoObjectRefProperty": {
+            "name": "Samples/PropertyScript/AutoObjectRefProperty",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/AutoObjectRefProperty.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/AutoReadOnlyFloatProperty": {
+            "name": "Samples/PropertyScript/AutoReadOnlyFloatProperty",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/AutoReadOnlyFloatProperty.wiki"
+        },
+        "Starfield_Mod:Samples/PropertyScript/AutoReadOnlyFormProperty": {
+            "name": "Samples/PropertyScript/AutoReadOnlyFormProperty",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/PropertyScript/AutoReadOnlyFormProperty.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Samples/Script": {
+            "name": "Test-Sample:Samples/Script",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Samples/Script.wiki"
+        },
+        "Starfield_Mod:Samples/Script/ItemData": {
+            "name": "Samples/Script/ItemData",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/ItemData.wiki"
+        },
+        "Starfield_Mod:Samples/Script/Description": {
+            "name": "Samples/Script/Description",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/Description.wiki"
+        },
+        "Starfield_Mod:Samples/Script/PlayerRef": {
+            "name": "Samples/Script/PlayerRef",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/PlayerRef.wiki"
+        },
+        "Starfield_Mod:Samples/Script/Counter": {
+            "name": "Samples/Script/Counter",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/Counter.wiki"
+        },
+        "Starfield_Mod:Samples/Script/Items": {
+            "name": "Samples/Script/Items",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/Items.wiki"
+        },
+        "Starfield_Mod:Samples/Script/OnInit": {
+            "name": "Samples/Script/OnInit",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/OnInit.wiki"
+        },
+        "Starfield_Mod:Samples/Script/OnTimer": {
+            "name": "Samples/Script/OnTimer",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/OnTimer.wiki"
+        },
+        "Starfield_Mod:Samples/Script/OnActivate": {
+            "name": "Samples/Script/OnActivate",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/OnActivate.wiki"
+        },
+        "Starfield_Mod:Samples/Script/AddItems": {
+            "name": "Samples/Script/AddItems",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/AddItems.wiki"
+        },
+        "Starfield_Mod:Samples/Script/Active": {
+            "name": "Samples/Script/Active",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/Active.wiki"
+        },
+        "Starfield_Mod:Samples/Script/OnBeginState": {
+            "name": "Samples/Script/OnBeginState",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/OnBeginState.wiki"
+        },
+        "Starfield_Mod:Samples/Script/OnEndState": {
+            "name": "Samples/Script/OnEndState",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/OnEndState.wiki"
+        },
+        "Starfield_Mod:Samples/Script/Inactive": {
+            "name": "Samples/Script/Inactive",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/Inactive.wiki"
+        },
+        "Starfield_Mod:Samples/Script/IsPlayerNearby": {
+            "name": "Samples/Script/IsPlayerNearby",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/Script/IsPlayerNearby.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Samples/StructureScript": {
+            "name": "Test-Sample:Samples/StructureScript",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Samples/StructureScript.wiki"
+        },
+        "Starfield_Mod:Samples/StructureScript/Data1": {
+            "name": "Samples/StructureScript/Data1",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Samples/StructureScript/Data1.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Tests/Comments": {
+            "name": "Test-Sample:Tests/Comments",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Tests/Comments.wiki"
+        },
+        "Starfield_Mod:Tests/Comments/Foo": {
+            "name": "Tests/Comments/Foo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Tests/Comments/Foo.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Tests/FooBar": {
+            "name": "Test-Sample:Tests/FooBar",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Tests/FooBar.wiki"
+        },
+        "Starfield_Mod:Tests/FooBar/MyEvent": {
+            "name": "Tests/FooBar/MyEvent",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Tests/FooBar/MyEvent.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Tests/LineContinuation": {
+            "name": "Test-Sample:Tests/LineContinuation",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Tests/LineContinuation.wiki"
+        },
+        "Starfield_Mod:Tests/LineContinuation/Foo": {
+            "name": "Tests/LineContinuation/Foo",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Tests/LineContinuation/Foo.wiki"
+        },
+        "Starfield_Mod:Tests/LineContinuation/Foo1": {
+            "name": "Tests/LineContinuation/Foo1",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Tests/LineContinuation/Foo1.wiki"
+        },
+        "Starfield_Mod:Tests/LineContinuation/Foo2": {
+            "name": "Tests/LineContinuation/Foo2",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Tests/LineContinuation/Foo2.wiki"
+        },
+        "Starfield_Mod:Test-Sample:Tests/A/B/C/Script": {
+            "name": "Test-Sample:Tests/A/B/C/Script",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Test-Sample\\Tests/A/B/C/Script.wiki"
+        },
+        "Starfield_Mod:Script_Information": {
+            "name": "Script_Information",
+            "namespace": "Starfield_Mod",
+            "content": "wiki\\Starfield_Mod\\Script_Information.wiki"
+        }
+    }
+}

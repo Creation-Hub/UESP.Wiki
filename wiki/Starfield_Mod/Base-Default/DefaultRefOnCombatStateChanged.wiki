@@ -1,0 +1,133 @@
+{{Script_Object_Summary
+| title = DefaultRefOnCombatStateChanged
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| extends = [[SFM:Script-DefaultActor|DefaultActor]] → [[SFM:Script-DefaultActorParent|DefaultActorParent]] → [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultRefOnCombatStateChanged.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnCombatStateChanged Extends DefaultActor Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultRefOnCombatStateChanged.psc</code> source file.
+
+<source>
+Sets stage when THIS actor's combat state changes.
+<RefToCheck> is the reference THIS actor is getting into combat with.
+<LocationToCheck> is the current location of THIS actor's reference.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = IncludeOnHitEvent
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/IncludeOnHitEvent|IncludeOnHitEvent]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), exceute script functionality when THIS actor is hit in combat and <RefToCheck> will be the aggressor.
+}}
+
+{{Script_Object_Member_Summary
+| title = CombatStateToCheckFor
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/CombatStateToCheckFor|CombatStateToCheckFor]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 4
+| documentation = 0: Not In Combat
+1: In Combat
+2: Searching
+4 (Default): In Combat or Searching
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnCombatStateChanged
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/OnCombatStateChanged|OnCombatStateChanged]]
+| kind = Event
+| parameters = ObjectReference akTarget, int aeCombatState
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/Done|Done]]
+| kind = State
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = CombatStateChangedOrHit
+| script = [[SFM:Script-DefaultRefOnCombatStateChanged|DefaultRefOnCombatStateChanged]]
+| name = [[SFM:Script-DefaultRefOnCombatStateChanged/CombatStateChangedOrHit|CombatStateChangedOrHit]]
+| kind = Function
+| parameters = ObjectReference TargetOrAggressor
+}}
+
+
+
+

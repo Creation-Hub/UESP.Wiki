@@ -12,9 +12,10 @@ class ArticleText:
             logging.error(f"Wiki article '{file_path}' has no content to write.")
             return
 
-        if not os.path.exists(os.path.dirname(file_path)):
-            os.makedirs(os.path.dirname(file_path))
-            logging.debug(f"Created new directory for file: {os.path.dirname(file_path)}")
+        directory:str = os.path.dirname(file_path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            logging.debug(f"Created new directory for file: {directory}")
 
         with open(file_path, "w", encoding="utf-8") as file:
             file.writelines(lines)
@@ -29,3 +30,18 @@ class ArticleText:
         with open(file_path, 'r', encoding='utf-8') as file:
             content:list[str] = file.readlines()
         return content
+
+
+class ArticlePath:
+
+    @staticmethod
+    def get_filepath(article:Article, base_directory:str, project:str) -> str:
+        """Generate complete file path for an article."""
+        namespace_dir:str = ""
+        if article.title.namespace.name:
+            namespace_dir = article.title.namespace.name
+        else:
+            namespace_dir = "Main"
+
+        filename:str = article.title.name + ".wiki"
+        return os.path.join(base_directory, namespace_dir, project, filename)

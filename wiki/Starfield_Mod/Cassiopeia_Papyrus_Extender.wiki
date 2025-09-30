@@ -1,0 +1,12 @@
+== Details ==
+* '''Name''': Cassiopeia Papyrus Extender
+* '''Author''': LarannKiar
+* '''Description''': SFSE plugin that expands the capabilities of Papyrus, the Creation Engine's scripting language.
+* '''Platform''': nexus
+* '''URL''': https://www.nexusmods.com/starfield/mods/10896
+* '''URL ID''': 10896
+* '''Version''': 4.1.0
+* '''Version Build''': 
+* '''Version Date''': 2025-06-25
+
+[[Category:Cassiopeia_Papyrus_Extender]]

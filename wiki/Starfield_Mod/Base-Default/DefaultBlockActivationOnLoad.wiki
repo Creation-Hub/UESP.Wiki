@@ -1,0 +1,64 @@
+{{Script_Object_Summary
+| title = DefaultBlockActivationOnLoad
+| name = [[SFM:Script-DefaultBlockActivationOnLoad|DefaultBlockActivationOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultBlockActivationOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultBlockActivationOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultBlockActivationOnLoad.psc</code> source file.
+
+<source>
+Blocks activation once on load.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = HideActivationText
+| script = [[SFM:Script-DefaultBlockActivationOnLoad|DefaultBlockActivationOnLoad]]
+| name = [[SFM:Script-DefaultBlockActivationOnLoad/HideActivationText|HideActivationText]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultBlockActivationOnLoad|DefaultBlockActivationOnLoad]]
+| name = [[SFM:Script-DefaultBlockActivationOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultBlockActivationOnLoad|DefaultBlockActivationOnLoad]]
+| name = [[SFM:Script-DefaultBlockActivationOnLoad/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+
+

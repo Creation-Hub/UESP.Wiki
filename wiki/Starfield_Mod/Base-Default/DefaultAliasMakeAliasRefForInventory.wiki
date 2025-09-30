@@ -1,0 +1,171 @@
+{{Script_Object_Summary
+| title = DefaultAliasMakeAliasRefForInventory
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAliasMakeAliasRefForInventory.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAliasMakeAliasRefForInventory Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultAliasMakeAliasRefForInventory.psc</code> source file.
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = RequiredProperties
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/RequiredProperties|RequiredProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = OptionalProperties
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OptionalProperties|OptionalProperties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = TargetObject
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/TargetObject|TargetObject]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Form
+| documentation = The object we're interested in. Must be an inventory object.
+}}
+
+{{Script_Object_Member_Summary
+| title = AliasToForce
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/AliasToForce|AliasToForce]]
+| kind = Property
+| flags = Auto Const
+| returns = ReferenceAlias
+| documentation = The alias we want the specified object shoved into. NOTE: This is exclusive with CollectionToAddTo. If this is set, whatever's in CollectionToAddTo will be ignored
+}}
+
+{{Script_Object_Member_Summary
+| title = CollectionToAddTo
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/CollectionToAddTo|CollectionToAddTo]]
+| kind = Property
+| flags = Auto Const
+| returns = RefCollectionAlias
+| documentation = The ref collection we want the specifed object shoves into.
+}}
+
+{{Script_Object_Member_Summary
+| title = PrereqStage
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/PrereqStage|PrereqStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage that must be set for this script's functionality to execute
+}}
+
+{{Script_Object_Member_Summary
+| title = TurnOffStageDone
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/TurnOffStageDone|TurnOffStageDone]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = If this stage is specfically done, this script's functionality is ignored
+}}
+
+{{Script_Object_Member_Summary
+| title = DoOnce
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/DoOnce|DoOnce]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Only execute this script's functionality once
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = Quest.OnStageSet
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/Quest.OnStageSet|Quest.OnStageSet]]
+| kind = Event
+| parameters = Quest akSenderRef, int auiStageID, int auiItemID
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemAdded
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/OnItemAdded|OnItemAdded]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = ProcessMakingRef
+| script = [[SFM:Script-DefaultAliasMakeAliasRefForInventory|DefaultAliasMakeAliasRefForInventory]]
+| name = [[SFM:Script-DefaultAliasMakeAliasRefForInventory/ProcessMakingRef|ProcessMakingRef]]
+| kind = Function
+| parameters = Form akBaseItem
+}}
+
+
+
+

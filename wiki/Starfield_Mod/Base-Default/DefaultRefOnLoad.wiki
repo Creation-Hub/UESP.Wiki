@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultRefOnLoad
+| name = [[SFM:Script-DefaultRefOnLoad|DefaultRefOnLoad]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultRefOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnLoad Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultRefOnLoad.psc</code> source file.
+
+<source>
+Sets quest stage when this reference loads.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultRefOnLoad|DefaultRefOnLoad]]
+| name = [[SFM:Script-DefaultRefOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
+
+

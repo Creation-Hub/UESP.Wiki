@@ -1,0 +1,73 @@
+{{Script_Object_Summary
+| title = DefaultCounterQuestIncOnceOnActivate
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultCounterQuestIncOnceOnActivate Extends ReferenceAlias Default Hidden
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultCounterQuestIncOnceOnActivate.psc</code> source file.
+
+<source>
+Once this ALIAS is activated (by the PLAYER) it increments the counter on its Quest's DefaultCounterQuest script
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = WaitForActivate
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/WaitForActivate|WaitForActivate]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = DoneWaiting
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/DoneWaiting|DoneWaiting]]
+| kind = State
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]]
+| name = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate/Increment|Increment]]
+| kind = Function
+}}
+
+
+
+

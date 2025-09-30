@@ -1,0 +1,12 @@
+== Details ==
+* '''Name''': Creation Kit
+* '''Author''': Bethesda Game Studios
+* '''Description''': The Creation Kit.
+* '''Platform''': steam
+* '''URL''': https://store.steampowered.com/app/2722710/Starfield_Creation_Kit/
+* '''URL ID''': 2722710
+* '''Version''': 1.15.216.0
+* '''Version Build''': 18483730
+* '''Version Date''': 2024-12-15
+
+[[Category:Creation_Kit]]

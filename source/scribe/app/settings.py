@@ -106,7 +106,7 @@ class AppSettings:
 
 
     @property # Generator
-    def generator_file_path(self) -> str|None:
+    def papyrus_file_path(self) -> str|None:
         """The json file path for the generator configuration file."""
         if not self._data: return None
         return self._data.get("generator.file")

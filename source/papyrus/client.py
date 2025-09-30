@@ -18,7 +18,7 @@ class PapyrusClient:
         self.projects[project.identifier] = project
 
 
-    def _valid_imports(self, project:PapyrusProject) -> bool:
+    def _validate_imports(self, project:PapyrusProject) -> bool:
         for imported in project.imports:
             if imported not in self.projects:
                 logging.error(f"[{project.identifier}] The imported '{imported}' project dependency does not exist.")
@@ -32,11 +32,12 @@ class PapyrusClient:
             return False
 
         for project in self.projects.values():
-            if not self._valid_imports(project):
+            if not self._validate_imports(project):
                 logging.error(f"[{project.identifier}] There was a problem with one or more imported projects.")
                 return False
 
             if not project.load():
                 logging.error(f"[{project.identifier}] Failed to load project scripts.")
+                continue
 
         return True

@@ -1,0 +1,141 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnDistanceLessThan
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAliasOnDistanceLessThan.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnDistanceLessThan Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultAliasOnDistanceLessThan.psc</code> source file.
+
+<source>
+Sets a stage when the distance between this an a target alias is less than a target distance.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Required_Data
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Required_Data|Required_Data]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Data
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Optional_Data|Optional_Data]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = TargetAlias
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/TargetAlias|TargetAlias]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ReferenceAlias
+| documentation = The alias we're interested in
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetDistance
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/TargetDistance|TargetDistance]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = float
+| documentation = The needed distance between this and the target
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSet
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/StageToSet|StageToSet]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+| documentation = Stage to Set
+}}
+
+{{Script_Object_Member_Summary
+| title = PrereqStage
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/PrereqStage|PrereqStage]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage that must be set for this script's functionality to execute
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = Quest.OnStageSet
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/Quest.OnStageSet|Quest.OnStageSet]]
+| kind = Event
+| parameters = Quest akSender, int auiStageID, int auiItemID
+}}
+
+{{Script_Object_Member_Summary
+| title = OnDistanceLessThan
+| script = [[SFM:Script-DefaultAliasOnDistanceLessThan|DefaultAliasOnDistanceLessThan]]
+| name = [[SFM:Script-DefaultAliasOnDistanceLessThan/OnDistanceLessThan|OnDistanceLessThan]]
+| kind = Event
+| parameters = ObjectReference akObj1, ObjectReference akObj2, float afDistance, int aiEventID
+}}
+
+
+
+

@@ -1,0 +1,71 @@
+{{Script_Object_Summary
+| title = GameDaysPassedGlobalsQuestScript
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>GameDaysPassedGlobalsQuestScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName GameDaysPassedGlobalsQuestScript Extends Quest Const Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>GameDaysPassedGlobalsQuestScript.psc</code> source file.
+
+<source>
+Used to set globalvariables in terms of gamedays passed.
+Useful for story manager and dialogue conditions like:
+GetGlobalValue NextAllowed <= GameDaysPassed
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Struct ===
+These are the struct members for this script.
+
+{{Script_Object_Member_Summary
+| title = GlobalsDatum
+| script = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript/GlobalsDatum|GlobalsDatum]]
+| kind = Struct
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = GameDaysPassedGlobalsAndQuestStages
+| script = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript/GameDaysPassedGlobalsAndQuestStages|GameDaysPassedGlobalsAndQuestStages]]
+| kind = Property
+| flags = Const Auto
+| returns = GlobalsDatum[]
+| documentation = Holds quest stages and globals to set with GameDaysPassed
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnStageSet
+| script = [[SFM:Script-GameDaysPassedGlobalsQuestScript|GameDaysPassedGlobalsQuestScript]]
+| name = [[SFM:Script-GameDaysPassedGlobalsQuestScript/OnStageSet|OnStageSet]]
+| kind = Event
+| parameters = int auiStageID, int auiItemID
+}}
+
+
+
+

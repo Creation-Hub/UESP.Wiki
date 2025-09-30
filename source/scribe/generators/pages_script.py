@@ -7,10 +7,11 @@ from papyrus.project import PapyrusProject
 from papyrus.code import Event, Function, Guard, Property, PropertyGroup, Script, Structure, Variable
 from papyrus.code import Member
 from papyrus.text.parsing import State
+from wiki.data.section import SectionLevel
+from scribe.services.composer import ComposerService
 from scribe.composer.article import Article
 from scribe.composer.wiki import Wiki
 from scribe.composer.builder import ArticleBuilder
-from wiki.data.section import SectionLevel
 from .templates import Script_Object_Member_Summary, Script_Object_Summary
 
 class PageScript:
@@ -19,14 +20,14 @@ class PageScript:
     """
 
     @staticmethod
-    def create(wiki:Wiki, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Article:
+    def create(composer:ComposerService, papyrus:PapyrusClient, project:PapyrusProject, script:Script) -> Article:
         game_version:str = ""
         source_file_path:str = script.header.name.file_path() + ".psc"
 
         # Builder
-        builder:ArticleBuilder = ArticleBuilder(wiki)
-        builder.title(PageScript.get_title(script), Wiki.NAMESPACE_MODDING)
-        builder.category(Wiki.CATEGORY_PAPYRUS.name)
+        builder:ArticleBuilder = ArticleBuilder(composer)
+        builder.title(PageScript.title_name(project, script), Wiki.SFM_NAMESPACE)
+        builder.category(Wiki.PAPYRUS_CATEGORY)
         builder.line(Script_Object_Summary.template(papyrus, project, script, game_version))
         builder.line("\n\n")
         builder.section("Definition", SectionLevel.H2)
@@ -81,8 +82,9 @@ class PageScript:
 
 
     @staticmethod
-    def get_title(script:Script) -> str:
-        return script.header.name.file_path().replace("\\", "/")
+    def title_name(project:PapyrusProject, script:Script) -> str:
+        path:str = script.header.name.file_path().replace("\\", "/")
+        return f"{project.identifier}:{path}"
 
 
     @staticmethod

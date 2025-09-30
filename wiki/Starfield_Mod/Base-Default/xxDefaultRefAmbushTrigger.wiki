@@ -1,0 +1,127 @@
+{{Script_Object_Summary
+| title = xxDefaultRefAmbushTrigger
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>xxDefaultRefAmbushTrigger.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName xxDefaultRefAmbushTrigger Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>xxDefaultRefAmbushTrigger.psc</code> source file.
+
+<source>
+set the AmbushTriggered actor value on this ref when player enters
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = AmbushTriggered
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/AmbushTriggered|AmbushTriggered]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkAmbushTrigger
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/LinkAmbushTrigger|LinkAmbushTrigger]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = autofill
+}}
+
+{{Script_Object_Member_Summary
+| title = TriggerIfAnyLinkedActorEntersCombat
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerIfAnyLinkedActorEntersCombat|TriggerIfAnyLinkedActorEntersCombat]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = TRUE = any linked actor that enters combat sets AmbushTriggered to 1
+	  FALSE = only set AmbushTrigger to 1 if player enters me
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnCellLoad
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/OnCellLoad|OnCellLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+{{Script_Object_Member_Summary
+| title = Actor.OnCombatStateChanged
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/Actor.OnCombatStateChanged|Actor.OnCombatStateChanged]]
+| kind = Event
+| parameters = Actor akSource, ObjectReference akTarget, int aeCombatState
+| documentation = This was causing part of GEN-296983 "AI: Ambush procedure seems to be able to be overriden by ally going into combat"
+Adding this back in, only to trigger on combat, should only apply to actors linked to this ref.
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = TriggerAmbush
+| script = [[SFM:Script-xxDefaultRefAmbushTrigger|xxDefaultRefAmbushTrigger]]
+| name = [[SFM:Script-xxDefaultRefAmbushTrigger/TriggerAmbush|TriggerAmbush]]
+| kind = Function
+}}
+
+
+
+

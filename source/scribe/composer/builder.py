@@ -1,5 +1,6 @@
 from typing import final
 from papyrus.code import Script
+from scribe.services.composer import ComposerService
 from wiki.data.common import Namespaces
 from wiki.data.title import Title, Namespace
 from wiki.data.formatting import Text
@@ -10,12 +11,12 @@ from .article import Article
 @final
 class ArticleBuilder:
 
-    def __init__(self, wiki:Wiki) -> None:
+    def __init__(self, composer:ComposerService) -> None:
         super().__init__()
-        self._wiki:Wiki = wiki
+        self._composer:ComposerService = composer
         self._title:Title|None = None
+        self._categories:list[Title] = []
         self._content:list[str] = []
-        self._categories:list[str] = []
 
 
     def title(self, name:str, namespace:Namespace) -> 'ArticleBuilder':
@@ -23,8 +24,8 @@ class ArticleBuilder:
         return self
 
 
-    def category(self, category_name:str) -> 'ArticleBuilder':
-        self._categories.append(category_name)
+    def category(self, title:Title) -> 'ArticleBuilder':
+        self._categories.append(title)
         return self
 
 
@@ -50,27 +51,22 @@ class ArticleBuilder:
         article:Article = Article(self._title)
         article.content = self._content.copy()
 
-        # Convert category names to category titles
-        for category_name in self._categories:
-            category:Title = Title(category_name, Namespaces.Category)
-            article.categories.append(category)
-
         return article
 
 
 
-# Usage:
-def create_script_page(wiki:Wiki, script:Script) -> Article:
-    return (ArticleBuilder(wiki)
-        .title(f"Script-{script.name}", Wiki.NAMESPACE_MODDING)
+# Example Usage:
+def create_script_page(composer:ComposerService, script:Script) -> Article:
+    return (ArticleBuilder(composer)
+        .title(f"Script-{script.name}", Wiki.SFM_NAMESPACE)
         .section("Definition", SectionLevel.H2)
         .lines([
-            f"<source lang=\"papyrus\">\n",
-            f"{script.header.definition}\n",
-            f"</source>\n"
+            f"<source lang=\"papyrus\">",
+            f"{script.header.definition}",
+            f"</source>"
         ])
         .section("Documentation", SectionLevel.H2)
         .line(script.header.documentation or "No documentation provided.")
-        .category("Starfield_Mod-Papyrus")
+        .category(Title("Starfield_Mod-Papyrus", Namespaces.Category))
         .build()
     )

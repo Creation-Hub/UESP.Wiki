@@ -1,0 +1,40 @@
+{{Script_Object_Summary
+| title = Enchantment
+| name = [[SFM:Script-Enchantment|Enchantment]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Enchantment.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Enchantment Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Enchantment.psc</code> source file.
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = IsHostile
+| script = [[SFM:Script-Enchantment|Enchantment]]
+| name = [[SFM:Script-Enchantment/IsHostile|IsHostile]]
+| kind = Function
+| flags = Native
+| returns = bool
+| documentation = Is this enchantment classified as hostile?
+}}
+
+
+
+

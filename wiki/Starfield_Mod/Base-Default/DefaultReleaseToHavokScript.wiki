@@ -1,0 +1,151 @@
+{{Script_Object_Summary
+| title = DefaultReleaseToHavokScript
+| name = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultReleaseToHavokScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultReleaseToHavokScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultReleaseToHavokScript.psc</code> source file.
+
+<source>
+Releases an object to Havok OnHit or OnActivate.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Properties
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/Properties|Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = HavokOnHit
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/HavokOnHit|HavokOnHit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default: TRUE. Should we release the object to Havok when it's hit?
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnActivate
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/HavokOnActivate|HavokOnActivate]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default: TRUE. Should we release the object to Havok when it's activated?
+}}
+
+{{Script_Object_Member_Summary
+| title = ReleaseAllLinkedHavokPartners
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/ReleaseAllLinkedHavokPartners|ReleaseAllLinkedHavokPartners]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = Default: TRUE.
+	 If True, release all objects linked to or from this object with LinkHavokPartner to Havok. Assumes this object is part of a simple chain; branching is NOT supported.
+	 If False, release only objects linked from this object with LinkHavokPartner to Havok.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkHavokPartner
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/LinkHavokPartner|LinkHavokPartner]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = The chain of objects linked with this keyword will be released to Havok when this object is released.
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Released
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/Released|Released]]
+| kind = State
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference triggerRef
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = ReleaseToHavok
+| script = [[SFM:Script-DefaultReleaseToHavokScript|DefaultReleaseToHavokScript]]
+| name = [[SFM:Script-DefaultReleaseToHavokScript/ReleaseToHavok|ReleaseToHavok]]
+| kind = Function
+| documentation = Empty State functions.
+}}
+
+
+
+

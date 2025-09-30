@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultMoveToEditorLocationOnLoad
+| name = [[SFM:Script-DefaultMoveToEditorLocationOnLoad|DefaultMoveToEditorLocationOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultMoveToEditorLocationOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultMoveToEditorLocationOnLoad Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultMoveToEditorLocationOnLoad.psc</code> source file.
+
+<source>
+Script that will move this reference to it's editor location any time it loads.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultMoveToEditorLocationOnLoad|DefaultMoveToEditorLocationOnLoad]]
+| name = [[SFM:Script-DefaultMoveToEditorLocationOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
+
+

@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Explosion
+| name = [[SFM:Script-Explosion|Explosion]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Explosion.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Explosion Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Explosion.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Explosion.psc</code> source file.
+
+
+

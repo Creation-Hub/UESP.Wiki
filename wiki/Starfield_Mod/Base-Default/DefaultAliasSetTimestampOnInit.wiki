@@ -1,0 +1,67 @@
+{{Script_Object_Summary
+| title = DefaultAliasSetTimestampOnInit
+| name = [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAliasSetTimestampOnInit.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAliasSetTimestampOnInit Extends ReferenceAlias Const Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultAliasSetTimestampOnInit.psc</code> source file.
+
+<source>
+sets a specified AV as a timestamp (with a specified offset from current time) OnAliasInit
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = TimestampAV
+| script = [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
+| name = [[SFM:Script-DefaultAliasSetTimestampOnInit/TimestampAV|TimestampAV]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ActorValue
+| documentation = actor value used to stamp GameDaysPassed + TimestampOffset on the ref in this alias
+}}
+
+{{Script_Object_Member_Summary
+| title = TimestampOffset
+| script = [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
+| name = [[SFM:Script-DefaultAliasSetTimestampOnInit/TimestampOffset|TimestampOffset]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 0.0
+| documentation = how much to add to GameDaysPassed when setting TimestampAV
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasSetTimestampOnInit|DefaultAliasSetTimestampOnInit]]
+| name = [[SFM:Script-DefaultAliasSetTimestampOnInit/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+
+
+

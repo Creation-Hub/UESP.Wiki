@@ -1,0 +1,86 @@
+{{Script_Object_Summary
+| title = DefaultAddItemOnLoad
+| name = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAddItemOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAddItemOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultAddItemOnLoad.psc</code> source file.
+
+<source>
+Placed on an Object Reference (preferably an actor or container) that will add the selected item OnLoad()
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = ItemToAdd
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/ItemToAdd|ItemToAdd]]
+| kind = Property
+| flags = Auto Const
+| returns = Form
+| documentation = Base object to add to this reference.
+}}
+
+{{Script_Object_Member_Summary
+| title = Count
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/Count|Count]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 1
+| documentation = Default = 1: Number of this item to add.
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = DoneWaiting
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/DoneWaiting|DoneWaiting]]
+| kind = State
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultAddItemOnLoad|DefaultAddItemOnLoad]]
+| name = [[SFM:Script-DefaultAddItemOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
+
+

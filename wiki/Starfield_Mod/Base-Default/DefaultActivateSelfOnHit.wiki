@@ -1,0 +1,90 @@
+{{Script_Object_Summary
+| title = DefaultActivateSelfOnHit
+| name = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| extends = [[SFM:Script-Actor|Actor]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultActivateSelfOnHit.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultActivateSelfOnHit Extends Actor Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultActivateSelfOnHit.psc</code> source file.
+
+<source>
+The ref activates itself on hit, typically to trigger an ambush from an ActivateParented actor.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = DoOnce
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/DoOnce|DoOnce]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Initial
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/Initial|Initial]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultActivateSelfOnHit|DefaultActivateSelfOnHit]]
+| name = [[SFM:Script-DefaultActivateSelfOnHit/Done|Done]]
+| kind = State
+}}
+
+
+
+

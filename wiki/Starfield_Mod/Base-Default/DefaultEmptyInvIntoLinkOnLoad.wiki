@@ -1,0 +1,60 @@
+{{Script_Object_Summary
+| title = DefaultEmptyInvIntoLinkOnLoad
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultEmptyInvIntoLinkOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultEmptyInvIntoLinkOnLoad.psc</code> source file.
+
+<source>
+Removes items from self and puts them into Linked Ref OnLoad()
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = WaitForLoad
+| script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad/WaitForLoad|WaitForLoad]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad/Done|Done]]
+| kind = State
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad|DefaultEmptyInvIntoLinkOnLoad]]
+| name = [[SFM:Script-DefaultEmptyInvIntoLinkOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+
+
+

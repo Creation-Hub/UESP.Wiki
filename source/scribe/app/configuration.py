@@ -36,13 +36,13 @@ class AppConfiguration:
         self.export_directory:str|None = None
         """The export directory for wiki pages."""
 
-        # Generator
-        self.generator_file_path:str|None = None
-        """The json file path for the generator configuration file."""
+        # Papyrus
+        self.papyrus_file_path:str|None = None
+        """The json file path for the Papyrus configuration."""
 
         # Uploader
         self.uploader_file_path:str|None = None
-        """The json file path for the uploader configuration file."""
+        """The json file path for the uploader configuration."""
 
         # Uploader
         self.uploader_environment:str|None = None
@@ -63,7 +63,7 @@ class AppConfiguration:
         this.log_console_level = arguments.log_console_level or settings.log_console_level
         this.log_file_level = arguments.log_file_level or settings.log_file_level
         this.log_file_path = arguments.log_file_path or settings.log_file_path
-        this.generator_file_path = arguments.generator_file_path or settings.generator_file_path
+        this.papyrus_file_path = arguments.papyrus_file_path or settings.papyrus_file_path
         this.uploader_file_path = arguments.uploader_file_path or settings.uploader_file_path
         this.uploader_environment = arguments.upload_environment or settings.uploader_environment
         return this

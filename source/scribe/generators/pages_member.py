@@ -1,7 +1,6 @@
 """
 Generates MediaWiki pages for Papyrus members.
 """
-from papyrus.project import PapyrusProject
 from papyrus.code import Script
 from papyrus.code import Member
 from papyrus.code import Function
@@ -9,6 +8,7 @@ from papyrus.code import Event
 from papyrus.code import Variable
 from papyrus.code import Property
 from wiki.data.section import SectionLevel
+from scribe.services.composer import ComposerService
 from scribe.composer.article import Article
 from scribe.composer.builder import ArticleBuilder
 from scribe.composer.wiki import Wiki
@@ -21,14 +21,14 @@ class PageMember:
     """
 
     @staticmethod
-    def create(wiki:Wiki, file_path:str, project:PapyrusProject, script:Script, member:Member) -> Article:
+    def create(composer:ComposerService, script:Script, member:Member) -> Article:
         game_version:str = ""
         source_file_path:str = script.header.name.file_path() + ".psc"
 
         # Builder
-        builder:ArticleBuilder = ArticleBuilder(wiki)
-        builder.title(PageMember.get_title(script, member), Wiki.NAMESPACE_MODDING)
-        builder.category(Wiki.CATEGORY_PAPYRUS.name)
+        builder:ArticleBuilder = ArticleBuilder(composer)
+        builder.title(PageMember.get_title(script, member), Wiki.SFM_NAMESPACE)
+        builder.category(Wiki.PAPYRUS_CATEGORY)
 
         # Summary Template
         builder.line(Script_Member_Summary.template(script, member, game_version))

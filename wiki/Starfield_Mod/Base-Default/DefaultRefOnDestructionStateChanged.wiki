@@ -1,0 +1,70 @@
+{{Script_Object_Summary
+| title = DefaultRefOnDestructionStateChanged
+| name = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultRefOnDestructionStateChanged.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnDestructionStateChanged Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultRefOnDestructionStateChanged.psc</code> source file.
+
+<source>
+Set stage when THIS object's destruction stage changes.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+| name = [[SFM:Script-DefaultRefOnDestructionStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = DestructionStateToCheckFor
+| script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+| name = [[SFM:Script-DefaultRefOnDestructionStateChanged/DestructionStateToCheckFor|DestructionStateToCheckFor]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = 1
+| documentation = Set the stage when this destruction state is reached.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnDestructionStageChanged
+| script = [[SFM:Script-DefaultRefOnDestructionStateChanged|DefaultRefOnDestructionStateChanged]]
+| name = [[SFM:Script-DefaultRefOnDestructionStateChanged/OnDestructionStageChanged|OnDestructionStageChanged]]
+| kind = Event
+| parameters = int aiOldStage, int aiCurrentStage
+}}
+
+
+
+

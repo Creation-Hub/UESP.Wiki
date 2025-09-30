@@ -1,0 +1,191 @@
+{{Script_Object_Summary
+| title = DefaultDisableHavokOnLoad
+| name = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultDisableHavokOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultDisableHavokOnLoad Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultDisableHavokOnLoad.psc</code> source file.
+
+<source>
+Disable havok on a ref OnLoad(), then optionally enable havok OnHit(), OnActivate(), or OnGrab()
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = HavokOnHit
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokOnHit|HavokOnHit]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Start Havok Sim when hit? DEFAULT: False
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnActivate
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokOnActivate|HavokOnActivate]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Start Havok Sim when activated? DEFAULT: False
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokOnZKey
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokOnZKey|HavokOnZKey]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Start Havok Sim when grabbed by player? DEFAULT: False
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkHavokPartner
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/LinkHavokPartner|LinkHavokPartner]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = Link with this keyword and that ref will also sim with myself
+}}
+
+{{Script_Object_Member_Summary
+| title = BeenSimmed
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/BeenSimmed|BeenSimmed]]
+| kind = Property
+| flags = Auto Hidden
+| returns = bool
+| parameters = false
+| documentation = Prevent an object that has been havok'd in-game from going static
+}}
+
+{{Script_Object_Member_Summary
+| title = HavokImpulseMagnitude
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/HavokImpulseMagnitude|HavokImpulseMagnitude]]
+| kind = Property
+| flags = Auto Const
+| returns = float
+| parameters = 0.07
+| documentation = havok impulse to apply when released to havok sim
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = Default = False, Set to True if you want the traces in this script to show up in the log.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnLoad|OnLoad]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference triggerRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference var1, Form var2, Projectile var3, bool var4, bool var5, bool var6, bool var7, string asMaterialName
+}}
+
+{{Script_Object_Member_Summary
+| title = OnGrab
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/OnGrab|OnGrab]]
+| kind = Event
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = ReleaseToHavok
+| script = [[SFM:Script-DefaultDisableHavokOnLoad|DefaultDisableHavokOnLoad]]
+| name = [[SFM:Script-DefaultDisableHavokOnLoad/ReleaseToHavok|ReleaseToHavok]]
+| kind = Function
+}}
+
+
+
+

@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = WordOfPower
+| name = [[SFM:Script-WordOfPower|WordOfPower]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>WordOfPower.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName WordOfPower Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>WordOfPower.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>WordOfPower.psc</code> source file.
+
+
+

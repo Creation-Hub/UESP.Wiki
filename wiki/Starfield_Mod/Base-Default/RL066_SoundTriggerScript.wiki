@@ -1,0 +1,109 @@
+{{Script_Object_Summary
+| title = RL066_SoundTriggerScript
+| name = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>RL066_SoundTriggerScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName RL066_SoundTriggerScript Extends ObjectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>RL066_SoundTriggerScript.psc</code> source file.
+
+<source>
+Plays a random sound at a random interval
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SoundToPlayEvent
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/SoundToPlayEvent|SoundToPlayEvent]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = WwiseEvent[]
+| documentation = The sounds to be played.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkCustom01
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/LinkCustom01|LinkCustom01]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = play the sound from this link
+}}
+
+{{Script_Object_Member_Summary
+| title = StopSound
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/StopSound|StopSound]]
+| kind = Property
+| flags = Auto
+| returns = bool
+| parameters = false
+| documentation = stops playing sounds if true
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Waiting
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/Waiting|Waiting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/Done|Done]]
+| kind = State
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-RL066_SoundTriggerScript|RL066_SoundTriggerScript]]
+| name = [[SFM:Script-RL066_SoundTriggerScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference triggerRef
+}}
+
+
+
+

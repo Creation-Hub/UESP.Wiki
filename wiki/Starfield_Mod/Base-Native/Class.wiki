@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Class
+| name = [[SFM:Script-Class|Class]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Class.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Class Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Class.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Class.psc</code> source file.
+
+
+

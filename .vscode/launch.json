@@ -33,7 +33,7 @@
 				"--settings", "scribe.json",
 				"--log-file-path", "scribe.generator.log",
 				"generate",
-				"--config", "scribe.generator.json"
+				"--config", "assets\\papyrus.json"
 			]
 		},
 		{

@@ -1,0 +1,159 @@
+{{Script_Object_Summary
+| title = defaultCounter
+| name = [[SFM:Script-defaultCounter|defaultCounter]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>defaultCounter.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName defaultCounter Extends objectReference Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>defaultCounter.psc</code> source file.
+
+<source>
+A simple counter. Place on an object, then increment with another script (such as defaultCounterIncrementOnDeath). When the target value is reached (or, optionally, exceeded), the counter:
+ - Activates itself.
+ - Optionally, sets a quest stage.
+ - Optionally, performs a specified action on a specified linkedref.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = TargetValue
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/TargetValue|TargetValue]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| documentation = The first value at which the counter will trigger.
+}}
+
+{{Script_Object_Member_Summary
+| title = QuestToSet
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/QuestToSet|QuestToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = Quest
+| documentation = Quest containing the Stage to set
+}}
+
+{{Script_Object_Member_Summary
+| title = StageToSet
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/StageToSet|StageToSet]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| parameters = -1
+| documentation = Stage to Set
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkedRefKeyword
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/LinkedRefKeyword|LinkedRefKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = The keyword for the LinkedRef to perform the action on. Defaults to the unnamed linkedref.
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkedRefAction
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/LinkedRefAction|LinkedRefAction]]
+| kind = Property
+| flags = Auto Const
+| returns = int
+| documentation = Determines what action to perform on the object's linkedref.
+	0: Activate (default)
+	1: Toggle Enable/Disable
+	2: Enable Only
+	3: Disable Only
+}}
+
+{{Script_Object_Member_Summary
+| title = AllowDecrementing
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/AllowDecrementing|AllowDecrementing]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| documentation = (Default: false) If true, we Decrementing via calls to "Decrement()", undoing the specified action (where possible) if the value falls below the target.
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = AllowCounting
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/AllowCounting|AllowCounting]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = StopCounting
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/StopCounting|StopCounting]]
+| kind = State
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Increment|Increment]]
+| kind = Function
+}}
+
+{{Script_Object_Member_Summary
+| title = Decrement
+| script = [[SFM:Script-defaultCounter|defaultCounter]]
+| name = [[SFM:Script-defaultCounter/Decrement|Decrement]]
+| kind = Function
+}}
+
+
+
+

@@ -56,7 +56,7 @@ class UploaderService:
             return False
 
 
-        if not composer.wiki.articles:
+        if not composer.articles:
             logging.error("No wiki articles to upload.")
             return False
 
@@ -86,7 +86,7 @@ class UploaderService:
             return False
 
         # Upload each page
-        for article in composer.wiki.articles.values():
+        for article in composer.articles.values():
             UploaderService.edit_article(client, article, UploaderService.BOT_EDIT_SUMMARY)
 
         return True

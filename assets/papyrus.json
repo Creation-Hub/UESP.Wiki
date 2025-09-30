@@ -1,0 +1,111 @@
+{
+	"Starfield": {
+		"name": "Starfield",
+		"author": "Bethesda Game Studios",
+		"description": "The base game content",
+		"platform": "steam",
+		"url": "https://store.steampowered.com/app/1716740/Starfield/",
+		"url_id": "1716740",
+		"version": {
+			"number": "1.15.216.0",
+			"build": "18483158",
+			"date": "2024-12-15"
+		},
+		"papyrus": [
+			{
+				"identifier": "Game"
+			}
+		]
+	},
+	"Starfield_Creation_Kit": {
+		"name": "Creation Kit",
+		"author": "Bethesda Game Studios",
+		"description": "The Creation Kit.",
+		"platform": "steam",
+		"url": "https://store.steampowered.com/app/2722710/Starfield_Creation_Kit/",
+		"url_id": "2722710",
+		"version": {
+			"number": "1.15.216.0",
+			"build": "18483730",
+			"date": "2024-12-15"
+		},
+		"papyrus": [
+			{
+				"identifier": "Base-Native",
+				"source.imports": [],
+				"source.directory": "assets/papyrus/Base-Native",
+				"publish.enabled": true,
+				"publish.objects": true,
+				"publish.members": false
+			},
+			{
+				"identifier": "Base-Shared-Default",
+				"source.imports": [ "Base-Native" ],
+				"source.directory": "assets/papyrus/Base-Shared-Default",
+				"publish.enabled": true,
+				"publish.objects": true,
+				"publish.members": false
+			},
+			{
+				"identifier": "Base-Default",
+				"source.imports": [ "Base-Shared-Default", "Base-Native" ],
+				"source.directory": "assets/papyrus/Base-Default",
+				"publish.enabled": true,
+				"publish.objects": true,
+				"publish.members": false
+			}
+		]
+	},
+	"sfse": {
+		"name": "Starfield Script Extender",
+		"author": "SFSE Team",
+		"description": "Starfield Script Extender (SFSE) is a tool adding additional scripting capabilities and functionality to the game.",
+		"platform": "nexus",
+		"url": "https://www.nexusmods.com/starfield/mods/106",
+		"url_id": "106",
+		"version": {
+			"number": "0.2.17",
+			"date": "2025-05-23"
+		}
+	},
+	"cassiopeia": {
+		"name": "Cassiopeia Papyrus Extender",
+		"author": "LarannKiar",
+		"description": "SFSE plugin that expands the capabilities of Papyrus, the Creation Engine's scripting language.",
+		"platform": "nexus",
+		"url": "https://www.nexusmods.com/starfield/mods/10896",
+		"url_id": "10896",
+		"version": {
+			"number": "4.1.0",
+			"date": "2025-06-25"
+		},
+		"papyrus": [
+			{
+				"identifier": "Cassiopeia",
+				"source.imports": [ "Base-Native" ],
+				"source.directory": "assets/papyrus/Cassiopeia",
+				"publish.enabled": false,
+				"publish.objects": true,
+				"publish.members": false
+			}
+		]
+	},
+	"Testing": {
+		"name": "Testing",
+		"author": "Scrivener07",
+		"description": "Provides script samples for integration testing.",
+		"version": {
+			"number": "0.0.0"
+		},
+		"papyrus": [
+			{
+				"identifier": "Test-Sample",
+				"source.imports": [ "Base-Native" ],
+				"source.directory": "assets/papyrus/Test-Sample",
+				"publish.enabled": true,
+				"publish.objects": true,
+				"publish.members": true
+			}
+		]
+	}
+}

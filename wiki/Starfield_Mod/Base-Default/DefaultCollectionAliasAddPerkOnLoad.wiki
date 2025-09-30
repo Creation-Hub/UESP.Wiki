@@ -1,0 +1,53 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasAddPerkOnLoad
+| name = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultCollectionAliasAddPerkOnLoad.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasAddPerkOnLoad Extends RefCollectionAlias Const Default
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>DefaultCollectionAliasAddPerkOnLoad.psc</code> source file.
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = PerkToAdd
+| script = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad/PerkToAdd|PerkToAdd]]
+| kind = Property
+| flags = Auto Const
+| returns = Perk
+| documentation = The perk that should be added to actors in the collection upon load.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad|DefaultCollectionAliasAddPerkOnLoad]]
+| name = [[SFM:Script-DefaultCollectionAliasAddPerkOnLoad/OnLoad|OnLoad]]
+| kind = Event
+| parameters = ObjectReference akSenderRef
+}}
+
+
+
+

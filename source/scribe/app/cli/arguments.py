@@ -81,7 +81,7 @@ class AppArguments:
         else: return AppMode[value.upper()]
 
     @property
-    def generator_file_path(self) -> str|None:
+    def papyrus_file_path(self) -> str|None:
         """Path to the generator configuration file."""
         if not self.values: return None
         if self.mode is not AppMode.GENERATE:

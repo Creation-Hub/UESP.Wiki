@@ -1,0 +1,18 @@
+{{Script_Member_Summary
+| title = MyProperty1
+| script = [[SFM:Script-Samples:GuardScript|Samples:GuardScript]]
+| name = [[SFM:Script-Samples:GuardScript/MyProperty1|MyProperty1]]
+| kind = Property
+| flags = Auto Hidden Conditional RequiresGuard(MyPropertyGuard)
+| returns = int
+| parameters = 2
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Field Initializer ==
+* 2
+

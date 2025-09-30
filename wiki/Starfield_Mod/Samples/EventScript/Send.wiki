@@ -1,0 +1,16 @@
+{{Script_Member_Summary
+| title = Send
+| script = [[SFM:Script-Samples:EventScript|Samples:EventScript]]
+| name = [[SFM:Script-Samples:EventScript/Send|Send]]
+| kind = Function
+}}
+
+
+== Documentation ==
+No documentation comments were provided for this member.
+
+
+== Parameters ==
+This function member has no parameters.
+
+

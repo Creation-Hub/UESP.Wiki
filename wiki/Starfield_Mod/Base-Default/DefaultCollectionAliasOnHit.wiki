@@ -1,0 +1,111 @@
+{{Script_Object_Summary
+| title = DefaultCollectionAliasOnHit
+| name = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| extends = [[SFM:Script-DefaultCollectionAlias|DefaultCollectionAlias]] → [[SFM:Script-DefaultCollectionAliasParent|DefaultCollectionAliasParent]] → [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultCollectionAliasOnHit.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionAliasOnHit Extends DefaultCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultCollectionAliasOnHit.psc</code> source file.
+
+<source>
+Sets stage when THIS RefCollection's members are hit.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the reference hitting each ref in THIS refcollection.
+<LocationToCheck> is the current location of each ref in THIS collection.
+
+SEE ALSO DefaultCollectionOnCombatStateChanged which includes the ability to also check for OnHit.
+(You probably want to use DefaultCollectionOnCombatStateChanged if THIS is an actor and you are testing to see if it's becoming hostile)
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SpellHits_HostileOnly
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/SpellHits_HostileOnly|SpellHits_HostileOnly]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = (Default: true) If true, stage will be set when hits from spells are flagged as "hostile". If false, stage will be set from any kind of spell hit.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnLoad
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/OnLoad|OnLoad]]
+| kind = Event
+| parameters = ObjectReference akSenderRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/OnUnload|OnUnload]]
+| kind = Event
+| parameters = ObjectReference akSenderRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnHit
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/OnHit|OnHit]]
+| kind = Event
+| parameters = ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string asMaterialName
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Done
+| script = [[SFM:Script-DefaultCollectionAliasOnHit|DefaultCollectionAliasOnHit]]
+| name = [[SFM:Script-DefaultCollectionAliasOnHit/Done|Done]]
+| kind = State
+}}
+
+
+
+

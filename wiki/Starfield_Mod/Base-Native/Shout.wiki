@@ -1,0 +1,25 @@
+{{Script_Object_Summary
+| title = Shout
+| name = [[SFM:Script-Shout|Shout]]
+| extends = [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native, Hidden
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Shout.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Shout Extends Form Native Hidden
+</source>
+
+
+== Documentation ==
+No documentation comments were provided in the <code>Shout.psc</code> source file.
+
+
+== Member ==
+No members were defined in the <code>Shout.psc</code> source file.
+
+
+

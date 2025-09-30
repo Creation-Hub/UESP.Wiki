@@ -1,0 +1,41 @@
+{{Script_Object_Summary
+| title = DefaultCounterAliasIncOnceOnActivateC
+| name = [[SFM:Script-DefaultCounterAliasIncOnceOnActivateC|DefaultCounterAliasIncOnceOnActivateC]]
+| extends = [[SFM:Script-DefaultCounterQuestIncOnceOnActivate|DefaultCounterQuestIncOnceOnActivate]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultCounterAliasIncOnceOnActivateC.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultCounterAliasIncOnceOnActivateC Extends DefaultCounterQuestIncOnceOnActivate Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultCounterAliasIncOnceOnActivateC.psc</code> source file.
+
+<source>
+Once this ALIAS is activated (by the PLAYER) it increments the counter on its Quest's DefaultCounterQuestC script
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = Increment
+| script = [[SFM:Script-DefaultCounterAliasIncOnceOnActivateC|DefaultCounterAliasIncOnceOnActivateC]]
+| name = [[SFM:Script-DefaultCounterAliasIncOnceOnActivateC/Increment|Increment]]
+| kind = Function
+}}
+
+
+
+

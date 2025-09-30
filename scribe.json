@@ -2,7 +2,7 @@
 	"log": {
 		"file_path": "scribe.app.log"
 	},
-	"export.directory": "wiki/export",
+	"export.directory": "wiki",
 	"generator.file": "scribe.generator.json",
 	"uploader.file": "scribe.uploader.json"
 }

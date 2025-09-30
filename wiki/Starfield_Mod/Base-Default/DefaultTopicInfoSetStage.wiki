@@ -1,0 +1,78 @@
+{{Script_Object_Summary
+| title = DefaultTopicInfoSetStage
+| name = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| extends = [[SFM:Script-DefaultTopicInfo|DefaultTopicInfo]] → [[SFM:Script-TopicInfo|TopicInfo]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultTopicInfoSetStage.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultTopicInfoSetStage Extends DefaultTopicInfo Const Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultTopicInfoSetStage.psc</code> source file.
+
+<source>
+Default script for setting a different quest's stage from a topic info.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SetStageOnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/SetStageOnEnd|SetStageOnEnd]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = true
+| documentation = If true (default), set stage on end. If false, set stage on begin.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnBegin
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/OnBegin|OnBegin]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+{{Script_Object_Member_Summary
+| title = OnEnd
+| script = [[SFM:Script-DefaultTopicInfoSetStage|DefaultTopicInfoSetStage]]
+| name = [[SFM:Script-DefaultTopicInfoSetStage/OnEnd|OnEnd]]
+| kind = Event
+| parameters = ObjectReference akSpeakerRef, bool abHasBeenSaid
+}}
+
+
+
+

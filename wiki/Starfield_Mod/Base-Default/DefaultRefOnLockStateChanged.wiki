@@ -1,0 +1,69 @@
+{{Script_Object_Summary
+| title = DefaultRefOnLockStateChanged
+| name = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| extends = [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultRefOnLockStateChanged.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultRefOnLockStateChanged Extends DefaultRefParent Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultRefOnLockStateChanged.psc</code> source file.
+
+<source>
+Sets stage if THIS object's lock state changes.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| name = [[SFM:Script-DefaultRefOnLockStateChanged/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = CheckForUnlock
+| script = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| name = [[SFM:Script-DefaultRefOnLockStateChanged/CheckForUnlock|CheckForUnlock]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), exceute this script if the lock state changes to Unlocked. If false, if the lock state changes to Locked.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnLockStateChanged
+| script = [[SFM:Script-DefaultRefOnLockStateChanged|DefaultRefOnLockStateChanged]]
+| name = [[SFM:Script-DefaultRefOnLockStateChanged/OnLockStateChanged|OnLockStateChanged]]
+| kind = Event
+}}
+
+
+
+

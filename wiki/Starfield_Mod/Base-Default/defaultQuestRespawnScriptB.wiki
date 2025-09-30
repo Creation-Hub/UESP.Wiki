@@ -1,0 +1,43 @@
+{{Script_Object_Summary
+| title = defaultQuestRespawnScriptB
+| name = [[SFM:Script-defaultQuestRespawnScriptB|defaultQuestRespawnScriptB]]
+| extends = [[SFM:Script-defaultQuestRespawnScript|defaultQuestRespawnScript]] → [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>defaultQuestRespawnScriptB.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName defaultQuestRespawnScriptB Extends defaultQuestRespawnScript Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>defaultQuestRespawnScriptB.psc</code> source file.
+
+<source>
+Simple script to respawn Aliases that have the DefaultAliasRespawnScriptB on them.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = TryToRespawn
+| script = [[SFM:Script-defaultQuestRespawnScriptB|defaultQuestRespawnScriptB]]
+| name = [[SFM:Script-defaultQuestRespawnScriptB/TryToRespawn|TryToRespawn]]
+| kind = Function
+| parameters = ReferenceAlias aliasToRespawn
+| documentation = call this when you want to try to respawn
+}}
+
+
+
+

@@ -1,0 +1,80 @@
+{{Script_Object_Summary
+| title = DefaultCollectionRandomVoiceType
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| extends = [[SFM:Script-RefCollectionAlias|RefCollectionAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultCollectionRandomVoiceType.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultCollectionRandomVoiceType Extends RefCollectionAlias Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultCollectionRandomVoiceType.psc</code> source file.
+
+<source>
+used to use a random voice from a formlist of voicetypes to reference(s) in the alias
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = VoicesList
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/VoicesList|VoicesList]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = FormList
+| documentation = The formlist with random voices you want to select from.
+IMPORTANT: make sure the alias has the same formlist in the Export drop down if they are getting new dialogue in this quest.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShowTraces
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/ShowTraces|ShowTraces]]
+| kind = Property
+| flags = Auto Const
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will trace to log. Must also have DefaultScriptFunction script compiled locally, or be loading debug archives.
+}}
+
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Debug_Properties
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/Debug_Properties|Debug_Properties]]
+| kind = Group
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultCollectionRandomVoiceType|DefaultCollectionRandomVoiceType]]
+| name = [[SFM:Script-DefaultCollectionRandomVoiceType/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+
+
+

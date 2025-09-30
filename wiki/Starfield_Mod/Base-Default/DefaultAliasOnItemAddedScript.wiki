@@ -1,0 +1,79 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnItemAddedScript
+| name = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAliasOnItemAddedScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnItemAddedScript Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultAliasOnItemAddedScript.psc</code> source file.
+
+<source>
+Sets quest stage when items are added to this Alias.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the PLAYER.
+<LocationToCheck> is the current location of THIS alias.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+| name = [[SFM:Script-DefaultAliasOnItemAddedScript/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = ItemFilter
+| script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+| name = [[SFM:Script-DefaultAliasOnItemAddedScript/ItemFilter|ItemFilter]]
+| kind = Property
+| flags = Mandatory Const Auto
+| returns = Form
+| documentation = The item filter defining the items we care about being removed from the container. See "AddInventoryEventFilter" function documentation for details
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnAliasInit
+| script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+| name = [[SFM:Script-DefaultAliasOnItemAddedScript/OnAliasInit|OnAliasInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnItemAdded
+| script = [[SFM:Script-DefaultAliasOnItemAddedScript|DefaultAliasOnItemAddedScript]]
+| name = [[SFM:Script-DefaultAliasOnItemAddedScript/OnItemAdded|OnItemAdded]]
+| kind = Event
+| parameters = Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer, int aiTransferReason
+}}
+
+
+
+

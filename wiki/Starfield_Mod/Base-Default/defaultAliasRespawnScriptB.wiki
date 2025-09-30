@@ -1,0 +1,102 @@
+{{Script_Object_Summary
+| title = defaultAliasRespawnScriptB
+| name = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| extends = [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>defaultAliasRespawnScriptB.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName defaultAliasRespawnScriptB Extends ReferenceAlias Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>defaultAliasRespawnScriptB.psc</code> source file.
+
+<source>
+Script for respawning this alias.  For use along with a quest that has the DefaultQuestRespawnScript attached to it.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Optional_Properties
+| script = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| name = [[SFM:Script-defaultAliasRespawnScriptB/Optional_Properties|Optional_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = RespawningOn
+| script = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| name = [[SFM:Script-defaultAliasRespawnScriptB/RespawningOn|RespawningOn]]
+| kind = Property
+| flags = Auto
+| returns = bool
+| parameters = true
+| documentation = Set to false to stop this alias from auto-respawning when it dies
+	defaults to TRUE
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = RespawnIfDead
+| script = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| name = [[SFM:Script-defaultAliasRespawnScriptB/RespawnIfDead|RespawnIfDead]]
+| kind = Function
+}}
+
+
+
+=== State ===
+These are the state members for this script.
+
+{{Script_Object_Member_Summary
+| title = Normal
+| script = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| name = [[SFM:Script-defaultAliasRespawnScriptB/Normal|Normal]]
+| kind = State
+}}
+
+{{Script_Object_Member_Summary
+| title = Respawning
+| script = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| name = [[SFM:Script-defaultAliasRespawnScriptB/Respawning|Respawning]]
+| kind = State
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnDeath
+| script = [[SFM:Script-defaultAliasRespawnScriptB|defaultAliasRespawnScriptB]]
+| name = [[SFM:Script-defaultAliasRespawnScriptB/OnDeath|OnDeath]]
+| kind = Event
+| parameters = ObjectReference akKiller
+}}
+
+
+
+

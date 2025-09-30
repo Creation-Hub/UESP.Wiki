@@ -1,0 +1,70 @@
+{{Script_Object_Summary
+| title = FXScripts:EffectSequenceOnActivate
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default, Const
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>FXScripts\EffectSequenceOnActivate.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName FXScripts:EffectSequenceOnActivate Extends ObjectReference Default Const
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>FXScripts\EffectSequenceOnActivate.psc</code> source file.
+
+<source>
+For any activator that you want to play a single animation each time it's activated.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Required_Properties
+| script = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate/Required_Properties|Required_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = SequenceName
+| script = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate/SequenceName|SequenceName]]
+| kind = Property
+| flags = Auto Const
+| returns = string
+| parameters = "Play01"
+| documentation = Effect Sequence to play when this is activated.
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnActivate
+| script = [[SFM:Script-FXScripts:EffectSequenceOnActivate|FXScripts:EffectSequenceOnActivate]]
+| name = [[SFM:Script-FXScripts:EffectSequenceOnActivate/OnActivate|OnActivate]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+
+

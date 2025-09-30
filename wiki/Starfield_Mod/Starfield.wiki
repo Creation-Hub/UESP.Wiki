@@ -1,0 +1,12 @@
+== Details ==
+* '''Name''': Starfield
+* '''Author''': Bethesda Game Studios
+* '''Description''': The base game content
+* '''Platform''': steam
+* '''URL''': https://store.steampowered.com/app/1716740/Starfield/
+* '''URL ID''': 1716740
+* '''Version''': 1.15.216.0
+* '''Version Build''': 18483158
+* '''Version Date''': 2024-12-15
+
+[[Category:Starfield]]

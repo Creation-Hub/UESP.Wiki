@@ -1,0 +1,172 @@
+{{Script_Object_Summary
+| title = DefaultActivateLinkedRefOnTrigger
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| extends = [[SFM:Script-DefaultRef|DefaultRef]] → [[SFM:Script-DefaultRefParent|DefaultRefParent]] → [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultActivateLinkedRefOnTrigger.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultActivateLinkedRefOnTrigger Extends DefaultRef Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultActivateLinkedRefOnTrigger.psc</code> source file.
+
+<source>
+Activates the specified linked ref when THIS object is entered.
+<RefToCheck> is the reference triggering THIS Object.
+<LocationToCheck> is the current location of THIS object.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Group ===
+These are the group members for this script.
+
+{{Script_Object_Member_Summary
+| title = Quest_Properties
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/Quest_Properties|Quest_Properties]]
+| kind = Group
+| flags = collapsed
+| documentation = Double-Click to EXPAND
+}}
+
+{{Script_Object_Member_Summary
+| title = Script_Specific_Properties
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/Script_Specific_Properties|Script_Specific_Properties]]
+| kind = Group
+}}
+
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = XxxPlaceHolderForEmptyGroup2xxx
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/XxxPlaceHolderForEmptyGroup2xxx|XxxPlaceHolderForEmptyGroup2xxx]]
+| kind = Property
+| flags = Const Auto Hidden
+| returns = bool
+| documentation = `TTP-27034: Papyrus: Need a way to manage groups across parents and children`
+}}
+
+{{Script_Object_Member_Summary
+| title = LinkedRefKeyword
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/LinkedRefKeyword|LinkedRefKeyword]]
+| kind = Property
+| flags = Auto Const
+| returns = Keyword
+| documentation = The Keyword of the LinkedRef you want to activate when this activated.
+}}
+
+{{Script_Object_Member_Summary
+| title = ShouldUseLinkedRefChain
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/ShouldUseLinkedRefChain|ShouldUseLinkedRefChain]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = (Default: false) If true, will execute over the entire Linked Ref Chain.
+}}
+
+{{Script_Object_Member_Summary
+| title = ActivatorIsRefToCheck
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/ActivatorIsRefToCheck|ActivatorIsRefToCheck]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = If true (default), Activate function's akActivator param will be <RefToCheck>. If false, akActivator param will be THIS object.
+}}
+
+{{Script_Object_Member_Summary
+| title = ActivateOnTriggerEnter
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/ActivateOnTriggerEnter|ActivateOnTriggerEnter]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = true
+| documentation = if true, will send activation OnTriggerEnter
+}}
+
+{{Script_Object_Member_Summary
+| title = ActivateOnTriggerLeave
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/ActivateOnTriggerLeave|ActivateOnTriggerLeave]]
+| kind = Property
+| flags = Const Auto
+| returns = bool
+| parameters = false
+| documentation = if true, will send activation OnTriggerLeave
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnInit
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/OnInit|OnInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+{{Script_Object_Member_Summary
+| title = OnTriggerLeave
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/OnTriggerLeave|OnTriggerLeave]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = GetRefsToDoSpecificThingsWith
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/GetRefsToDoSpecificThingsWith|GetRefsToDoSpecificThingsWith]]
+| kind = Function
+| returns = ObjectReference[]
+| documentation = Reimplementing Parent's empty function
+}}
+
+{{Script_Object_Member_Summary
+| title = DoSpecificThing
+| script = [[SFM:Script-DefaultActivateLinkedRefOnTrigger|DefaultActivateLinkedRefOnTrigger]]
+| name = [[SFM:Script-DefaultActivateLinkedRefOnTrigger/DoSpecificThing|DoSpecificThing]]
+| kind = Function
+| parameters = DefaultScriptFunctions:ParentScriptFunctionParams ParentScriptFunctionParams, ObjectReference RefToDoThingWith = none, bool LastRefToDoThingWith = true
+| documentation = Reimplementing Parent's empty function
+}}
+
+
+
+

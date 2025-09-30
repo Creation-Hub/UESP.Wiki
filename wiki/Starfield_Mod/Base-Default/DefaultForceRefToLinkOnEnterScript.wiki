@@ -1,0 +1,56 @@
+{{Script_Object_Summary
+| title = DefaultForceRefToLinkOnEnterScript
+| name = [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+| extends = [[SFM:Script-ObjectReference|ObjectReference]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Const, Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultForceRefToLinkOnEnterScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultForceRefToLinkOnEnterScript Extends ObjectReference Const Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultForceRefToLinkOnEnterScript.psc</code> source file.
+
+<source>
+Used Primarily for Quest Target breadcrumbing. Force the QT RefAlias to this trigger's LinkedRef when the Player enters this Trigger.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = RefAliasToFill
+| script = [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+| name = [[SFM:Script-DefaultForceRefToLinkOnEnterScript/RefAliasToFill|RefAliasToFill]]
+| kind = Property
+| flags = Auto Mandatory Const
+| returns = ReferenceAlias
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnTriggerEnter
+| script = [[SFM:Script-DefaultForceRefToLinkOnEnterScript|DefaultForceRefToLinkOnEnterScript]]
+| name = [[SFM:Script-DefaultForceRefToLinkOnEnterScript/OnTriggerEnter|OnTriggerEnter]]
+| kind = Event
+| parameters = ObjectReference akActionRef
+}}
+
+
+
+

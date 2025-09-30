@@ -1,0 +1,45 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnContainerChangedFrom
+| name = [[SFM:Script-DefaultAliasOnContainerChangedFrom|DefaultAliasOnContainerChangedFrom]]
+| extends = [[SFM:Script-DefaultAlias|DefaultAlias]] → [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAliasOnContainerChangedFrom.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnContainerChangedFrom Extends DefaultAlias Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultAliasOnContainerChangedFrom.psc</code> source file.
+
+<source>
+Set stage when THIS Alias's container changes.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+<RefToCheck> is the container THIS object was removed from.
+<LocationToCheck> is the current location of the container THIS object was removed from.
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnContainerChanged
+| script = [[SFM:Script-DefaultAliasOnContainerChangedFrom|DefaultAliasOnContainerChangedFrom]]
+| name = [[SFM:Script-DefaultAliasOnContainerChangedFrom/OnContainerChanged|OnContainerChanged]]
+| kind = Event
+| parameters = ObjectReference akNewContainer, ObjectReference akOldContainer
+}}
+
+
+
+

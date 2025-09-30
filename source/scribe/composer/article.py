@@ -1,23 +1,7 @@
 """
 This module provides MediaWiki data model for articles.
-"""
-"""
+
 - https://www.mediawiki.org/wiki/Manual:Page_table
-- https://www.mediawiki.org/wiki/Manual:Page_ID
-- https://www.mediawiki.org/wiki/Manual:Page_title
-- https://www.mediawiki.org/wiki/Manual:Title.php
-
-A page whose name is not prefixed by a namespace lies in the mainspace.
-
-Note, however, that colons and prefixes can also appear in page titles without indicating a namespace:
-    the page `Foo:Namespaces` is a page located in the mainspace because the namespace 'Foo' does not exist.
-
-Similarly the page `Help:Foo:Namespaces` is in the 'Help' namespace.
-
-prefix:	namespace:	page name
-optional	optional	required
-"""
-"""
 - https://www.mediawiki.org/wiki/Help:Categories
 """
 from typing import override

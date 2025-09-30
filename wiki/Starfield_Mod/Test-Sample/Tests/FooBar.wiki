@@ -1,0 +1,43 @@
+{{Script_Object_Summary
+| title = Tests:FooBar
+| name = [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+| extends = [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Native
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>Tests\FooBar.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName Tests:FooBar Native
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>Tests\FooBar.psc</code> source file.
+
+<source>
+This is my docstring comment.
+hello world!
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Function ===
+These are the function members for this script.
+
+{{Script_Object_Member_Summary
+| title = MyEvent
+| script = [[SFM:Script-Tests:FooBar|Tests:FooBar]]
+| name = [[SFM:Script-Tests:FooBar/MyEvent|MyEvent]]
+| kind = Function
+| returns = bool
+}}
+
+
+
+

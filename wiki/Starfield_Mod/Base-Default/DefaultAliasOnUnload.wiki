@@ -1,0 +1,42 @@
+{{Script_Object_Summary
+| title = DefaultAliasOnUnload
+| name = [[SFM:Script-DefaultAliasOnUnload|DefaultAliasOnUnload]]
+| extends = [[SFM:Script-DefaultAliasParent|DefaultAliasParent]] → [[SFM:Script-ReferenceAlias|ReferenceAlias]] → [[SFM:Script-Alias|Alias]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultAliasOnUnload.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultAliasOnUnload Extends DefaultAliasParent Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultAliasOnUnload.psc</code> source file.
+
+<source>
+Sets quest stage when this reference unloads.
+<QuestToSetOrCheck> is THIS Alias's GetOwningQuest()
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnUnload
+| script = [[SFM:Script-DefaultAliasOnUnload|DefaultAliasOnUnload]]
+| name = [[SFM:Script-DefaultAliasOnUnload/OnUnload|OnUnload]]
+| kind = Event
+}}
+
+
+
+

@@ -1,0 +1,103 @@
+{{Script_Object_Summary
+| title = DefaultSurveyPlanetQuestScript
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| extends = [[SFM:Script-Quest|Quest]] → [[SFM:Script-Form|Form]] → [[SFM:Script-ScriptObject|ScriptObject]]
+| flags = Default
+}}
+
+
+== Definition ==
+The header definition for this script comes from the <code>DefaultSurveyPlanetQuestScript.psc</code> source file.
+
+<source lang="papyrus">
+ScriptName DefaultSurveyPlanetQuestScript Extends Quest Default
+</source>
+
+
+== Documentation ==
+The documentation comments for this script come from the <code>DefaultSurveyPlanetQuestScript.psc</code> source file.
+
+<source>
+script to set a stage when a specified planet has been surveyed
+</source>
+
+
+== Member ==
+These are the members that belong to this script, grouped by kind.
+
+
+=== Property ===
+These are the property members for this script.
+
+{{Script_Object_Member_Summary
+| title = PlayerShip
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/PlayerShip|PlayerShip]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = ReferenceAlias
+| documentation = should point to SQ_PlayerShip, PlayerShip alias
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetSystemLocation
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/TargetSystemLocation|TargetSystemLocation]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias
+}}
+
+{{Script_Object_Member_Summary
+| title = TargetPlanetLocation
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/TargetPlanetLocation|TargetPlanetLocation]]
+| kind = Property
+| flags = Auto Const
+| returns = LocationAlias
+}}
+
+{{Script_Object_Member_Summary
+| title = LocTypeMajorOrbital
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/LocTypeMajorOrbital|LocTypeMajorOrbital]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = Keyword
+| documentation = used to check if something is a planet or moon
+}}
+
+{{Script_Object_Member_Summary
+| title = SurveyCompleteStage
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/SurveyCompleteStage|SurveyCompleteStage]]
+| kind = Property
+| flags = Auto Const Mandatory
+| returns = int
+| parameters = -1
+| documentation = stage to set when planet survey is complete
+}}
+
+
+
+=== Event ===
+These are the event members for this script.
+
+{{Script_Object_Member_Summary
+| title = OnQuestInit
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/OnQuestInit|OnQuestInit]]
+| kind = Event
+}}
+
+{{Script_Object_Member_Summary
+| title = Actor.OnPlayerPlanetSurveyComplete
+| script = [[SFM:Script-DefaultSurveyPlanetQuestScript|DefaultSurveyPlanetQuestScript]]
+| name = [[SFM:Script-DefaultSurveyPlanetQuestScript/Actor.OnPlayerPlanetSurveyComplete|Actor.OnPlayerPlanetSurveyComplete]]
+| kind = Event
+| parameters = Actor akSource, Planet akPlanet
+}}
+
+
+
+
